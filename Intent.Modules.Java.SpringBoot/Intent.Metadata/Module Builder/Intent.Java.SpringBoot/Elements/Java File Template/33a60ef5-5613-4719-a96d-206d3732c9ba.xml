@@ -3,7 +3,7 @@
   <name>RestController</name>
   <display>RestController: File Per Model</display>
   <isAbstract>false</isAbstract>
-  <order>1</order>
+  <order>3</order>
   <genericTypes />
   <typeReference id="65ddf137-9b15-46f7-90ec-4576bbc0ab25">
     <typeId>99cb461f-ec82-4dde-a804-e3393a5e2a8d</typeId>
@@ -31,7 +31,7 @@
         <property name="75b89367-1808-43f8-9f18-785915ec1630" display="Model Type" value="b16578a5-27b1-4047-a8df-f0b783d706bd" isActive="true" />
         <property name="d1e89313-0647-48bd-81da-b04b644db475" display="Model Name" value="object" isActive="false" />
         <property name="f1d88e59-1ca6-426e-b52d-42f3467e6bd5" display="Role" value="Application" isActive="true" />
-        <property name="1ac0fa39-ecea-48f8-92e4-41616a639586" display="Location" value="application/rest" isActive="true" />
+        <property name="1ac0fa39-ecea-48f8-92e4-41616a639586" display="Location" value="rest" isActive="true" />
       </properties>
     </stereotype>
   </stereotypes>

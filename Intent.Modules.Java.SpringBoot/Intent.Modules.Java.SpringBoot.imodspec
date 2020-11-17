@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <package>
   <id>Intent.Java.SpringBoot</id>
-  <version>3.0.0-beta.2</version>
+  <version>3.0.0-beta.3</version>
   <summary>A custom module for Intent.Modules.Java.</summary>
   <description>A custom module for Intent.Modules.Java.</description>
   <authors>Intent.Modules.Java</authors>
@@ -12,7 +12,7 @@
     </template>
     <template id="Intent.Java.SpringBoot.RestController" externalReference="33a60ef5-5613-4719-a96d-206d3732c9ba">
       <role>Application</role>
-      <location>application/rest</location>
+      <location>rest</location>
     </template>
     <template id="Intent.Java.SpringBoot.IntentAnnotations" externalReference="d63a1b44-6b6e-4f97-8fd6-310abef4e115">
       <role>Startup</role>
@@ -20,10 +20,10 @@
     </template>
   </templates>
   <dependencies>
-    <dependency id="Intent.Common" version="3.0.0-beta.2" />
-    <dependency id="Intent.Common.Types" version="3.0.0-beta.2" />
+    <dependency id="Intent.Common" version="3.0.0-beta.3" />
+    <dependency id="Intent.Common.Types" version="3.0.0-beta.3" />
     <dependency id="Intent.Common.Java" version="3.0.0-beta.3" />
-    <dependency id="Intent.Modelers.Services" version="3.0.0-beta.2" />
+    <dependency id="Intent.Modelers.Services" version="3.0.0-beta.3" />
   </dependencies>
   <files>
     <file src="$outDir$/$id$.dll" />

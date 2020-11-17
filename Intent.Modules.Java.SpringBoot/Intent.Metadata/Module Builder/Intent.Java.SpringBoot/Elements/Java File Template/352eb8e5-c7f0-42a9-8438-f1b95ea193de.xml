@@ -3,7 +3,7 @@
   <name>Application</name>
   <display>Application: Single File</display>
   <isAbstract>false</isAbstract>
-  <order>2</order>
+  <order>1</order>
   <genericTypes />
   <typeReference id="cdb0b762-3917-455a-8604-5f39281575f1">
     <typeId>f65d2904-88c9-4501-873a-a4eec8303b1d</typeId>

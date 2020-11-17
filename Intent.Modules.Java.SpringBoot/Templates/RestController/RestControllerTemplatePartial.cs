@@ -50,7 +50,7 @@ namespace Intent.Modules.Java.SpringBoot.Templates.RestController
         private string GetParameters(OperationModel operation)
         {
             return string.Join(", ", operation.Parameters.Select(GetParameter)
-                    .Concat(new []{ "@RequestHeader Map<String, String> headers" }))
+                    .Concat(new[] { "@RequestHeader Map<String, String> headers" }))
                 ;
         }
 

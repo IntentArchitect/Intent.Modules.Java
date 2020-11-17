@@ -86,8 +86,21 @@ import java.util.Map;
             
             #line default
             #line hidden
-            this.Write("\r\n    @GetMapping(\"/v1/subscriptions/{msisdn}/customers\")\r\n    @Timed(value = \"QR" +
-                    "YSCU\", extraTags = {\"service\", \"");
+            this.Write("\r\n    @GetMapping(\"/v1/");
+            
+            #line 29 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.SpringBoot\Templates\RestController\RestControllerTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(ClassName.ToKebabCase()));
+            
+            #line default
+            #line hidden
+            this.Write("/");
+            
+            #line 29 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.SpringBoot\Templates\RestController\RestControllerTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name.ToKebabCase()));
+            
+            #line default
+            #line hidden
+            this.Write("\")\r\n    @Timed(value = \"QRYSCU\", extraTags = {\"service\", \"");
             
             #line 30 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.SpringBoot\Templates\RestController\RestControllerTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
@@ -134,7 +147,7 @@ import java.util.Map;
             this.Write(".");
             
             #line 34 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.SpringBoot\Templates\RestController\RestControllerTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(GetTypeName(operation)));
+            this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden

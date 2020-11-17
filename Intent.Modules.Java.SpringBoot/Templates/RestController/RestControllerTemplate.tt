@@ -26,12 +26,12 @@ public class <#= ClassName #> {
     private final <#= GetServiceInterfaceName() #> <#= GetServiceInterfaceName().ToCamelCase() #>;
 <#  foreach(var operation in Model.Operations) { #>
 
-    @GetMapping("/v1/subscriptions/{msisdn}/customers")
+    @GetMapping("/v1/<#= ClassName.ToKebabCase() #>/<#= operation.Name.ToKebabCase() #>")
     @Timed(value = "QRYSCU", extraTags = {"service", "<#= operation.Name #>"})//QRYSCU is the audit name of the service and is used in metrics
     public ResponseEntity<<#= GetTypeName(operation) #>> <#= operation.Name #>(<#= GetParameters(operation) #>) {
         final long startTime = System.currentTimeMillis();
         
-        final <#= GetTypeName(operation) #> result = <#= GetServiceInterfaceName().ToCamelCase() #>.<#= GetTypeName(operation) #>(<#= this.GetArguments(operation.Parameters #>);
+        final <#= GetTypeName(operation) #> result = <#= GetServiceInterfaceName().ToCamelCase() #>.<#= operation.Name #>(<#= this.GetArguments(operation.Parameters) #>);
 
         log.info("Completed: getCustomerBySubscription()");
         return new ResponseEntity<>(result, HttpStatus.OK);
