@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <class id="06caed4b-c0ea-4239-a4e7-6febea061869" type="Class Library (.NET Core)" typeId="52B49DB5-3EA9-4095-B1A7-DF1AC22D7DAE">
-  <name>Intent.Modules.Java.ApplicationTemplates</name>
-  <display>Intent.Modules.Java.ApplicationTemplates</display>
+  <name>Intent.ApplicationTemplates.Java</name>
+  <display>Intent.ApplicationTemplates.Java</display>
   <isAbstract>false</isAbstract>
   <order>1</order>
   <genericTypes />
