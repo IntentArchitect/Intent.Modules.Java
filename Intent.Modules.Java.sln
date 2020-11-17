@@ -1,0 +1,54 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30011.22
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Intent.Modules.Java.Services", "Intent.Modules.Java.Services\Intent.Modules.Java.Services.csproj", "{9A39A5E5-1C2A-4DF7-BAB4-5D2760783B6D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Intent.Modules.Java.SpringBoot", "Intent.Modules.Java.SpringBoot\Intent.Modules.Java.SpringBoot.csproj", "{915037D0-3D43-4CDA-9777-BB75B8BD5C63}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Intent.Modules.Java.Domain", "Intent.Modules.Java.Domain\Intent.Modules.Java.Domain.csproj", "{586E75C2-AE1C-4988-9E68-89C2696670BD}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Intent.Modules.Java.Maven", "Intent.Modules.Java.Maven\Intent.Modules.Java.Maven.csproj", "{2AEE7253-E4D7-4433-95B7-561CA904F214}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Intent.Modules.Java.ApplicationTemplates", "Intent.Modules.Java.ApplicationTemplates\Intent.Modules.Java.ApplicationTemplates.csproj", "{06CAED4B-C0EA-4239-A4E7-6FEBEA061869}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Intent.Modules.Common.Java", "Intent.Modules.Common.Java\Intent.Modules.Common.Java.csproj", "{A997F21C-EEDB-40E2-84D6-50AAE652A0B8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9A39A5E5-1C2A-4DF7-BAB4-5D2760783B6D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A39A5E5-1C2A-4DF7-BAB4-5D2760783B6D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A39A5E5-1C2A-4DF7-BAB4-5D2760783B6D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A39A5E5-1C2A-4DF7-BAB4-5D2760783B6D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{915037D0-3D43-4CDA-9777-BB75B8BD5C63}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{915037D0-3D43-4CDA-9777-BB75B8BD5C63}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{915037D0-3D43-4CDA-9777-BB75B8BD5C63}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{915037D0-3D43-4CDA-9777-BB75B8BD5C63}.Release|Any CPU.Build.0 = Release|Any CPU
+		{586E75C2-AE1C-4988-9E68-89C2696670BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{586E75C2-AE1C-4988-9E68-89C2696670BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{586E75C2-AE1C-4988-9E68-89C2696670BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{586E75C2-AE1C-4988-9E68-89C2696670BD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2AEE7253-E4D7-4433-95B7-561CA904F214}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2AEE7253-E4D7-4433-95B7-561CA904F214}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2AEE7253-E4D7-4433-95B7-561CA904F214}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2AEE7253-E4D7-4433-95B7-561CA904F214}.Release|Any CPU.Build.0 = Release|Any CPU
+		{06CAED4B-C0EA-4239-A4E7-6FEBEA061869}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{06CAED4B-C0EA-4239-A4E7-6FEBEA061869}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{06CAED4B-C0EA-4239-A4E7-6FEBEA061869}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{06CAED4B-C0EA-4239-A4E7-6FEBEA061869}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A997F21C-EEDB-40E2-84D6-50AAE652A0B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A997F21C-EEDB-40E2-84D6-50AAE652A0B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A997F21C-EEDB-40E2-84D6-50AAE652A0B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A997F21C-EEDB-40E2-84D6-50AAE652A0B8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DAEF00C2-32D0-437F-BBBC-96B2DC1C90B4}
+	EndGlobalSection
+EndGlobal

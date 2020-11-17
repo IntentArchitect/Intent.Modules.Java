@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<outputLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ApplicationId>738877b4-d369-4e34-8449-cca870b40b13</ApplicationId>
+  <FileLogs>
+    <FileLog>
+      <ProjectId>bbc4cd1f-809d-4695-9c3d-dccc70e375f2</ProjectId>
+      <SolutionRelativeFilePath>..\NewApplication1\pom.xml</SolutionRelativeFilePath>
+      <ProjectRelativeFilePath>pom.xml</ProjectRelativeFilePath>
+    </FileLog>
+    <FileLog>
+      <ProjectId>19989037-ed54-4893-b96b-ba92117fd9e5</ProjectId>
+      <SolutionRelativeFilePath>..\NewApplication1\src\main\java\com\Intent.Modules.Java\NewApplication1\Application.java</SolutionRelativeFilePath>
+      <ProjectRelativeFilePath>Application.java</ProjectRelativeFilePath>
+    </FileLog>
+  </FileLogs>
+</outputLog>

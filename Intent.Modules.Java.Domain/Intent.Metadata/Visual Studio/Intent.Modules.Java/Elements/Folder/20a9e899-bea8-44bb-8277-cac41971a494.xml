@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<class id="20a9e899-bea8-44bb-8277-cac41971a494" type="Folder" typeId="3407a825-1331-4f3f-89a4-901903ed97ce">
+  <name>Extensions</name>
+  <display>Extensions</display>
+  <isAbstract>false</isAbstract>
+  <order>0</order>
+  <genericTypes />
+  <isMapped>false</isMapped>
+  <parentFolderId>5e0aa026-b347-49c7-8fd1-f869d40b1d28</parentFolderId>
+  <packageId>9a6b660c-89bd-4f4f-99d0-3c5601ef6c1b</packageId>
+  <packageName>Intent.Modules.Java</packageName>
+  <stereotypes />
+  <childElements>
+    <childElement id="c079ea52-6659-4876-8587-7748d32701c5" type="Template Output" typeId="d421c322-7a51-4094-89fa-e5d8a0a97b27">
+      <name>ModuleBuilder.Templates.Api.ApiAssociationModelExtensions</name>
+      <display>ModuleBuilder.Templates.Api.ApiAssociationModelExtensions</display>
+      <isAbstract>false</isAbstract>
+      <order>0</order>
+      <genericTypes />
+      <isMapped>false</isMapped>
+      <parentFolderId>20a9e899-bea8-44bb-8277-cac41971a494</parentFolderId>
+      <packageId>9a6b660c-89bd-4f4f-99d0-3c5601ef6c1b</packageId>
+      <packageName>Intent.Modules.Java</packageName>
+      <stereotypes />
+      <childElements />
+    </childElement>
+    <childElement id="2ff00f02-b336-4fa7-94a7-71dd8a34b371" type="Template Output" typeId="d421c322-7a51-4094-89fa-e5d8a0a97b27">
+      <name>ModuleBuilder.Templates.Api.ApiElementModelExtensions</name>
+      <display>ModuleBuilder.Templates.Api.ApiElementModelExtensions</display>
+      <isAbstract>false</isAbstract>
+      <order>0</order>
+      <genericTypes />
+      <isMapped>false</isMapped>
+      <parentFolderId>20a9e899-bea8-44bb-8277-cac41971a494</parentFolderId>
+      <packageId>9a6b660c-89bd-4f4f-99d0-3c5601ef6c1b</packageId>
+      <packageName>Intent.Modules.Java</packageName>
+      <stereotypes />
+      <childElements />
+    </childElement>
+  </childElements>
+</class>

@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<settings>
+  <targetDesignerId>27916ede-58c6-4356-87b1-0b0628d1e2a7</targetDesignerId>
+  <createPackages>
+    <package type="Root Location Package" typeId="fbca4a65-b376-482c-a23d-32da9908cac9">
+      <name>root</name>
+      <childElements>
+        <element type="Folder" typeId="4d95d53a-8855-4f35-aa82-e312643f5c5f">
+          <name>src</name>
+          <childElements>
+            <element type="Folder" typeId="4d95d53a-8855-4f35-aa82-e312643f5c5f">
+              <name>main</name>
+              <childElements>
+                <element type="Folder" typeId="4d95d53a-8855-4f35-aa82-e312643f5c5f">
+                  <name>java</name>
+                  <childElements>
+                    <element type="Folder" typeId="4d95d53a-8855-4f35-aa82-e312643f5c5f">
+                      <name>com</name>
+                      <childElements>
+                        <element type="Folder" typeId="4d95d53a-8855-4f35-aa82-e312643f5c5f">
+                          <name>${solution.name}</name>
+                          <childElements>
+                            <element type="Folder" typeId="4d95d53a-8855-4f35-aa82-e312643f5c5f">
+                              <name>${application.name}</name>
+                              <childElements>
+                                <element type="Folder" typeId="4d95d53a-8855-4f35-aa82-e312643f5c5f">
+                                  <name>application</name>
+                                  <childElements>
+                                    <element type="Role" typeId="8663c9f9-2852-45e7-aaa1-0883a2e6f1da">
+                                      <name>Application</name>
+                                    </element>
+                                  </childElements>
+                                </element>
+                                <element type="Folder" typeId="4d95d53a-8855-4f35-aa82-e312643f5c5f">
+                                  <name>domain</name>
+                                  <childElements>
+                                    <element type="Role" typeId="8663c9f9-2852-45e7-aaa1-0883a2e6f1da">
+                                      <name>Domain</name>
+                                    </element>
+                                  </childElements>
+                                </element>
+                                <element type="Role" typeId="8663c9f9-2852-45e7-aaa1-0883a2e6f1da">
+                                  <name>Startup</name>
+                                </element>
+                              </childElements>
+                            </element>
+                          </childElements>
+                        </element>
+                      </childElements>
+                    </element>
+                  </childElements>
+                </element>
+              </childElements>
+            </element>
+          </childElements>
+        </element>
+      </childElements>
+    </package>
+  </createPackages>
+</settings>

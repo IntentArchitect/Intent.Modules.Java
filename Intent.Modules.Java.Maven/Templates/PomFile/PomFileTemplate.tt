@@ -1,0 +1,42 @@
+<#@ template language="C#" inherits="IntentTemplateBase<object>" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="Intent.Modules.Common" #>
+<#@ import namespace="Intent.Modules.Common.Templates" #>
+<#@ import namespace="Intent.Metadata.Models" #>
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.3.1.RELEASE</version>
+		<relativePath/> <!-- lookup parent from repository -->
+	</parent>
+
+	<groupId><#= GroupId #></groupId>
+	<artifactId><#= ArtifactId #></artifactId>
+	<version><#= Version #></version>
+	<name><#= Name #></name>
+	<description>Get subscription customers by Msisdn</description>
+
+	<properties>
+		<java.version>1.8</java.version>
+	</properties>
+
+	<distributionManagement>
+		
+	</distributionManagement>
+
+	<dependencies>
+
+	</dependencies>
+
+	<profiles>
+		
+	</profiles>
+
+</project>

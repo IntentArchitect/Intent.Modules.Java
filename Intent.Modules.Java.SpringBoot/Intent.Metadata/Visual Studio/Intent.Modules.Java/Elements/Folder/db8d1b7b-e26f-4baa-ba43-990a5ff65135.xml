@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<class id="db8d1b7b-e26f-4baa-ba43-990a5ff65135" type="Folder" typeId="3407a825-1331-4f3f-89a4-901903ed97ce">
+  <name>Templates</name>
+  <display>Templates</display>
+  <isAbstract>false</isAbstract>
+  <genericTypes />
+  <isMapped>false</isMapped>
+  <parentFolderId>915037d0-3d43-4cda-9777-bb75b8bd5c63</parentFolderId>
+  <packageId>60869086-7611-4173-8f65-1056e7949c6a</packageId>
+  <packageName>Intent.Modules.Java</packageName>
+  <stereotypes />
+  <childElements>
+    <childElement id="afbea075-d37c-4c4c-96b7-a1040190ba16" type="Template Output" typeId="d421c322-7a51-4094-89fa-e5d8a0a97b27">
+      <name>Intent.ModuleBuilder.ProjectItemTemplate.Partial</name>
+      <display>Intent.ModuleBuilder.ProjectItemTemplate.Partial</display>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <isMapped>false</isMapped>
+      <parentFolderId>db8d1b7b-e26f-4baa-ba43-990a5ff65135</parentFolderId>
+      <packageId>60869086-7611-4173-8f65-1056e7949c6a</packageId>
+      <packageName>Intent.Modules.Java</packageName>
+      <stereotypes />
+      <childElements />
+    </childElement>
+    <childElement id="12a147b9-673f-4589-880a-55eeaf8e9f06" type="Template Output" typeId="d421c322-7a51-4094-89fa-e5d8a0a97b27">
+      <name>Intent.ModuleBuilder.ProjectItemTemplate.T4Template</name>
+      <display>Intent.ModuleBuilder.ProjectItemTemplate.T4Template</display>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <isMapped>false</isMapped>
+      <parentFolderId>db8d1b7b-e26f-4baa-ba43-990a5ff65135</parentFolderId>
+      <packageId>60869086-7611-4173-8f65-1056e7949c6a</packageId>
+      <packageName>Intent.Modules.Java</packageName>
+      <stereotypes />
+      <childElements />
+    </childElement>
+    <childElement id="bb0b800a-20d0-4fa3-ae0b-bc6c1cab3702" type="Template Output" typeId="d421c322-7a51-4094-89fa-e5d8a0a97b27">
+      <name>Intent.ModuleBuilder.ProjectItemTemplate.T4Template.PreProcessed</name>
+      <display>Intent.ModuleBuilder.ProjectItemTemplate.T4Template.PreProcessed</display>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <isMapped>false</isMapped>
+      <parentFolderId>db8d1b7b-e26f-4baa-ba43-990a5ff65135</parentFolderId>
+      <packageId>60869086-7611-4173-8f65-1056e7949c6a</packageId>
+      <packageName>Intent.Modules.Java</packageName>
+      <stereotypes />
+      <childElements />
+    </childElement>
+    <childElement id="61650c96-23e0-4f72-8a8a-09bbe71804e4" type="Template Output" typeId="d421c322-7a51-4094-89fa-e5d8a0a97b27">
+      <name>Intent.ModuleBuilder.TemplateRegistration.Custom</name>
+      <display>Intent.ModuleBuilder.TemplateRegistration.Custom</display>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <isMapped>false</isMapped>
+      <parentFolderId>db8d1b7b-e26f-4baa-ba43-990a5ff65135</parentFolderId>
+      <packageId>60869086-7611-4173-8f65-1056e7949c6a</packageId>
+      <packageName>Intent.Modules.Java</packageName>
+      <stereotypes />
+      <childElements />
+    </childElement>
+    <childElement id="9398cd46-eb03-4aca-8203-11e3716e70a2" type="Template Output" typeId="d421c322-7a51-4094-89fa-e5d8a0a97b27">
+      <name>Intent.ModuleBuilder.TemplateRegistration.FilePerModel</name>
+      <display>Intent.ModuleBuilder.TemplateRegistration.FilePerModel</display>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <isMapped>false</isMapped>
+      <parentFolderId>db8d1b7b-e26f-4baa-ba43-990a5ff65135</parentFolderId>
+      <packageId>60869086-7611-4173-8f65-1056e7949c6a</packageId>
+      <packageName>Intent.Modules.Java</packageName>
+      <stereotypes />
+      <childElements />
+    </childElement>
+    <childElement id="b9be5db5-4a72-400d-8427-06eea9d5ebd8" type="Template Output" typeId="d421c322-7a51-4094-89fa-e5d8a0a97b27">
+      <name>Intent.ModuleBuilder.TemplateRegistration.SingleFileListModel</name>
+      <display>Intent.ModuleBuilder.TemplateRegistration.SingleFileListModel</display>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <isMapped>false</isMapped>
+      <parentFolderId>db8d1b7b-e26f-4baa-ba43-990a5ff65135</parentFolderId>
+      <packageId>60869086-7611-4173-8f65-1056e7949c6a</packageId>
+      <packageName>Intent.Modules.Java</packageName>
+      <stereotypes />
+      <childElements />
+    </childElement>
+    <childElement id="20e6596e-229d-4c96-a2c4-2e48a73a5c5e" type="Template Output" typeId="d421c322-7a51-4094-89fa-e5d8a0a97b27">
+      <name>Intent.ModuleBuilder.TemplateRegistration.SingleFileNoModel</name>
+      <display>Intent.ModuleBuilder.TemplateRegistration.SingleFileNoModel</display>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <isMapped>false</isMapped>
+      <parentFolderId>db8d1b7b-e26f-4baa-ba43-990a5ff65135</parentFolderId>
+      <packageId>60869086-7611-4173-8f65-1056e7949c6a</packageId>
+      <packageName>Intent.Modules.Java</packageName>
+      <stereotypes />
+      <childElements />
+    </childElement>
+    <childElement id="28e905d4-045e-4af0-8252-51986d90c2ba" type="Template Output" typeId="d421c322-7a51-4094-89fa-e5d8a0a97b27">
+      <name>ModuleBuilder.Java.Templates.JavaFileTemplate</name>
+      <display>ModuleBuilder.Java.Templates.JavaFileTemplate</display>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <isMapped>false</isMapped>
+      <parentFolderId>db8d1b7b-e26f-4baa-ba43-990a5ff65135</parentFolderId>
+      <packageId>60869086-7611-4173-8f65-1056e7949c6a</packageId>
+      <packageName>Intent.Modules.Java</packageName>
+      <stereotypes />
+      <childElements />
+    </childElement>
+    <childElement id="4a6f48c8-fc80-4fd0-aa91-d0880ad0e40b" type="Template Output" typeId="d421c322-7a51-4094-89fa-e5d8a0a97b27">
+      <name>ModuleBuilder.Java.Templates.JavaFileTemplatePartial</name>
+      <display>ModuleBuilder.Java.Templates.JavaFileTemplatePartial</display>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <isMapped>false</isMapped>
+      <parentFolderId>db8d1b7b-e26f-4baa-ba43-990a5ff65135</parentFolderId>
+      <packageId>60869086-7611-4173-8f65-1056e7949c6a</packageId>
+      <packageName>Intent.Modules.Java</packageName>
+      <stereotypes />
+      <childElements />
+    </childElement>
+    <childElement id="d8fec82e-7aec-428d-9629-be7cfe1d419b" type="Template Output" typeId="d421c322-7a51-4094-89fa-e5d8a0a97b27">
+      <name>ModuleBuilder.Java.Templates.JavaTemplate.PreProcessT4</name>
+      <display>ModuleBuilder.Java.Templates.JavaTemplate.PreProcessT4</display>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <isMapped>false</isMapped>
+      <parentFolderId>db8d1b7b-e26f-4baa-ba43-990a5ff65135</parentFolderId>
+      <packageId>60869086-7611-4173-8f65-1056e7949c6a</packageId>
+      <packageName>Intent.Modules.Java</packageName>
+      <stereotypes />
+      <childElements />
+    </childElement>
+  </childElements>
+</class>

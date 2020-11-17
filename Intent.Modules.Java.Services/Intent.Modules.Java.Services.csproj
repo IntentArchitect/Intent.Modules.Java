@@ -1,0 +1,77 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+  
+    <Compile Update="Templates\DataTransferModel\DataTransferModel.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>DataTransferModel.tt</DependentUpon>
+    </Compile>
+  
+    <Compile Update="Templates\DataTransferModel\DataTransferModelTemplate.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>DataTransferModelTemplate.tt</DependentUpon>
+    </Compile>
+  
+    <Compile Update="Templates\ServiceImplementation\ServiceImplementation.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ServiceImplementation.tt</DependentUpon>
+    </Compile>
+  
+    <Compile Update="Templates\ServiceImplementation\ServiceImplementationTemplate.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ServiceImplementationTemplate.tt</DependentUpon>
+    </Compile>
+  
+    <Compile Update="Templates\ServiceInterface\ServiceInterface.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ServiceInterface.tt</DependentUpon>
+    </Compile>
+  
+    <Compile Update="Templates\ServiceInterface\ServiceInterfaceTemplate.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ServiceInterfaceTemplate.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Templates\ServiceImplementation\ServiceImplementationTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>ServiceImplementationTemplate.cs</LastGenOutput>
+    </None>
+    <None Update="Templates\ServiceInterface\ServiceInterfaceTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>ServiceInterfaceTemplate.cs</LastGenOutput>
+    </None>
+  
+    <None Update="Templates\DataTransferModel\DataTransferModelTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>DataTransferModelTemplate.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Intent.Modules.Common" Version="3.0.0-*" />
+    <PackageReference Include="Intent.Modules.Common.Java" Version="3.0.0-*" />
+    <PackageReference Include="Intent.Modules.Modelers.Services" Version="3.0.0-*" />
+    <PackageReference Include="Intent.Packager" Version="3.0.0-*">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Intent.RoslynWeaver.Attributes" Version="1.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
+  </ItemGroup>
+
+</Project>

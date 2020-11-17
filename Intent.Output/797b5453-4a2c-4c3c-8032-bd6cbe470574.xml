@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<outputLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ApplicationId>797b5453-4a2c-4c3c-8032-bd6cbe470574</ApplicationId>
+  <FileLogs>
+    <FileLog>
+      <ProjectId>22388744-fbe5-40fc-8d5a-dc7dec7813b5</ProjectId>
+      <SolutionRelativeFilePath>..\TestApplication\src\main\java\com\vod_ms_infinity\subscription_customer\Application.java</SolutionRelativeFilePath>
+      <ProjectRelativeFilePath>Application.java</ProjectRelativeFilePath>
+    </FileLog>
+    <FileLog>
+      <ProjectId>a513c495-905e-49ab-a4ba-a9d2d7e57193</ProjectId>
+      <SolutionRelativeFilePath>..\TestApplication\src\main\java\com\vod_ms_infinity\subscription_customer\application\models\CustomerRetrievalModel.java</SolutionRelativeFilePath>
+      <ProjectRelativeFilePath>CustomerRetrievalModel.java</ProjectRelativeFilePath>
+    </FileLog>
+    <FileLog>
+      <ProjectId>cd1ebe7f-8097-413b-80f2-7b6d74d60ec2</ProjectId>
+      <SolutionRelativeFilePath>..\TestApplication\src\main\java\com\vod_ms_infinity\subscription_customer\application\rest\CustomerService.java</SolutionRelativeFilePath>
+      <ProjectRelativeFilePath>CustomerService.java</ProjectRelativeFilePath>
+    </FileLog>
+    <FileLog>
+      <ProjectId>3d419507-2749-43ba-a504-056177daec14</ProjectId>
+      <SolutionRelativeFilePath>..\TestApplication\src\main\java\com\vod_ms_infinity\subscription_customer\application\services\CustomerService.java</SolutionRelativeFilePath>
+      <ProjectRelativeFilePath>CustomerService.java</ProjectRelativeFilePath>
+    </FileLog>
+    <FileLog>
+      <ProjectId>2e36e866-8e7a-46a0-bdf1-8364edc17534</ProjectId>
+      <SolutionRelativeFilePath>..\TestApplication\src\main\java\com\vod_ms_infinity\subscription_customer\application\services\impl\CustomerService.java</SolutionRelativeFilePath>
+      <ProjectRelativeFilePath>CustomerService.java</ProjectRelativeFilePath>
+    </FileLog>
+    <FileLog>
+      <ProjectId>bb2303a0-9bb2-437f-9257-66c7cdb99fbb</ProjectId>
+      <SolutionRelativeFilePath>..\TestApplication\src\main\java\com\vod_ms_infinity\subscription_customer\domain\models\Customer.java</SolutionRelativeFilePath>
+      <ProjectRelativeFilePath>Customer.java</ProjectRelativeFilePath>
+    </FileLog>
+  </FileLogs>
+</outputLog>
