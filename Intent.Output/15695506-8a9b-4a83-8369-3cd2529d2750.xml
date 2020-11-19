@@ -13,11 +13,6 @@
       <ProjectRelativeFilePath>Intent.Java.SpringBoot.WebApplication/metadata.iatspec</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
-      <ProjectId>06caed4b-c0ea-4239-a4e7-6febea061869</ProjectId>
-      <SolutionRelativeFilePath>..\Intent.ApplicationTemplates.Java\README.txt</SolutionRelativeFilePath>
-      <ProjectRelativeFilePath>README.txt</ProjectRelativeFilePath>
-    </FileLog>
-    <FileLog>
       <SolutionRelativeFilePath>..\Intent.Modules.Java.sln</SolutionRelativeFilePath>
     </FileLog>
   </FileLogs>

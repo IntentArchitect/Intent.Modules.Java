@@ -21,7 +21,6 @@
 
   <ItemGroup>
     <PackageReference Include="Intent.Modules.Common" Version="3.0.0-*" />
-    <PackageReference Include="Intent.Modules.Common.Java" Version="3.0.0-*" />
     <PackageReference Include="Intent.Modules.Modelers.Domain" Version="3.0.0-*" />
     <PackageReference Include="Intent.Packager" Version="3.0.0-*">
       <PrivateAssets>all</PrivateAssets>
@@ -29,6 +28,10 @@
     </PackageReference>
     <PackageReference Include="Intent.RoslynWeaver.Attributes" Version="1.0.0" />
     <PackageReference Include="Intent.SoftwareFactory.SDK" Version="3.0.0-pre.9" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Intent.Modules.Common.Java\Intent.Modules.Common.Java.csproj" />
   </ItemGroup>
 
   <ItemGroup>

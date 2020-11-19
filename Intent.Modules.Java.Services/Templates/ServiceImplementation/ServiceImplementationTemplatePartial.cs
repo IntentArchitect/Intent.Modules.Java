@@ -5,6 +5,7 @@ using Intent.Modules.Common.Java;
 using Intent.Modules.Common.Java.Templates;
 using Intent.Modules.Common.Templates;
 using Intent.Modules.Java.Services.Api;
+using Intent.Modules.Java.Services.Templates.DataTransferModel;
 using Intent.RoslynWeaver.Attributes;
 using Intent.Templates;
 
@@ -23,6 +24,7 @@ namespace Intent.Modules.Java.Services.Templates.ServiceImplementation
         {
             AddDependency(new JavaDependency("org.projectlombok", "lombok", "1.18.12"));
             AddTemplateDependency("Intent.Java.SpringBoot.IntentAnnotations");
+            AddTypeSource(DataTransferModelTemplate.TemplateId, "List<{0}>");
         }
 
         [IntentManaged(Mode.Merge, Body = Mode.Ignore, Signature = Mode.Fully)]

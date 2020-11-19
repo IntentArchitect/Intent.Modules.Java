@@ -20,6 +20,10 @@ import java.io.Serializable;
 public class <#= ClassName #> implements Serializable {
     private static final long serialVersionUID = 1L;
 <#  foreach(var attribute in Model.Attributes) { #>
-    private <#= GetTypeName(attribute) #> <#= attribute.Name #>;
+    private <#= GetTypeName(attribute) #> <#= attribute.Name.ToCamelCase() #>;
+<#  } #>
+
+<#  foreach(var attribute in Model.AssociatedClasses.Where(x => x.IsNavigable)) { #>
+    private <#= GetTypeName(attribute) #> <#= attribute.Name.ToCamelCase() #>;
 <#  } #>
 }

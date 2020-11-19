@@ -4,6 +4,7 @@ using Intent.Modelers.Services.Api;
 using Intent.Modules.Common.Java;
 using Intent.Modules.Common.Java.Templates;
 using Intent.Modules.Common.Templates;
+using Intent.Modules.Java.Services.Templates.DataTransferModel;
 using Intent.RoslynWeaver.Attributes;
 using Intent.Templates;
 
@@ -20,6 +21,7 @@ namespace Intent.Modules.Java.Services.Templates.ServiceInterface
 
         public ServiceInterfaceTemplate(IOutputTarget outputTarget, ServiceModel model) : base(TemplateId, outputTarget, model)
         {
+            AddTypeSource(DataTransferModelTemplate.TemplateId, "List<{0}>");
         }
 
         [IntentManaged(Mode.Merge, Body = Mode.Ignore, Signature = Mode.Fully)]

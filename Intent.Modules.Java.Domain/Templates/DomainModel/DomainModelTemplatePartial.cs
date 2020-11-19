@@ -20,6 +20,8 @@ namespace Intent.Modules.Java.Domain.Templates.DomainModel
 
         public DomainModelTemplate(IOutputTarget outputTarget, ClassModel model) : base(TemplateId, outputTarget, model)
         {
+            SetDefaultTypeCollectionFormat("List<{0}>");
+            AddTypeSource(TemplateId, "List<{0}>");
         }
 
         [IntentManaged(Mode.Merge, Body = Mode.Ignore, Signature = Mode.Fully)]
