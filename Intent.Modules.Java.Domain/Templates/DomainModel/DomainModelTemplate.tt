@@ -17,8 +17,7 @@ import java.io.Serializable;
 
 @Entity()
 @Data
-public class <#= ClassName #> implements Serializable {
-    private static final long serialVersionUID = 1L;
+public class <#= ClassName #> extends <#= GetBaseClass() #> {
 <#  foreach(var attribute in Model.Attributes) { #>
     private <#= GetTypeName(attribute) #> <#= attribute.Name.ToCamelCase() #>;
 <#  } #>

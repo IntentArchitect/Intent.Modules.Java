@@ -1,43 +1,34 @@
 using System.Collections.Generic;
 using Intent.Engine;
-using Intent.Modelers.Domain.Api;
 using Intent.Modules.Common.Java;
 using Intent.Modules.Common.Java.Templates;
 using Intent.Modules.Common.Templates;
-using Intent.Modules.Java.Domain.Templates.AbstractEntity;
 using Intent.RoslynWeaver.Attributes;
 using Intent.Templates;
+
 
 [assembly: DefaultIntentManaged(Mode.Merge)]
 [assembly: IntentTemplate("ModuleBuilder.Java.Templates.JavaFileTemplatePartial", Version = "1.0")]
 
-namespace Intent.Modules.Java.Domain.Templates.DomainModel
+namespace Intent.Modules.Java.Domain.Templates.AbstractEntity
 {
     [IntentManaged(Mode.Merge, Signature = Mode.Fully)]
-    partial class DomainModelTemplate : JavaTemplateBase<ClassModel>
+    partial class AbstractEntityTemplate : JavaTemplateBase<object>
     {
         [IntentManaged(Mode.Fully)]
-        public const string TemplateId = "Intent.Java.Domain.DomainModel";
+        public const string TemplateId = "Intent.Java.Domain.AbstractEntity";
 
-        public DomainModelTemplate(IOutputTarget outputTarget, ClassModel model) : base(TemplateId, outputTarget, model)
+        public AbstractEntityTemplate(IOutputTarget outputTarget, object model) : base(TemplateId, outputTarget, model)
         {
-            SetDefaultTypeCollectionFormat("List<{0}>");
-            AddTypeSource(TemplateId, "List<{0}>");
         }
 
         [IntentManaged(Mode.Merge, Body = Mode.Ignore, Signature = Mode.Fully)]
         public override ITemplateFileConfig GetTemplateFileConfig()
         {
             return new JavaFileConfig(
-                className: $"{Model.Name}",
+                className: $"AbstractEntity",
                 package: $"{OutputTarget.GetPackage()}"
             );
-        }
-
-
-        public string GetBaseClass()
-        {
-            return GetTypeName(AbstractEntityTemplate.TemplateId);
         }
 
     }

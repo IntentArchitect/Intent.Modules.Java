@@ -10,12 +10,23 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>DomainModelTemplate.tt</DependentUpon>
     </Compile>
+  
+    <Compile Update="Templates\AbstractEntity\AbstractEntityTemplate.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>AbstractEntityTemplate.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
 
   <ItemGroup>
     <None Update="Templates\DomainModel\DomainModelTemplate.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>DomainModelTemplate.cs</LastGenOutput>
+    </None>
+  
+    <None Update="Templates\AbstractEntity\AbstractEntityTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>AbstractEntityTemplate.cs</LastGenOutput>
     </None>
   </ItemGroup>
 

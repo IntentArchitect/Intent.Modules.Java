@@ -1,0 +1,54 @@
+<#@ template language="C#" inherits="JavaTemplateBase<object>" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="Intent.Modules.Common" #>
+<#@ import namespace="Intent.Modules.Common.Templates" #>
+<#@ import namespace="Intent.Modules.Common.Java.Templates" #>
+<#@ import namespace="Intent.Templates" #>
+<#@ import namespace="Intent.Metadata.Models" #>
+
+package <#= Package #>;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import lombok.Data;
+import org.hibernate.envers.Audited;
+import java.time.Instant;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedBy;
+import org.springframework.data.annotation.LastModifiedDate;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
+
+import javax.persistence.Column;
+import javax.persistence.EntityListeners;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.MappedSuperclass;
+import java.io.Serializable;
+
+@MappedSuperclass
+@Audited
+@EntityListeners(AuditingEntityListener.class)
+@Data
+public abstract class <#= ClassName #> implements Serializable {//NOPMD
+    private static final long serialVersionUID = 1L;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;//NOPMD
+
+    @CreatedDate
+    @Column(name = "created_date", updatable = false)
+    @JsonIgnore
+    private Instant createdDate = Instant.now();
+
+    @LastModifiedBy
+    @Column(name = "last_modified_by", length = 50)
+    @JsonIgnore
+    private String lastModifiedBy;
+
+    @LastModifiedDate
+    @Column(name = "last_modified_date")
+    @JsonIgnore
+    private Instant lastModifiedDate = Instant.now();
+}
