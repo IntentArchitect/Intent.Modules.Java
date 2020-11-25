@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
@@ -15,7 +15,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>RestControllerTemplate.tt</DependentUpon>
     </Compile>
-  
     <Compile Update="Templates\IntentAnnotations\IntentAnnotationsTemplate.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -32,7 +31,6 @@
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>RestControllerTemplate.cs</LastGenOutput>
     </None>
-  
     <None Update="Templates\IntentAnnotations\IntentAnnotationsTemplate.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>IntentAnnotationsTemplate.cs</LastGenOutput>
@@ -48,6 +46,7 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Intent.RoslynWeaver.Attributes" Version="1.0.0" />
+    <PackageReference Include="Intent.SoftwareFactory.SDK" Version="3.0.0-*" />
   </ItemGroup>
 
   <ItemGroup>

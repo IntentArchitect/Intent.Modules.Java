@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<class id="4edc25aa-af40-4cec-97e0-dcadd8d85838" type="Folder" typeId="3407a825-1331-4f3f-89a4-901903ed97ce">
-  <name>modelers</name>
-  <display>modelers</display>
+<class id="819923c5-8947-48d2-82d5-18ce80b6e136" type="Folder" typeId="3407a825-1331-4f3f-89a4-901903ed97ce">
+  <name>FactoryExtensions</name>
+  <display>FactoryExtensions</display>
   <isAbstract>false</isAbstract>
-  <order>3</order>
+  <order>2</order>
   <genericTypes />
   <isMapped>false</isMapped>
   <parentFolderId>9a39a5e5-1c2a-4df7-bab4-5d2760783b6d</parentFolderId>
@@ -20,27 +20,14 @@
     </stereotype>
   </stereotypes>
   <childElements>
-    <childElement id="581d5d5d-1462-4301-b302-d25a74436db5" type="Template Output" typeId="d421c322-7a51-4094-89fa-e5d8a0a97b27">
-      <name>Intent.ModuleBuilder.DesignerConfig</name>
-      <display>Intent.ModuleBuilder.DesignerConfig</display>
+    <childElement id="61b00f14-71d6-493f-8528-d1f1bc4b1a51" type="Template Output" typeId="d421c322-7a51-4094-89fa-e5d8a0a97b27">
+      <name>ModuleBuilder.Templates.FactoryExtension</name>
+      <display>ModuleBuilder.Templates.FactoryExtension</display>
       <isAbstract>false</isAbstract>
       <order>0</order>
       <genericTypes />
       <isMapped>false</isMapped>
-      <parentFolderId>4edc25aa-af40-4cec-97e0-dcadd8d85838</parentFolderId>
-      <packageId>136bc8ec-e584-44d3-bd1c-772024b12244</packageId>
-      <packageName>Intent.Modules.Java</packageName>
-      <stereotypes />
-      <childElements />
-    </childElement>
-    <childElement id="0b4ea1b2-6d33-4609-837e-25ac333d90ca" type="Template Output" typeId="d421c322-7a51-4094-89fa-e5d8a0a97b27">
-      <name>Intent.ModuleBuilder.DesignerSettings</name>
-      <display>Intent.ModuleBuilder.DesignerSettings</display>
-      <isAbstract>false</isAbstract>
-      <order>1</order>
-      <genericTypes />
-      <isMapped>false</isMapped>
-      <parentFolderId>4edc25aa-af40-4cec-97e0-dcadd8d85838</parentFolderId>
+      <parentFolderId>819923c5-8947-48d2-82d5-18ce80b6e136</parentFolderId>
       <packageId>136bc8ec-e584-44d3-bd1c-772024b12244</packageId>
       <packageName>Intent.Modules.Java</packageName>
       <stereotypes />

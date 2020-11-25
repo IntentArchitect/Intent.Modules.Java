@@ -3,13 +3,22 @@
   <name>Decorators</name>
   <display>Decorators</display>
   <isAbstract>false</isAbstract>
-  <order>0</order>
+  <order>1</order>
   <genericTypes />
   <isMapped>false</isMapped>
   <parentFolderId>586e75c2-ae1c-4988-9e68-89c2696670bd</parentFolderId>
   <packageId>9a6b660c-89bd-4f4f-99d0-3c5601ef6c1b</packageId>
   <packageName>Intent.Modules.Java</packageName>
-  <stereotypes />
+  <stereotypes>
+    <stereotype stereotypeDefinitionId="61132551-825d-4c6e-b9f1-0f95249d08d4" name="Folder Options">
+      <addedByDefault>true</addedByDefault>
+      <definitionPackageName>Intent.VisualStudio.Projects</definitionPackageName>
+      <definitionPackageId>a0636ab7-d3a1-430b-9609-11a18aa3cc7f</definitionPackageId>
+      <properties>
+        <property name="4bfbefd0-d22e-4ca0-9723-92ae273feca4" display="Namespace Provider" value="true" isActive="true" />
+      </properties>
+    </stereotype>
+  </stereotypes>
   <childElements>
     <childElement id="70ba2216-db5d-43ff-ade6-8149e7f42de7" type="Template Output" typeId="d421c322-7a51-4094-89fa-e5d8a0a97b27">
       <name>Intent.ModuleBuilder.DecoratorRegistration.Template</name>
@@ -28,7 +37,7 @@
       <name>Intent.ModuleBuilder.DecoratorTemplate</name>
       <display>Intent.ModuleBuilder.DecoratorTemplate</display>
       <isAbstract>false</isAbstract>
-      <order>0</order>
+      <order>1</order>
       <genericTypes />
       <isMapped>false</isMapped>
       <parentFolderId>50c10784-75f4-4dbc-b995-dc9547325159</parentFolderId>

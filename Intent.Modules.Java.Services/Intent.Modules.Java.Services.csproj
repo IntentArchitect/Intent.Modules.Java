@@ -5,37 +5,31 @@
   </PropertyGroup>
 
   <ItemGroup>
-  
     <Compile Update="Templates\DataTransferModel\DataTransferModel.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>DataTransferModel.tt</DependentUpon>
     </Compile>
-  
     <Compile Update="Templates\DataTransferModel\DataTransferModelTemplate.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>DataTransferModelTemplate.tt</DependentUpon>
     </Compile>
-  
     <Compile Update="Templates\ServiceImplementation\ServiceImplementation.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>ServiceImplementation.tt</DependentUpon>
     </Compile>
-  
     <Compile Update="Templates\ServiceImplementation\ServiceImplementationTemplate.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>ServiceImplementationTemplate.tt</DependentUpon>
     </Compile>
-  
     <Compile Update="Templates\ServiceInterface\ServiceInterface.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>ServiceInterface.tt</DependentUpon>
     </Compile>
-  
     <Compile Update="Templates\ServiceInterface\ServiceInterfaceTemplate.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -52,7 +46,6 @@
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>ServiceInterfaceTemplate.cs</LastGenOutput>
     </None>
-  
     <None Update="Templates\DataTransferModel\DataTransferModelTemplate.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>DataTransferModelTemplate.cs</LastGenOutput>
@@ -68,6 +61,7 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Intent.RoslynWeaver.Attributes" Version="1.0.0" />
+    <PackageReference Include="Intent.SoftwareFactory.SDK" Version="3.0.0-*" />
   </ItemGroup>
 
   <ItemGroup>
