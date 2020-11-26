@@ -61,9 +61,9 @@ namespace Intent.Modules.Common.Java.Templates
             Dependencies.Add(dependency);
         }
 
-        public override string GetTypeName(ITemplateDependency templateDependency, bool throwIfNotFound)
+        public override string GetTypeName(ITemplateDependency templateDependency, TemplateDiscoveryOptions options = null)
         {
-            return GetTemplate<IClassProvider>(templateDependency, throwIfNotFound).ClassName;
+            return GetTemplate<IClassProvider>(templateDependency, options).ClassName;
         }
 
         public override void BeforeTemplateExecution()
