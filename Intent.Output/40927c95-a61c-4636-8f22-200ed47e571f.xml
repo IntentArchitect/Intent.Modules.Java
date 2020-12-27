@@ -4,13 +4,13 @@
   <FileLogs>
     <FileLog>
       <ProjectId>586e75c2-ae1c-4988-9e68-89c2696670bd</ProjectId>
-      <SolutionRelativeFilePath>../Intent.Modules.Java.Domain/Intent.Modules.Java.Domain.csproj</SolutionRelativeFilePath>
-      <ProjectRelativeFilePath>Intent.Modules.Java.Domain.csproj</ProjectRelativeFilePath>
+      <SolutionRelativeFilePath>../Intent.Modules.Java.Domain/Intent.Java.Domain.imodspec</SolutionRelativeFilePath>
+      <ProjectRelativeFilePath>Intent.Java.Domain.imodspec</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
       <ProjectId>586e75c2-ae1c-4988-9e68-89c2696670bd</ProjectId>
-      <SolutionRelativeFilePath>../Intent.Modules.Java.Domain/Intent.Modules.Java.Domain.imodspec</SolutionRelativeFilePath>
-      <ProjectRelativeFilePath>Intent.Modules.Java.Domain.imodspec</ProjectRelativeFilePath>
+      <SolutionRelativeFilePath>../Intent.Modules.Java.Domain/Intent.Modules.Java.Domain.csproj</SolutionRelativeFilePath>
+      <ProjectRelativeFilePath>Intent.Modules.Java.Domain.csproj</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
       <ProjectId>586e75c2-ae1c-4988-9e68-89c2696670bd</ProjectId>

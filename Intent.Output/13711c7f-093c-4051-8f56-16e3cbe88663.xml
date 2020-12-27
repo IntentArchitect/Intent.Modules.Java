@@ -4,41 +4,41 @@
   <FileLogs>
     <FileLog>
       <ProjectId>2aee7253-e4d7-4433-95b7-561ca904f214</ProjectId>
-      <SolutionRelativeFilePath>..\Intent.Modules.Java.Maven\Intent.Modules.Java.Maven.csproj</SolutionRelativeFilePath>
+      <SolutionRelativeFilePath>../Intent.Modules.Java.Maven/Intent.Java.Maven.imodspec</SolutionRelativeFilePath>
+      <ProjectRelativeFilePath>Intent.Java.Maven.imodspec</ProjectRelativeFilePath>
+    </FileLog>
+    <FileLog>
+      <ProjectId>2aee7253-e4d7-4433-95b7-561ca904f214</ProjectId>
+      <SolutionRelativeFilePath>../Intent.Modules.Java.Maven/Intent.Modules.Java.Maven.csproj</SolutionRelativeFilePath>
       <ProjectRelativeFilePath>Intent.Modules.Java.Maven.csproj</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
       <ProjectId>2aee7253-e4d7-4433-95b7-561ca904f214</ProjectId>
-      <SolutionRelativeFilePath>..\Intent.Modules.Java.Maven\Intent.Modules.Java.Maven.imodspec</SolutionRelativeFilePath>
-      <ProjectRelativeFilePath>Intent.Modules.Java.Maven.imodspec</ProjectRelativeFilePath>
-    </FileLog>
-    <FileLog>
-      <ProjectId>2aee7253-e4d7-4433-95b7-561ca904f214</ProjectId>
-      <SolutionRelativeFilePath>..\Intent.Modules.Java.Maven\README.txt</SolutionRelativeFilePath>
+      <SolutionRelativeFilePath>../Intent.Modules.Java.Maven/README.txt</SolutionRelativeFilePath>
       <ProjectRelativeFilePath>README.txt</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
       <ProjectId>73f1bfd6-6e37-4965-a6f6-64ba8f3f313c</ProjectId>
-      <SolutionRelativeFilePath>..\Intent.Modules.Java.Maven\Templates\PomFile\PomFileTemplate.cs</SolutionRelativeFilePath>
+      <SolutionRelativeFilePath>../Intent.Modules.Java.Maven/Templates/PomFile/PomFileTemplate.cs</SolutionRelativeFilePath>
       <ProjectRelativeFilePath>PomFile/PomFileTemplate.cs</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
       <ProjectId>73f1bfd6-6e37-4965-a6f6-64ba8f3f313c</ProjectId>
-      <SolutionRelativeFilePath>..\Intent.Modules.Java.Maven\Templates\PomFile\PomFileTemplate.tt</SolutionRelativeFilePath>
+      <SolutionRelativeFilePath>../Intent.Modules.Java.Maven/Templates/PomFile/PomFileTemplate.tt</SolutionRelativeFilePath>
       <ProjectRelativeFilePath>PomFile/PomFileTemplate.tt</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
       <ProjectId>73f1bfd6-6e37-4965-a6f6-64ba8f3f313c</ProjectId>
-      <SolutionRelativeFilePath>..\Intent.Modules.Java.Maven\Templates\PomFile\PomFileTemplatePartial.cs</SolutionRelativeFilePath>
+      <SolutionRelativeFilePath>../Intent.Modules.Java.Maven/Templates/PomFile/PomFileTemplatePartial.cs</SolutionRelativeFilePath>
       <ProjectRelativeFilePath>PomFile/PomFileTemplatePartial.cs</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
       <ProjectId>73f1bfd6-6e37-4965-a6f6-64ba8f3f313c</ProjectId>
-      <SolutionRelativeFilePath>..\Intent.Modules.Java.Maven\Templates\PomFile\PomFileTemplateRegistration.cs</SolutionRelativeFilePath>
+      <SolutionRelativeFilePath>../Intent.Modules.Java.Maven/Templates/PomFile/PomFileTemplateRegistration.cs</SolutionRelativeFilePath>
       <ProjectRelativeFilePath>PomFile/PomFileTemplateRegistration.cs</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
-      <SolutionRelativeFilePath>..\Intent.Modules.Java.sln</SolutionRelativeFilePath>
+      <SolutionRelativeFilePath>../Intent.Modules.Java.sln</SolutionRelativeFilePath>
     </FileLog>
   </FileLogs>
 </outputLog>

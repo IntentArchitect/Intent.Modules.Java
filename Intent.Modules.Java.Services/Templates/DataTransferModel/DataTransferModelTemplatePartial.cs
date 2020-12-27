@@ -8,12 +8,12 @@ using Intent.RoslynWeaver.Attributes;
 using Intent.Templates;
 
 [assembly: DefaultIntentManaged(Mode.Merge)]
-[assembly: IntentTemplate("ModuleBuilder.Java.Templates.JavaFileTemplatePartial", Version = "1.0")]
+[assembly: IntentTemplate("Intent.ModuleBuilder.Java.Templates.JavaFileTemplatePartial", Version = "1.0")]
 
 namespace Intent.Modules.Java.Services.Templates.DataTransferModel
 {
     [IntentManaged(Mode.Merge, Signature = Mode.Fully)]
-    partial class DataTransferModelTemplate : JavaTemplateBase<DTOModel>
+    partial class DataTransferModelTemplate : JavaTemplateBase<Intent.Modelers.Services.Api.DTOModel>
     {
         [IntentManaged(Mode.Fully)]
         public const string TemplateId = "Intent.Java.Services.DataTransferModel";

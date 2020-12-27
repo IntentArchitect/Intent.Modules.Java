@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.1</TargetFramework>
@@ -10,7 +10,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>DomainModelTemplate.tt</DependentUpon>
     </Compile>
-  
     <Compile Update="Templates\AbstractEntity\AbstractEntityTemplate.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -23,7 +22,6 @@
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>DomainModelTemplate.cs</LastGenOutput>
     </None>
-  
     <None Update="Templates\AbstractEntity\AbstractEntityTemplate.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>AbstractEntityTemplate.cs</LastGenOutput>
@@ -31,6 +29,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Intent.Modules.Common" Version="3.0.*" />
     <PackageReference Include="Intent.Modules.Common.Java" Version="3.0.*" />
     <PackageReference Include="Intent.Modules.Modelers.Domain" Version="3.0.*" />
     <PackageReference Include="Intent.Packager" Version="3.0.*">
@@ -38,7 +37,7 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Intent.RoslynWeaver.Attributes" Version="1.0.0" />
-    <PackageReference Include="Intent.SoftwareFactory.SDK" Version="3.0.0-pre.*" />
+    <PackageReference Include="Intent.SoftwareFactory.SDK" Version="3.0.*" />
   </ItemGroup>
 
   <ItemGroup>

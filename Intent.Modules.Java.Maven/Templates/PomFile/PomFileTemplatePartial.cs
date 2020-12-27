@@ -25,7 +25,7 @@ namespace Intent.Modules.Java.Maven.Templates.PomFile
         private ICollection<JavaDependency> _javaDependencies = new List<JavaDependency>();
 
         [IntentManaged(Mode.Fully)]
-        public const string TemplateId = "Java.Maven.PomFile";
+        public const string TemplateId = "Intent.Java.Maven.PomFile";
 
         public PomFileTemplate(IOutputTarget outputTarget, object model) : base(TemplateId, outputTarget, model)
         {

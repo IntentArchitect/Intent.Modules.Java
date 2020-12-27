@@ -1,4 +1,4 @@
-<#@ template language="C#" inherits="JavaTemplateBase<ClassModel>" #>
+<#@ template language="C#" inherits="JavaTemplateBase<Intent.Modelers.Domain.Api.ClassModel>" #>
 <#@ assembly name="System.Core" #>
 <#@ import namespace="System.Collections.Generic" #>
 <#@ import namespace="System.Linq" #>

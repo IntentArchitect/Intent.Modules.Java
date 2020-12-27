@@ -150,5 +150,53 @@
       <stereotypes />
       <childElements />
     </childElement>
+    <childElement id="254a8b0b-e72b-414d-a747-265c3a065d8d" type="Template Output" typeId="d421c322-7a51-4094-89fa-e5d8a0a97b27">
+      <name>Intent.ModuleBuilder.Templates.TemplateDecoratorContract</name>
+      <display>Intent.ModuleBuilder.Templates.TemplateDecoratorContract</display>
+      <externalReference>Intent.ModuleBuilder</externalReference>
+      <isAbstract>false</isAbstract>
+      <order>0</order>
+      <genericTypes />
+      <isMapped>false</isMapped>
+      <parentFolderId>32921436-c716-4bad-8ff1-2cc93f11b598</parentFolderId>
+      <stereotypes />
+      <childElements />
+    </childElement>
+    <childElement id="33184f29-5b9a-44cb-8baf-ff73c949fc42" type="Template Output" typeId="d421c322-7a51-4094-89fa-e5d8a0a97b27">
+      <name>Intent.ModuleBuilder.Java.Templates.JavaFileTemplate</name>
+      <display>Intent.ModuleBuilder.Java.Templates.JavaFileTemplate</display>
+      <externalReference>Intent.ModuleBuilder.Java</externalReference>
+      <isAbstract>false</isAbstract>
+      <order>0</order>
+      <genericTypes />
+      <isMapped>false</isMapped>
+      <parentFolderId>32921436-c716-4bad-8ff1-2cc93f11b598</parentFolderId>
+      <stereotypes />
+      <childElements />
+    </childElement>
+    <childElement id="fe31aab0-61c0-4da7-8fcc-8e227eda80d1" type="Template Output" typeId="d421c322-7a51-4094-89fa-e5d8a0a97b27">
+      <name>Intent.ModuleBuilder.Java.Templates.JavaFileTemplatePartial</name>
+      <display>Intent.ModuleBuilder.Java.Templates.JavaFileTemplatePartial</display>
+      <externalReference>Intent.ModuleBuilder.Java</externalReference>
+      <isAbstract>false</isAbstract>
+      <order>0</order>
+      <genericTypes />
+      <isMapped>false</isMapped>
+      <parentFolderId>32921436-c716-4bad-8ff1-2cc93f11b598</parentFolderId>
+      <stereotypes />
+      <childElements />
+    </childElement>
+    <childElement id="a4148757-c155-4947-bff4-b111c0660933" type="Template Output" typeId="d421c322-7a51-4094-89fa-e5d8a0a97b27">
+      <name>Intent.ModuleBuilder.Java.Templates.JavaTemplate.PreProcessT4</name>
+      <display>Intent.ModuleBuilder.Java.Templates.JavaTemplate.PreProcessT4</display>
+      <externalReference>Intent.ModuleBuilder.Java</externalReference>
+      <isAbstract>false</isAbstract>
+      <order>0</order>
+      <genericTypes />
+      <isMapped>false</isMapped>
+      <parentFolderId>32921436-c716-4bad-8ff1-2cc93f11b598</parentFolderId>
+      <stereotypes />
+      <childElements />
+    </childElement>
   </childElements>
 </class>

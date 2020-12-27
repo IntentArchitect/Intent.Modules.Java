@@ -72,5 +72,53 @@
       <stereotypes />
       <childElements />
     </childElement>
+    <childElement id="5fd2b98c-afe4-4031-98a9-e21a8e529212" type="Template Output" typeId="d421c322-7a51-4094-89fa-e5d8a0a97b27">
+      <name>Intent.ModuleBuilder.Templates.Api.ApiAssociationModel</name>
+      <display>Intent.ModuleBuilder.Templates.Api.ApiAssociationModel</display>
+      <externalReference>Intent.ModuleBuilder</externalReference>
+      <isAbstract>false</isAbstract>
+      <order>0</order>
+      <genericTypes />
+      <isMapped>false</isMapped>
+      <parentFolderId>fc1732df-fba8-4135-bfd8-1c4b82c60ab4</parentFolderId>
+      <stereotypes />
+      <childElements />
+    </childElement>
+    <childElement id="4dccccec-65b0-467a-9942-c3c8ba0f5110" type="Template Output" typeId="d421c322-7a51-4094-89fa-e5d8a0a97b27">
+      <name>Intent.ModuleBuilder.Templates.Api.ApiElementModel</name>
+      <display>Intent.ModuleBuilder.Templates.Api.ApiElementModel</display>
+      <externalReference>Intent.ModuleBuilder</externalReference>
+      <isAbstract>false</isAbstract>
+      <order>0</order>
+      <genericTypes />
+      <isMapped>false</isMapped>
+      <parentFolderId>fc1732df-fba8-4135-bfd8-1c4b82c60ab4</parentFolderId>
+      <stereotypes />
+      <childElements />
+    </childElement>
+    <childElement id="f9735169-26fd-4d93-a6ee-43ee86e09b5a" type="Template Output" typeId="d421c322-7a51-4094-89fa-e5d8a0a97b27">
+      <name>Intent.ModuleBuilder.Templates.Api.ApiPackageModel</name>
+      <display>Intent.ModuleBuilder.Templates.Api.ApiPackageModel</display>
+      <externalReference>Intent.ModuleBuilder</externalReference>
+      <isAbstract>false</isAbstract>
+      <order>0</order>
+      <genericTypes />
+      <isMapped>false</isMapped>
+      <parentFolderId>fc1732df-fba8-4135-bfd8-1c4b82c60ab4</parentFolderId>
+      <stereotypes />
+      <childElements />
+    </childElement>
+    <childElement id="9d3045a8-eb95-4c9d-89db-96eea048ec1f" type="Template Output" typeId="d421c322-7a51-4094-89fa-e5d8a0a97b27">
+      <name>Intent.ModuleBuilder.Templates.Api.ApiElementExtensionModel</name>
+      <display>Intent.ModuleBuilder.Templates.Api.ApiElementExtensionModel</display>
+      <externalReference>Intent.ModuleBuilder</externalReference>
+      <isAbstract>false</isAbstract>
+      <order>0</order>
+      <genericTypes />
+      <isMapped>false</isMapped>
+      <parentFolderId>fc1732df-fba8-4135-bfd8-1c4b82c60ab4</parentFolderId>
+      <stereotypes />
+      <childElements />
+    </childElement>
   </childElements>
 </class>

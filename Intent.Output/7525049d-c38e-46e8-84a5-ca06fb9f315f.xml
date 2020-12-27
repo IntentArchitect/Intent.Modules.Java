@@ -4,86 +4,86 @@
   <FileLogs>
     <FileLog>
       <ProjectId>64c684bc-7d0b-4cf2-8445-6558b97ef785</ProjectId>
-      <SolutionRelativeFilePath>..\Intent.Modules.Java.Services\Api\Extensions\OperationModelExtensions.cs</SolutionRelativeFilePath>
+      <SolutionRelativeFilePath>../Intent.Modules.Java.Services/Api/Extensions/OperationModelExtensions.cs</SolutionRelativeFilePath>
       <ProjectRelativeFilePath>OperationModelExtensions.cs</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
       <ProjectId>9a39a5e5-1c2a-4df7-bab4-5d2760783b6d</ProjectId>
-      <SolutionRelativeFilePath>..\Intent.Modules.Java.Services\Intent.Modules.Java.Services.csproj</SolutionRelativeFilePath>
+      <SolutionRelativeFilePath>../Intent.Modules.Java.Services/Intent.Java.Services.imodspec</SolutionRelativeFilePath>
+      <ProjectRelativeFilePath>Intent.Java.Services.imodspec</ProjectRelativeFilePath>
+    </FileLog>
+    <FileLog>
+      <ProjectId>9a39a5e5-1c2a-4df7-bab4-5d2760783b6d</ProjectId>
+      <SolutionRelativeFilePath>../Intent.Modules.Java.Services/Intent.Modules.Java.Services.csproj</SolutionRelativeFilePath>
       <ProjectRelativeFilePath>Intent.Modules.Java.Services.csproj</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
       <ProjectId>9a39a5e5-1c2a-4df7-bab4-5d2760783b6d</ProjectId>
-      <SolutionRelativeFilePath>..\Intent.Modules.Java.Services\Intent.Modules.Java.Services.imodspec</SolutionRelativeFilePath>
-      <ProjectRelativeFilePath>Intent.Modules.Java.Services.imodspec</ProjectRelativeFilePath>
-    </FileLog>
-    <FileLog>
-      <ProjectId>9a39a5e5-1c2a-4df7-bab4-5d2760783b6d</ProjectId>
-      <SolutionRelativeFilePath>..\Intent.Modules.Java.Services\README.txt</SolutionRelativeFilePath>
+      <SolutionRelativeFilePath>../Intent.Modules.Java.Services/README.txt</SolutionRelativeFilePath>
       <ProjectRelativeFilePath>README.txt</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
       <ProjectId>32921436-c716-4bad-8ff1-2cc93f11b598</ProjectId>
-      <SolutionRelativeFilePath>..\Intent.Modules.Java.Services\Templates\DataTransferModel\DataTransferModelTemplate.cs</SolutionRelativeFilePath>
+      <SolutionRelativeFilePath>../Intent.Modules.Java.Services/Templates/DataTransferModel/DataTransferModelTemplate.cs</SolutionRelativeFilePath>
       <ProjectRelativeFilePath>DataTransferModel/DataTransferModelTemplate.cs</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
       <ProjectId>32921436-c716-4bad-8ff1-2cc93f11b598</ProjectId>
-      <SolutionRelativeFilePath>..\Intent.Modules.Java.Services\Templates\DataTransferModel\DataTransferModelTemplate.tt</SolutionRelativeFilePath>
+      <SolutionRelativeFilePath>../Intent.Modules.Java.Services/Templates/DataTransferModel/DataTransferModelTemplate.tt</SolutionRelativeFilePath>
       <ProjectRelativeFilePath>DataTransferModel/DataTransferModelTemplate.tt</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
       <ProjectId>32921436-c716-4bad-8ff1-2cc93f11b598</ProjectId>
-      <SolutionRelativeFilePath>..\Intent.Modules.Java.Services\Templates\DataTransferModel\DataTransferModelTemplatePartial.cs</SolutionRelativeFilePath>
+      <SolutionRelativeFilePath>../Intent.Modules.Java.Services/Templates/DataTransferModel/DataTransferModelTemplatePartial.cs</SolutionRelativeFilePath>
       <ProjectRelativeFilePath>DataTransferModel/DataTransferModelTemplatePartial.cs</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
       <ProjectId>32921436-c716-4bad-8ff1-2cc93f11b598</ProjectId>
-      <SolutionRelativeFilePath>..\Intent.Modules.Java.Services\Templates\DataTransferModel\DataTransferModelTemplateRegistration.cs</SolutionRelativeFilePath>
+      <SolutionRelativeFilePath>../Intent.Modules.Java.Services/Templates/DataTransferModel/DataTransferModelTemplateRegistration.cs</SolutionRelativeFilePath>
       <ProjectRelativeFilePath>DataTransferModel/DataTransferModelTemplateRegistration.cs</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
       <ProjectId>32921436-c716-4bad-8ff1-2cc93f11b598</ProjectId>
-      <SolutionRelativeFilePath>..\Intent.Modules.Java.Services\Templates\ServiceImplementation\ServiceImplementationTemplate.cs</SolutionRelativeFilePath>
+      <SolutionRelativeFilePath>../Intent.Modules.Java.Services/Templates/ServiceImplementation/ServiceImplementationTemplate.cs</SolutionRelativeFilePath>
       <ProjectRelativeFilePath>ServiceImplementation/ServiceImplementationTemplate.cs</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
       <ProjectId>32921436-c716-4bad-8ff1-2cc93f11b598</ProjectId>
-      <SolutionRelativeFilePath>..\Intent.Modules.Java.Services\Templates\ServiceImplementation\ServiceImplementationTemplate.tt</SolutionRelativeFilePath>
+      <SolutionRelativeFilePath>../Intent.Modules.Java.Services/Templates/ServiceImplementation/ServiceImplementationTemplate.tt</SolutionRelativeFilePath>
       <ProjectRelativeFilePath>ServiceImplementation/ServiceImplementationTemplate.tt</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
       <ProjectId>32921436-c716-4bad-8ff1-2cc93f11b598</ProjectId>
-      <SolutionRelativeFilePath>..\Intent.Modules.Java.Services\Templates\ServiceImplementation\ServiceImplementationTemplatePartial.cs</SolutionRelativeFilePath>
+      <SolutionRelativeFilePath>../Intent.Modules.Java.Services/Templates/ServiceImplementation/ServiceImplementationTemplatePartial.cs</SolutionRelativeFilePath>
       <ProjectRelativeFilePath>ServiceImplementation/ServiceImplementationTemplatePartial.cs</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
       <ProjectId>32921436-c716-4bad-8ff1-2cc93f11b598</ProjectId>
-      <SolutionRelativeFilePath>..\Intent.Modules.Java.Services\Templates\ServiceImplementation\ServiceImplementationTemplateRegistration.cs</SolutionRelativeFilePath>
+      <SolutionRelativeFilePath>../Intent.Modules.Java.Services/Templates/ServiceImplementation/ServiceImplementationTemplateRegistration.cs</SolutionRelativeFilePath>
       <ProjectRelativeFilePath>ServiceImplementation/ServiceImplementationTemplateRegistration.cs</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
       <ProjectId>32921436-c716-4bad-8ff1-2cc93f11b598</ProjectId>
-      <SolutionRelativeFilePath>..\Intent.Modules.Java.Services\Templates\ServiceInterface\ServiceInterfaceTemplate.cs</SolutionRelativeFilePath>
+      <SolutionRelativeFilePath>../Intent.Modules.Java.Services/Templates/ServiceInterface/ServiceInterfaceTemplate.cs</SolutionRelativeFilePath>
       <ProjectRelativeFilePath>ServiceInterface/ServiceInterfaceTemplate.cs</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
       <ProjectId>32921436-c716-4bad-8ff1-2cc93f11b598</ProjectId>
-      <SolutionRelativeFilePath>..\Intent.Modules.Java.Services\Templates\ServiceInterface\ServiceInterfaceTemplate.tt</SolutionRelativeFilePath>
+      <SolutionRelativeFilePath>../Intent.Modules.Java.Services/Templates/ServiceInterface/ServiceInterfaceTemplate.tt</SolutionRelativeFilePath>
       <ProjectRelativeFilePath>ServiceInterface/ServiceInterfaceTemplate.tt</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
       <ProjectId>32921436-c716-4bad-8ff1-2cc93f11b598</ProjectId>
-      <SolutionRelativeFilePath>..\Intent.Modules.Java.Services\Templates\ServiceInterface\ServiceInterfaceTemplatePartial.cs</SolutionRelativeFilePath>
+      <SolutionRelativeFilePath>../Intent.Modules.Java.Services/Templates/ServiceInterface/ServiceInterfaceTemplatePartial.cs</SolutionRelativeFilePath>
       <ProjectRelativeFilePath>ServiceInterface/ServiceInterfaceTemplatePartial.cs</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
       <ProjectId>32921436-c716-4bad-8ff1-2cc93f11b598</ProjectId>
-      <SolutionRelativeFilePath>..\Intent.Modules.Java.Services\Templates\ServiceInterface\ServiceInterfaceTemplateRegistration.cs</SolutionRelativeFilePath>
+      <SolutionRelativeFilePath>../Intent.Modules.Java.Services/Templates/ServiceInterface/ServiceInterfaceTemplateRegistration.cs</SolutionRelativeFilePath>
       <ProjectRelativeFilePath>ServiceInterface/ServiceInterfaceTemplateRegistration.cs</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
-      <SolutionRelativeFilePath>..\Intent.Modules.Java.sln</SolutionRelativeFilePath>
+      <SolutionRelativeFilePath>../Intent.Modules.Java.sln</SolutionRelativeFilePath>
     </FileLog>
   </FileLogs>
 </outputLog>

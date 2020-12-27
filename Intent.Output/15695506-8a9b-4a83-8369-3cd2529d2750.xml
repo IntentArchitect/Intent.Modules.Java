@@ -4,16 +4,16 @@
   <FileLogs>
     <FileLog>
       <ProjectId>06caed4b-c0ea-4239-a4e7-6febea061869</ProjectId>
-      <SolutionRelativeFilePath>..\Intent.ApplicationTemplates.Java\Intent.ApplicationTemplates.Java.csproj</SolutionRelativeFilePath>
+      <SolutionRelativeFilePath>../Intent.ApplicationTemplates.Java/Intent.ApplicationTemplates.Java.csproj</SolutionRelativeFilePath>
       <ProjectRelativeFilePath>Intent.ApplicationTemplates.Java.csproj</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
       <ProjectId>06caed4b-c0ea-4239-a4e7-6febea061869</ProjectId>
-      <SolutionRelativeFilePath>..\Intent.ApplicationTemplates.Java\Intent.Java.SpringBoot.WebApplication\metadata.iatspec</SolutionRelativeFilePath>
+      <SolutionRelativeFilePath>../Intent.ApplicationTemplates.Java/Intent.Java.SpringBoot.WebApplication/metadata.iatspec</SolutionRelativeFilePath>
       <ProjectRelativeFilePath>Intent.Java.SpringBoot.WebApplication/metadata.iatspec</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
-      <SolutionRelativeFilePath>..\Intent.Modules.Java.sln</SolutionRelativeFilePath>
+      <SolutionRelativeFilePath>../Intent.Modules.Java.sln</SolutionRelativeFilePath>
     </FileLog>
   </FileLogs>
 </outputLog>

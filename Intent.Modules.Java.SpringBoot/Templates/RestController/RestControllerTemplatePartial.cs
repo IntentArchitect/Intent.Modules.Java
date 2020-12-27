@@ -10,12 +10,12 @@ using Intent.RoslynWeaver.Attributes;
 using Intent.Templates;
 
 [assembly: DefaultIntentManaged(Mode.Merge)]
-[assembly: IntentTemplate("ModuleBuilder.Java.Templates.JavaFileTemplatePartial", Version = "1.0")]
+[assembly: IntentTemplate("Intent.ModuleBuilder.Java.Templates.JavaFileTemplatePartial", Version = "1.0")]
 
 namespace Intent.Modules.Java.SpringBoot.Templates.RestController
 {
     [IntentManaged(Mode.Merge, Signature = Mode.Fully)]
-    partial class RestControllerTemplate : JavaTemplateBase<ServiceModel>
+    partial class RestControllerTemplate : JavaTemplateBase<Intent.Modelers.Services.Api.ServiceModel>
     {
         [IntentManaged(Mode.Fully)]
         public const string TemplateId = "Intent.Java.SpringBoot.RestController";

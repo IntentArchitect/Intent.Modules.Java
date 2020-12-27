@@ -9,12 +9,12 @@ using Intent.RoslynWeaver.Attributes;
 using Intent.Templates;
 
 [assembly: DefaultIntentManaged(Mode.Merge)]
-[assembly: IntentTemplate("ModuleBuilder.Java.Templates.JavaFileTemplatePartial", Version = "1.0")]
+[assembly: IntentTemplate("Intent.ModuleBuilder.Java.Templates.JavaFileTemplatePartial", Version = "1.0")]
 
 namespace Intent.Modules.Java.Domain.Templates.DomainModel
 {
     [IntentManaged(Mode.Merge, Signature = Mode.Fully)]
-    partial class DomainModelTemplate : JavaTemplateBase<ClassModel>
+    partial class DomainModelTemplate : JavaTemplateBase<Intent.Modelers.Domain.Api.ClassModel>
     {
         [IntentManaged(Mode.Fully)]
         public const string TemplateId = "Intent.Java.Domain.DomainModel";
