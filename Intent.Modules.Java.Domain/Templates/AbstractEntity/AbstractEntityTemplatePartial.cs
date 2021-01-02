@@ -18,6 +18,7 @@ namespace Intent.Modules.Java.Domain.Templates.AbstractEntity
         [IntentManaged(Mode.Fully)]
         public const string TemplateId = "Intent.Java.Domain.AbstractEntity";
 
+        [IntentManaged(Mode.Merge, Body = Mode.Ignore, Signature = Mode.Fully)]
         public AbstractEntityTemplate(IOutputTarget outputTarget, object model) : base(TemplateId, outputTarget, model)
         {
         }

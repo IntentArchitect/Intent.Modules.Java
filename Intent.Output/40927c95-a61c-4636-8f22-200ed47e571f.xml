@@ -39,6 +39,11 @@
     </FileLog>
     <FileLog>
       <ProjectId>ba8f91ca-3f8c-44a2-9194-e9d5ed6640bd</ProjectId>
+      <SolutionRelativeFilePath>../Intent.Modules.Java.Domain/Templates/DomainModel/DomainModelDecorator.cs</SolutionRelativeFilePath>
+      <ProjectRelativeFilePath>DomainModel/DomainModelDecorator.cs</ProjectRelativeFilePath>
+    </FileLog>
+    <FileLog>
+      <ProjectId>ba8f91ca-3f8c-44a2-9194-e9d5ed6640bd</ProjectId>
       <SolutionRelativeFilePath>../Intent.Modules.Java.Domain/Templates/DomainModel/DomainModelTemplate.cs</SolutionRelativeFilePath>
       <ProjectRelativeFilePath>DomainModel/DomainModelTemplate.cs</ProjectRelativeFilePath>
     </FileLog>

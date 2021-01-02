@@ -12,6 +12,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Intent.Modules.Java.Maven",
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Intent.ApplicationTemplates.Java", "Intent.ApplicationTemplates.Java\Intent.ApplicationTemplates.Java.csproj", "{06CAED4B-C0EA-4239-A4E7-6FEBEA061869}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Intent.Modules.Java.Persistence.JPA", "Intent.Modules.Java.Persistence.JPA\Intent.Modules.Java.Persistence.JPA.csproj", "{F92DF344-0995-48CF-9967-DB535AD749B6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -38,11 +40,17 @@ Global
 		{06CAED4B-C0EA-4239-A4E7-6FEBEA061869}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{06CAED4B-C0EA-4239-A4E7-6FEBEA061869}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{06CAED4B-C0EA-4239-A4E7-6FEBEA061869}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F92DF344-0995-48CF-9967-DB535AD749B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F92DF344-0995-48CF-9967-DB535AD749B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F92DF344-0995-48CF-9967-DB535AD749B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F92DF344-0995-48CF-9967-DB535AD749B6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {DAEF00C2-32D0-437F-BBBC-96B2DC1C90B4}
+	EndGlobalSection
+	GlobalSection(NestedProjects) = postSolution
 	EndGlobalSection
 EndGlobal

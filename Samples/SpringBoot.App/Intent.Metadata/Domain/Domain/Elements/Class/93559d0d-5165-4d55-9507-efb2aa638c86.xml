@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<class id="93559d0d-5165-4d55-9507-efb2aa638c86" type="Class" typeId="04e12b51-ed12-42a3-9667-a6aa81bb6d10">
+  <name>Role</name>
+  <display>Role</display>
+  <isAbstract>false</isAbstract>
+  <order>3</order>
+  <genericTypes />
+  <isMapped>false</isMapped>
+  <parentFolderId>961aa864-fb44-47cf-8d72-46083984b698</parentFolderId>
+  <packageId>961aa864-fb44-47cf-8d72-46083984b698</packageId>
+  <packageName>Domain</packageName>
+  <stereotypes />
+  <childElements>
+    <childElement id="afca3a51-16df-457a-9899-751c920a8bda" type="Attribute" typeId="0090fb93-483e-41af-a11d-5ad2dc796adf">
+      <name>name</name>
+      <display>name: string</display>
+      <isAbstract>false</isAbstract>
+      <order>0</order>
+      <genericTypes />
+      <typeReference id="eb73614b-0a7d-4bbb-a936-45ac40537655">
+        <typeId>d384db9c-a279-45e1-801e-e4e8099625f2</typeId>
+        <isNavigable>true</isNavigable>
+        <isNullable>false</isNullable>
+        <isCollection>false</isCollection>
+        <isRequired>true</isRequired>
+        <typePackageName>Intent.Common.Types</typePackageName>
+        <typePackageId>870ad967-cbd4-4ea9-b86d-9c3a5d55ea67</typePackageId>
+        <stereotypes />
+        <genericTypeParameters />
+      </typeReference>
+      <isMapped>false</isMapped>
+      <parentFolderId>93559d0d-5165-4d55-9507-efb2aa638c86</parentFolderId>
+      <packageId>961aa864-fb44-47cf-8d72-46083984b698</packageId>
+      <packageName>Domain</packageName>
+      <stereotypes />
+      <childElements />
+    </childElement>
+  </childElements>
+</class>

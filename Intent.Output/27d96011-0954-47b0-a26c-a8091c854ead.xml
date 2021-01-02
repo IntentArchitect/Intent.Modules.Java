@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<outputLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ApplicationId>27d96011-0954-47b0-a26c-a8091c854ead</ApplicationId>
+  <FileLogs>
+    <FileLog>
+      <ProjectId>5fa9e7c0-0bd2-466b-bac0-3a2ffbb77f19</ProjectId>
+      <SolutionRelativeFilePath>../Intent.Modules.Java.Persistence.JPA/Decorators/JpaDomainModelDecorator.cs</SolutionRelativeFilePath>
+      <ProjectRelativeFilePath>JpaDomainModelDecorator.cs</ProjectRelativeFilePath>
+    </FileLog>
+    <FileLog>
+      <ProjectId>5fa9e7c0-0bd2-466b-bac0-3a2ffbb77f19</ProjectId>
+      <SolutionRelativeFilePath>../Intent.Modules.Java.Persistence.JPA/Decorators/JpaDomainModelDecoratorRegistration.cs</SolutionRelativeFilePath>
+      <ProjectRelativeFilePath>JpaDomainModelDecoratorRegistration.cs</ProjectRelativeFilePath>
+    </FileLog>
+    <FileLog>
+      <ProjectId>f92df344-0995-48cf-9967-db535ad749b6</ProjectId>
+      <SolutionRelativeFilePath>../Intent.Modules.Java.Persistence.JPA/Intent.Java.Persistence.JPA.imodspec</SolutionRelativeFilePath>
+      <ProjectRelativeFilePath>Intent.Java.Persistence.JPA.imodspec</ProjectRelativeFilePath>
+    </FileLog>
+    <FileLog>
+      <ProjectId>f92df344-0995-48cf-9967-db535ad749b6</ProjectId>
+      <SolutionRelativeFilePath>../Intent.Modules.Java.Persistence.JPA/Intent.Modules.Java.Persistence.JPA.csproj</SolutionRelativeFilePath>
+      <ProjectRelativeFilePath>Intent.Modules.Java.Persistence.JPA.csproj</ProjectRelativeFilePath>
+    </FileLog>
+    <FileLog>
+      <ProjectId>f92df344-0995-48cf-9967-db535ad749b6</ProjectId>
+      <SolutionRelativeFilePath>../Intent.Modules.Java.Persistence.JPA/README.txt</SolutionRelativeFilePath>
+      <ProjectRelativeFilePath>README.txt</ProjectRelativeFilePath>
+    </FileLog>
+    <FileLog>
+      <SolutionRelativeFilePath>../Intent.Modules.Java.sln</SolutionRelativeFilePath>
+    </FileLog>
+  </FileLogs>
+</outputLog>

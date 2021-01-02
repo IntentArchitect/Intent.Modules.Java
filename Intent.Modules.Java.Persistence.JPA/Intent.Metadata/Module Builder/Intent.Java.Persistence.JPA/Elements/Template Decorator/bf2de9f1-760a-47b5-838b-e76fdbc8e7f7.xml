@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<class id="bf2de9f1-760a-47b5-838b-e76fdbc8e7f7" type="Template Decorator" typeId="f0f46278-29ea-42bd-9206-0e7034f623bc">
+  <name>JpaDomainModelDecorator</name>
+  <display>JpaDomainModelDecorator: DomainModelDecorator</display>
+  <isAbstract>false</isAbstract>
+  <order>1</order>
+  <genericTypes />
+  <typeReference id="5e6027d6-cfa9-4154-8364-d9345a6853fd">
+    <typeId>a894136d-e504-4327-a9cd-0452c74dae9b</typeId>
+    <isNavigable>true</isNavigable>
+    <isNullable>false</isNullable>
+    <isCollection>false</isCollection>
+    <isRequired>true</isRequired>
+    <typePackageName>Intent.Java.Domain</typePackageName>
+    <typePackageId>0f8329b6-d189-4f03-8027-6c6b832fef2b</typePackageId>
+    <stereotypes />
+    <genericTypeParameters />
+  </typeReference>
+  <isMapped>false</isMapped>
+  <parentFolderId>2e4398f1-893d-432e-badb-ab0c4ea3280e</parentFolderId>
+  <packageId>2e4398f1-893d-432e-badb-ab0c4ea3280e</packageId>
+  <packageName>Intent.Java.Persistence.JPA</packageName>
+  <stereotypes />
+  <childElements />
+</class>

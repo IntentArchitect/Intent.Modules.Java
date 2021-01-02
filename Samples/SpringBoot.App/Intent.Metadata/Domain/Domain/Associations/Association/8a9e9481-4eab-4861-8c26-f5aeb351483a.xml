@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<association id="8a9e9481-4eab-4861-8c26-f5aeb351483a">
+  <sourceEnd id="ba4a614f-6355-4451-80bb-e2a9854f5881">
+    <name>User</name>
+    <display>User : User</display>
+    <typeReference id="036cee2a-b56c-4fc0-aba9-347ff3d4527a">
+      <typeId>0becb807-5103-42fa-a087-5a4b1ae91e70</typeId>
+      <isNavigable>false</isNavigable>
+      <isNullable>false</isNullable>
+      <isCollection>false</isCollection>
+      <isRequired>true</isRequired>
+      <typePackageName>Domain</typePackageName>
+      <typePackageId>961aa864-fb44-47cf-8d72-46083984b698</typePackageId>
+      <stereotypes />
+      <genericTypeParameters />
+    </typeReference>
+    <stereotypes />
+  </sourceEnd>
+  <targetEnd id="8a9e9481-4eab-4861-8c26-f5aeb351483a">
+    <name>LoginSessions</name>
+    <display>LoginSessions : LoginSession[*]</display>
+    <typeReference id="8d12b54c-1fff-471f-b0b2-137af8166daf">
+      <typeId>02032f76-6b98-4037-9222-1d122955bc50</typeId>
+      <isNavigable>true</isNavigable>
+      <isNullable>false</isNullable>
+      <isCollection>true</isCollection>
+      <isRequired>true</isRequired>
+      <typePackageName>Domain</typePackageName>
+      <typePackageId>961aa864-fb44-47cf-8d72-46083984b698</typePackageId>
+      <stereotypes />
+      <genericTypeParameters />
+    </typeReference>
+    <stereotypes />
+  </targetEnd>
+  <associationType>Association</associationType>
+  <associationTypeId>eaf9ed4e-0b61-4ac1-ba88-09f912c12087</associationTypeId>
+  <stereotypes />
+</association>

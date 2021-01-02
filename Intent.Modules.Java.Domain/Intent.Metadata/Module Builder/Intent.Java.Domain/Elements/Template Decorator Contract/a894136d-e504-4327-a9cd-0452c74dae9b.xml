@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<class id="a894136d-e504-4327-a9cd-0452c74dae9b" type="Template Decorator Contract" typeId="ac1da322-377e-45cf-a2d9-d147a4d91457">
+  <name>DomainModelDecorator</name>
+  <display>DomainModelDecorator</display>
+  <isAbstract>false</isAbstract>
+  <order>1</order>
+  <genericTypes />
+  <isMapped>false</isMapped>
+  <parentFolderId>3060efbe-358f-4d3a-99d6-561534b80b70</parentFolderId>
+  <packageId>0f8329b6-d189-4f03-8027-6c6b832fef2b</packageId>
+  <packageName>Intent.Java.Domain</packageName>
+  <stereotypes />
+  <childElements />
+</class>

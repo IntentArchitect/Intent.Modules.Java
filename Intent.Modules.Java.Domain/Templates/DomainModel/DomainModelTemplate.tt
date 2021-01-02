@@ -1,4 +1,4 @@
-<#@ template language="C#" inherits="JavaTemplateBase<Intent.Modelers.Domain.Api.ClassModel>" #>
+<#@ template language="C#" inherits="JavaTemplateBase<Intent.Modelers.Domain.Api.ClassModel, Intent.Modules.Java.Domain.Templates.DomainModel.DomainModelDecorator>" #>
 <#@ assembly name="System.Core" #>
 <#@ import namespace="System.Collections.Generic" #>
 <#@ import namespace="System.Linq" #>
@@ -10,19 +10,18 @@
 <#@ import namespace="Intent.Modelers.Domain.Api" #>
 package <#= Package #>;
 
-import lombok.Data;
-
-import javax.persistence.*;
 import java.io.Serializable;
 
-@Entity()
-@Data
-public class <#= ClassName #> extends <#= GetBaseClass() #> {
+<#= GetDecoratorsOutput(x => x.ClassAnnotations()) #>
+public class <#= ClassName #> extends <#= GetBaseClass() #> implements Serializable {
+    private static final long serialVersionUID = 1L;
 <#  foreach(var attribute in Model.Attributes) { #>
+    <#= GetDecoratorsOutput(x => x.BeforeField(attribute)) #>
     private <#= GetTypeName(attribute) #> <#= attribute.Name.ToCamelCase() #>;
 <#  } #>
 
-<#  foreach(var attribute in Model.AssociatedClasses.Where(x => x.IsNavigable)) { #>
-    private <#= GetTypeName(attribute) #> <#= attribute.Name.ToCamelCase() #>;
+<#  foreach(var associationEnd in Model.AssociatedClasses.Where(x => x.IsNavigable)) { #>
+    <#= GetDecoratorsOutput(x => x.BeforeField(associationEnd)) #>
+    private <#= GetTypeName(associationEnd) #> <#= associationEnd.Name.ToCamelCase() #>;
 <#  } #>
 }

@@ -22,12 +22,14 @@
   <dependencies>
     <dependency id="Intent.Common" version="3.0.0" />
     <dependency id="Intent.Common.Types" version="3.0.0" />
-    <dependency id="Intent.Common.Java" version="3.0.0" />
+    <dependency id="Intent.Common.Java" version="3.0.1" />
     <dependency id="Intent.Modelers.Domain" version="3.0.0" />
   </dependencies>
   <files>
     <file src="$outDir$/$id$.dll" />
     <file src="$outDir$/$id$.pdb" />
   </files>
-  <metadata />
+  <metadata>
+    <install target="Module Builder" src="Intent.Metadata/Module Builder/Intent.Java.Domain/Intent.Java.Domain.pkg.config" externalReference="0f8329b6-d189-4f03-8027-6c6b832fef2b" />
+  </metadata>
 </package>
