@@ -15,6 +15,7 @@
   <dependencies>
     <dependency id="Intent.Common" version="3.0.0" />
     <dependency id="Intent.Common.Types" version="3.0.0" />
+    <dependency id="Intent.Metadata.RDBMS" version="3.0.0" />
   </dependencies>
   <files>
     <file src="$outDir$/$id$.dll" />

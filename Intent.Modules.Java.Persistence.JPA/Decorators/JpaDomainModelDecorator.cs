@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Intent.Metadata.RDBMS.Api;
 using Intent.Modelers.Domain.Api;
 using Intent.Modules.Common.Java.Templates;
 using Intent.Modules.Common.Templates;
@@ -39,10 +40,10 @@ namespace Intent.Modules.Java.Persistence.JPA.Decorators
             var annotations = new List<string>();
             var columnSettings = new List<string>();
             columnSettings.Add($"name = \"{model.Name.ToSnakeCase()}\"");
-            if (_template.GetTypeName(model.TypeReference) == "String")
+            if (_template.GetTypeName(model.TypeReference) == "String" && model.GetTextConstraints()?.MaxLength() != null)
             {
-                annotations.Add("@Size(max = 60)");
-                columnSettings.Add("length = 60");
+                annotations.Add($"@Size(max = {model.GetTextConstraints().MaxLength()})");
+                columnSettings.Add($"length = {model.GetTextConstraints().MaxLength()}");
             }
 
             if (model.Name.ToLower().EndsWith("email"))
@@ -96,7 +97,7 @@ namespace Intent.Modules.Java.Persistence.JPA.Decorators
                 if (thatEnd.IsTargetEnd())
                 {
                     annotations.Add($@"@JoinTable(
-            name = {sourceEnd.Element.Name.ToSnakeCase()}_{thatEnd.Element.Name.ToSnakeCase()},
+            name = ""{sourceEnd.Element.Name.ToSnakeCase()}_{thatEnd.Element.Name.ToSnakeCase()}"",
             joinColumns = {{ @JoinColumn(name = ""{sourceEnd.Element.Name.ToSnakeCase()}_id"") }},
             inverseJoinColumns = {{ @JoinColumn(name = ""{thatEnd.Element.Name.ToSnakeCase()}_id"") }}
     )");
