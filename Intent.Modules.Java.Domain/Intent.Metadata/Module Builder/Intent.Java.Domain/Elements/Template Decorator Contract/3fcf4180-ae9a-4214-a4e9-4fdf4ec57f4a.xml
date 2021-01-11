@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<class id="3fcf4180-ae9a-4214-a4e9-4fdf4ec57f4a" type="Template Decorator Contract" typeId="ac1da322-377e-45cf-a2d9-d147a4d91457">
+  <name>AbstractEntityDecorator</name>
+  <display>AbstractEntityDecorator</display>
+  <isAbstract>false</isAbstract>
+  <order>1</order>
+  <genericTypes />
+  <isMapped>false</isMapped>
+  <parentFolderId>94c6a849-fc61-4d80-9bdc-2ad79268ac57</parentFolderId>
+  <packageId>0f8329b6-d189-4f03-8027-6c6b832fef2b</packageId>
+  <packageName>Intent.Java.Domain</packageName>
+  <stereotypes />
+  <childElements />
+</class>

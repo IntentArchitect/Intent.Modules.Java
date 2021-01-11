@@ -10,10 +10,8 @@
 <#@ import namespace="Intent.Modelers.Domain.Api" #>
 package <#= Package #>;
 
-import java.io.Serializable;
-
 <#= GetDecoratorsOutput(x => x.ClassAnnotations()) #>
-public class <#= ClassName #> extends <#= GetBaseClass() #> implements Serializable {
+public class <#= ClassName #> extends <#= GetBaseClass() #> {
     private static final long serialVersionUID = 1L;
 <#  foreach(var attribute in Model.Attributes) { #>
     <#= GetDecoratorsOutput(x => x.BeforeField(attribute)) #>

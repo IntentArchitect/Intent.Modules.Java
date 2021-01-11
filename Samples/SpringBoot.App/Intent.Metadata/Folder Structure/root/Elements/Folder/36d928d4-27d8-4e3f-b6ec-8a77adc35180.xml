@@ -3,10 +3,12 @@
   <name>rest</name>
   <display>rest</display>
   <isAbstract>false</isAbstract>
-  <order>0</order>
+  <order>1</order>
   <genericTypes />
   <isMapped>false</isMapped>
   <parentFolderId>e94fa53a-8941-4ca0-b018-52d9886d93ce</parentFolderId>
+  <packageId>6a88e337-e454-4c78-958d-698b9030bd40</packageId>
+  <packageName>root</packageName>
   <stereotypes />
   <childElements>
     <childElement id="d8426f42-c6bb-4c4d-b0cc-6798454652fb" type="Template Output" typeId="09de2192-2507-41a2-8044-286c7ecadec2">
@@ -18,6 +20,8 @@
       <genericTypes />
       <isMapped>false</isMapped>
       <parentFolderId>36d928d4-27d8-4e3f-b6ec-8a77adc35180</parentFolderId>
+      <packageId>6a88e337-e454-4c78-958d-698b9030bd40</packageId>
+      <packageName>root</packageName>
       <stereotypes />
       <childElements />
     </childElement>

@@ -11,26 +11,22 @@
 package <#= Package #>;
 
 import lombok.AllArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
-import javax.persistence.NoResultException;
-import javax.persistence.TypedQuery;
 
 @Service
 @AllArgsConstructor
-@Slf4j
-@IntentMerge
+<#= this.IntentMergeAnnotation() #>
 public class <#= ClassName #> implements <#= GetTypeName(ServiceInterface.ServiceInterfaceTemplate.TemplateId) #> {
 <#  foreach(var operation in Model.Operations) { #>
 
     @Override
     @Transactional(readOnly = <#= IsReadOnly(operation) #>)
-    @IntentIgnoreBody
+    <#= this.IntentIgnoreBodyAnnotation() #>
     public <#= GetTypeName(operation) #> <#= operation.Name #>(<#= this.GetMethodParameters(operation.Parameters) #>) {
-        throw new NotImplementedException("Your implementation here...");
+        throw new UnsupportedOperationException("Your implementation here...");
     }
 <#  } #>
 }

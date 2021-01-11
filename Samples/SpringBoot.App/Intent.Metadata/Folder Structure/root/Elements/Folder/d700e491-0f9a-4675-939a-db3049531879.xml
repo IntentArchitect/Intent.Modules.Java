@@ -7,6 +7,8 @@
   <genericTypes />
   <isMapped>false</isMapped>
   <parentFolderId>e28bdd77-8e81-4926-9641-b010122e9ba9</parentFolderId>
+  <packageId>6a88e337-e454-4c78-958d-698b9030bd40</packageId>
+  <packageName>root</packageName>
   <stereotypes />
   <childElements>
     <childElement id="a66f1399-ad03-42ff-be7f-f632d64355f3" type="Template Output" typeId="09de2192-2507-41a2-8044-286c7ecadec2">
@@ -18,6 +20,8 @@
       <genericTypes />
       <isMapped>false</isMapped>
       <parentFolderId>d700e491-0f9a-4675-939a-db3049531879</parentFolderId>
+      <packageId>6a88e337-e454-4c78-958d-698b9030bd40</packageId>
+      <packageName>root</packageName>
       <stereotypes />
       <childElements />
     </childElement>
@@ -26,10 +30,12 @@
       <display>Intent.Java.Domain.DomainModel</display>
       <externalReference>Intent.Java.Domain</externalReference>
       <isAbstract>false</isAbstract>
-      <order>0</order>
+      <order>1</order>
       <genericTypes />
       <isMapped>false</isMapped>
       <parentFolderId>d700e491-0f9a-4675-939a-db3049531879</parentFolderId>
+      <packageId>6a88e337-e454-4c78-958d-698b9030bd40</packageId>
+      <packageName>root</packageName>
       <stereotypes />
       <childElements />
     </childElement>

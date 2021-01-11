@@ -7,6 +7,8 @@
   <genericTypes />
   <isMapped>false</isMapped>
   <parentFolderId>e77153fd-99ac-460e-b13c-9835bcf4636f</parentFolderId>
+  <packageId>6a88e337-e454-4c78-958d-698b9030bd40</packageId>
+  <packageName>root</packageName>
   <stereotypes />
   <childElements>
     <childElement id="4892d3b9-643d-45f5-aefd-25d5af7743ec" type="Template Output" typeId="09de2192-2507-41a2-8044-286c7ecadec2">
@@ -18,6 +20,8 @@
       <genericTypes />
       <isMapped>false</isMapped>
       <parentFolderId>caf52109-36ba-4fe5-87f4-ec53b9b565a0</parentFolderId>
+      <packageId>6a88e337-e454-4c78-958d-698b9030bd40</packageId>
+      <packageName>root</packageName>
       <stereotypes />
       <childElements />
     </childElement>

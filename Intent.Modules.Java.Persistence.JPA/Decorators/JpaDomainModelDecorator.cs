@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using Intent.Metadata.RDBMS.Api;
 using Intent.Modelers.Domain.Api;
@@ -20,10 +21,25 @@ namespace Intent.Modules.Java.Persistence.JPA.Decorators
         public const string DecoratorId = "Intent.Java.Persistence.JPA.JpaDomainModelDecorator";
 
         private readonly DomainModelTemplate _template;
+        private ICollection<string> _imports = new List<string>();
 
         public JpaDomainModelDecorator(DomainModelTemplate template)
         {
             _template = template;
+            _template.AddDependency(new JavaDependency("org.springframework.boot", "spring-boot-starter-data-jpa"));
+            _template.AddDependency(new JavaDependency("org.springframework.boot", "spring-boot-starter-jdbc"));
+            _template.AddDependency(new JavaDependency("com.h2database", "h2"));
+        }
+
+        private string Use(string fullyQualifiedType, string import = null)
+        {
+            import = import ?? fullyQualifiedType;
+            if (!_imports.Contains(import))
+            {
+                _imports.Add(import);
+            }
+
+            return fullyQualifiedType.Split('.').Last();
         }
 
         public override string ClassAnnotations()
@@ -42,18 +58,11 @@ namespace Intent.Modules.Java.Persistence.JPA.Decorators
             columnSettings.Add($"name = \"{model.Name.ToSnakeCase()}\"");
             if (_template.GetTypeName(model.TypeReference) == "String" && model.GetTextConstraints()?.MaxLength() != null)
             {
-                annotations.Add($"@Size(max = {model.GetTextConstraints().MaxLength()})");
                 columnSettings.Add($"length = {model.GetTextConstraints().MaxLength()}");
-            }
-
-            if (model.Name.ToLower().EndsWith("email"))
-            {
-                annotations.Add("@Email");
             }
 
             if (!model.TypeReference.IsNullable)
             {
-                annotations.Add("@NotNull");
                 columnSettings.Add("nullable = false");
             }
             annotations.Add($@"@Column({string.Join(", ", columnSettings)})");
@@ -111,14 +120,13 @@ namespace Intent.Modules.Java.Persistence.JPA.Decorators
 
         public IEnumerable<string> DeclareImports()
         {
-            yield return "lombok.Data";
-            yield return "lombok.EqualsAndHashCode";
-            yield return "lombok.NonNull";
-            yield return "javax.persistence.*";
-            yield return "javax.validation.constraints.Email";
-            yield return "javax.validation.constraints.NotNull";
-            yield return "javax.validation.constraints.Pattern";
-            yield return "javax.validation.constraints.Size";
+            return _imports.Concat(new[]
+            {
+                "lombok.Data",
+                "lombok.EqualsAndHashCode",
+                "javax.persistence.*",
+            }).Distinct();
+
         }
     }
 }

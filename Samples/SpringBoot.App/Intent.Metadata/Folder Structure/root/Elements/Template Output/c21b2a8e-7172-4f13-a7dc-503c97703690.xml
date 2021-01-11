@@ -4,10 +4,12 @@
   <display>Intent.Java.Maven.PomFile</display>
   <externalReference>Intent.Java.Maven</externalReference>
   <isAbstract>false</isAbstract>
-  <order>0</order>
+  <order>2</order>
   <genericTypes />
   <isMapped>false</isMapped>
   <parentFolderId>6a88e337-e454-4c78-958d-698b9030bd40</parentFolderId>
+  <packageId>6a88e337-e454-4c78-958d-698b9030bd40</packageId>
+  <packageName>root</packageName>
   <stereotypes />
   <childElements />
 </class>

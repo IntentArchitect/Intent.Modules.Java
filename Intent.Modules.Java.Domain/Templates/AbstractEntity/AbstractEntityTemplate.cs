@@ -24,7 +24,7 @@ namespace Intent.Modules.Java.Domain.Templates.AbstractEntity
     
     #line 1 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Domain\Templates\AbstractEntity\AbstractEntityTemplate.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "16.0.0.0")]
-    public partial class AbstractEntityTemplate : JavaTemplateBase<object>
+    public partial class AbstractEntityTemplate : JavaTemplateBase<object, Intent.Modules.Java.Domain.Templates.AbstractEntity.AbstractEntityDecorator>
     {
 #line hidden
         /// <summary>
@@ -39,58 +39,41 @@ namespace Intent.Modules.Java.Domain.Templates.AbstractEntity
             
             #line default
             #line hidden
-            this.Write(@";
-
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import lombok.Data;
-import org.hibernate.envers.Audited;
-import java.time.Instant;
-import org.springframework.data.annotation.CreatedDate;
-import org.springframework.data.annotation.LastModifiedBy;
-import org.springframework.data.annotation.LastModifiedDate;
-import org.springframework.data.jpa.domain.support.AuditingEntityListener;
-
-import javax.persistence.Column;
-import javax.persistence.EntityListeners;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.MappedSuperclass;
-import java.io.Serializable;
-
-@MappedSuperclass
-@Audited
-@EntityListeners(AuditingEntityListener.class)
-@Data
-public abstract class ");
+            this.Write(";\r\n\r\nimport lombok.Data;\r\n\r\nimport java.io.Serializable;\r\n\r\n");
             
-            #line 34 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Domain\Templates\AbstractEntity\AbstractEntityTemplate.tt"
+            #line 17 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Domain\Templates\AbstractEntity\AbstractEntityTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(GetClassAnnotations()));
+            
+            #line default
+            #line hidden
+            this.Write("\r\n");
+            
+            #line 18 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Domain\Templates\AbstractEntity\AbstractEntityTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.IntentMergeAnnotation()));
+            
+            #line default
+            #line hidden
+            this.Write("\r\npublic abstract class ");
+            
+            #line 19 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Domain\Templates\AbstractEntity\AbstractEntityTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(ClassName));
             
             #line default
             #line hidden
-            this.Write(@" implements Serializable {//NOPMD
-    private static final long serialVersionUID = 1L;
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;//NOPMD
-
-    @CreatedDate
-    @Column(name = ""created_date"", updatable = false)
-    @JsonIgnore
-    private Instant createdDate = Instant.now();
-
-    @LastModifiedBy
-    @Column(name = ""last_modified_by"", length = 50)
-    @JsonIgnore
-    private String lastModifiedBy;
-
-    @LastModifiedDate
-    @Column(name = ""last_modified_date"")
-    @JsonIgnore
-    private Instant lastModifiedDate = Instant.now();
-}
-");
+            this.Write(" implements Serializable {\r\n    private static final long serialVersionUID = 1L;");
+            
+            #line 20 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Domain\Templates\AbstractEntity\AbstractEntityTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(GetFields()));
+            
+            #line default
+            #line hidden
+            
+            #line 20 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Domain\Templates\AbstractEntity\AbstractEntityTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(GetMethods()));
+            
+            #line default
+            #line hidden
+            this.Write("\r\n}\r\n");
             return this.GenerationEnvironment.ToString();
         }
     }

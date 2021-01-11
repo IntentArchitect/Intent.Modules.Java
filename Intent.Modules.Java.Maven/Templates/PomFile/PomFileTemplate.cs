@@ -74,7 +74,7 @@ namespace Intent.Modules.Java.Maven.Templates.PomFile
 	<description>Get subscription customers by Msisdn</description>
 
 	<properties>
-		<java.version>1.8</java.version>
+		<java.version>14</java.version>
 	</properties>
 
 	<distributionManagement>

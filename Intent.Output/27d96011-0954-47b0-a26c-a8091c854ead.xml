@@ -4,6 +4,16 @@
   <FileLogs>
     <FileLog>
       <ProjectId>5fa9e7c0-0bd2-466b-bac0-3a2ffbb77f19</ProjectId>
+      <SolutionRelativeFilePath>../Intent.Modules.Java.Persistence.JPA/Decorators/JpaAbstractEntityDecorator.cs</SolutionRelativeFilePath>
+      <ProjectRelativeFilePath>JpaAbstractEntityDecorator.cs</ProjectRelativeFilePath>
+    </FileLog>
+    <FileLog>
+      <ProjectId>5fa9e7c0-0bd2-466b-bac0-3a2ffbb77f19</ProjectId>
+      <SolutionRelativeFilePath>../Intent.Modules.Java.Persistence.JPA/Decorators/JpaAbstractEntityDecoratorRegistration.cs</SolutionRelativeFilePath>
+      <ProjectRelativeFilePath>JpaAbstractEntityDecoratorRegistration.cs</ProjectRelativeFilePath>
+    </FileLog>
+    <FileLog>
+      <ProjectId>5fa9e7c0-0bd2-466b-bac0-3a2ffbb77f19</ProjectId>
       <SolutionRelativeFilePath>../Intent.Modules.Java.Persistence.JPA/Decorators/JpaDomainModelDecorator.cs</SolutionRelativeFilePath>
       <ProjectRelativeFilePath>JpaDomainModelDecorator.cs</ProjectRelativeFilePath>
     </FileLog>

@@ -3,7 +3,7 @@
   <name>JpaDomainModelDecorator</name>
   <display>JpaDomainModelDecorator: DomainModelDecorator</display>
   <isAbstract>false</isAbstract>
-  <order>1</order>
+  <order>2</order>
   <genericTypes />
   <typeReference id="5e6027d6-cfa9-4154-8364-d9345a6853fd">
     <typeId>a894136d-e504-4327-a9cd-0452c74dae9b</typeId>

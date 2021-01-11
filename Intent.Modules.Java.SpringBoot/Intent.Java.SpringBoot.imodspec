@@ -11,10 +11,6 @@
     <template id="Intent.Java.SpringBoot.Application" externalReference="352eb8e5-c7f0-42a9-8438-f1b95ea193de">
       <role>Startup</role>
     </template>
-    <template id="Intent.Java.SpringBoot.IntentAnnotations" externalReference="d63a1b44-6b6e-4f97-8fd6-310abef4e115">
-      <role>Startup</role>
-      <location>intent</location>
-    </template>
     <template id="Intent.Java.SpringBoot.RestController" externalReference="33a60ef5-5613-4719-a96d-206d3732c9ba">
       <role>Application</role>
       <location>rest</location>

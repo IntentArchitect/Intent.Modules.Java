@@ -19,6 +19,11 @@
     </FileLog>
     <FileLog>
       <ProjectId>ba8f91ca-3f8c-44a2-9194-e9d5ed6640bd</ProjectId>
+      <SolutionRelativeFilePath>../Intent.Modules.Java.Domain/Templates/AbstractEntity/AbstractEntityDecorator.cs</SolutionRelativeFilePath>
+      <ProjectRelativeFilePath>AbstractEntity/AbstractEntityDecorator.cs</ProjectRelativeFilePath>
+    </FileLog>
+    <FileLog>
+      <ProjectId>ba8f91ca-3f8c-44a2-9194-e9d5ed6640bd</ProjectId>
       <SolutionRelativeFilePath>../Intent.Modules.Java.Domain/Templates/AbstractEntity/AbstractEntityTemplate.cs</SolutionRelativeFilePath>
       <ProjectRelativeFilePath>AbstractEntity/AbstractEntityTemplate.cs</ProjectRelativeFilePath>
     </FileLog>

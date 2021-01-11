@@ -53,41 +53,37 @@ namespace Intent.Modules.Java.Maven.Templates.PomFile
 
         public override string RunTemplate()
         {
-            if (File.Exists(GetMetadata().GetFilePath()))
-            {
-                var doc = XDocument.Load(GetMetadata().GetFilePath(), LoadOptions.PreserveWhitespace);
-                // manipulate and save
+            var doc = File.Exists(GetMetadata().GetFilePath()) ? XDocument.Load(GetMetadata().GetFilePath(), LoadOptions.PreserveWhitespace) : XDocument.Parse(TransformText(), LoadOptions.PreserveWhitespace);
+            // manipulate and save
 
-                foreach (var dependency in _javaDependencies)
+            foreach (var dependency in _javaDependencies)
+            {
+                var namespaces = new XmlNamespaceManager(new NameTable());
+                var _namespace = doc.Root.GetDefaultNamespace();
+                namespaces.AddNamespace("ns", _namespace.NamespaceName);
+                var existing = doc.XPathSelectElement($"ns:project/ns:dependencies/ns:dependency[ns:groupId[text() = \"{dependency.GroupId}\"] and ns:artifactId[text() = \"{dependency.ArtifactId}\"]]", namespaces);
+                if (existing == null)
                 {
-                    var namespaces = new XmlNamespaceManager(new NameTable());
-                    var _namespace = doc.Root.GetDefaultNamespace();
-                    namespaces.AddNamespace("ns", _namespace.NamespaceName);
-                    var existing = doc.XPathSelectElement($"ns:project/ns:dependencies/ns:dependency[ns:groupId[text() = \"{dependency.GroupId}\"] and ns:artifactId[text() = \"{dependency.ArtifactId}\"]]", namespaces);
-                    if (existing == null)
-                    {
-                        var dependencies = doc.XPathSelectElement($"ns:project/ns:dependencies", namespaces);
-                        var newDependency = XElement.Parse($@"<dependency>
+                    var dependencies = doc.XPathSelectElement($"ns:project/ns:dependencies", namespaces);
+                    var newDependency = XElement.Parse($@"<dependency>
             <groupId>{dependency.GroupId}</groupId>
             <artifactId>{dependency.ArtifactId}</artifactId>
         </dependency>", LoadOptions.PreserveWhitespace);
-                        if (!string.IsNullOrWhiteSpace(dependency.Version))
-                        {
-                            newDependency.Add("    ", XElement.Parse($@"<version>{dependency.Version}</version>"));
-                            newDependency.Add(Environment.NewLine + "        ");
-                        }
-                        foreach (XElement e in newDependency.DescendantsAndSelf())
-                        {
-                            e.Name = _namespace + e.Name.LocalName;
-                        }
-                        dependencies?.Add("    ", newDependency);
-                        dependencies?.Add(Environment.NewLine + "    ");
+                    if (!string.IsNullOrWhiteSpace(dependency.Version))
+                    {
+                        newDependency.Add("    ", XElement.Parse($@"<version>{dependency.Version}</version>"));
+                        newDependency.Add(Environment.NewLine + "        ");
                     }
+                    foreach (XElement e in newDependency.DescendantsAndSelf())
+                    {
+                        e.Name = _namespace + e.Name.LocalName;
+                    }
+                    dependencies?.Add("    ", newDependency);
+                    dependencies?.Add(Environment.NewLine + "    ");
                 }
-
-                return doc.ToStringUTF8();
             }
-            return TransformText();
+
+            return doc.ToStringUTF8();
         }
     }
 }

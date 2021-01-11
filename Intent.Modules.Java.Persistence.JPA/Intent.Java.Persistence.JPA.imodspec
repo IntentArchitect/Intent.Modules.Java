@@ -10,12 +10,13 @@
   <templates></templates>
   <decorators>
     <decorator id="Intent.Java.Persistence.JPA.JpaDomainModelDecorator" externalReference="bf2de9f1-760a-47b5-838b-e76fdbc8e7f7" />
+    <decorator id="Intent.Java.Persistence.JPA.JpaAbstractEntityDecorator" externalReference="4cc94355-f5eb-4ed0-953c-2ed915f3ffc6" />
   </decorators>
   <factoryExtensions></factoryExtensions>
   <dependencies>
-    <dependency id="Intent.Common" version="3.0.0" />
-    <dependency id="Intent.Common.Types" version="3.0.0" />
-    <dependency id="Intent.Metadata.RDBMS" version="3.0.0" />
+    <dependency id="Intent.Common" version="3.0.1" />
+    <dependency id="Intent.Common.Types" version="3.0.1" />
+    <dependency id="Intent.Metadata.RDBMS" version="3.0.1" />
   </dependencies>
   <files>
     <file src="$outDir$/$id$.dll" />

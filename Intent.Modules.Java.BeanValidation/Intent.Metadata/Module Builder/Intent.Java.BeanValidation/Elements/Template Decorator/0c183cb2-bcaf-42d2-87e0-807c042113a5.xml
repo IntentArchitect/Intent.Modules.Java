@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<class id="0c183cb2-bcaf-42d2-87e0-807c042113a5" type="Template Decorator" typeId="f0f46278-29ea-42bd-9206-0e7034f623bc">
+  <name>ValidationDomainModelDecorator</name>
+  <display>ValidationDomainModelDecorator: DomainModelDecorator</display>
+  <isAbstract>false</isAbstract>
+  <order>1</order>
+  <genericTypes />
+  <typeReference id="b04b4eb1-df2f-42da-bc40-f672841b0c5e">
+    <typeId>a894136d-e504-4327-a9cd-0452c74dae9b</typeId>
+    <isNavigable>true</isNavigable>
+    <isNullable>false</isNullable>
+    <isCollection>false</isCollection>
+    <isRequired>true</isRequired>
+    <typePackageName>Intent.Java.Domain</typePackageName>
+    <typePackageId>0f8329b6-d189-4f03-8027-6c6b832fef2b</typePackageId>
+    <stereotypes />
+    <genericTypeParameters />
+  </typeReference>
+  <isMapped>false</isMapped>
+  <parentFolderId>149448e0-3813-46e4-b605-38aaee83959c</parentFolderId>
+  <packageId>149448e0-3813-46e4-b605-38aaee83959c</packageId>
+  <packageName>Intent.Java.BeanValidation</packageName>
+  <stereotypes />
+  <childElements />
+</class>

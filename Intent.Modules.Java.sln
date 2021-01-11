@@ -14,6 +14,14 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Intent.ApplicationTemplates
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Intent.Modules.Java.Persistence.JPA", "Intent.Modules.Java.Persistence.JPA\Intent.Modules.Java.Persistence.JPA.csproj", "{F92DF344-0995-48CF-9967-DB535AD749B6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Intent.Modules.Java.Weaving.Annotations", "Intent.Modules.Java.Weaving.Annotations\Intent.Modules.Java.Weaving.Annotations.csproj", "{9BA4083B-CA3E-4813-8A51-ACE7E6B40366}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Intent.Modules.Java.Spring.Data.Repositories", "Intent.Modules.Java.Spring.Data.Repositories\Intent.Modules.Java.Spring.Data.Repositories.csproj", "{5EE9053B-4284-4568-9E38-3A4AA5A53AC2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Intent.Modules.Java.BeanValidation", "Intent.Modules.Java.BeanValidation\Intent.Modules.Java.BeanValidation.csproj", "{8220ED3B-FABC-4FF0-945C-ACAFB0ED917C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Intent.Modules.Java.ModelMapper", "Intent.Modules.Java.ModelMapper\Intent.Modules.Java.ModelMapper.csproj", "{997D1487-CFEA-43D7-9AEC-BE05F101F8DF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -44,6 +52,22 @@ Global
 		{F92DF344-0995-48CF-9967-DB535AD749B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F92DF344-0995-48CF-9967-DB535AD749B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F92DF344-0995-48CF-9967-DB535AD749B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9BA4083B-CA3E-4813-8A51-ACE7E6B40366}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9BA4083B-CA3E-4813-8A51-ACE7E6B40366}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9BA4083B-CA3E-4813-8A51-ACE7E6B40366}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9BA4083B-CA3E-4813-8A51-ACE7E6B40366}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5EE9053B-4284-4568-9E38-3A4AA5A53AC2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5EE9053B-4284-4568-9E38-3A4AA5A53AC2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5EE9053B-4284-4568-9E38-3A4AA5A53AC2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5EE9053B-4284-4568-9E38-3A4AA5A53AC2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8220ED3B-FABC-4FF0-945C-ACAFB0ED917C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8220ED3B-FABC-4FF0-945C-ACAFB0ED917C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8220ED3B-FABC-4FF0-945C-ACAFB0ED917C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8220ED3B-FABC-4FF0-945C-ACAFB0ED917C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{997D1487-CFEA-43D7-9AEC-BE05F101F8DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{997D1487-CFEA-43D7-9AEC-BE05F101F8DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{997D1487-CFEA-43D7-9AEC-BE05F101F8DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{997D1487-CFEA-43D7-9AEC-BE05F101F8DF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

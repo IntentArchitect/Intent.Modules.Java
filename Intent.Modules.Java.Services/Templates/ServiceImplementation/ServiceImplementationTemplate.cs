@@ -25,7 +25,7 @@ namespace Intent.Modules.Java.Services.Templates.ServiceImplementation
     
     #line 1 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Services\Templates\ServiceImplementation\ServiceImplementationTemplate.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "16.0.0.0")]
-    public partial class ServiceImplementationTemplate : JavaTemplateBase<ServiceModel>
+    public partial class ServiceImplementationTemplate : JavaTemplateBase<Intent.Modelers.Services.Api.ServiceModel>
     {
 #line hidden
         /// <summary>
@@ -40,74 +40,75 @@ namespace Intent.Modules.Java.Services.Templates.ServiceImplementation
             
             #line default
             #line hidden
-            this.Write(@";
-
-import lombok.AllArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
-import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
-
-import javax.persistence.EntityManager;
-import javax.persistence.NoResultException;
-import javax.persistence.TypedQuery;
-
-@Service
-@AllArgsConstructor
-@Slf4j
-@IntentMerge
-public class ");
+            this.Write(";\r\n\r\nimport lombok.AllArgsConstructor;\r\nimport org.springframework.stereotype.Ser" +
+                    "vice;\r\nimport org.springframework.transaction.annotation.Transactional;\r\n\r\nimpor" +
+                    "t javax.persistence.EntityManager;\r\n\r\n@Service\r\n@AllArgsConstructor\r\n");
             
-            #line 26 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Services\Templates\ServiceImplementation\ServiceImplementationTemplate.tt"
+            #line 21 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Services\Templates\ServiceImplementation\ServiceImplementationTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.IntentMergeAnnotation()));
+            
+            #line default
+            #line hidden
+            this.Write("\r\npublic class ");
+            
+            #line 22 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Services\Templates\ServiceImplementation\ServiceImplementationTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(ClassName));
             
             #line default
             #line hidden
             this.Write(" implements ");
             
-            #line 26 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Services\Templates\ServiceImplementation\ServiceImplementationTemplate.tt"
+            #line 22 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Services\Templates\ServiceImplementation\ServiceImplementationTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(GetTypeName(ServiceInterface.ServiceInterfaceTemplate.TemplateId)));
             
             #line default
             #line hidden
             this.Write(" {\r\n");
             
-            #line 27 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Services\Templates\ServiceImplementation\ServiceImplementationTemplate.tt"
+            #line 23 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Services\Templates\ServiceImplementation\ServiceImplementationTemplate.tt"
   foreach(var operation in Model.Operations) { 
             
             #line default
             #line hidden
             this.Write("\r\n    @Override\r\n    @Transactional(readOnly = ");
             
-            #line 30 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Services\Templates\ServiceImplementation\ServiceImplementationTemplate.tt"
+            #line 26 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Services\Templates\ServiceImplementation\ServiceImplementationTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(IsReadOnly(operation)));
             
             #line default
             #line hidden
-            this.Write(")\r\n    @IntentIgnoreBody\r\n    public ");
+            this.Write(")\r\n    ");
             
-            #line 32 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Services\Templates\ServiceImplementation\ServiceImplementationTemplate.tt"
+            #line 27 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Services\Templates\ServiceImplementation\ServiceImplementationTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.IntentIgnoreBodyAnnotation()));
+            
+            #line default
+            #line hidden
+            this.Write("\r\n    public ");
+            
+            #line 28 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Services\Templates\ServiceImplementation\ServiceImplementationTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(GetTypeName(operation)));
             
             #line default
             #line hidden
             this.Write(" ");
             
-            #line 32 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Services\Templates\ServiceImplementation\ServiceImplementationTemplate.tt"
+            #line 28 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Services\Templates\ServiceImplementation\ServiceImplementationTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("(");
             
-            #line 32 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Services\Templates\ServiceImplementation\ServiceImplementationTemplate.tt"
+            #line 28 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Services\Templates\ServiceImplementation\ServiceImplementationTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.GetMethodParameters(operation.Parameters)));
             
             #line default
             #line hidden
-            this.Write(") {\r\n        throw new NotImplementedException(\"Your implementation here...\");\r\n " +
-                    "   }\r\n");
+            this.Write(") {\r\n        throw new UnsupportedOperationException(\"Your implementation here..." +
+                    "\");\r\n    }\r\n");
             
-            #line 35 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Services\Templates\ServiceImplementation\ServiceImplementationTemplate.tt"
+            #line 31 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Services\Templates\ServiceImplementation\ServiceImplementationTemplate.tt"
   } 
             
             #line default

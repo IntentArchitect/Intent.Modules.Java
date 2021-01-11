@@ -13,5 +13,9 @@
     <application id="13711c7f-093c-4051-8f56-16e3cbe88663" name="Intent.Modules.Java.Maven" relativePath="Intent.Modules.Java.Maven/Intent.Modules.Java.Maven.application.config" />
     <application id="15695506-8a9b-4a83-8369-3cd2529d2750" name="Intent.Java.ApplicationTemplates" relativePath="Intent.ApplicationTemplates.Java/Intent.Java.ApplicationTemplates.application.config" />
     <application id="27d96011-0954-47b0-a26c-a8091c854ead" name="Intent.Modules.Java.Persistence.JPA" relativePath="Intent.Modules.Java.Persistence.JPA/Intent.Modules.Java.Persistence.JPA.application.config" />
+    <application id="34ab81e4-7133-42aa-a9ac-72dc515be606" name="Intent.Modules.Java.Weaving.Annotations" relativePath="Intent.Modules.Java.Weaving.Annotations/Intent.Modules.Java.Weaving.Annotations.application.config" />
+    <application id="2a1f90d0-0a78-4a3a-899b-a45205055f19" name="Intent.Modules.Java.Spring.Data.Repositories" relativePath="Intent.Modules.Java.Spring.Data.Repositories/Intent.Modules.Java.Spring.Data.Repositories.application.config" />
+    <application id="5260c3ef-ea5c-487d-9150-6b5cb1fc28be" name="Intent.Modules.Java.BeanValidation" relativePath="Intent.Modules.Java.BeanValidation/Intent.Modules.Java.BeanValidation.application.config" />
+    <application id="e1ac2551-105e-45da-be15-8b6a51f50fa4" name="Intent.Modules.Java.ModelMapper" relativePath="Intent.Modules.Java.ModelMapper/Intent.Modules.Java.ModelMapper.application.config" />
   </applications>
 </solution>

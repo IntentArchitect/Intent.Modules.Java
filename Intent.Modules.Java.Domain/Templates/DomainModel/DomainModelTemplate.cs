@@ -40,94 +40,93 @@ namespace Intent.Modules.Java.Domain.Templates.DomainModel
             
             #line default
             #line hidden
-            this.Write(";\r\n\r\nimport java.io.Serializable;\r\n\r\n");
+            this.Write(";\r\n\r\n");
             
-            #line 15 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Domain\Templates\DomainModel\DomainModelTemplate.tt"
+            #line 13 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Domain\Templates\DomainModel\DomainModelTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(GetDecoratorsOutput(x => x.ClassAnnotations())));
             
             #line default
             #line hidden
             this.Write("\r\npublic class ");
             
-            #line 16 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Domain\Templates\DomainModel\DomainModelTemplate.tt"
+            #line 14 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Domain\Templates\DomainModel\DomainModelTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(ClassName));
             
             #line default
             #line hidden
             this.Write(" extends ");
             
-            #line 16 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Domain\Templates\DomainModel\DomainModelTemplate.tt"
+            #line 14 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Domain\Templates\DomainModel\DomainModelTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(GetBaseClass()));
             
             #line default
             #line hidden
-            this.Write(" implements Serializable {\r\n    private static final long serialVersionUID = 1L;\r" +
-                    "\n");
+            this.Write(" {\r\n    private static final long serialVersionUID = 1L;\r\n");
             
-            #line 18 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Domain\Templates\DomainModel\DomainModelTemplate.tt"
+            #line 16 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Domain\Templates\DomainModel\DomainModelTemplate.tt"
   foreach(var attribute in Model.Attributes) { 
             
             #line default
             #line hidden
             this.Write("    ");
             
-            #line 19 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Domain\Templates\DomainModel\DomainModelTemplate.tt"
+            #line 17 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Domain\Templates\DomainModel\DomainModelTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(GetDecoratorsOutput(x => x.BeforeField(attribute))));
             
             #line default
             #line hidden
             this.Write("\r\n    private ");
             
-            #line 20 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Domain\Templates\DomainModel\DomainModelTemplate.tt"
+            #line 18 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Domain\Templates\DomainModel\DomainModelTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(GetTypeName(attribute)));
             
             #line default
             #line hidden
             this.Write(" ");
             
-            #line 20 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Domain\Templates\DomainModel\DomainModelTemplate.tt"
+            #line 18 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Domain\Templates\DomainModel\DomainModelTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(attribute.Name.ToCamelCase()));
             
             #line default
             #line hidden
             this.Write(";\r\n");
             
-            #line 21 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Domain\Templates\DomainModel\DomainModelTemplate.tt"
+            #line 19 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Domain\Templates\DomainModel\DomainModelTemplate.tt"
   } 
             
             #line default
             #line hidden
             this.Write("\r\n");
             
-            #line 23 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Domain\Templates\DomainModel\DomainModelTemplate.tt"
+            #line 21 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Domain\Templates\DomainModel\DomainModelTemplate.tt"
   foreach(var associationEnd in Model.AssociatedClasses.Where(x => x.IsNavigable)) { 
             
             #line default
             #line hidden
             this.Write("    ");
             
-            #line 24 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Domain\Templates\DomainModel\DomainModelTemplate.tt"
+            #line 22 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Domain\Templates\DomainModel\DomainModelTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(GetDecoratorsOutput(x => x.BeforeField(associationEnd))));
             
             #line default
             #line hidden
             this.Write("\r\n    private ");
             
-            #line 25 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Domain\Templates\DomainModel\DomainModelTemplate.tt"
+            #line 23 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Domain\Templates\DomainModel\DomainModelTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(GetTypeName(associationEnd)));
             
             #line default
             #line hidden
             this.Write(" ");
             
-            #line 25 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Domain\Templates\DomainModel\DomainModelTemplate.tt"
+            #line 23 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Domain\Templates\DomainModel\DomainModelTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(associationEnd.Name.ToCamelCase()));
             
             #line default
             #line hidden
             this.Write(";\r\n");
             
-            #line 26 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Domain\Templates\DomainModel\DomainModelTemplate.tt"
+            #line 24 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Domain\Templates\DomainModel\DomainModelTemplate.tt"
   } 
             
             #line default

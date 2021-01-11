@@ -1,4 +1,6 @@
 using System.Collections.Generic;
+using System.Linq;
+using System.Runtime.InteropServices.ComTypes;
 using Intent.Engine;
 using Intent.Modules.Common.Java;
 using Intent.Modules.Common.Java.Templates;
@@ -13,7 +15,7 @@ using Intent.Templates;
 namespace Intent.Modules.Java.Domain.Templates.AbstractEntity
 {
     [IntentManaged(Mode.Merge, Signature = Mode.Fully)]
-    partial class AbstractEntityTemplate : JavaTemplateBase<object>
+    partial class AbstractEntityTemplate : JavaTemplateBase<object, AbstractEntityDecorator>
     {
         [IntentManaged(Mode.Fully)]
         public const string TemplateId = "Intent.Java.Domain.AbstractEntity";
@@ -30,6 +32,26 @@ namespace Intent.Modules.Java.Domain.Templates.AbstractEntity
                 className: $"AbstractEntity",
                 package: $"{OutputTarget.GetPackage()}"
             );
+        }
+
+        private string GetClassAnnotations()
+        {
+            return string.Join(@"
+", new [] { "@Data" }.Concat( GetDecorators().SelectMany(x => x.ClassAnnotations())));
+        }
+
+        private string GetFields()
+        {
+            var fields = GetDecoratorsOutput(x => x.Fields());
+            return string.IsNullOrWhiteSpace(fields) ? "" : $@"
+    {fields}";
+        }
+
+        private string GetMethods()
+        {
+            var methods = GetDecoratorsOutput(x => x.Methods());
+            return string.IsNullOrWhiteSpace(methods) ? "" : $@"
+    {methods}";
         }
 
     }

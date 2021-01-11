@@ -25,7 +25,7 @@ namespace Intent.Modules.Java.SpringBoot.Templates.RestController
     
     #line 1 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.SpringBoot\Templates\RestController\RestControllerTemplate.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "16.0.0.0")]
-    public partial class RestControllerTemplate : JavaTemplateBase<ServiceModel>
+    public partial class RestControllerTemplate : JavaTemplateBase<Intent.Modelers.Services.Api.ServiceModel>
     {
 #line hidden
         /// <summary>
@@ -42,7 +42,6 @@ namespace Intent.Modules.Java.SpringBoot.Templates.RestController
             #line hidden
             this.Write(@";
 
-import io.micrometer.core.annotation.Timed;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
@@ -51,117 +50,142 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Map;
 
 @RestController
-@RequestMapping(""");
+");
             
-            #line 22 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.SpringBoot\Templates\RestController\RestControllerTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(GetApiPath()));
+            #line 21 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.SpringBoot\Templates\RestController\RestControllerTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(GetControllerAnnotations()));
             
             #line default
             #line hidden
-            this.Write("\")\r\n@AllArgsConstructor\r\n@Slf4j\r\npublic class ");
+            this.Write("\r\n@AllArgsConstructor\r\n@Slf4j\r\npublic class ");
             
-            #line 25 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.SpringBoot\Templates\RestController\RestControllerTemplate.tt"
+            #line 24 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.SpringBoot\Templates\RestController\RestControllerTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(ClassName));
             
             #line default
             #line hidden
             this.Write(" {\r\n    private final ");
             
-            #line 26 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.SpringBoot\Templates\RestController\RestControllerTemplate.tt"
+            #line 25 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.SpringBoot\Templates\RestController\RestControllerTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(GetServiceInterfaceName()));
             
             #line default
             #line hidden
             this.Write(" ");
             
-            #line 26 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.SpringBoot\Templates\RestController\RestControllerTemplate.tt"
+            #line 25 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.SpringBoot\Templates\RestController\RestControllerTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(GetServiceInterfaceName().ToCamelCase()));
             
             #line default
             #line hidden
             this.Write(";\r\n");
             
-            #line 27 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.SpringBoot\Templates\RestController\RestControllerTemplate.tt"
+            #line 26 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.SpringBoot\Templates\RestController\RestControllerTemplate.tt"
   foreach(var operation in Model.Operations) { 
             
             #line default
             #line hidden
-            this.Write("\r\n    @GetMapping(\"/v1/");
+            this.Write("\r\n    ");
+            
+            #line 28 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.SpringBoot\Templates\RestController\RestControllerTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(GetOperationAnnotations(operation)));
+            
+            #line default
+            #line hidden
+            this.Write("\r\n    public ");
             
             #line 29 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.SpringBoot\Templates\RestController\RestControllerTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(ClassName.ToKebabCase()));
+            this.Write(this.ToStringHelper.ToStringWithCulture(GetReturnType(operation)));
             
             #line default
             #line hidden
-            this.Write("/");
+            this.Write(" ");
             
             #line 29 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.SpringBoot\Templates\RestController\RestControllerTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name.ToKebabCase()));
-            
-            #line default
-            #line hidden
-            this.Write("\")\r\n    @Timed(value = \"QRYSCU\", extraTags = {\"service\", \"");
-            
-            #line 30 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.SpringBoot\Templates\RestController\RestControllerTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
-            
-            #line default
-            #line hidden
-            this.Write("\"})//QRYSCU is the audit name of the service and is used in metrics\r\n    public R" +
-                    "esponseEntity<");
-            
-            #line 31 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.SpringBoot\Templates\RestController\RestControllerTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(GetTypeName(operation)));
-            
-            #line default
-            #line hidden
-            this.Write("> ");
-            
-            #line 31 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.SpringBoot\Templates\RestController\RestControllerTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("(");
             
-            #line 31 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.SpringBoot\Templates\RestController\RestControllerTemplate.tt"
+            #line 29 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.SpringBoot\Templates\RestController\RestControllerTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(GetParameters(operation)));
             
             #line default
             #line hidden
-            this.Write(") {\r\n        final long startTime = System.currentTimeMillis();\r\n        \r\n      " +
-                    "  final ");
+            this.Write(") {\r\n");
             
-            #line 34 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.SpringBoot\Templates\RestController\RestControllerTemplate.tt"
+            #line 30 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.SpringBoot\Templates\RestController\RestControllerTemplate.tt"
+      if (operation.ReturnType != null) { 
+            
+            #line default
+            #line hidden
+            this.Write("        final ");
+            
+            #line 31 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.SpringBoot\Templates\RestController\RestControllerTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(GetTypeName(operation)));
             
             #line default
             #line hidden
             this.Write(" result = ");
             
-            #line 34 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.SpringBoot\Templates\RestController\RestControllerTemplate.tt"
+            #line 31 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.SpringBoot\Templates\RestController\RestControllerTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(GetServiceInterfaceName().ToCamelCase()));
             
             #line default
             #line hidden
             this.Write(".");
             
-            #line 34 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.SpringBoot\Templates\RestController\RestControllerTemplate.tt"
+            #line 31 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.SpringBoot\Templates\RestController\RestControllerTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("(");
             
-            #line 34 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.SpringBoot\Templates\RestController\RestControllerTemplate.tt"
+            #line 31 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.SpringBoot\Templates\RestController\RestControllerTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.GetArguments(operation.Parameters)));
             
             #line default
             #line hidden
-            this.Write(");\r\n\r\n        log.info(\"Completed: getCustomerBySubscription()\");\r\n        return" +
-                    " new ResponseEntity<>(result, HttpStatus.OK);\r\n    }\r\n");
+            this.Write(");\r\n\r\n        return new ResponseEntity<>(result, HttpStatus.OK);\r\n");
             
-            #line 39 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.SpringBoot\Templates\RestController\RestControllerTemplate.tt"
+            #line 34 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.SpringBoot\Templates\RestController\RestControllerTemplate.tt"
+      } else { 
+            
+            #line default
+            #line hidden
+            this.Write("        ");
+            
+            #line 35 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.SpringBoot\Templates\RestController\RestControllerTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(GetServiceInterfaceName().ToCamelCase()));
+            
+            #line default
+            #line hidden
+            this.Write(".");
+            
+            #line 35 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.SpringBoot\Templates\RestController\RestControllerTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
+            
+            #line default
+            #line hidden
+            this.Write("(");
+            
+            #line 35 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.SpringBoot\Templates\RestController\RestControllerTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.GetArguments(operation.Parameters)));
+            
+            #line default
+            #line hidden
+            this.Write(");\r\n");
+            
+            #line 36 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.SpringBoot\Templates\RestController\RestControllerTemplate.tt"
+      } 
+            
+            #line default
+            #line hidden
+            this.Write("    }\r\n");
+            
+            #line 38 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.SpringBoot\Templates\RestController\RestControllerTemplate.tt"
   } 
             
             #line default
