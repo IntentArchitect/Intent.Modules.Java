@@ -19,6 +19,26 @@
     </FileLog>
     <FileLog>
       <ProjectId>ccea972e-d4bf-492c-a8a3-58fdb0aac140</ProjectId>
+      <SolutionRelativeFilePath>../Intent.Modules.Java.ModelMapper/Templates/EntityToDtoMapping/EntityToDtoMappingTemplate.cs</SolutionRelativeFilePath>
+      <ProjectRelativeFilePath>EntityToDtoMapping/EntityToDtoMappingTemplate.cs</ProjectRelativeFilePath>
+    </FileLog>
+    <FileLog>
+      <ProjectId>ccea972e-d4bf-492c-a8a3-58fdb0aac140</ProjectId>
+      <SolutionRelativeFilePath>../Intent.Modules.Java.ModelMapper/Templates/EntityToDtoMapping/EntityToDtoMappingTemplate.tt</SolutionRelativeFilePath>
+      <ProjectRelativeFilePath>EntityToDtoMapping/EntityToDtoMappingTemplate.tt</ProjectRelativeFilePath>
+    </FileLog>
+    <FileLog>
+      <ProjectId>ccea972e-d4bf-492c-a8a3-58fdb0aac140</ProjectId>
+      <SolutionRelativeFilePath>../Intent.Modules.Java.ModelMapper/Templates/EntityToDtoMapping/EntityToDtoMappingTemplatePartial.cs</SolutionRelativeFilePath>
+      <ProjectRelativeFilePath>EntityToDtoMapping/EntityToDtoMappingTemplatePartial.cs</ProjectRelativeFilePath>
+    </FileLog>
+    <FileLog>
+      <ProjectId>ccea972e-d4bf-492c-a8a3-58fdb0aac140</ProjectId>
+      <SolutionRelativeFilePath>../Intent.Modules.Java.ModelMapper/Templates/EntityToDtoMapping/EntityToDtoMappingTemplateRegistration.cs</SolutionRelativeFilePath>
+      <ProjectRelativeFilePath>EntityToDtoMapping/EntityToDtoMappingTemplateRegistration.cs</ProjectRelativeFilePath>
+    </FileLog>
+    <FileLog>
+      <ProjectId>ccea972e-d4bf-492c-a8a3-58fdb0aac140</ProjectId>
       <SolutionRelativeFilePath>../Intent.Modules.Java.ModelMapper/Templates/ModelMapperBean/ModelMapperBeanTemplate.cs</SolutionRelativeFilePath>
       <ProjectRelativeFilePath>ModelMapperBean/ModelMapperBeanTemplate.cs</ProjectRelativeFilePath>
     </FileLog>

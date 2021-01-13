@@ -1,7 +1,6 @@
 package com.samples.app.application.services.impl;
 
 import lombok.AllArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 
 import org.modelmapper.ModelMapper;
 import org.modelmapper.TypeToken;
@@ -9,7 +8,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
-
 import com.samples.app.application.services.TestService;
 import com.samples.app.domain.models.User;
 import com.samples.app.intent.IntentMerge;

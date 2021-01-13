@@ -5,6 +5,8 @@ using Intent.Modules.Common.Java.Templates;
 using Intent.Modules.Common.Templates;
 using Intent.RoslynWeaver.Attributes;
 using Intent.Templates;
+using Intent.Modelers.Services.Api;
+using Intent.Modules.Java.ModelMapper.Templates.EntityToDtoMapping;
 
 
 [assembly: DefaultIntentManaged(Mode.Merge)]
@@ -13,13 +15,13 @@ using Intent.Templates;
 namespace Intent.Modules.Java.ModelMapper.Templates.ModelMapperBean
 {
     [IntentManaged(Mode.Merge, Signature = Mode.Fully)]
-    partial class ModelMapperBeanTemplate : JavaTemplateBase<object>
+    partial class ModelMapperBeanTemplate : JavaTemplateBase<IList<Intent.Modelers.Services.Api.DTOModel>>
     {
         [IntentManaged(Mode.Fully)]
         public const string TemplateId = "Intent.Java.ModelMapper.ModelMapperBean";
 
         [IntentManaged(Mode.Merge, Body = Mode.Ignore, Signature = Mode.Fully)]
-        public ModelMapperBeanTemplate(IOutputTarget outputTarget, object model) : base(TemplateId, outputTarget, model)
+        public ModelMapperBeanTemplate(IOutputTarget outputTarget, IList<Intent.Modelers.Services.Api.DTOModel> model) : base(TemplateId, outputTarget, model)
         {
         }
 
@@ -32,5 +34,12 @@ namespace Intent.Modules.Java.ModelMapper.Templates.ModelMapperBean
             );
         }
 
+        private IEnumerable<string> GetMappings()
+        {
+            foreach (var mappedDto in Model)
+            {
+                yield return GetTypeName(EntityToDtoMappingTemplate.TemplateId, mappedDto);
+            }
+        }
     }
 }

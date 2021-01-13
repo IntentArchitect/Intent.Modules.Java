@@ -1,12 +1,9 @@
 package com.samples.app.beans;
 
-
-import com.samples.app.application.models.UserDto;
-import com.samples.app.domain.models.User;
-
 import org.modelmapper.ModelMapper;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import com.samples.app.application.mappings.UserToUserDtoMapping;
 
 @Configuration
 public class ModelMapperBean {
@@ -14,7 +11,12 @@ public class ModelMapperBean {
     public ModelMapper modelMapper() {
         var modelMapper = new ModelMapper();
 
-        modelMapper.addMappings(new UserToUserDtoMapping());
+        InitializeMappings(modelMapper);
+
         return modelMapper;
+    }
+
+    private void InitializeMappings(ModelMapper modelMapper) {
+        modelMapper.addMappings(new UserToUserDtoMapping());
     }
 }

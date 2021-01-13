@@ -1,4 +1,4 @@
-<#@ template language="C#" inherits="JavaTemplateBase<object>" #>
+<#@ template language="C#" inherits="JavaTemplateBase<IList<Intent.Modelers.Services.Api.DTOModel>>" #>
 <#@ assembly name="System.Core" #>
 <#@ import namespace="System.Collections.Generic" #>
 <#@ import namespace="System.Linq" #>
@@ -9,18 +9,24 @@
 <#@ import namespace="Intent.Metadata.Models" #>
 package <#= Package #>;
 
+import org.modelmapper.ModelMapper;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+@Configuration
 public class <#= ClassName #> {
-    private String exampleFiled;
+    @Bean
+    public ModelMapper modelMapper() {
+        var modelMapper = new ModelMapper();
 
-    public <#= ClassName #>() {
+        InitializeMappings(modelMapper);
 
+        return modelMapper;
     }
 
-    public void setExampleFiled(String value) {
-        this.exampleField = value;
-    }
-
-    public String getExampleField() {
-        return this.exampleField;
+    private void InitializeMappings(ModelMapper modelMapper) {
+<#  foreach(var mapping in GetMappings()) { #>
+        modelMapper.addMappings(new <#= mapping #>());
+<#  } #>
     }
 }

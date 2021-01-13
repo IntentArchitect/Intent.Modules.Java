@@ -1,7 +1,6 @@
 package com.samples.app.application.rest;
 
 import lombok.AllArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -12,6 +11,7 @@ import com.samples.app.application.services.TestService;
 import com.samples.app.application.models.UserUpdateDto;
 import com.samples.app.application.models.UserDto;
 import com.samples.app.application.models.UserCreateDto;
+import lombok.extern.slf4j.Slf4j;
 
 @RestController
 @RequestMapping("/api/test")

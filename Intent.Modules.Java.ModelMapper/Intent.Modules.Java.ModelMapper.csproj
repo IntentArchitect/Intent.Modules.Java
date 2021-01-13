@@ -2,6 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.1</TargetFramework>
+    <LangVersion>latest</LangVersion>
   </PropertyGroup>
 
   <ItemGroup>
@@ -10,6 +11,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>ModelMapperBeanTemplate.tt</DependentUpon>
     </Compile>
+    <Compile Update="Templates\EntityToDtoMapping\EntityToDtoMappingTemplate.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>EntityToDtoMappingTemplate.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
 
   <ItemGroup>
@@ -17,17 +23,32 @@
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>ModelMapperBeanTemplate.cs</LastGenOutput>
     </None>
+    <None Update="Templates\EntityToDtoMapping\EntityToDtoMappingTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>EntityToDtoMappingTemplate.cs</LastGenOutput>
+    </None>
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Intent.Modules.Common" Version="3.0.1" />
     <PackageReference Include="Intent.Modules.Common.Java" Version="3.0.1" />
+    <PackageReference Include="Intent.Modules.Modelers.Domain" Version="3.0.1" />
+    <PackageReference Include="Intent.Modules.Modelers.Services" Version="3.0.1" />
     <PackageReference Include="Intent.Packager" Version="3.0.1">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Intent.RoslynWeaver.Attributes" Version="1.0.0" />
     <PackageReference Include="Intent.SoftwareFactory.SDK" Version="3.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Intent.Modules.Java.Domain\Intent.Modules.Java.Domain.csproj" />
+    <ProjectReference Include="..\Intent.Modules.Java.Services\Intent.Modules.Java.Services.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
   </ItemGroup>
 
 </Project>

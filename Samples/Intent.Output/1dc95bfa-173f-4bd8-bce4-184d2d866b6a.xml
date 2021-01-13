@@ -13,6 +13,11 @@
       <ProjectRelativeFilePath>Application.java</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
+      <ProjectId>9d83cccc-8981-4228-b883-93904c2aa86e</ProjectId>
+      <SolutionRelativeFilePath>../SpringBoot.App/src/src/main/java/com/samples/app/application/mappings/UserToUserDtoMapping.java</SolutionRelativeFilePath>
+      <ProjectRelativeFilePath>UserToUserDtoMapping.java</ProjectRelativeFilePath>
+    </FileLog>
+    <FileLog>
       <ProjectId>6a0918bd-6fc8-408a-885b-fcaa97cfaae3</ProjectId>
       <SolutionRelativeFilePath>../SpringBoot.App/src/src/main/java/com/samples/app/application/models/UserCreateDto.java</SolutionRelativeFilePath>
       <ProjectRelativeFilePath>UserCreateDto.java</ProjectRelativeFilePath>
@@ -41,6 +46,11 @@
       <ProjectId>e77153fd-99ac-460e-b13c-9835bcf4636f</ProjectId>
       <SolutionRelativeFilePath>../SpringBoot.App/src/src/main/java/com/samples/app/application/services/TestService.java</SolutionRelativeFilePath>
       <ProjectRelativeFilePath>TestService.java</ProjectRelativeFilePath>
+    </FileLog>
+    <FileLog>
+      <ProjectId>a549299a-c55e-4724-bba2-a6aa305bb030</ProjectId>
+      <SolutionRelativeFilePath>../SpringBoot.App/src/src/main/java/com/samples/app/beans/ModelMapperBean.java</SolutionRelativeFilePath>
+      <ProjectRelativeFilePath>ModelMapperBean.java</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
       <ProjectId>d700e491-0f9a-4675-939a-db3049531879</ProjectId>
