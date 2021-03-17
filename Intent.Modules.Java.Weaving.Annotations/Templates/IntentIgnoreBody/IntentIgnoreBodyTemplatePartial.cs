@@ -19,7 +19,7 @@ namespace Intent.Modules.Java.Weaving.Annotations.Templates.IntentIgnoreBody
         public const string TemplateId = "Intent.Java.Weaving.Annotations.IntentIgnoreBody";
 
         [IntentManaged(Mode.Merge, Body = Mode.Ignore, Signature = Mode.Fully)]
-        public IntentIgnoreBodyTemplate(IOutputTarget outputTarget, object model) : base(TemplateId, outputTarget, model)
+        public IntentIgnoreBodyTemplate(IOutputTarget outputTarget, object model = null) : base(TemplateId, outputTarget, model)
         {
         }
 

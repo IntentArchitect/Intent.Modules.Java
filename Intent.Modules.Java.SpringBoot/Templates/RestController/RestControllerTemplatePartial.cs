@@ -23,7 +23,8 @@ namespace Intent.Modules.Java.SpringBoot.Templates.RestController
         [IntentManaged(Mode.Fully)]
         public const string TemplateId = "Intent.Java.SpringBoot.RestController";
 
-        public RestControllerTemplate(IOutputTarget outputTarget, ServiceModel model) : base(TemplateId, outputTarget, model)
+        [IntentManaged(Mode.Merge, Signature = Mode.Fully)]
+        public RestControllerTemplate(IOutputTarget outputTarget, Intent.Modelers.Services.Api.ServiceModel model) : base(TemplateId, outputTarget, model)
         {
             AddTypeSource(DataTransferModelTemplate.TemplateId, "List<{0}>");
             AddDependency(new JavaDependency("org.springframework.boot", "spring-boot-starter", "2.3.1.RELEASE"));
@@ -98,7 +99,7 @@ namespace Intent.Modules.Java.SpringBoot.Templates.RestController
                 ;
         }
 
-        private string GetParameter(OperationModel operation,  ParameterModel parameter)
+        private string GetParameter(OperationModel operation, ParameterModel parameter)
         {
             return $"{GetParameterBindingAttribute(operation, parameter)}{GetTypeName(parameter)} {parameter.Name}";
         }
@@ -109,10 +110,10 @@ namespace Intent.Modules.Java.SpringBoot.Templates.RestController
             {
                 if (GetTypeInfo(parameter.TypeReference).IsPrimitive && !parameter.TypeReference.IsCollection)
                 {
-                    if (GetPath(operation) != null && GetPath(operation).Split('/', StringSplitOptions.RemoveEmptyEntries).Any(x => 
-                        x.Contains('{') 
-                        && x.Contains('}') 
-                        && x.Split( new [] {'{', '}'}, StringSplitOptions.RemoveEmptyEntries).Any(i => i == parameter.Name)))
+                    if (GetPath(operation) != null && GetPath(operation).Split('/', StringSplitOptions.RemoveEmptyEntries).Any(x =>
+                        x.Contains('{')
+                        && x.Contains('}')
+                        && x.Split(new[] { '{', '}' }, StringSplitOptions.RemoveEmptyEntries).Any(i => i == parameter.Name)))
                     {
                         return $"@PathVariable(value = \"{parameter.Name}\"{(parameter.Type.IsNullable ? $", required = {parameter.TypeReference.IsNullable.ToString().ToLower()}" : "")}) ";
                     }

@@ -45,10 +45,8 @@ namespace Intent.Modules.Java.Persistence.JPA.Decorators
         public override string ClassAnnotations()
         {
             return $@"
-@EqualsAndHashCode(callSuper = true)
 @Entity
-@Table(name = ""{_template.Model.Name.ToSnakeCase()}"")
-@Data";
+@Table(name = ""{_template.Model.Name.ToSnakeCase()}"")";
         }
 
         public override string BeforeField(AttributeModel model)
@@ -67,8 +65,7 @@ namespace Intent.Modules.Java.Persistence.JPA.Decorators
             }
             annotations.Add($@"@Column({string.Join(", ", columnSettings)})");
 
-            return @"
-    " + string.Join(@"
+            return string.Join(@"
     ", annotations);
         }
 
@@ -113,8 +110,7 @@ namespace Intent.Modules.Java.Persistence.JPA.Decorators
                 }
             }
 
-            return @"
-    " + string.Join(@"
+            return string.Join(@"
     ", annotations);
         }
 
@@ -122,8 +118,6 @@ namespace Intent.Modules.Java.Persistence.JPA.Decorators
         {
             return _imports.Concat(new[]
             {
-                "lombok.Data",
-                "lombok.EqualsAndHashCode",
                 "javax.persistence.*",
             }).Distinct();
 

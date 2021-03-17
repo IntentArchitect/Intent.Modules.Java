@@ -19,7 +19,8 @@ namespace Intent.Modules.Java.Services.Templates.ServiceInterface
         [IntentManaged(Mode.Fully)]
         public const string TemplateId = "Intent.Java.Services.ServiceInterface";
 
-        public ServiceInterfaceTemplate(IOutputTarget outputTarget, ServiceModel model) : base(TemplateId, outputTarget, model)
+        [IntentManaged(Mode.Merge, Signature = Mode.Fully)]
+        public ServiceInterfaceTemplate(IOutputTarget outputTarget, Intent.Modelers.Services.Api.ServiceModel model) : base(TemplateId, outputTarget, model)
         {
             AddTypeSource(DataTransferModelTemplate.TemplateId, "List<{0}>");
         }

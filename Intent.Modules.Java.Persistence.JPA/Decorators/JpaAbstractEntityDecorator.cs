@@ -29,46 +29,31 @@ namespace Intent.Modules.Java.Persistence.JPA.Decorators
         public override string Fields()
         {
             return @"
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    
-    @CreatedBy
-    @Column(name = ""created_by"", length = 50)
-    @JsonIgnore
-    private String createdBy;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Integer id;
 
-    @CreatedDate
-    @Column(name = ""created_date"", updatable = false)
-    @JsonIgnore
-    private Instant createdDate = Instant.now();
+	public Integer getId() {
+		return id;
+	}
 
-    @LastModifiedBy
-    @Column(name = ""last_modified_by"", length = 50)
-    @JsonIgnore
-    private String lastModifiedBy;
+	public void setId(Integer id) {
+		this.id = id;
+	}
 
-    @LastModifiedDate
-    @Column(name = ""last_modified_date"")
-    @JsonIgnore
-    private Instant lastModifiedDate = Instant.now();
+	public boolean isNew() {
+		return this.id == null;
+	}
 ";
         }
 
         public IEnumerable<string> DeclareImports()
         {
-            yield return "java.time.Instant";
-            yield return "com.fasterxml.jackson.annotation.JsonIgnore";
-            yield return "org.springframework.data.annotation.CreatedBy";
-            yield return "org.springframework.data.annotation.CreatedDate";
-            yield return "org.springframework.data.annotation.LastModifiedBy";
-            yield return "org.springframework.data.annotation.LastModifiedDate";
-            yield return "javax.persistence.Column";
             yield return "javax.persistence.GeneratedValue";
             yield return "javax.persistence.GenerationType";
             yield return "javax.persistence.Id";
             yield return "javax.persistence.MappedSuperclass";
-            
+
         }
     }
 }

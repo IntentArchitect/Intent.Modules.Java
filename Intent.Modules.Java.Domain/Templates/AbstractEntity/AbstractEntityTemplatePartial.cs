@@ -21,7 +21,7 @@ namespace Intent.Modules.Java.Domain.Templates.AbstractEntity
         public const string TemplateId = "Intent.Java.Domain.AbstractEntity";
 
         [IntentManaged(Mode.Merge, Body = Mode.Ignore, Signature = Mode.Fully)]
-        public AbstractEntityTemplate(IOutputTarget outputTarget, object model) : base(TemplateId, outputTarget, model)
+        public AbstractEntityTemplate(IOutputTarget outputTarget, object model = null) : base(TemplateId, outputTarget, model)
         {
         }
 
@@ -37,7 +37,7 @@ namespace Intent.Modules.Java.Domain.Templates.AbstractEntity
         private string GetClassAnnotations()
         {
             return string.Join(@"
-", new [] { "@Data" }.Concat( GetDecorators().SelectMany(x => x.ClassAnnotations())));
+", GetDecorators().SelectMany(x => x.ClassAnnotations()));
         }
 
         private string GetFields()

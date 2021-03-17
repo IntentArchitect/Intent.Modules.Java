@@ -18,7 +18,8 @@ namespace Intent.Modules.Java.Services.Templates.DataTransferModel
         [IntentManaged(Mode.Fully)]
         public const string TemplateId = "Intent.Java.Services.DataTransferModel";
 
-        public DataTransferModelTemplate(IOutputTarget outputTarget, DTOModel model) : base(TemplateId, outputTarget, model)
+        [IntentManaged(Mode.Merge, Signature = Mode.Fully)]
+        public DataTransferModelTemplate(IOutputTarget outputTarget, Intent.Modelers.Services.Api.DTOModel model) : base(TemplateId, outputTarget, model)
         {
             AddDependency(new JavaDependency("org.projectlombok", "lombok", "1.18.12"));
         }

@@ -27,7 +27,8 @@ namespace Intent.Modules.Java.Maven.Templates.PomFile
         [IntentManaged(Mode.Fully)]
         public const string TemplateId = "Intent.Java.Maven.PomFile";
 
-        public PomFileTemplate(IOutputTarget outputTarget, object model) : base(TemplateId, outputTarget, model)
+        [IntentManaged(Mode.Merge, Signature = Mode.Fully)]
+        public PomFileTemplate(IOutputTarget outputTarget, object model = null) : base(TemplateId, outputTarget, model)
         {
             ExecutionContext.EventDispatcher.Subscribe<JavaDependency>(Handle);
         }

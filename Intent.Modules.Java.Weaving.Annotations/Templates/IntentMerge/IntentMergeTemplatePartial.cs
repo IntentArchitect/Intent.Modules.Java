@@ -19,7 +19,7 @@ namespace Intent.Modules.Java.Weaving.Annotations.Templates.IntentMerge
         public const string TemplateId = "Intent.Java.Weaving.Annotations.IntentMerge";
 
         [IntentManaged(Mode.Merge, Body = Mode.Ignore, Signature = Mode.Fully)]
-        public IntentMergeTemplate(IOutputTarget outputTarget, object model) : base(TemplateId, outputTarget, model)
+        public IntentMergeTemplate(IOutputTarget outputTarget, object model = null) : base(TemplateId, outputTarget, model)
         {
         }
 

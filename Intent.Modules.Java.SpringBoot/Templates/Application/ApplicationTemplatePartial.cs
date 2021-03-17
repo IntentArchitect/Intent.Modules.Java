@@ -18,7 +18,8 @@ namespace Intent.Modules.Java.SpringBoot.Templates.Application
         [IntentManaged(Mode.Fully)]
         public const string TemplateId = "Intent.Java.SpringBoot.Application";
 
-        public ApplicationTemplate(IOutputTarget outputTarget, object model) : base(TemplateId, outputTarget, model)
+        [IntentManaged(Mode.Merge, Signature = Mode.Fully)]
+        public ApplicationTemplate(IOutputTarget outputTarget, object model = null) : base(TemplateId, outputTarget, model)
         {
         }
 

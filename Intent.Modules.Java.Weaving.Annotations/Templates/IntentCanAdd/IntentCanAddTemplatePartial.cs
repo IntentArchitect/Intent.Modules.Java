@@ -19,7 +19,7 @@ namespace Intent.Modules.Java.Weaving.Annotations.Templates.IntentCanAdd
         public const string TemplateId = "Intent.Java.Weaving.Annotations.IntentCanAdd";
 
         [IntentManaged(Mode.Merge, Body = Mode.Ignore, Signature = Mode.Fully)]
-        public IntentCanAddTemplate(IOutputTarget outputTarget, object model) : base(TemplateId, outputTarget, model)
+        public IntentCanAddTemplate(IOutputTarget outputTarget, object model = null) : base(TemplateId, outputTarget, model)
         {
         }
 

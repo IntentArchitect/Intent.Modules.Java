@@ -20,7 +20,8 @@ namespace Intent.Modules.Java.Services.Templates.ServiceImplementation
         [IntentManaged(Mode.Fully)]
         public const string TemplateId = "Intent.Java.Services.ServiceImplementation";
 
-        public ServiceImplementationTemplate(IOutputTarget outputTarget, ServiceModel model) : base(TemplateId, outputTarget, model)
+        [IntentManaged(Mode.Merge, Signature = Mode.Fully)]
+        public ServiceImplementationTemplate(IOutputTarget outputTarget, Intent.Modelers.Services.Api.ServiceModel model) : base(TemplateId, outputTarget, model)
         {
             AddDependency(new JavaDependency("org.projectlombok", "lombok", "1.18.12"));
             AddTemplateDependency("Intent.Java.SpringBoot.IntentAnnotations");
