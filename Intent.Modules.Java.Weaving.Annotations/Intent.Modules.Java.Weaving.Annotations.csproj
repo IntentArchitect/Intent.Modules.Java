@@ -40,6 +40,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>IntentMergeTemplate.tt</DependentUpon>
     </Compile>
+  
+    <Compile Update="Templates\ModeEnum\ModeEnumTemplate.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ModeEnumTemplate.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
 
   <ItemGroup>
@@ -71,11 +77,16 @@
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>IntentMergeTemplate.cs</LastGenOutput>
     </None>
+  
+    <None Update="Templates\ModeEnum\ModeEnumTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>ModeEnumTemplate.cs</LastGenOutput>
+    </None>
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Intent.Modules.Common" Version="3.0.3" />
-    <PackageReference Include="Intent.Modules.Common.Java" Version="3.0.1" />
+    <PackageReference Include="Intent.Modules.Common.Java" Version="3.0.3" />
     <PackageReference Include="Intent.Packager" Version="3.0.1">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>

@@ -1,4 +1,4 @@
-<#@ template language="C#" inherits="JavaTemplateBase<Intent.Modelers.Services.Api.DTOModel>" #>
+<#@ template language="C#" inherits="JavaTemplateBase<Intent.Modelers.Services.Api.DTOModel, Intent.Modules.Java.Services.Templates.DataTransferModel.DataTransferModelDecorator>" #>
 <#@ assembly name="System.Core" #>
 <#@ import namespace="System.Collections.Generic" #>
 <#@ import namespace="System.Linq" #>
@@ -20,5 +20,5 @@ import lombok.NoArgsConstructor;
 public class <#= ClassName #> {
 <#  foreach(var field in Model.Fields) { #>
     private <#= GetTypeName(field) #> <#= field.Name #>;
-<#  } #>
+<#  } #><#= GetDecoratorsOutput(x => x.Methods()) #>
 }

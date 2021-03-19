@@ -44,7 +44,7 @@ namespace Intent.Modules.Java.BeanValidation.Decorators
             var annotations = new List<string>();
             if (model.GetTextConstraints()?.MaxLength() != null)
             {
-                annotations.Add($"@{Use("javax.validation.constraints.Size")}(max = {model.GetTextConstraints().MaxLength()})");
+                annotations.Add($"@{("javax.validation.constraints.Size")}(max = {model.GetTextConstraints().MaxLength()})");
             }
 
             if (model.Name.ToLower().EndsWith("email"))

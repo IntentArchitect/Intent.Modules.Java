@@ -26,9 +26,10 @@ namespace Intent.Modules.Java.SpringBoot.Templates.RestController
         [IntentManaged(Mode.Merge, Signature = Mode.Fully)]
         public RestControllerTemplate(IOutputTarget outputTarget, Intent.Modelers.Services.Api.ServiceModel model) : base(TemplateId, outputTarget, model)
         {
-            AddTypeSource(DataTransferModelTemplate.TemplateId, "List<{0}>");
             AddDependency(new JavaDependency("org.springframework.boot", "spring-boot-starter", "2.3.1.RELEASE"));
             AddDependency(new JavaDependency("org.springframework.boot", "spring-boot-starter-web", "2.3.1.RELEASE"));
+
+            AddTypeSource(DataTransferModelTemplate.TemplateId, type => $"{ImportType("java.util.List")}<{type}>");
         }
 
         public string RootName => Model.Name.RemoveSuffix("Service", "Controller", "Resource");

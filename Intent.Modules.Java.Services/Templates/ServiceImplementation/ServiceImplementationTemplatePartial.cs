@@ -25,7 +25,8 @@ namespace Intent.Modules.Java.Services.Templates.ServiceImplementation
         {
             AddDependency(new JavaDependency("org.projectlombok", "lombok", "1.18.12"));
             AddTemplateDependency("Intent.Java.SpringBoot.IntentAnnotations");
-            AddTypeSource(DataTransferModelTemplate.TemplateId, "List<{0}>");
+
+            AddTypeSource(DataTransferModelTemplate.TemplateId, type => $"{ImportType("java.util.List")}<{type}>");
         }
 
         [IntentManaged(Mode.Merge, Body = Mode.Ignore, Signature = Mode.Fully)]

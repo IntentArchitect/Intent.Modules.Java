@@ -17,13 +17,17 @@
       <location>mappings</location>
     </template>
   </templates>
-  <decorators></decorators>
+  <decorators>
+    <decorator id="Intent.Java.ModelMapper.DataTransferModelMappingDecorator" externalReference="d51337a7-9ac0-4498-9aef-028fe173ce88" />
+  </decorators>
   <factoryExtensions></factoryExtensions>
   <dependencies>
     <dependency id="Intent.Common" version="3.0.3" />
     <dependency id="Intent.Common.Types" version="3.0.1" />
-    <dependency id="Intent.Common.Java" version="3.0.1" />
+    <dependency id="Intent.Common.Java" version="3.0.3" />
     <dependency id="Intent.Modelers.Services" version="3.0.1" />
+    <dependency id="Intent.Java.Services" version="1.0.0" />
+    <dependency id="Intent.Java.Domain" version="1.0.0" />
   </dependencies>
   <files>
     <file src="$outDir$/$id$.dll" />

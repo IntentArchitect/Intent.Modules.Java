@@ -25,7 +25,7 @@ namespace Intent.Modules.Java.Services.Templates.ServiceInterface
     
     #line 1 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Services\Templates\ServiceInterface\ServiceInterfaceTemplate.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "16.0.0.0")]
-    public partial class ServiceInterfaceTemplate : JavaTemplateBase<ServiceModel>
+    public partial class ServiceInterfaceTemplate : JavaTemplateBase<Intent.Modelers.Services.Api.ServiceModel>
     {
 #line hidden
         /// <summary>

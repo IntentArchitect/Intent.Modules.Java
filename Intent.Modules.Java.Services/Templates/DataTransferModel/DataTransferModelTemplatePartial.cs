@@ -13,7 +13,7 @@ using Intent.Templates;
 namespace Intent.Modules.Java.Services.Templates.DataTransferModel
 {
     [IntentManaged(Mode.Merge, Signature = Mode.Fully)]
-    partial class DataTransferModelTemplate : JavaTemplateBase<Intent.Modelers.Services.Api.DTOModel>
+    partial class DataTransferModelTemplate : JavaTemplateBase<Intent.Modelers.Services.Api.DTOModel, DataTransferModelDecorator>
     {
         [IntentManaged(Mode.Fully)]
         public const string TemplateId = "Intent.Java.Services.DataTransferModel";
@@ -22,6 +22,7 @@ namespace Intent.Modules.Java.Services.Templates.DataTransferModel
         public DataTransferModelTemplate(IOutputTarget outputTarget, Intent.Modelers.Services.Api.DTOModel model) : base(TemplateId, outputTarget, model)
         {
             AddDependency(new JavaDependency("org.projectlombok", "lombok", "1.18.12"));
+            AddTypeSource(TemplateId, type => $"{ImportType("java.util.List")}<{type}>");
         }
 
         [IntentManaged(Mode.Merge, Body = Mode.Ignore, Signature = Mode.Fully)]

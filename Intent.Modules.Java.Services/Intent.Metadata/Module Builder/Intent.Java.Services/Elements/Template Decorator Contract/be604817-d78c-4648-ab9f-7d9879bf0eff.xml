@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<class id="be604817-d78c-4648-ab9f-7d9879bf0eff" type="Template Decorator Contract" typeId="ac1da322-377e-45cf-a2d9-d147a4d91457">
+  <name>DataTransferModelDecorator</name>
+  <display>DataTransferModelDecorator</display>
+  <isAbstract>false</isAbstract>
+  <order>1</order>
+  <genericTypes />
+  <isMapped>false</isMapped>
+  <parentFolderId>be2a8f83-c156-4e1a-8095-00c402a0cb15</parentFolderId>
+  <packageId>e3481ac6-e429-4423-8eba-b5b1bc890f1b</packageId>
+  <packageName>Intent.Java.Services</packageName>
+  <stereotypes />
+  <childElements />
+</class>

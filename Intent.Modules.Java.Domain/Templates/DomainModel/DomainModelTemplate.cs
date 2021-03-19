@@ -34,45 +34,58 @@ namespace Intent.Modules.Java.Domain.Templates.DomainModel
         /// </summary>
         public override string TransformText()
         {
-            this.Write("\n");
             this.Write("package ");
             
-            #line 11 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Domain\Templates\DomainModel\DomainModelTemplate.tt"
+            #line 12 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Domain\Templates\DomainModel\DomainModelTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Package));
             
             #line default
             #line hidden
             this.Write(";\r\n\r\n");
             
-            #line 13 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Domain\Templates\DomainModel\DomainModelTemplate.tt"
+            #line 14 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Domain\Templates\DomainModel\DomainModelTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(GetDecoratorsOutput(x => x.ClassAnnotations())));
             
             #line default
             #line hidden
-            this.Write("\r\npublic class ");
+            this.Write("\r\n");
             
-            #line 14 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Domain\Templates\DomainModel\DomainModelTemplate.tt"
+            #line 15 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Domain\Templates\DomainModel\DomainModelTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.IntentManageAnnotation()));
+            
+            #line default
+            #line hidden
+            this.Write("(privateMethods = ");
+            
+            #line 15 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Domain\Templates\DomainModel\DomainModelTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.IntentModeIgnore()));
+            
+            #line default
+            #line hidden
+            this.Write(")\r\npublic class ");
+            
+            #line 16 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Domain\Templates\DomainModel\DomainModelTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(ClassName));
             
             #line default
             #line hidden
             this.Write(" extends ");
             
-            #line 14 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Domain\Templates\DomainModel\DomainModelTemplate.tt"
+            #line 16 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Domain\Templates\DomainModel\DomainModelTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(GetBaseClass()));
             
             #line default
             #line hidden
             this.Write(" {\r\n    private static final long serialVersionUID = 1L;\r\n");
             
-            #line 16 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Domain\Templates\DomainModel\DomainModelTemplate.tt"
+            #line 18 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Domain\Templates\DomainModel\DomainModelTemplate.tt"
   foreach(var attribute in Model.Attributes) { 
             
             #line default
             #line hidden
             this.Write("\r\n    ");
             
-            #line 18 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Domain\Templates\DomainModel\DomainModelTemplate.tt"
+            #line 20 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Domain\Templates\DomainModel\DomainModelTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(GetDecoratorsOutput(x => x.BeforeField(attribute), @"
     ")));
             
@@ -80,34 +93,34 @@ namespace Intent.Modules.Java.Domain.Templates.DomainModel
             #line hidden
             this.Write("private ");
             
-            #line 19 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Domain\Templates\DomainModel\DomainModelTemplate.tt"
+            #line 21 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Domain\Templates\DomainModel\DomainModelTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(GetTypeName(attribute)));
             
             #line default
             #line hidden
             this.Write(" ");
             
-            #line 19 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Domain\Templates\DomainModel\DomainModelTemplate.tt"
+            #line 21 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Domain\Templates\DomainModel\DomainModelTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(attribute.Name.ToCamelCase()));
             
             #line default
             #line hidden
             this.Write(";\r\n");
             
-            #line 20 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Domain\Templates\DomainModel\DomainModelTemplate.tt"
+            #line 22 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Domain\Templates\DomainModel\DomainModelTemplate.tt"
   } 
             
             #line default
             #line hidden
             
-            #line 21 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Domain\Templates\DomainModel\DomainModelTemplate.tt"
+            #line 23 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Domain\Templates\DomainModel\DomainModelTemplate.tt"
   foreach(var associationEnd in Model.AssociatedClasses.Where(x => x.IsNavigable)) { 
             
             #line default
             #line hidden
             this.Write("\r\n    ");
             
-            #line 23 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Domain\Templates\DomainModel\DomainModelTemplate.tt"
+            #line 25 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Domain\Templates\DomainModel\DomainModelTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(GetDecoratorsOutput(x => x.BeforeField(associationEnd), @"
     ")));
             
@@ -115,193 +128,193 @@ namespace Intent.Modules.Java.Domain.Templates.DomainModel
             #line hidden
             this.Write("private ");
             
-            #line 24 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Domain\Templates\DomainModel\DomainModelTemplate.tt"
+            #line 26 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Domain\Templates\DomainModel\DomainModelTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(GetTypeName(associationEnd)));
             
             #line default
             #line hidden
             this.Write(" ");
             
-            #line 24 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Domain\Templates\DomainModel\DomainModelTemplate.tt"
+            #line 26 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Domain\Templates\DomainModel\DomainModelTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(associationEnd.Name.ToCamelCase()));
             
             #line default
             #line hidden
             this.Write(";\r\n");
             
-            #line 25 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Domain\Templates\DomainModel\DomainModelTemplate.tt"
+            #line 27 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Domain\Templates\DomainModel\DomainModelTemplate.tt"
   } 
             
             #line default
             #line hidden
             
-            #line 26 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Domain\Templates\DomainModel\DomainModelTemplate.tt"
+            #line 28 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Domain\Templates\DomainModel\DomainModelTemplate.tt"
   foreach(var attribute in Model.Attributes) { 
             
             #line default
             #line hidden
             this.Write("\r\n    public ");
             
-            #line 28 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Domain\Templates\DomainModel\DomainModelTemplate.tt"
+            #line 30 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Domain\Templates\DomainModel\DomainModelTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(GetTypeName(attribute)));
             
             #line default
             #line hidden
             this.Write(" get");
             
-            #line 28 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Domain\Templates\DomainModel\DomainModelTemplate.tt"
+            #line 30 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Domain\Templates\DomainModel\DomainModelTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(attribute.Name.ToPascalCase()));
             
             #line default
             #line hidden
             this.Write("() {\r\n        return this.");
             
-            #line 29 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Domain\Templates\DomainModel\DomainModelTemplate.tt"
+            #line 31 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Domain\Templates\DomainModel\DomainModelTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(attribute.Name.ToCamelCase()));
             
             #line default
             #line hidden
             this.Write(";\r\n    }\r\n\r\n    public void set");
             
-            #line 32 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Domain\Templates\DomainModel\DomainModelTemplate.tt"
+            #line 34 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Domain\Templates\DomainModel\DomainModelTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(attribute.Name.ToPascalCase()));
             
             #line default
             #line hidden
             this.Write("(");
             
-            #line 32 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Domain\Templates\DomainModel\DomainModelTemplate.tt"
+            #line 34 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Domain\Templates\DomainModel\DomainModelTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(GetTypeName(attribute)));
             
             #line default
             #line hidden
             this.Write(" ");
             
-            #line 32 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Domain\Templates\DomainModel\DomainModelTemplate.tt"
+            #line 34 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Domain\Templates\DomainModel\DomainModelTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(attribute.Name.ToCamelCase()));
             
             #line default
             #line hidden
             this.Write(") {\r\n        this.");
             
-            #line 33 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Domain\Templates\DomainModel\DomainModelTemplate.tt"
+            #line 35 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Domain\Templates\DomainModel\DomainModelTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(attribute.Name.ToCamelCase()));
             
             #line default
             #line hidden
             this.Write(" = ");
             
-            #line 33 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Domain\Templates\DomainModel\DomainModelTemplate.tt"
+            #line 35 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Domain\Templates\DomainModel\DomainModelTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(attribute.Name.ToCamelCase()));
             
             #line default
             #line hidden
             this.Write(";\r\n    }\r\n");
             
-            #line 35 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Domain\Templates\DomainModel\DomainModelTemplate.tt"
+            #line 37 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Domain\Templates\DomainModel\DomainModelTemplate.tt"
   } 
             
             #line default
             #line hidden
             
-            #line 36 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Domain\Templates\DomainModel\DomainModelTemplate.tt"
+            #line 38 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Domain\Templates\DomainModel\DomainModelTemplate.tt"
   foreach(var association in Model.AssociatedClasses.Where(x => x.IsNavigable)) { 
             
             #line default
             #line hidden
             this.Write("\r\n    public ");
             
-            #line 38 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Domain\Templates\DomainModel\DomainModelTemplate.tt"
+            #line 40 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Domain\Templates\DomainModel\DomainModelTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(GetTypeName(association)));
             
             #line default
             #line hidden
             this.Write(" get");
             
-            #line 38 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Domain\Templates\DomainModel\DomainModelTemplate.tt"
+            #line 40 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Domain\Templates\DomainModel\DomainModelTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(association.Name.ToPascalCase()));
             
             #line default
             #line hidden
             this.Write("() {\r\n        return this.");
             
-            #line 39 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Domain\Templates\DomainModel\DomainModelTemplate.tt"
+            #line 41 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Domain\Templates\DomainModel\DomainModelTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(association.Name.ToCamelCase()));
             
             #line default
             #line hidden
             this.Write(";\r\n    }\r\n\r\n    public void set");
             
-            #line 42 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Domain\Templates\DomainModel\DomainModelTemplate.tt"
+            #line 44 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Domain\Templates\DomainModel\DomainModelTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(association.Name.ToPascalCase()));
             
             #line default
             #line hidden
             this.Write("(");
             
-            #line 42 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Domain\Templates\DomainModel\DomainModelTemplate.tt"
+            #line 44 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Domain\Templates\DomainModel\DomainModelTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(GetTypeName(association)));
             
             #line default
             #line hidden
             this.Write(" ");
             
-            #line 42 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Domain\Templates\DomainModel\DomainModelTemplate.tt"
+            #line 44 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Domain\Templates\DomainModel\DomainModelTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(association.Name.ToCamelCase()));
             
             #line default
             #line hidden
             this.Write(") {\r\n        this.");
             
-            #line 43 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Domain\Templates\DomainModel\DomainModelTemplate.tt"
+            #line 45 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Domain\Templates\DomainModel\DomainModelTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(association.Name.ToCamelCase()));
             
             #line default
             #line hidden
             this.Write(" = ");
             
-            #line 43 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Domain\Templates\DomainModel\DomainModelTemplate.tt"
+            #line 45 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Domain\Templates\DomainModel\DomainModelTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(association.Name.ToCamelCase()));
             
             #line default
             #line hidden
             this.Write(";\r\n    }\r\n");
             
-            #line 45 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Domain\Templates\DomainModel\DomainModelTemplate.tt"
+            #line 47 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Domain\Templates\DomainModel\DomainModelTemplate.tt"
   } 
             
             #line default
             #line hidden
             
-            #line 46 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Domain\Templates\DomainModel\DomainModelTemplate.tt"
+            #line 48 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Domain\Templates\DomainModel\DomainModelTemplate.tt"
   foreach(var operation in Model.Operations) { 
             
             #line default
             #line hidden
             this.Write("\r\n    @");
             
-            #line 48 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Domain\Templates\DomainModel\DomainModelTemplate.tt"
+            #line 50 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Domain\Templates\DomainModel\DomainModelTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(GetTypeName(IntentIgnoreBodyTemplate.TemplateId)));
             
             #line default
             #line hidden
             this.Write("\r\n    public ");
             
-            #line 49 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Domain\Templates\DomainModel\DomainModelTemplate.tt"
+            #line 51 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Domain\Templates\DomainModel\DomainModelTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(GetTypeName(operation)));
             
             #line default
             #line hidden
             this.Write(" ");
             
-            #line 49 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Domain\Templates\DomainModel\DomainModelTemplate.tt"
+            #line 51 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Domain\Templates\DomainModel\DomainModelTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name.ToCamelCase()));
             
             #line default
             #line hidden
             this.Write("(");
             
-            #line 49 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Domain\Templates\DomainModel\DomainModelTemplate.tt"
+            #line 51 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Domain\Templates\DomainModel\DomainModelTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.GetMethodParameters(operation.Parameters)));
             
             #line default
@@ -309,7 +322,7 @@ namespace Intent.Modules.Java.Domain.Templates.DomainModel
             this.Write(") {\r\n\t\tthrow new UnsupportedOperationException(\"Write your implementation here..." +
                     "\");\r\n    }\r\n");
             
-            #line 52 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Domain\Templates\DomainModel\DomainModelTemplate.tt"
+            #line 54 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Domain\Templates\DomainModel\DomainModelTemplate.tt"
   } 
             
             #line default

@@ -9,6 +9,7 @@ using Intent.Modules.Java.Weaving.Annotations.Templates.IntentIgnore;
 using Intent.Modules.Java.Weaving.Annotations.Templates.IntentIgnoreBody;
 using Intent.Modules.Java.Weaving.Annotations.Templates.IntentManage;
 using Intent.Modules.Java.Weaving.Annotations.Templates.IntentMerge;
+using Intent.Modules.Java.Weaving.Annotations.Templates.ModeEnum;
 
 namespace Intent.Modules.Java
 {
@@ -47,6 +48,11 @@ namespace Intent.Modules.Java
         public static string IntentCanRemoveAnnotation<T>(this JavaTemplateBase<T> template)
         {
             return "@" + template.GetTypeName(IntentCanRemoveTemplate.TemplateId);
+        }
+
+        public static string IntentModeIgnore<T>(this JavaTemplateBase<T> template)
+        {
+            return $"{template.GetTypeName(ModeEnumTemplate.TemplateId)}.Ignore";
         }
     }
 }

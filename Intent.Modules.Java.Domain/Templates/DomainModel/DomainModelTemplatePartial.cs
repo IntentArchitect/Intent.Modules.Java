@@ -15,7 +15,7 @@ using Intent.Templates;
 namespace Intent.Modules.Java.Domain.Templates.DomainModel
 {
     [IntentManaged(Mode.Merge, Signature = Mode.Fully)]
-    partial class DomainModelTemplate : JavaTemplateBase<Intent.Modelers.Domain.Api.ClassModel, DomainModelDecorator>, IDeclareImports
+    partial class DomainModelTemplate : JavaTemplateBase<Intent.Modelers.Domain.Api.ClassModel, DomainModelDecorator>
     {
         [IntentManaged(Mode.Fully)]
         public const string TemplateId = "Intent.Java.Domain.DomainModel";
@@ -24,7 +24,7 @@ namespace Intent.Modules.Java.Domain.Templates.DomainModel
         public DomainModelTemplate(IOutputTarget outputTarget, Intent.Modelers.Domain.Api.ClassModel model) : base(TemplateId, outputTarget, model)
         {
             SetDefaultTypeCollectionFormat("List<{0}>");
-            AddTypeSource(TemplateId, "List<{0}>");
+            AddTypeSource(TemplateId, type => $"{ImportType("java.util.List")}<{type}>");
         }
 
         [IntentManaged(Mode.Merge, Body = Mode.Ignore, Signature = Mode.Fully)]
@@ -39,14 +39,6 @@ namespace Intent.Modules.Java.Domain.Templates.DomainModel
         public string GetBaseClass()
         {
             return GetTypeName(AbstractEntityTemplate.TemplateId);
-        }
-
-        public IEnumerable<string> DeclareImports()
-        {
-            if (Model.AssociatedClasses.Any(x => x.IsCollection && x.IsNavigable))
-            {
-                yield return "java.util.List";
-            }
         }
     }
 }

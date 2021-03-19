@@ -160,5 +160,25 @@
       <SolutionRelativeFilePath>../Intent.Modules.Java.Weaving.Annotations/Templates/IntentMerge/IntentMergeTemplateRegistration.cs</SolutionRelativeFilePath>
       <ProjectRelativeFilePath>IntentMerge/IntentMergeTemplateRegistration.cs</ProjectRelativeFilePath>
     </FileLog>
+    <FileLog>
+      <ProjectId>631ccc2a-ef75-4dd2-8106-edc7337d1209</ProjectId>
+      <SolutionRelativeFilePath>../Intent.Modules.Java.Weaving.Annotations/Templates/ModeEnum/ModeEnumTemplate.cs</SolutionRelativeFilePath>
+      <ProjectRelativeFilePath>ModeEnum/ModeEnumTemplate.cs</ProjectRelativeFilePath>
+    </FileLog>
+    <FileLog>
+      <ProjectId>631ccc2a-ef75-4dd2-8106-edc7337d1209</ProjectId>
+      <SolutionRelativeFilePath>../Intent.Modules.Java.Weaving.Annotations/Templates/ModeEnum/ModeEnumTemplate.tt</SolutionRelativeFilePath>
+      <ProjectRelativeFilePath>ModeEnum/ModeEnumTemplate.tt</ProjectRelativeFilePath>
+    </FileLog>
+    <FileLog>
+      <ProjectId>631ccc2a-ef75-4dd2-8106-edc7337d1209</ProjectId>
+      <SolutionRelativeFilePath>../Intent.Modules.Java.Weaving.Annotations/Templates/ModeEnum/ModeEnumTemplatePartial.cs</SolutionRelativeFilePath>
+      <ProjectRelativeFilePath>ModeEnum/ModeEnumTemplatePartial.cs</ProjectRelativeFilePath>
+    </FileLog>
+    <FileLog>
+      <ProjectId>631ccc2a-ef75-4dd2-8106-edc7337d1209</ProjectId>
+      <SolutionRelativeFilePath>../Intent.Modules.Java.Weaving.Annotations/Templates/ModeEnum/ModeEnumTemplateRegistration.cs</SolutionRelativeFilePath>
+      <ProjectRelativeFilePath>ModeEnum/ModeEnumTemplateRegistration.cs</ProjectRelativeFilePath>
+    </FileLog>
   </FileLogs>
 </outputLog>

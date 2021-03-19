@@ -3,6 +3,16 @@
   <ApplicationId>e1ac2551-105e-45da-be15-8b6a51f50fa4</ApplicationId>
   <FileLogs>
     <FileLog>
+      <ProjectId>f7ac3064-fb03-46f5-9743-5518f5aa4e46</ProjectId>
+      <SolutionRelativeFilePath>../Intent.Modules.Java.ModelMapper/Decorators/DataTransferModelMappingDecorator.cs</SolutionRelativeFilePath>
+      <ProjectRelativeFilePath>DataTransferModelMappingDecorator.cs</ProjectRelativeFilePath>
+    </FileLog>
+    <FileLog>
+      <ProjectId>f7ac3064-fb03-46f5-9743-5518f5aa4e46</ProjectId>
+      <SolutionRelativeFilePath>../Intent.Modules.Java.ModelMapper/Decorators/DataTransferModelMappingDecoratorRegistration.cs</SolutionRelativeFilePath>
+      <ProjectRelativeFilePath>DataTransferModelMappingDecoratorRegistration.cs</ProjectRelativeFilePath>
+    </FileLog>
+    <FileLog>
       <ProjectId>997d1487-cfea-43d7-9aec-be05f101f8df</ProjectId>
       <SolutionRelativeFilePath>../Intent.Modules.Java.ModelMapper/Intent.Java.ModelMapper.imodspec</SolutionRelativeFilePath>
       <ProjectRelativeFilePath>Intent.Java.ModelMapper.imodspec</ProjectRelativeFilePath>

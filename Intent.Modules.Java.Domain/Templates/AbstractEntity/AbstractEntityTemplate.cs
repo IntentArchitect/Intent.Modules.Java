@@ -46,29 +46,22 @@ namespace Intent.Modules.Java.Domain.Templates.AbstractEntity
             
             #line default
             #line hidden
-            this.Write("\r\n");
-            
-            #line 16 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Domain\Templates\AbstractEntity\AbstractEntityTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(this.IntentMergeAnnotation()));
-            
-            #line default
-            #line hidden
             this.Write("\r\npublic abstract class ");
             
-            #line 17 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Domain\Templates\AbstractEntity\AbstractEntityTemplate.tt"
+            #line 16 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Domain\Templates\AbstractEntity\AbstractEntityTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(ClassName));
             
             #line default
             #line hidden
             this.Write(" implements Serializable {\r\n    private static final long serialVersionUID = 1L;");
             
-            #line 18 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Domain\Templates\AbstractEntity\AbstractEntityTemplate.tt"
+            #line 17 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Domain\Templates\AbstractEntity\AbstractEntityTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(GetFields()));
             
             #line default
             #line hidden
             
-            #line 18 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Domain\Templates\AbstractEntity\AbstractEntityTemplate.tt"
+            #line 17 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Domain\Templates\AbstractEntity\AbstractEntityTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(GetMethods()));
             
             #line default

@@ -39,6 +39,22 @@
                                     </element>
                                   </childElements>
                                 </element>
+                                <element type="Folder" typeId="4d95d53a-8855-4f35-aa82-e312643f5c5f">
+                                  <name>intent</name>
+                                  <childElements>
+                                    <element type="Role" typeId="8663c9f9-2852-45e7-aaa1-0883a2e6f1da">
+                                      <name>Intent.Annotations</name>
+                                    </element>
+                                  </childElements>
+                                </element>
+                                <element type="Folder" typeId="4d95d53a-8855-4f35-aa82-e312643f5c5f">
+                                  <name>data</name>
+                                  <childElements>
+                                    <element type="Role" typeId="8663c9f9-2852-45e7-aaa1-0883a2e6f1da">
+                                      <name>Data</name>
+                                    </element>
+                                  </childElements>
+                                </element>
                                 <element type="Role" typeId="8663c9f9-2852-45e7-aaa1-0883a2e6f1da">
                                   <name>Startup</name>
                                 </element>
@@ -53,6 +69,9 @@
               </childElements>
             </element>
           </childElements>
+        </element>
+        <element type="Role" typeId="8663c9f9-2852-45e7-aaa1-0883a2e6f1da">
+          <name>Root</name>
         </element>
       </childElements>
     </package>

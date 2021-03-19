@@ -24,6 +24,11 @@
     </FileLog>
     <FileLog>
       <ProjectId>32921436-c716-4bad-8ff1-2cc93f11b598</ProjectId>
+      <SolutionRelativeFilePath>../Intent.Modules.Java.Services/Templates/DataTransferModel/DataTransferModelDecorator.cs</SolutionRelativeFilePath>
+      <ProjectRelativeFilePath>DataTransferModel/DataTransferModelDecorator.cs</ProjectRelativeFilePath>
+    </FileLog>
+    <FileLog>
+      <ProjectId>32921436-c716-4bad-8ff1-2cc93f11b598</ProjectId>
       <SolutionRelativeFilePath>../Intent.Modules.Java.Services/Templates/DataTransferModel/DataTransferModelTemplate.cs</SolutionRelativeFilePath>
       <ProjectRelativeFilePath>DataTransferModel/DataTransferModelTemplate.cs</ProjectRelativeFilePath>
     </FileLog>

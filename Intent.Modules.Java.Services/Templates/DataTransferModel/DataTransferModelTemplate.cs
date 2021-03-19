@@ -25,7 +25,7 @@ namespace Intent.Modules.Java.Services.Templates.DataTransferModel
     
     #line 1 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Services\Templates\DataTransferModel\DataTransferModelTemplate.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "16.0.0.0")]
-    public partial class DataTransferModelTemplate : JavaTemplateBase<DTOModel>
+    public partial class DataTransferModelTemplate : JavaTemplateBase<Intent.Modelers.Services.Api.DTOModel, Intent.Modules.Java.Services.Templates.DataTransferModel.DataTransferModelDecorator>
     {
 #line hidden
         /// <summary>
@@ -76,7 +76,13 @@ namespace Intent.Modules.Java.Services.Templates.DataTransferModel
             
             #line default
             #line hidden
-            this.Write("}");
+            
+            #line 23 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Services\Templates\DataTransferModel\DataTransferModelTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(GetDecoratorsOutput(x => x.Methods())));
+            
+            #line default
+            #line hidden
+            this.Write("\r\n}");
             return this.GenerationEnvironment.ToString();
         }
     }

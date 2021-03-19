@@ -29,13 +29,16 @@
     <template id="Intent.Java.Weaving.Annotations.IntentMerge" externalReference="7ac43274-c88a-406b-8cce-8a4900a47faf">
       <role>Intent.Annotations</role>
     </template>
+    <template id="Intent.Java.Weaving.Annotations.ModeEnum" externalReference="d65432d9-673e-4fc6-87c4-f9d481c706bd">
+      <role>Intent.Annotations</role>
+    </template>
   </templates>
   <decorators></decorators>
   <factoryExtensions></factoryExtensions>
   <dependencies>
     <dependency id="Intent.Common" version="3.0.3" />
     <dependency id="Intent.Common.Types" version="3.0.1" />
-    <dependency id="Intent.Common.Java" version="3.0.1" />
+    <dependency id="Intent.Common.Java" version="3.0.3" />
   </dependencies>
   <files>
     <file src="$outDir$/$id$.dll" />

@@ -1,35 +1,33 @@
 using System.Collections.Generic;
 using Intent.Engine;
-using Intent.Modelers.Services.Api;
 using Intent.Modules.Common.Java;
 using Intent.Modules.Common.Java.Templates;
 using Intent.Modules.Common.Templates;
-using Intent.Modules.Java.Services.Templates.DataTransferModel;
 using Intent.RoslynWeaver.Attributes;
 using Intent.Templates;
+
 
 [assembly: DefaultIntentManaged(Mode.Merge)]
 [assembly: IntentTemplate("Intent.ModuleBuilder.Java.Templates.JavaFileTemplatePartial", Version = "1.0")]
 
-namespace Intent.Modules.Java.Services.Templates.ServiceInterface
+namespace Intent.Modules.Java.Weaving.Annotations.Templates.ModeEnum
 {
     [IntentManaged(Mode.Merge, Signature = Mode.Fully)]
-    partial class ServiceInterfaceTemplate : JavaTemplateBase<Intent.Modelers.Services.Api.ServiceModel>
+    partial class ModeEnumTemplate : JavaTemplateBase<object>
     {
         [IntentManaged(Mode.Fully)]
-        public const string TemplateId = "Intent.Java.Services.ServiceInterface";
+        public const string TemplateId = "Intent.Java.Weaving.Annotations.ModeEnum";
 
         [IntentManaged(Mode.Merge, Signature = Mode.Fully)]
-        public ServiceInterfaceTemplate(IOutputTarget outputTarget, Intent.Modelers.Services.Api.ServiceModel model) : base(TemplateId, outputTarget, model)
+        public ModeEnumTemplate(IOutputTarget outputTarget, object model = null) : base(TemplateId, outputTarget, model)
         {
-            AddTypeSource(DataTransferModelTemplate.TemplateId, type => $"{ImportType("java.util.List")}<{type}>");
         }
 
         [IntentManaged(Mode.Merge, Body = Mode.Ignore, Signature = Mode.Fully)]
         public override ITemplateFileConfig GetTemplateFileConfig()
         {
             return new JavaFileConfig(
-                className: $"{Model.Name}",
+                className: $"Mode",
                 package: $"{OutputTarget.GetPackage()}"
             );
         }
