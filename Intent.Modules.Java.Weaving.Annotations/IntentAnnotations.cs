@@ -8,6 +8,7 @@ using Intent.Modules.Java.Weaving.Annotations.Templates.IntentCanUpdate;
 using Intent.Modules.Java.Weaving.Annotations.Templates.IntentIgnore;
 using Intent.Modules.Java.Weaving.Annotations.Templates.IntentIgnoreBody;
 using Intent.Modules.Java.Weaving.Annotations.Templates.IntentManage;
+using Intent.Modules.Java.Weaving.Annotations.Templates.IntentManageClass;
 using Intent.Modules.Java.Weaving.Annotations.Templates.IntentMerge;
 using Intent.Modules.Java.Weaving.Annotations.Templates.ModeEnum;
 
@@ -33,6 +34,11 @@ namespace Intent.Modules.Java
         public static string IntentManageAnnotation<T>(this JavaTemplateBase<T> template)
         {
             return "@" + template.GetTypeName(IntentManageTemplate.TemplateId);
+        }
+
+        public static string IntentManageClassAnnotation<T>(this JavaTemplateBase<T> template)
+        {
+            return "@" + template.GetTypeName(IntentManageClassTemplate.TemplateId);
         }
 
         public static string IntentCanAddAnnotation<T>(this JavaTemplateBase<T> template)

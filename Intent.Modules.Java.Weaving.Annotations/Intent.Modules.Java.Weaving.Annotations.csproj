@@ -46,6 +46,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>ModeEnumTemplate.tt</DependentUpon>
     </Compile>
+  
+    <Compile Update="Templates\IntentManageClass\IntentManageClassTemplate.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>IntentManageClassTemplate.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
 
   <ItemGroup>
@@ -81,6 +87,11 @@
     <None Update="Templates\ModeEnum\ModeEnumTemplate.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>ModeEnumTemplate.cs</LastGenOutput>
+    </None>
+  
+    <None Update="Templates\IntentManageClass\IntentManageClassTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>IntentManageClassTemplate.cs</LastGenOutput>
     </None>
   </ItemGroup>
 

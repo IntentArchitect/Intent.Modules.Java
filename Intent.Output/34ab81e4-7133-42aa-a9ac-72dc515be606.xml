@@ -142,6 +142,26 @@
     </FileLog>
     <FileLog>
       <ProjectId>631ccc2a-ef75-4dd2-8106-edc7337d1209</ProjectId>
+      <SolutionRelativeFilePath>../Intent.Modules.Java.Weaving.Annotations/Templates/IntentManageClass/IntentManageClassTemplate.cs</SolutionRelativeFilePath>
+      <ProjectRelativeFilePath>IntentManageClass/IntentManageClassTemplate.cs</ProjectRelativeFilePath>
+    </FileLog>
+    <FileLog>
+      <ProjectId>631ccc2a-ef75-4dd2-8106-edc7337d1209</ProjectId>
+      <SolutionRelativeFilePath>../Intent.Modules.Java.Weaving.Annotations/Templates/IntentManageClass/IntentManageClassTemplate.tt</SolutionRelativeFilePath>
+      <ProjectRelativeFilePath>IntentManageClass/IntentManageClassTemplate.tt</ProjectRelativeFilePath>
+    </FileLog>
+    <FileLog>
+      <ProjectId>631ccc2a-ef75-4dd2-8106-edc7337d1209</ProjectId>
+      <SolutionRelativeFilePath>../Intent.Modules.Java.Weaving.Annotations/Templates/IntentManageClass/IntentManageClassTemplatePartial.cs</SolutionRelativeFilePath>
+      <ProjectRelativeFilePath>IntentManageClass/IntentManageClassTemplatePartial.cs</ProjectRelativeFilePath>
+    </FileLog>
+    <FileLog>
+      <ProjectId>631ccc2a-ef75-4dd2-8106-edc7337d1209</ProjectId>
+      <SolutionRelativeFilePath>../Intent.Modules.Java.Weaving.Annotations/Templates/IntentManageClass/IntentManageClassTemplateRegistration.cs</SolutionRelativeFilePath>
+      <ProjectRelativeFilePath>IntentManageClass/IntentManageClassTemplateRegistration.cs</ProjectRelativeFilePath>
+    </FileLog>
+    <FileLog>
+      <ProjectId>631ccc2a-ef75-4dd2-8106-edc7337d1209</ProjectId>
       <SolutionRelativeFilePath>../Intent.Modules.Java.Weaving.Annotations/Templates/IntentMerge/IntentMergeTemplate.cs</SolutionRelativeFilePath>
       <ProjectRelativeFilePath>IntentMerge/IntentMergeTemplate.cs</ProjectRelativeFilePath>
     </FileLog>

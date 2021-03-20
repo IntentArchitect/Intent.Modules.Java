@@ -6,6 +6,16 @@
       <SolutionRelativeFilePath>../Intent.Modules.Java.sln</SolutionRelativeFilePath>
     </FileLog>
     <FileLog>
+      <ProjectId>c6a75fa9-12ed-4f89-a451-f71220ab0e9b</ProjectId>
+      <SolutionRelativeFilePath>../Intent.Modules.Java.SpringFox.Swagger/Decorators/OpenApiControllerDecorator.cs</SolutionRelativeFilePath>
+      <ProjectRelativeFilePath>OpenApiControllerDecorator.cs</ProjectRelativeFilePath>
+    </FileLog>
+    <FileLog>
+      <ProjectId>c6a75fa9-12ed-4f89-a451-f71220ab0e9b</ProjectId>
+      <SolutionRelativeFilePath>../Intent.Modules.Java.SpringFox.Swagger/Decorators/OpenApiControllerDecoratorRegistration.cs</SolutionRelativeFilePath>
+      <ProjectRelativeFilePath>OpenApiControllerDecoratorRegistration.cs</ProjectRelativeFilePath>
+    </FileLog>
+    <FileLog>
       <ProjectId>ad411f25-020a-4d8a-89c8-166edee814b5</ProjectId>
       <SolutionRelativeFilePath>../Intent.Modules.Java.SpringFox.Swagger/Intent.Java.SpringFox.Swagger.imodspec</SolutionRelativeFilePath>
       <ProjectRelativeFilePath>Intent.Java.SpringFox.Swagger.imodspec</ProjectRelativeFilePath>

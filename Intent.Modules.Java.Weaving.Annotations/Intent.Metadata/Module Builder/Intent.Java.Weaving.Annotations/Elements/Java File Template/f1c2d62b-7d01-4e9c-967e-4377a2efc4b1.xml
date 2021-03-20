@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<class id="7ac43274-c88a-406b-8cce-8a4900a47faf" type="Java File Template" typeId="e27af6dd-e69e-4e80-a2e1-0bbe9493cf7a">
-  <name>IntentMerge</name>
-  <display>IntentMerge: Single File</display>
+<class id="f1c2d62b-7d01-4e9c-967e-4377a2efc4b1" type="Java File Template" typeId="e27af6dd-e69e-4e80-a2e1-0bbe9493cf7a">
+  <name>IntentManageClass</name>
+  <display>IntentManageClass: Single File</display>
   <isAbstract>false</isAbstract>
-  <order>8</order>
+  <order>7</order>
   <genericTypes />
-  <typeReference id="c75697ec-c4f9-4706-86d3-c712135cd440">
+  <typeReference id="caeed07c-2f2b-4fde-8e5d-c6c69050a77e">
     <typeId>f65d2904-88c9-4501-873a-a4eec8303b1d</typeId>
     <isNavigable>true</isNavigable>
     <isNullable>false</isNullable>

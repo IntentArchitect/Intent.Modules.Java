@@ -55,17 +55,7 @@ public @interface ");
             
             #line default
             #line hidden
-            this.Write(@"{
-    Mode privateMethods() default Mode.Fully;
-    Mode protectedMethods() default Mode.Fully;
-    Mode publicMethods() default Mode.Fully;
-    Mode methods() default Mode.Fully;
-
-    Mode privateFields() default Mode.Fully;
-    Mode protectedFields() default Mode.Fully;
-    Mode publicFields() default Mode.Fully;
-    Mode fields() default Mode.Fully;
-}");
+            this.Write("{\r\n}");
             return this.GenerationEnvironment.ToString();
         }
     }

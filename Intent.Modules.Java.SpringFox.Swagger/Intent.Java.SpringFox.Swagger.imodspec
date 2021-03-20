@@ -13,7 +13,9 @@
       <location>configuration</location>
     </template>
   </templates>
-  <decorators></decorators>
+  <decorators>
+    <decorator id="Intent.Java.SpringFox.Swagger.OpenApiControllerDecorator" externalReference="1ed87dac-aae6-48c7-9165-257c0d4dd5fc" />
+  </decorators>
   <factoryExtensions></factoryExtensions>
   <dependencies>
     <dependency id="Intent.Common" version="3.0.3" />

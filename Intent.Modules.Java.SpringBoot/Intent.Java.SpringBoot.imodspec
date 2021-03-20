@@ -29,5 +29,7 @@
     <file src="$outDir$/$id$.dll" />
     <file src="$outDir$/$id$.pdb" />
   </files>
-  <metadata />
+  <metadata>
+    <install target="Module Builder" src="Intent.Metadata/Module Builder/Intent.Java.SpringBoot/Intent.Java.SpringBoot.pkg.config" externalReference="27f3b2d0-b9e5-47da-bece-d305c33b5945" />
+  </metadata>
 </package>

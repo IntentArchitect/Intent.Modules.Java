@@ -32,6 +32,9 @@
     <template id="Intent.Java.Weaving.Annotations.ModeEnum" externalReference="d65432d9-673e-4fc6-87c4-f9d481c706bd">
       <role>Intent.Annotations</role>
     </template>
+    <template id="Intent.Java.Weaving.Annotations.IntentManageClass" externalReference="f1c2d62b-7d01-4e9c-967e-4377a2efc4b1">
+      <role>Intent.Annotations</role>
+    </template>
   </templates>
   <decorators></decorators>
   <factoryExtensions></factoryExtensions>

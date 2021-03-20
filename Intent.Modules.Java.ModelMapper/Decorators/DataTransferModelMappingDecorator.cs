@@ -30,14 +30,14 @@ namespace Intent.Modules.Java.ModelMapper.Decorators
             }
 
             return $@"
-    public static {_template.ClassName} mapFrom{GetEntityTypeName()}({GetEntityTypeName()} {GetEntityTypeName().ToCamelCase()}) {{
-        return new {_template.ImportType("org.modelmapper.ModelMapper")}().map(user, {_template.ClassName}.class);
+    public static {_template.ClassName} mapFrom{GetEntityTypeName()}({GetEntityTypeName()} {GetEntityTypeName().ToCamelCase()}, {_template.ImportType("org.modelmapper.ModelMapper")} mapper) {{
+        return mapper.map(user, {_template.ClassName}.class);
     }}
 
-    public static {_template.ImportType("java.util.List")}<{_template.ClassName}> mapFrom{GetEntityTypeName().ToPluralName()}(List<{GetEntityTypeName()}> {GetEntityTypeName().ToCamelCase().ToPluralName()}) {{
+    public static {_template.ImportType("java.util.List")}<{_template.ClassName}> mapFrom{GetEntityTypeName().ToPluralName()}(List<{GetEntityTypeName()}> {GetEntityTypeName().ToCamelCase().ToPluralName()}, {_template.ImportType("org.modelmapper.ModelMapper")} mapper) {{
         return {GetEntityTypeName().ToCamelCase().ToPluralName()}
             .stream()
-            .map({GetEntityTypeName().ToCamelCase()} -> {_template.ClassName}.mapFrom{GetEntityTypeName()}({GetEntityTypeName().ToCamelCase()}))
+            .map({GetEntityTypeName().ToCamelCase()} -> {_template.ClassName}.mapFrom{GetEntityTypeName()}({GetEntityTypeName().ToCamelCase()}, mapper))
             .collect({_template.ImportType("java.util.stream.Collectors")}.toList());
     }}";
         }

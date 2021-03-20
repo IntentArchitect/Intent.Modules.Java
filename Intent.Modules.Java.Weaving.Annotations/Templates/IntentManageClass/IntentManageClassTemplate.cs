@@ -7,7 +7,7 @@
 //     the code is regenerated.
 // </auto-generated>
 // ------------------------------------------------------------------------------
-namespace Intent.Modules.Java.Weaving.Annotations.Templates.ModeEnum
+namespace Intent.Modules.Java.Weaving.Annotations.Templates.IntentManageClass
 {
     using System.Collections.Generic;
     using System.Linq;
@@ -22,9 +22,9 @@ namespace Intent.Modules.Java.Weaving.Annotations.Templates.ModeEnum
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Weaving.Annotations\Templates\ModeEnum\ModeEnumTemplate.tt"
+    #line 1 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Weaving.Annotations\Templates\IntentManageClass\IntentManageClassTemplate.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "16.0.0.0")]
-    public partial class ModeEnumTemplate : JavaTemplateBase<object>
+    public partial class IntentManageClassTemplate : JavaTemplateBase<object>
     {
 #line hidden
         /// <summary>
@@ -34,19 +34,41 @@ namespace Intent.Modules.Java.Weaving.Annotations.Templates.ModeEnum
         {
             this.Write("package ");
             
-            #line 10 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Weaving.Annotations\Templates\ModeEnum\ModeEnumTemplate.tt"
+            #line 10 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Weaving.Annotations\Templates\IntentManageClass\IntentManageClassTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Package));
             
             #line default
             #line hidden
-            this.Write(";\r\n\r\npublic enum ");
+            this.Write(@";
+
+import java.lang.annotation.ElementType;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
+ 
+@Target({ ElementType.TYPE, ElementType.METHOD, ElementType.FIELD, ElementType.CONSTRUCTOR })
+@Retention(RetentionPolicy.SOURCE)
+public @interface ");
             
-            #line 12 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Weaving.Annotations\Templates\ModeEnum\ModeEnumTemplate.tt"
+            #line 19 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Weaving.Annotations\Templates\IntentManageClass\IntentManageClassTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(ClassName));
             
             #line default
             #line hidden
-            this.Write(" {\r\n    Default,\r\n    Ignore\r\n}");
+            this.Write(@"{
+
+    Mode privateFields() default Mode.Default;
+    Mode protectedFields() default Mode.Default;
+    Mode publicFields() default Mode.Default;
+    Mode fields() default Mode.Default;
+    
+    Mode constructors() default Mode.Default;
+
+    Mode privateMethods() default Mode.Default;
+    Mode protectedMethods() default Mode.Default;
+    Mode publicMethods() default Mode.Default;
+    Mode methods() default Mode.Default;
+}");
             return this.GenerationEnvironment.ToString();
         }
     }

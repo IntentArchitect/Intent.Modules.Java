@@ -18,7 +18,7 @@ using Intent.Templates;
 namespace Intent.Modules.Java.SpringBoot.Templates.RestController
 {
     [IntentManaged(Mode.Merge, Signature = Mode.Fully)]
-    partial class RestControllerTemplate : JavaTemplateBase<Intent.Modelers.Services.Api.ServiceModel>
+    partial class RestControllerTemplate : JavaTemplateBase<Intent.Modelers.Services.Api.ServiceModel, RestControllerDecorator>
     {
         [IntentManaged(Mode.Fully)]
         public const string TemplateId = "Intent.Java.SpringBoot.RestController";
@@ -53,9 +53,9 @@ namespace Intent.Modules.Java.SpringBoot.Templates.RestController
             annotations.Add($@"@RequestMapping(""/{(string.IsNullOrWhiteSpace(Model.GetHttpServiceSettings().Route())
                 ? $"api/{RootName.ToKebabCase()}"
                 : Model.GetHttpServiceSettings().Route().RemovePrefix("/"))}"")");
-
+            annotations.AddRange(GetDecorators().SelectMany(x => x.ControllerAnnotations() ?? new List<string>()));
             return string.Join(@"
-    ", annotations);
+", annotations.Where(x => !string.IsNullOrWhiteSpace(x)));
         }
 
         private string GetServiceInterfaceName()
@@ -73,6 +73,7 @@ namespace Intent.Modules.Java.SpringBoot.Templates.RestController
             annotations.Add(GetPath(operation) != null
                 ? $@"@{GetHttpVerb(operation).ToString().ToLower().ToPascalCase()}Mapping(""{GetPath(operation)}"")"
                 : $@"@{GetHttpVerb(operation).ToString().ToLower().ToPascalCase()}Mapping");
+            annotations.AddRange(GetDecorators().SelectMany(x => x.OperationAnnotations(operation) ?? new List<string>()));
 
             return string.Join(@"
     ", annotations);
@@ -82,7 +83,7 @@ namespace Intent.Modules.Java.SpringBoot.Templates.RestController
         {
             if (operation.ReturnType == null)
             {
-                return "void";
+                return "ResponseEntity<Void>";
             }
             return $"ResponseEntity<{GetTypeName(operation.TypeReference)}>";
         }
@@ -95,8 +96,8 @@ namespace Intent.Modules.Java.SpringBoot.Templates.RestController
 
         private string GetParameters(OperationModel operation)
         {
-            return string.Join(", ", operation.Parameters.Select(param => GetParameter(operation, param))
-                    .Concat(new[] { "@RequestHeader Map<String, String> headers" }))
+            return string.Join(", ", operation.Parameters.Select(param => GetParameter(operation, param)))
+                //.Concat(new[] { "@RequestHeader Map<String, String> headers" }))
                 ;
         }
 

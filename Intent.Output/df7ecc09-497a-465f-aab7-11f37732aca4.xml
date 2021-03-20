@@ -42,6 +42,11 @@
     </FileLog>
     <FileLog>
       <ProjectId>db8d1b7b-e26f-4baa-ba43-990a5ff65135</ProjectId>
+      <SolutionRelativeFilePath>../Intent.Modules.Java.SpringBoot/Templates/RestController/RestControllerDecorator.cs</SolutionRelativeFilePath>
+      <ProjectRelativeFilePath>RestController/RestControllerDecorator.cs</ProjectRelativeFilePath>
+    </FileLog>
+    <FileLog>
+      <ProjectId>db8d1b7b-e26f-4baa-ba43-990a5ff65135</ProjectId>
       <SolutionRelativeFilePath>../Intent.Modules.Java.SpringBoot/Templates/RestController/RestControllerTemplate.cs</SolutionRelativeFilePath>
       <ProjectRelativeFilePath>RestController/RestControllerTemplate.cs</ProjectRelativeFilePath>
     </FileLog>

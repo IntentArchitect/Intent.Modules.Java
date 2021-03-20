@@ -51,7 +51,7 @@ namespace Intent.Modules.Java.Domain.Templates.DomainModel
             this.Write("\r\n");
             
             #line 15 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Domain\Templates\DomainModel\DomainModelTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(this.IntentManageAnnotation()));
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.IntentManageClassAnnotation()));
             
             #line default
             #line hidden

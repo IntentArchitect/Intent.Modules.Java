@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<class id="92b673b3-739b-4e6a-bf1a-9b58b76d598f" type="Template Decorator Contract" typeId="ac1da322-377e-45cf-a2d9-d147a4d91457">
+  <name>RestControllerDecorator</name>
+  <display>RestControllerDecorator</display>
+  <isAbstract>false</isAbstract>
+  <order>1</order>
+  <genericTypes />
+  <isMapped>false</isMapped>
+  <parentFolderId>33a60ef5-5613-4719-a96d-206d3732c9ba</parentFolderId>
+  <packageId>27f3b2d0-b9e5-47da-bece-d305c33b5945</packageId>
+  <packageName>Intent.Java.SpringBoot</packageName>
+  <stereotypes />
+  <childElements />
+</class>

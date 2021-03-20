@@ -10,6 +10,6 @@
 package <#= Package #>;
 
 public enum <#= ClassName #> {
-    Fully,
+    Default,
     Ignore
 }

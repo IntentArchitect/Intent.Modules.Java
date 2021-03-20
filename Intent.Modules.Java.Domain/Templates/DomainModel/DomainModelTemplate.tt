@@ -12,7 +12,7 @@
 package <#= Package #>;
 
 <#= GetDecoratorsOutput(x => x.ClassAnnotations()) #>
-<#= this.IntentManageAnnotation() #>(privateMethods = <#= this.IntentModeIgnore() #>)
+<#= this.IntentManageClassAnnotation() #>(privateMethods = <#= this.IntentModeIgnore() #>)
 public class <#= ClassName #> extends <#= GetBaseClass() #> {
     private static final long serialVersionUID = 1L;
 <#  foreach(var attribute in Model.Attributes) { #>
