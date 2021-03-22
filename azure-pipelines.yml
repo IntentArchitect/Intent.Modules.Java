@@ -1,0 +1,69 @@
+trigger:
+  batch: true
+  branches:
+    include:
+    - '*'
+
+variables:
+  vstsFeed: '4bb4c1b9-5b56-4972-8bac-0ad3fa64204e/intentarchitect-feed'
+  targetsToBuild: '**/*.sln'
+  targetsToPack: '' # See 'Intent.Modules' for multi line example
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+
+- checkout: 'self'
+  persistCredentials: true
+  fetchDepth: 1
+  submodules: 'recursive'
+
+- task: NuGetCommand@2
+  displayName: 'nuget restore'
+  inputs:
+    command: 'restore'
+    feedsToUse: 'select'
+    vstsFeed: $(vstsFeed)
+    includeNuGetOrg: true
+    restoreSolution: $(targetsToBuild)
+
+- task: DotNetCoreCLI@2
+  displayName: 'dotnet build'
+  env:
+    DOTNET_NOLOGO: 1
+  inputs:
+    command: 'build'
+    projects: $(targetsToBuild)
+    arguments: '--no-restore'
+
+- task: DotNetCoreCLI@2
+  displayName: 'dotnet test'
+  env:
+    DOTNET_NOLOGO: 1
+  inputs:
+    command: 'test'
+    projects: $(targetsToBuild)
+    arguments: '--no-build'
+
+- task: DotNetCoreCLI@2
+  displayName: 'dotnet pack'
+  condition: and(succeeded(), ne(variables['targetsToPack'], ''))
+  env:
+    DOTNET_NOLOGO: '1'
+  inputs:
+    command: 'pack'
+    nobuild: true
+    searchPatternPack: $(targetsToPack)
+
+- task: NuGetCommand@2
+  displayName: 'nuget push'
+  condition: and(succeeded(), ne(variables['targetsToPack'], ''))
+  inputs:
+      command: 'push'
+      feedsToUse: 'select'
+      includeNuGetOrg: false
+      publishVstsFeed: $(vstsFeed)
+      allowPackageConflicts: true
+      packagesToPush: '$(Build.ArtifactStagingDirectory)/*.nupkg'
+      nuGetFeedType: 'internal'
