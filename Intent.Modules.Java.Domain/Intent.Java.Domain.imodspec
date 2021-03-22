@@ -20,10 +20,11 @@
   <decorators></decorators>
   <factoryExtensions></factoryExtensions>
   <dependencies>
-    <dependency id="Intent.Common" version="3.0.3" />
-    <dependency id="Intent.Common.Types" version="3.0.1" />
+    <dependency id="Intent.Common" version="3.0.4" />
+    <dependency id="Intent.Common.Types" version="3.0.3" />
     <dependency id="Intent.Common.Java" version="3.0.3" />
     <dependency id="Intent.Modelers.Domain" version="3.0.2" />
+    <dependency id="Intent.Java.Weaving.Annotations" version="1.0.0" />
   </dependencies>
   <files>
     <file src="$outDir$/$id$.dll" />

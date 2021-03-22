@@ -70,9 +70,9 @@
             </element>
           </childElements>
         </element>
-        <element type="Role" typeId="8663c9f9-2852-45e7-aaa1-0883a2e6f1da">
+        <!--<element type="Role" typeId="8663c9f9-2852-45e7-aaa1-0883a2e6f1da">
           <name>Root</name>
-        </element>
+        </element>-->
       </childElements>
     </package>
   </createPackages>
