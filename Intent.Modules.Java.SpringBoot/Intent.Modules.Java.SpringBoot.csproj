@@ -51,6 +51,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Intent.Modules.Java.Maven\Intent.Modules.Java.Maven.csproj" />
     <ProjectReference Include="..\Intent.Modules.Java.Services\Intent.Modules.Java.Services.csproj" />
   </ItemGroup>
 

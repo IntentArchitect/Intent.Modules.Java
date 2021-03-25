@@ -17,6 +17,7 @@
   <dependencies>
     <dependency id="Intent.Common" version="3.0.4" />
     <dependency id="Intent.Common.Types" version="3.0.3" />
+    <dependency id="Intent.Common.Java" version="3.0.3" />
   </dependencies>
   <files>
     <file src="$outDir$/$id$.dll" />

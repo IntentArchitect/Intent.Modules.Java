@@ -23,6 +23,7 @@ namespace Intent.Modules.Java.Maven.Templates.PomFile
     partial class PomFileTemplate : IntentTemplateBase<object>
     {
         private ICollection<JavaDependency> _javaDependencies = new List<JavaDependency>();
+        private JavaDependency _projectInheritance;
 
         [IntentManaged(Mode.Fully)]
         public const string TemplateId = "Intent.Java.Maven.PomFile";
@@ -31,11 +32,17 @@ namespace Intent.Modules.Java.Maven.Templates.PomFile
         public PomFileTemplate(IOutputTarget outputTarget, object model = null) : base(TemplateId, outputTarget, model)
         {
             ExecutionContext.EventDispatcher.Subscribe<JavaDependency>(Handle);
+            ExecutionContext.EventDispatcher.Subscribe<MavenProjectInheritanceRequest>(Handle);
         }
 
         private void Handle(JavaDependency dependency)
         {
             _javaDependencies.Add(dependency);
+        }
+
+        private void Handle(MavenProjectInheritanceRequest dependency)
+        {
+            _projectInheritance = dependency;
         }
 
         public string GroupId => OutputTarget.Application.SolutionName.ToDotCase();
@@ -55,13 +62,35 @@ namespace Intent.Modules.Java.Maven.Templates.PomFile
         public override string RunTemplate()
         {
             var doc = File.Exists(GetMetadata().GetFilePath()) ? XDocument.Load(GetMetadata().GetFilePath(), LoadOptions.PreserveWhitespace) : XDocument.Parse(TransformText(), LoadOptions.PreserveWhitespace);
+            var namespaces = new XmlNamespaceManager(new NameTable());
+            var _namespace = doc.Root.GetDefaultNamespace();
+            namespaces.AddNamespace("ns", _namespace.NamespaceName);
             // manipulate and save
+
+            if (_projectInheritance != null)
+            {
+                var modelVersionElement = doc.XPathSelectElement("ns:project/ns:modelVersion", namespaces);
+                if (modelVersionElement != null && doc.XPathSelectElement("ns:project/ns:parent", namespaces) == null)
+                {
+                    var element = XElement.Parse($@"
+    <parent>
+		<groupId>{_projectInheritance.GroupId}</groupId>
+		<artifactId>{_projectInheritance.ArtifactId}</artifactId>
+		<version>{_projectInheritance.Version}</version>
+	</parent>", LoadOptions.PreserveWhitespace);
+                    foreach (XElement e in element.DescendantsAndSelf())
+                    {
+                        e.Name = _namespace + e.Name.LocalName; // remove namespaces
+                    }
+                    modelVersionElement.AddAfterSelf(element);
+                    modelVersionElement.AddAfterSelf(@"
+	");
+                }
+            }
 
             foreach (var dependency in _javaDependencies)
             {
-                var namespaces = new XmlNamespaceManager(new NameTable());
-                var _namespace = doc.Root.GetDefaultNamespace();
-                namespaces.AddNamespace("ns", _namespace.NamespaceName);
+
                 var existing = doc.XPathSelectElement($"ns:project/ns:dependencies/ns:dependency[ns:groupId[text() = \"{dependency.GroupId}\"] and ns:artifactId[text() = \"{dependency.ArtifactId}\"]]", namespaces);
                 if (existing == null)
                 {
@@ -77,7 +106,7 @@ namespace Intent.Modules.Java.Maven.Templates.PomFile
                     }
                     foreach (XElement e in newDependency.DescendantsAndSelf())
                     {
-                        e.Name = _namespace + e.Name.LocalName;
+                        e.Name = _namespace + e.Name.LocalName; // remove namespaces
                     }
                     dependencies?.Add("    ", newDependency);
                     dependencies?.Add(Environment.NewLine + "    ");

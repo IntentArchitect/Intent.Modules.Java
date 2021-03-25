@@ -35,62 +35,39 @@ namespace Intent.Modules.Java.Maven.Templates.PomFile
          xmlns:xsi=""http://www.w3.org/2001/XMLSchema-instance""
 		 xsi:schemaLocation=""http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd"">
 	<modelVersion>4.0.0</modelVersion>
-	<parent>
-		<groupId>org.springframework.boot</groupId>
-		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.3.1.RELEASE</version>
-		<relativePath/> <!-- lookup parent from repository -->
-	</parent>
 
 	<groupId>");
             
-            #line 20 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Maven\Templates\PomFile\PomFileTemplate.tt"
+            #line 14 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Maven\Templates\PomFile\PomFileTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(GroupId));
             
             #line default
             #line hidden
             this.Write("</groupId>\r\n\t<artifactId>");
             
-            #line 21 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Maven\Templates\PomFile\PomFileTemplate.tt"
+            #line 15 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Maven\Templates\PomFile\PomFileTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(ArtifactId));
             
             #line default
             #line hidden
             this.Write("</artifactId>\r\n\t<version>");
             
-            #line 22 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Maven\Templates\PomFile\PomFileTemplate.tt"
+            #line 16 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Maven\Templates\PomFile\PomFileTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Version));
             
             #line default
             #line hidden
             this.Write("</version>\r\n\t<name>");
             
-            #line 23 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Maven\Templates\PomFile\PomFileTemplate.tt"
+            #line 17 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Maven\Templates\PomFile\PomFileTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Name));
             
             #line default
             #line hidden
-            this.Write(@"</name>
-	<description>Get subscription customers by Msisdn</description>
-
-	<properties>
-		<java.version>14</java.version>
-	</properties>
-
-	<distributionManagement>
-		
-	</distributionManagement>
-
-	<dependencies>
-
-	</dependencies>
-
-	<profiles>
-		
-	</profiles>
-
-</project>
-");
+            this.Write("</name>\r\n\t<description></description>\r\n\r\n\t<properties>\r\n\t\t<java.version>14</java." +
+                    "version>\r\n\t</properties>\r\n\r\n\t<distributionManagement>\r\n\t\t\r\n\t</distributionManage" +
+                    "ment>\r\n\r\n\t<dependencies>\r\n\r\n\t</dependencies>\r\n\r\n\t<profiles>\r\n\t\t\r\n\t</profiles>\r\n\r" +
+                    "\n</project>\r\n");
             return this.GenerationEnvironment.ToString();
         }
     }
