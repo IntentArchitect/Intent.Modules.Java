@@ -18,5 +18,6 @@
     <application id="5260c3ef-ea5c-487d-9150-6b5cb1fc28be" name="Intent.Modules.Java.BeanValidation" relativePath="Intent.Modules.Java.BeanValidation/Intent.Modules.Java.BeanValidation.application.config" />
     <application id="e1ac2551-105e-45da-be15-8b6a51f50fa4" name="Intent.Modules.Java.ModelMapper" relativePath="Intent.Modules.Java.ModelMapper/Intent.Modules.Java.ModelMapper.application.config" />
     <application id="5ff4b835-8249-47cd-8b33-d60f02c9824b" name="Intent.Modules.Java.SpringFox.Swagger" relativePath="Intent.Modules.Java.SpringFox.Swagger/Intent.Modules.Java.SpringFox.Swagger.application.config" />
+    <application id="2a056a85-a105-4062-b43c-b434e72dff8b" name="Intent.Modules.Java.Spring.Cors" relativePath="Intent.Modules.Java.Spring.Cors/Intent.Modules.Java.Spring.Cors.application.config" />
   </applications>
 </solution>
