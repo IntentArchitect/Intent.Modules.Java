@@ -22,10 +22,13 @@ namespace Intent.Modules.Java.SpringBoot.Templates.Application
         [IntentManaged(Mode.Merge, Signature = Mode.Fully)]
         public ApplicationTemplate(IOutputTarget outputTarget, object model = null) : base(TemplateId, outputTarget, model)
         {
+            AddDependency(new JavaDependency("org.springframework.boot", "spring-boot-starter", "2.3.1.RELEASE"));
+            AddDependency(new JavaDependency("org.springframework.boot", "spring-boot-starter-web", "2.3.1.RELEASE"));
         }
 
         public override void BeforeTemplateExecution()
         {
+            base.BeforeTemplateExecution();
             ExecutionContext.EventDispatcher.Publish(new MavenProjectInheritanceRequest("org.springframework.boot", "spring-boot-starter-parent", "2.3.1.RELEASE"));
         }
 

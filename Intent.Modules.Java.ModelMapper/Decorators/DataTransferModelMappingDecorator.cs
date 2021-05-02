@@ -31,7 +31,7 @@ namespace Intent.Modules.Java.ModelMapper.Decorators
 
             return $@"
     public static {_template.ClassName} mapFrom{GetEntityTypeName()}({GetEntityTypeName()} {GetEntityTypeName().ToCamelCase()}, {_template.ImportType("org.modelmapper.ModelMapper")} mapper) {{
-        return mapper.map(user, {_template.ClassName}.class);
+        return mapper.map({GetEntityTypeName().ToCamelCase()}, {_template.ClassName}.class);
     }}
 
     public static {_template.ImportType("java.util.List")}<{_template.ClassName}> mapFrom{GetEntityTypeName().ToPluralName()}(List<{GetEntityTypeName()}> {GetEntityTypeName().ToCamelCase().ToPluralName()}, {_template.ImportType("org.modelmapper.ModelMapper")} mapper) {{

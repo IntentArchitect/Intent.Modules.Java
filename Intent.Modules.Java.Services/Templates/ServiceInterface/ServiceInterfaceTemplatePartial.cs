@@ -29,7 +29,7 @@ namespace Intent.Modules.Java.Services.Templates.ServiceInterface
         public override ITemplateFileConfig GetTemplateFileConfig()
         {
             return new JavaFileConfig(
-                className: $"{Model.Name}",
+                className: $"{Model.Name.RemoveSuffix("Controller", "Service")}Service",
                 package: $"{OutputTarget.GetPackage()}"
             );
         }
