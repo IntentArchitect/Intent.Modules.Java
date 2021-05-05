@@ -17,7 +17,7 @@ import org.springframework.transaction.annotation.Transactional;
 @Service
 @AllArgsConstructor
 <#= this.IntentMergeAnnotation() #>
-public class <#= ClassName #> implements <#= GetTypeName(ServiceInterface.ServiceInterfaceTemplate.TemplateId) #> {
+public class <#= ClassName #> implements <#= GetTypeName(ServiceInterface.ServiceInterfaceTemplate.TemplateId, Model) #> {
 <#  foreach(var operation in Model.Operations) { #>
 
     @Override

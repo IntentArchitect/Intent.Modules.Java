@@ -59,7 +59,7 @@ namespace Intent.Modules.Java.Services.Templates.ServiceImplementation
             this.Write(" implements ");
             
             #line 20 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Services\Templates\ServiceImplementation\ServiceImplementationTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(GetTypeName(ServiceInterface.ServiceInterfaceTemplate.TemplateId)));
+            this.Write(this.ToStringHelper.ToStringWithCulture(GetTypeName(ServiceInterface.ServiceInterfaceTemplate.TemplateId, Model)));
             
             #line default
             #line hidden

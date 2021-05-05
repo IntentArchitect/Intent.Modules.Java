@@ -87,15 +87,25 @@ namespace Intent.Modules.Java.Persistence.JPA.Decorators
             }
             else if (!sourceEnd.IsCollection && thatEnd.IsCollection) // one-to-many
             {
-                annotations.Add($"@OneToMany({(sourceEnd.IsNullable ? "" : "orphanRemoval = true")})");
+                var settings = new List<string>();
+                if (sourceEnd.IsNavigable)
+                {
+                    settings.Add($"mappedBy=\"{sourceEnd.Name.ToCamelCase()}\"");
+                }
+
+                if (!sourceEnd.IsNullable)
+                {
+                    settings.Add("orphanRemoval = true");
+                }
+                annotations.Add($"@OneToMany({string.Join(", ", settings)})");
             }
             else if (sourceEnd.IsCollection && !thatEnd.IsCollection) // many-to-one
             {
                 annotations.Add($"@ManyToOne(optional = {thatEnd.IsNullable.ToString().ToLower()})");
-                if (thatEnd.IsTargetEnd())
-                {
-                    annotations.Add($"@JoinColumn(name=\"{thatEnd.Name.ToSnakeCase()}_id\", nullable = {thatEnd.IsNullable.ToString().ToLower()})");
-                }
+                //if (thatEnd.IsTargetEnd())
+                //{
+                annotations.Add($"@JoinColumn(name=\"{thatEnd.Name.ToSnakeCase()}_id\", nullable = {thatEnd.IsNullable.ToString().ToLower()})");
+                //}
             }
             else if (sourceEnd.IsCollection && thatEnd.IsCollection) // many-to-many
             {

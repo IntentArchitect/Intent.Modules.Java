@@ -34,7 +34,7 @@ namespace Intent.Modules.Java.ModelMapper.Decorators
         return mapper.map({GetEntityTypeName().ToCamelCase()}, {_template.ClassName}.class);
     }}
 
-    public static {_template.ImportType("java.util.List")}<{_template.ClassName}> mapFrom{GetEntityTypeName().ToPluralName()}(List<{GetEntityTypeName()}> {GetEntityTypeName().ToCamelCase().ToPluralName()}, {_template.ImportType("org.modelmapper.ModelMapper")} mapper) {{
+    public static {_template.ImportType("java.util.List")}<{_template.ClassName}> mapFrom{GetEntityTypeName().ToPluralName()}({_template.ImportType("java.util.Collection")}<{GetEntityTypeName()}> {GetEntityTypeName().ToCamelCase().ToPluralName()}, {_template.ImportType("org.modelmapper.ModelMapper")} mapper) {{
         return {GetEntityTypeName().ToCamelCase().ToPluralName()}
             .stream()
             .map({GetEntityTypeName().ToCamelCase()} -> {_template.ClassName}.mapFrom{GetEntityTypeName()}({GetEntityTypeName().ToCamelCase()}, mapper))

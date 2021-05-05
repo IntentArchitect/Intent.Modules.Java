@@ -40,7 +40,7 @@ namespace Intent.Modules.Java.Spring.Data.Repositories.Templates.EntityRepositor
 
         private string GetEntityIdType()
         {
-            return "Long";
+            return "Integer";
         }
 
     }
