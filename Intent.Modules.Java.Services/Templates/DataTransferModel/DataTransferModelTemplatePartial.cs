@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using Intent.Engine;
 using Intent.Modelers.Services.Api;
 using Intent.Modules.Common.Java;
@@ -22,6 +23,10 @@ namespace Intent.Modules.Java.Services.Templates.DataTransferModel
         public DataTransferModelTemplate(IOutputTarget outputTarget, Intent.Modelers.Services.Api.DTOModel model) : base(TemplateId, outputTarget, model)
         {
             AddDependency(new JavaDependency("org.projectlombok", "lombok", "1.18.12"));
+            if (model.Fields.Any(x => x.TypeReference.IsCollection))
+            {
+                SetDefaultTypeCollectionFormat($"{ImportType("java.util.List")}<{{0}}>");
+            }
             AddTypeSource(TemplateId, type => $"{ImportType("java.util.List")}<{type}>");
         }
 

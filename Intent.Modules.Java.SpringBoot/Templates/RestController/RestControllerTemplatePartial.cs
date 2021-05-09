@@ -7,6 +7,7 @@ using Intent.Modelers.Services.Api;
 using Intent.Modules.Common.Java;
 using Intent.Modules.Common.Java.Templates;
 using Intent.Modules.Common.Templates;
+using Intent.Modules.Java.Services.Templates;
 using Intent.Modules.Java.Services.Templates.DataTransferModel;
 using Intent.Modules.Java.Services.Templates.ServiceInterface;
 using Intent.RoslynWeaver.Attributes;
@@ -82,7 +83,7 @@ namespace Intent.Modules.Java.SpringBoot.Templates.RestController
             {
                 return "ResponseEntity<Void>";
             }
-            return $"ResponseEntity<{GetTypeName(operation.TypeReference)}>";
+            return $"ResponseEntity<{this.GetTypeAsObject(operation.TypeReference)}>";
         }
 
         private string GetPath(OperationModel operation)

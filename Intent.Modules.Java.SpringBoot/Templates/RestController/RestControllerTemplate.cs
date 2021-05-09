@@ -140,44 +140,85 @@ namespace Intent.Modules.Java.SpringBoot.Templates.RestController
             
             #line default
             #line hidden
-            this.Write(");\r\n\r\n        return new ResponseEntity<>(result, HttpStatus.OK);\r\n");
+            this.Write(");\r\n");
+            
+            #line 29 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.SpringBoot\Templates\RestController\RestControllerTemplate.tt"
+          if (!operation.ReturnType.IsNullable && !GetTypeInfo(operation.ReturnType).IsPrimitive && !operation.ReturnType.IsCollection) { 
+            
+            #line default
+            #line hidden
+            this.Write("        if (result == null) {\r\n            return new ");
             
             #line 31 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.SpringBoot\Templates\RestController\RestControllerTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(GetReturnType(operation)));
+            
+            #line default
+            #line hidden
+            this.Write("(HttpStatus.NOT_FOUND);\r\n        }\r\n");
+            
+            #line 33 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.SpringBoot\Templates\RestController\RestControllerTemplate.tt"
+          } 
+            
+            #line default
+            #line hidden
+            
+            #line 34 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.SpringBoot\Templates\RestController\RestControllerTemplate.tt"
+          if (!operation.ReturnType.IsNullable && operation.ReturnType.IsCollection) { 
+            
+            #line default
+            #line hidden
+            this.Write("        if (result.isEmpty()) {\r\n            return new ");
+            
+            #line 36 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.SpringBoot\Templates\RestController\RestControllerTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(GetReturnType(operation)));
+            
+            #line default
+            #line hidden
+            this.Write("(HttpStatus.NOT_FOUND);\r\n        }\r\n");
+            
+            #line 38 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.SpringBoot\Templates\RestController\RestControllerTemplate.tt"
+          } 
+            
+            #line default
+            #line hidden
+            this.Write("        return new ResponseEntity<>(result, HttpStatus.OK);\r\n");
+            
+            #line 40 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.SpringBoot\Templates\RestController\RestControllerTemplate.tt"
       } else { 
             
             #line default
             #line hidden
             this.Write("        ");
             
-            #line 32 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.SpringBoot\Templates\RestController\RestControllerTemplate.tt"
+            #line 41 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.SpringBoot\Templates\RestController\RestControllerTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(GetServiceInterfaceName().ToCamelCase()));
             
             #line default
             #line hidden
             this.Write(".");
             
-            #line 32 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.SpringBoot\Templates\RestController\RestControllerTemplate.tt"
+            #line 41 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.SpringBoot\Templates\RestController\RestControllerTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("(");
             
-            #line 32 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.SpringBoot\Templates\RestController\RestControllerTemplate.tt"
+            #line 41 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.SpringBoot\Templates\RestController\RestControllerTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.GetArguments(operation.Parameters)));
             
             #line default
             #line hidden
             this.Write(");\r\n\r\n        return new ResponseEntity<>(HttpStatus.OK);\r\n");
             
-            #line 35 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.SpringBoot\Templates\RestController\RestControllerTemplate.tt"
+            #line 44 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.SpringBoot\Templates\RestController\RestControllerTemplate.tt"
       } 
             
             #line default
             #line hidden
             this.Write("    }\r\n");
             
-            #line 37 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.SpringBoot\Templates\RestController\RestControllerTemplate.tt"
+            #line 46 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.SpringBoot\Templates\RestController\RestControllerTemplate.tt"
   } 
             
             #line default

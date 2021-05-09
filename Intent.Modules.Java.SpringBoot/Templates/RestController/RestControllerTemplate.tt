@@ -26,7 +26,16 @@ public class <#= ClassName #> {
     public <#= GetReturnType(operation) #> <#= operation.Name #>(<#= GetParameters(operation) #>) {
 <#      if (operation.ReturnType != null) { #>
         final <#= GetTypeName(operation) #> result = <#= GetServiceInterfaceName().ToCamelCase() #>.<#= operation.Name #>(<#= this.GetArguments(operation.Parameters) #>);
-
+<#          if (!operation.ReturnType.IsNullable && !GetTypeInfo(operation.ReturnType).IsPrimitive && !operation.ReturnType.IsCollection) { #>
+        if (result == null) {
+            return new <#= GetReturnType(operation) #>(HttpStatus.NOT_FOUND);
+        }
+<#          } #>
+<#          if (!operation.ReturnType.IsNullable && operation.ReturnType.IsCollection) { #>
+        if (result.isEmpty()) {
+            return new <#= GetReturnType(operation) #>(HttpStatus.NOT_FOUND);
+        }
+<#          } #>
         return new ResponseEntity<>(result, HttpStatus.OK);
 <#      } else { #>
         <#= GetServiceInterfaceName().ToCamelCase() #>.<#= operation.Name #>(<#= this.GetArguments(operation.Parameters) #>);

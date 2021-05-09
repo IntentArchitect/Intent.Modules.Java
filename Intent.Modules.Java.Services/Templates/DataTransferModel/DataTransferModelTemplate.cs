@@ -58,7 +58,7 @@ namespace Intent.Modules.Java.Services.Templates.DataTransferModel
             this.Write("    private ");
             
             #line 22 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Services\Templates\DataTransferModel\DataTransferModelTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(GetTypeName(field)));
+            this.Write(this.ToStringHelper.ToStringWithCulture(field.TypeReference.IsCollection ? this.GetTypeAsObject(field.TypeReference) : GetTypeName(field.TypeReference)));
             
             #line default
             #line hidden
