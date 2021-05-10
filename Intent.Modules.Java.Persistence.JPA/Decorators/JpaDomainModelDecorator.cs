@@ -46,7 +46,7 @@ namespace Intent.Modules.Java.Persistence.JPA.Decorators
         {
             return $@"
 @Entity
-@Table(name = ""{_template.Model.Name.ToSnakeCase()}"")";
+@Table(name = ""{(_template.Model.HasTable() ? _template.Model.GetTable().Name() : _template.Model.Name.ToPluralName().ToSnakeCase())}"")";
         }
 
         public override string BeforeField(AttributeModel model)
@@ -113,7 +113,7 @@ namespace Intent.Modules.Java.Persistence.JPA.Decorators
                 if (thatEnd.IsTargetEnd())
                 {
                     annotations.Add($@"@JoinTable(
-            name = ""{sourceEnd.Element.Name.ToSnakeCase()}_{thatEnd.Element.Name.ToSnakeCase()}"",
+            name = ""{sourceEnd.Element.Name.ToSnakeCase()}_{thatEnd.Element.Name.ToPluralName().ToSnakeCase()}"",
             joinColumns = {{ @JoinColumn(name = ""{sourceEnd.Element.Name.ToSnakeCase()}_id"") }},
             inverseJoinColumns = {{ @JoinColumn(name = ""{thatEnd.Element.Name.ToSnakeCase()}_id"") }}
     )");
