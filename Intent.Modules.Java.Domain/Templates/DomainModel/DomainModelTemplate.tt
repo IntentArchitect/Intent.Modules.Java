@@ -15,7 +15,7 @@ package <#= Package #>;
 <#= this.IntentManageClassAnnotation() #>(privateMethods = <#= this.IntentModeIgnore() #>)
 public class <#= ClassName #> extends <#= GetBaseClass() #> {
     private static final long serialVersionUID = 1L;
-<#  foreach(var attribute in Model.Attributes) { #>
+<#  foreach(var attribute in Model.Attributes.Where(x => !x.Name.Equals("id", StringComparison.InvariantCultureIgnoreCase))) { #>
 
     <#= GetDecoratorsOutput(x => x.BeforeField(attribute), @"
     ") #>private <#= GetTypeName(attribute) #> <#= attribute.Name.ToCamelCase() #>;
@@ -25,7 +25,7 @@ public class <#= ClassName #> extends <#= GetBaseClass() #> {
     <#= GetDecoratorsOutput(x => x.BeforeField(associationEnd), @"
     ") #>private <#= GetTypeName(associationEnd) #> <#= associationEnd.Name.ToCamelCase() #>;
 <#  } #>
-<#  foreach(var attribute in Model.Attributes) { #>
+<#  foreach(var attribute in Model.Attributes.Where(x => !x.Name.Equals("id", StringComparison.InvariantCultureIgnoreCase))) { #>
 
     public <#= GetTypeName(attribute) #> get<#= attribute.Name.ToPascalCase() #>() {
         return this.<#= attribute.Name.ToCamelCase() #>;

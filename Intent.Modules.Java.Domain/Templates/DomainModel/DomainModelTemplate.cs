@@ -79,7 +79,7 @@ namespace Intent.Modules.Java.Domain.Templates.DomainModel
             this.Write(" {\r\n    private static final long serialVersionUID = 1L;\r\n");
             
             #line 18 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Domain\Templates\DomainModel\DomainModelTemplate.tt"
-  foreach(var attribute in Model.Attributes) { 
+  foreach(var attribute in Model.Attributes.Where(x => !x.Name.Equals("id", StringComparison.InvariantCultureIgnoreCase))) { 
             
             #line default
             #line hidden
@@ -149,7 +149,7 @@ namespace Intent.Modules.Java.Domain.Templates.DomainModel
             #line hidden
             
             #line 28 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Domain\Templates\DomainModel\DomainModelTemplate.tt"
-  foreach(var attribute in Model.Attributes) { 
+  foreach(var attribute in Model.Attributes.Where(x => !x.Name.Equals("id", StringComparison.InvariantCultureIgnoreCase))) { 
             
             #line default
             #line hidden

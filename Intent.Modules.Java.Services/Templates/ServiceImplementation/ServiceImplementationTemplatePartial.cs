@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using Intent.Engine;
 using Intent.Modelers.Services.Api;
+using Intent.Modules.Common;
 using Intent.Modules.Common.Java;
 using Intent.Modules.Common.Java.Templates;
 using Intent.Modules.Common.Templates;
@@ -25,7 +26,6 @@ namespace Intent.Modules.Java.Services.Templates.ServiceImplementation
         {
             AddDependency(new JavaDependency("org.projectlombok", "lombok", "1.18.12"));
             AddTemplateDependency("Intent.Java.SpringBoot.IntentAnnotations");
-
             AddTypeSource(DataTransferModelTemplate.TemplateId, type => $"{ImportType("java.util.List")}<{type}>");
         }
 
@@ -40,7 +40,8 @@ namespace Intent.Modules.Java.Services.Templates.ServiceImplementation
 
         public string IsReadOnly(OperationModel operation)
         {
-            return operation.GetTransactionOptions().IsReadOnly().ToString().ToLower();
+            return operation.GetTransactionOptions()?.IsReadOnly().ToString().ToLower() ??
+                (operation.GetStereotype("Http Settings")?.GetProperty<string>("Verb") == "GET" ? "true" : "false");
         }
 
     }

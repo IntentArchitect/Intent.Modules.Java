@@ -5,7 +5,7 @@
   <targetElements>
     <element id="e030c97a-e066-40a7-8188-808c275df3cb">Operation</element>
   </targetElements>
-  <applyMode>always</applyMode>
+  <applyMode>manually</applyMode>
   <icon type="FontAwesome" source="database" />
   <displayIcon>false</displayIcon>
   <displayFunction />
