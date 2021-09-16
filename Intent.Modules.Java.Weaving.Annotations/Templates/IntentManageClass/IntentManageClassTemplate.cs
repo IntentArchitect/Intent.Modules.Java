@@ -45,30 +45,40 @@ import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
- 
-@Target({ ElementType.TYPE, ElementType.METHOD, ElementType.FIELD, ElementType.CONSTRUCTOR })
+
+/**
+ * Allows explicit instructions for the various element types within this class.
+ */
+@Target({ ElementType.TYPE })
 @Retention(RetentionPolicy.SOURCE)
 public @interface ");
             
-            #line 19 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Weaving.Annotations\Templates\IntentManageClass\IntentManageClassTemplate.tt"
+            #line 22 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Weaving.Annotations\Templates\IntentManageClass\IntentManageClassTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(ClassName));
             
             #line default
             #line hidden
-            this.Write(@"{
-
-    Mode privateFields() default Mode.Default;
-    Mode protectedFields() default Mode.Default;
-    Mode publicFields() default Mode.Default;
-    Mode fields() default Mode.Default;
-    
-    Mode constructors() default Mode.Default;
-
-    Mode privateMethods() default Mode.Default;
-    Mode protectedMethods() default Mode.Default;
-    Mode publicMethods() default Mode.Default;
-    Mode methods() default Mode.Default;
-}");
+            this.Write("{\r\n    /**\r\n    * Override for the identifier for this class. \r\n    * Use this if" +
+                    " you want Intent Architect to match this class to an output class, irrespective " +
+                    "of its name.\r\n    */\r\n    String id() default \"\";\r\n    /**\r\n    * Sets the instr" +
+                    "uction for how to manage annotations on this class.\r\n    */\r\n    int annotations" +
+                    "() default 0;\r\n    /**\r\n    * Sets the instruction for how to manage members in " +
+                    "this class.\r\n    */\r\n    int members() default 0;\r\n    /**\r\n    * Sets the instr" +
+                    "uction for how to manage private fields in this class.\r\n    */\r\n    int privateF" +
+                    "ields() default 0;\r\n    /**\r\n    * Sets the instruction for how to manage privat" +
+                    "e fields in this class.\r\n    */\r\n    int protectedFields() default 0;\r\n    /**\r\n" +
+                    "    * Sets the instruction for how to manage protected fields in this class.\r\n  " +
+                    "  */\r\n    int publicFields() default 0;\r\n    /**\r\n    * Sets the instruction for" +
+                    " how to manage public fields in this class.\r\n    */\r\n    int fields() default 0;" +
+                    "\r\n    /**\r\n    * Sets the instruction for how to manage all fields in this class" +
+                    ".\r\n    */    \r\n    int constructors() default 0;\r\n    /**\r\n    * Sets the instru" +
+                    "ction for how to manage constructors in this class.\r\n    */\r\n    int privateMeth" +
+                    "ods() default 0;\r\n    /**\r\n    * Sets the instruction for how to manage private " +
+                    "methods in this class.\r\n    */\r\n    int protectedMethods() default 0;\r\n    /**\r\n" +
+                    "    * Sets the instruction for how to manage protected methods in this class.\r\n " +
+                    "   */\r\n    int publicMethods() default 0;\r\n    /**\r\n    * Sets the instruction f" +
+                    "or how to manage public methods in this class.\r\n    */\r\n    int methods() defaul" +
+                    "t 0;\r\n}");
             return this.GenerationEnvironment.ToString();
         }
     }

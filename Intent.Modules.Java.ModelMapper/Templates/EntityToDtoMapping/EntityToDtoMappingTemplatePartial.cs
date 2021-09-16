@@ -30,7 +30,7 @@ namespace Intent.Modules.Java.ModelMapper.Templates.EntityToDtoMapping
         public EntityToDtoMappingTemplate(IOutputTarget outputTarget, Intent.Modelers.Services.Api.DTOModel model) : base(TemplateId, outputTarget, model)
         {
             _entity = new ClassModel((IElement)Model.Mapping.Element);
-            AddTypeSource(DataTransferModelTemplate.TemplateId);
+            AddTypeSource(DataTransferModelTemplate.TemplateId).TrackDependencies(false);
         }
 
         [IntentManaged(Mode.Merge, Body = Mode.Ignore, Signature = Mode.Fully)]

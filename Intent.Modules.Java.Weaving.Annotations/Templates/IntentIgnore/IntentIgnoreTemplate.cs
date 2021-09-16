@@ -45,17 +45,22 @@ import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
- 
+
+/**
+ * Instructs Intent Architect to ignore this member (i.e. do not update or remove it)
+ */
 @Target({ ElementType.TYPE, ElementType.METHOD, ElementType.FIELD, ElementType.CONSTRUCTOR })
 @Retention(RetentionPolicy.SOURCE)
 public @interface ");
             
-            #line 19 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Weaving.Annotations\Templates\IntentIgnore\IntentIgnoreTemplate.tt"
+            #line 22 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Weaving.Annotations\Templates\IntentIgnore\IntentIgnoreTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(ClassName));
             
             #line default
             #line hidden
-            this.Write("{\r\n}");
+            this.Write("{\r\n    /**\r\n    * Override for the identifier for this element. \r\n    * Use this " +
+                    "if you want Intent Architect to match this element to an output element, irrespe" +
+                    "ctive of its name or signature.\r\n    */\r\n    String id() default \"\";\r\n}");
             return this.GenerationEnvironment.ToString();
         }
     }

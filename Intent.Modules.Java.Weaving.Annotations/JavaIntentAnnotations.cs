@@ -61,5 +61,30 @@ namespace Intent.Modules.Java
         {
             return $"{template.GetTypeName(ModeEnumTemplate.TemplateId)}.Ignore";
         }
+
+        public static string IntentModeMerge<T>(this IntentTemplateBase<T> template)
+        {
+            return $"{template.GetTypeName(ModeEnumTemplate.TemplateId)}.Merge";
+        }
+
+        public static string IntentModeManage<T>(this IntentTemplateBase<T> template)
+        {
+            return $"{template.GetTypeName(ModeEnumTemplate.TemplateId)}.Manage";
+        }
+
+        public static string IntentModeCanAdd<T>(this IntentTemplateBase<T> template)
+        {
+            return $"{template.GetTypeName(ModeEnumTemplate.TemplateId)}.CanAdd";
+        }
+
+        public static string IntentModeCanUpdate<T>(this IntentTemplateBase<T> template)
+        {
+            return $"{template.GetTypeName(ModeEnumTemplate.TemplateId)}.CanUpdate";
+        }
+
+        public static string IntentModeCanRemove<T>(this IntentTemplateBase<T> template)
+        {
+            return $"{template.GetTypeName(ModeEnumTemplate.TemplateId)}.CanRemove";
+        }
     }
 }
