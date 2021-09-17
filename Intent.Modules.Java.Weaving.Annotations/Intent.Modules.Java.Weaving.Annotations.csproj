@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.1</TargetFramework>
@@ -50,13 +50,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>IntentMergeTemplate.tt</DependentUpon>
     </Compile>
-  
     <Compile Update="Templates\ModeEnum\ModeEnumTemplate.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>ModeEnumTemplate.tt</DependentUpon>
     </Compile>
-  
     <Compile Update="Templates\IntentManageClass\IntentManageClassTemplate.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -93,12 +91,12 @@
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>IntentMergeTemplate.cs</LastGenOutput>
     </None>
-  
+
     <None Update="Templates\ModeEnum\ModeEnumTemplate.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>ModeEnumTemplate.cs</LastGenOutput>
     </None>
-  
+
     <None Update="Templates\IntentManageClass\IntentManageClassTemplate.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>IntentManageClassTemplate.cs</LastGenOutput>
@@ -126,4 +124,5 @@
       <Pack>True</Pack>
     </None>
   </ItemGroup>
+
 </Project>
