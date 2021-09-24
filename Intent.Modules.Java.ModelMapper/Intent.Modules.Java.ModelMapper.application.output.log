@@ -1,74 +1,74 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="utf-8"?>
 <outputLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ApplicationId>e1ac2551-105e-45da-be15-8b6a51f50fa4</ApplicationId>
   <FileLogs>
     <FileLog>
       <ProjectId>f7ac3064-fb03-46f5-9743-5518f5aa4e46</ProjectId>
-      <SolutionRelativeFilePath>../Intent.Modules.Java.ModelMapper/Decorators/DataTransferModelMappingDecorator.cs</SolutionRelativeFilePath>
+      <ApplicationRelativeFilePath>Decorators/DataTransferModelMappingDecorator.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>DataTransferModelMappingDecorator.cs</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
       <ProjectId>f7ac3064-fb03-46f5-9743-5518f5aa4e46</ProjectId>
-      <SolutionRelativeFilePath>../Intent.Modules.Java.ModelMapper/Decorators/DataTransferModelMappingDecoratorRegistration.cs</SolutionRelativeFilePath>
+      <ApplicationRelativeFilePath>Decorators/DataTransferModelMappingDecoratorRegistration.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>DataTransferModelMappingDecoratorRegistration.cs</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
       <ProjectId>997d1487-cfea-43d7-9aec-be05f101f8df</ProjectId>
-      <SolutionRelativeFilePath>../Intent.Modules.Java.ModelMapper/Intent.Java.ModelMapper.imodspec</SolutionRelativeFilePath>
+      <ApplicationRelativeFilePath>Intent.Java.ModelMapper.imodspec</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>Intent.Java.ModelMapper.imodspec</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
       <ProjectId>997d1487-cfea-43d7-9aec-be05f101f8df</ProjectId>
-      <SolutionRelativeFilePath>../Intent.Modules.Java.ModelMapper/Intent.Modules.Java.ModelMapper.csproj</SolutionRelativeFilePath>
+      <ApplicationRelativeFilePath>Intent.Modules.Java.ModelMapper.csproj</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>Intent.Modules.Java.ModelMapper.csproj</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
       <ProjectId>997d1487-cfea-43d7-9aec-be05f101f8df</ProjectId>
-      <SolutionRelativeFilePath>../Intent.Modules.Java.ModelMapper/README.txt</SolutionRelativeFilePath>
+      <ApplicationRelativeFilePath>README.txt</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>README.txt</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
       <ProjectId>ccea972e-d4bf-492c-a8a3-58fdb0aac140</ProjectId>
-      <SolutionRelativeFilePath>../Intent.Modules.Java.ModelMapper/Templates/EntityToDtoMapping/EntityToDtoMappingTemplate.cs</SolutionRelativeFilePath>
+      <ApplicationRelativeFilePath>Templates/EntityToDtoMapping/EntityToDtoMappingTemplate.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>EntityToDtoMapping/EntityToDtoMappingTemplate.cs</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
       <ProjectId>ccea972e-d4bf-492c-a8a3-58fdb0aac140</ProjectId>
-      <SolutionRelativeFilePath>../Intent.Modules.Java.ModelMapper/Templates/EntityToDtoMapping/EntityToDtoMappingTemplate.tt</SolutionRelativeFilePath>
+      <ApplicationRelativeFilePath>Templates/EntityToDtoMapping/EntityToDtoMappingTemplate.tt</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>EntityToDtoMapping/EntityToDtoMappingTemplate.tt</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
       <ProjectId>ccea972e-d4bf-492c-a8a3-58fdb0aac140</ProjectId>
-      <SolutionRelativeFilePath>../Intent.Modules.Java.ModelMapper/Templates/EntityToDtoMapping/EntityToDtoMappingTemplatePartial.cs</SolutionRelativeFilePath>
+      <ApplicationRelativeFilePath>Templates/EntityToDtoMapping/EntityToDtoMappingTemplatePartial.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>EntityToDtoMapping/EntityToDtoMappingTemplatePartial.cs</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
       <ProjectId>ccea972e-d4bf-492c-a8a3-58fdb0aac140</ProjectId>
-      <SolutionRelativeFilePath>../Intent.Modules.Java.ModelMapper/Templates/EntityToDtoMapping/EntityToDtoMappingTemplateRegistration.cs</SolutionRelativeFilePath>
+      <ApplicationRelativeFilePath>Templates/EntityToDtoMapping/EntityToDtoMappingTemplateRegistration.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>EntityToDtoMapping/EntityToDtoMappingTemplateRegistration.cs</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
       <ProjectId>ccea972e-d4bf-492c-a8a3-58fdb0aac140</ProjectId>
-      <SolutionRelativeFilePath>../Intent.Modules.Java.ModelMapper/Templates/ModelMapperBean/ModelMapperBeanTemplate.cs</SolutionRelativeFilePath>
+      <ApplicationRelativeFilePath>Templates/ModelMapperBean/ModelMapperBeanTemplate.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>ModelMapperBean/ModelMapperBeanTemplate.cs</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
       <ProjectId>ccea972e-d4bf-492c-a8a3-58fdb0aac140</ProjectId>
-      <SolutionRelativeFilePath>../Intent.Modules.Java.ModelMapper/Templates/ModelMapperBean/ModelMapperBeanTemplate.tt</SolutionRelativeFilePath>
+      <ApplicationRelativeFilePath>Templates/ModelMapperBean/ModelMapperBeanTemplate.tt</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>ModelMapperBean/ModelMapperBeanTemplate.tt</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
       <ProjectId>ccea972e-d4bf-492c-a8a3-58fdb0aac140</ProjectId>
-      <SolutionRelativeFilePath>../Intent.Modules.Java.ModelMapper/Templates/ModelMapperBean/ModelMapperBeanTemplatePartial.cs</SolutionRelativeFilePath>
+      <ApplicationRelativeFilePath>Templates/ModelMapperBean/ModelMapperBeanTemplatePartial.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>ModelMapperBean/ModelMapperBeanTemplatePartial.cs</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
       <ProjectId>ccea972e-d4bf-492c-a8a3-58fdb0aac140</ProjectId>
-      <SolutionRelativeFilePath>../Intent.Modules.Java.ModelMapper/Templates/ModelMapperBean/ModelMapperBeanTemplateRegistration.cs</SolutionRelativeFilePath>
+      <ApplicationRelativeFilePath>Templates/ModelMapperBean/ModelMapperBeanTemplateRegistration.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>ModelMapperBean/ModelMapperBeanTemplateRegistration.cs</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
-      <SolutionRelativeFilePath>../Intent.Modules.Java.sln</SolutionRelativeFilePath>
+      <ApplicationRelativeFilePath>../Intent.Modules.Java.sln</ApplicationRelativeFilePath>
     </FileLog>
   </FileLogs>
 </outputLog>

@@ -1,53 +1,53 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="utf-8"?>
 <outputLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ApplicationId>5ff4b835-8249-47cd-8b33-d60f02c9824b</ApplicationId>
   <FileLogs>
     <FileLog>
-      <SolutionRelativeFilePath>../Intent.Modules.Java.sln</SolutionRelativeFilePath>
+      <ApplicationRelativeFilePath>../Intent.Modules.Java.sln</ApplicationRelativeFilePath>
     </FileLog>
     <FileLog>
       <ProjectId>c6a75fa9-12ed-4f89-a451-f71220ab0e9b</ProjectId>
-      <SolutionRelativeFilePath>../Intent.Modules.Java.SpringFox.Swagger/Decorators/OpenApiControllerDecorator.cs</SolutionRelativeFilePath>
+      <ApplicationRelativeFilePath>Decorators/OpenApiControllerDecorator.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>OpenApiControllerDecorator.cs</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
       <ProjectId>c6a75fa9-12ed-4f89-a451-f71220ab0e9b</ProjectId>
-      <SolutionRelativeFilePath>../Intent.Modules.Java.SpringFox.Swagger/Decorators/OpenApiControllerDecoratorRegistration.cs</SolutionRelativeFilePath>
+      <ApplicationRelativeFilePath>Decorators/OpenApiControllerDecoratorRegistration.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>OpenApiControllerDecoratorRegistration.cs</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
       <ProjectId>ad411f25-020a-4d8a-89c8-166edee814b5</ProjectId>
-      <SolutionRelativeFilePath>../Intent.Modules.Java.SpringFox.Swagger/Intent.Java.SpringFox.Swagger.imodspec</SolutionRelativeFilePath>
+      <ApplicationRelativeFilePath>Intent.Java.SpringFox.Swagger.imodspec</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>Intent.Java.SpringFox.Swagger.imodspec</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
       <ProjectId>ad411f25-020a-4d8a-89c8-166edee814b5</ProjectId>
-      <SolutionRelativeFilePath>../Intent.Modules.Java.SpringFox.Swagger/Intent.Modules.Java.SpringFox.Swagger.csproj</SolutionRelativeFilePath>
+      <ApplicationRelativeFilePath>Intent.Modules.Java.SpringFox.Swagger.csproj</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>Intent.Modules.Java.SpringFox.Swagger.csproj</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
       <ProjectId>ad411f25-020a-4d8a-89c8-166edee814b5</ProjectId>
-      <SolutionRelativeFilePath>../Intent.Modules.Java.SpringFox.Swagger/README.txt</SolutionRelativeFilePath>
+      <ApplicationRelativeFilePath>README.txt</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>README.txt</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
       <ProjectId>1c020f5d-a54f-4469-b2f7-5b30ab67cb35</ProjectId>
-      <SolutionRelativeFilePath>../Intent.Modules.Java.SpringFox.Swagger/Templates/SpringFoxConfig/SpringFoxConfigTemplate.cs</SolutionRelativeFilePath>
+      <ApplicationRelativeFilePath>Templates/SpringFoxConfig/SpringFoxConfigTemplate.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>SpringFoxConfig/SpringFoxConfigTemplate.cs</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
       <ProjectId>1c020f5d-a54f-4469-b2f7-5b30ab67cb35</ProjectId>
-      <SolutionRelativeFilePath>../Intent.Modules.Java.SpringFox.Swagger/Templates/SpringFoxConfig/SpringFoxConfigTemplate.tt</SolutionRelativeFilePath>
+      <ApplicationRelativeFilePath>Templates/SpringFoxConfig/SpringFoxConfigTemplate.tt</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>SpringFoxConfig/SpringFoxConfigTemplate.tt</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
       <ProjectId>1c020f5d-a54f-4469-b2f7-5b30ab67cb35</ProjectId>
-      <SolutionRelativeFilePath>../Intent.Modules.Java.SpringFox.Swagger/Templates/SpringFoxConfig/SpringFoxConfigTemplatePartial.cs</SolutionRelativeFilePath>
+      <ApplicationRelativeFilePath>Templates/SpringFoxConfig/SpringFoxConfigTemplatePartial.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>SpringFoxConfig/SpringFoxConfigTemplatePartial.cs</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
       <ProjectId>1c020f5d-a54f-4469-b2f7-5b30ab67cb35</ProjectId>
-      <SolutionRelativeFilePath>../Intent.Modules.Java.SpringFox.Swagger/Templates/SpringFoxConfig/SpringFoxConfigTemplateRegistration.cs</SolutionRelativeFilePath>
+      <ApplicationRelativeFilePath>Templates/SpringFoxConfig/SpringFoxConfigTemplateRegistration.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>SpringFoxConfig/SpringFoxConfigTemplateRegistration.cs</ProjectRelativeFilePath>
     </FileLog>
   </FileLogs>

@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<stereotypeDefinition id="b72430de-3a53-44de-af0a-75023119d64f">
+<stereotypeDefinition id="b72430de-3a53-44de-af0a-75023119d64f" version="3.1.0">
   <name>Transaction Options</name>
   <targetMode>of-type</targetMode>
-  <targetElements>
-    <element id="e030c97a-e066-40a7-8188-808c275df3cb">Operation</element>
-  </targetElements>
+  <targetTypes>
+    <type id="e030c97a-e066-40a7-8188-808c275df3cb">Operation</type>
+  </targetTypes>
+  <targetReferenceTypes />
   <applyMode>manually</applyMode>
   <icon type="FontAwesome" source="database" />
   <displayIcon>false</displayIcon>

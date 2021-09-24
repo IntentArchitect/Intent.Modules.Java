@@ -1,203 +1,203 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="utf-8"?>
 <outputLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ApplicationId>34ab81e4-7133-42aa-a9ac-72dc515be606</ApplicationId>
   <FileLogs>
     <FileLog>
-      <SolutionRelativeFilePath>../Intent.Modules.Java.sln</SolutionRelativeFilePath>
+      <ApplicationRelativeFilePath>../Intent.Modules.Java.sln</ApplicationRelativeFilePath>
     </FileLog>
     <FileLog>
       <ProjectId>9ba4083b-ca3e-4813-8a51-ace7e6b40366</ProjectId>
-      <SolutionRelativeFilePath>../Intent.Modules.Java.Weaving.Annotations/Intent.Java.Weaving.Annotations.imodspec</SolutionRelativeFilePath>
+      <ApplicationRelativeFilePath>Intent.Java.Weaving.Annotations.imodspec</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>Intent.Java.Weaving.Annotations.imodspec</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
       <ProjectId>9ba4083b-ca3e-4813-8a51-ace7e6b40366</ProjectId>
-      <SolutionRelativeFilePath>../Intent.Modules.Java.Weaving.Annotations/Intent.Modules.Java.Weaving.Annotations.csproj</SolutionRelativeFilePath>
+      <ApplicationRelativeFilePath>Intent.Modules.Java.Weaving.Annotations.csproj</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>Intent.Modules.Java.Weaving.Annotations.csproj</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
       <ProjectId>9ba4083b-ca3e-4813-8a51-ace7e6b40366</ProjectId>
-      <SolutionRelativeFilePath>../Intent.Modules.Java.Weaving.Annotations/README.txt</SolutionRelativeFilePath>
+      <ApplicationRelativeFilePath>README.txt</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>README.txt</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
       <ProjectId>631ccc2a-ef75-4dd2-8106-edc7337d1209</ProjectId>
-      <SolutionRelativeFilePath>../Intent.Modules.Java.Weaving.Annotations/Templates/IntentCanAdd/IntentCanAddTemplate.cs</SolutionRelativeFilePath>
+      <ApplicationRelativeFilePath>Templates/IntentCanAdd/IntentCanAddTemplate.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>IntentCanAdd/IntentCanAddTemplate.cs</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
       <ProjectId>631ccc2a-ef75-4dd2-8106-edc7337d1209</ProjectId>
-      <SolutionRelativeFilePath>../Intent.Modules.Java.Weaving.Annotations/Templates/IntentCanAdd/IntentCanAddTemplate.tt</SolutionRelativeFilePath>
+      <ApplicationRelativeFilePath>Templates/IntentCanAdd/IntentCanAddTemplate.tt</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>IntentCanAdd/IntentCanAddTemplate.tt</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
       <ProjectId>631ccc2a-ef75-4dd2-8106-edc7337d1209</ProjectId>
-      <SolutionRelativeFilePath>../Intent.Modules.Java.Weaving.Annotations/Templates/IntentCanAdd/IntentCanAddTemplatePartial.cs</SolutionRelativeFilePath>
+      <ApplicationRelativeFilePath>Templates/IntentCanAdd/IntentCanAddTemplatePartial.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>IntentCanAdd/IntentCanAddTemplatePartial.cs</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
       <ProjectId>631ccc2a-ef75-4dd2-8106-edc7337d1209</ProjectId>
-      <SolutionRelativeFilePath>../Intent.Modules.Java.Weaving.Annotations/Templates/IntentCanAdd/IntentCanAddTemplateRegistration.cs</SolutionRelativeFilePath>
+      <ApplicationRelativeFilePath>Templates/IntentCanAdd/IntentCanAddTemplateRegistration.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>IntentCanAdd/IntentCanAddTemplateRegistration.cs</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
       <ProjectId>631ccc2a-ef75-4dd2-8106-edc7337d1209</ProjectId>
-      <SolutionRelativeFilePath>../Intent.Modules.Java.Weaving.Annotations/Templates/IntentCanRemove/IntentCanRemoveTemplate.cs</SolutionRelativeFilePath>
+      <ApplicationRelativeFilePath>Templates/IntentCanRemove/IntentCanRemoveTemplate.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>IntentCanRemove/IntentCanRemoveTemplate.cs</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
       <ProjectId>631ccc2a-ef75-4dd2-8106-edc7337d1209</ProjectId>
-      <SolutionRelativeFilePath>../Intent.Modules.Java.Weaving.Annotations/Templates/IntentCanRemove/IntentCanRemoveTemplate.tt</SolutionRelativeFilePath>
+      <ApplicationRelativeFilePath>Templates/IntentCanRemove/IntentCanRemoveTemplate.tt</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>IntentCanRemove/IntentCanRemoveTemplate.tt</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
       <ProjectId>631ccc2a-ef75-4dd2-8106-edc7337d1209</ProjectId>
-      <SolutionRelativeFilePath>../Intent.Modules.Java.Weaving.Annotations/Templates/IntentCanRemove/IntentCanRemoveTemplatePartial.cs</SolutionRelativeFilePath>
+      <ApplicationRelativeFilePath>Templates/IntentCanRemove/IntentCanRemoveTemplatePartial.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>IntentCanRemove/IntentCanRemoveTemplatePartial.cs</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
       <ProjectId>631ccc2a-ef75-4dd2-8106-edc7337d1209</ProjectId>
-      <SolutionRelativeFilePath>../Intent.Modules.Java.Weaving.Annotations/Templates/IntentCanRemove/IntentCanRemoveTemplateRegistration.cs</SolutionRelativeFilePath>
+      <ApplicationRelativeFilePath>Templates/IntentCanRemove/IntentCanRemoveTemplateRegistration.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>IntentCanRemove/IntentCanRemoveTemplateRegistration.cs</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
       <ProjectId>631ccc2a-ef75-4dd2-8106-edc7337d1209</ProjectId>
-      <SolutionRelativeFilePath>../Intent.Modules.Java.Weaving.Annotations/Templates/IntentCanUpdate/IntentCanUpdateTemplate.cs</SolutionRelativeFilePath>
+      <ApplicationRelativeFilePath>Templates/IntentCanUpdate/IntentCanUpdateTemplate.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>IntentCanUpdate/IntentCanUpdateTemplate.cs</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
       <ProjectId>631ccc2a-ef75-4dd2-8106-edc7337d1209</ProjectId>
-      <SolutionRelativeFilePath>../Intent.Modules.Java.Weaving.Annotations/Templates/IntentCanUpdate/IntentCanUpdateTemplate.tt</SolutionRelativeFilePath>
+      <ApplicationRelativeFilePath>Templates/IntentCanUpdate/IntentCanUpdateTemplate.tt</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>IntentCanUpdate/IntentCanUpdateTemplate.tt</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
       <ProjectId>631ccc2a-ef75-4dd2-8106-edc7337d1209</ProjectId>
-      <SolutionRelativeFilePath>../Intent.Modules.Java.Weaving.Annotations/Templates/IntentCanUpdate/IntentCanUpdateTemplatePartial.cs</SolutionRelativeFilePath>
+      <ApplicationRelativeFilePath>Templates/IntentCanUpdate/IntentCanUpdateTemplatePartial.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>IntentCanUpdate/IntentCanUpdateTemplatePartial.cs</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
       <ProjectId>631ccc2a-ef75-4dd2-8106-edc7337d1209</ProjectId>
-      <SolutionRelativeFilePath>../Intent.Modules.Java.Weaving.Annotations/Templates/IntentCanUpdate/IntentCanUpdateTemplateRegistration.cs</SolutionRelativeFilePath>
+      <ApplicationRelativeFilePath>Templates/IntentCanUpdate/IntentCanUpdateTemplateRegistration.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>IntentCanUpdate/IntentCanUpdateTemplateRegistration.cs</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
       <ProjectId>631ccc2a-ef75-4dd2-8106-edc7337d1209</ProjectId>
-      <SolutionRelativeFilePath>../Intent.Modules.Java.Weaving.Annotations/Templates/IntentIgnore/IntentIgnoreTemplate.cs</SolutionRelativeFilePath>
+      <ApplicationRelativeFilePath>Templates/IntentIgnore/IntentIgnoreTemplate.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>IntentIgnore/IntentIgnoreTemplate.cs</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
       <ProjectId>631ccc2a-ef75-4dd2-8106-edc7337d1209</ProjectId>
-      <SolutionRelativeFilePath>../Intent.Modules.Java.Weaving.Annotations/Templates/IntentIgnore/IntentIgnoreTemplate.tt</SolutionRelativeFilePath>
+      <ApplicationRelativeFilePath>Templates/IntentIgnore/IntentIgnoreTemplate.tt</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>IntentIgnore/IntentIgnoreTemplate.tt</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
       <ProjectId>631ccc2a-ef75-4dd2-8106-edc7337d1209</ProjectId>
-      <SolutionRelativeFilePath>../Intent.Modules.Java.Weaving.Annotations/Templates/IntentIgnore/IntentIgnoreTemplatePartial.cs</SolutionRelativeFilePath>
+      <ApplicationRelativeFilePath>Templates/IntentIgnore/IntentIgnoreTemplatePartial.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>IntentIgnore/IntentIgnoreTemplatePartial.cs</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
       <ProjectId>631ccc2a-ef75-4dd2-8106-edc7337d1209</ProjectId>
-      <SolutionRelativeFilePath>../Intent.Modules.Java.Weaving.Annotations/Templates/IntentIgnore/IntentIgnoreTemplateRegistration.cs</SolutionRelativeFilePath>
+      <ApplicationRelativeFilePath>Templates/IntentIgnore/IntentIgnoreTemplateRegistration.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>IntentIgnore/IntentIgnoreTemplateRegistration.cs</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
       <ProjectId>631ccc2a-ef75-4dd2-8106-edc7337d1209</ProjectId>
-      <SolutionRelativeFilePath>../Intent.Modules.Java.Weaving.Annotations/Templates/IntentIgnoreBody/IntentIgnoreBodyTemplate.cs</SolutionRelativeFilePath>
+      <ApplicationRelativeFilePath>Templates/IntentIgnoreBody/IntentIgnoreBodyTemplate.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>IntentIgnoreBody/IntentIgnoreBodyTemplate.cs</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
       <ProjectId>631ccc2a-ef75-4dd2-8106-edc7337d1209</ProjectId>
-      <SolutionRelativeFilePath>../Intent.Modules.Java.Weaving.Annotations/Templates/IntentIgnoreBody/IntentIgnoreBodyTemplate.tt</SolutionRelativeFilePath>
+      <ApplicationRelativeFilePath>Templates/IntentIgnoreBody/IntentIgnoreBodyTemplate.tt</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>IntentIgnoreBody/IntentIgnoreBodyTemplate.tt</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
       <ProjectId>631ccc2a-ef75-4dd2-8106-edc7337d1209</ProjectId>
-      <SolutionRelativeFilePath>../Intent.Modules.Java.Weaving.Annotations/Templates/IntentIgnoreBody/IntentIgnoreBodyTemplatePartial.cs</SolutionRelativeFilePath>
+      <ApplicationRelativeFilePath>Templates/IntentIgnoreBody/IntentIgnoreBodyTemplatePartial.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>IntentIgnoreBody/IntentIgnoreBodyTemplatePartial.cs</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
       <ProjectId>631ccc2a-ef75-4dd2-8106-edc7337d1209</ProjectId>
-      <SolutionRelativeFilePath>../Intent.Modules.Java.Weaving.Annotations/Templates/IntentIgnoreBody/IntentIgnoreBodyTemplateRegistration.cs</SolutionRelativeFilePath>
+      <ApplicationRelativeFilePath>Templates/IntentIgnoreBody/IntentIgnoreBodyTemplateRegistration.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>IntentIgnoreBody/IntentIgnoreBodyTemplateRegistration.cs</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
       <ProjectId>631ccc2a-ef75-4dd2-8106-edc7337d1209</ProjectId>
-      <SolutionRelativeFilePath>../Intent.Modules.Java.Weaving.Annotations/Templates/IntentManage/IntentManageTemplate.cs</SolutionRelativeFilePath>
+      <ApplicationRelativeFilePath>Templates/IntentManage/IntentManageTemplate.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>IntentManage/IntentManageTemplate.cs</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
       <ProjectId>631ccc2a-ef75-4dd2-8106-edc7337d1209</ProjectId>
-      <SolutionRelativeFilePath>../Intent.Modules.Java.Weaving.Annotations/Templates/IntentManage/IntentManageTemplate.tt</SolutionRelativeFilePath>
+      <ApplicationRelativeFilePath>Templates/IntentManage/IntentManageTemplate.tt</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>IntentManage/IntentManageTemplate.tt</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
       <ProjectId>631ccc2a-ef75-4dd2-8106-edc7337d1209</ProjectId>
-      <SolutionRelativeFilePath>../Intent.Modules.Java.Weaving.Annotations/Templates/IntentManage/IntentManageTemplatePartial.cs</SolutionRelativeFilePath>
+      <ApplicationRelativeFilePath>Templates/IntentManage/IntentManageTemplatePartial.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>IntentManage/IntentManageTemplatePartial.cs</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
       <ProjectId>631ccc2a-ef75-4dd2-8106-edc7337d1209</ProjectId>
-      <SolutionRelativeFilePath>../Intent.Modules.Java.Weaving.Annotations/Templates/IntentManage/IntentManageTemplateRegistration.cs</SolutionRelativeFilePath>
+      <ApplicationRelativeFilePath>Templates/IntentManage/IntentManageTemplateRegistration.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>IntentManage/IntentManageTemplateRegistration.cs</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
       <ProjectId>631ccc2a-ef75-4dd2-8106-edc7337d1209</ProjectId>
-      <SolutionRelativeFilePath>../Intent.Modules.Java.Weaving.Annotations/Templates/IntentManageClass/IntentManageClassTemplate.cs</SolutionRelativeFilePath>
+      <ApplicationRelativeFilePath>Templates/IntentManageClass/IntentManageClassTemplate.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>IntentManageClass/IntentManageClassTemplate.cs</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
       <ProjectId>631ccc2a-ef75-4dd2-8106-edc7337d1209</ProjectId>
-      <SolutionRelativeFilePath>../Intent.Modules.Java.Weaving.Annotations/Templates/IntentManageClass/IntentManageClassTemplate.tt</SolutionRelativeFilePath>
+      <ApplicationRelativeFilePath>Templates/IntentManageClass/IntentManageClassTemplate.tt</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>IntentManageClass/IntentManageClassTemplate.tt</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
       <ProjectId>631ccc2a-ef75-4dd2-8106-edc7337d1209</ProjectId>
-      <SolutionRelativeFilePath>../Intent.Modules.Java.Weaving.Annotations/Templates/IntentManageClass/IntentManageClassTemplatePartial.cs</SolutionRelativeFilePath>
+      <ApplicationRelativeFilePath>Templates/IntentManageClass/IntentManageClassTemplatePartial.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>IntentManageClass/IntentManageClassTemplatePartial.cs</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
       <ProjectId>631ccc2a-ef75-4dd2-8106-edc7337d1209</ProjectId>
-      <SolutionRelativeFilePath>../Intent.Modules.Java.Weaving.Annotations/Templates/IntentManageClass/IntentManageClassTemplateRegistration.cs</SolutionRelativeFilePath>
+      <ApplicationRelativeFilePath>Templates/IntentManageClass/IntentManageClassTemplateRegistration.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>IntentManageClass/IntentManageClassTemplateRegistration.cs</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
       <ProjectId>631ccc2a-ef75-4dd2-8106-edc7337d1209</ProjectId>
-      <SolutionRelativeFilePath>../Intent.Modules.Java.Weaving.Annotations/Templates/IntentMerge/IntentMergeTemplate.cs</SolutionRelativeFilePath>
+      <ApplicationRelativeFilePath>Templates/IntentMerge/IntentMergeTemplate.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>IntentMerge/IntentMergeTemplate.cs</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
       <ProjectId>631ccc2a-ef75-4dd2-8106-edc7337d1209</ProjectId>
-      <SolutionRelativeFilePath>../Intent.Modules.Java.Weaving.Annotations/Templates/IntentMerge/IntentMergeTemplate.tt</SolutionRelativeFilePath>
+      <ApplicationRelativeFilePath>Templates/IntentMerge/IntentMergeTemplate.tt</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>IntentMerge/IntentMergeTemplate.tt</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
       <ProjectId>631ccc2a-ef75-4dd2-8106-edc7337d1209</ProjectId>
-      <SolutionRelativeFilePath>../Intent.Modules.Java.Weaving.Annotations/Templates/IntentMerge/IntentMergeTemplatePartial.cs</SolutionRelativeFilePath>
+      <ApplicationRelativeFilePath>Templates/IntentMerge/IntentMergeTemplatePartial.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>IntentMerge/IntentMergeTemplatePartial.cs</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
       <ProjectId>631ccc2a-ef75-4dd2-8106-edc7337d1209</ProjectId>
-      <SolutionRelativeFilePath>../Intent.Modules.Java.Weaving.Annotations/Templates/IntentMerge/IntentMergeTemplateRegistration.cs</SolutionRelativeFilePath>
+      <ApplicationRelativeFilePath>Templates/IntentMerge/IntentMergeTemplateRegistration.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>IntentMerge/IntentMergeTemplateRegistration.cs</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
       <ProjectId>631ccc2a-ef75-4dd2-8106-edc7337d1209</ProjectId>
-      <SolutionRelativeFilePath>../Intent.Modules.Java.Weaving.Annotations/Templates/ModeEnum/ModeEnumTemplate.cs</SolutionRelativeFilePath>
+      <ApplicationRelativeFilePath>Templates/ModeEnum/ModeEnumTemplate.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>ModeEnum/ModeEnumTemplate.cs</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
       <ProjectId>631ccc2a-ef75-4dd2-8106-edc7337d1209</ProjectId>
-      <SolutionRelativeFilePath>../Intent.Modules.Java.Weaving.Annotations/Templates/ModeEnum/ModeEnumTemplate.tt</SolutionRelativeFilePath>
+      <ApplicationRelativeFilePath>Templates/ModeEnum/ModeEnumTemplate.tt</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>ModeEnum/ModeEnumTemplate.tt</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
       <ProjectId>631ccc2a-ef75-4dd2-8106-edc7337d1209</ProjectId>
-      <SolutionRelativeFilePath>../Intent.Modules.Java.Weaving.Annotations/Templates/ModeEnum/ModeEnumTemplatePartial.cs</SolutionRelativeFilePath>
+      <ApplicationRelativeFilePath>Templates/ModeEnum/ModeEnumTemplatePartial.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>ModeEnum/ModeEnumTemplatePartial.cs</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
       <ProjectId>631ccc2a-ef75-4dd2-8106-edc7337d1209</ProjectId>
-      <SolutionRelativeFilePath>../Intent.Modules.Java.Weaving.Annotations/Templates/ModeEnum/ModeEnumTemplateRegistration.cs</SolutionRelativeFilePath>
+      <ApplicationRelativeFilePath>Templates/ModeEnum/ModeEnumTemplateRegistration.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>ModeEnum/ModeEnumTemplateRegistration.cs</ProjectRelativeFilePath>
     </FileLog>
   </FileLogs>

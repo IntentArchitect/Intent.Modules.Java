@@ -1,43 +1,43 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="utf-8"?>
 <outputLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ApplicationId>2a1f90d0-0a78-4a3a-899b-a45205055f19</ApplicationId>
   <FileLogs>
     <FileLog>
-      <SolutionRelativeFilePath>../Intent.Modules.Java.sln</SolutionRelativeFilePath>
+      <ApplicationRelativeFilePath>../Intent.Modules.Java.sln</ApplicationRelativeFilePath>
     </FileLog>
     <FileLog>
       <ProjectId>5ee9053b-4284-4568-9e38-3a4aa5a53ac2</ProjectId>
-      <SolutionRelativeFilePath>../Intent.Modules.Java.Spring.Data.Repositories/Intent.Java.Spring.Data.Repositories.imodspec</SolutionRelativeFilePath>
+      <ApplicationRelativeFilePath>Intent.Java.Spring.Data.Repositories.imodspec</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>Intent.Java.Spring.Data.Repositories.imodspec</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
       <ProjectId>5ee9053b-4284-4568-9e38-3a4aa5a53ac2</ProjectId>
-      <SolutionRelativeFilePath>../Intent.Modules.Java.Spring.Data.Repositories/Intent.Modules.Java.Spring.Data.Repositories.csproj</SolutionRelativeFilePath>
+      <ApplicationRelativeFilePath>Intent.Modules.Java.Spring.Data.Repositories.csproj</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>Intent.Modules.Java.Spring.Data.Repositories.csproj</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
       <ProjectId>5ee9053b-4284-4568-9e38-3a4aa5a53ac2</ProjectId>
-      <SolutionRelativeFilePath>../Intent.Modules.Java.Spring.Data.Repositories/README.txt</SolutionRelativeFilePath>
+      <ApplicationRelativeFilePath>README.txt</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>README.txt</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
       <ProjectId>cb181c44-e0eb-4777-b2f1-110454210b8c</ProjectId>
-      <SolutionRelativeFilePath>../Intent.Modules.Java.Spring.Data.Repositories/Templates/EntityRepository/EntityRepositoryTemplate.cs</SolutionRelativeFilePath>
+      <ApplicationRelativeFilePath>Templates/EntityRepository/EntityRepositoryTemplate.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>EntityRepository/EntityRepositoryTemplate.cs</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
       <ProjectId>cb181c44-e0eb-4777-b2f1-110454210b8c</ProjectId>
-      <SolutionRelativeFilePath>../Intent.Modules.Java.Spring.Data.Repositories/Templates/EntityRepository/EntityRepositoryTemplate.tt</SolutionRelativeFilePath>
+      <ApplicationRelativeFilePath>Templates/EntityRepository/EntityRepositoryTemplate.tt</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>EntityRepository/EntityRepositoryTemplate.tt</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
       <ProjectId>cb181c44-e0eb-4777-b2f1-110454210b8c</ProjectId>
-      <SolutionRelativeFilePath>../Intent.Modules.Java.Spring.Data.Repositories/Templates/EntityRepository/EntityRepositoryTemplatePartial.cs</SolutionRelativeFilePath>
+      <ApplicationRelativeFilePath>Templates/EntityRepository/EntityRepositoryTemplatePartial.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>EntityRepository/EntityRepositoryTemplatePartial.cs</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
       <ProjectId>cb181c44-e0eb-4777-b2f1-110454210b8c</ProjectId>
-      <SolutionRelativeFilePath>../Intent.Modules.Java.Spring.Data.Repositories/Templates/EntityRepository/EntityRepositoryTemplateRegistration.cs</SolutionRelativeFilePath>
+      <ApplicationRelativeFilePath>Templates/EntityRepository/EntityRepositoryTemplateRegistration.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>EntityRepository/EntityRepositoryTemplateRegistration.cs</ProjectRelativeFilePath>
     </FileLog>
   </FileLogs>

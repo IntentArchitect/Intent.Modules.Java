@@ -1,94 +1,94 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="utf-8"?>
 <outputLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ApplicationId>7525049d-c38e-46e8-84a5-ca06fb9f315f</ApplicationId>
   <FileLogs>
     <FileLog>
       <ProjectId>64c684bc-7d0b-4cf2-8445-6558b97ef785</ProjectId>
-      <SolutionRelativeFilePath>../Intent.Modules.Java.Services/Api/Extensions/OperationModelExtensions.cs</SolutionRelativeFilePath>
+      <ApplicationRelativeFilePath>Api/Extensions/OperationModelExtensions.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>OperationModelExtensions.cs</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
       <ProjectId>9a39a5e5-1c2a-4df7-bab4-5d2760783b6d</ProjectId>
-      <SolutionRelativeFilePath>../Intent.Modules.Java.Services/Intent.Java.Services.imodspec</SolutionRelativeFilePath>
+      <ApplicationRelativeFilePath>Intent.Java.Services.imodspec</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>Intent.Java.Services.imodspec</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
       <ProjectId>9a39a5e5-1c2a-4df7-bab4-5d2760783b6d</ProjectId>
-      <SolutionRelativeFilePath>../Intent.Modules.Java.Services/Intent.Modules.Java.Services.csproj</SolutionRelativeFilePath>
+      <ApplicationRelativeFilePath>Intent.Modules.Java.Services.csproj</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>Intent.Modules.Java.Services.csproj</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
       <ProjectId>9a39a5e5-1c2a-4df7-bab4-5d2760783b6d</ProjectId>
-      <SolutionRelativeFilePath>../Intent.Modules.Java.Services/README.txt</SolutionRelativeFilePath>
+      <ApplicationRelativeFilePath>README.txt</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>README.txt</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
       <ProjectId>32921436-c716-4bad-8ff1-2cc93f11b598</ProjectId>
-      <SolutionRelativeFilePath>../Intent.Modules.Java.Services/Templates/DataTransferModel/DataTransferModelDecorator.cs</SolutionRelativeFilePath>
+      <ApplicationRelativeFilePath>Templates/DataTransferModel/DataTransferModelDecorator.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>DataTransferModel/DataTransferModelDecorator.cs</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
       <ProjectId>32921436-c716-4bad-8ff1-2cc93f11b598</ProjectId>
-      <SolutionRelativeFilePath>../Intent.Modules.Java.Services/Templates/DataTransferModel/DataTransferModelTemplate.cs</SolutionRelativeFilePath>
+      <ApplicationRelativeFilePath>Templates/DataTransferModel/DataTransferModelTemplate.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>DataTransferModel/DataTransferModelTemplate.cs</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
       <ProjectId>32921436-c716-4bad-8ff1-2cc93f11b598</ProjectId>
-      <SolutionRelativeFilePath>../Intent.Modules.Java.Services/Templates/DataTransferModel/DataTransferModelTemplate.tt</SolutionRelativeFilePath>
+      <ApplicationRelativeFilePath>Templates/DataTransferModel/DataTransferModelTemplate.tt</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>DataTransferModel/DataTransferModelTemplate.tt</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
       <ProjectId>32921436-c716-4bad-8ff1-2cc93f11b598</ProjectId>
-      <SolutionRelativeFilePath>../Intent.Modules.Java.Services/Templates/DataTransferModel/DataTransferModelTemplatePartial.cs</SolutionRelativeFilePath>
+      <ApplicationRelativeFilePath>Templates/DataTransferModel/DataTransferModelTemplatePartial.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>DataTransferModel/DataTransferModelTemplatePartial.cs</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
       <ProjectId>32921436-c716-4bad-8ff1-2cc93f11b598</ProjectId>
-      <SolutionRelativeFilePath>../Intent.Modules.Java.Services/Templates/DataTransferModel/DataTransferModelTemplateRegistration.cs</SolutionRelativeFilePath>
+      <ApplicationRelativeFilePath>Templates/DataTransferModel/DataTransferModelTemplateRegistration.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>DataTransferModel/DataTransferModelTemplateRegistration.cs</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
       <ProjectId>32921436-c716-4bad-8ff1-2cc93f11b598</ProjectId>
-      <SolutionRelativeFilePath>../Intent.Modules.Java.Services/Templates/ServiceImplementation/ServiceImplementationTemplate.cs</SolutionRelativeFilePath>
+      <ApplicationRelativeFilePath>Templates/ServiceImplementation/ServiceImplementationTemplate.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>ServiceImplementation/ServiceImplementationTemplate.cs</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
       <ProjectId>32921436-c716-4bad-8ff1-2cc93f11b598</ProjectId>
-      <SolutionRelativeFilePath>../Intent.Modules.Java.Services/Templates/ServiceImplementation/ServiceImplementationTemplate.tt</SolutionRelativeFilePath>
+      <ApplicationRelativeFilePath>Templates/ServiceImplementation/ServiceImplementationTemplate.tt</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>ServiceImplementation/ServiceImplementationTemplate.tt</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
       <ProjectId>32921436-c716-4bad-8ff1-2cc93f11b598</ProjectId>
-      <SolutionRelativeFilePath>../Intent.Modules.Java.Services/Templates/ServiceImplementation/ServiceImplementationTemplatePartial.cs</SolutionRelativeFilePath>
+      <ApplicationRelativeFilePath>Templates/ServiceImplementation/ServiceImplementationTemplatePartial.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>ServiceImplementation/ServiceImplementationTemplatePartial.cs</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
       <ProjectId>32921436-c716-4bad-8ff1-2cc93f11b598</ProjectId>
-      <SolutionRelativeFilePath>../Intent.Modules.Java.Services/Templates/ServiceImplementation/ServiceImplementationTemplateRegistration.cs</SolutionRelativeFilePath>
+      <ApplicationRelativeFilePath>Templates/ServiceImplementation/ServiceImplementationTemplateRegistration.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>ServiceImplementation/ServiceImplementationTemplateRegistration.cs</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
       <ProjectId>32921436-c716-4bad-8ff1-2cc93f11b598</ProjectId>
-      <SolutionRelativeFilePath>../Intent.Modules.Java.Services/Templates/ServiceInterface/ServiceInterfaceTemplate.cs</SolutionRelativeFilePath>
+      <ApplicationRelativeFilePath>Templates/ServiceInterface/ServiceInterfaceTemplate.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>ServiceInterface/ServiceInterfaceTemplate.cs</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
       <ProjectId>32921436-c716-4bad-8ff1-2cc93f11b598</ProjectId>
-      <SolutionRelativeFilePath>../Intent.Modules.Java.Services/Templates/ServiceInterface/ServiceInterfaceTemplate.tt</SolutionRelativeFilePath>
+      <ApplicationRelativeFilePath>Templates/ServiceInterface/ServiceInterfaceTemplate.tt</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>ServiceInterface/ServiceInterfaceTemplate.tt</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
       <ProjectId>32921436-c716-4bad-8ff1-2cc93f11b598</ProjectId>
-      <SolutionRelativeFilePath>../Intent.Modules.Java.Services/Templates/ServiceInterface/ServiceInterfaceTemplatePartial.cs</SolutionRelativeFilePath>
+      <ApplicationRelativeFilePath>Templates/ServiceInterface/ServiceInterfaceTemplatePartial.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>ServiceInterface/ServiceInterfaceTemplatePartial.cs</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
       <ProjectId>32921436-c716-4bad-8ff1-2cc93f11b598</ProjectId>
-      <SolutionRelativeFilePath>../Intent.Modules.Java.Services/Templates/ServiceInterface/ServiceInterfaceTemplateRegistration.cs</SolutionRelativeFilePath>
+      <ApplicationRelativeFilePath>Templates/ServiceInterface/ServiceInterfaceTemplateRegistration.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>ServiceInterface/ServiceInterfaceTemplateRegistration.cs</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
-      <SolutionRelativeFilePath>../Intent.Modules.Java.sln</SolutionRelativeFilePath>
+      <ApplicationRelativeFilePath>../Intent.Modules.Java.sln</ApplicationRelativeFilePath>
     </FileLog>
   </FileLogs>
 </outputLog>

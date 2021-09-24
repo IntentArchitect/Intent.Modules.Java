@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<class id="557d0206-1c1d-42df-bad2-ce48e12e7d32" type="Template Output" typeId="d421c322-7a51-4094-89fa-e5d8a0a97b27">
+  <name>Intent.ApplicationTemplate.Builder.Templates.IatSpecFile</name>
+  <display>Intent.ApplicationTemplate.Builder.Templates.IatSpecFile</display>
+  <externalReference>Intent.ApplicationTemplate.Builder</externalReference>
+  <isAbstract>false</isAbstract>
+  <order>0</order>
+  <genericTypes />
+  <isMapped>false</isMapped>
+  <parentFolderId>6bc1816c-8318-4f89-a341-e154aeb9cd01</parentFolderId>
+  <stereotypes />
+  <childElements />
+</class>

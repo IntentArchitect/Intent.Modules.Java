@@ -1,43 +1,43 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="utf-8"?>
 <outputLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ApplicationId>2a056a85-a105-4062-b43c-b434e72dff8b</ApplicationId>
   <FileLogs>
     <FileLog>
-      <SolutionRelativeFilePath>../Intent.Modules.Java.sln</SolutionRelativeFilePath>
+      <ApplicationRelativeFilePath>../Intent.Modules.Java.sln</ApplicationRelativeFilePath>
     </FileLog>
     <FileLog>
       <ProjectId>10c0b22a-10cb-477a-9c0f-fefd470ed8e0</ProjectId>
-      <SolutionRelativeFilePath>../Intent.Modules.Java.Spring.Cors/Intent.Java.Spring.Cors.imodspec</SolutionRelativeFilePath>
+      <ApplicationRelativeFilePath>Intent.Java.Spring.Cors.imodspec</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>Intent.Java.Spring.Cors.imodspec</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
       <ProjectId>10c0b22a-10cb-477a-9c0f-fefd470ed8e0</ProjectId>
-      <SolutionRelativeFilePath>../Intent.Modules.Java.Spring.Cors/Intent.Modules.Java.Spring.Cors.csproj</SolutionRelativeFilePath>
+      <ApplicationRelativeFilePath>Intent.Modules.Java.Spring.Cors.csproj</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>Intent.Modules.Java.Spring.Cors.csproj</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
       <ProjectId>10c0b22a-10cb-477a-9c0f-fefd470ed8e0</ProjectId>
-      <SolutionRelativeFilePath>../Intent.Modules.Java.Spring.Cors/README.txt</SolutionRelativeFilePath>
+      <ApplicationRelativeFilePath>README.txt</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>README.txt</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
       <ProjectId>89f29537-720d-4631-8c9e-bd9a316caee8</ProjectId>
-      <SolutionRelativeFilePath>../Intent.Modules.Java.Spring.Cors/Templates/CorsConfig/CorsConfigTemplate.cs</SolutionRelativeFilePath>
+      <ApplicationRelativeFilePath>Templates/CorsConfig/CorsConfigTemplate.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>CorsConfig/CorsConfigTemplate.cs</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
       <ProjectId>89f29537-720d-4631-8c9e-bd9a316caee8</ProjectId>
-      <SolutionRelativeFilePath>../Intent.Modules.Java.Spring.Cors/Templates/CorsConfig/CorsConfigTemplate.tt</SolutionRelativeFilePath>
+      <ApplicationRelativeFilePath>Templates/CorsConfig/CorsConfigTemplate.tt</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>CorsConfig/CorsConfigTemplate.tt</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
       <ProjectId>89f29537-720d-4631-8c9e-bd9a316caee8</ProjectId>
-      <SolutionRelativeFilePath>../Intent.Modules.Java.Spring.Cors/Templates/CorsConfig/CorsConfigTemplatePartial.cs</SolutionRelativeFilePath>
+      <ApplicationRelativeFilePath>Templates/CorsConfig/CorsConfigTemplatePartial.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>CorsConfig/CorsConfigTemplatePartial.cs</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
       <ProjectId>89f29537-720d-4631-8c9e-bd9a316caee8</ProjectId>
-      <SolutionRelativeFilePath>../Intent.Modules.Java.Spring.Cors/Templates/CorsConfig/CorsConfigTemplateRegistration.cs</SolutionRelativeFilePath>
+      <ApplicationRelativeFilePath>Templates/CorsConfig/CorsConfigTemplateRegistration.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>CorsConfig/CorsConfigTemplateRegistration.cs</ProjectRelativeFilePath>
     </FileLog>
   </FileLogs>

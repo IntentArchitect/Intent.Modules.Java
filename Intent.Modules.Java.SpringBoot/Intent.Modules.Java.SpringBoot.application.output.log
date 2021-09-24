@@ -1,68 +1,68 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="utf-8"?>
 <outputLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ApplicationId>df7ecc09-497a-465f-aab7-11f37732aca4</ApplicationId>
   <FileLogs>
     <FileLog>
-      <SolutionRelativeFilePath>../Intent.Modules.Java.sln</SolutionRelativeFilePath>
+      <ApplicationRelativeFilePath>../Intent.Modules.Java.sln</ApplicationRelativeFilePath>
     </FileLog>
     <FileLog>
       <ProjectId>915037d0-3d43-4cda-9777-bb75b8bd5c63</ProjectId>
-      <SolutionRelativeFilePath>../Intent.Modules.Java.SpringBoot/Intent.Java.SpringBoot.imodspec</SolutionRelativeFilePath>
+      <ApplicationRelativeFilePath>Intent.Java.SpringBoot.imodspec</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>Intent.Java.SpringBoot.imodspec</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
       <ProjectId>915037d0-3d43-4cda-9777-bb75b8bd5c63</ProjectId>
-      <SolutionRelativeFilePath>../Intent.Modules.Java.SpringBoot/Intent.Modules.Java.SpringBoot.csproj</SolutionRelativeFilePath>
+      <ApplicationRelativeFilePath>Intent.Modules.Java.SpringBoot.csproj</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>Intent.Modules.Java.SpringBoot.csproj</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
       <ProjectId>915037d0-3d43-4cda-9777-bb75b8bd5c63</ProjectId>
-      <SolutionRelativeFilePath>../Intent.Modules.Java.SpringBoot/README.txt</SolutionRelativeFilePath>
+      <ApplicationRelativeFilePath>README.txt</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>README.txt</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
       <ProjectId>db8d1b7b-e26f-4baa-ba43-990a5ff65135</ProjectId>
-      <SolutionRelativeFilePath>../Intent.Modules.Java.SpringBoot/Templates/Application/ApplicationTemplate.cs</SolutionRelativeFilePath>
+      <ApplicationRelativeFilePath>Templates/Application/ApplicationTemplate.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>Application/ApplicationTemplate.cs</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
       <ProjectId>db8d1b7b-e26f-4baa-ba43-990a5ff65135</ProjectId>
-      <SolutionRelativeFilePath>../Intent.Modules.Java.SpringBoot/Templates/Application/ApplicationTemplate.tt</SolutionRelativeFilePath>
+      <ApplicationRelativeFilePath>Templates/Application/ApplicationTemplate.tt</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>Application/ApplicationTemplate.tt</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
       <ProjectId>db8d1b7b-e26f-4baa-ba43-990a5ff65135</ProjectId>
-      <SolutionRelativeFilePath>../Intent.Modules.Java.SpringBoot/Templates/Application/ApplicationTemplatePartial.cs</SolutionRelativeFilePath>
+      <ApplicationRelativeFilePath>Templates/Application/ApplicationTemplatePartial.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>Application/ApplicationTemplatePartial.cs</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
       <ProjectId>db8d1b7b-e26f-4baa-ba43-990a5ff65135</ProjectId>
-      <SolutionRelativeFilePath>../Intent.Modules.Java.SpringBoot/Templates/Application/ApplicationTemplateRegistration.cs</SolutionRelativeFilePath>
+      <ApplicationRelativeFilePath>Templates/Application/ApplicationTemplateRegistration.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>Application/ApplicationTemplateRegistration.cs</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
       <ProjectId>db8d1b7b-e26f-4baa-ba43-990a5ff65135</ProjectId>
-      <SolutionRelativeFilePath>../Intent.Modules.Java.SpringBoot/Templates/RestController/RestControllerDecorator.cs</SolutionRelativeFilePath>
+      <ApplicationRelativeFilePath>Templates/RestController/RestControllerDecorator.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>RestController/RestControllerDecorator.cs</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
       <ProjectId>db8d1b7b-e26f-4baa-ba43-990a5ff65135</ProjectId>
-      <SolutionRelativeFilePath>../Intent.Modules.Java.SpringBoot/Templates/RestController/RestControllerTemplate.cs</SolutionRelativeFilePath>
+      <ApplicationRelativeFilePath>Templates/RestController/RestControllerTemplate.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>RestController/RestControllerTemplate.cs</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
       <ProjectId>db8d1b7b-e26f-4baa-ba43-990a5ff65135</ProjectId>
-      <SolutionRelativeFilePath>../Intent.Modules.Java.SpringBoot/Templates/RestController/RestControllerTemplate.tt</SolutionRelativeFilePath>
+      <ApplicationRelativeFilePath>Templates/RestController/RestControllerTemplate.tt</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>RestController/RestControllerTemplate.tt</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
       <ProjectId>db8d1b7b-e26f-4baa-ba43-990a5ff65135</ProjectId>
-      <SolutionRelativeFilePath>../Intent.Modules.Java.SpringBoot/Templates/RestController/RestControllerTemplatePartial.cs</SolutionRelativeFilePath>
+      <ApplicationRelativeFilePath>Templates/RestController/RestControllerTemplatePartial.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>RestController/RestControllerTemplatePartial.cs</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
       <ProjectId>db8d1b7b-e26f-4baa-ba43-990a5ff65135</ProjectId>
-      <SolutionRelativeFilePath>../Intent.Modules.Java.SpringBoot/Templates/RestController/RestControllerTemplateRegistration.cs</SolutionRelativeFilePath>
+      <ApplicationRelativeFilePath>Templates/RestController/RestControllerTemplateRegistration.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>RestController/RestControllerTemplateRegistration.cs</ProjectRelativeFilePath>
     </FileLog>
   </FileLogs>
