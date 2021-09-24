@@ -3,10 +3,12 @@
   <name>Intent.Modules.Java.Spring.Data.Repositories</name>
   <display>Intent.Modules.Java.Spring.Data.Repositories</display>
   <isAbstract>false</isAbstract>
-  <order>0</order>
+  <order>1</order>
   <genericTypes />
   <isMapped>false</isMapped>
   <parentFolderId>faa7bb8b-3a31-4e79-beee-0f17d8088ea1</parentFolderId>
+  <packageId>faa7bb8b-3a31-4e79-beee-0f17d8088ea1</packageId>
+  <packageName>Intent.Modules.Java</packageName>
   <stereotypes>
     <stereotype stereotypeDefinitionId="5d85edfb-490c-42c2-81ef-c57c0300eb5a" name=".NET Core Settings">
       <addedByDefault>true</addedByDefault>
@@ -18,72 +20,29 @@
         <property name="5215b600-32fc-4a6d-af72-9eb88a6f30e7" display="Target Frameworks" value="" isActive="false" />
       </properties>
     </stereotype>
+    <stereotype stereotypeDefinitionId="d9b43864-0370-401b-9e71-b1d286919500" name="C# Project Options">
+      <addedByDefault>true</addedByDefault>
+      <definitionPackageName>Intent.VisualStudio.Projects</definitionPackageName>
+      <definitionPackageId>a0636ab7-d3a1-430b-9609-11a18aa3cc7f</definitionPackageId>
+      <properties>
+        <property name="cb56677d-e132-4397-b2ec-3f47e950a111" display="Language Version" value="default" isActive="true" />
+        <property name="5c953a82-78c4-4986-b204-df9fcbea5242" display="Relative Location" isActive="true" />
+        <property name="415a5406-0517-4c0e-ab60-bc809a23c308" display="Nullable Enabled" value="false" isActive="true" />
+      </properties>
+    </stereotype>
   </stereotypes>
   <childElements>
-    <childElement id="bc5dd777-581c-4ff5-9d7b-9a84cd36a362" type="Role" typeId="025e933b-b602-4b6d-95ab-0ec36ae940da">
-      <name>Api</name>
-      <display>Api</display>
-      <isAbstract>false</isAbstract>
-      <order>0</order>
-      <genericTypes />
-      <isMapped>false</isMapped>
-      <parentFolderId>5ee9053b-4284-4568-9e38-3a4aa5a53ac2</parentFolderId>
-      <stereotypes />
-      <childElements />
-    </childElement>
-    <childElement id="e9e62f45-c8a6-43ff-857b-b3cb40d4ca48" type="Role" typeId="025e933b-b602-4b6d-95ab-0ec36ae940da">
-      <name>Decorators</name>
-      <display>Decorators</display>
-      <isAbstract>false</isAbstract>
-      <order>0</order>
-      <genericTypes />
-      <isMapped>false</isMapped>
-      <parentFolderId>5ee9053b-4284-4568-9e38-3a4aa5a53ac2</parentFolderId>
-      <stereotypes />
-      <childElements />
-    </childElement>
-    <childElement id="86df6cc2-76fe-4dcf-9cb9-aa7bc5d80264" type="Role" typeId="025e933b-b602-4b6d-95ab-0ec36ae940da">
-      <name>DesignerConfig</name>
-      <display>DesignerConfig</display>
-      <isAbstract>false</isAbstract>
-      <order>0</order>
-      <genericTypes />
-      <isMapped>false</isMapped>
-      <parentFolderId>5ee9053b-4284-4568-9e38-3a4aa5a53ac2</parentFolderId>
-      <stereotypes />
-      <childElements />
-    </childElement>
-    <childElement id="a7c54808-96ec-423b-913f-8c23c51f28f8" type="Role" typeId="025e933b-b602-4b6d-95ab-0ec36ae940da">
-      <name>IModSpec</name>
-      <display>IModSpec</display>
-      <isAbstract>false</isAbstract>
-      <order>0</order>
-      <genericTypes />
-      <isMapped>false</isMapped>
-      <parentFolderId>5ee9053b-4284-4568-9e38-3a4aa5a53ac2</parentFolderId>
-      <stereotypes />
-      <childElements />
-    </childElement>
-    <childElement id="97de8bca-c6f4-42e8-8605-1eaceecac19b" type="Role" typeId="025e933b-b602-4b6d-95ab-0ec36ae940da">
-      <name>Templates</name>
-      <display>Templates</display>
-      <isAbstract>false</isAbstract>
-      <order>0</order>
-      <genericTypes />
-      <isMapped>false</isMapped>
-      <parentFolderId>5ee9053b-4284-4568-9e38-3a4aa5a53ac2</parentFolderId>
-      <stereotypes />
-      <childElements />
-    </childElement>
     <childElement id="1614d9a8-f1a7-4d07-b837-a6b80dc86a9b" type="Template Output" typeId="d421c322-7a51-4094-89fa-e5d8a0a97b27">
       <name>Intent.ModuleBuilder.IModeSpecFile</name>
       <display>Intent.ModuleBuilder.IModeSpecFile</display>
       <externalReference>Intent.ModuleBuilder</externalReference>
       <isAbstract>false</isAbstract>
-      <order>0</order>
+      <order>6</order>
       <genericTypes />
       <isMapped>false</isMapped>
       <parentFolderId>5ee9053b-4284-4568-9e38-3a4aa5a53ac2</parentFolderId>
+      <packageId>faa7bb8b-3a31-4e79-beee-0f17d8088ea1</packageId>
+      <packageName>Intent.Modules.Java</packageName>
       <stereotypes />
       <childElements />
     </childElement>
@@ -92,22 +51,12 @@
       <display>Intent.ModuleBuilder.ReadMe</display>
       <externalReference>Intent.ModuleBuilder</externalReference>
       <isAbstract>false</isAbstract>
-      <order>0</order>
+      <order>7</order>
       <genericTypes />
       <isMapped>false</isMapped>
       <parentFolderId>5ee9053b-4284-4568-9e38-3a4aa5a53ac2</parentFolderId>
-      <stereotypes />
-      <childElements />
-    </childElement>
-    <childElement id="1dbb4b5d-d6ad-44e0-9afc-97436d2ffa42" type="Template Output" typeId="d421c322-7a51-4094-89fa-e5d8a0a97b27">
-      <name>Intent.ModuleBuilder.Templates.Api.ApiMetadataProviderExtensions</name>
-      <display>Intent.ModuleBuilder.Templates.Api.ApiMetadataProviderExtensions</display>
-      <externalReference>Intent.ModuleBuilder</externalReference>
-      <isAbstract>false</isAbstract>
-      <order>0</order>
-      <genericTypes />
-      <isMapped>false</isMapped>
-      <parentFolderId>5ee9053b-4284-4568-9e38-3a4aa5a53ac2</parentFolderId>
+      <packageId>faa7bb8b-3a31-4e79-beee-0f17d8088ea1</packageId>
+      <packageName>Intent.Modules.Java</packageName>
       <stereotypes />
       <childElements />
     </childElement>
@@ -116,10 +65,12 @@
       <display>Intent.ModuleBuilder.Templates.Api.ApiMetadataDesignerExtensions</display>
       <externalReference>Intent.ModuleBuilder</externalReference>
       <isAbstract>false</isAbstract>
-      <order>0</order>
+      <order>8</order>
       <genericTypes />
       <isMapped>false</isMapped>
       <parentFolderId>5ee9053b-4284-4568-9e38-3a4aa5a53ac2</parentFolderId>
+      <packageId>faa7bb8b-3a31-4e79-beee-0f17d8088ea1</packageId>
+      <packageName>Intent.Modules.Java</packageName>
       <stereotypes />
       <childElements />
     </childElement>
@@ -128,10 +79,26 @@
       <display>Intent.ModuleBuilder.Templates.Api.ApiMetadataPackageExtensions</display>
       <externalReference>Intent.ModuleBuilder</externalReference>
       <isAbstract>false</isAbstract>
-      <order>0</order>
+      <order>9</order>
       <genericTypes />
       <isMapped>false</isMapped>
       <parentFolderId>5ee9053b-4284-4568-9e38-3a4aa5a53ac2</parentFolderId>
+      <packageId>faa7bb8b-3a31-4e79-beee-0f17d8088ea1</packageId>
+      <packageName>Intent.Modules.Java</packageName>
+      <stereotypes />
+      <childElements />
+    </childElement>
+    <childElement id="1dbb4b5d-d6ad-44e0-9afc-97436d2ffa42" type="Template Output" typeId="d421c322-7a51-4094-89fa-e5d8a0a97b27">
+      <name>Intent.ModuleBuilder.Templates.Api.ApiMetadataProviderExtensions</name>
+      <display>Intent.ModuleBuilder.Templates.Api.ApiMetadataProviderExtensions</display>
+      <externalReference>Intent.ModuleBuilder</externalReference>
+      <isAbstract>false</isAbstract>
+      <order>10</order>
+      <genericTypes />
+      <isMapped>false</isMapped>
+      <parentFolderId>5ee9053b-4284-4568-9e38-3a4aa5a53ac2</parentFolderId>
+      <packageId>faa7bb8b-3a31-4e79-beee-0f17d8088ea1</packageId>
+      <packageName>Intent.Modules.Java</packageName>
       <stereotypes />
       <childElements />
     </childElement>
@@ -140,10 +107,77 @@
       <display>Intent.ModuleBuilder.Templates.Api.ApiPackageExtensionModel</display>
       <externalReference>Intent.ModuleBuilder</externalReference>
       <isAbstract>false</isAbstract>
-      <order>0</order>
+      <order>11</order>
       <genericTypes />
       <isMapped>false</isMapped>
       <parentFolderId>5ee9053b-4284-4568-9e38-3a4aa5a53ac2</parentFolderId>
+      <packageId>faa7bb8b-3a31-4e79-beee-0f17d8088ea1</packageId>
+      <packageName>Intent.Modules.Java</packageName>
+      <stereotypes />
+      <childElements />
+    </childElement>
+    <childElement id="bc5dd777-581c-4ff5-9d7b-9a84cd36a362" type="Role" typeId="025e933b-b602-4b6d-95ab-0ec36ae940da">
+      <name>Api</name>
+      <display>Api</display>
+      <isAbstract>false</isAbstract>
+      <order>12</order>
+      <genericTypes />
+      <isMapped>false</isMapped>
+      <parentFolderId>5ee9053b-4284-4568-9e38-3a4aa5a53ac2</parentFolderId>
+      <packageId>faa7bb8b-3a31-4e79-beee-0f17d8088ea1</packageId>
+      <packageName>Intent.Modules.Java</packageName>
+      <stereotypes />
+      <childElements />
+    </childElement>
+    <childElement id="e9e62f45-c8a6-43ff-857b-b3cb40d4ca48" type="Role" typeId="025e933b-b602-4b6d-95ab-0ec36ae940da">
+      <name>Decorators</name>
+      <display>Decorators</display>
+      <isAbstract>false</isAbstract>
+      <order>13</order>
+      <genericTypes />
+      <isMapped>false</isMapped>
+      <parentFolderId>5ee9053b-4284-4568-9e38-3a4aa5a53ac2</parentFolderId>
+      <packageId>faa7bb8b-3a31-4e79-beee-0f17d8088ea1</packageId>
+      <packageName>Intent.Modules.Java</packageName>
+      <stereotypes />
+      <childElements />
+    </childElement>
+    <childElement id="86df6cc2-76fe-4dcf-9cb9-aa7bc5d80264" type="Role" typeId="025e933b-b602-4b6d-95ab-0ec36ae940da">
+      <name>DesignerConfig</name>
+      <display>DesignerConfig</display>
+      <isAbstract>false</isAbstract>
+      <order>14</order>
+      <genericTypes />
+      <isMapped>false</isMapped>
+      <parentFolderId>5ee9053b-4284-4568-9e38-3a4aa5a53ac2</parentFolderId>
+      <packageId>faa7bb8b-3a31-4e79-beee-0f17d8088ea1</packageId>
+      <packageName>Intent.Modules.Java</packageName>
+      <stereotypes />
+      <childElements />
+    </childElement>
+    <childElement id="a7c54808-96ec-423b-913f-8c23c51f28f8" type="Role" typeId="025e933b-b602-4b6d-95ab-0ec36ae940da">
+      <name>IModSpec</name>
+      <display>IModSpec</display>
+      <isAbstract>false</isAbstract>
+      <order>15</order>
+      <genericTypes />
+      <isMapped>false</isMapped>
+      <parentFolderId>5ee9053b-4284-4568-9e38-3a4aa5a53ac2</parentFolderId>
+      <packageId>faa7bb8b-3a31-4e79-beee-0f17d8088ea1</packageId>
+      <packageName>Intent.Modules.Java</packageName>
+      <stereotypes />
+      <childElements />
+    </childElement>
+    <childElement id="97de8bca-c6f4-42e8-8605-1eaceecac19b" type="Role" typeId="025e933b-b602-4b6d-95ab-0ec36ae940da">
+      <name>Templates</name>
+      <display>Templates</display>
+      <isAbstract>false</isAbstract>
+      <order>16</order>
+      <genericTypes />
+      <isMapped>false</isMapped>
+      <parentFolderId>5ee9053b-4284-4568-9e38-3a4aa5a53ac2</parentFolderId>
+      <packageId>faa7bb8b-3a31-4e79-beee-0f17d8088ea1</packageId>
+      <packageName>Intent.Modules.Java</packageName>
       <stereotypes />
       <childElements />
     </childElement>

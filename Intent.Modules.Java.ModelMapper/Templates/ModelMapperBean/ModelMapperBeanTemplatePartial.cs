@@ -7,6 +7,7 @@ using Intent.RoslynWeaver.Attributes;
 using Intent.Templates;
 using Intent.Modelers.Services.Api;
 using Intent.Modules.Java.ModelMapper.Templates.EntityToDtoMapping;
+using Intent.Modules.Common;
 
 
 [assembly: DefaultIntentManaged(Mode.Merge)]

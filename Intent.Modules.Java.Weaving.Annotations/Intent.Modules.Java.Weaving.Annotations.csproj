@@ -91,12 +91,10 @@
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>IntentMergeTemplate.cs</LastGenOutput>
     </None>
-
     <None Update="Templates\ModeEnum\ModeEnumTemplate.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>ModeEnumTemplate.cs</LastGenOutput>
     </None>
-
     <None Update="Templates\IntentManageClass\IntentManageClassTemplate.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>IntentManageClassTemplate.cs</LastGenOutput>

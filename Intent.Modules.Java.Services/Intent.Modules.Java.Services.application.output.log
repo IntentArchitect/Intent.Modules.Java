@@ -1,94 +1,135 @@
 <?xml version="1.0" encoding="utf-8"?>
-<outputLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<outputLog>
   <ApplicationId>7525049d-c38e-46e8-84a5-ca06fb9f315f</ApplicationId>
   <FileLogs>
     <FileLog>
+      <ApplicationRelativeFilePath>../Intent.Modules.Java.sln</ApplicationRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
       <ProjectId>64c684bc-7d0b-4cf2-8445-6558b97ef785</ProjectId>
-      <ApplicationRelativeFilePath>Api/Extensions/OperationModelExtensions.cs</ApplicationRelativeFilePath>
-      <ProjectRelativeFilePath>OperationModelExtensions.cs</ProjectRelativeFilePath>
+      <CorrelationId>Intent.ModuleBuilder.Templates.Api.ApiElementModelExtensions#e030c97a-e066-40a7-8188-808c275df3cb</CorrelationId>
+      <ApplicationRelativeFilePath>Api/Extensions/OperationModelStereotypeExtensions.cs</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>OperationModelStereotypeExtensions.cs</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
       <ProjectId>9a39a5e5-1c2a-4df7-bab4-5d2760783b6d</ProjectId>
+      <CorrelationId>Intent.ModuleBuilder.IModeSpecFile</CorrelationId>
       <ApplicationRelativeFilePath>Intent.Java.Services.imodspec</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>Intent.Java.Services.imodspec</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
       <ProjectId>9a39a5e5-1c2a-4df7-bab4-5d2760783b6d</ProjectId>
+      <CorrelationId>Intent.VisualStudio.Projects.CoreLibrary.CSProject#9a39a5e5-1c2a-4df7-bab4-5d2760783b6d</CorrelationId>
       <ApplicationRelativeFilePath>Intent.Modules.Java.Services.csproj</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>Intent.Modules.Java.Services.csproj</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
       <ProjectId>9a39a5e5-1c2a-4df7-bab4-5d2760783b6d</ProjectId>
+      <CorrelationId>Intent.ModuleBuilder.ReadMe</CorrelationId>
       <ApplicationRelativeFilePath>README.txt</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>README.txt</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
       <ProjectId>32921436-c716-4bad-8ff1-2cc93f11b598</ProjectId>
+      <CorrelationId>Intent.ModuleBuilder.Templates.TemplateDecoratorContract#be604817-d78c-4648-ab9f-7d9879bf0eff</CorrelationId>
       <ApplicationRelativeFilePath>Templates/DataTransferModel/DataTransferModelDecorator.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>DataTransferModel/DataTransferModelDecorator.cs</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
       <ProjectId>32921436-c716-4bad-8ff1-2cc93f11b598</ProjectId>
+      <CorrelationId>Intent.ModuleBuilder.Java.Templates.JavaTemplate.PreProcessT4#be2a8f83-c156-4e1a-8095-00c402a0cb15</CorrelationId>
       <ApplicationRelativeFilePath>Templates/DataTransferModel/DataTransferModelTemplate.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>DataTransferModel/DataTransferModelTemplate.cs</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
       <ProjectId>32921436-c716-4bad-8ff1-2cc93f11b598</ProjectId>
+      <CorrelationId>Intent.ModuleBuilder.Java.Templates.JavaFileTemplate#be2a8f83-c156-4e1a-8095-00c402a0cb15</CorrelationId>
       <ApplicationRelativeFilePath>Templates/DataTransferModel/DataTransferModelTemplate.tt</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>DataTransferModel/DataTransferModelTemplate.tt</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
       <ProjectId>32921436-c716-4bad-8ff1-2cc93f11b598</ProjectId>
+      <CorrelationId>Intent.ModuleBuilder.Java.Templates.JavaFileTemplatePartial#be2a8f83-c156-4e1a-8095-00c402a0cb15</CorrelationId>
       <ApplicationRelativeFilePath>Templates/DataTransferModel/DataTransferModelTemplatePartial.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>DataTransferModel/DataTransferModelTemplatePartial.cs</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
       <ProjectId>32921436-c716-4bad-8ff1-2cc93f11b598</ProjectId>
+      <CorrelationId>Intent.ModuleBuilder.TemplateRegistration.FilePerModel#be2a8f83-c156-4e1a-8095-00c402a0cb15</CorrelationId>
       <ApplicationRelativeFilePath>Templates/DataTransferModel/DataTransferModelTemplateRegistration.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>DataTransferModel/DataTransferModelTemplateRegistration.cs</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
       <ProjectId>32921436-c716-4bad-8ff1-2cc93f11b598</ProjectId>
+      <CorrelationId>Intent.ModuleBuilder.Java.Templates.JavaTemplate.PreProcessT4#7ce91561-d9e7-4da5-870b-bc7f091513c7</CorrelationId>
       <ApplicationRelativeFilePath>Templates/ServiceImplementation/ServiceImplementationTemplate.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>ServiceImplementation/ServiceImplementationTemplate.cs</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
       <ProjectId>32921436-c716-4bad-8ff1-2cc93f11b598</ProjectId>
+      <CorrelationId>Intent.ModuleBuilder.Java.Templates.JavaFileTemplate#7ce91561-d9e7-4da5-870b-bc7f091513c7</CorrelationId>
       <ApplicationRelativeFilePath>Templates/ServiceImplementation/ServiceImplementationTemplate.tt</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>ServiceImplementation/ServiceImplementationTemplate.tt</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
       <ProjectId>32921436-c716-4bad-8ff1-2cc93f11b598</ProjectId>
+      <CorrelationId>Intent.ModuleBuilder.Java.Templates.JavaFileTemplatePartial#7ce91561-d9e7-4da5-870b-bc7f091513c7</CorrelationId>
       <ApplicationRelativeFilePath>Templates/ServiceImplementation/ServiceImplementationTemplatePartial.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>ServiceImplementation/ServiceImplementationTemplatePartial.cs</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
       <ProjectId>32921436-c716-4bad-8ff1-2cc93f11b598</ProjectId>
+      <CorrelationId>Intent.ModuleBuilder.TemplateRegistration.FilePerModel#7ce91561-d9e7-4da5-870b-bc7f091513c7</CorrelationId>
       <ApplicationRelativeFilePath>Templates/ServiceImplementation/ServiceImplementationTemplateRegistration.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>ServiceImplementation/ServiceImplementationTemplateRegistration.cs</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
       <ProjectId>32921436-c716-4bad-8ff1-2cc93f11b598</ProjectId>
+      <CorrelationId>Intent.ModuleBuilder.Java.Templates.JavaTemplate.PreProcessT4#592827c8-f46a-4c1a-a54d-ef454ff11210</CorrelationId>
       <ApplicationRelativeFilePath>Templates/ServiceInterface/ServiceInterfaceTemplate.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>ServiceInterface/ServiceInterfaceTemplate.cs</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
       <ProjectId>32921436-c716-4bad-8ff1-2cc93f11b598</ProjectId>
+      <CorrelationId>Intent.ModuleBuilder.Java.Templates.JavaFileTemplate#592827c8-f46a-4c1a-a54d-ef454ff11210</CorrelationId>
       <ApplicationRelativeFilePath>Templates/ServiceInterface/ServiceInterfaceTemplate.tt</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>ServiceInterface/ServiceInterfaceTemplate.tt</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
       <ProjectId>32921436-c716-4bad-8ff1-2cc93f11b598</ProjectId>
+      <CorrelationId>Intent.ModuleBuilder.Java.Templates.JavaFileTemplatePartial#592827c8-f46a-4c1a-a54d-ef454ff11210</CorrelationId>
       <ApplicationRelativeFilePath>Templates/ServiceInterface/ServiceInterfaceTemplatePartial.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>ServiceInterface/ServiceInterfaceTemplatePartial.cs</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
       <ProjectId>32921436-c716-4bad-8ff1-2cc93f11b598</ProjectId>
+      <CorrelationId>Intent.ModuleBuilder.TemplateRegistration.FilePerModel#592827c8-f46a-4c1a-a54d-ef454ff11210</CorrelationId>
       <ApplicationRelativeFilePath>Templates/ServiceInterface/ServiceInterfaceTemplateRegistration.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>ServiceInterface/ServiceInterfaceTemplateRegistration.cs</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
-      <ApplicationRelativeFilePath>../Intent.Modules.Java.sln</ApplicationRelativeFilePath>
+      <ProjectId>32921436-c716-4bad-8ff1-2cc93f11b598</ProjectId>
+      <ApplicationRelativeFilePath>Templates/TemplateExtensions.cs</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>TemplateExtensions.cs</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
     </FileLog>
   </FileLogs>
 </outputLog>

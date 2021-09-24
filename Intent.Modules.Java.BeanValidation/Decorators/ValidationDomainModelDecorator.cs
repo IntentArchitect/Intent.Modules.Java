@@ -7,6 +7,7 @@ using Intent.Modules.Common.Java.Templates;
 using Intent.Modules.Common.Templates;
 using Intent.Modules.Java.Domain.Templates.DomainModel;
 using Intent.RoslynWeaver.Attributes;
+using Intent.Engine;
 
 [assembly: DefaultIntentManaged(Mode.Merge)]
 [assembly: IntentTemplate("Intent.ModuleBuilder.Templates.TemplateDecorator", Version = "1.0")]
@@ -21,10 +22,13 @@ namespace Intent.Modules.Java.BeanValidation.Decorators
 
         private readonly DomainModelTemplate _template;
         private readonly ICollection<string> _imports = new List<string>();
+        private readonly IApplication _application;
 
-        public ValidationDomainModelDecorator(DomainModelTemplate template)
+        [IntentManaged(Mode.Merge, Body = Mode.Ignore)]
+        public ValidationDomainModelDecorator(DomainModelTemplate template, IApplication application)
         {
             _template = template;
+            _application = application;
             _template.AddDependency(new JavaDependency("javax.validation", "validation-api"));
         }
 

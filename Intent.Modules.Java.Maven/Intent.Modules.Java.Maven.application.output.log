@@ -1,44 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
-<outputLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<outputLog>
   <ApplicationId>13711c7f-093c-4051-8f56-16e3cbe88663</ApplicationId>
   <FileLogs>
     <FileLog>
+      <ApplicationRelativeFilePath>../Intent.Modules.Java.sln</ApplicationRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
       <ProjectId>2aee7253-e4d7-4433-95b7-561ca904f214</ProjectId>
+      <CorrelationId>Intent.ModuleBuilder.IModeSpecFile</CorrelationId>
       <ApplicationRelativeFilePath>Intent.Java.Maven.imodspec</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>Intent.Java.Maven.imodspec</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
       <ProjectId>2aee7253-e4d7-4433-95b7-561ca904f214</ProjectId>
+      <CorrelationId>Intent.VisualStudio.Projects.CoreLibrary.CSProject#2aee7253-e4d7-4433-95b7-561ca904f214</CorrelationId>
       <ApplicationRelativeFilePath>Intent.Modules.Java.Maven.csproj</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>Intent.Modules.Java.Maven.csproj</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
       <ProjectId>2aee7253-e4d7-4433-95b7-561ca904f214</ProjectId>
+      <CorrelationId>Intent.ModuleBuilder.ReadMe</CorrelationId>
       <ApplicationRelativeFilePath>README.txt</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>README.txt</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
       <ProjectId>73f1bfd6-6e37-4965-a6f6-64ba8f3f313c</ProjectId>
+      <CorrelationId>Intent.ModuleBuilder.ProjectItemTemplate.T4Template.PreProcessed#cf1787cd-4aae-4887-b9f1-e9fdaf5bee4d</CorrelationId>
       <ApplicationRelativeFilePath>Templates/PomFile/PomFileTemplate.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>PomFile/PomFileTemplate.cs</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
       <ProjectId>73f1bfd6-6e37-4965-a6f6-64ba8f3f313c</ProjectId>
+      <CorrelationId>Intent.ModuleBuilder.ProjectItemTemplate.T4Template#cf1787cd-4aae-4887-b9f1-e9fdaf5bee4d</CorrelationId>
       <ApplicationRelativeFilePath>Templates/PomFile/PomFileTemplate.tt</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>PomFile/PomFileTemplate.tt</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
       <ProjectId>73f1bfd6-6e37-4965-a6f6-64ba8f3f313c</ProjectId>
+      <CorrelationId>Intent.ModuleBuilder.ProjectItemTemplate.Partial#cf1787cd-4aae-4887-b9f1-e9fdaf5bee4d</CorrelationId>
       <ApplicationRelativeFilePath>Templates/PomFile/PomFileTemplatePartial.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>PomFile/PomFileTemplatePartial.cs</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
       <ProjectId>73f1bfd6-6e37-4965-a6f6-64ba8f3f313c</ProjectId>
+      <CorrelationId>Intent.ModuleBuilder.TemplateRegistration.SingleFileNoModel#cf1787cd-4aae-4887-b9f1-e9fdaf5bee4d</CorrelationId>
       <ApplicationRelativeFilePath>Templates/PomFile/PomFileTemplateRegistration.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>PomFile/PomFileTemplateRegistration.cs</ProjectRelativeFilePath>
-    </FileLog>
-    <FileLog>
-      <ApplicationRelativeFilePath>../Intent.Modules.Java.sln</ApplicationRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
     </FileLog>
   </FileLogs>
 </outputLog>

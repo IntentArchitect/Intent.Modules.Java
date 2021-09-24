@@ -6,6 +6,7 @@ using Intent.Modules.Common.Templates;
 using Intent.Modules.Java.Maven.Templates;
 using Intent.RoslynWeaver.Attributes;
 using Intent.Templates;
+using Intent.Modules.Common;
 
 
 [assembly: DefaultIntentManaged(Mode.Merge)]

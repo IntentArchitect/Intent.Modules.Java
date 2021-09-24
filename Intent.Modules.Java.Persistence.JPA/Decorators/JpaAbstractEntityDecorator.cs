@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using Intent.Modules.Common.Java.Templates;
 using Intent.Modules.Java.Domain.Templates.AbstractEntity;
 using Intent.RoslynWeaver.Attributes;
+using Intent.Engine;
 
 [assembly: DefaultIntentManaged(Mode.Merge)]
 [assembly: IntentTemplate("Intent.ModuleBuilder.Templates.TemplateDecorator", Version = "1.0")]
@@ -15,10 +16,13 @@ namespace Intent.Modules.Java.Persistence.JPA.Decorators
         public const string DecoratorId = "Intent.Java.Persistence.JPA.JpaAbstractEntityDecorator";
 
         private readonly AbstractEntityTemplate _template;
+        private readonly IApplication _application;
 
-        public JpaAbstractEntityDecorator(AbstractEntityTemplate template)
+        [IntentManaged(Mode.Merge, Body = Mode.Fully)]
+        public JpaAbstractEntityDecorator(AbstractEntityTemplate template, IApplication application)
         {
             _template = template;
+            _application = application;
         }
 
         public override IEnumerable<string> ClassAnnotations()

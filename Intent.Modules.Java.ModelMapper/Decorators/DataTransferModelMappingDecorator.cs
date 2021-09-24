@@ -3,6 +3,7 @@ using Intent.Modules.Common.Templates;
 using Intent.Modules.Java.Domain.Templates.DomainModel;
 using Intent.Modules.Java.Services.Templates.DataTransferModel;
 using Intent.RoslynWeaver.Attributes;
+using Intent.Engine;
 
 [assembly: DefaultIntentManaged(Mode.Merge)]
 [assembly: IntentTemplate("Intent.ModuleBuilder.Templates.TemplateDecorator", Version = "1.0")]
@@ -16,10 +17,13 @@ namespace Intent.Modules.Java.ModelMapper.Decorators
         public const string DecoratorId = "Intent.Java.ModelMapper.DataTransferModelMappingDecorator";
 
         private readonly DataTransferModelTemplate _template;
+        private readonly IApplication _application;
 
-        public DataTransferModelMappingDecorator(DataTransferModelTemplate template)
+        [IntentManaged(Mode.Merge, Body = Mode.Fully)]
+        public DataTransferModelMappingDecorator(DataTransferModelTemplate template, IApplication application)
         {
             _template = template;
+            _application = application;
         }
 
         public override string Methods()

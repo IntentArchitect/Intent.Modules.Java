@@ -1,44 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
-<outputLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<outputLog>
   <ApplicationId>2a1f90d0-0a78-4a3a-899b-a45205055f19</ApplicationId>
   <FileLogs>
     <FileLog>
       <ApplicationRelativeFilePath>../Intent.Modules.Java.sln</ApplicationRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
       <ProjectId>5ee9053b-4284-4568-9e38-3a4aa5a53ac2</ProjectId>
+      <CorrelationId>Intent.ModuleBuilder.IModeSpecFile</CorrelationId>
       <ApplicationRelativeFilePath>Intent.Java.Spring.Data.Repositories.imodspec</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>Intent.Java.Spring.Data.Repositories.imodspec</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
       <ProjectId>5ee9053b-4284-4568-9e38-3a4aa5a53ac2</ProjectId>
+      <CorrelationId>Intent.VisualStudio.Projects.CoreLibrary.CSProject#5ee9053b-4284-4568-9e38-3a4aa5a53ac2</CorrelationId>
       <ApplicationRelativeFilePath>Intent.Modules.Java.Spring.Data.Repositories.csproj</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>Intent.Modules.Java.Spring.Data.Repositories.csproj</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
       <ProjectId>5ee9053b-4284-4568-9e38-3a4aa5a53ac2</ProjectId>
+      <CorrelationId>Intent.ModuleBuilder.ReadMe</CorrelationId>
       <ApplicationRelativeFilePath>README.txt</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>README.txt</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
       <ProjectId>cb181c44-e0eb-4777-b2f1-110454210b8c</ProjectId>
+      <CorrelationId>Intent.ModuleBuilder.Java.Templates.JavaTemplate.PreProcessT4#161cbca5-2ef9-4c47-bf3e-265b9ef3c17a</CorrelationId>
       <ApplicationRelativeFilePath>Templates/EntityRepository/EntityRepositoryTemplate.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>EntityRepository/EntityRepositoryTemplate.cs</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
       <ProjectId>cb181c44-e0eb-4777-b2f1-110454210b8c</ProjectId>
+      <CorrelationId>Intent.ModuleBuilder.Java.Templates.JavaFileTemplate#161cbca5-2ef9-4c47-bf3e-265b9ef3c17a</CorrelationId>
       <ApplicationRelativeFilePath>Templates/EntityRepository/EntityRepositoryTemplate.tt</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>EntityRepository/EntityRepositoryTemplate.tt</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
       <ProjectId>cb181c44-e0eb-4777-b2f1-110454210b8c</ProjectId>
+      <CorrelationId>Intent.ModuleBuilder.Java.Templates.JavaFileTemplatePartial#161cbca5-2ef9-4c47-bf3e-265b9ef3c17a</CorrelationId>
       <ApplicationRelativeFilePath>Templates/EntityRepository/EntityRepositoryTemplatePartial.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>EntityRepository/EntityRepositoryTemplatePartial.cs</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
       <ProjectId>cb181c44-e0eb-4777-b2f1-110454210b8c</ProjectId>
+      <CorrelationId>Intent.ModuleBuilder.TemplateRegistration.FilePerModel#161cbca5-2ef9-4c47-bf3e-265b9ef3c17a</CorrelationId>
       <ApplicationRelativeFilePath>Templates/EntityRepository/EntityRepositoryTemplateRegistration.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>EntityRepository/EntityRepositoryTemplateRegistration.cs</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
+      <ProjectId>cb181c44-e0eb-4777-b2f1-110454210b8c</ProjectId>
+      <ApplicationRelativeFilePath>Templates/TemplateExtensions.cs</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>TemplateExtensions.cs</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
     </FileLog>
   </FileLogs>
 </outputLog>

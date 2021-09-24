@@ -9,7 +9,7 @@ using Intent.RoslynWeaver.Attributes;
 
 namespace Intent.Modules.Java.Services.Api
 {
-    public static class OperationModelExtensions
+    public static class OperationModelStereotypeExtensions
     {
         public static TransactionOptions GetTransactionOptions(this OperationModel model)
         {

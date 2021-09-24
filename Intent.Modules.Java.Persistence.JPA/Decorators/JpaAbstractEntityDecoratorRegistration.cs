@@ -14,7 +14,7 @@ namespace Intent.Modules.Java.Persistence.JPA.Decorators
     {
         public override AbstractEntityDecorator CreateDecoratorInstance(AbstractEntityTemplate template, IApplication application)
         {
-            return new JpaAbstractEntityDecorator(template);
+            return new JpaAbstractEntityDecorator(template, application);
         }
 
         public override string DecoratorId => JpaAbstractEntityDecorator.DecoratorId;

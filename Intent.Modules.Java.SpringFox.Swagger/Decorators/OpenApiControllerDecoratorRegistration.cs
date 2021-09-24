@@ -14,7 +14,7 @@ namespace Intent.Modules.Java.SpringFox.Swagger.Decorators
     {
         public override RestControllerDecorator CreateDecoratorInstance(RestControllerTemplate template, IApplication application)
         {
-            return new OpenApiControllerDecorator(template);
+            return new OpenApiControllerDecorator(template, application);
         }
 
         public override string DecoratorId => OpenApiControllerDecorator.DecoratorId;

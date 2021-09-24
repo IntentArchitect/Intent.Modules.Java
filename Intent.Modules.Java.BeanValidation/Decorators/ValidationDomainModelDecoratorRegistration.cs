@@ -14,7 +14,7 @@ namespace Intent.Modules.Java.BeanValidation.Decorators
     {
         public override DomainModelDecorator CreateDecoratorInstance(DomainModelTemplate template, IApplication application)
         {
-            return new ValidationDomainModelDecorator(template);
+            return new ValidationDomainModelDecorator(template, application);
         }
 
         public override string DecoratorId => ValidationDomainModelDecorator.DecoratorId;

@@ -3,6 +3,7 @@ using System.Linq;
 using Intent.Modelers.Services.Api;
 using Intent.Modules.Java.SpringBoot.Templates.RestController;
 using Intent.RoslynWeaver.Attributes;
+using Intent.Engine;
 
 [assembly: DefaultIntentManaged(Mode.Merge)]
 [assembly: IntentTemplate("Intent.ModuleBuilder.Templates.TemplateDecorator", Version = "1.0")]
@@ -17,9 +18,11 @@ namespace Intent.Modules.Java.SpringFox.Swagger.Decorators
 
         private readonly RestControllerTemplate _template;
 
-        public OpenApiControllerDecorator(RestControllerTemplate template)
+        [IntentManaged(Mode.Merge, Body = Mode.Fully)]
+        public OpenApiControllerDecorator(RestControllerTemplate template, IApplication application)
         {
             _template = template;
+            _application = application;
         }
 
         public override IEnumerable<string> ControllerAnnotations()
@@ -47,5 +50,6 @@ namespace Intent.Modules.Java.SpringFox.Swagger.Decorators
             }
             yield return $"@{_template.ImportType("io.swagger.annotations.ApiOperation")}({string.Join(", ", options.Select(x => $"{x.Key} = {x.Value}"))})";
         }
+        private readonly IApplication _application;
     }
 }

@@ -8,6 +8,7 @@ using Intent.Modules.Common.Java.Templates;
 using Intent.Modules.Common.Templates;
 using Intent.Modules.Java.Domain.Templates.DomainModel;
 using Intent.RoslynWeaver.Attributes;
+using Intent.Engine;
 
 [assembly: DefaultIntentManaged(Mode.Merge)]
 [assembly: IntentTemplate("Intent.ModuleBuilder.Templates.TemplateDecorator", Version = "1.0")]
@@ -21,11 +22,14 @@ namespace Intent.Modules.Java.Persistence.JPA.Decorators
         public const string DecoratorId = "Intent.Java.Persistence.JPA.JpaDomainModelDecorator";
 
         private readonly DomainModelTemplate _template;
+        private readonly IApplication _application;
         private ICollection<string> _imports = new List<string>();
 
-        public JpaDomainModelDecorator(DomainModelTemplate template)
+        [IntentManaged(Mode.Merge, Body = Mode.Ignore)]
+        public JpaDomainModelDecorator(DomainModelTemplate template, IApplication application)
         {
             _template = template;
+            _application = application;
             _template.AddDependency(new JavaDependency("org.springframework.boot", "spring-boot-starter-data-jpa"));
             _template.AddDependency(new JavaDependency("org.springframework.boot", "spring-boot-starter-jdbc"));
             _template.AddDependency(new JavaDependency("com.h2database", "h2"));

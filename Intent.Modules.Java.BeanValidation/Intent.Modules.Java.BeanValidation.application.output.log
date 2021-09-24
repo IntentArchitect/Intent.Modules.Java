@@ -1,34 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
-<outputLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<outputLog>
   <ApplicationId>5260c3ef-ea5c-487d-9150-6b5cb1fc28be</ApplicationId>
   <FileLogs>
     <FileLog>
+      <ApplicationRelativeFilePath>../Intent.Modules.Java.sln</ApplicationRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
       <ProjectId>814b54ba-dcd3-4a1b-946d-5ce8d758450c</ProjectId>
+      <CorrelationId>Intent.ModuleBuilder.Templates.TemplateDecorator#0c183cb2-bcaf-42d2-87e0-807c042113a5</CorrelationId>
       <ApplicationRelativeFilePath>Decorators/ValidationDomainModelDecorator.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>ValidationDomainModelDecorator.cs</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
       <ProjectId>814b54ba-dcd3-4a1b-946d-5ce8d758450c</ProjectId>
+      <CorrelationId>Intent.ModuleBuilder.Templates.TemplateDecoratorRegistration#0c183cb2-bcaf-42d2-87e0-807c042113a5</CorrelationId>
       <ApplicationRelativeFilePath>Decorators/ValidationDomainModelDecoratorRegistration.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>ValidationDomainModelDecoratorRegistration.cs</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
       <ProjectId>8220ed3b-fabc-4ff0-945c-acafb0ed917c</ProjectId>
+      <CorrelationId>Intent.ModuleBuilder.IModeSpecFile</CorrelationId>
       <ApplicationRelativeFilePath>Intent.Java.BeanValidation.imodspec</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>Intent.Java.BeanValidation.imodspec</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
       <ProjectId>8220ed3b-fabc-4ff0-945c-acafb0ed917c</ProjectId>
+      <CorrelationId>Intent.VisualStudio.Projects.CoreLibrary.CSProject#8220ed3b-fabc-4ff0-945c-acafb0ed917c</CorrelationId>
       <ApplicationRelativeFilePath>Intent.Modules.Java.BeanValidation.csproj</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>Intent.Modules.Java.BeanValidation.csproj</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
       <ProjectId>8220ed3b-fabc-4ff0-945c-acafb0ed917c</ProjectId>
+      <CorrelationId>Intent.ModuleBuilder.ReadMe</CorrelationId>
       <ApplicationRelativeFilePath>README.txt</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>README.txt</ProjectRelativeFilePath>
-    </FileLog>
-    <FileLog>
-      <ApplicationRelativeFilePath>../Intent.Modules.Java.sln</ApplicationRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
     </FileLog>
   </FileLogs>
 </outputLog>

@@ -1,69 +1,100 @@
 <?xml version="1.0" encoding="utf-8"?>
-<outputLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<outputLog>
   <ApplicationId>df7ecc09-497a-465f-aab7-11f37732aca4</ApplicationId>
   <FileLogs>
     <FileLog>
       <ApplicationRelativeFilePath>../Intent.Modules.Java.sln</ApplicationRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
       <ProjectId>915037d0-3d43-4cda-9777-bb75b8bd5c63</ProjectId>
+      <CorrelationId>Intent.ModuleBuilder.IModeSpecFile</CorrelationId>
       <ApplicationRelativeFilePath>Intent.Java.SpringBoot.imodspec</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>Intent.Java.SpringBoot.imodspec</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
       <ProjectId>915037d0-3d43-4cda-9777-bb75b8bd5c63</ProjectId>
+      <CorrelationId>Intent.VisualStudio.Projects.CoreLibrary.CSProject#915037d0-3d43-4cda-9777-bb75b8bd5c63</CorrelationId>
       <ApplicationRelativeFilePath>Intent.Modules.Java.SpringBoot.csproj</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>Intent.Modules.Java.SpringBoot.csproj</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
       <ProjectId>915037d0-3d43-4cda-9777-bb75b8bd5c63</ProjectId>
+      <CorrelationId>Intent.ModuleBuilder.ReadMe</CorrelationId>
       <ApplicationRelativeFilePath>README.txt</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>README.txt</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
       <ProjectId>db8d1b7b-e26f-4baa-ba43-990a5ff65135</ProjectId>
+      <CorrelationId>Intent.ModuleBuilder.Java.Templates.JavaTemplate.PreProcessT4#352eb8e5-c7f0-42a9-8438-f1b95ea193de</CorrelationId>
       <ApplicationRelativeFilePath>Templates/Application/ApplicationTemplate.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>Application/ApplicationTemplate.cs</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
       <ProjectId>db8d1b7b-e26f-4baa-ba43-990a5ff65135</ProjectId>
+      <CorrelationId>Intent.ModuleBuilder.Java.Templates.JavaFileTemplate#352eb8e5-c7f0-42a9-8438-f1b95ea193de</CorrelationId>
       <ApplicationRelativeFilePath>Templates/Application/ApplicationTemplate.tt</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>Application/ApplicationTemplate.tt</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
       <ProjectId>db8d1b7b-e26f-4baa-ba43-990a5ff65135</ProjectId>
+      <CorrelationId>Intent.ModuleBuilder.Java.Templates.JavaFileTemplatePartial#352eb8e5-c7f0-42a9-8438-f1b95ea193de</CorrelationId>
       <ApplicationRelativeFilePath>Templates/Application/ApplicationTemplatePartial.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>Application/ApplicationTemplatePartial.cs</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
       <ProjectId>db8d1b7b-e26f-4baa-ba43-990a5ff65135</ProjectId>
+      <CorrelationId>Intent.ModuleBuilder.TemplateRegistration.SingleFileNoModel#352eb8e5-c7f0-42a9-8438-f1b95ea193de</CorrelationId>
       <ApplicationRelativeFilePath>Templates/Application/ApplicationTemplateRegistration.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>Application/ApplicationTemplateRegistration.cs</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
       <ProjectId>db8d1b7b-e26f-4baa-ba43-990a5ff65135</ProjectId>
+      <CorrelationId>Intent.ModuleBuilder.Templates.TemplateDecoratorContract#92b673b3-739b-4e6a-bf1a-9b58b76d598f</CorrelationId>
       <ApplicationRelativeFilePath>Templates/RestController/RestControllerDecorator.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>RestController/RestControllerDecorator.cs</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
       <ProjectId>db8d1b7b-e26f-4baa-ba43-990a5ff65135</ProjectId>
+      <CorrelationId>Intent.ModuleBuilder.Java.Templates.JavaTemplate.PreProcessT4#33a60ef5-5613-4719-a96d-206d3732c9ba</CorrelationId>
       <ApplicationRelativeFilePath>Templates/RestController/RestControllerTemplate.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>RestController/RestControllerTemplate.cs</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
       <ProjectId>db8d1b7b-e26f-4baa-ba43-990a5ff65135</ProjectId>
+      <CorrelationId>Intent.ModuleBuilder.Java.Templates.JavaFileTemplate#33a60ef5-5613-4719-a96d-206d3732c9ba</CorrelationId>
       <ApplicationRelativeFilePath>Templates/RestController/RestControllerTemplate.tt</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>RestController/RestControllerTemplate.tt</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
       <ProjectId>db8d1b7b-e26f-4baa-ba43-990a5ff65135</ProjectId>
+      <CorrelationId>Intent.ModuleBuilder.Java.Templates.JavaFileTemplatePartial#33a60ef5-5613-4719-a96d-206d3732c9ba</CorrelationId>
       <ApplicationRelativeFilePath>Templates/RestController/RestControllerTemplatePartial.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>RestController/RestControllerTemplatePartial.cs</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
       <ProjectId>db8d1b7b-e26f-4baa-ba43-990a5ff65135</ProjectId>
+      <CorrelationId>Intent.ModuleBuilder.TemplateRegistration.FilePerModel#33a60ef5-5613-4719-a96d-206d3732c9ba</CorrelationId>
       <ApplicationRelativeFilePath>Templates/RestController/RestControllerTemplateRegistration.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>RestController/RestControllerTemplateRegistration.cs</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
+      <ProjectId>db8d1b7b-e26f-4baa-ba43-990a5ff65135</ProjectId>
+      <ApplicationRelativeFilePath>Templates/TemplateExtensions.cs</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>TemplateExtensions.cs</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
     </FileLog>
   </FileLogs>
 </outputLog>

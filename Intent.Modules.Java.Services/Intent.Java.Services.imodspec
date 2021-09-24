@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <package>
   <id>Intent.Java.Services</id>
   <version>3.1.0</version>
@@ -37,4 +37,5 @@
   <metadata>
     <install target="Services;Module Builder" src="Intent.Metadata/Module Builder/Intent.Java.Services/Intent.Java.Services.pkg.config" externalReference="e3481ac6-e429-4423-8eba-b5b1bc890f1b" />
   </metadata>
+  <moduleSettings />
 </package>

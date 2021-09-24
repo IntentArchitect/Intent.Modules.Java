@@ -1,44 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
-<outputLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<outputLog>
   <ApplicationId>2a056a85-a105-4062-b43c-b434e72dff8b</ApplicationId>
   <FileLogs>
     <FileLog>
       <ApplicationRelativeFilePath>../Intent.Modules.Java.sln</ApplicationRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
       <ProjectId>10c0b22a-10cb-477a-9c0f-fefd470ed8e0</ProjectId>
+      <CorrelationId>Intent.ModuleBuilder.IModeSpecFile</CorrelationId>
       <ApplicationRelativeFilePath>Intent.Java.Spring.Cors.imodspec</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>Intent.Java.Spring.Cors.imodspec</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
       <ProjectId>10c0b22a-10cb-477a-9c0f-fefd470ed8e0</ProjectId>
+      <CorrelationId>Intent.VisualStudio.Projects.CoreLibrary.CSProject#10c0b22a-10cb-477a-9c0f-fefd470ed8e0</CorrelationId>
       <ApplicationRelativeFilePath>Intent.Modules.Java.Spring.Cors.csproj</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>Intent.Modules.Java.Spring.Cors.csproj</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
       <ProjectId>10c0b22a-10cb-477a-9c0f-fefd470ed8e0</ProjectId>
+      <CorrelationId>Intent.ModuleBuilder.ReadMe</CorrelationId>
       <ApplicationRelativeFilePath>README.txt</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>README.txt</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
       <ProjectId>89f29537-720d-4631-8c9e-bd9a316caee8</ProjectId>
+      <CorrelationId>Intent.ModuleBuilder.Java.Templates.JavaTemplate.PreProcessT4#217129c3-670d-447c-8cdc-955ab8249f96</CorrelationId>
       <ApplicationRelativeFilePath>Templates/CorsConfig/CorsConfigTemplate.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>CorsConfig/CorsConfigTemplate.cs</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
       <ProjectId>89f29537-720d-4631-8c9e-bd9a316caee8</ProjectId>
+      <CorrelationId>Intent.ModuleBuilder.Java.Templates.JavaFileTemplate#217129c3-670d-447c-8cdc-955ab8249f96</CorrelationId>
       <ApplicationRelativeFilePath>Templates/CorsConfig/CorsConfigTemplate.tt</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>CorsConfig/CorsConfigTemplate.tt</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
       <ProjectId>89f29537-720d-4631-8c9e-bd9a316caee8</ProjectId>
+      <CorrelationId>Intent.ModuleBuilder.Java.Templates.JavaFileTemplatePartial#217129c3-670d-447c-8cdc-955ab8249f96</CorrelationId>
       <ApplicationRelativeFilePath>Templates/CorsConfig/CorsConfigTemplatePartial.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>CorsConfig/CorsConfigTemplatePartial.cs</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
       <ProjectId>89f29537-720d-4631-8c9e-bd9a316caee8</ProjectId>
+      <CorrelationId>Intent.ModuleBuilder.TemplateRegistration.SingleFileNoModel#217129c3-670d-447c-8cdc-955ab8249f96</CorrelationId>
       <ApplicationRelativeFilePath>Templates/CorsConfig/CorsConfigTemplateRegistration.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>CorsConfig/CorsConfigTemplateRegistration.cs</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
+      <ProjectId>89f29537-720d-4631-8c9e-bd9a316caee8</ProjectId>
+      <ApplicationRelativeFilePath>Templates/TemplateExtensions.cs</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>TemplateExtensions.cs</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
     </FileLog>
   </FileLogs>
 </outputLog>

@@ -14,7 +14,7 @@ namespace Intent.Modules.Java.ModelMapper.Decorators
     {
         public override DataTransferModelDecorator CreateDecoratorInstance(DataTransferModelTemplate template, IApplication application)
         {
-            return new DataTransferModelMappingDecorator(template);
+            return new DataTransferModelMappingDecorator(template, application);
         }
 
         public override string DecoratorId => DataTransferModelMappingDecorator.DecoratorId;
