@@ -1,19 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<outputLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<outputLog>
   <ApplicationId>15695506-8a9b-4a83-8369-3cd2529d2750</ApplicationId>
   <FileLogs>
     <FileLog>
+      <ApplicationRelativeFilePath>../Intent.Modules.Java.sln</ApplicationRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
       <ProjectId>06caed4b-c0ea-4239-a4e7-6febea061869</ProjectId>
+      <CorrelationId>Intent.VisualStudio.Projects.CoreLibrary.CSProject#06caed4b-c0ea-4239-a4e7-6febea061869</CorrelationId>
       <ApplicationRelativeFilePath>Intent.ApplicationTemplates.Java.csproj</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>Intent.ApplicationTemplates.Java.csproj</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
       <ProjectId>06caed4b-c0ea-4239-a4e7-6febea061869</ProjectId>
+      <CorrelationId>Intent.ApplicationTemplate.Builder.Templates.IatSpecFile#84eb6eb9-30f5-429d-bf3c-06591e639eec</CorrelationId>
       <ApplicationRelativeFilePath>Intent.Java.SpringBoot.WebApplication/metadata.iatspec</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>Intent.Java.SpringBoot.WebApplication/metadata.iatspec</ProjectRelativeFilePath>
-    </FileLog>
-    <FileLog>
-      <ApplicationRelativeFilePath>../Intent.Modules.Java.sln</ApplicationRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
     </FileLog>
   </FileLogs>
 </outputLog>
