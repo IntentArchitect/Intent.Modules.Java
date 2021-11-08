@@ -16,14 +16,13 @@ using Intent.Engine;
 namespace Intent.Modules.Java.Persistence.JPA.Decorators
 {
     [IntentManaged(Mode.Merge)]
-    public class JpaDomainModelDecorator : DomainModelDecorator, IDeclareImports
+    public class JpaDomainModelDecorator : DomainModelDecorator
     {
         [IntentManaged(Mode.Fully)]
         public const string DecoratorId = "Intent.Java.Persistence.JPA.JpaDomainModelDecorator";
 
         private readonly DomainModelTemplate _template;
         private readonly IApplication _application;
-        private ICollection<string> _imports = new List<string>();
 
         [IntentManaged(Mode.Merge, Body = Mode.Ignore)]
         public JpaDomainModelDecorator(DomainModelTemplate template, IApplication application)
@@ -35,22 +34,28 @@ namespace Intent.Modules.Java.Persistence.JPA.Decorators
             _template.AddDependency(new JavaDependency("com.h2database", "h2"));
         }
 
-        private string Use(string fullyQualifiedType, string import = null)
-        {
-            import = import ?? fullyQualifiedType;
-            if (!_imports.Contains(import))
-            {
-                _imports.Add(import);
-            }
-
-            return fullyQualifiedType.Split('.').Last();
-        }
-
         public override string ClassAnnotations()
         {
             return $@"
 @Entity
-@Table(name = ""{(_template.Model.HasTable() ? _template.Model.GetTable().Name() : _template.Model.Name.ToPluralName().ToSnakeCase())}"")";
+@Table(name = ""{(_template.Model.HasTable() ? _template.Model.GetTable().Name() : _template.Model.Name.ToPluralName().ToSnakeCase())}""{GetIndexes()})";
+        }
+
+        private string GetIndexes()
+        {
+            if (_template.Model.Attributes.Any(x => x.HasIndex()))
+            {
+                var indexes = _template.Model.Attributes
+                    .Where(x => x.HasIndex())
+                    .GroupBy(x => x.GetIndex().UniqueKey() ?? "IX_" + _template.Model.Name + "_" + x.Name);
+
+                return $@", indexes = {{
+    {string.Join(@",
+    ", indexes.Select(x => $"@{_template.ImportType("javax.persistence.Index")}(name = \"{x.Key}\", columnList = \"{string.Join(",", x.Select(c => c.Name.ToCamelCase()))}\")"))}
+}}";
+            }
+
+            return string.Empty;
         }
 
         public override string BeforeField(AttributeModel model)
@@ -126,15 +131,6 @@ namespace Intent.Modules.Java.Persistence.JPA.Decorators
 
             return string.Join(@"
     ", annotations);
-        }
-
-        public IEnumerable<string> DeclareImports()
-        {
-            return _imports.Concat(new[]
-            {
-                "javax.persistence.*",
-            }).Distinct();
-
         }
     }
 }

@@ -1,5 +1,7 @@
 using System.Collections.Generic;
+using System.Linq;
 using Intent.Engine;
+using Intent.Metadata.RDBMS.Api;
 using Intent.Modelers.Domain.Api;
 using Intent.Modules.Common.Java;
 using Intent.Modules.Common.Java.Templates;
@@ -8,6 +10,7 @@ using Intent.Modules.Java.Domain.Templates.DomainModel;
 using Intent.RoslynWeaver.Attributes;
 using Intent.Templates;
 using Intent.Modules.Common;
+using Intent.Modules.Java.Domain.Templates;
 
 [assembly: DefaultIntentManaged(Mode.Merge)]
 [assembly: IntentTemplate("Intent.ModuleBuilder.Java.Templates.JavaFileTemplatePartial", Version = "1.0")]
@@ -44,5 +47,18 @@ namespace Intent.Modules.Java.Spring.Data.Repositories.Templates.EntityRepositor
             return "Integer";
         }
 
+        private IEnumerable<string> GetQueriesFromIndexes()
+        {
+            if (Model.Attributes.Any(x => x.HasIndex()))
+            {
+                var indexes = Model.Attributes
+                    .Where(x => x.HasIndex())
+                    .GroupBy(x => x.GetIndex().UniqueKey() ?? $"IX_{Model.Name}_{x.Name.ToCamelCase()}");
+
+                return indexes.Select(x => $"{ImportType("java.util.List")}<{this.GetDomainModelName()}> findBy{string.Join("And", x.Select(c => c.Name.ToPascalCase()))}({string.Join(", ", x.Select(c => $"{GetTypeName(c)} {c.Name.ToCamelCase()}"))});");
+            }
+
+            return new string[0];
+        }
     }
 }

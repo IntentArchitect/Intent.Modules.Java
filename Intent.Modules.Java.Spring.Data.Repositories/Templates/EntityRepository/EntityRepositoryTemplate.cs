@@ -75,7 +75,28 @@ namespace Intent.Modules.Java.Spring.Data.Repositories.Templates.EntityRepositor
             
             #line default
             #line hidden
-            this.Write("> {\r\n}");
+            this.Write("> {\r\n");
+            
+            #line 19 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Spring.Data.Repositories\Templates\EntityRepository\EntityRepositoryTemplate.tt"
+  foreach(var query in GetQueriesFromIndexes()) { 
+            
+            #line default
+            #line hidden
+            this.Write("    ");
+            
+            #line 20 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Spring.Data.Repositories\Templates\EntityRepository\EntityRepositoryTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(query));
+            
+            #line default
+            #line hidden
+            this.Write("\r\n\r\n");
+            
+            #line 22 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Spring.Data.Repositories\Templates\EntityRepository\EntityRepositoryTemplate.tt"
+  } 
+            
+            #line default
+            #line hidden
+            this.Write("}");
             return this.GenerationEnvironment.ToString();
         }
     }
