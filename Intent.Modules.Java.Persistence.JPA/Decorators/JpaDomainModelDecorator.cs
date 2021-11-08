@@ -37,8 +37,8 @@ namespace Intent.Modules.Java.Persistence.JPA.Decorators
         public override string ClassAnnotations()
         {
             return $@"
-@Entity
-@Table(name = ""{(_template.Model.HasTable() ? _template.Model.GetTable().Name() : _template.Model.Name.ToPluralName().ToSnakeCase())}""{GetIndexes()})";
+@{_template.ImportType("javax.persistence.Entity")}
+@{_template.ImportType("javax.persistence.Table")}(name = ""{(_template.Model.HasTable() ? _template.Model.GetTable().Name() : _template.Model.Name.ToPluralName().ToSnakeCase())}""{GetIndexes()})";
         }
 
         private string GetIndexes()
@@ -72,7 +72,7 @@ namespace Intent.Modules.Java.Persistence.JPA.Decorators
             {
                 columnSettings.Add("nullable = false");
             }
-            annotations.Add($@"@Column({string.Join(", ", columnSettings)})");
+            annotations.Add($@"@{_template.ImportType("javax.persistence.Column")}({string.Join(", ", columnSettings)})");
 
             return string.Join(@"
     ", annotations);
@@ -88,10 +88,10 @@ namespace Intent.Modules.Java.Persistence.JPA.Decorators
             var sourceEnd = thatEnd.OtherEnd();
             if (!sourceEnd.IsCollection && !thatEnd.IsCollection) // one-to-one
             {
-                annotations.Add($"@OneToOne(optional = {thatEnd.IsNullable.ToString().ToLower()}{(sourceEnd.IsNullable ? "" : ", orphanRemoval = true")})");
+                annotations.Add($"@{_template.ImportType("javax.persistence.OneToOne")}(optional = {thatEnd.IsNullable.ToString().ToLower()}{(sourceEnd.IsNullable ? "" : ", orphanRemoval = true")})");
                 if (thatEnd.IsTargetEnd())
                 {
-                    annotations.Add($"@JoinColumn(name=\"{thatEnd.Name.ToSnakeCase()}_id\", nullable = {thatEnd.IsNullable.ToString().ToLower()})");
+                    annotations.Add($"@{_template.ImportType("javax.persistence.JoinColumn")}(name=\"{thatEnd.Name.ToSnakeCase()}_id\", nullable = {thatEnd.IsNullable.ToString().ToLower()})");
                 }
             }
             else if (!sourceEnd.IsCollection && thatEnd.IsCollection) // one-to-many
@@ -106,25 +106,25 @@ namespace Intent.Modules.Java.Persistence.JPA.Decorators
                 {
                     settings.Add("orphanRemoval = true");
                 }
-                annotations.Add($"@OneToMany({string.Join(", ", settings)})");
+                annotations.Add($"@{_template.ImportType("javax.persistence.OneToMany")}({string.Join(", ", settings)})");
             }
             else if (sourceEnd.IsCollection && !thatEnd.IsCollection) // many-to-one
             {
-                annotations.Add($"@ManyToOne(optional = {thatEnd.IsNullable.ToString().ToLower()})");
+                annotations.Add($"@{_template.ImportType("javax.persistence.ManyToOne")}(optional = {thatEnd.IsNullable.ToString().ToLower()})");
                 //if (thatEnd.IsTargetEnd())
                 //{
-                annotations.Add($"@JoinColumn(name=\"{thatEnd.Name.ToSnakeCase()}_id\", nullable = {thatEnd.IsNullable.ToString().ToLower()})");
+                annotations.Add($"@{_template.ImportType("javax.persistence.JoinColumn")}(name=\"{thatEnd.Name.ToSnakeCase()}_id\", nullable = {thatEnd.IsNullable.ToString().ToLower()})");
                 //}
             }
             else if (sourceEnd.IsCollection && thatEnd.IsCollection) // many-to-many
             {
-                annotations.Add($"@ManyToMany");
+                annotations.Add($"@{_template.ImportType("javax.persistence.ManyToMany")}");
                 if (thatEnd.IsTargetEnd())
                 {
-                    annotations.Add($@"@JoinTable(
+                    annotations.Add($@"@{_template.ImportType("javax.persistence.JoinTable")}(
             name = ""{sourceEnd.Element.Name.ToSnakeCase()}_{thatEnd.Element.Name.ToPluralName().ToSnakeCase()}"",
-            joinColumns = {{ @JoinColumn(name = ""{sourceEnd.Element.Name.ToSnakeCase()}_id"") }},
-            inverseJoinColumns = {{ @JoinColumn(name = ""{thatEnd.Element.Name.ToSnakeCase()}_id"") }}
+            joinColumns = {{ @{_template.ImportType("javax.persistence.JoinColumn")}(name = ""{sourceEnd.Element.Name.ToSnakeCase()}_id"") }},
+            inverseJoinColumns = {{ @{_template.ImportType("javax.persistence.JoinColumn")}(name = ""{thatEnd.Element.Name.ToSnakeCase()}_id"") }}
     )");
                 }
             }

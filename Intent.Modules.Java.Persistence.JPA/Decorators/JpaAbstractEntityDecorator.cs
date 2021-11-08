@@ -57,7 +57,6 @@ namespace Intent.Modules.Java.Persistence.JPA.Decorators
             yield return "javax.persistence.GenerationType";
             yield return "javax.persistence.Id";
             yield return "javax.persistence.MappedSuperclass";
-
         }
     }
 }
