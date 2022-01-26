@@ -3,12 +3,13 @@
   <ApplicationId>2a056a85-a105-4062-b43c-b434e72dff8b</ApplicationId>
   <FileLogs>
     <FileLog>
+      <CorrelationId>Intent.VisualStudio.Projects.VisualStudio2015Solution#7fc0390b-e1ea-4316-8fd8-6446d3c3e0f7</CorrelationId>
       <ApplicationRelativeFilePath>../Intent.Modules.Java.sln</ApplicationRelativeFilePath>
       <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
       <ProjectId>10c0b22a-10cb-477a-9c0f-fefd470ed8e0</ProjectId>
-      <CorrelationId>Intent.ModuleBuilder.IModeSpecFile</CorrelationId>
+      <CorrelationId>Intent.ModuleBuilder.IModSpecFile</CorrelationId>
       <ApplicationRelativeFilePath>Intent.Java.Spring.Cors.imodspec</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>Intent.Java.Spring.Cors.imodspec</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
@@ -57,6 +58,7 @@
     </FileLog>
     <FileLog>
       <ProjectId>89f29537-720d-4631-8c9e-bd9a316caee8</ProjectId>
+      <CorrelationId>Intent.ModuleBuilder.Templates.TemplateExtensions</CorrelationId>
       <ApplicationRelativeFilePath>Templates/TemplateExtensions.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>TemplateExtensions.cs</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>

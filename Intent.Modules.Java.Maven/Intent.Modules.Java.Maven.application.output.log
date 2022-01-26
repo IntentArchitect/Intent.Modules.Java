@@ -3,12 +3,13 @@
   <ApplicationId>13711c7f-093c-4051-8f56-16e3cbe88663</ApplicationId>
   <FileLogs>
     <FileLog>
+      <CorrelationId>Intent.VisualStudio.Projects.VisualStudio2015Solution#df3bac93-c6dc-47c3-9253-a92f3791c0db</CorrelationId>
       <ApplicationRelativeFilePath>../Intent.Modules.Java.sln</ApplicationRelativeFilePath>
       <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
       <ProjectId>2aee7253-e4d7-4433-95b7-561ca904f214</ProjectId>
-      <CorrelationId>Intent.ModuleBuilder.IModeSpecFile</CorrelationId>
+      <CorrelationId>Intent.ModuleBuilder.IModSpecFile</CorrelationId>
       <ApplicationRelativeFilePath>Intent.Java.Maven.imodspec</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>Intent.Java.Maven.imodspec</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>

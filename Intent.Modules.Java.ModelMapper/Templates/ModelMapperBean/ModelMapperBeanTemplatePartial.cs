@@ -1,14 +1,13 @@
 using System.Collections.Generic;
 using Intent.Engine;
+using Intent.Modelers.Services.Api;
+using Intent.Modules.Common;
 using Intent.Modules.Common.Java;
 using Intent.Modules.Common.Java.Templates;
 using Intent.Modules.Common.Templates;
+using Intent.Modules.Java.ModelMapper.Templates.EntityToDtoMapping;
 using Intent.RoslynWeaver.Attributes;
 using Intent.Templates;
-using Intent.Modelers.Services.Api;
-using Intent.Modules.Java.ModelMapper.Templates.EntityToDtoMapping;
-using Intent.Modules.Common;
-
 
 [assembly: DefaultIntentManaged(Mode.Merge)]
 [assembly: IntentTemplate("Intent.ModuleBuilder.Java.Templates.JavaFileTemplatePartial", Version = "1.0")]

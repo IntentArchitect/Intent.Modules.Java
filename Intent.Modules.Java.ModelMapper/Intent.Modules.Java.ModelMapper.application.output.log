@@ -3,6 +3,7 @@
   <ApplicationId>e1ac2551-105e-45da-be15-8b6a51f50fa4</ApplicationId>
   <FileLogs>
     <FileLog>
+      <CorrelationId>Intent.VisualStudio.Projects.VisualStudio2015Solution#efafd076-b2c4-4906-ba87-7b96bbcc1a98</CorrelationId>
       <ApplicationRelativeFilePath>../Intent.Modules.Java.sln</ApplicationRelativeFilePath>
       <IsIgnored>false</IsIgnored>
     </FileLog>
@@ -22,7 +23,7 @@
     </FileLog>
     <FileLog>
       <ProjectId>997d1487-cfea-43d7-9aec-be05f101f8df</ProjectId>
-      <CorrelationId>Intent.ModuleBuilder.IModeSpecFile</CorrelationId>
+      <CorrelationId>Intent.ModuleBuilder.IModSpecFile</CorrelationId>
       <ApplicationRelativeFilePath>Intent.Java.ModelMapper.imodspec</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>Intent.Java.ModelMapper.imodspec</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
@@ -99,6 +100,7 @@
     </FileLog>
     <FileLog>
       <ProjectId>ccea972e-d4bf-492c-a8a3-58fdb0aac140</ProjectId>
+      <CorrelationId>Intent.ModuleBuilder.Templates.TemplateExtensions</CorrelationId>
       <ApplicationRelativeFilePath>Templates/TemplateExtensions.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>TemplateExtensions.cs</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>

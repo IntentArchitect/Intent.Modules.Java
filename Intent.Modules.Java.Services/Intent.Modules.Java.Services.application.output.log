@@ -3,6 +3,7 @@
   <ApplicationId>7525049d-c38e-46e8-84a5-ca06fb9f315f</ApplicationId>
   <FileLogs>
     <FileLog>
+      <CorrelationId>Intent.VisualStudio.Projects.VisualStudio2015Solution#136bc8ec-e584-44d3-bd1c-772024b12244</CorrelationId>
       <ApplicationRelativeFilePath>../Intent.Modules.Java.sln</ApplicationRelativeFilePath>
       <IsIgnored>false</IsIgnored>
     </FileLog>
@@ -15,7 +16,7 @@
     </FileLog>
     <FileLog>
       <ProjectId>9a39a5e5-1c2a-4df7-bab4-5d2760783b6d</ProjectId>
-      <CorrelationId>Intent.ModuleBuilder.IModeSpecFile</CorrelationId>
+      <CorrelationId>Intent.ModuleBuilder.IModSpecFile</CorrelationId>
       <ApplicationRelativeFilePath>Intent.Java.Services.imodspec</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>Intent.Java.Services.imodspec</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
@@ -67,6 +68,13 @@
       <CorrelationId>Intent.ModuleBuilder.TemplateRegistration.FilePerModel#be2a8f83-c156-4e1a-8095-00c402a0cb15</CorrelationId>
       <ApplicationRelativeFilePath>Templates/DataTransferModel/DataTransferModelTemplateRegistration.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>DataTransferModel/DataTransferModelTemplateRegistration.cs</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
+      <ProjectId>32921436-c716-4bad-8ff1-2cc93f11b598</ProjectId>
+      <CorrelationId>Intent.ModuleBuilder.Templates.TemplateDecoratorContract#190a0466-89ca-49b9-a9ee-c57bc7142a57</CorrelationId>
+      <ApplicationRelativeFilePath>Templates/ServiceImplementation/ServiceImplementationDecorator.cs</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>ServiceImplementation/ServiceImplementationDecorator.cs</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
@@ -127,6 +135,7 @@
     </FileLog>
     <FileLog>
       <ProjectId>32921436-c716-4bad-8ff1-2cc93f11b598</ProjectId>
+      <CorrelationId>Intent.ModuleBuilder.Templates.TemplateExtensions</CorrelationId>
       <ApplicationRelativeFilePath>Templates/TemplateExtensions.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>TemplateExtensions.cs</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>

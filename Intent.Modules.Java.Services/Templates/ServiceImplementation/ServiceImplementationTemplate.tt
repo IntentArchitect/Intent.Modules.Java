@@ -1,4 +1,4 @@
-<#@ template language="C#" inherits="JavaTemplateBase<Intent.Modelers.Services.Api.ServiceModel>" #>
+<#@ template language="C#" inherits="JavaTemplateBase<Intent.Modelers.Services.Api.ServiceModel, Intent.Modules.Java.Services.Templates.ServiceImplementation.ServiceImplementationDecorator>" #>
 <#@ assembly name="System.Core" #>
 <#@ import namespace="System.Collections.Generic" #>
 <#@ import namespace="System.Linq" #>
@@ -18,13 +18,18 @@ import org.springframework.transaction.annotation.Transactional;
 @AllArgsConstructor
 <#= this.IntentMergeAnnotation() #>
 public class <#= ClassName #> implements <#= GetTypeName(ServiceInterface.ServiceInterfaceTemplate.TemplateId, Model) #> {
+<#	var parameters = GetConstructorDependencies(); 
+	foreach (var parameter in parameters)
+	{ #>
+    private <#= ImportType(parameter.Type) #> <#= parameter.Name.ToCamelCase() #>;
+<#	} #>
 <#  foreach(var operation in Model.Operations) { #>
 
     @Override
     @Transactional(readOnly = <#= IsReadOnly(operation) #>)
     <#= this.IntentIgnoreBodyAnnotation() #>
     public <#= GetTypeName(operation) #> <#= operation.Name #>(<#= this.GetMethodParameters(operation.Parameters) #>) {
-        throw new UnsupportedOperationException("Your implementation here...");
+        <#= GetImplementation(operation) #>
     }
 <#  } #>
 }

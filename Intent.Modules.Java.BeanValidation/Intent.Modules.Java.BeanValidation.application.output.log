@@ -3,6 +3,7 @@
   <ApplicationId>5260c3ef-ea5c-487d-9150-6b5cb1fc28be</ApplicationId>
   <FileLogs>
     <FileLog>
+      <CorrelationId>Intent.VisualStudio.Projects.VisualStudio2015Solution#1770fe38-7eb9-472f-8e32-873942940570</CorrelationId>
       <ApplicationRelativeFilePath>../Intent.Modules.Java.sln</ApplicationRelativeFilePath>
       <IsIgnored>false</IsIgnored>
     </FileLog>
@@ -22,7 +23,7 @@
     </FileLog>
     <FileLog>
       <ProjectId>8220ed3b-fabc-4ff0-945c-acafb0ed917c</ProjectId>
-      <CorrelationId>Intent.ModuleBuilder.IModeSpecFile</CorrelationId>
+      <CorrelationId>Intent.ModuleBuilder.IModSpecFile</CorrelationId>
       <ApplicationRelativeFilePath>Intent.Java.BeanValidation.imodspec</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>Intent.Java.BeanValidation.imodspec</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>

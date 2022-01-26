@@ -1,13 +1,13 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Intent.Engine;
 using Intent.Metadata.RDBMS.Api;
 using Intent.Modelers.Domain.Api;
 using Intent.Modules.Common.Java.Templates;
 using Intent.Modules.Common.Templates;
 using Intent.Modules.Java.Domain.Templates.DomainModel;
 using Intent.RoslynWeaver.Attributes;
-using Intent.Engine;
 
 [assembly: DefaultIntentManaged(Mode.Merge)]
 [assembly: IntentTemplate("Intent.ModuleBuilder.Templates.TemplateDecorator", Version = "1.0")]
@@ -20,6 +20,7 @@ namespace Intent.Modules.Java.BeanValidation.Decorators
         [IntentManaged(Mode.Fully)]
         public const string DecoratorId = "Intent.Java.BeanValidation.ValidationDomainModelDecorator";
 
+        [IntentManaged(Mode.Fully)]
         private readonly DomainModelTemplate _template;
         private readonly ICollection<string> _imports = new List<string>();
         private readonly IApplication _application;

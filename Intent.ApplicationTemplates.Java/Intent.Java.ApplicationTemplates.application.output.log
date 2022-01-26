@@ -3,6 +3,7 @@
   <ApplicationId>15695506-8a9b-4a83-8369-3cd2529d2750</ApplicationId>
   <FileLogs>
     <FileLog>
+      <CorrelationId>Intent.VisualStudio.Projects.VisualStudio2015Solution#6bc1816c-8318-4f89-a341-e154aeb9cd01</CorrelationId>
       <ApplicationRelativeFilePath>../Intent.Modules.Java.sln</ApplicationRelativeFilePath>
       <IsIgnored>false</IsIgnored>
     </FileLog>

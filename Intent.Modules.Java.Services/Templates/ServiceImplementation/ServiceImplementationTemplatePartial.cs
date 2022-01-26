@@ -1,4 +1,6 @@
+using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Intent.Engine;
 using Intent.Modelers.Services.Api;
 using Intent.Modules.Common;
@@ -16,7 +18,7 @@ using Intent.Templates;
 namespace Intent.Modules.Java.Services.Templates.ServiceImplementation
 {
     [IntentManaged(Mode.Merge, Signature = Mode.Fully)]
-    partial class ServiceImplementationTemplate : JavaTemplateBase<Intent.Modelers.Services.Api.ServiceModel>
+    partial class ServiceImplementationTemplate : JavaTemplateBase<Intent.Modelers.Services.Api.ServiceModel, ServiceImplementationDecorator>
     {
         [IntentManaged(Mode.Fully)]
         public const string TemplateId = "Intent.Java.Services.ServiceImplementation";
@@ -43,5 +45,15 @@ namespace Intent.Modules.Java.Services.Templates.ServiceImplementation
                 (operation.GetStereotype("Http Settings")?.GetProperty<string>("Verb") == "GET" ? "true" : "false");
         }
 
+        private string GetImplementation(OperationModel operation)
+        {
+            var decorator = GetDecoratorsOutput(x => x.GetImplementation(operation));
+            return !string.IsNullOrWhiteSpace(decorator) ? decorator : @"throw new UnsupportedOperationException(""Your implementation here..."");";
+        }
+
+        private IList<ClassDependency> GetConstructorDependencies()
+        {
+            return GetDecorators().SelectMany(x => x.GetClassDependencies()).ToList();
+        }
     }
 }

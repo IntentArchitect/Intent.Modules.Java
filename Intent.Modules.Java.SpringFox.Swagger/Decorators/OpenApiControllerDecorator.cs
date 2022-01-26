@@ -1,9 +1,9 @@
 using System.Collections.Generic;
 using System.Linq;
+using Intent.Engine;
 using Intent.Modelers.Services.Api;
 using Intent.Modules.Java.SpringBoot.Templates.RestController;
 using Intent.RoslynWeaver.Attributes;
-using Intent.Engine;
 
 [assembly: DefaultIntentManaged(Mode.Merge)]
 [assembly: IntentTemplate("Intent.ModuleBuilder.Templates.TemplateDecorator", Version = "1.0")]
@@ -16,6 +16,7 @@ namespace Intent.Modules.Java.SpringFox.Swagger.Decorators
         [IntentManaged(Mode.Fully)]
         public const string DecoratorId = "Intent.Java.SpringFox.Swagger.OpenApiControllerDecorator";
 
+        [IntentManaged(Mode.Fully)]
         private readonly RestControllerTemplate _template;
 
         [IntentManaged(Mode.Merge, Body = Mode.Fully)]

@@ -3,11 +3,22 @@
   <name>modelers</name>
   <display>modelers</display>
   <isAbstract>false</isAbstract>
-  <order>0</order>
+  <order>3</order>
   <genericTypes />
   <isMapped>false</isMapped>
   <parentFolderId>10c0b22a-10cb-477a-9c0f-fefd470ed8e0</parentFolderId>
-  <stereotypes />
+  <packageId>7fc0390b-e1ea-4316-8fd8-6446d3c3e0f7</packageId>
+  <packageName>Intent.Modules.Java</packageName>
+  <stereotypes>
+    <stereotype stereotypeDefinitionId="61132551-825d-4c6e-b9f1-0f95249d08d4" name="Folder Options">
+      <addedByDefault>true</addedByDefault>
+      <definitionPackageName>Intent.VisualStudio.Projects</definitionPackageName>
+      <definitionPackageId>a0636ab7-d3a1-430b-9609-11a18aa3cc7f</definitionPackageId>
+      <properties>
+        <property name="4bfbefd0-d22e-4ca0-9723-92ae273feca4" display="Namespace Provider" value="true" isActive="true" />
+      </properties>
+    </stereotype>
+  </stereotypes>
   <childElements>
     <childElement id="406a60c6-8f88-47c5-9527-3d0f0f25c635" type="Template Output" typeId="d421c322-7a51-4094-89fa-e5d8a0a97b27">
       <name>Intent.ModuleBuilder.DesignerConfig</name>
@@ -18,6 +29,8 @@
       <genericTypes />
       <isMapped>false</isMapped>
       <parentFolderId>b4e52fa3-cfa8-48c4-ac5a-f9a363520d28</parentFolderId>
+      <packageId>7fc0390b-e1ea-4316-8fd8-6446d3c3e0f7</packageId>
+      <packageName>Intent.Modules.Java</packageName>
       <stereotypes />
       <childElements />
     </childElement>
@@ -26,10 +39,12 @@
       <display>Intent.ModuleBuilder.DesignerSettings</display>
       <externalReference>Intent.ModuleBuilder</externalReference>
       <isAbstract>false</isAbstract>
-      <order>0</order>
+      <order>1</order>
       <genericTypes />
       <isMapped>false</isMapped>
       <parentFolderId>b4e52fa3-cfa8-48c4-ac5a-f9a363520d28</parentFolderId>
+      <packageId>7fc0390b-e1ea-4316-8fd8-6446d3c3e0f7</packageId>
+      <packageName>Intent.Modules.Java</packageName>
       <stereotypes />
       <childElements />
     </childElement>
