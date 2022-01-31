@@ -20,5 +20,6 @@
     <application id="5ff4b835-8249-47cd-8b33-d60f02c9824b" name="Intent.Modules.Java.SpringFox.Swagger" relativePath="Intent.Modules.Java.SpringFox.Swagger/Intent.Modules.Java.SpringFox.Swagger.application.config" />
     <application id="2a056a85-a105-4062-b43c-b434e72dff8b" name="Intent.Modules.Java.Spring.Cors" relativePath="Intent.Modules.Java.Spring.Cors/Intent.Modules.Java.Spring.Cors.application.config" />
     <application id="107906ee-a9fd-4272-818a-28912b7ad043" name="Intent.Modules.Java.Services.CRUD" relativePath="Intent.Modules.Java.Services.CRUD/Intent.Modules.Java.Services.CRUD.application.config" />
+    <application id="591f2bfb-b70f-4d42-977f-333a15ee80ab" name="ApplicationTemplates.Java.Metadata" relativePath="ApplicationTemplates.Java.Metadata/ApplicationTemplates.Java.Metadata.application.config" />
   </applications>
 </solution>

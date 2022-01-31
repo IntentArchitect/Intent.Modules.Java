@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<class id="07f4851b-3996-4b65-963c-ca6a87cb00dc" type="Folder" typeId="4d95d53a-8855-4f35-aa82-e312643f5c5f">
+  <name>domain</name>
+  <display>domain</display>
+  <isAbstract>false</isAbstract>
+  <order>2</order>
+  <genericTypes />
+  <isMapped>false</isMapped>
+  <parentFolderId>d9187998-c1d2-40b6-836b-263c442d3723</parentFolderId>
+  <packageId>5b595dcd-0671-4389-be22-be212215b9a1</packageId>
+  <packageName>root</packageName>
+  <stereotypes />
+  <childElements>
+    <childElement id="fb61de22-23eb-4dd4-9f84-3dd274bfe3d5" type="Role" typeId="8663c9f9-2852-45e7-aaa1-0883a2e6f1da">
+      <name>Domain</name>
+      <display>Domain</display>
+      <isAbstract>false</isAbstract>
+      <order>0</order>
+      <genericTypes />
+      <isMapped>false</isMapped>
+      <parentFolderId>07f4851b-3996-4b65-963c-ca6a87cb00dc</parentFolderId>
+      <packageId>5b595dcd-0671-4389-be22-be212215b9a1</packageId>
+      <packageName>root</packageName>
+      <stereotypes />
+      <childElements />
+    </childElement>
+  </childElements>
+</class>

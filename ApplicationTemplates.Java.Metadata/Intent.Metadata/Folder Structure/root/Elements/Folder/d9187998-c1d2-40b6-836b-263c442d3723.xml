@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<class id="d9187998-c1d2-40b6-836b-263c442d3723" type="Folder" typeId="4d95d53a-8855-4f35-aa82-e312643f5c5f">
+  <name>${application.name}</name>
+  <display>${application.name}</display>
+  <isAbstract>false</isAbstract>
+  <order>0</order>
+  <genericTypes />
+  <isMapped>false</isMapped>
+  <parentFolderId>ccecf323-5f4d-4195-b47a-45f264eeb0ac</parentFolderId>
+  <packageId>5b595dcd-0671-4389-be22-be212215b9a1</packageId>
+  <packageName>root</packageName>
+  <stereotypes />
+  <childElements>
+    <childElement id="357d0b07-49c7-4b72-8e21-33434415b152" type="Role" typeId="8663c9f9-2852-45e7-aaa1-0883a2e6f1da">
+      <name>Startup</name>
+      <display>Startup</display>
+      <isAbstract>false</isAbstract>
+      <order>4</order>
+      <genericTypes />
+      <isMapped>false</isMapped>
+      <parentFolderId>d9187998-c1d2-40b6-836b-263c442d3723</parentFolderId>
+      <packageId>5b595dcd-0671-4389-be22-be212215b9a1</packageId>
+      <packageName>root</packageName>
+      <stereotypes />
+      <childElements />
+    </childElement>
+  </childElements>
+</class>

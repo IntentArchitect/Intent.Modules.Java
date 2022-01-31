@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<class id="a8d60b7f-ad97-464d-ae2b-5997205a684e" type="Folder" typeId="4d95d53a-8855-4f35-aa82-e312643f5c5f">
+  <name>main</name>
+  <display>main</display>
+  <isAbstract>false</isAbstract>
+  <order>0</order>
+  <genericTypes />
+  <isMapped>false</isMapped>
+  <parentFolderId>4340b86c-cbb5-412f-8227-38d7ec4b83ca</parentFolderId>
+  <packageId>5b595dcd-0671-4389-be22-be212215b9a1</packageId>
+  <packageName>root</packageName>
+  <stereotypes />
+  <childElements />
+</class>
