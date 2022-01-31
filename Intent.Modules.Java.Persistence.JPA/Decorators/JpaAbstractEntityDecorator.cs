@@ -24,6 +24,8 @@ namespace Intent.Modules.Java.Persistence.JPA.Decorators
         {
             _template = template;
             _application = application;
+
+            _template.AddDependency(new JavaDependency("org.springframework.boot", "spring-boot-starter-data-jpa"));
         }
 
         public override IEnumerable<string> ClassAnnotations()
