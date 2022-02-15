@@ -28,7 +28,7 @@ namespace Intent.Modules.Java.Services.CRUD.Decorators
         private readonly ClassModel _targetEntity;
         private readonly IMetadataManager _metadataManager;
 
-        [IntentManaged(Mode.Merge, Body = Mode.Fully)]
+        [IntentManaged(Mode.Merge, Signature = Mode.Fully)]
         public CrudServiceImplementationDecorator(ServiceImplementationTemplate template, IApplication application)
         {
             _template = template;
