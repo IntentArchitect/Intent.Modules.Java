@@ -23,6 +23,7 @@ namespace Intent.Modules.Java.BeanValidation.Decorators
         [IntentManaged(Mode.Fully)]
         private readonly DomainModelTemplate _template;
         private readonly ICollection<string> _imports = new List<string>();
+        [IntentManaged(Mode.Fully)]
         private readonly IApplication _application;
 
         [IntentManaged(Mode.Merge, Body = Mode.Ignore)]

@@ -17,6 +17,7 @@ namespace Intent.Modules.Java.Persistence.JPA.Decorators
 
         [IntentManaged(Mode.Fully)]
         private readonly AbstractEntityTemplate _template;
+        [IntentManaged(Mode.Fully)]
         private readonly IApplication _application;
 
         [IntentManaged(Mode.Merge, Signature = Mode.Fully)]

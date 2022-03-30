@@ -18,6 +18,7 @@ namespace Intent.Modules.Java.ModelMapper.Decorators
 
         [IntentManaged(Mode.Fully)]
         private readonly DataTransferModelTemplate _template;
+        [IntentManaged(Mode.Fully)]
         private readonly IApplication _application;
 
         [IntentManaged(Mode.Merge, Body = Mode.Fully)]

@@ -19,6 +19,16 @@ namespace Intent.Modules.Java.Services.Api
             return stereotype != null ? new TransactionOptions(stereotype) : null;
         }
 
+        public static IReadOnlyCollection<TransactionOptions> GetTransactionOptionss(this OperationModel model)
+        {
+            var stereotypes = model
+                .GetStereotypes("Transaction Options")
+                .Select(stereotype => new TransactionOptions(stereotype))
+                .ToArray();
+
+            return stereotypes;
+        }
+
         public static bool HasTransactionOptions(this OperationModel model)
         {
             return model.HasStereotype("Transaction Options");

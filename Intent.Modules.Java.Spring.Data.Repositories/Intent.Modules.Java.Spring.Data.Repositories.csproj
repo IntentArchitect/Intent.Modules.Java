@@ -1,7 +1,7 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net5.0</TargetFramework>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
@@ -20,7 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Intent.Modules.Common" Version="3.2.0" />
+    <PackageReference Include="Intent.Modules.Common" Version="3.2.2" />
     <PackageReference Include="Intent.Modules.Common.Java" Version="3.2.0" />
     <PackageReference Include="Intent.Modules.Metadata.RDBMS" Version="3.2.1" />
     <PackageReference Include="Intent.Modules.Modelers.Domain" Version="3.2.0" />

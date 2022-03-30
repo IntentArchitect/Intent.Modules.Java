@@ -51,6 +51,7 @@ namespace Intent.Modules.Java.SpringFox.Swagger.Decorators
             }
             yield return $"@{_template.ImportType("io.swagger.annotations.ApiOperation")}({string.Join(", ", options.Select(x => $"{x.Key} = {x.Value}"))})";
         }
+        [IntentManaged(Mode.Fully)]
         private readonly IApplication _application;
     }
 }

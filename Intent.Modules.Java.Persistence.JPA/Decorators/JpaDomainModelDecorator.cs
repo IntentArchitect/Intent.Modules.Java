@@ -23,6 +23,7 @@ namespace Intent.Modules.Java.Persistence.JPA.Decorators
 
         [IntentManaged(Mode.Fully)]
         private readonly DomainModelTemplate _template;
+        [IntentManaged(Mode.Fully)]
         private readonly IApplication _application;
 
         [IntentManaged(Mode.Merge, Body = Mode.Ignore)]
