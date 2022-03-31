@@ -55,6 +55,7 @@
   <ItemGroup>
     <PackageReference Include="Intent.Modules.Common" Version="3.3.0" />
     <PackageReference Include="Intent.Modules.Common.Java" Version="3.3.0" />
+    <PackageReference Include="Intent.Modules.Java.Weaving.Annotations" Version="3.3.0" />
     <PackageReference Include="Intent.Modules.Modelers.Services" Version="3.3.0" />
     <PackageReference Include="Intent.Packager" Version="3.2.0">
       <PrivateAssets>all</PrivateAssets>
@@ -62,10 +63,6 @@
     </PackageReference>
     <PackageReference Include="Intent.RoslynWeaver.Attributes" Version="1.1.2" />
     <PackageReference Include="Intent.SoftwareFactory.SDK" Version="3.3.0" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\Intent.Modules.Java.Weaving.Annotations\Intent.Modules.Java.Weaving.Annotations.csproj" />
   </ItemGroup>
 
   <ItemGroup>
