@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <package>
   <id>Intent.Java.ModelMapper</id>
-  <version>3.2.1</version>
-  <supportedClientVersions>[3.1.0-pre.0, 4.0.0)</supportedClientVersions>
+  <version>3.3.0</version>
+  <supportedClientVersions>[3.3.0-pre.0, 4.0.0)</supportedClientVersions>
   <summary>Mapping from Domain entities to DTOs using the ModelMapper framework.</summary>
   <description>Mapping from Domain entities to DTOs using the ModelMapper framework.</description>
   <authors>Intent.Modules.Java</authors>
@@ -22,12 +22,12 @@
   </decorators>
   <factoryExtensions></factoryExtensions>
   <dependencies>
-    <dependency id="Intent.Common" version="3.2.0" />
-    <dependency id="Intent.Common.Java" version="3.2.0" />
-    <dependency id="Intent.Common.Types" version="3.2.0" />
-    <dependency id="Intent.Java.Domain" version="3.2.1" />
-    <dependency id="Intent.Java.Services" version="3.2.1" />
-    <dependency id="Intent.Modelers.Services" version="3.1.3" />
+    <dependency id="Intent.Common" version="3.3.0" />
+    <dependency id="Intent.Common.Java" version="3.3.0" />
+    <dependency id="Intent.Common.Types" version="3.3.0" />
+    <dependency id="Intent.Java.Domain" version="3.3.0" />
+    <dependency id="Intent.Java.Services" version="3.3.0" />
+    <dependency id="Intent.Modelers.Services" version="3.3.0" />
   </dependencies>
   <files>
     <file src="$outDir$/$id$.dll" />
