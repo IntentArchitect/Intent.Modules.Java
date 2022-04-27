@@ -24,7 +24,7 @@
   <decorators></decorators>
   <factoryExtensions></factoryExtensions>
   <dependencies>
-    <dependency id="Intent.Common" version="3.3.0" />
+    <dependency id="Intent.Common" version="3.3.1" />
     <dependency id="Intent.Common.Java" version="3.3.0" />
     <dependency id="Intent.Common.Types" version="3.3.0" />
     <dependency id="Intent.Java.Weaving.Annotations" version="3.3.0" />
