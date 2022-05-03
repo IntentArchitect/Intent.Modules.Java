@@ -10,6 +10,7 @@
   <packageId>5b595dcd-0671-4389-be22-be212215b9a1</packageId>
   <packageName>root</packageName>
   <stereotypes />
+  <metadata />
   <childElements>
     <childElement id="a6fdd101-3ded-414f-9e2c-0ce4a52a5437" type="Role" typeId="8663c9f9-2852-45e7-aaa1-0883a2e6f1da">
       <name>Data</name>
@@ -22,6 +23,7 @@
       <packageId>5b595dcd-0671-4389-be22-be212215b9a1</packageId>
       <packageName>root</packageName>
       <stereotypes />
+      <metadata />
       <childElements />
     </childElement>
   </childElements>

@@ -10,6 +10,7 @@
   <packageId>84eb6eb9-30f5-429d-bf3c-06591e639eec</packageId>
   <packageName>Intent.Java.SpringBoot.WebApplication</packageName>
   <stereotypes />
+  <metadata />
   <childElements>
     <childElement id="ac285896-21f8-456f-a237-ec6e4962f7cf" type="Component" typeId="47064ef1-2295-4287-8301-c446910a1b1e">
       <name>Java Persistence API</name>
@@ -33,6 +34,7 @@
           </properties>
         </stereotype>
       </stereotypes>
+      <metadata />
       <childElements>
         <childElement id="0e1052b9-a63e-4b99-9e9a-1934cdce1730" type="Module" typeId="ef75f8f0-520c-4ab8-814f-5e75f4877dd7">
           <name>Intent.Java.Persistence.JPA</name>
@@ -54,6 +56,7 @@
               </properties>
             </stereotype>
           </stereotypes>
+          <metadata />
           <childElements />
         </childElement>
       </childElements>
@@ -80,6 +83,7 @@
           </properties>
         </stereotype>
       </stereotypes>
+      <metadata />
       <childElements>
         <childElement id="59ad66ee-24ae-4780-86a4-15c84e1cf6a7" type="Module" typeId="ef75f8f0-520c-4ab8-814f-5e75f4877dd7">
           <name>Intent.Java.Spring.Data.Repositories</name>
@@ -101,6 +105,7 @@
               </properties>
             </stereotype>
           </stereotypes>
+          <metadata />
           <childElements />
         </childElement>
       </childElements>

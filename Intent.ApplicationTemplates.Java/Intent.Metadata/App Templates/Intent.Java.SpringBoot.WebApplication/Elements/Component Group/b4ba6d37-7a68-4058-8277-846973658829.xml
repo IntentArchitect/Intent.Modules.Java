@@ -10,6 +10,7 @@
   <packageId>84eb6eb9-30f5-429d-bf3c-06591e639eec</packageId>
   <packageName>Intent.Java.SpringBoot.WebApplication</packageName>
   <stereotypes />
+  <metadata />
   <childElements>
     <childElement id="e8e32a60-d3de-4d4a-b76a-c107170d9aa7" type="Component" typeId="47064ef1-2295-4287-8301-c446910a1b1e">
       <name>Entities</name>
@@ -33,6 +34,7 @@
           </properties>
         </stereotype>
       </stereotypes>
+      <metadata />
       <childElements>
         <childElement id="a3de7abc-1654-46a0-ae9a-56cb5affa8cc" type="Module" typeId="ef75f8f0-520c-4ab8-814f-5e75f4877dd7">
           <name>Intent.Java.Domain</name>
@@ -54,6 +56,7 @@
               </properties>
             </stereotype>
           </stereotypes>
+          <metadata />
           <childElements />
         </childElement>
       </childElements>

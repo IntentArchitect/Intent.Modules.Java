@@ -10,6 +10,7 @@
   <packageId>84eb6eb9-30f5-429d-bf3c-06591e639eec</packageId>
   <packageName>Intent.Java.SpringBoot.WebApplication</packageName>
   <stereotypes />
+  <metadata />
   <childElements>
     <childElement id="596e01eb-4756-43a2-8177-8923882bc0bc" type="Component" typeId="47064ef1-2295-4287-8301-c446910a1b1e">
       <name>Spring Boot</name>
@@ -33,6 +34,7 @@
           </properties>
         </stereotype>
       </stereotypes>
+      <metadata />
       <childElements>
         <childElement id="1d6f39bf-9a35-4e6a-965f-c1c60580b484" type="Module" typeId="ef75f8f0-520c-4ab8-814f-5e75f4877dd7">
           <name>Intent.Java.SpringBoot</name>
@@ -54,6 +56,7 @@
               </properties>
             </stereotype>
           </stereotypes>
+          <metadata />
           <childElements />
         </childElement>
       </childElements>
@@ -80,6 +83,7 @@
           </properties>
         </stereotype>
       </stereotypes>
+      <metadata />
       <childElements>
         <childElement id="67fe2241-da24-44c6-8eb4-fb9c438bf6ba" type="Module" typeId="ef75f8f0-520c-4ab8-814f-5e75f4877dd7">
           <name>Intent.Java.SpringFox.Swagger</name>
@@ -101,6 +105,7 @@
               </properties>
             </stereotype>
           </stereotypes>
+          <metadata />
           <childElements />
         </childElement>
       </childElements>

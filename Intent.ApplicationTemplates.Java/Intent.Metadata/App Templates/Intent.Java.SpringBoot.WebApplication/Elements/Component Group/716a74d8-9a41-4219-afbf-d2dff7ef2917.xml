@@ -10,6 +10,7 @@
   <packageId>84eb6eb9-30f5-429d-bf3c-06591e639eec</packageId>
   <packageName>Intent.Java.SpringBoot.WebApplication</packageName>
   <stereotypes />
+  <metadata />
   <childElements>
     <childElement id="63b544b1-fcc8-41d2-853f-f2269b8e4002" type="Component" typeId="47064ef1-2295-4287-8301-c446910a1b1e">
       <name>Service Handlers</name>
@@ -33,6 +34,7 @@
           </properties>
         </stereotype>
       </stereotypes>
+      <metadata />
       <childElements>
         <childElement id="213028bd-f7af-483e-98da-8a9fdec13af8" type="Module" typeId="ef75f8f0-520c-4ab8-814f-5e75f4877dd7">
           <name>Intent.Java.Services</name>
@@ -54,6 +56,7 @@
               </properties>
             </stereotype>
           </stereotypes>
+          <metadata />
           <childElements />
         </childElement>
       </childElements>
@@ -80,6 +83,7 @@
           </properties>
         </stereotype>
       </stereotypes>
+      <metadata />
       <childElements>
         <childElement id="e99f1ece-5908-4b1c-ad5f-041c8d685dea" type="Module" typeId="ef75f8f0-520c-4ab8-814f-5e75f4877dd7">
           <name>Intent.Java.ModelMapper</name>
@@ -101,6 +105,7 @@
               </properties>
             </stereotype>
           </stereotypes>
+          <metadata />
           <childElements />
         </childElement>
       </childElements>
@@ -127,6 +132,7 @@
           </properties>
         </stereotype>
       </stereotypes>
+      <metadata />
       <childElements>
         <childElement id="e04fa234-7885-402a-9662-75097e28f553" type="Module" typeId="ef75f8f0-520c-4ab8-814f-5e75f4877dd7">
           <name>Intent.Java.Services.CRUD</name>
@@ -148,6 +154,7 @@
               </properties>
             </stereotype>
           </stereotypes>
+          <metadata />
           <childElements />
         </childElement>
       </childElements>

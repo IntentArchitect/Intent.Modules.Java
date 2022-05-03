@@ -45,6 +45,7 @@
       </properties>
     </stereotype>
   </stereotypes>
+  <metadata />
   <childElements>
     <childElement id="ef651cdb-3324-40d9-b47f-9ec05b93b377" type="Context Menu" typeId="d45e383d-90ba-4b64-aca7-34ca100cea21">
       <name>[context menu]</name>
@@ -57,6 +58,7 @@
       <packageId>56086e1d-4630-474c-a0e7-fa51aff2f5a5</packageId>
       <packageName>Intent.Java.Services.CRUD</packageName>
       <stereotypes />
+      <metadata />
       <childElements>
         <childElement id="c9f0316c-947a-42c0-80b0-59d95cfdf0c2" type="Run Script Option" typeId="345d46fb-c500-409a-88c7-26720572c9af">
           <name>Create CRUD Operations</name>
@@ -101,6 +103,7 @@
               </properties>
             </stereotype>
           </stereotypes>
+          <metadata />
           <childElements />
         </childElement>
       </childElements>
