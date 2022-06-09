@@ -164,12 +164,29 @@
       <metadata />
       <childElements />
     </childElement>
+    <childElement id="4a660e29-27e6-4f81-8462-428e9acd7c3c" type="Template Output" typeId="d421c322-7a51-4094-89fa-e5d8a0a97b27">
+      <name>Intent.ModuleBuilder.Templates.StaticContentTemplateRegistration</name>
+      <display>Intent.ModuleBuilder.Templates.StaticContentTemplateRegistration</display>
+      <externalReference>Intent.ModuleBuilder</externalReference>
+      <isAbstract>false</isAbstract>
+      <order>10</order>
+      <genericTypes />
+      <isMapped>false</isMapped>
+      <parentFolderId>db8d1b7b-e26f-4baa-ba43-990a5ff65135</parentFolderId>
+      <packageId>60869086-7611-4173-8f65-1056e7949c6a</packageId>
+      <packageName>Intent.Modules.Java</packageName>
+      <stereotypes />
+      <metadata>
+        <entry key="status" value="assigned" />
+      </metadata>
+      <childElements />
+    </childElement>
     <childElement id="190b6b15-675f-4926-918e-b7122a43ce9f" type="Template Output" typeId="d421c322-7a51-4094-89fa-e5d8a0a97b27">
       <name>Intent.ModuleBuilder.Templates.TemplateDecoratorContract</name>
       <display>Intent.ModuleBuilder.Templates.TemplateDecoratorContract</display>
       <externalReference>Intent.ModuleBuilder</externalReference>
       <isAbstract>false</isAbstract>
-      <order>10</order>
+      <order>11</order>
       <genericTypes />
       <isMapped>false</isMapped>
       <parentFolderId>db8d1b7b-e26f-4baa-ba43-990a5ff65135</parentFolderId>
@@ -184,7 +201,7 @@
       <display>Intent.ModuleBuilder.Templates.TemplateExtensions</display>
       <externalReference>Intent.ModuleBuilder</externalReference>
       <isAbstract>false</isAbstract>
-      <order>11</order>
+      <order>12</order>
       <genericTypes />
       <isMapped>false</isMapped>
       <parentFolderId>db8d1b7b-e26f-4baa-ba43-990a5ff65135</parentFolderId>
@@ -198,7 +215,7 @@
       <name>ModuleBuilder.Java.Templates.JavaFileTemplate</name>
       <display>ModuleBuilder.Java.Templates.JavaFileTemplate</display>
       <isAbstract>false</isAbstract>
-      <order>12</order>
+      <order>13</order>
       <genericTypes />
       <isMapped>false</isMapped>
       <parentFolderId>db8d1b7b-e26f-4baa-ba43-990a5ff65135</parentFolderId>
@@ -212,7 +229,7 @@
       <name>ModuleBuilder.Java.Templates.JavaFileTemplatePartial</name>
       <display>ModuleBuilder.Java.Templates.JavaFileTemplatePartial</display>
       <isAbstract>false</isAbstract>
-      <order>13</order>
+      <order>14</order>
       <genericTypes />
       <isMapped>false</isMapped>
       <parentFolderId>db8d1b7b-e26f-4baa-ba43-990a5ff65135</parentFolderId>
@@ -226,7 +243,7 @@
       <name>ModuleBuilder.Java.Templates.JavaTemplate.PreProcessT4</name>
       <display>ModuleBuilder.Java.Templates.JavaTemplate.PreProcessT4</display>
       <isAbstract>false</isAbstract>
-      <order>14</order>
+      <order>15</order>
       <genericTypes />
       <isMapped>false</isMapped>
       <parentFolderId>db8d1b7b-e26f-4baa-ba43-990a5ff65135</parentFolderId>
@@ -234,21 +251,6 @@
       <packageName>Intent.Modules.Java</packageName>
       <stereotypes />
       <metadata />
-      <childElements />
-    </childElement>
-    <childElement id="4a660e29-27e6-4f81-8462-428e9acd7c3c" type="Template Output" typeId="d421c322-7a51-4094-89fa-e5d8a0a97b27">
-      <name>Intent.ModuleBuilder.Templates.StaticContentTemplateRegistration</name>
-      <display>Intent.ModuleBuilder.Templates.StaticContentTemplateRegistration</display>
-      <externalReference>Intent.ModuleBuilder</externalReference>
-      <isAbstract>false</isAbstract>
-      <order>0</order>
-      <genericTypes />
-      <isMapped>false</isMapped>
-      <parentFolderId>db8d1b7b-e26f-4baa-ba43-990a5ff65135</parentFolderId>
-      <stereotypes />
-      <metadata>
-        <entry key="status" value="assigned" />
-      </metadata>
       <childElements />
     </childElement>
   </childElements>

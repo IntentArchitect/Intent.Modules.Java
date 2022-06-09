@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <package>
   <id>Intent.Java.Domain</id>
   <version>3.3.1</version>
@@ -34,4 +34,5 @@
     <install target="Module Builder" src="Intent.Metadata/Module Builder/Intent.Java.Domain/Intent.Java.Domain.pkg.config" externalReference="0f8329b6-d189-4f03-8027-6c6b832fef2b" />
   </metadata>
   <moduleSettings />
+  <moduleSettingsExtensions />
 </package>
