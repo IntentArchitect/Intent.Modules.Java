@@ -26,9 +26,9 @@ namespace Intent.Modules.Java.Services.Templates.DataTransferModel
             AddDependency(new JavaDependency("org.projectlombok", "lombok", "1.18.12"));
             if (model.Fields.Any(x => x.TypeReference.IsCollection))
             {
-                SetDefaultTypeCollectionFormat($"{ImportType("java.util.List")}<{{0}}>");
+                SetDefaultTypeCollectionFormat("java.util.List<{0}>");
             }
-            AddTypeSource(TemplateId, type => $"{ImportType("java.util.List")}<{type}>");
+            AddTypeSource(TemplateId).WithCollectionFormat("java.util.List<{0}>");
         }
 
         [IntentManaged(Mode.Merge, Body = Mode.Ignore, Signature = Mode.Fully)]

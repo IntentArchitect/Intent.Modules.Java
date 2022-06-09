@@ -1,10 +1,10 @@
 using System.Collections.Generic;
-using System.Linq;
 using Intent.Engine;
 using Intent.Modelers.Domain.Api;
 using Intent.Modules.Common;
 using Intent.Modules.Common.Java;
 using Intent.Modules.Common.Java.Templates;
+using Intent.Modules.Common.Java.TypeResolvers;
 using Intent.Modules.Common.Templates;
 using Intent.Modules.Java.Domain.Templates.AbstractEntity;
 using Intent.RoslynWeaver.Attributes;
@@ -24,8 +24,8 @@ namespace Intent.Modules.Java.Domain.Templates.DomainModel
         [IntentManaged(Mode.Merge, Body = Mode.Ignore, Signature = Mode.Fully)]
         public DomainModelTemplate(IOutputTarget outputTarget, Intent.Modelers.Domain.Api.ClassModel model) : base(TemplateId, outputTarget, model)
         {
-            SetDefaultTypeCollectionFormat("List<{0}>");
-            AddTypeSource(TemplateId, type => $"{ImportType("java.util.List")}<{type}>");
+            SetDefaultTypeCollectionFormat("java.util.List<{0}>");
+            AddTypeSource(TemplateId).WithCollectionFormat("java.util.List<{0}>");
         }
 
         [IntentManaged(Mode.Merge, Body = Mode.Ignore, Signature = Mode.Fully)]

@@ -22,6 +22,7 @@ namespace Intent.Modules.Java.SpringFox.Swagger.Templates.SpringFoxConfig
         public SpringFoxConfigTemplate(IOutputTarget outputTarget, object model = null) : base(TemplateId, outputTarget, model)
         {
             AddDependency(new JavaDependency("io.springfox", "springfox-boot-starter", "3.0.0"));
+            AddDependency(new JavaDependency("io.springfox", "springfox-swagger-ui", "3.0.0"));
         }
 
         [IntentManaged(Mode.Merge, Body = Mode.Ignore, Signature = Mode.Fully)]

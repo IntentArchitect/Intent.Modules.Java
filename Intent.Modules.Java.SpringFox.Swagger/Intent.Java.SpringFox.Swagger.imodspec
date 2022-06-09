@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <package>
   <id>Intent.Java.SpringFox.Swagger</id>
-  <version>3.3.0</version>
+  <version>3.3.1</version>
   <supportedClientVersions>[3.3.0-pre.0, 4.0.0)</supportedClientVersions>
   <summary>Open API configuration using SpringFox.</summary>
   <description>Open API configuration using SpringFox.</description>
@@ -18,8 +18,8 @@
   </decorators>
   <factoryExtensions></factoryExtensions>
   <dependencies>
-    <dependency id="Intent.Common" version="3.3.1" />
-    <dependency id="Intent.Common.Java" version="3.3.0" />
+    <dependency id="Intent.Common" version="3.3.3-alpha.1" />
+    <dependency id="Intent.Common.Java" version="3.3.3-alpha.1" />
     <dependency id="Intent.Common.Types" version="3.3.0" />
     <dependency id="Intent.Java.SpringBoot" version="3.3.0" />
   </dependencies>

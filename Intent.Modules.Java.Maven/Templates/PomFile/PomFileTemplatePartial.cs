@@ -21,7 +21,7 @@ namespace Intent.Modules.Java.Maven.Templates.PomFile
     [IntentManaged(Mode.Merge)]
     partial class PomFileTemplate : IntentTemplateBase<object>
     {
-        private ICollection<JavaDependency> _javaDependencies = new List<JavaDependency>();
+        private readonly ICollection<JavaDependency> _javaDependencies = new List<JavaDependency>();
         private JavaDependency _projectInheritance;
 
         [IntentManaged(Mode.Fully)]
@@ -44,16 +44,16 @@ namespace Intent.Modules.Java.Maven.Templates.PomFile
             _projectInheritance = dependency;
         }
 
-        public string GroupId => OutputTarget.Application.SolutionName.ToDotCase();
-        public string ArtifactId => OutputTarget.Application.Name.ToDotCase();
+        public string GroupId => ExecutionContext.GetSolutionConfig().SolutionName.ToDotCase();
+        public string ArtifactId => ExecutionContext.GetApplicationConfig().Name.ToDotCase();
         public string Version => "1.0.0";
-        public string Name => OutputTarget.Application.Name;
+        public string Name => ExecutionContext.GetApplicationConfig().Name;
 
         [IntentManaged(Mode.Merge, Body = Mode.Ignore, Signature = Mode.Fully)]
         public override ITemplateFileConfig GetTemplateFileConfig()
         {
             return new TemplateFileConfig(
-                fileName: $"pom",
+                fileName: "pom",
                 fileExtension: "xml"
             );
         }
@@ -62,8 +62,8 @@ namespace Intent.Modules.Java.Maven.Templates.PomFile
         {
             var doc = File.Exists(GetMetadata().GetFilePath()) ? XDocument.Load(GetMetadata().GetFilePath(), LoadOptions.PreserveWhitespace) : XDocument.Parse(TransformText(), LoadOptions.PreserveWhitespace);
             var namespaces = new XmlNamespaceManager(new NameTable());
-            var _namespace = doc.Root.GetDefaultNamespace();
-            namespaces.AddNamespace("ns", _namespace.NamespaceName);
+            var @namespace = doc.Root!.GetDefaultNamespace();
+            namespaces.AddNamespace("ns", @namespace.NamespaceName);
             // manipulate and save
 
             if (_projectInheritance != null)
@@ -73,27 +73,39 @@ namespace Intent.Modules.Java.Maven.Templates.PomFile
                 {
                     var element = XElement.Parse($@"
     <parent>
-		<groupId>{_projectInheritance.GroupId}</groupId>
-		<artifactId>{_projectInheritance.ArtifactId}</artifactId>
-		<version>{_projectInheritance.Version}</version>
-	</parent>", LoadOptions.PreserveWhitespace);
+        <groupId>{_projectInheritance.GroupId}</groupId>
+        <artifactId>{_projectInheritance.ArtifactId}</artifactId>
+        <version>{_projectInheritance.Version}</version>
+    </parent>", LoadOptions.PreserveWhitespace);
                     foreach (XElement e in element.DescendantsAndSelf())
                     {
-                        e.Name = _namespace + e.Name.LocalName; // remove namespaces
+                        e.Name = @namespace + e.Name.LocalName; // remove namespaces
                     }
                     modelVersionElement.AddAfterSelf(element);
                     modelVersionElement.AddAfterSelf(@"
-	");
+    ");
                 }
+            }
+
+            var projectElement = doc.XPathSelectElement("ns:project", namespaces);
+            if (projectElement == null)
+            {
+                projectElement = new XElement("project", @namespace);
+                doc.Add(projectElement);
+            }
+
+            var dependenciesElement = doc.XPathSelectElement("ns:project/ns:dependencies", namespaces);
+            if (dependenciesElement == null)
+            {
+                dependenciesElement = new XElement("dependencies", @namespace);
+                projectElement.Add(dependenciesElement);
             }
 
             foreach (var dependency in _javaDependencies)
             {
-
                 var existing = doc.XPathSelectElement($"ns:project/ns:dependencies/ns:dependency[ns:groupId[text() = \"{dependency.GroupId}\"] and ns:artifactId[text() = \"{dependency.ArtifactId}\"]]", namespaces);
                 if (existing == null)
                 {
-                    var dependencies = doc.XPathSelectElement($"ns:project/ns:dependencies", namespaces);
                     var newDependency = XElement.Parse($@"<dependency>
             <groupId>{dependency.GroupId}</groupId>
             <artifactId>{dependency.ArtifactId}</artifactId>
@@ -103,13 +115,33 @@ namespace Intent.Modules.Java.Maven.Templates.PomFile
                         newDependency.Add("    ", XElement.Parse($@"<version>{dependency.Version}</version>"));
                         newDependency.Add(Environment.NewLine + "        ");
                     }
-                    foreach (XElement e in newDependency.DescendantsAndSelf())
+                    foreach (var e in newDependency.DescendantsAndSelf())
                     {
-                        e.Name = _namespace + e.Name.LocalName; // remove namespaces
+                        e.Name = @namespace + e.Name.LocalName; // remove namespaces
                     }
-                    dependencies?.Add("    ", newDependency);
-                    dependencies?.Add(Environment.NewLine + "    ");
+                    dependenciesElement.Add("    ", newDependency);
+                    dependenciesElement.Add(Environment.NewLine + "    ");
                 }
+            }
+
+            // Sort dependencies
+            var sortedDependencyElements = dependenciesElement
+                .Elements()
+                .OrderBy(x => x.Element(XName.Get("groupId", @namespace.NamespaceName))?.Value)
+                .ThenBy(x => x.Element(XName.Get("artifactId", @namespace.NamespaceName))?.Value)
+                .ToArray();
+            dependenciesElement.RemoveAll();
+
+            foreach (var dependencyElement in sortedDependencyElements)
+            {
+                dependenciesElement.Add(
+                    $"{Environment.NewLine}        ",
+                    dependencyElement);
+            }
+
+            if (dependenciesElement.HasElements)
+            {
+                dependenciesElement.Add($"{Environment.NewLine}    ");
             }
 
             return doc.ToStringUTF8();

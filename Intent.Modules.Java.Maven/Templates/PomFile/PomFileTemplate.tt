@@ -8,29 +8,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" 
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
 
-	<groupId><#= GroupId #></groupId>
-	<artifactId><#= ArtifactId #></artifactId>
-	<version><#= Version #></version>
-	<name><#= Name #></name>
-	<description></description>
+    <groupId><#= GroupId #></groupId>
+    <artifactId><#= ArtifactId #></artifactId>
+    <version><#= Version #></version>
+    <name><#= Name #></name>
+    <description></description>
 
-	<properties>
-		<java.version>14</java.version>
-	</properties>
+    <properties>
+        <java.version>14</java.version>
+    </properties>
 
-	<distributionManagement>
-		
-	</distributionManagement>
+    <distributionManagement>
+    </distributionManagement>
 
-	<dependencies>
+    <dependencies>
+    </dependencies>
 
-	</dependencies>
-
-	<profiles>
-		
-	</profiles>
+    <profiles>
+    </profiles>
 
 </project>
