@@ -10,6 +10,7 @@ using Intent.Metadata.Models;
 using Intent.Modules.Common;
 using Intent.Modules.Common.Java.Templates;
 using Intent.Modules.Common.Templates;
+using Intent.Modules.Java.Maven.Utils;
 using Intent.RoslynWeaver.Attributes;
 using Intent.Templates;
 
@@ -103,24 +104,32 @@ namespace Intent.Modules.Java.Maven.Templates.PomFile
 
             foreach (var dependency in _javaDependencies)
             {
-                var existing = doc.XPathSelectElement($"ns:project/ns:dependencies/ns:dependency[ns:groupId[text() = \"{dependency.GroupId}\"] and ns:artifactId[text() = \"{dependency.ArtifactId}\"]]", namespaces);
-                if (existing == null)
+                var dependencyElement = doc.XPathSelectElement($"ns:project/ns:dependencies/ns:dependency[ns:groupId[text() = \"{dependency.GroupId}\"] and ns:artifactId[text() = \"{dependency.ArtifactId}\"]]", namespaces);
+                if (dependencyElement == null)
                 {
-                    var newDependency = XElement.Parse($@"<dependency>
+                    dependencyElement = XElement.Parse($@"<dependency>
             <groupId>{dependency.GroupId}</groupId>
             <artifactId>{dependency.ArtifactId}</artifactId>
         </dependency>", LoadOptions.PreserveWhitespace);
                     if (!string.IsNullOrWhiteSpace(dependency.Version))
                     {
-                        newDependency.Add("    ", XElement.Parse($@"<version>{dependency.Version}</version>"));
-                        newDependency.Add(Environment.NewLine + "        ");
+                        dependencyElement.Add("    ", XElement.Parse($@"<version>{dependency.Version}</version>"));
+                        dependencyElement.Add(Environment.NewLine + "        ");
                     }
-                    foreach (var e in newDependency.DescendantsAndSelf())
+                    foreach (var e in dependencyElement.DescendantsAndSelf())
                     {
                         e.Name = @namespace + e.Name.LocalName; // remove namespaces
                     }
-                    dependenciesElement.Add("    ", newDependency);
+                    dependenciesElement.Add("    ", dependencyElement);
                     dependenciesElement.Add(Environment.NewLine + "    ");
+                }
+
+                var version = dependencyElement.Element(XName.Get("version", @namespace.NamespaceName));
+                if (version != null &&
+                    dependency.Version != null &&
+                    ComparableVersion.Parse(version.Value) < ComparableVersion.Parse(dependency.Version))
+                {
+                    version.Value = dependency.Version;
                 }
             }
 
