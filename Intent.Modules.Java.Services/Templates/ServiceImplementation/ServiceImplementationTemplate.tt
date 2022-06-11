@@ -18,11 +18,11 @@ import org.springframework.transaction.annotation.Transactional;
 @AllArgsConstructor
 <#= this.IntentMergeAnnotation() #>
 public class <#= ClassName #> implements <#= GetTypeName(ServiceInterface.ServiceInterfaceTemplate.TemplateId, Model) #> {
-<#	var parameters = GetConstructorDependencies(); 
-	foreach (var parameter in parameters)
-	{ #>
+<#  var parameters = GetConstructorDependencies(); 
+    foreach (var parameter in parameters)
+    { #>
     private <#= ImportType(parameter.Type) #> <#= parameter.Name.ToCamelCase() #>;
-<#	} #>
+<#  } #>
 <#  foreach(var operation in Model.Operations) { #>
 
     @Override

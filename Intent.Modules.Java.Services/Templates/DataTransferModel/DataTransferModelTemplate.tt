@@ -19,6 +19,6 @@ import lombok.NoArgsConstructor;
 @Data
 public class <#= ClassName #> {
 <#  foreach(var field in Model.Fields) { #>
-    private <#= field.TypeReference.IsCollection ? this.GetTypeAsObject(field.TypeReference) : GetTypeName(field.TypeReference) #> <#= field.Name #>;
+    private <#= GetTypeName(field.TypeReference) #> <#= field.Name #>;
 <#  } #><#= GetDecoratorsOutput(x => x.Methods()) #>
 }

@@ -84,7 +84,7 @@ namespace Intent.Modules.Java.SpringBoot.Templates.RestController
             {
                 return "ResponseEntity<Void>";
             }
-            return $"ResponseEntity<{this.GetTypeAsObject(operation.TypeReference)}>";
+            return $"ResponseEntity<{GetTypeName(operation.TypeReference).AsReferenceType()}>";
         }
 
         private string GetPath(OperationModel operation)

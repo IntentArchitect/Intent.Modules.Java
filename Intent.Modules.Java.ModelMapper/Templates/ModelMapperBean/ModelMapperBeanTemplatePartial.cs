@@ -23,7 +23,7 @@ namespace Intent.Modules.Java.ModelMapper.Templates.ModelMapperBean
         [IntentManaged(Mode.Merge, Body = Mode.Ignore, Signature = Mode.Fully)]
         public ModelMapperBeanTemplate(IOutputTarget outputTarget, IList<Intent.Modelers.Services.Api.DTOModel> model) : base(TemplateId, outputTarget, model)
         {
-            AddDependency(new JavaDependency(groupId: "org.modelmapper", artifactId: "modelmapper", version: "2.3.8"));
+            AddDependency(new JavaDependency(groupId: "org.modelmapper", artifactId: "modelmapper", version: "2.4.1"));
         }
 
         [IntentManaged(Mode.Merge, Body = Mode.Ignore, Signature = Mode.Fully)]
