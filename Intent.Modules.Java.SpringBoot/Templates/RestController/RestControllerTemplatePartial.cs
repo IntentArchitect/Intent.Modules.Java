@@ -65,12 +65,28 @@ namespace Intent.Modules.Java.SpringBoot.Templates.RestController
         private string GetOperationAnnotations(OperationModel operation)
         {
             var annotations = new List<string>();
-            //if (Model.HasSecured())
-            //{
-            //    attributes.Add("[Authorize]");
-            //}
-            annotations.Add(GetPath(operation) != null
-                ? $@"@{GetHttpVerb(operation).ToString().ToLower().ToPascalCase()}Mapping(""{GetPath(operation)}"")"
+            var mappingAnnotationParameters = new List<string>();
+
+            if (operation.ReturnType == null)
+            {
+                annotations.Add($"@ResponseStatus({GetHttpResponseCode()})");
+            }
+
+            if (GetPath(operation) != null)
+            {
+                mappingAnnotationParameters.Add($"path = \"{GetPath(operation)}\"");
+            }
+
+            if (operation.Parameters.Any() &&
+                operation.Parameters.All(parameter =>
+                    parameter.GetParameterSettings().Source().AsEnum() == ParameterModelStereotypeExtensions
+                        .ParameterSettings.SourceOptionsEnum.FromForm))
+            {
+                mappingAnnotationParameters.Add($"consumes = {ImportType("org.springframework.http.MediaType")}.APPLICATION_FORM_URLENCODED_VALUE");
+            }
+
+            annotations.Add(mappingAnnotationParameters.Any()
+                ? $@"@{GetHttpVerb(operation).ToString().ToLower().ToPascalCase()}Mapping({string.Join(", ", mappingAnnotationParameters)})"
                 : $@"@{GetHttpVerb(operation).ToString().ToLower().ToPascalCase()}Mapping");
             annotations.AddRange(GetDecorators().SelectMany(x => x.OperationAnnotations(operation) ?? new List<string>()));
 
@@ -78,12 +94,18 @@ namespace Intent.Modules.Java.SpringBoot.Templates.RestController
     ", annotations);
         }
 
+        private static string GetHttpResponseCode()
+        {
+            return "HttpStatus.OK";
+        }
+
         private string GetReturnType(OperationModel operation)
         {
             if (operation.ReturnType == null)
             {
-                return "ResponseEntity<Void>";
+                return "void";
             }
+
             return $"ResponseEntity<{GetTypeName(operation.TypeReference).AsReferenceType()}>";
         }
 
@@ -95,9 +117,7 @@ namespace Intent.Modules.Java.SpringBoot.Templates.RestController
 
         private string GetParameters(OperationModel operation)
         {
-            return string.Join(", ", operation.Parameters.Select(param => GetParameter(operation, param)))
-                //.Concat(new[] { "@RequestHeader Map<String, String> headers" }))
-                ;
+            return string.Join(", ", operation.Parameters.Select(param => GetParameter(operation, param)));
         }
 
         private string GetParameter(OperationModel operation, ParameterModel parameter)
@@ -116,39 +136,46 @@ namespace Intent.Modules.Java.SpringBoot.Templates.RestController
                         && x.Contains('}')
                         && x.Split(new[] { '{', '}' }, StringSplitOptions.RemoveEmptyEntries).Any(i => i == parameter.Name)))
                     {
-                        return $"@PathVariable(value = \"{parameter.Name}\"{(parameter.Type.IsNullable ? $", required = {parameter.TypeReference.IsNullable.ToString().ToLower()}" : "")}) ";
+                        return $"@PathVariable(value = \"{parameter.Name}\"{(parameter.Type.IsNullable ? $", required = {parameter.TypeReference.IsNullable.ToString().ToLower()}" : string.Empty)}) ";
                     }
-                    return $"@RequestParam(value = \"{parameter.Name}\"{(parameter.Type.IsNullable ? $", required = {parameter.TypeReference.IsNullable.ToString().ToLower()}" : "")}) ";
+                    return $"@RequestParam(value = \"{parameter.Name}\"{(parameter.Type.IsNullable ? $", required = {parameter.TypeReference.IsNullable.ToString().ToLower()}" : string.Empty)}) ";
                 }
 
-                if (GetHttpVerb(operation) == HttpVerb.POST || GetHttpVerb(operation) == HttpVerb.PUT)
+                if (GetHttpVerb(operation) == HttpVerb.PATCH ||
+                    GetHttpVerb(operation) == HttpVerb.POST ||
+                    GetHttpVerb(operation) == HttpVerb.PUT)
                 {
                     return "@RequestBody ";
                 }
-                return "";
+
+                return string.Empty;
             }
 
-            if (parameter.GetParameterSettings().Source().IsFromBody())
+            if (parameter.GetParameterSettings().Source().IsFromBody() ||
+                parameter.GetParameterSettings().Source().IsFromForm())
             {
-                return "";
+                return string.Empty;
             }
+
             if (parameter.GetParameterSettings().Source().IsFromHeader())
             {
                 return "@RequestHeader ";
             }
+
             if (parameter.GetParameterSettings().Source().IsFromQuery())
             {
-                return $"@RequestParam(value = \"{parameter.Name}\"{(parameter.Type.IsNullable ? $", required = {parameter.TypeReference.IsNullable.ToString().ToLower()}" : "")}) ";
+                return $"@RequestParam(value = \"{parameter.Name}\"{(parameter.Type.IsNullable ? $", required = {parameter.TypeReference.IsNullable.ToString().ToLower()}" : string.Empty)}) ";
             }
+
             if (parameter.GetParameterSettings().Source().IsFromRoute())
             {
-                return $"@PathVariable(value = \"{parameter.Name}\"{(parameter.Type.IsNullable ? $", required = {parameter.TypeReference.IsNullable.ToString().ToLower()}" : "")}) ";
+                return $"@PathVariable(value = \"{parameter.Name}\"{(parameter.Type.IsNullable ? $", required = {parameter.TypeReference.IsNullable.ToString().ToLower()}" : string.Empty)}) ";
             }
 
-            return "";
+            return string.Empty;
         }
 
-        private HttpVerb GetHttpVerb(OperationModel operation)
+        private static HttpVerb GetHttpVerb(OperationModel operation)
         {
             var verb = operation.GetHttpSettings().Verb();
             return Enum.TryParse(verb.Value, out HttpVerb verbEnum) ? verbEnum : HttpVerb.POST;
@@ -156,10 +183,11 @@ namespace Intent.Modules.Java.SpringBoot.Templates.RestController
 
         public enum HttpVerb
         {
+            DELETE,
             GET,
+            PATCH,
             POST,
-            PUT,
-            DELETE
+            PUT
         }
     }
 }
