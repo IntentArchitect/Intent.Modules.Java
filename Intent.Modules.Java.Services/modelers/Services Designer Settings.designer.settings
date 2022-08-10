@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<settings version="3.1.1">
+  <id>582b12d8-61f5-4a4e-a1aa-e0359574be60</id>
+  <name>Services Designer Settings</name>
+  <designerReferences />
+  <packageSettings />
+  <packageExtensions />
+  <elementSettings>
+    <elementSetting type="Checked Exception" typeId="c5132b85-8cea-405b-abd5-9d3eccbc0d07">
+      <icon type="FontAwesome" source="exclamation-circle" />
+      <saveAsOwnFile>true</saveAsOwnFile>
+      <displayFunction>return `throws ${typeReference.display}`;</displayFunction>
+      <allowRename>false</allowRename>
+      <allowAbstract>false</allowAbstract>
+      <allowGenericTypes>false</allowGenericTypes>
+      <allowMapping>false</allowMapping>
+      <allowSorting>true</allowSorting>
+      <sortChildren p4:nil="true" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance" />
+      <allowFindInView>false</allowFindInView>
+      <allowTypeReference>true</allowTypeReference>
+      <allowConvertToType p4:nil="true" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance" />
+      <allowSetValue>false</allowSetValue>
+      <typeReferenceSetting>
+        <displayName>Exception Type</displayName>
+        <isRequired>true</isRequired>
+        <targetTypes>
+          <type>Type-Definition</type>
+        </targetTypes>
+        <allowIsNavigable>true</allowIsNavigable>
+        <allowIsNullable>false</allowIsNullable>
+        <allowIsCollection>false</allowIsCollection>
+        <isNavigableDefault>true</isNavigableDefault>
+        <isNullableDefault>false</isNullableDefault>
+        <isCollectionDefault>false</isCollectionDefault>
+      </typeReferenceSetting>
+      <mappingSettings />
+      <childElementSettings />
+    </elementSetting>
+  </elementSettings>
+  <elementExtensions>
+    <elementExtension type="Operation" typeId="e030c97a-e066-40a7-8188-808c275df3cb">
+      <creationOptions>
+        <option type="element">
+          <specializationType>Checked Exception</specializationType>
+          <specializationTypeId>c5132b85-8cea-405b-abd5-9d3eccbc0d07</specializationTypeId>
+          <text>Add Checked Exception</text>
+          <shortcut>ctrl + shift + c</shortcut>
+          <defaultName>Checked Exception</defaultName>
+          <icon type="FontAwesome" source="exclamation-circle" />
+          <allowMultiple>true</allowMultiple>
+        </option>
+      </creationOptions>
+      <scriptOptions />
+      <typeOrder>
+        <type>Checked Exception</type>
+      </typeOrder>
+      <mappingSettings />
+    </elementExtension>
+  </elementExtensions>
+  <associationSettings />
+  <associationExtensions />
+</settings>

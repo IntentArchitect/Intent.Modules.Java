@@ -3,7 +3,6 @@
   <name>JpaAbstractEntityDecorator</name>
   <display>JpaAbstractEntityDecorator: AbstractEntityDecorator</display>
   <isAbstract>false</isAbstract>
-  <order>1</order>
   <genericTypes />
   <typeReference id="a316cca0-3b49-46b0-b8f8-2f32b9722bfc">
     <typeId>3fcf4180-ae9a-4214-a4e9-4fdf4ec57f4a</typeId>

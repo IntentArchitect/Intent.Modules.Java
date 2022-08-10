@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<stereotypeDefinition id="49de8cd7-872f-4b37-b9a2-2056304434dd" version="3.1.0">
+  <name>Association JPA Settings</name>
+  <targetMode>of-type</targetMode>
+  <targetTypes>
+    <type id="8d9d2e5b-bd55-4f36-9ae4-2b9e84fd4e58">Association Source End</type>
+    <type id="0a66489f-30aa-417b-a75d-b945863366fd">Association Target End</type>
+  </targetTypes>
+  <targetReferenceTypes />
+  <applyMode>always</applyMode>
+  <icon type="FontAwesome" source="cogs" />
+  <displayIcon>false</displayIcon>
+  <displayFunction />
+  <displayAsAnnotation>false</displayAsAnnotation>
+  <displayAsText>true</displayAsText>
+  <autoAdd>false</autoAdd>
+  <allowMultipleApplies>false</allowMultipleApplies>
+  <parentFolderId>2e4398f1-893d-432e-badb-ab0c4ea3280e</parentFolderId>
+  <order>0</order>
+  <packageId>2e4398f1-893d-432e-badb-ab0c4ea3280e</packageId>
+  <packageName>Intent.Java.Persistence.JPA</packageName>
+  <properties>
+    <property id="abe22345-1d55-483e-b1f4-54c60cb53539">
+      <name>Fetch Type</name>
+      <type>string</type>
+      <controlType>select</controlType>
+      <optionsSource>options</optionsSource>
+      <placeholder>(default)</placeholder>
+      <valueOptions>
+        <option>Eager</option>
+        <option>Lazy</option>
+      </valueOptions>
+      <lookupTypes />
+    </property>
+  </properties>
+</stereotypeDefinition>

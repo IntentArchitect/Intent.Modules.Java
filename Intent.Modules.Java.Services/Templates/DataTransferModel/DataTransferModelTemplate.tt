@@ -10,11 +10,12 @@
 <#@ import namespace="Intent.Modelers.Services.Api" #>
 package <#= Package #>;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@AllArgsConstructor
+<#  if (Model.Fields.Any()) { #>
+@<#= ImportType("lombok.AllArgsConstructor") #>
+<#  } #>
 @NoArgsConstructor
 @Data
 public class <#= ClassName #> {

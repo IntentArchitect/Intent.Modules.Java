@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Intent.Engine;
+using Intent.Java.SpringFox.Swagger.Api;
 using Intent.Modelers.Services.Api;
 using Intent.Modules.Java.SpringBoot.Templates.RestController;
 using Intent.RoslynWeaver.Attributes;
@@ -32,11 +33,22 @@ namespace Intent.Modules.Java.SpringFox.Swagger.Decorators
             {
                 {"value", $"\"{_template.Model.Name}\""}
             };
+
             if (!string.IsNullOrWhiteSpace(_template.Model.InternalElement.Comment))
             {
                 options.Add("description", $"\"{_template.Model.InternalElement.Comment}\"");
             }
-            yield return $"@{_template.ImportType("io.swagger.annotations.Api")}({string.Join(", ", options.Select(x => $"{x.Key} = {x.Value}"))})";
+
+            yield return $"@{_template.ImportType("io.swagger.annotations.Api")}(name = {string.Join(", ", options.Select(x => $"{x.Key} = {x.Value}"))})";
+
+            var securityRequirements = _template.Model.GetOpenAPISettings()?.SecurityRequirement();
+            if (!string.IsNullOrWhiteSpace(securityRequirements))
+            {
+                foreach (var securityRequirement in securityRequirements.Split(',').Where(requirement => !string.IsNullOrWhiteSpace(requirement)))
+                {
+                    yield return $"@{_template.ImportType("io.swagger.v3.oas.annotations.security.SecurityRequirement")}(\"{securityRequirement.Trim()}\")";
+                }
+            }
         }
 
         public override IEnumerable<string> OperationAnnotations(OperationModel operation)

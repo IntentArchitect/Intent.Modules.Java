@@ -1,7 +1,9 @@
+using System;
 using System.Collections.Generic;
 using Intent.Engine;
 using Intent.Modules.Common.Java.Templates;
 using Intent.Modules.Java.Domain.Templates.AbstractEntity;
+using Intent.Modules.Metadata.RDBMS.Settings;
 using Intent.RoslynWeaver.Attributes;
 
 [assembly: DefaultIntentManaged(Mode.Merge)]
@@ -36,22 +38,30 @@ namespace Intent.Modules.Java.Persistence.JPA.Decorators
 
         public override string Fields()
         {
-            return @"
+            var type = _application.Settings.GetDatabaseSettings().KeyType().AsEnum() switch
+            {
+                DatabaseSettings.KeyTypeOptionsEnum.Guid => _template.ImportType("java.util.UUID"),
+                DatabaseSettings.KeyTypeOptionsEnum.Long => "Long",
+                DatabaseSettings.KeyTypeOptionsEnum.Int => "Integer",
+                _ => throw new ArgumentOutOfRangeException()
+            };
+
+            return $@"
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private {type} id;
 
-    public Integer getId() {
+    public {type} getId() {{
         return id;
-    }
+    }}
 
-    public void setId(Integer id) {
+    public void setId({type} id) {{
         this.id = id;
-    }
+    }}
 
-    public boolean isNew() {
+    public boolean isNew() {{
         return this.id == null;
-    }
+    }}
 ";
         }
 

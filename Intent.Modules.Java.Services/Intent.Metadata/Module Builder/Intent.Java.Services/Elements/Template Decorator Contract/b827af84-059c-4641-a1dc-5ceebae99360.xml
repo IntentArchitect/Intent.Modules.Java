@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<class id="b827af84-059c-4641-a1dc-5ceebae99360" type="Template Decorator Contract" typeId="ac1da322-377e-45cf-a2d9-d147a4d91457">
+  <name>ServiceInterfaceDecorator</name>
+  <display>ServiceInterfaceDecorator</display>
+  <isAbstract>false</isAbstract>
+  <genericTypes />
+  <isMapped>false</isMapped>
+  <parentFolderId>592827c8-f46a-4c1a-a54d-ef454ff11210</parentFolderId>
+  <packageId>e3481ac6-e429-4423-8eba-b5b1bc890f1b</packageId>
+  <packageName>Intent.Java.Services</packageName>
+  <stereotypes />
+  <metadata />
+  <childElements />
+</class>

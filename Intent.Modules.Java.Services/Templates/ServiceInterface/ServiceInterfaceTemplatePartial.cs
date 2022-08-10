@@ -1,10 +1,13 @@
+using System;
 using System.Collections.Generic;
+using System.Linq;
 using Intent.Engine;
 using Intent.Modelers.Services.Api;
 using Intent.Modules.Common;
 using Intent.Modules.Common.Java;
 using Intent.Modules.Common.Java.Templates;
 using Intent.Modules.Common.Templates;
+using Intent.Modules.Java.Services.Api;
 using Intent.Modules.Java.Services.Templates.DataTransferModel;
 using Intent.RoslynWeaver.Attributes;
 using Intent.Templates;
@@ -15,7 +18,7 @@ using Intent.Templates;
 namespace Intent.Modules.Java.Services.Templates.ServiceInterface
 {
     [IntentManaged(Mode.Merge, Signature = Mode.Fully)]
-    partial class ServiceInterfaceTemplate : JavaTemplateBase<Intent.Modelers.Services.Api.ServiceModel>
+    partial class ServiceInterfaceTemplate : JavaTemplateBase<Intent.Modelers.Services.Api.ServiceModel, ServiceInterfaceDecorator>
     {
         [IntentManaged(Mode.Fully)]
         public const string TemplateId = "Intent.Java.Services.ServiceInterface";
@@ -24,6 +27,18 @@ namespace Intent.Modules.Java.Services.Templates.ServiceInterface
         public ServiceInterfaceTemplate(IOutputTarget outputTarget, Intent.Modelers.Services.Api.ServiceModel model) : base(TemplateId, outputTarget, model)
         {
             AddTypeSource(DataTransferModelTemplate.TemplateId).WithCollectionFormat("java.util.List<{0}>");
+        }
+
+        private string GetCheckedExceptions(OperationModel operation)
+        {
+            var checkedExceptions = new OperationExtensionModel(operation.InternalElement).CheckedExceptions
+                .Select(GetTypeName)
+                .ToArray();
+
+            return checkedExceptions.Length == 0
+                ? string.Empty
+                : @$"
+            throws {string.Join(", ", checkedExceptions)}";
         }
 
         [IntentManaged(Mode.Merge, Body = Mode.Ignore, Signature = Mode.Fully)]

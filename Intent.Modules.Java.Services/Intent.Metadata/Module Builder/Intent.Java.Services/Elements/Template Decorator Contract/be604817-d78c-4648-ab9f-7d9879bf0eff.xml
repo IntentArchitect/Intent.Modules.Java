@@ -3,7 +3,6 @@
   <name>DataTransferModelDecorator</name>
   <display>DataTransferModelDecorator</display>
   <isAbstract>false</isAbstract>
-  <order>1</order>
   <genericTypes />
   <isMapped>false</isMapped>
   <parentFolderId>be2a8f83-c156-4e1a-8095-00c402a0cb15</parentFolderId>

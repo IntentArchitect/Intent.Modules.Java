@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using Intent.Modelers.Services.Api;
 using Intent.RoslynWeaver.Attributes;
 using Intent.Templates;
@@ -13,14 +14,10 @@ namespace Intent.Modules.Java.SpringBoot.Templates.RestController
     {
         public int Priority { get; protected set; } = 0;
 
-        public virtual IEnumerable<string> ControllerAnnotations()
-        {
-            yield break;
-        }
+        public virtual IEnumerable<string> ControllerAnnotations() => Enumerable.Empty<string>();
 
-        public virtual IEnumerable<string> OperationAnnotations(OperationModel operation)
-        {
-            yield break;
-        }
+        public virtual IEnumerable<string> OperationAnnotations(OperationModel operation) => Enumerable.Empty<string>();
+
+        public virtual IEnumerable<string> ParameterAnnotations(ParameterModel parameter) => Enumerable.Empty<string>();
     }
 }

@@ -40,44 +40,64 @@ namespace Intent.Modules.Java.Services.Templates.DataTransferModel
             
             #line default
             #line hidden
-            this.Write(";\r\n\r\nimport lombok.AllArgsConstructor;\r\nimport lombok.Data;\r\nimport lombok.NoArgs" +
-                    "Constructor;\r\n\r\n@AllArgsConstructor\r\n@NoArgsConstructor\r\n@Data\r\npublic class ");
+            this.Write(";\r\n\r\nimport lombok.Data;\r\nimport lombok.NoArgsConstructor;\r\n\r\n");
             
-            #line 20 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Services\Templates\DataTransferModel\DataTransferModelTemplate.tt"
+            #line 16 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Services\Templates\DataTransferModel\DataTransferModelTemplate.tt"
+  if (Model.Fields.Any()) { 
+            
+            #line default
+            #line hidden
+            this.Write("@");
+            
+            #line 17 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Services\Templates\DataTransferModel\DataTransferModelTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(ImportType("lombok.AllArgsConstructor")));
+            
+            #line default
+            #line hidden
+            this.Write("\r\n");
+            
+            #line 18 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Services\Templates\DataTransferModel\DataTransferModelTemplate.tt"
+  } 
+            
+            #line default
+            #line hidden
+            this.Write("@NoArgsConstructor\r\n@Data\r\npublic class ");
+            
+            #line 21 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Services\Templates\DataTransferModel\DataTransferModelTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(ClassName));
             
             #line default
             #line hidden
             this.Write(" {\r\n");
             
-            #line 21 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Services\Templates\DataTransferModel\DataTransferModelTemplate.tt"
+            #line 22 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Services\Templates\DataTransferModel\DataTransferModelTemplate.tt"
   foreach(var field in Model.Fields) { 
             
             #line default
             #line hidden
             this.Write("    private ");
             
-            #line 22 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Services\Templates\DataTransferModel\DataTransferModelTemplate.tt"
+            #line 23 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Services\Templates\DataTransferModel\DataTransferModelTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(GetTypeName(field.TypeReference)));
             
             #line default
             #line hidden
             this.Write(" ");
             
-            #line 22 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Services\Templates\DataTransferModel\DataTransferModelTemplate.tt"
+            #line 23 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Services\Templates\DataTransferModel\DataTransferModelTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(field.Name));
             
             #line default
             #line hidden
             this.Write(";\r\n");
             
-            #line 23 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Services\Templates\DataTransferModel\DataTransferModelTemplate.tt"
+            #line 24 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Services\Templates\DataTransferModel\DataTransferModelTemplate.tt"
   } 
             
             #line default
             #line hidden
             
-            #line 23 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Services\Templates\DataTransferModel\DataTransferModelTemplate.tt"
+            #line 24 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Services\Templates\DataTransferModel\DataTransferModelTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(GetDecoratorsOutput(x => x.Methods())));
             
             #line default

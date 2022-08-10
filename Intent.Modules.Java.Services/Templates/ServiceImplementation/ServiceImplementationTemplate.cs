@@ -134,7 +134,14 @@ namespace Intent.Modules.Java.Services.Templates.ServiceImplementation
             
             #line default
             #line hidden
-            this.Write(") {\r\n        ");
+            this.Write(")");
+            
+            #line 31 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Services\Templates\ServiceImplementation\ServiceImplementationTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(GetCheckedExceptions(operation)));
+            
+            #line default
+            #line hidden
+            this.Write(" {\r\n        ");
             
             #line 32 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Services\Templates\ServiceImplementation\ServiceImplementationTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(GetImplementation(operation)));

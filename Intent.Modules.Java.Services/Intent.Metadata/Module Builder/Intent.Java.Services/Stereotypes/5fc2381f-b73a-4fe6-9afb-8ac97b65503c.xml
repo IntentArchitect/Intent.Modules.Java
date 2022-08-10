@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<stereotypeDefinition id="5fc2381f-b73a-4fe6-9afb-8ac97b65503c" version="3.1.0">
+  <name>Checked Exception Handling</name>
+  <targetMode>of-type</targetMode>
+  <targetTypes>
+    <type id="d4e577cd-ad05-4180-9a2e-fff4ddea0e1e">Type-Definition</type>
+  </targetTypes>
+  <targetReferenceTypes />
+  <applyMode>manually</applyMode>
+  <icon type="FontAwesome" source="exclamation-circle" />
+  <displayIcon>false</displayIcon>
+  <displayFunction />
+  <displayAsAnnotation>false</displayAsAnnotation>
+  <displayAsText>true</displayAsText>
+  <autoAdd>false</autoAdd>
+  <allowMultipleApplies>false</allowMultipleApplies>
+  <parentFolderId>e3481ac6-e429-4423-8eba-b5b1bc890f1b</parentFolderId>
+  <order>0</order>
+  <packageId>e3481ac6-e429-4423-8eba-b5b1bc890f1b</packageId>
+  <packageName>Intent.Java.Services</packageName>
+  <properties>
+    <property id="3ab32e11-28f6-4633-8b2d-658193052ed6">
+      <name>Http Response Status</name>
+      <type>string</type>
+      <controlType>select</controlType>
+      <optionsSource>options</optionsSource>
+      <placeholder />
+      <valueOptions>
+        <option>CONTINUE (100)</option>
+        <option>SWITCHING_PROTOCOLS (101)</option>
+        <option>PROCESSING (102)</option>
+        <option>CHECKPOINT (103)</option>
+        <option>OK (200)</option>
+        <option>CREATED (201)</option>
+        <option>ACCEPTED (202)</option>
+        <option>NON_AUTHORITATIVE_INFORMATION (203)</option>
+        <option>NO_CONTENT (204)</option>
+        <option>RESET_CONTENT (205)</option>
+        <option>PARTIAL_CONTENT (206)</option>
+        <option>MULTI_STATUS (207)</option>
+        <option>ALREADY_REPORTED (208)</option>
+        <option>IM_USED (226)</option>
+        <option>MULTIPLE_CHOICES (300)</option>
+        <option>MOVED_PERMANENTLY (301)</option>
+        <option>FOUND (302)</option>
+        <option>SEE_OTHER (303)</option>
+        <option>NOT_MODIFIED (304)</option>
+        <option>TEMPORARY_REDIRECT (307)</option>
+        <option>PERMANENT_REDIRECT (308)</option>
+        <option>BAD_REQUEST (400)</option>
+        <option>UNAUTHORIZED (401)</option>
+        <option>PAYMENT_REQUIRED (402)</option>
+        <option>FORBIDDEN (403)</option>
+        <option>NOT_FOUND (404)</option>
+        <option>METHOD_NOT_ALLOWED (405)</option>
+        <option>NOT_ACCEPTABLE (406)</option>
+        <option>PROXY_AUTHENTICATION_REQUIRED (407)</option>
+        <option>REQUEST_TIMEOUT (408)</option>
+        <option>CONFLICT (409)</option>
+        <option>GONE (410)</option>
+        <option>LENGTH_REQUIRED (411)</option>
+        <option>PRECONDITION_FAILED (412)</option>
+        <option>PAYLOAD_TOO_LARGE (413)</option>
+        <option>URI_TOO_LONG (414)</option>
+        <option>UNSUPPORTED_MEDIA_TYPE (415)</option>
+        <option>REQUESTED_RANGE_NOT_SATISFIABLE (416)</option>
+        <option>EXPECTATION_FAILED (417)</option>
+        <option>I_AM_A_TEAPOT (418)</option>
+        <option>UNPROCESSABLE_ENTITY (422)</option>
+        <option>LOCKED (423)</option>
+        <option>FAILED_DEPENDENCY (424)</option>
+        <option>TOO_EARLY (425)</option>
+        <option>UPGRADE_REQUIRED (426)</option>
+        <option>PRECONDITION_REQUIRED (428)</option>
+        <option>TOO_MANY_REQUESTS (429)</option>
+        <option>REQUEST_HEADER_FIELDS_TOO_LARGE (431)</option>
+        <option>UNAVAILABLE_FOR_LEGAL_REASONS (451)</option>
+        <option>INTERNAL_SERVER_ERROR (500)</option>
+        <option>NOT_IMPLEMENTED (501)</option>
+        <option>BAD_GATEWAY (502)</option>
+        <option>SERVICE_UNAVAILABLE (503)</option>
+        <option>GATEWAY_TIMEOUT (504)</option>
+        <option>HTTP_VERSION_NOT_SUPPORTED (505)</option>
+        <option>VARIANT_ALSO_NEGOTIATES (506)</option>
+        <option>INSUFFICIENT_STORAGE (507)</option>
+        <option>LOOP_DETECTED (508)</option>
+        <option>BANDWIDTH_LIMIT_EXCEEDED (509)</option>
+        <option>NOT_EXTENDED (510)</option>
+        <option>NETWORK_AUTHENTICATION_REQUIRED (511)</option>
+      </valueOptions>
+      <lookupTypes />
+      <isRequiredFunction>return true;</isRequiredFunction>
+    </property>
+    <property id="0a9580f8-b5cd-4386-9a03-8c3fd3f4544a">
+      <name>Log</name>
+      <type>string</type>
+      <controlType>checkbox</controlType>
+      <optionsSource>n/a</optionsSource>
+      <placeholder />
+      <defaultValue>false</defaultValue>
+      <valueOptions />
+      <lookupTypes />
+    </property>
+  </properties>
+</stereotypeDefinition>

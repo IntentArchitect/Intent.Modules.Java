@@ -24,7 +24,16 @@ public class <#= ClassName #> {
 
     <#= GetOperationAnnotations(operation) #>
     public <#= GetReturnType(operation) #> <#= operation.Name #>(<#= GetParameters(operation) #>) {
-<#      if (operation.ReturnType != null) { #>
+<#
+        var hasCheckedExceptions = HasCheckedExceptions(operation);
+        if (hasCheckedExceptions)
+        {
+            PushIndent("    ");
+#>
+    try {
+<#      }
+
+        if (operation.ReturnType != null) { #>
         final <#= GetTypeName(operation) #> result = <#= GetServiceInterfaceName().ToCamelCase() #>.<#= operation.Name #>(<#= this.GetArguments(operation.Parameters) #>);
 <#          if (!operation.ReturnType.IsNullable && !GetTypeInfo(operation.ReturnType).IsPrimitive && !operation.ReturnType.IsCollection) { #>
         if (result == null) {
@@ -39,7 +48,23 @@ public class <#= ClassName #> {
         return new ResponseEntity<>(result, <#= GetHttpResponseCode() #>);
 <#      } else { #>
         <#= GetServiceInterfaceName().ToCamelCase() #>.<#= operation.Name #>(<#= this.GetArguments(operation.Parameters) #>);
+<#      }
+
+        if (hasCheckedExceptions)
+        {
+            PopIndent();
+            foreach (var checkedException in GetCheckedExceptions(operation))
+            { #>
+        } catch (<#= checkedException.Types #> e) {
+<#
+                if (checkedException.Log) { #>
+            log.error(e.getMessage(), e);
+<#              } #>
+            throw new ResponseStatusException(<#= ImportType("org.springframework.http.HttpStatus") #>.<#= checkedException.HttpStatus #>>);
+<#          } #>
+        }
 <#      } #>
     }
-<#  } #>
+<#
+    } #>
 }

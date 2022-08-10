@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<class id="57964a9d-79ef-485c-8f9e-4fe42baddc67" type="Designers Folder" typeId="dbb71aa5-0db2-4a2a-97a9-501950f36f99">
+  <name>designers</name>
+  <display>designers</display>
+  <isAbstract>false</isAbstract>
+  <sort-children>by-type-then-by-name</sort-children>
+  <genericTypes />
+  <isMapped>false</isMapped>
+  <parentFolderId>e3481ac6-e429-4423-8eba-b5b1bc890f1b</parentFolderId>
+  <packageId>e3481ac6-e429-4423-8eba-b5b1bc890f1b</packageId>
+  <packageName>Intent.Java.Services</packageName>
+  <stereotypes />
+  <metadata />
+  <childElements />
+</class>

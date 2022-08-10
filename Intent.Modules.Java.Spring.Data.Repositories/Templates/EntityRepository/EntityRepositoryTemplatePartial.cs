@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Intent.Engine;
@@ -9,6 +10,7 @@ using Intent.Modules.Common.Java.Templates;
 using Intent.Modules.Common.Templates;
 using Intent.Modules.Java.Domain.Templates;
 using Intent.Modules.Java.Domain.Templates.DomainModel;
+using Intent.Modules.Metadata.RDBMS.Settings;
 using Intent.RoslynWeaver.Attributes;
 using Intent.Templates;
 
@@ -18,7 +20,7 @@ using Intent.Templates;
 namespace Intent.Modules.Java.Spring.Data.Repositories.Templates.EntityRepository
 {
     [IntentManaged(Mode.Merge, Signature = Mode.Fully)]
-    partial class EntityRepositoryTemplate : JavaTemplateBase<Intent.Modelers.Domain.Api.ClassModel>
+    partial class EntityRepositoryTemplate : JavaTemplateBase<Intent.Modelers.Domain.Api.ClassModel, EntityRepositoryDecorator>
     {
         [IntentManaged(Mode.Fully)]
         public const string TemplateId = "Intent.Java.Spring.Data.Repositories.EntityRepository";
@@ -44,7 +46,13 @@ namespace Intent.Modules.Java.Spring.Data.Repositories.Templates.EntityRepositor
 
         private string GetEntityIdType()
         {
-            return "Integer";
+            return OutputTarget.ExecutionContext.Settings.GetDatabaseSettings().KeyType().AsEnum() switch
+            {
+                DatabaseSettings.KeyTypeOptionsEnum.Guid => ImportType("java.util.UUID"),
+                DatabaseSettings.KeyTypeOptionsEnum.Long => "Long",
+                DatabaseSettings.KeyTypeOptionsEnum.Int => "Integer",
+                _ => throw new ArgumentOutOfRangeException()
+            };
         }
 
         private IEnumerable<string> GetQueriesFromIndexes()

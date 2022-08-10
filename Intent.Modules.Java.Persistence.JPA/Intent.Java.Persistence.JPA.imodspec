@@ -1,7 +1,7 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <package>
   <id>Intent.Java.Persistence.JPA</id>
-  <version>3.3.3</version>
+  <version>3.3.4</version>
   <supportedClientVersions>[3.3.0-pre.0, 4.0.0)</supportedClientVersions>
   <summary>JPA Annotation decoration of Domain entities.</summary>
   <description>JPA Annotation decoration of Domain entities.</description>
@@ -19,12 +19,15 @@
     <dependency id="Intent.Common.Types" version="3.3.4" />
     <dependency id="Intent.Java.Domain" version="3.3.2" />
     <dependency id="Intent.Metadata.RDBMS" version="3.3.5" />
+    <dependency id="Intent.Modelers.Domain" version="3.3.5" />
   </dependencies>
   <files>
     <file src="$outDir$/$id$.dll" />
     <file src="$outDir$/$id$.pdb" />
   </files>
-  <metadata />
+  <metadata>
+    <install target="Domain" src="Intent.Metadata/Module Builder/Intent.Java.Persistence.JPA/Intent.Java.Persistence.JPA.pkg.config" externalReference="2e4398f1-893d-432e-badb-ab0c4ea3280e" />
+  </metadata>
   <moduleSettings />
   <moduleSettingsExtensions />
 </package>

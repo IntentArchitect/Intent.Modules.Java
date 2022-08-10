@@ -1,4 +1,4 @@
-<#@ template language="C#" inherits="JavaTemplateBase<Intent.Modelers.Domain.Api.ClassModel>" #>
+<#@ template language="C#" inherits="JavaTemplateBase<Intent.Modelers.Domain.Api.ClassModel, Intent.Modules.Java.Spring.Data.Repositories.Templates.EntityRepository.EntityRepositoryDecorator>" #>
 <#@ assembly name="System.Core" #>
 <#@ import namespace="System.Collections.Generic" #>
 <#@ import namespace="System.Linq" #>
@@ -18,6 +18,10 @@ import org.springframework.data.jpa.repository.JpaRepository;
 public interface <#= ClassName #> extends JpaRepository<<#= GetEntityType() #>, <#= GetEntityIdType() #>> {
 <#  foreach(var query in GetQueriesFromIndexes()) { #>
     <#= query #>
+
+<#  } #>
+<#  foreach(var member in GetDecorators().SelectMany(x => x.GetMembers())) { #>
+    <#= member #>
 
 <#  } #>
 }

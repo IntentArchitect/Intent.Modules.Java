@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<class id="fba2765b-4f5f-4317-b153-388e632cf4c6" type="Template Decorator" typeId="f0f46278-29ea-42bd-9206-0e7034f623bc">
+  <name>CorsRestControllerDecorator</name>
+  <display>CorsRestControllerDecorator: RestControllerDecorator</display>
+  <isAbstract>false</isAbstract>
+  <genericTypes />
+  <typeReference id="d964d741-e050-4619-9730-2d6f4b35db9a">
+    <typeId>92b673b3-739b-4e6a-bf1a-9b58b76d598f</typeId>
+    <isNavigable>true</isNavigable>
+    <isNullable>false</isNullable>
+    <isCollection>false</isCollection>
+    <isRequired>true</isRequired>
+    <typePackageName>Intent.Java.SpringBoot</typePackageName>
+    <typePackageId>27f3b2d0-b9e5-47da-bece-d305c33b5945</typePackageId>
+    <stereotypes />
+    <genericTypeParameters />
+  </typeReference>
+  <isMapped>false</isMapped>
+  <parentFolderId>697b3afa-5cbc-4332-8476-351bd64446b9</parentFolderId>
+  <packageId>697b3afa-5cbc-4332-8476-351bd64446b9</packageId>
+  <packageName>Intent.Java.Spring.Cors</packageName>
+  <stereotypes />
+  <metadata />
+  <childElements />
+</class>

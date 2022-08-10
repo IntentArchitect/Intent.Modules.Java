@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using Intent.Modelers.Services.Api;
 using Intent.RoslynWeaver.Attributes;
 using Intent.Templates;
@@ -12,15 +13,9 @@ namespace Intent.Modules.Java.Services.Templates.ServiceImplementation
     [IntentManaged(Mode.Merge, Signature = Mode.Fully)]
     public abstract class ServiceImplementationDecorator : ITemplateDecorator
     {
-        public virtual IEnumerable<ClassDependency> GetClassDependencies()
-        {
-            return new List<ClassDependency>();
-        }
+        public virtual IEnumerable<ClassDependency> GetClassDependencies() => Enumerable.Empty<ClassDependency>();
 
-        public virtual string GetImplementation(OperationModel operationModel)
-        {
-            return string.Empty;
-        }
+        public virtual string GetImplementation(OperationModel operationModel) => string.Empty;
 
         public int Priority { get; protected set; } = 0;
     }

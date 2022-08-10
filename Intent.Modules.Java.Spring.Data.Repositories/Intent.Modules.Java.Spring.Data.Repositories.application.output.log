@@ -4,12 +4,14 @@
   <FileLogs>
     <FileLog>
       <CorrelationId>Intent.VisualStudio.Projects.VisualStudio2015Solution#faa7bb8b-3a31-4e79-beee-0f17d8088ea1</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>../Intent.Modules.Java.sln</ApplicationRelativeFilePath>
       <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
       <ProjectId>5ee9053b-4284-4568-9e38-3a4aa5a53ac2</ProjectId>
       <CorrelationId>Intent.ModuleBuilder.IModSpecFile</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Intent.Java.Spring.Data.Repositories.imodspec</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>Intent.Java.Spring.Data.Repositories.imodspec</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
@@ -17,6 +19,7 @@
     <FileLog>
       <ProjectId>5ee9053b-4284-4568-9e38-3a4aa5a53ac2</ProjectId>
       <CorrelationId>Intent.VisualStudio.Projects.CoreLibrary.CSProject#5ee9053b-4284-4568-9e38-3a4aa5a53ac2</CorrelationId>
+      <OverwriteBehaviour>once-off</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Intent.Modules.Java.Spring.Data.Repositories.csproj</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>Intent.Modules.Java.Spring.Data.Repositories.csproj</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
@@ -24,13 +27,23 @@
     <FileLog>
       <ProjectId>5ee9053b-4284-4568-9e38-3a4aa5a53ac2</ProjectId>
       <CorrelationId>Intent.ModuleBuilder.ReadMe</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>README.txt</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>README.txt</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
       <ProjectId>cb181c44-e0eb-4777-b2f1-110454210b8c</ProjectId>
+      <CorrelationId>Intent.ModuleBuilder.Templates.TemplateDecoratorContract#96ceca67-6dbf-445e-8cec-8d91107683b1</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>Templates/EntityRepository/EntityRepositoryDecorator.cs</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>EntityRepository/EntityRepositoryDecorator.cs</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
+      <ProjectId>cb181c44-e0eb-4777-b2f1-110454210b8c</ProjectId>
       <CorrelationId>Intent.ModuleBuilder.Java.Templates.JavaTemplate.PreProcessT4#161cbca5-2ef9-4c47-bf3e-265b9ef3c17a</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Templates/EntityRepository/EntityRepositoryTemplate.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>EntityRepository/EntityRepositoryTemplate.cs</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
@@ -38,6 +51,7 @@
     <FileLog>
       <ProjectId>cb181c44-e0eb-4777-b2f1-110454210b8c</ProjectId>
       <CorrelationId>Intent.ModuleBuilder.Java.Templates.JavaFileTemplate#161cbca5-2ef9-4c47-bf3e-265b9ef3c17a</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Templates/EntityRepository/EntityRepositoryTemplate.tt</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>EntityRepository/EntityRepositoryTemplate.tt</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
@@ -45,6 +59,7 @@
     <FileLog>
       <ProjectId>cb181c44-e0eb-4777-b2f1-110454210b8c</ProjectId>
       <CorrelationId>Intent.ModuleBuilder.Java.Templates.JavaFileTemplatePartial#161cbca5-2ef9-4c47-bf3e-265b9ef3c17a</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Templates/EntityRepository/EntityRepositoryTemplatePartial.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>EntityRepository/EntityRepositoryTemplatePartial.cs</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
@@ -52,6 +67,7 @@
     <FileLog>
       <ProjectId>cb181c44-e0eb-4777-b2f1-110454210b8c</ProjectId>
       <CorrelationId>Intent.ModuleBuilder.TemplateRegistration.FilePerModel#161cbca5-2ef9-4c47-bf3e-265b9ef3c17a</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Templates/EntityRepository/EntityRepositoryTemplateRegistration.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>EntityRepository/EntityRepositoryTemplateRegistration.cs</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
@@ -59,6 +75,7 @@
     <FileLog>
       <ProjectId>cb181c44-e0eb-4777-b2f1-110454210b8c</ProjectId>
       <CorrelationId>Intent.ModuleBuilder.Templates.TemplateExtensions</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Templates/TemplateExtensions.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>TemplateExtensions.cs</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>

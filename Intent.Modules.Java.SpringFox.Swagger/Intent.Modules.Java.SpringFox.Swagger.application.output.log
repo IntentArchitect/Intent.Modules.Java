@@ -4,12 +4,30 @@
   <FileLogs>
     <FileLog>
       <CorrelationId>Intent.VisualStudio.Projects.VisualStudio2015Solution#f67daf4c-35fc-420a-afcc-5cf9e482aca7</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>../Intent.Modules.Java.sln</ApplicationRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
+      <ProjectId>00dba266-e0cf-4e3a-96bb-a6e3fea0cebe</ProjectId>
+      <CorrelationId>Intent.ModuleBuilder.Templates.Api.ApiElementModelExtensions#e030c97a-e066-40a7-8188-808c275df3cb</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>Api/Extensions/OperationModelStereotypeExtensions.cs</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>OperationModelStereotypeExtensions.cs</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
+      <ProjectId>00dba266-e0cf-4e3a-96bb-a6e3fea0cebe</ProjectId>
+      <CorrelationId>Intent.ModuleBuilder.Templates.Api.ApiElementModelExtensions#b16578a5-27b1-4047-a8df-f0b783d706bd</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>Api/Extensions/ServiceModelStereotypeExtensions.cs</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>ServiceModelStereotypeExtensions.cs</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
       <ProjectId>c6a75fa9-12ed-4f89-a451-f71220ab0e9b</ProjectId>
       <CorrelationId>Intent.ModuleBuilder.Templates.TemplateDecorator#1ed87dac-aae6-48c7-9165-257c0d4dd5fc</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Decorators/OpenApiControllerDecorator.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>OpenApiControllerDecorator.cs</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
@@ -17,6 +35,7 @@
     <FileLog>
       <ProjectId>c6a75fa9-12ed-4f89-a451-f71220ab0e9b</ProjectId>
       <CorrelationId>Intent.ModuleBuilder.Templates.TemplateDecoratorRegistration#1ed87dac-aae6-48c7-9165-257c0d4dd5fc</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Decorators/OpenApiControllerDecoratorRegistration.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>OpenApiControllerDecoratorRegistration.cs</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
@@ -24,6 +43,7 @@
     <FileLog>
       <ProjectId>ad411f25-020a-4d8a-89c8-166edee814b5</ProjectId>
       <CorrelationId>Intent.ModuleBuilder.IModSpecFile</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Intent.Java.SpringFox.Swagger.imodspec</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>Intent.Java.SpringFox.Swagger.imodspec</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
@@ -31,6 +51,7 @@
     <FileLog>
       <ProjectId>ad411f25-020a-4d8a-89c8-166edee814b5</ProjectId>
       <CorrelationId>Intent.VisualStudio.Projects.CoreLibrary.CSProject#ad411f25-020a-4d8a-89c8-166edee814b5</CorrelationId>
+      <OverwriteBehaviour>once-off</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Intent.Modules.Java.SpringFox.Swagger.csproj</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>Intent.Modules.Java.SpringFox.Swagger.csproj</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
@@ -38,6 +59,7 @@
     <FileLog>
       <ProjectId>ad411f25-020a-4d8a-89c8-166edee814b5</ProjectId>
       <CorrelationId>Intent.ModuleBuilder.ReadMe</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>README.txt</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>README.txt</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
@@ -45,6 +67,7 @@
     <FileLog>
       <ProjectId>1c020f5d-a54f-4469-b2f7-5b30ab67cb35</ProjectId>
       <CorrelationId>Intent.ModuleBuilder.Java.Templates.JavaTemplate.PreProcessT4#2102a415-a12f-48ca-ad49-397d79e3ca88</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Templates/SpringFoxConfig/SpringFoxConfigTemplate.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>SpringFoxConfig/SpringFoxConfigTemplate.cs</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
@@ -52,6 +75,7 @@
     <FileLog>
       <ProjectId>1c020f5d-a54f-4469-b2f7-5b30ab67cb35</ProjectId>
       <CorrelationId>Intent.ModuleBuilder.Java.Templates.JavaFileTemplate#2102a415-a12f-48ca-ad49-397d79e3ca88</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Templates/SpringFoxConfig/SpringFoxConfigTemplate.tt</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>SpringFoxConfig/SpringFoxConfigTemplate.tt</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
@@ -59,6 +83,7 @@
     <FileLog>
       <ProjectId>1c020f5d-a54f-4469-b2f7-5b30ab67cb35</ProjectId>
       <CorrelationId>Intent.ModuleBuilder.Java.Templates.JavaFileTemplatePartial#2102a415-a12f-48ca-ad49-397d79e3ca88</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Templates/SpringFoxConfig/SpringFoxConfigTemplatePartial.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>SpringFoxConfig/SpringFoxConfigTemplatePartial.cs</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
@@ -66,6 +91,7 @@
     <FileLog>
       <ProjectId>1c020f5d-a54f-4469-b2f7-5b30ab67cb35</ProjectId>
       <CorrelationId>Intent.ModuleBuilder.TemplateRegistration.SingleFileNoModel#2102a415-a12f-48ca-ad49-397d79e3ca88</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Templates/SpringFoxConfig/SpringFoxConfigTemplateRegistration.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>SpringFoxConfig/SpringFoxConfigTemplateRegistration.cs</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
@@ -73,6 +99,7 @@
     <FileLog>
       <ProjectId>1c020f5d-a54f-4469-b2f7-5b30ab67cb35</ProjectId>
       <CorrelationId>Intent.ModuleBuilder.Templates.TemplateExtensions</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Templates/TemplateExtensions.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>TemplateExtensions.cs</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>

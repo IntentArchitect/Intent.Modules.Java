@@ -3,7 +3,6 @@
   <name>SpringFoxConfig</name>
   <display>SpringFoxConfig: Single File</display>
   <isAbstract>false</isAbstract>
-  <order>1</order>
   <genericTypes />
   <typeReference id="e986814e-d2ec-45ad-92b5-a90720c7838a">
     <typeId>f65d2904-88c9-4501-873a-a4eec8303b1d</typeId>

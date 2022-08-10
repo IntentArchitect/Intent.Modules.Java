@@ -3,7 +3,6 @@
   <name>OpenApiControllerDecorator</name>
   <display>OpenApiControllerDecorator: RestControllerDecorator</display>
   <isAbstract>false</isAbstract>
-  <order>2</order>
   <genericTypes />
   <typeReference id="70a3598b-9691-4e41-81e1-ab761df6accb">
     <typeId>92b673b3-739b-4e6a-bf1a-9b58b76d598f</typeId>

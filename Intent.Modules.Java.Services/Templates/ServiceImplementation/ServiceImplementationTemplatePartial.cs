@@ -26,7 +26,7 @@ namespace Intent.Modules.Java.Services.Templates.ServiceImplementation
         [IntentManaged(Mode.Merge, Signature = Mode.Fully)]
         public ServiceImplementationTemplate(IOutputTarget outputTarget, Intent.Modelers.Services.Api.ServiceModel model) : base(TemplateId, outputTarget, model)
         {
-            AddDependency(new JavaDependency("org.projectlombok", "lombok", "1.18.12"));
+            AddDependency(JavaDependencies.Lombok);
             AddTypeSource(DataTransferModelTemplate.TemplateId).WithCollectionFormat("java.util.List<{0}>");
         }
 
@@ -51,9 +51,21 @@ namespace Intent.Modules.Java.Services.Templates.ServiceImplementation
             return !string.IsNullOrWhiteSpace(decorator) ? decorator : @"throw new UnsupportedOperationException(""Your implementation here..."");";
         }
 
-        private IList<ClassDependency> GetConstructorDependencies()
+        private IEnumerable<ClassDependency> GetConstructorDependencies()
         {
-            return GetDecorators().SelectMany(x => x.GetClassDependencies()).ToList();
+            return GetDecorators().SelectMany(x => x.GetClassDependencies());
+        }
+
+        private string GetCheckedExceptions(OperationModel operation)
+        {
+            var checkedExceptions = new OperationExtensionModel(operation.InternalElement).CheckedExceptions
+                .Select(GetTypeName)
+                .ToArray();
+
+            return checkedExceptions.Length == 0
+                ? string.Empty
+                : @$"
+        throws {string.Join(", ", checkedExceptions)}";
         }
     }
 }

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<class id="96ceca67-6dbf-445e-8cec-8d91107683b1" type="Template Decorator Contract" typeId="ac1da322-377e-45cf-a2d9-d147a4d91457">
+  <name>EntityRepositoryDecorator</name>
+  <display>EntityRepositoryDecorator</display>
+  <isAbstract>false</isAbstract>
+  <genericTypes />
+  <isMapped>false</isMapped>
+  <parentFolderId>161cbca5-2ef9-4c47-bf3e-265b9ef3c17a</parentFolderId>
+  <packageId>ced0d79b-9b83-4317-a0d9-7857a26d2393</packageId>
+  <packageName>Intent.Java.Spring.Data.Repositories</packageName>
+  <stereotypes />
+  <metadata />
+  <childElements />
+</class>

@@ -8,11 +8,15 @@ using Intent.Modules.Common;
 using Intent.Modules.Common.Java;
 using Intent.Modules.Common.Java.Templates;
 using Intent.Modules.Common.Templates;
+using Intent.Modules.Common.Types.Api;
+using Intent.Modules.Java.Services;
+using Intent.Modules.Java.Services.Api;
 using Intent.Modules.Java.Services.Templates;
 using Intent.Modules.Java.Services.Templates.DataTransferModel;
 using Intent.Modules.Java.Services.Templates.ServiceInterface;
 using Intent.RoslynWeaver.Attributes;
 using Intent.Templates;
+using OperationExtensionModel = Intent.Modules.Java.Services.Api.OperationExtensionModel;
 
 [assembly: DefaultIntentManaged(Mode.Merge)]
 [assembly: IntentTemplate("Intent.ModuleBuilder.Java.Templates.JavaFileTemplatePartial", Version = "1.0")]
@@ -29,6 +33,7 @@ namespace Intent.Modules.Java.SpringBoot.Templates.RestController
         public RestControllerTemplate(IOutputTarget outputTarget, Intent.Modelers.Services.Api.ServiceModel model) : base(TemplateId, outputTarget, model)
         {
             AddTypeSource(DataTransferModelTemplate.TemplateId).WithCollectionFormat("java.util.List<{0}>");
+            AddDependency(JavaDependencies.Lombok);
         }
 
         public string RootName => Model.Name.RemoveSuffix("Service", "Controller", "Resource");
@@ -45,14 +50,20 @@ namespace Intent.Modules.Java.SpringBoot.Templates.RestController
         private string GetControllerAnnotations()
         {
             var annotations = new List<string>();
-            //if (Model.HasSecured())
-            //{
-            //    attributes.Add("[Authorize]");
-            //}
+
+            if (Model.Operations
+                .Any(operation => new OperationExtensionModel(operation.InternalElement).CheckedExceptions
+                    .Any(checkException => checkException.TypeReference.Element.AsTypeDefinitionModel()?.GetCheckedExceptionHandling()?.Log() == true)))
+            {
+                annotations.Add($"@{ImportType("lombok.extern.slf4j.Slf4j")}");
+            }
+
             annotations.Add($@"@RequestMapping(""/{(string.IsNullOrWhiteSpace(Model.GetHttpServiceSettings().Route())
                 ? $"api/{RootName.ToKebabCase()}"
                 : Model.GetHttpServiceSettings().Route().RemovePrefix("/"))}"")");
+
             annotations.AddRange(GetDecorators().SelectMany(x => x.ControllerAnnotations() ?? new List<string>()));
+
             return string.Join(@"
 ", annotations.Where(x => !string.IsNullOrWhiteSpace(x)));
         }
@@ -106,10 +117,16 @@ namespace Intent.Modules.Java.SpringBoot.Templates.RestController
                 return "void";
             }
 
-            return $"ResponseEntity<{GetTypeName(operation.TypeReference).AsReferenceType()}>";
+            var returnType = operation.TypeReference.Element.Name != "object"
+                ? GetTypeName(operation.TypeReference).AsReferenceType()
+                : operation.TypeReference.IsCollection 
+                    ? $"{ImportType("java.util.List")}<?>"
+                    : "?";
+
+            return $"ResponseEntity<{returnType}>";
         }
 
-        private string GetPath(OperationModel operation)
+        private static string GetPath(OperationModel operation)
         {
             var path = operation.GetHttpSettings().Route();
             return !string.IsNullOrWhiteSpace(path) ? $"/{path.RemovePrefix("/")}" : null;
@@ -122,30 +139,37 @@ namespace Intent.Modules.Java.SpringBoot.Templates.RestController
 
         private string GetParameter(OperationModel operation, ParameterModel parameter)
         {
-            return $"{GetParameterBindingAttribute(operation, parameter)}{GetTypeName(parameter)} {parameter.Name}";
+            var annotations = GetDecorators()
+                .SelectMany(decorator => decorator.ParameterAnnotations(parameter))
+                .Append(GetParameterBindingDecorator(operation, parameter))
+                .Select(annotation => $"{annotation} ");
+
+            return $"{string.Concat(annotations)}{GetTypeName(parameter)} {parameter.Name}";
         }
 
-        private string GetParameterBindingAttribute(OperationModel operation, ParameterModel parameter)
+        private string GetParameterBindingDecorator(OperationModel operation, ParameterModel parameter)
         {
             if (parameter.GetParameterSettings().Source().IsDefault())
             {
-                if ((GetTypeInfo(parameter.TypeReference).IsPrimitive || GetTypeInfo(parameter.TypeReference).Name == "String") && !parameter.TypeReference.IsCollection)
+                if ((GetTypeInfo(parameter.TypeReference).IsPrimitive ||
+                     GetTypeInfo(parameter.TypeReference).Name == "String") &&
+                    !parameter.TypeReference.IsCollection)
                 {
                     if (GetPath(operation) != null && GetPath(operation).Split('/', StringSplitOptions.RemoveEmptyEntries).Any(x =>
                         x.Contains('{')
                         && x.Contains('}')
                         && x.Split(new[] { '{', '}' }, StringSplitOptions.RemoveEmptyEntries).Any(i => i == parameter.Name)))
                     {
-                        return $"@PathVariable(value = \"{parameter.Name}\"{(parameter.Type.IsNullable ? $", required = {parameter.TypeReference.IsNullable.ToString().ToLower()}" : string.Empty)}) ";
+                        return $"@PathVariable(value = \"{parameter.Name}\"{(parameter.Type.IsNullable ? $", required = {parameter.TypeReference.IsNullable.ToString().ToLower()}" : string.Empty)})";
                     }
-                    return $"@RequestParam(value = \"{parameter.Name}\"{(parameter.Type.IsNullable ? $", required = {parameter.TypeReference.IsNullable.ToString().ToLower()}" : string.Empty)}) ";
+                    return $"@RequestParam(value = \"{parameter.Name}\"{(parameter.Type.IsNullable ? $", required = {parameter.TypeReference.IsNullable.ToString().ToLower()}" : string.Empty)})";
                 }
 
                 if (GetHttpVerb(operation) == HttpVerb.PATCH ||
                     GetHttpVerb(operation) == HttpVerb.POST ||
                     GetHttpVerb(operation) == HttpVerb.PUT)
                 {
-                    return "@RequestBody ";
+                    return "@RequestBody";
                 }
 
                 return string.Empty;
@@ -159,17 +183,18 @@ namespace Intent.Modules.Java.SpringBoot.Templates.RestController
 
             if (parameter.GetParameterSettings().Source().IsFromHeader())
             {
-                return "@RequestHeader ";
+                var headerName = parameter.GetParameterSettings().HeaderName();
+                return $"@RequestHeader{(!string.IsNullOrWhiteSpace(headerName) ? $"(\"{headerName}\")" : string.Empty)}";
             }
 
             if (parameter.GetParameterSettings().Source().IsFromQuery())
             {
-                return $"@RequestParam(value = \"{parameter.Name}\"{(parameter.Type.IsNullable ? $", required = {parameter.TypeReference.IsNullable.ToString().ToLower()}" : string.Empty)}) ";
+                return $"@RequestParam(value = \"{parameter.Name}\"{(parameter.Type.IsNullable ? $", required = {parameter.TypeReference.IsNullable.ToString().ToLower()}" : string.Empty)})";
             }
 
             if (parameter.GetParameterSettings().Source().IsFromRoute())
             {
-                return $"@PathVariable(value = \"{parameter.Name}\"{(parameter.Type.IsNullable ? $", required = {parameter.TypeReference.IsNullable.ToString().ToLower()}" : string.Empty)}) ";
+                return $"@PathVariable(value = \"{parameter.Name}\"{(parameter.Type.IsNullable ? $", required = {parameter.TypeReference.IsNullable.ToString().ToLower()}" : string.Empty)})";
             }
 
             return string.Empty;
@@ -181,6 +206,32 @@ namespace Intent.Modules.Java.SpringBoot.Templates.RestController
             return Enum.TryParse(verb.Value, out HttpVerb verbEnum) ? verbEnum : HttpVerb.POST;
         }
 
+        private static bool HasCheckedExceptions(OperationModel operation)
+        {
+            return new OperationExtensionModel(operation.InternalElement).CheckedExceptions.Any();
+        }
+
+        private IEnumerable<CheckedException> GetCheckedExceptions(OperationModel operation)
+        {
+            return new OperationExtensionModel(operation.InternalElement).CheckedExceptions
+                .Select(checkedException => new
+                {
+                    TypeName = GetTypeName(checkedException),
+                    Handling = checkedException.TypeReference.Element.AsTypeDefinitionModel().GetCheckedExceptionHandling()
+                })
+                .Where(checkedException => checkedException.Handling != null)
+                .GroupBy(
+                    checkedException => new
+                        {
+                            HttpResponse = checkedException.Handling.HttpResponseStatus().Value,
+                            Log = checkedException.Handling.Log()
+                        },
+                    (key, groupItems) => new CheckedException(
+                        Types: string.Join(" | ", groupItems.Select(z => z.TypeName)),
+                        HttpStatus: key.HttpResponse.Split(' ')[0],
+                        Log: key.Log));
+        }
+
         public enum HttpVerb
         {
             DELETE,
@@ -189,5 +240,7 @@ namespace Intent.Modules.Java.SpringBoot.Templates.RestController
             POST,
             PUT
         }
+
+        private record struct CheckedException(string Types, string HttpStatus, bool Log);
     }
 }

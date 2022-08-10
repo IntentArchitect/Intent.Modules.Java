@@ -28,7 +28,7 @@ public class <#= ClassName #> implements <#= GetTypeName(ServiceInterface.Servic
     @Override
     @Transactional(readOnly = <#= IsReadOnly(operation) #>)
     <#= this.IntentIgnoreBodyAnnotation() #>
-    public <#= GetTypeName(operation) #> <#= operation.Name #>(<#= this.GetMethodParameters(operation.Parameters) #>) {
+    public <#= GetTypeName(operation) #> <#= operation.Name #>(<#= this.GetMethodParameters(operation.Parameters) #>)<#= GetCheckedExceptions(operation) #> {
         <#= GetImplementation(operation) #>
     }
 <#  } #>

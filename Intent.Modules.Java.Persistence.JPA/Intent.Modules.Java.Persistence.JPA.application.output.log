@@ -4,12 +4,30 @@
   <FileLogs>
     <FileLog>
       <CorrelationId>Intent.VisualStudio.Projects.VisualStudio2015Solution#64d9f7a0-5abe-4b02-a3dd-23d5692c6715</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>../Intent.Modules.Java.sln</ApplicationRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
+      <ProjectId>1aff7720-4d3c-4389-8561-104ef7cc57e9</ProjectId>
+      <CorrelationId>Intent.ModuleBuilder.Templates.Api.ApiElementModelExtensions#8d9d2e5b-bd55-4f36-9ae4-2b9e84fd4e58</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>Api/Extensions/AssociationSourceEndModelStereotypeExtensions.cs</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>AssociationSourceEndModelStereotypeExtensions.cs</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
+      <ProjectId>1aff7720-4d3c-4389-8561-104ef7cc57e9</ProjectId>
+      <CorrelationId>Intent.ModuleBuilder.Templates.Api.ApiElementModelExtensions#0a66489f-30aa-417b-a75d-b945863366fd</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>Api/Extensions/AssociationTargetEndModelStereotypeExtensions.cs</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>AssociationTargetEndModelStereotypeExtensions.cs</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
       <ProjectId>5fa9e7c0-0bd2-466b-bac0-3a2ffbb77f19</ProjectId>
       <CorrelationId>Intent.ModuleBuilder.Templates.TemplateDecorator#4cc94355-f5eb-4ed0-953c-2ed915f3ffc6</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Decorators/JpaAbstractEntityDecorator.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>JpaAbstractEntityDecorator.cs</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
@@ -17,6 +35,7 @@
     <FileLog>
       <ProjectId>5fa9e7c0-0bd2-466b-bac0-3a2ffbb77f19</ProjectId>
       <CorrelationId>Intent.ModuleBuilder.Templates.TemplateDecoratorRegistration#4cc94355-f5eb-4ed0-953c-2ed915f3ffc6</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Decorators/JpaAbstractEntityDecoratorRegistration.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>JpaAbstractEntityDecoratorRegistration.cs</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
@@ -24,6 +43,7 @@
     <FileLog>
       <ProjectId>5fa9e7c0-0bd2-466b-bac0-3a2ffbb77f19</ProjectId>
       <CorrelationId>Intent.ModuleBuilder.Templates.TemplateDecorator#bf2de9f1-760a-47b5-838b-e76fdbc8e7f7</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Decorators/JpaDomainModelDecorator.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>JpaDomainModelDecorator.cs</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
@@ -31,6 +51,7 @@
     <FileLog>
       <ProjectId>5fa9e7c0-0bd2-466b-bac0-3a2ffbb77f19</ProjectId>
       <CorrelationId>Intent.ModuleBuilder.Templates.TemplateDecoratorRegistration#bf2de9f1-760a-47b5-838b-e76fdbc8e7f7</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Decorators/JpaDomainModelDecoratorRegistration.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>JpaDomainModelDecoratorRegistration.cs</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
@@ -38,6 +59,7 @@
     <FileLog>
       <ProjectId>f92df344-0995-48cf-9967-db535ad749b6</ProjectId>
       <CorrelationId>Intent.ModuleBuilder.IModSpecFile</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Intent.Java.Persistence.JPA.imodspec</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>Intent.Java.Persistence.JPA.imodspec</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
@@ -45,6 +67,7 @@
     <FileLog>
       <ProjectId>f92df344-0995-48cf-9967-db535ad749b6</ProjectId>
       <CorrelationId>Intent.VisualStudio.Projects.CoreLibrary.CSProject#f92df344-0995-48cf-9967-db535ad749b6</CorrelationId>
+      <OverwriteBehaviour>once-off</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Intent.Modules.Java.Persistence.JPA.csproj</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>Intent.Modules.Java.Persistence.JPA.csproj</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
@@ -52,6 +75,7 @@
     <FileLog>
       <ProjectId>f92df344-0995-48cf-9967-db535ad749b6</ProjectId>
       <CorrelationId>Intent.ModuleBuilder.ReadMe</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>README.txt</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>README.txt</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>

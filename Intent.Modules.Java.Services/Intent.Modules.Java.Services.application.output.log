@@ -4,19 +4,54 @@
   <FileLogs>
     <FileLog>
       <CorrelationId>Intent.VisualStudio.Projects.VisualStudio2015Solution#136bc8ec-e584-44d3-bd1c-772024b12244</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>../Intent.Modules.Java.sln</ApplicationRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
+      <ProjectId>8d5141ef-033c-4e36-a065-f7d8cbec5b7b</ProjectId>
+      <CorrelationId>Intent.ModuleBuilder.Templates.Api.ApiElementModel#c5132b85-8cea-405b-abd5-9d3eccbc0d07</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>Api/CheckedExceptionModel.cs</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>CheckedExceptionModel.cs</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
       <ProjectId>64c684bc-7d0b-4cf2-8445-6558b97ef785</ProjectId>
       <CorrelationId>Intent.ModuleBuilder.Templates.Api.ApiElementModelExtensions#e030c97a-e066-40a7-8188-808c275df3cb</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Api/Extensions/OperationModelStereotypeExtensions.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>OperationModelStereotypeExtensions.cs</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
+      <ProjectId>64c684bc-7d0b-4cf2-8445-6558b97ef785</ProjectId>
+      <CorrelationId>Intent.ModuleBuilder.Templates.Api.ApiElementModelExtensions#d4e577cd-ad05-4180-9a2e-fff4ddea0e1e</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>Api/Extensions/TypeDefinitionModelStereotypeExtensions.cs</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>TypeDefinitionModelStereotypeExtensions.cs</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
+      <ProjectId>8d5141ef-033c-4e36-a065-f7d8cbec5b7b</ProjectId>
+      <CorrelationId>Intent.ModuleBuilder.Templates.Api.ApiElementExtensionModel#8b1db76d-fece-4bd6-bce5-59b48d257cbb</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>Api/OperationExtensionModel.cs</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>OperationExtensionModel.cs</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
+      <ProjectId>9a39a5e5-1c2a-4df7-bab4-5d2760783b6d</ProjectId>
+      <CorrelationId>Intent.ModuleBuilder.Templates.Api.ApiMetadataProviderExtensions</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>ApiMetadataProviderExtensions.cs</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>ApiMetadataProviderExtensions.cs</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
       <ProjectId>9a39a5e5-1c2a-4df7-bab4-5d2760783b6d</ProjectId>
       <CorrelationId>Intent.ModuleBuilder.IModSpecFile</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Intent.Java.Services.imodspec</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>Intent.Java.Services.imodspec</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
@@ -24,13 +59,23 @@
     <FileLog>
       <ProjectId>9a39a5e5-1c2a-4df7-bab4-5d2760783b6d</ProjectId>
       <CorrelationId>Intent.VisualStudio.Projects.CoreLibrary.CSProject#9a39a5e5-1c2a-4df7-bab4-5d2760783b6d</CorrelationId>
+      <OverwriteBehaviour>once-off</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Intent.Modules.Java.Services.csproj</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>Intent.Modules.Java.Services.csproj</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
+      <ProjectId>4edc25aa-af40-4cec-97e0-dcadd8d85838</ProjectId>
+      <CorrelationId>Intent.ModuleBuilder.DesignerSettings#582b12d8-61f5-4a4e-a1aa-e0359574be60</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>modelers/Services Designer Settings.designer.settings</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>Services Designer Settings.designer.settings</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
       <ProjectId>9a39a5e5-1c2a-4df7-bab4-5d2760783b6d</ProjectId>
       <CorrelationId>Intent.ModuleBuilder.ReadMe</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>README.txt</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>README.txt</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
@@ -38,6 +83,7 @@
     <FileLog>
       <ProjectId>32921436-c716-4bad-8ff1-2cc93f11b598</ProjectId>
       <CorrelationId>Intent.ModuleBuilder.Templates.TemplateDecoratorContract#be604817-d78c-4648-ab9f-7d9879bf0eff</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Templates/DataTransferModel/DataTransferModelDecorator.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>DataTransferModel/DataTransferModelDecorator.cs</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
@@ -45,6 +91,7 @@
     <FileLog>
       <ProjectId>32921436-c716-4bad-8ff1-2cc93f11b598</ProjectId>
       <CorrelationId>Intent.ModuleBuilder.Java.Templates.JavaTemplate.PreProcessT4#be2a8f83-c156-4e1a-8095-00c402a0cb15</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Templates/DataTransferModel/DataTransferModelTemplate.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>DataTransferModel/DataTransferModelTemplate.cs</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
@@ -52,6 +99,7 @@
     <FileLog>
       <ProjectId>32921436-c716-4bad-8ff1-2cc93f11b598</ProjectId>
       <CorrelationId>Intent.ModuleBuilder.Java.Templates.JavaFileTemplate#be2a8f83-c156-4e1a-8095-00c402a0cb15</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Templates/DataTransferModel/DataTransferModelTemplate.tt</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>DataTransferModel/DataTransferModelTemplate.tt</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
@@ -59,6 +107,7 @@
     <FileLog>
       <ProjectId>32921436-c716-4bad-8ff1-2cc93f11b598</ProjectId>
       <CorrelationId>Intent.ModuleBuilder.Java.Templates.JavaFileTemplatePartial#be2a8f83-c156-4e1a-8095-00c402a0cb15</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Templates/DataTransferModel/DataTransferModelTemplatePartial.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>DataTransferModel/DataTransferModelTemplatePartial.cs</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
@@ -66,6 +115,7 @@
     <FileLog>
       <ProjectId>32921436-c716-4bad-8ff1-2cc93f11b598</ProjectId>
       <CorrelationId>Intent.ModuleBuilder.TemplateRegistration.FilePerModel#be2a8f83-c156-4e1a-8095-00c402a0cb15</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Templates/DataTransferModel/DataTransferModelTemplateRegistration.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>DataTransferModel/DataTransferModelTemplateRegistration.cs</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
@@ -73,6 +123,7 @@
     <FileLog>
       <ProjectId>32921436-c716-4bad-8ff1-2cc93f11b598</ProjectId>
       <CorrelationId>Intent.ModuleBuilder.Templates.TemplateDecoratorContract#190a0466-89ca-49b9-a9ee-c57bc7142a57</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Templates/ServiceImplementation/ServiceImplementationDecorator.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>ServiceImplementation/ServiceImplementationDecorator.cs</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
@@ -80,6 +131,7 @@
     <FileLog>
       <ProjectId>32921436-c716-4bad-8ff1-2cc93f11b598</ProjectId>
       <CorrelationId>Intent.ModuleBuilder.Java.Templates.JavaTemplate.PreProcessT4#7ce91561-d9e7-4da5-870b-bc7f091513c7</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Templates/ServiceImplementation/ServiceImplementationTemplate.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>ServiceImplementation/ServiceImplementationTemplate.cs</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
@@ -87,6 +139,7 @@
     <FileLog>
       <ProjectId>32921436-c716-4bad-8ff1-2cc93f11b598</ProjectId>
       <CorrelationId>Intent.ModuleBuilder.Java.Templates.JavaFileTemplate#7ce91561-d9e7-4da5-870b-bc7f091513c7</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Templates/ServiceImplementation/ServiceImplementationTemplate.tt</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>ServiceImplementation/ServiceImplementationTemplate.tt</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
@@ -94,6 +147,7 @@
     <FileLog>
       <ProjectId>32921436-c716-4bad-8ff1-2cc93f11b598</ProjectId>
       <CorrelationId>Intent.ModuleBuilder.Java.Templates.JavaFileTemplatePartial#7ce91561-d9e7-4da5-870b-bc7f091513c7</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Templates/ServiceImplementation/ServiceImplementationTemplatePartial.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>ServiceImplementation/ServiceImplementationTemplatePartial.cs</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
@@ -101,13 +155,23 @@
     <FileLog>
       <ProjectId>32921436-c716-4bad-8ff1-2cc93f11b598</ProjectId>
       <CorrelationId>Intent.ModuleBuilder.TemplateRegistration.FilePerModel#7ce91561-d9e7-4da5-870b-bc7f091513c7</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Templates/ServiceImplementation/ServiceImplementationTemplateRegistration.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>ServiceImplementation/ServiceImplementationTemplateRegistration.cs</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
       <ProjectId>32921436-c716-4bad-8ff1-2cc93f11b598</ProjectId>
+      <CorrelationId>Intent.ModuleBuilder.Templates.TemplateDecoratorContract#b827af84-059c-4641-a1dc-5ceebae99360</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>Templates/ServiceInterface/ServiceInterfaceDecorator.cs</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>ServiceInterface/ServiceInterfaceDecorator.cs</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
+      <ProjectId>32921436-c716-4bad-8ff1-2cc93f11b598</ProjectId>
       <CorrelationId>Intent.ModuleBuilder.Java.Templates.JavaTemplate.PreProcessT4#592827c8-f46a-4c1a-a54d-ef454ff11210</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Templates/ServiceInterface/ServiceInterfaceTemplate.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>ServiceInterface/ServiceInterfaceTemplate.cs</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
@@ -115,6 +179,7 @@
     <FileLog>
       <ProjectId>32921436-c716-4bad-8ff1-2cc93f11b598</ProjectId>
       <CorrelationId>Intent.ModuleBuilder.Java.Templates.JavaFileTemplate#592827c8-f46a-4c1a-a54d-ef454ff11210</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Templates/ServiceInterface/ServiceInterfaceTemplate.tt</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>ServiceInterface/ServiceInterfaceTemplate.tt</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
@@ -122,6 +187,7 @@
     <FileLog>
       <ProjectId>32921436-c716-4bad-8ff1-2cc93f11b598</ProjectId>
       <CorrelationId>Intent.ModuleBuilder.Java.Templates.JavaFileTemplatePartial#592827c8-f46a-4c1a-a54d-ef454ff11210</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Templates/ServiceInterface/ServiceInterfaceTemplatePartial.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>ServiceInterface/ServiceInterfaceTemplatePartial.cs</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
@@ -129,6 +195,7 @@
     <FileLog>
       <ProjectId>32921436-c716-4bad-8ff1-2cc93f11b598</ProjectId>
       <CorrelationId>Intent.ModuleBuilder.TemplateRegistration.FilePerModel#592827c8-f46a-4c1a-a54d-ef454ff11210</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Templates/ServiceInterface/ServiceInterfaceTemplateRegistration.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>ServiceInterface/ServiceInterfaceTemplateRegistration.cs</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
@@ -136,6 +203,7 @@
     <FileLog>
       <ProjectId>32921436-c716-4bad-8ff1-2cc93f11b598</ProjectId>
       <CorrelationId>Intent.ModuleBuilder.Templates.TemplateExtensions</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Templates/TemplateExtensions.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>TemplateExtensions.cs</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
