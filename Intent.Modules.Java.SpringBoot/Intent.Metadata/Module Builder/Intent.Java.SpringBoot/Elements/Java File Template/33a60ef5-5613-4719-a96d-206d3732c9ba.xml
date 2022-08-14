@@ -3,7 +3,7 @@
   <name>RestController</name>
   <display>RestController: File Per Model</display>
   <isAbstract>false</isAbstract>
-  <order>2</order>
+  <sort-children>by-type-then-by-name</sort-children>
   <genericTypes />
   <typeReference id="65ddf137-9b15-46f7-90ec-4576bbc0ab25">
     <typeId>99cb461f-ec82-4dde-a804-e3393a5e2a8d</typeId>

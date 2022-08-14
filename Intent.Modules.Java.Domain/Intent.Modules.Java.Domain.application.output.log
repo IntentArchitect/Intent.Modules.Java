@@ -4,12 +4,14 @@
   <FileLogs>
     <FileLog>
       <CorrelationId>Intent.VisualStudio.Projects.VisualStudio2015Solution#9a6b660c-89bd-4f4f-99d0-3c5601ef6c1b</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>../Intent.Modules.Java.sln</ApplicationRelativeFilePath>
       <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
       <ProjectId>586e75c2-ae1c-4988-9e68-89c2696670bd</ProjectId>
       <CorrelationId>Intent.ModuleBuilder.IModSpecFile</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Intent.Java.Domain.imodspec</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>Intent.Java.Domain.imodspec</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
@@ -17,6 +19,7 @@
     <FileLog>
       <ProjectId>586e75c2-ae1c-4988-9e68-89c2696670bd</ProjectId>
       <CorrelationId>Intent.VisualStudio.Projects.CoreLibrary.CSProject#586e75c2-ae1c-4988-9e68-89c2696670bd</CorrelationId>
+      <OverwriteBehaviour>once-off</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Intent.Modules.Java.Domain.csproj</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>Intent.Modules.Java.Domain.csproj</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
@@ -24,6 +27,7 @@
     <FileLog>
       <ProjectId>586e75c2-ae1c-4988-9e68-89c2696670bd</ProjectId>
       <CorrelationId>Intent.ModuleBuilder.ReadMe</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>README.txt</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>README.txt</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
@@ -31,6 +35,7 @@
     <FileLog>
       <ProjectId>ba8f91ca-3f8c-44a2-9194-e9d5ed6640bd</ProjectId>
       <CorrelationId>Intent.ModuleBuilder.Templates.TemplateDecoratorContract#3fcf4180-ae9a-4214-a4e9-4fdf4ec57f4a</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Templates/AbstractEntity/AbstractEntityDecorator.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>AbstractEntity/AbstractEntityDecorator.cs</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
@@ -38,6 +43,7 @@
     <FileLog>
       <ProjectId>ba8f91ca-3f8c-44a2-9194-e9d5ed6640bd</ProjectId>
       <CorrelationId>Intent.ModuleBuilder.Java.Templates.JavaTemplate.PreProcessT4#94c6a849-fc61-4d80-9bdc-2ad79268ac57</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Templates/AbstractEntity/AbstractEntityTemplate.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>AbstractEntity/AbstractEntityTemplate.cs</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
@@ -45,6 +51,7 @@
     <FileLog>
       <ProjectId>ba8f91ca-3f8c-44a2-9194-e9d5ed6640bd</ProjectId>
       <CorrelationId>Intent.ModuleBuilder.Java.Templates.JavaFileTemplate#94c6a849-fc61-4d80-9bdc-2ad79268ac57</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Templates/AbstractEntity/AbstractEntityTemplate.tt</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>AbstractEntity/AbstractEntityTemplate.tt</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
@@ -52,6 +59,7 @@
     <FileLog>
       <ProjectId>ba8f91ca-3f8c-44a2-9194-e9d5ed6640bd</ProjectId>
       <CorrelationId>Intent.ModuleBuilder.Java.Templates.JavaFileTemplatePartial#94c6a849-fc61-4d80-9bdc-2ad79268ac57</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Templates/AbstractEntity/AbstractEntityTemplatePartial.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>AbstractEntity/AbstractEntityTemplatePartial.cs</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
@@ -59,6 +67,7 @@
     <FileLog>
       <ProjectId>ba8f91ca-3f8c-44a2-9194-e9d5ed6640bd</ProjectId>
       <CorrelationId>Intent.ModuleBuilder.TemplateRegistration.SingleFileNoModel#94c6a849-fc61-4d80-9bdc-2ad79268ac57</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Templates/AbstractEntity/AbstractEntityTemplateRegistration.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>AbstractEntity/AbstractEntityTemplateRegistration.cs</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
@@ -66,6 +75,7 @@
     <FileLog>
       <ProjectId>ba8f91ca-3f8c-44a2-9194-e9d5ed6640bd</ProjectId>
       <CorrelationId>Intent.ModuleBuilder.Templates.TemplateDecoratorContract#a894136d-e504-4327-a9cd-0452c74dae9b</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Templates/DomainModel/DomainModelDecorator.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>DomainModel/DomainModelDecorator.cs</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
@@ -73,6 +83,7 @@
     <FileLog>
       <ProjectId>ba8f91ca-3f8c-44a2-9194-e9d5ed6640bd</ProjectId>
       <CorrelationId>Intent.ModuleBuilder.Java.Templates.JavaTemplate.PreProcessT4#3060efbe-358f-4d3a-99d6-561534b80b70</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Templates/DomainModel/DomainModelTemplate.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>DomainModel/DomainModelTemplate.cs</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
@@ -80,6 +91,7 @@
     <FileLog>
       <ProjectId>ba8f91ca-3f8c-44a2-9194-e9d5ed6640bd</ProjectId>
       <CorrelationId>Intent.ModuleBuilder.Java.Templates.JavaFileTemplate#3060efbe-358f-4d3a-99d6-561534b80b70</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Templates/DomainModel/DomainModelTemplate.tt</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>DomainModel/DomainModelTemplate.tt</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
@@ -87,6 +99,7 @@
     <FileLog>
       <ProjectId>ba8f91ca-3f8c-44a2-9194-e9d5ed6640bd</ProjectId>
       <CorrelationId>Intent.ModuleBuilder.Java.Templates.JavaFileTemplatePartial#3060efbe-358f-4d3a-99d6-561534b80b70</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Templates/DomainModel/DomainModelTemplatePartial.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>DomainModel/DomainModelTemplatePartial.cs</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
@@ -94,6 +107,7 @@
     <FileLog>
       <ProjectId>ba8f91ca-3f8c-44a2-9194-e9d5ed6640bd</ProjectId>
       <CorrelationId>Intent.ModuleBuilder.TemplateRegistration.FilePerModel#3060efbe-358f-4d3a-99d6-561534b80b70</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Templates/DomainModel/DomainModelTemplateRegistration.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>DomainModel/DomainModelTemplateRegistration.cs</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
@@ -101,6 +115,7 @@
     <FileLog>
       <ProjectId>ba8f91ca-3f8c-44a2-9194-e9d5ed6640bd</ProjectId>
       <CorrelationId>Intent.ModuleBuilder.Templates.TemplateExtensions</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Templates/TemplateExtensions.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>TemplateExtensions.cs</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>

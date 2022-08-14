@@ -3,7 +3,6 @@
   <name>RestControllerDecorator</name>
   <display>RestControllerDecorator</display>
   <isAbstract>false</isAbstract>
-  <order>1</order>
   <genericTypes />
   <isMapped>false</isMapped>
   <parentFolderId>33a60ef5-5613-4719-a96d-206d3732c9ba</parentFolderId>

@@ -4,12 +4,14 @@
   <FileLogs>
     <FileLog>
       <CorrelationId>Intent.VisualStudio.Projects.VisualStudio2015Solution#efafd076-b2c4-4906-ba87-7b96bbcc1a98</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>../Intent.Modules.Java.sln</ApplicationRelativeFilePath>
       <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
       <ProjectId>f7ac3064-fb03-46f5-9743-5518f5aa4e46</ProjectId>
       <CorrelationId>Intent.ModuleBuilder.Templates.TemplateDecorator#d51337a7-9ac0-4498-9aef-028fe173ce88</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Decorators/DataTransferModelMappingDecorator.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>DataTransferModelMappingDecorator.cs</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
@@ -17,6 +19,7 @@
     <FileLog>
       <ProjectId>f7ac3064-fb03-46f5-9743-5518f5aa4e46</ProjectId>
       <CorrelationId>Intent.ModuleBuilder.Templates.TemplateDecoratorRegistration#d51337a7-9ac0-4498-9aef-028fe173ce88</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Decorators/DataTransferModelMappingDecoratorRegistration.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>DataTransferModelMappingDecoratorRegistration.cs</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
@@ -24,6 +27,7 @@
     <FileLog>
       <ProjectId>997d1487-cfea-43d7-9aec-be05f101f8df</ProjectId>
       <CorrelationId>Intent.ModuleBuilder.IModSpecFile</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Intent.Java.ModelMapper.imodspec</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>Intent.Java.ModelMapper.imodspec</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
@@ -31,6 +35,7 @@
     <FileLog>
       <ProjectId>997d1487-cfea-43d7-9aec-be05f101f8df</ProjectId>
       <CorrelationId>Intent.VisualStudio.Projects.CoreLibrary.CSProject#997d1487-cfea-43d7-9aec-be05f101f8df</CorrelationId>
+      <OverwriteBehaviour>once-off</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Intent.Modules.Java.ModelMapper.csproj</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>Intent.Modules.Java.ModelMapper.csproj</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
@@ -38,6 +43,7 @@
     <FileLog>
       <ProjectId>997d1487-cfea-43d7-9aec-be05f101f8df</ProjectId>
       <CorrelationId>Intent.ModuleBuilder.ReadMe</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>README.txt</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>README.txt</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
@@ -45,6 +51,7 @@
     <FileLog>
       <ProjectId>ccea972e-d4bf-492c-a8a3-58fdb0aac140</ProjectId>
       <CorrelationId>Intent.ModuleBuilder.Java.Templates.JavaTemplate.PreProcessT4#781272e2-537c-488b-b4f8-0cd4b1ed743a</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Templates/EntityToDtoMapping/EntityToDtoMappingTemplate.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>EntityToDtoMapping/EntityToDtoMappingTemplate.cs</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
@@ -52,6 +59,7 @@
     <FileLog>
       <ProjectId>ccea972e-d4bf-492c-a8a3-58fdb0aac140</ProjectId>
       <CorrelationId>Intent.ModuleBuilder.Java.Templates.JavaFileTemplate#781272e2-537c-488b-b4f8-0cd4b1ed743a</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Templates/EntityToDtoMapping/EntityToDtoMappingTemplate.tt</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>EntityToDtoMapping/EntityToDtoMappingTemplate.tt</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
@@ -59,6 +67,7 @@
     <FileLog>
       <ProjectId>ccea972e-d4bf-492c-a8a3-58fdb0aac140</ProjectId>
       <CorrelationId>Intent.ModuleBuilder.Java.Templates.JavaFileTemplatePartial#781272e2-537c-488b-b4f8-0cd4b1ed743a</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Templates/EntityToDtoMapping/EntityToDtoMappingTemplatePartial.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>EntityToDtoMapping/EntityToDtoMappingTemplatePartial.cs</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
@@ -66,6 +75,7 @@
     <FileLog>
       <ProjectId>ccea972e-d4bf-492c-a8a3-58fdb0aac140</ProjectId>
       <CorrelationId>Intent.ModuleBuilder.TemplateRegistration.FilePerModel#781272e2-537c-488b-b4f8-0cd4b1ed743a</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Templates/EntityToDtoMapping/EntityToDtoMappingTemplateRegistration.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>EntityToDtoMapping/EntityToDtoMappingTemplateRegistration.cs</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
@@ -73,6 +83,7 @@
     <FileLog>
       <ProjectId>ccea972e-d4bf-492c-a8a3-58fdb0aac140</ProjectId>
       <CorrelationId>Intent.ModuleBuilder.Java.Templates.JavaTemplate.PreProcessT4#f2af8499-cbaa-4618-9992-ee57acf31ffc</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Templates/ModelMapperBean/ModelMapperBeanTemplate.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>ModelMapperBean/ModelMapperBeanTemplate.cs</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
@@ -80,6 +91,7 @@
     <FileLog>
       <ProjectId>ccea972e-d4bf-492c-a8a3-58fdb0aac140</ProjectId>
       <CorrelationId>Intent.ModuleBuilder.Java.Templates.JavaFileTemplate#f2af8499-cbaa-4618-9992-ee57acf31ffc</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Templates/ModelMapperBean/ModelMapperBeanTemplate.tt</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>ModelMapperBean/ModelMapperBeanTemplate.tt</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
@@ -87,6 +99,7 @@
     <FileLog>
       <ProjectId>ccea972e-d4bf-492c-a8a3-58fdb0aac140</ProjectId>
       <CorrelationId>Intent.ModuleBuilder.Java.Templates.JavaFileTemplatePartial#f2af8499-cbaa-4618-9992-ee57acf31ffc</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Templates/ModelMapperBean/ModelMapperBeanTemplatePartial.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>ModelMapperBean/ModelMapperBeanTemplatePartial.cs</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
@@ -94,6 +107,7 @@
     <FileLog>
       <ProjectId>ccea972e-d4bf-492c-a8a3-58fdb0aac140</ProjectId>
       <CorrelationId>Intent.ModuleBuilder.TemplateRegistration.SingleFileListModel#f2af8499-cbaa-4618-9992-ee57acf31ffc</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Templates/ModelMapperBean/ModelMapperBeanTemplateRegistration.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>ModelMapperBean/ModelMapperBeanTemplateRegistration.cs</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
@@ -101,6 +115,7 @@
     <FileLog>
       <ProjectId>ccea972e-d4bf-492c-a8a3-58fdb0aac140</ProjectId>
       <CorrelationId>Intent.ModuleBuilder.Templates.TemplateExtensions</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Templates/TemplateExtensions.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>TemplateExtensions.cs</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
