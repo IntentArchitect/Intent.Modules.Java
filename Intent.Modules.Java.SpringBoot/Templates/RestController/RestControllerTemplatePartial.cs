@@ -119,7 +119,7 @@ namespace Intent.Modules.Java.SpringBoot.Templates.RestController
 
             var returnType = operation.TypeReference.Element.Name != "object"
                 ? GetTypeName(operation.TypeReference).AsReferenceType()
-                : operation.TypeReference.IsCollection 
+                : operation.TypeReference.IsCollection
                     ? $"{ImportType("java.util.List")}<?>"
                     : "?";
 
@@ -222,10 +222,10 @@ namespace Intent.Modules.Java.SpringBoot.Templates.RestController
                 .Where(checkedException => checkedException.Handling != null)
                 .GroupBy(
                     checkedException => new
-                        {
-                            HttpResponse = checkedException.Handling.HttpResponseStatus().Value,
-                            Log = checkedException.Handling.Log()
-                        },
+                    {
+                        HttpResponse = checkedException.Handling.HttpResponseStatus().Value,
+                        Log = checkedException.Handling.Log()
+                    },
                     (key, groupItems) => new CheckedException(
                         Types: string.Join(" | ", groupItems.Select(z => z.TypeName)),
                         HttpStatus: key.HttpResponse.Split(' ')[0],
@@ -240,7 +240,5 @@ namespace Intent.Modules.Java.SpringBoot.Templates.RestController
             POST,
             PUT
         }
-
-        private record struct CheckedException(string Types, string HttpStatus, bool Log);
     }
 }
