@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<stereotypeDefinition id="864415e5-f993-4ae2-a89d-af452f7b7f87" version="3.1.0">
+  <name>Join Settings</name>
+  <targetMode>of-type</targetMode>
+  <targetTypes>
+    <type id="41566d5b-85bf-4608-ba72-3d43b7a2cb07">Joined Table</type>
+  </targetTypes>
+  <targetReferenceTypes />
+  <applyMode>always</applyMode>
+  <icon type="FontAwesome" source="cogs" />
+  <displayIcon>false</displayIcon>
+  <displayFunction />
+  <displayAsAnnotation>false</displayAsAnnotation>
+  <displayAsText>true</displayAsText>
+  <autoAdd>false</autoAdd>
+  <allowMultipleApplies>false</allowMultipleApplies>
+  <parentFolderId>16ca8a57-4b1f-49fe-b42c-f44fa45059d9</parentFolderId>
+  <order>0</order>
+  <packageId>1f412104-d5bd-42a6-9655-ce7e37bad8cb</packageId>
+  <packageName>Intent.Java.Persistence.JPA.CustomQueries</packageName>
+  <properties>
+    <property id="3a2b9fa2-fd55-4f60-a86d-6da797284edf">
+      <name>Alias</name>
+      <type>string</type>
+      <controlType>text</controlType>
+      <optionsSource>n/a</optionsSource>
+      <placeholder />
+      <valueOptions />
+      <lookupTypes />
+    </property>
+  </properties>
+</stereotypeDefinition>

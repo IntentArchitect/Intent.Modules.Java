@@ -6,6 +6,7 @@
   <iconType>UrlImagePath</iconType>
   <metadataRelativePath>Intent.Metadata</metadataRelativePath>
   <modulesCacheRelativePath>.intent/modules</modulesCacheRelativePath>
+  <lastUsedApplicationTemplate id="Intent.ApplicationTemplate.ModuleBuilder" version="3.3.1" />
   <applications>
     <application id="7525049d-c38e-46e8-84a5-ca06fb9f315f" name="Intent.Modules.Java.Services" relativePath="Intent.Modules.Java.Services/Intent.Modules.Java.Services.application.config" />
     <application id="40927c95-a61c-4636-8f22-200ed47e571f" name="Intent.Modules.Java.Domain" relativePath="Intent.Modules.Java.Domain/Intent.Modules.Java.Domain.application.config" />
@@ -21,5 +22,6 @@
     <application id="2a056a85-a105-4062-b43c-b434e72dff8b" name="Intent.Modules.Java.Spring.Cors" relativePath="Intent.Modules.Java.Spring.Cors/Intent.Modules.Java.Spring.Cors.application.config" />
     <application id="107906ee-a9fd-4272-818a-28912b7ad043" name="Intent.Modules.Java.Services.CRUD" relativePath="Intent.Modules.Java.Services.CRUD/Intent.Modules.Java.Services.CRUD.application.config" />
     <application id="591f2bfb-b70f-4d42-977f-333a15ee80ab" name="ApplicationTemplates.Java.Metadata" relativePath="ApplicationTemplates.Java.Metadata/ApplicationTemplates.Java.Metadata.application.config" />
+    <application id="91e4276a-bdfd-4c88-9e51-7edf9d77d9f5" name="Intent.Modules.Java.Persistence.JPA.CustomQueries" relativePath="Intent.Modules.Java.Persistence.JPA.CustomQueries/Intent.Modules.Java.Persistence.JPA.CustomQueries.application.config" />
   </applications>
 </solution>

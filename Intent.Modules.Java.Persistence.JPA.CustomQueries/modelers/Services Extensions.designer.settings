@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<settings version="3.1.1">
+  <id>d0a0818c-da04-4526-bf66-cb3238cd7d59</id>
+  <name>Services Extensions</name>
+  <designerReferences />
+  <packageSettings />
+  <packageExtensions />
+  <elementSettings />
+  <elementExtensions>
+    <elementExtension type="DTO-Field" typeId="7baed1fd-469b-4980-8fd9-4cefb8331eb2">
+      <mappingSettings />
+      <typeReferenceSetting>
+        <isRequired>true</isRequired>
+        <targetTypes>
+          <type>DTO</type>
+          <type>Type-Definition</type>
+          <type>Enum</type>
+          <type>Custom Query</type>
+        </targetTypes>
+        <allowIsNavigable>inherit</allowIsNavigable>
+        <allowIsNullable>inherit</allowIsNullable>
+        <allowIsCollection>inherit</allowIsCollection>
+      </typeReferenceSetting>
+    </elementExtension>
+    <elementExtension type="Operation" typeId="e030c97a-e066-40a7-8188-808c275df3cb">
+      <mappingSettings />
+      <typeReferenceSetting>
+        <isRequired>true</isRequired>
+        <targetTypes>
+          <type>DTO</type>
+          <type>Type-Definition</type>
+          <type>Enum</type>
+          <type>Custom Query</type>
+        </targetTypes>
+        <allowIsNavigable>inherit</allowIsNavigable>
+        <allowIsNullable>inherit</allowIsNullable>
+        <allowIsCollection>inherit</allowIsCollection>
+      </typeReferenceSetting>
+    </elementExtension>
+  </elementExtensions>
+  <associationSettings />
+  <associationExtensions />
+</settings>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<class id="36af3c8b-4ee4-4ac0-9669-20e82b8764a0" type="Template Decorator" typeId="f0f46278-29ea-42bd-9206-0e7034f623bc">
+  <name>QueryServiceImplementationDecorator</name>
+  <display>QueryServiceImplementationDecorator: ServiceImplementationDecorator</display>
+  <isAbstract>false</isAbstract>
+  <genericTypes />
+  <typeReference id="d5fdae07-53d0-41cf-8364-c570c58bf63c">
+    <typeId>190a0466-89ca-49b9-a9ee-c57bc7142a57</typeId>
+    <isNavigable>true</isNavigable>
+    <isNullable>false</isNullable>
+    <isCollection>false</isCollection>
+    <isRequired>true</isRequired>
+    <typePackageName>Intent.Java.Services</typePackageName>
+    <typePackageId>e3481ac6-e429-4423-8eba-b5b1bc890f1b</typePackageId>
+    <stereotypes />
+    <genericTypeParameters />
+  </typeReference>
+  <isMapped>false</isMapped>
+  <parentFolderId>1f412104-d5bd-42a6-9655-ce7e37bad8cb</parentFolderId>
+  <packageId>1f412104-d5bd-42a6-9655-ce7e37bad8cb</packageId>
+  <packageName>Intent.Java.Persistence.JPA.CustomQueries</packageName>
+  <stereotypes />
+  <metadata />
+  <childElements />
+</class>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<stereotypeDefinition id="32cc779f-bde3-4722-bcd2-468ec5af4db2" version="3.1.0">
+  <name>Query Settings</name>
+  <targetMode>of-type</targetMode>
+  <targetTypes>
+    <type id="174c0034-1b66-4042-834c-cfb1e05df263">Custom Query</type>
+  </targetTypes>
+  <targetReferenceTypes />
+  <applyMode>always</applyMode>
+  <icon type="FontAwesome" source="cogs" />
+  <displayIcon>false</displayIcon>
+  <displayFunction />
+  <displayAsAnnotation>false</displayAsAnnotation>
+  <displayAsText>true</displayAsText>
+  <autoAdd>false</autoAdd>
+  <allowMultipleApplies>false</allowMultipleApplies>
+  <parentFolderId>16ca8a57-4b1f-49fe-b42c-f44fa45059d9</parentFolderId>
+  <order>0</order>
+  <packageId>1f412104-d5bd-42a6-9655-ce7e37bad8cb</packageId>
+  <packageName>Intent.Java.Persistence.JPA.CustomQueries</packageName>
+  <properties>
+    <property id="5c3ddbb3-d23c-4ac3-9ff1-3775d5e5054b">
+      <hint>The name of type to generate for the result.</hint>
+      <name>View Name</name>
+      <type>string</type>
+      <controlType>text</controlType>
+      <optionsSource>n/a</optionsSource>
+      <placeholder />
+      <valueOptions />
+      <lookupTypes />
+      <isActiveFunction>function hasColumnIncludedInResult(element) {
+    if (element.specialization === "Column" &amp;&amp;
+        element.getStereotype("Column Settings")?.getProperty("Include in result")?.value) {
+        return true;
+    }
+
+    return element.getChildren().some(hasColumnIncludedInResult);
+}
+
+return element.getChildren().some(hasColumnIncludedInResult);</isActiveFunction>
+      <isRequiredFunction>return true;</isRequiredFunction>
+    </property>
+    <property id="27210b76-23f7-4e9c-82ee-c484d5b8b493">
+      <name>Returns Collection</name>
+      <type>string</type>
+      <controlType>checkbox</controlType>
+      <optionsSource>n/a</optionsSource>
+      <placeholder />
+      <defaultValue>true</defaultValue>
+      <valueOptions />
+      <lookupTypes />
+    </property>
+    <property id="f8b2f52f-057a-4fa4-a746-15146498b43d">
+      <name>Alias</name>
+      <type>string</type>
+      <controlType>text</controlType>
+      <optionsSource>n/a</optionsSource>
+      <placeholder />
+      <valueOptions />
+      <lookupTypes />
+    </property>
+    <property id="9ad084e6-4fe0-43df-ac5b-5d138da1d9c6">
+      <name>Distinct</name>
+      <type>string</type>
+      <controlType>checkbox</controlType>
+      <optionsSource>n/a</optionsSource>
+      <placeholder />
+      <defaultValue>false</defaultValue>
+      <valueOptions />
+      <lookupTypes />
+      <isActiveFunction>return element.getChildren().some(element =&gt; {
+    if (element.specialization !== "Column") {
+        return false;
+    }
+
+    var stereotype = element.getStereotype("Column Settings");
+    if (stereotype == null) {
+        return false;
+    }
+
+    return stereotype.getProperty("Include in result").value;
+});</isActiveFunction>
+    </property>
+  </properties>
+</stereotypeDefinition>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<class id="8da96107-d730-4f4a-b200-df10abe24445" type="Template Decorator" typeId="f0f46278-29ea-42bd-9206-0e7034f623bc">
+  <name>QueryDataTransferModelDecorator</name>
+  <display>QueryDataTransferModelDecorator: DataTransferModelDecorator</display>
+  <isAbstract>false</isAbstract>
+  <genericTypes />
+  <typeReference id="d01463c8-4e8c-4bd7-a447-05a89f331152">
+    <typeId>be604817-d78c-4648-ab9f-7d9879bf0eff</typeId>
+    <isNavigable>true</isNavigable>
+    <isNullable>false</isNullable>
+    <isCollection>false</isCollection>
+    <isRequired>true</isRequired>
+    <typePackageName>Intent.Java.Services</typePackageName>
+    <typePackageId>e3481ac6-e429-4423-8eba-b5b1bc890f1b</typePackageId>
+    <stereotypes />
+    <genericTypeParameters />
+  </typeReference>
+  <isMapped>false</isMapped>
+  <parentFolderId>1f412104-d5bd-42a6-9655-ce7e37bad8cb</parentFolderId>
+  <packageId>1f412104-d5bd-42a6-9655-ce7e37bad8cb</packageId>
+  <packageName>Intent.Java.Persistence.JPA.CustomQueries</packageName>
+  <stereotypes />
+  <metadata />
+  <childElements />
+</class>
