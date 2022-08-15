@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Intent.Modules.Common" Version="3.3.9" />
+    <PackageReference Include="Intent.Modules.Common" Version="3.3.10" />
     <PackageReference Include="Intent.Modules.Common.Java" Version="3.3.7" />
     <PackageReference Include="Intent.Packager" Version="3.3.1">
       <PrivateAssets>all</PrivateAssets>

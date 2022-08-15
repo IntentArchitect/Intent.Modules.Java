@@ -15,7 +15,7 @@
   <decorators></decorators>
   <factoryExtensions></factoryExtensions>
   <dependencies>
-    <dependency id="Intent.Common" version="3.3.9" />
+    <dependency id="Intent.Common" version="3.3.10" />
     <dependency id="Intent.Common.Java" version="3.3.7" />
     <dependency id="Intent.Common.Types" version="3.3.4" />
   </dependencies>

@@ -92,7 +92,7 @@ namespace Intent.Modules.Java.Persistence.JPA.Decorators
 
             if (!string.IsNullOrWhiteSpace(fetchType))
             {
-                fetchType = $"fetch = FetchType.{fetchType.ToUpperInvariant()}";
+                fetchType = $"fetch = {_template.ImportType("javax.persistence.FetchType")}.{fetchType.ToUpperInvariant()}";
             }
 
             if (!thatEnd.IsNavigable)

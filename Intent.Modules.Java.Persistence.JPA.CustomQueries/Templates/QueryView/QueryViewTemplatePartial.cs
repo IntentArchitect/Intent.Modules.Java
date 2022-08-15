@@ -63,7 +63,7 @@ namespace Intent.Modules.Java.Persistence.JPA.CustomQueries.Templates.QueryView
         {
             return new JavaFileConfig(
                 className: $"{Model.GetQuerySettings().ViewName()}",
-                package: $"{OutputTarget.GetPackage()}",
+                package: $"{OutputTarget.GetPackage()}.{Model.InternalElement.ParentElement.Name.ToJavaPackage()}",
                 relativeLocation: this.GetFolderPath(Model.InternalElement.ParentElement.Name)
             );
         }

@@ -25,7 +25,7 @@
     <elementExtension type="Operation" typeId="e030c97a-e066-40a7-8188-808c275df3cb">
       <mappingSettings />
       <typeReferenceSetting>
-        <isRequired>true</isRequired>
+        <isRequired>false</isRequired>
         <targetTypes>
           <type>DTO</type>
           <type>Type-Definition</type>

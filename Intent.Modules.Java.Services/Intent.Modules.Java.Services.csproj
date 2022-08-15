@@ -53,7 +53,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Intent.Modules.Common" Version="3.3.9" />
+    <PackageReference Include="Intent.Modules.Common" Version="3.3.10" />
     <PackageReference Include="Intent.Modules.Common.Java" Version="3.3.7" />
     <PackageReference Include="Intent.Modules.Common.Types" Version="3.3.4" />
     <PackageReference Include="Intent.Modules.Java.Weaving.Annotations" Version="3.3.2" />

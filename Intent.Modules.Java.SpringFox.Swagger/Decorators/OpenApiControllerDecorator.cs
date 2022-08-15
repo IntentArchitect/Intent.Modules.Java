@@ -39,14 +39,14 @@ namespace Intent.Modules.Java.SpringFox.Swagger.Decorators
                 options.Add("description", $"\"{_template.Model.InternalElement.Comment}\"");
             }
 
-            yield return $"@{_template.ImportType("io.swagger.annotations.Api")}(name = {string.Join(", ", options.Select(x => $"{x.Key} = {x.Value}"))})";
+            yield return $"@{_template.ImportType("io.swagger.annotations.Api")}({string.Join(", ", options.Select(x => $"{x.Key} = {x.Value}"))})";
 
             var securityRequirements = _template.Model.GetOpenAPISettings()?.SecurityRequirement();
             if (!string.IsNullOrWhiteSpace(securityRequirements))
             {
                 foreach (var securityRequirement in securityRequirements.Split(',').Where(requirement => !string.IsNullOrWhiteSpace(requirement)))
                 {
-                    yield return $"@{_template.ImportType("io.swagger.v3.oas.annotations.security.SecurityRequirement")}(\"{securityRequirement.Trim()}\")";
+                    yield return $"@{_template.ImportType("io.swagger.v3.oas.annotations.security.SecurityRequirement")}(name = \"{securityRequirement.Trim()}\")";
                 }
             }
         }

@@ -52,7 +52,7 @@ namespace Intent.Modules.Java.Persistence.JPA.CustomQueries.Decorators
                 var includedColumns = new List<string>();
                 var whereClauses = new List<string>();
 
-                void Visit(IElement element, string tableNameOrAlias = null)
+                void Visit(IElement element, string alias = null)
                 {
                     switch (element.SpecializationTypeId)
                     {
@@ -60,11 +60,9 @@ namespace Intent.Modules.Java.Persistence.JPA.CustomQueries.Decorators
                             {
                                 var model = element.AsCustomQueryModel();
                                 var tableName = model.InternalElement.ParentElement.Name.ToPascalCase();
-                                var alias = model.GetQuerySettings()?.Alias();
-
-                                tableNameOrAlias = !string.IsNullOrWhiteSpace(alias)
-                                    ? alias
-                                    : tableName;
+                                
+                                alias = model.GetQuerySettings()?.Alias();
+                                if (string.IsNullOrWhiteSpace(alias)) alias = tableName;
 
                                 tables.Add((tableName, alias));
                                 break;
@@ -72,12 +70,10 @@ namespace Intent.Modules.Java.Persistence.JPA.CustomQueries.Decorators
                         case JoinedTableModel.SpecializationTypeId:
                             {
                                 var model = element.AsJoinedTableModel();
-                                var tableName = $"{tableNameOrAlias}.{model.InternalElement.MappedElement?.Element.Name.ToCamelCase()}";
-                                var alias = model.GetJoinSettings()?.Alias();
+                                var tableName = $"{alias}.{model.InternalElement.MappedElement?.Element.Name.ToCamelCase()}";
 
-                                tableNameOrAlias = !string.IsNullOrWhiteSpace(alias)
-                                    ? alias
-                                    : tableName;
+                                alias = model.GetJoinSettings()?.Alias();
+                                if (string.IsNullOrWhiteSpace(alias)) alias = tableName;
 
                                 tables.Add((tableName, alias));
                                 break;
@@ -88,15 +84,15 @@ namespace Intent.Modules.Java.Persistence.JPA.CustomQueries.Decorators
 
                                 if (model.GetColumnSettings().IncludeInResult())
                                 {
-                                    includedColumns.Add($"{GetMappingPath(model, tableNameOrAlias)} as {model.Name}");
+                                    includedColumns.Add($"{GetMappingPath(model, alias)} as {model.Name}");
                                 }
 
                                 if (!string.IsNullOrWhiteSpace(model.GetColumnSettings().WhereClauseCriteriaType().Value))
                                 {
                                     whereClauses.Add(model.GetColumnSettings().WhereClauseCriteriaType().AsEnum() switch
                                     {
-                                        WhereClauseCriteriaType.Parameter => $"{GetMappingPath(model, tableNameOrAlias)} = :{model.GetColumnSettings().WhereClauseParameterCriteria().Name}",
-                                        WhereClauseCriteriaType.Custom => $"{GetMappingPath(model, tableNameOrAlias)} = {model.GetColumnSettings().WhereClauseCustomCriteria()}",
+                                        WhereClauseCriteriaType.Parameter => $"{GetMappingPath(model, alias)} = :{model.GetColumnSettings().WhereClauseParameterCriteria().Name}",
+                                        WhereClauseCriteriaType.Custom => $"{GetMappingPath(model, alias)} = {model.GetColumnSettings().WhereClauseCustomCriteria()}",
                                         _ => throw new ArgumentOutOfRangeException()
                                     });
                                 }
@@ -107,7 +103,7 @@ namespace Intent.Modules.Java.Persistence.JPA.CustomQueries.Decorators
 
                     foreach (var childElement in element.ChildElements.OrderBy(x => x.IsColumnModel() ? 0 : 1))
                     {
-                        Visit(childElement, tableNameOrAlias);
+                        Visit(childElement, alias);
                     }
                 }
 

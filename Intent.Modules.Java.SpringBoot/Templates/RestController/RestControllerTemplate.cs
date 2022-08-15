@@ -161,14 +161,8 @@ namespace Intent.Modules.Java.SpringBoot.Templates.RestController
             
             #line default
             #line hidden
-            this.Write("        if (result == null) {\r\n            return new ");
-            
-            #line 40 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.SpringBoot\Templates\RestController\RestControllerTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(GetReturnType(operation)));
-            
-            #line default
-            #line hidden
-            this.Write("(HttpStatus.NOT_FOUND);\r\n        }\r\n");
+            this.Write("        if (result == null) {\r\n            return new ResponseEntity<>(HttpStatus" +
+                    ".NOT_FOUND);\r\n        }\r\n");
             
             #line 42 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.SpringBoot\Templates\RestController\RestControllerTemplate.tt"
           } 
@@ -181,14 +175,8 @@ namespace Intent.Modules.Java.SpringBoot.Templates.RestController
             
             #line default
             #line hidden
-            this.Write("        if (result.isEmpty()) {\r\n            return new ");
-            
-            #line 45 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.SpringBoot\Templates\RestController\RestControllerTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(GetReturnType(operation)));
-            
-            #line default
-            #line hidden
-            this.Write("(HttpStatus.NOT_FOUND);\r\n        }\r\n");
+            this.Write("        if (result.isEmpty()) {\r\n            return new ResponseEntity<>(HttpStat" +
+                    "us.NOT_FOUND);\r\n        }\r\n");
             
             #line 47 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.SpringBoot\Templates\RestController\RestControllerTemplate.tt"
           } 
@@ -265,7 +253,14 @@ namespace Intent.Modules.Java.SpringBoot.Templates.RestController
             
             #line default
             #line hidden
-            this.Write("            throw new ResponseStatusException(");
+            this.Write("            throw new ");
+            
+            #line 63 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.SpringBoot\Templates\RestController\RestControllerTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(ImportType("org.springframework.web.server.ResponseStatusException")));
+            
+            #line default
+            #line hidden
+            this.Write("(");
             
             #line 63 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.SpringBoot\Templates\RestController\RestControllerTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(ImportType("org.springframework.http.HttpStatus")));
@@ -279,7 +274,7 @@ namespace Intent.Modules.Java.SpringBoot.Templates.RestController
             
             #line default
             #line hidden
-            this.Write(">);\r\n");
+            this.Write(");\r\n");
             
             #line 64 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.SpringBoot\Templates\RestController\RestControllerTemplate.tt"
           } 

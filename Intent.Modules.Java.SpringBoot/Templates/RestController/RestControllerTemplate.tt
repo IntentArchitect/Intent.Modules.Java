@@ -37,12 +37,12 @@ public class <#= ClassName #> {
         final <#= GetTypeName(operation) #> result = <#= GetServiceInterfaceName().ToCamelCase() #>.<#= operation.Name #>(<#= this.GetArguments(operation.Parameters) #>);
 <#          if (!operation.ReturnType.IsNullable && !GetTypeInfo(operation.ReturnType).IsPrimitive && !operation.ReturnType.IsCollection) { #>
         if (result == null) {
-            return new <#= GetReturnType(operation) #>(HttpStatus.NOT_FOUND);
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
 <#          } #>
 <#          if (!operation.ReturnType.IsNullable && operation.ReturnType.IsCollection) { #>
         if (result.isEmpty()) {
-            return new <#= GetReturnType(operation) #>(HttpStatus.NOT_FOUND);
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
 <#          } #>
         return new ResponseEntity<>(result, <#= GetHttpResponseCode() #>);
@@ -60,7 +60,7 @@ public class <#= ClassName #> {
                 if (checkedException.Log) { #>
             log.error(e.getMessage(), e);
 <#              } #>
-            throw new ResponseStatusException(<#= ImportType("org.springframework.http.HttpStatus") #>.<#= checkedException.HttpStatus #>>);
+            throw new <#= ImportType("org.springframework.web.server.ResponseStatusException") #>(<#= ImportType("org.springframework.http.HttpStatus") #>.<#= checkedException.HttpStatus #>);
 <#          } #>
         }
 <#      } #>
