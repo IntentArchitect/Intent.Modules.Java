@@ -31,7 +31,8 @@ namespace Intent.Modules.Java.ModelMapper.Templates.ModelMapperBean
         {
             return new JavaFileConfig(
                 className: $"ModelMapperBean",
-                package: $"{OutputTarget.GetPackage()}"
+                package: OutputTarget.GetPackage(),
+                relativeLocation: OutputTarget.GetPackageFolderPath()
             );
         }
 

@@ -28,7 +28,8 @@ namespace Intent.Modules.Java.Weaving.Annotations.Templates.IntentCanUpdate
         {
             return new JavaFileConfig(
                 className: $"IntentCanUpdate",
-                package: $"{OutputTarget.GetPackage()}"
+                package: OutputTarget.GetPackage(),
+                relativeLocation: OutputTarget.GetPackageFolderPath()
             );
         }
 

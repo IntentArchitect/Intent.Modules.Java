@@ -28,7 +28,8 @@ namespace Intent.Modules.Java.Weaving.Annotations.Templates.IntentIgnoreBody
         {
             return new JavaFileConfig(
                 className: $"IntentIgnoreBody",
-                package: $"{OutputTarget.GetPackage()}"
+                package: OutputTarget.GetPackage(),
+                relativeLocation: OutputTarget.GetPackageFolderPath()
             );
         }
 

@@ -28,7 +28,8 @@ namespace Intent.Modules.Java.Weaving.Annotations.Templates.IntentCanAdd
         {
             return new JavaFileConfig(
                 className: $"IntentCanAdd",
-                package: $"{OutputTarget.GetPackage()}"
+                package: OutputTarget.GetPackage(),
+                relativeLocation: OutputTarget.GetPackageFolderPath()
             );
         }
 

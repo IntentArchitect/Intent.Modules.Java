@@ -43,7 +43,8 @@ namespace Intent.Modules.Java.SpringBoot.Templates.RestController
         {
             return new JavaFileConfig(
                 className: $"{RootName}Controller",
-                package: $"{OutputTarget.GetPackage()}"
+                package: this.GetPackage(),
+                relativeLocation: this.GetPackageFolderPath()
             );
         }
 

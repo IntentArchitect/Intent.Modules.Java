@@ -36,7 +36,8 @@ namespace Intent.Modules.Java.Services.Templates.DataTransferModel
         {
             return new JavaFileConfig(
                 className: $"{Model.Name}",
-                package: $"{OutputTarget.GetPackage()}"
+                package: this.GetPackage(),
+                relativeLocation: this.GetPackageFolderPath()
             );
         }
 

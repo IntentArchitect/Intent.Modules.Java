@@ -35,7 +35,8 @@ namespace Intent.Modules.Java.Services.Templates.ServiceImplementation
         {
             return new JavaFileConfig(
                 className: $"{Model.Name.RemoveSuffix("Controller", "Service")}ServiceImpl",
-                package: $"{OutputTarget.GetPackage()}"
+                package: this.GetPackage(),
+                relativeLocation: this.GetPackageFolderPath()
             );
         }
 

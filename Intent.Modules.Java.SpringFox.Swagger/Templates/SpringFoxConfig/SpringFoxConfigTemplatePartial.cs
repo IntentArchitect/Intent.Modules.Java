@@ -30,7 +30,8 @@ namespace Intent.Modules.Java.SpringFox.Swagger.Templates.SpringFoxConfig
         {
             return new JavaFileConfig(
                 className: $"SpringFoxConfig",
-                package: $"{OutputTarget.GetPackage()}"
+                package: OutputTarget.GetPackage(),
+                relativeLocation: OutputTarget.GetPackageFolderPath()
             );
         }
 

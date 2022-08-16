@@ -28,7 +28,8 @@ namespace Intent.Modules.Java.Weaving.Annotations.Templates.IntentCanRemove
         {
             return new JavaFileConfig(
                 className: $"IntentCanRemove",
-                package: $"{OutputTarget.GetPackage()}"
+                package: OutputTarget.GetPackage(),
+                relativeLocation: OutputTarget.GetPackageFolderPath()
             );
         }
 

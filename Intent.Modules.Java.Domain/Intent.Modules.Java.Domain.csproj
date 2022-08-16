@@ -30,7 +30,7 @@
 
   <ItemGroup>
     <PackageReference Include="Intent.Modules.Common" Version="3.3.10" />
-    <PackageReference Include="Intent.Modules.Common.Java" Version="3.3.7" />
+    <PackageReference Include="Intent.Modules.Common.Java" Version="3.3.8-pre.1" />
     <PackageReference Include="Intent.Modules.Java.Weaving.Annotations" Version="3.3.2" />
     <PackageReference Include="Intent.Modules.Modelers.Domain" Version="3.3.5" />
     <PackageReference Include="Intent.Packager" Version="3.3.1">
