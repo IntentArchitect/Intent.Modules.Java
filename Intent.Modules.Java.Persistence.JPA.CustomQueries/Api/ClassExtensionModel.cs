@@ -12,10 +12,10 @@ using Intent.RoslynWeaver.Attributes;
 namespace Intent.Java.Persistence.JPA.CustomQueries.Api
 {
     [IntentManaged(Mode.Fully, Signature = Mode.Fully)]
-    public class ClassExtensionsModel : ClassModel
+    public class ClassExtensionModel : ClassModel
     {
         [IntentManaged(Mode.Fully, Body = Mode.Ignore)]
-        public ClassExtensionsModel(IElement element) : base(element)
+        public ClassExtensionModel(IElement element) : base(element)
         {
         }
 

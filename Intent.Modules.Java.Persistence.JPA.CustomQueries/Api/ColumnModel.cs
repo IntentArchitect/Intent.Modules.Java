@@ -14,7 +14,7 @@ namespace Intent.Java.Persistence.JPA.CustomQueries.Api
     public class ColumnModel : IMetadataModel, IHasStereotypes, IHasName, IHasTypeReference
     {
         public const string SpecializationType = "Column";
-        public const string SpecializationTypeId = "626e0881-381a-4cd5-9b66-ea7d2279fa15";
+        public const string SpecializationTypeId = "c00ed838-f31f-48e8-a3bc-6eb4a892584d";
         protected readonly IElement _element;
 
         [IntentManaged(Mode.Fully)]
@@ -38,11 +38,6 @@ namespace Intent.Java.Persistence.JPA.CustomQueries.Api
         public ITypeReference TypeReference => _element.TypeReference;
 
         public IElement InternalElement => _element;
-
-        public IList<JoinedTableModel> JoinedTables => _element.ChildElements
-            .GetElementsOfType(JoinedTableModel.SpecializationTypeId)
-            .Select(x => new JoinedTableModel(x))
-            .ToList();
 
         public override string ToString()
         {

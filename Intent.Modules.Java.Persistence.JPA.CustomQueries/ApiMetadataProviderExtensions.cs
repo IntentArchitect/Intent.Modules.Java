@@ -18,5 +18,12 @@ namespace Intent.Java.Persistence.JPA.CustomQueries.Api
                 .ToList();
         }
 
+        public static IList<QueryResultModel> GetQueryResultModels(this IDesigner designer)
+        {
+            return designer.GetElementsOfType(QueryResultModel.SpecializationTypeId)
+                .Select(x => new QueryResultModel(x))
+                .ToList();
+        }
+
     }
 }

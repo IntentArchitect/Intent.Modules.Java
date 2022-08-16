@@ -28,7 +28,7 @@
         <property name="35226a83-3965-4224-8aef-20c68a0c5180" display="Mode" value="Optional" isActive="true" />
         <property name="7d3859d4-084d-4ff0-8b31-850b4a8f8cd0" display="Display Name" isActive="true" />
         <property name="17223dbd-8df0-4700-8b81-02274ca3ed7f" display="Hint" isActive="true" />
-        <property name="b2cef034-5706-45d2-8554-f4dc582a18ff" display="Target Types" value="[&quot;fee0edca-4aa0-4f77-a524-6bbd84e78734&quot;,&quot;d4e577cd-ad05-4180-9a2e-fff4ddea0e1e&quot;,&quot;85fba0e9-9161-4c85-a603-a229ef312beb&quot;,&quot;174c0034-1b66-4042-834c-cfb1e05df263&quot;]" isActive="true" />
+        <property name="b2cef034-5706-45d2-8554-f4dc582a18ff" display="Target Types" value="[&quot;fee0edca-4aa0-4f77-a524-6bbd84e78734&quot;,&quot;d4e577cd-ad05-4180-9a2e-fff4ddea0e1e&quot;,&quot;85fba0e9-9161-4c85-a603-a229ef312beb&quot;,&quot;b8819c07-fa52-4e38-a92c-439e21220c55&quot;]" isActive="true" />
         <property name="93e4efa9-186d-4e88-ae0a-491bcd6e6f5e" display="Default Type Id" isActive="true" />
         <property name="7a0c4185-1c08-4d3e-9185-14683d7a3bd0" display="Allow Collection" value="Inherit" isActive="true" />
         <property name="e3dc90ec-4f5f-4f20-b271-e28a5094dc91" display="Allow Nullable" value="Inherit" isActive="true" />

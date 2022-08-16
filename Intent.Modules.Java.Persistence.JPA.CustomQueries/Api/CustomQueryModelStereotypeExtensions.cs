@@ -47,19 +47,9 @@ namespace Intent.Java.Persistence.JPA.CustomQueries.Api
 
             public string Name => _stereotype.Name;
 
-            public string ViewName()
+            public string TableAlias()
             {
-                return _stereotype.GetProperty<string>("View Name");
-            }
-
-            public bool ReturnsCollection()
-            {
-                return _stereotype.GetProperty<bool>("Returns Collection");
-            }
-
-            public string Alias()
-            {
-                return _stereotype.GetProperty<string>("Alias");
+                return _stereotype.GetProperty<string>("Table Alias");
             }
 
             public bool Distinct()

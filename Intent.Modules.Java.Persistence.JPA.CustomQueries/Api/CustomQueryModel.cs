@@ -11,10 +11,10 @@ using Intent.RoslynWeaver.Attributes;
 namespace Intent.Java.Persistence.JPA.CustomQueries.Api
 {
     [IntentManaged(Mode.Fully, Signature = Mode.Fully)]
-    public class CustomQueryModel : IMetadataModel, IHasStereotypes, IHasName
+    public class CustomQueryModel : IMetadataModel, IHasStereotypes, IHasName, IHasTypeReference
     {
         public const string SpecializationType = "Custom Query";
-        public const string SpecializationTypeId = "174c0034-1b66-4042-834c-cfb1e05df263";
+        public const string SpecializationTypeId = "4276d179-00df-4105-bad6-a467a06a799b";
         protected readonly IElement _element;
 
         [IntentManaged(Mode.Fully)]
@@ -35,20 +35,17 @@ namespace Intent.Java.Persistence.JPA.CustomQueries.Api
 
         public IEnumerable<IStereotype> Stereotypes => _element.Stereotypes;
 
+        public ITypeReference TypeReference => _element.TypeReference;
+
         public bool IsMapped => _element.IsMapped;
 
         public IElementMapping Mapping => _element.MappedElement;
 
         public IElement InternalElement => _element;
 
-        public IList<ColumnModel> Columns => _element.ChildElements
-            .GetElementsOfType(ColumnModel.SpecializationTypeId)
-            .Select(x => new ColumnModel(x))
-            .ToList();
-
-        public IList<QueryParameterModel> Parameters => _element.ChildElements
-            .GetElementsOfType(QueryParameterModel.SpecializationTypeId)
-            .Select(x => new QueryParameterModel(x))
+        public IList<ParameterModel> Parameters => _element.ChildElements
+            .GetElementsOfType(ParameterModel.SpecializationTypeId)
+            .Select(x => new ParameterModel(x))
             .ToList();
 
         public override string ToString()
@@ -89,14 +86,14 @@ namespace Intent.Java.Persistence.JPA.CustomQueries.Api
             return type.IsCustomQueryModel() ? new CustomQueryModel((IElement)type) : null;
         }
 
-        public static bool HasMapFromDomainMapping(this CustomQueryModel type)
+        public static bool HasMapParametersMapping(this CustomQueryModel type)
         {
-            return type.Mapping?.MappingSettingsId == "27656313-0a7d-4fb1-ba8a-013cf8ee5263";
+            return type.Mapping?.MappingSettingsId == "2290d513-2fd9-4425-8f88-14e17c008162";
         }
 
-        public static IElementMapping GetMapFromDomainMapping(this CustomQueryModel type)
+        public static IElementMapping GetMapParametersMapping(this CustomQueryModel type)
         {
-            return type.HasMapFromDomainMapping() ? type.Mapping : null;
+            return type.HasMapParametersMapping() ? type.Mapping : null;
         }
     }
 }

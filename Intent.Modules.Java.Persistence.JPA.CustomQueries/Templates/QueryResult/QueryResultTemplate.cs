@@ -7,11 +7,10 @@ using Intent.RoslynWeaver.Attributes;
 [assembly: DefaultIntentManaged(Mode.Fully)]
 [assembly:IntentTemplate("Intent.ModuleBuilder.Java.Templates.JavaFileStringInterpolationTemplate",Version= "1.0")]
 
-namespace Intent.Modules.Java.Persistence.JPA.CustomQueries.Templates.QueryView
+namespace Intent.Modules.Java.Persistence.JPA.CustomQueries.Templates.QueryResult
 {
     [IntentManaged(Mode.Fully, Body = Mode.Merge)]
-    public partial class QueryViewTemplate
-    {
+    public partial class QueryResultTemplate    {
         [IntentManaged(Mode.Fully, Body = Mode.Ignore)]
         public override string TransformText()
         {
@@ -25,9 +24,9 @@ public interface {ClassName} {{{string.Join(Environment.NewLine, GetMembers())}
 
         private IEnumerable<string> GetMembers()
         {
-            return GetFields()
-                .Select(field => @$"
-    {GetTypeName(field)} get{field.Name.ToPascalCase()}();");
+            return Model.Columns
+                .Select(column => @$"
+    {GetTypeName(column)} get{column.Name.ToPascalCase()}();");
         }
     }
 }

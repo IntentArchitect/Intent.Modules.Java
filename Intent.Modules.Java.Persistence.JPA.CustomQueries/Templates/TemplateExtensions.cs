@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 using Intent.Modules.Common.Templates;
-using Intent.Modules.Java.Persistence.JPA.CustomQueries.Templates.QueryView;
+using Intent.Modules.Java.Persistence.JPA.CustomQueries.Templates.QueryResult;
 using Intent.RoslynWeaver.Attributes;
 
 [assembly: DefaultIntentManaged(Mode.Fully)]
@@ -11,14 +11,14 @@ namespace Intent.Modules.Java.Persistence.JPA.CustomQueries.Templates
 {
     public static class TemplateExtensions
     {
-        public static string GetQueryViewName<T>(this IntentTemplateBase<T> template) where T : Intent.Java.Persistence.JPA.CustomQueries.Api.CustomQueryModel
+        public static string GetQueryResultName<T>(this IntentTemplateBase<T> template) where T : Intent.Java.Persistence.JPA.CustomQueries.Api.QueryResultModel
         {
-            return template.GetTypeName(QueryViewTemplate.TemplateId, template.Model);
+            return template.GetTypeName(QueryResultTemplate.TemplateId, template.Model);
         }
 
-        public static string GetQueryViewName(this IntentTemplateBase template, Intent.Java.Persistence.JPA.CustomQueries.Api.CustomQueryModel model)
+        public static string GetQueryResultName(this IntentTemplateBase template, Intent.Java.Persistence.JPA.CustomQueries.Api.QueryResultModel model)
         {
-            return template.GetTypeName(QueryViewTemplate.TemplateId, model);
+            return template.GetTypeName(QueryResultTemplate.TemplateId, model);
         }
 
     }

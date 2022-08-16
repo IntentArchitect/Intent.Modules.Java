@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using Intent.Engine;
 using Intent.Java.Persistence.JPA.CustomQueries.Api;
 using Intent.Metadata.Models;
@@ -10,7 +11,6 @@ using Intent.Modules.Java.Domain.Templates;
 using Intent.Modules.Java.Persistence.JPA.CustomQueries.Templates;
 using Intent.Modules.Java.Spring.Data.Repositories.Templates.EntityRepository;
 using Intent.RoslynWeaver.Attributes;
-using WhereClauseCriteriaType = Intent.Java.Persistence.JPA.CustomQueries.Api.ColumnModelStereotypeExtensions.ColumnSettings.WhereClauseCriteriaTypeOptionsEnum;
 
 [assembly: DefaultIntentManaged(Mode.Fully)]
 [assembly: IntentTemplate("Intent.ModuleBuilder.Templates.TemplateDecorator", Version = "1.0")]
@@ -18,7 +18,7 @@ using WhereClauseCriteriaType = Intent.Java.Persistence.JPA.CustomQueries.Api.Co
 namespace Intent.Modules.Java.Persistence.JPA.CustomQueries.Decorators
 {
     [IntentManaged(Mode.Merge)]
-    public class EntityRepositoryQueryDecorator : EntityRepositoryDecorator
+    public partial class EntityRepositoryQueryDecorator : EntityRepositoryDecorator
     {
         [IntentManaged(Mode.Fully)]
         public const string DecoratorId = "Intent.Java.Persistence.JPA.CustomQueries.EntityRepositoryQueryDecorator";
@@ -37,89 +37,117 @@ namespace Intent.Modules.Java.Persistence.JPA.CustomQueries.Decorators
 
         public override IEnumerable<string> GetMembers()
         {
-            static string GetMappingPath(ColumnModel columnModel, string tableNameOrAlias)
-            {
-                var path = columnModel.InternalElement.MappedElement.Path
-                    .Where(x => x.Specialization != GeneralizationModel.SpecializationType)
-                    .Select(x => x.Name.ToCamelCase());
-
-                return $"{tableNameOrAlias}.{string.Join('.', path)}";
-            }
-
-            static (IReadOnlyList<(string Name, string Alias)> Tables, IReadOnlyList<string> IncludedColumns, IReadOnlyList<string> WhereClauses) GetData(CustomQueryModel model)
+            static CustomQueryData GetCustomQueryData(CustomQueryModel customQuery, EntityRepositoryTemplate template)
             {
                 var tables = new List<(string Name, string Alias)>();
-                var includedColumns = new List<string>();
+                var columns = new List<string>();
                 var whereClauses = new List<string>();
+                var parameters = new List<string>();
+                var queryResult = customQuery.TypeReference.Element.AsQueryResultModel();
 
-                void Visit(IElement element, string alias = null)
+                // Get "root" table:
                 {
-                    switch (element.SpecializationTypeId)
-                    {
-                        case CustomQueryModel.SpecializationTypeId:
-                            {
-                                var model = element.AsCustomQueryModel();
-                                var tableName = model.InternalElement.ParentElement.Name.ToPascalCase();
-                                
-                                alias = model.GetQuerySettings()?.Alias();
-                                if (string.IsNullOrWhiteSpace(alias)) alias = tableName;
+                    var tableName = customQuery.InternalElement.ParentElement.Name.ToPascalCase();
+                    var tableAlias = customQuery.GetQuerySettings()?.TableAlias();
 
-                                tables.Add((tableName, alias));
-                                break;
-                            }
-                        case JoinedTableModel.SpecializationTypeId:
-                            {
-                                var model = element.AsJoinedTableModel();
-                                var tableName = $"{alias}.{model.InternalElement.MappedElement?.Element.Name.ToCamelCase()}";
-
-                                alias = model.GetJoinSettings()?.Alias();
-                                if (string.IsNullOrWhiteSpace(alias)) alias = tableName;
-
-                                tables.Add((tableName, alias));
-                                break;
-                            }
-                        case ColumnModel.SpecializationTypeId:
-                            {
-                                var model = element.AsColumnModel();
-
-                                if (model.GetColumnSettings().IncludeInResult())
-                                {
-                                    includedColumns.Add($"{GetMappingPath(model, alias)} as {model.Name}");
-                                }
-
-                                if (!string.IsNullOrWhiteSpace(model.GetColumnSettings().WhereClauseCriteriaType().Value))
-                                {
-                                    whereClauses.Add(model.GetColumnSettings().WhereClauseCriteriaType().AsEnum() switch
-                                    {
-                                        WhereClauseCriteriaType.Parameter => $"{GetMappingPath(model, alias)} = :{model.GetColumnSettings().WhereClauseParameterCriteria().Name}",
-                                        WhereClauseCriteriaType.Custom => $"{GetMappingPath(model, alias)} = {model.GetColumnSettings().WhereClauseCustomCriteria()}",
-                                        _ => throw new ArgumentOutOfRangeException()
-                                    });
-                                }
-
-                                break;
-                            }
-                    }
-
-                    foreach (var childElement in element.ChildElements.OrderBy(x => x.IsColumnModel() ? 0 : 1))
-                    {
-                        Visit(childElement, alias);
-                    }
+                    var table = (Name: tableName, Alias: !string.IsNullOrWhiteSpace(tableAlias) ? tableAlias : tableName);
+                    tables.Add(table);
                 }
 
-                Visit(model.InternalElement);
+                foreach (var column in queryResult?.Columns ?? Enumerable.Empty<ColumnModel>())
+                {
+                    if (!column.InternalElement.IsMapped)
+                    {
+                        continue;
+                    }
 
-                return (tables, includedColumns, whereClauses);
+                    var queryPath = new List<string>
+                    {
+                        tables[0].Alias
+                    };
+
+                    foreach (var path in column.InternalElement.MappedElement.Path)
+                    {
+                        if (path.Element is IAssociationEnd associationEnd &&
+                            associationEnd.TypeReference.IsCollection)
+                        {
+                            var table = (Name: $"{string.Join('.', queryPath.Append(associationEnd.Name.ToCamelCase()))}", Alias: associationEnd.Name.Singularize().ToCamelCase());
+                            if (!tables.Contains(table))
+                            {
+                                tables.Add(table);
+                            }
+
+                            queryPath.Clear();
+                            queryPath.Add(table.Alias);
+
+                            continue;
+                        }
+
+                        queryPath.Add(path.Name.ToCamelCase());
+                    }
+
+                    columns.Add($"{string.Join('.', queryPath)} as {column.Name.ToCamelCase()}");
+                }
+
+                foreach (var parameter in customQuery.Parameters)
+                {
+                    var excludeFromParamList = parameter.GetParameterSettings()?.ExcludeFromParameterList() == true;
+                    if (!excludeFromParamList)
+                    {
+                        parameters.Add($"@{template.ImportType("org.springframework.data.repository.query.Param")}(\"{parameter.Name}\") {template.GetTypeName(parameter)} {parameter.Name}");
+                    }
+
+                    if (!parameter.InternalElement.IsMapped)
+                    {
+                        continue;
+                    }
+
+                    var queryPath = new List<string>
+                    {
+                        tables[0].Alias
+                    };
+
+                    foreach (var path in parameter.InternalElement.MappedElement.Path)
+                    {
+                        if (path.Element is IAssociationEnd associationEnd &&
+                            associationEnd.TypeReference.IsCollection)
+                        {
+                            var table = (Name: $"{string.Join('.', queryPath.Append(associationEnd.Name.ToCamelCase()))}", Alias: associationEnd.Name.Singularize().ToCamelCase());
+                            if (!tables.Contains(table))
+                            {
+                                tables.Add(table);
+                            }
+
+                            queryPath.Clear();
+                            queryPath.Add(table.Alias);
+
+                            continue;
+                        }
+
+                        queryPath.Add(path.Name.ToCamelCase());
+                    }
+
+                    var equals = excludeFromParamList
+                        ? parameter.Value
+                        : $":{parameter.Name}";
+                    whereClauses.Add($"{string.Join('.', queryPath)} = {equals}");
+                }
+
+                return new CustomQueryData(tables, columns, whereClauses, parameters);
             }
 
-            foreach (var model in new ClassExtensionsModel(_template.Model.InternalElement).CustomQueries.Where(x => x.IsMapped))
+            foreach (var customQuery in new ClassExtensionModel(_template.Model.InternalElement).CustomQueries.Where(x => x.IsMapped))
             {
-                var distinct = model.GetQuerySettings().Distinct();
-                var (tables, selectColumns, whereClauses) = GetData(model);
+                var distinct = customQuery.GetQuerySettings().Distinct();
+                var (tables, selectColumns, whereClauses, parameters) = GetCustomQueryData(customQuery, _template);
 
                 var lines = new List<string>();
 
-                if (selectColumns.Count > 0)
+                if (customQuery.TypeReference.Element.IsClassModel())
+                {
+                    lines.Add($"select {tables[0].Alias}");
+                }
+                else
                 {
                     lines.Add($"select{(distinct ? " distinct" : string.Empty)}");
 
@@ -129,14 +157,8 @@ namespace Intent.Modules.Java.Persistence.JPA.CustomQueries.Decorators
                         lines.Add($"{selectColumns[i]}{(!isLastItem ? "," : string.Empty)}");
                     }
                 }
-                else
-                {
-                    // If no columns are included in the result, then we select the entity itself
-                    var table = tables[0];
-                    lines.Add($"select {(!string.IsNullOrWhiteSpace(table.Alias) ? table.Alias : table.Name)}");
-                }
 
-                lines.Add($"from {string.Join(" join ", tables.Select(table => $"{table.Name}{(!string.IsNullOrWhiteSpace(table.Alias) ? $" {table.Alias}" : string.Empty)}"))}");
+                lines.Add($"from {string.Join(" join ", tables.Select(table => $"{table.Name} {table.Alias}"))}");
 
                 if (whereClauses.Count > 0)
                 {
@@ -145,20 +167,8 @@ namespace Intent.Modules.Java.Persistence.JPA.CustomQueries.Decorators
 
                 var query = $"\"{string.Join($" \" +{Environment.NewLine}            \"", lines)}\"";
 
-                // If no columns are included in the result, then we return the entity itself
-                var returnType = selectColumns.Count > 0
-                    ? _template.GetQueryViewName(model)
-                    : _template.GetDomainModelName(model.Mapping.Element.AsClassModel());
-
-                var methodReturnType = model.GetQuerySettings().ReturnsCollection()
-                    ? $"{_template.ImportType("java.util.List")}<{returnType}>"
-                    : $"{_template.ImportType("java.util.Optional")}<{returnType}>";
-
-                var parameters = model.Parameters
-                    .Select(parameter => $"@{_template.ImportType("org.springframework.data.repository.query.Param")}(\"{parameter.Name}\") {_template.GetTypeName(parameter)} {parameter.Name}");
-
                 yield return @$"@{_template.ImportType("org.springframework.data.jpa.repository.Query")}({query})
-    {methodReturnType} {model.Name}({string.Join(", ", parameters)});";
+    {_template.GetTypeName(customQuery, $"{_template.ImportType("java.util.List")}<{{0}}>")} {customQuery.Name}({string.Join(", ", parameters)});";
             }
 
             foreach (var member in base.GetMembers())

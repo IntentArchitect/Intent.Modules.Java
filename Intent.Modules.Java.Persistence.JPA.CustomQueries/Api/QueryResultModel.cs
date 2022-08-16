@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Intent.Metadata.Models;
 using Intent.Modules.Common;
+using Intent.Modules.Common.Types.Api;
 using Intent.RoslynWeaver.Attributes;
 
 [assembly: DefaultIntentManaged(Mode.Fully)]
@@ -11,20 +12,21 @@ using Intent.RoslynWeaver.Attributes;
 namespace Intent.Java.Persistence.JPA.CustomQueries.Api
 {
     [IntentManaged(Mode.Fully, Signature = Mode.Fully)]
-    public class JoinedTableMappingModel : IMetadataModel, IHasStereotypes, IHasName
+    public class QueryResultModel : IMetadataModel, IHasStereotypes, IHasName, IHasFolder
     {
-        public const string SpecializationType = "Joined Table Mapping";
-        public const string SpecializationTypeId = "e96d7695-e8ed-470f-8592-f23f3e5713ce";
+        public const string SpecializationType = "Query Result";
+        public const string SpecializationTypeId = "b8819c07-fa52-4e38-a92c-439e21220c55";
         protected readonly IElement _element;
 
         [IntentManaged(Mode.Fully)]
-        public JoinedTableMappingModel(IElement element, string requiredType = SpecializationType)
+        public QueryResultModel(IElement element, string requiredType = SpecializationType)
         {
             if (!requiredType.Equals(element.SpecializationType, StringComparison.InvariantCultureIgnoreCase))
             {
                 throw new Exception($"Cannot create a '{GetType().Name}' from element with specialization type '{element.SpecializationType}'. Must be of type '{SpecializationType}'");
             }
             _element = element;
+            Folder = _element.ParentElement?.SpecializationTypeId == FolderModel.SpecializationTypeId ? new FolderModel(_element.ParentElement) : null;
         }
 
         public string Id => _element.Id;
@@ -34,6 +36,8 @@ namespace Intent.Java.Persistence.JPA.CustomQueries.Api
         public string Comment => _element.Comment;
 
         public IEnumerable<IStereotype> Stereotypes => _element.Stereotypes;
+
+        public FolderModel Folder { get; }
 
         public bool IsMapped => _element.IsMapped;
 
@@ -46,17 +50,12 @@ namespace Intent.Java.Persistence.JPA.CustomQueries.Api
             .Select(x => new ColumnModel(x))
             .ToList();
 
-        public IList<JoinedTableModel> JoinedTables => _element.ChildElements
-            .GetElementsOfType(JoinedTableModel.SpecializationTypeId)
-            .Select(x => new JoinedTableModel(x))
-            .ToList();
-
         public override string ToString()
         {
             return _element.ToString();
         }
 
-        public bool Equals(JoinedTableMappingModel other)
+        public bool Equals(QueryResultModel other)
         {
             return Equals(_element, other?._element);
         }
@@ -66,7 +65,7 @@ namespace Intent.Java.Persistence.JPA.CustomQueries.Api
             if (ReferenceEquals(null, obj)) return false;
             if (ReferenceEquals(this, obj)) return true;
             if (obj.GetType() != this.GetType()) return false;
-            return Equals((JoinedTableMappingModel)obj);
+            return Equals((QueryResultModel)obj);
         }
 
         public override int GetHashCode()
@@ -76,27 +75,27 @@ namespace Intent.Java.Persistence.JPA.CustomQueries.Api
     }
 
     [IntentManaged(Mode.Fully)]
-    public static class JoinedTableMappingModelExtensions
+    public static class QueryResultModelExtensions
     {
 
-        public static bool IsJoinedTableMappingModel(this ICanBeReferencedType type)
+        public static bool IsQueryResultModel(this ICanBeReferencedType type)
         {
-            return type != null && type is IElement element && element.SpecializationTypeId == JoinedTableMappingModel.SpecializationTypeId;
+            return type != null && type is IElement element && element.SpecializationTypeId == QueryResultModel.SpecializationTypeId;
         }
 
-        public static JoinedTableMappingModel AsJoinedTableMappingModel(this ICanBeReferencedType type)
+        public static QueryResultModel AsQueryResultModel(this ICanBeReferencedType type)
         {
-            return type.IsJoinedTableMappingModel() ? new JoinedTableMappingModel((IElement)type) : null;
+            return type.IsQueryResultModel() ? new QueryResultModel((IElement)type) : null;
         }
 
-        public static bool HasMapFromDomainMapping(this JoinedTableMappingModel type)
+        public static bool HasProjectFromClassMapping(this QueryResultModel type)
         {
-            return type.Mapping?.MappingSettingsId == "b1d32e1d-024a-4099-b870-8365ff0efaeb";
+            return type.Mapping?.MappingSettingsId == "23a4e11b-f188-4fd3-b1f7-ed3fa17e4447";
         }
 
-        public static IElementMapping GetMapFromDomainMapping(this JoinedTableMappingModel type)
+        public static IElementMapping GetProjectFromClassMapping(this QueryResultModel type)
         {
-            return type.HasMapFromDomainMapping() ? type.Mapping : null;
+            return type.HasProjectFromClassMapping() ? type.Mapping : null;
         }
     }
 }

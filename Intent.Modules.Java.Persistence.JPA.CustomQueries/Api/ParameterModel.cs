@@ -11,14 +11,14 @@ using Intent.RoslynWeaver.Attributes;
 namespace Intent.Java.Persistence.JPA.CustomQueries.Api
 {
     [IntentManaged(Mode.Fully, Signature = Mode.Fully)]
-    public class JoinedTableModel : IMetadataModel, IHasStereotypes, IHasName
+    public class ParameterModel : IMetadataModel, IHasStereotypes, IHasName, IHasTypeReference
     {
-        public const string SpecializationType = "Joined Table";
-        public const string SpecializationTypeId = "41566d5b-85bf-4608-ba72-3d43b7a2cb07";
+        public const string SpecializationType = "Parameter";
+        public const string SpecializationTypeId = "c8533d27-520e-46e2-9310-e13077f67988";
         protected readonly IElement _element;
 
         [IntentManaged(Mode.Fully)]
-        public JoinedTableModel(IElement element, string requiredType = SpecializationType)
+        public ParameterModel(IElement element, string requiredType = SpecializationType)
         {
             if (!requiredType.Equals(element.SpecializationType, StringComparison.InvariantCultureIgnoreCase))
             {
@@ -35,19 +35,18 @@ namespace Intent.Java.Persistence.JPA.CustomQueries.Api
 
         public IEnumerable<IStereotype> Stereotypes => _element.Stereotypes;
 
-        public IElement InternalElement => _element;
+        public string Value => _element.Value;
 
-        public JoinedTableMappingModel CreateMapping => _element.ChildElements
-            .GetElementsOfType(JoinedTableMappingModel.SpecializationTypeId)
-            .Select(x => new JoinedTableMappingModel(x))
-            .SingleOrDefault();
+        public ITypeReference TypeReference => _element.TypeReference;
+
+        public IElement InternalElement => _element;
 
         public override string ToString()
         {
             return _element.ToString();
         }
 
-        public bool Equals(JoinedTableModel other)
+        public bool Equals(ParameterModel other)
         {
             return Equals(_element, other?._element);
         }
@@ -57,7 +56,7 @@ namespace Intent.Java.Persistence.JPA.CustomQueries.Api
             if (ReferenceEquals(null, obj)) return false;
             if (ReferenceEquals(this, obj)) return true;
             if (obj.GetType() != this.GetType()) return false;
-            return Equals((JoinedTableModel)obj);
+            return Equals((ParameterModel)obj);
         }
 
         public override int GetHashCode()
@@ -67,17 +66,17 @@ namespace Intent.Java.Persistence.JPA.CustomQueries.Api
     }
 
     [IntentManaged(Mode.Fully)]
-    public static class JoinedTableModelExtensions
+    public static class ParameterModelExtensions
     {
 
-        public static bool IsJoinedTableModel(this ICanBeReferencedType type)
+        public static bool IsParameterModel(this ICanBeReferencedType type)
         {
-            return type != null && type is IElement element && element.SpecializationTypeId == JoinedTableModel.SpecializationTypeId;
+            return type != null && type is IElement element && element.SpecializationTypeId == ParameterModel.SpecializationTypeId;
         }
 
-        public static JoinedTableModel AsJoinedTableModel(this ICanBeReferencedType type)
+        public static ParameterModel AsParameterModel(this ICanBeReferencedType type)
         {
-            return type.IsJoinedTableModel() ? new JoinedTableModel((IElement)type) : null;
+            return type.IsParameterModel() ? new ParameterModel((IElement)type) : null;
         }
     }
 }

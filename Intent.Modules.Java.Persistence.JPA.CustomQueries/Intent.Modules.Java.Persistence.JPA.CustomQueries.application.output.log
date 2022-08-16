@@ -12,13 +12,13 @@
       <ProjectId>b5d77679-3971-4c52-a455-ee11d331f760</ProjectId>
       <CorrelationId>Intent.ModuleBuilder.Templates.Api.ApiElementExtensionModel#6986a6a1-aff3-4222-bb85-5ebe4d08e180</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
-      <ApplicationRelativeFilePath>Api/ClassExtensionsModel.cs</ApplicationRelativeFilePath>
-      <ProjectRelativeFilePath>ClassExtensionsModel.cs</ProjectRelativeFilePath>
+      <ApplicationRelativeFilePath>Api/ClassExtensionModel.cs</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>ClassExtensionModel.cs</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
       <ProjectId>b5d77679-3971-4c52-a455-ee11d331f760</ProjectId>
-      <CorrelationId>Intent.ModuleBuilder.Templates.Api.ApiElementModel#626e0881-381a-4cd5-9b66-ea7d2279fa15</CorrelationId>
+      <CorrelationId>Intent.ModuleBuilder.Templates.Api.ApiElementModel#c00ed838-f31f-48e8-a3bc-6eb4a892584d</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Api/ColumnModel.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>ColumnModel.cs</ProjectRelativeFilePath>
@@ -26,15 +26,7 @@
     </FileLog>
     <FileLog>
       <ProjectId>b5d77679-3971-4c52-a455-ee11d331f760</ProjectId>
-      <CorrelationId>Intent.ModuleBuilder.Templates.Api.ApiElementModelExtensions#626e0881-381a-4cd5-9b66-ea7d2279fa15</CorrelationId>
-      <OverwriteBehaviour>always</OverwriteBehaviour>
-      <ApplicationRelativeFilePath>Api/ColumnModelStereotypeExtensions.cs</ApplicationRelativeFilePath>
-      <ProjectRelativeFilePath>ColumnModelStereotypeExtensions.cs</ProjectRelativeFilePath>
-      <IsIgnored>false</IsIgnored>
-    </FileLog>
-    <FileLog>
-      <ProjectId>b5d77679-3971-4c52-a455-ee11d331f760</ProjectId>
-      <CorrelationId>Intent.ModuleBuilder.Templates.Api.ApiElementModel#174c0034-1b66-4042-834c-cfb1e05df263</CorrelationId>
+      <CorrelationId>Intent.ModuleBuilder.Templates.Api.ApiElementModel#4276d179-00df-4105-bad6-a467a06a799b</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Api/CustomQueryModel.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>CustomQueryModel.cs</ProjectRelativeFilePath>
@@ -42,7 +34,7 @@
     </FileLog>
     <FileLog>
       <ProjectId>b5d77679-3971-4c52-a455-ee11d331f760</ProjectId>
-      <CorrelationId>Intent.ModuleBuilder.Templates.Api.ApiElementModelExtensions#174c0034-1b66-4042-834c-cfb1e05df263</CorrelationId>
+      <CorrelationId>Intent.ModuleBuilder.Templates.Api.ApiElementModelExtensions#4276d179-00df-4105-bad6-a467a06a799b</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Api/CustomQueryModelStereotypeExtensions.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>CustomQueryModelStereotypeExtensions.cs</ProjectRelativeFilePath>
@@ -58,26 +50,10 @@
     </FileLog>
     <FileLog>
       <ProjectId>b5d77679-3971-4c52-a455-ee11d331f760</ProjectId>
-      <CorrelationId>Intent.ModuleBuilder.Templates.Api.ApiElementModel#e96d7695-e8ed-470f-8592-f23f3e5713ce</CorrelationId>
+      <CorrelationId>Intent.ModuleBuilder.Templates.Api.ApiElementExtensionModel#3a805b09-62eb-447d-94ce-551ad7a04c6e</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
-      <ApplicationRelativeFilePath>Api/JoinedTableMappingModel.cs</ApplicationRelativeFilePath>
-      <ProjectRelativeFilePath>JoinedTableMappingModel.cs</ProjectRelativeFilePath>
-      <IsIgnored>false</IsIgnored>
-    </FileLog>
-    <FileLog>
-      <ProjectId>b5d77679-3971-4c52-a455-ee11d331f760</ProjectId>
-      <CorrelationId>Intent.ModuleBuilder.Templates.Api.ApiElementModel#41566d5b-85bf-4608-ba72-3d43b7a2cb07</CorrelationId>
-      <OverwriteBehaviour>always</OverwriteBehaviour>
-      <ApplicationRelativeFilePath>Api/JoinedTableModel.cs</ApplicationRelativeFilePath>
-      <ProjectRelativeFilePath>JoinedTableModel.cs</ProjectRelativeFilePath>
-      <IsIgnored>false</IsIgnored>
-    </FileLog>
-    <FileLog>
-      <ProjectId>b5d77679-3971-4c52-a455-ee11d331f760</ProjectId>
-      <CorrelationId>Intent.ModuleBuilder.Templates.Api.ApiElementModelExtensions#41566d5b-85bf-4608-ba72-3d43b7a2cb07</CorrelationId>
-      <OverwriteBehaviour>always</OverwriteBehaviour>
-      <ApplicationRelativeFilePath>Api/JoinedTableModelStereotypeExtensions.cs</ApplicationRelativeFilePath>
-      <ProjectRelativeFilePath>JoinedTableModelStereotypeExtensions.cs</ProjectRelativeFilePath>
+      <ApplicationRelativeFilePath>Api/FolderExtensionModel.cs</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>FolderExtensionModel.cs</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
@@ -90,10 +66,34 @@
     </FileLog>
     <FileLog>
       <ProjectId>b5d77679-3971-4c52-a455-ee11d331f760</ProjectId>
-      <CorrelationId>Intent.ModuleBuilder.Templates.Api.ApiElementModel#228328e9-3bbc-4fec-8607-18cacd98472e</CorrelationId>
+      <CorrelationId>Intent.ModuleBuilder.Templates.Api.ApiPackageExtensionModel#b284aaed-5be3-46a5-bab2-ca6b90051fb6</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
-      <ApplicationRelativeFilePath>Api/QueryParameterModel.cs</ApplicationRelativeFilePath>
-      <ProjectRelativeFilePath>QueryParameterModel.cs</ProjectRelativeFilePath>
+      <ApplicationRelativeFilePath>Api/PackageExtensionModel.cs</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>PackageExtensionModel.cs</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
+      <ProjectId>b5d77679-3971-4c52-a455-ee11d331f760</ProjectId>
+      <CorrelationId>Intent.ModuleBuilder.Templates.Api.ApiElementModel#c8533d27-520e-46e2-9310-e13077f67988</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>Api/ParameterModel.cs</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>ParameterModel.cs</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
+      <ProjectId>b5d77679-3971-4c52-a455-ee11d331f760</ProjectId>
+      <CorrelationId>Intent.ModuleBuilder.Templates.Api.ApiElementModelExtensions#c8533d27-520e-46e2-9310-e13077f67988</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>Api/ParameterModelStereotypeExtensions.cs</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>ParameterModelStereotypeExtensions.cs</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
+      <ProjectId>b5d77679-3971-4c52-a455-ee11d331f760</ProjectId>
+      <CorrelationId>Intent.ModuleBuilder.Templates.Api.ApiElementModel#b8819c07-fa52-4e38-a92c-439e21220c55</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>Api/QueryResultModel.cs</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>QueryResultModel.cs</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
@@ -228,24 +228,24 @@
       <ProjectId>ed51c3d4-bf68-4413-940f-5b4fcbdd1a02</ProjectId>
       <CorrelationId>Intent.ModuleBuilder.Java.Templates.JavaFileStringInterpolationTemplate#0ff18d4b-8069-4494-9fde-94ac99e01028</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
-      <ApplicationRelativeFilePath>Templates/QueryView/QueryViewTemplate.cs</ApplicationRelativeFilePath>
-      <ProjectRelativeFilePath>QueryView/QueryViewTemplate.cs</ProjectRelativeFilePath>
+      <ApplicationRelativeFilePath>Templates/QueryResult/QueryResultTemplate.cs</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>QueryResult/QueryResultTemplate.cs</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
       <ProjectId>ed51c3d4-bf68-4413-940f-5b4fcbdd1a02</ProjectId>
       <CorrelationId>Intent.ModuleBuilder.Java.Templates.JavaFileTemplatePartial#0ff18d4b-8069-4494-9fde-94ac99e01028</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
-      <ApplicationRelativeFilePath>Templates/QueryView/QueryViewTemplatePartial.cs</ApplicationRelativeFilePath>
-      <ProjectRelativeFilePath>QueryView/QueryViewTemplatePartial.cs</ProjectRelativeFilePath>
+      <ApplicationRelativeFilePath>Templates/QueryResult/QueryResultTemplatePartial.cs</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>QueryResult/QueryResultTemplatePartial.cs</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
       <ProjectId>ed51c3d4-bf68-4413-940f-5b4fcbdd1a02</ProjectId>
       <CorrelationId>Intent.ModuleBuilder.TemplateRegistration.FilePerModel#0ff18d4b-8069-4494-9fde-94ac99e01028</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
-      <ApplicationRelativeFilePath>Templates/QueryView/QueryViewTemplateRegistration.cs</ApplicationRelativeFilePath>
-      <ProjectRelativeFilePath>QueryView/QueryViewTemplateRegistration.cs</ProjectRelativeFilePath>
+      <ApplicationRelativeFilePath>Templates/QueryResult/QueryResultTemplateRegistration.cs</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>QueryResult/QueryResultTemplateRegistration.cs</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
