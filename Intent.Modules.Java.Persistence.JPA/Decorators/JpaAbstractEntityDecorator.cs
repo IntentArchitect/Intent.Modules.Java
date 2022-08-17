@@ -48,7 +48,7 @@ namespace Intent.Modules.Java.Persistence.JPA.Decorators
 
             return $@"
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private {type} id;
 
     public {type} getId() {{
