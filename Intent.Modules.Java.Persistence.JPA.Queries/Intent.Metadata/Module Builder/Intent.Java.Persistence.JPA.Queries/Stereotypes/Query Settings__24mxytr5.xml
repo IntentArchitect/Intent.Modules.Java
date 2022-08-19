@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<stereotypeDefinition id="5ffc1a1f-cb80-4451-a70e-db3738491e0e" version="3.1.0">
+  <name>Query Settings</name>
+  <targetMode>of-type</targetMode>
+  <targetTypes>
+    <type id="4276d179-00df-4105-bad6-a467a06a799b">Query</type>
+  </targetTypes>
+  <targetReferenceTypes />
+  <applyMode>always</applyMode>
+  <icon type="FontAwesome" source="cogs" />
+  <displayIcon>false</displayIcon>
+  <displayFunction />
+  <displayAsAnnotation>false</displayAsAnnotation>
+  <displayAsText>true</displayAsText>
+  <autoAdd>false</autoAdd>
+  <allowMultipleApplies>false</allowMultipleApplies>
+  <parentFolderId>6dc08da8-85c0-4cc1-b6ae-6a1871492db5</parentFolderId>
+  <order>0</order>
+  <packageId>1f412104-d5bd-42a6-9655-ce7e37bad8cb</packageId>
+  <packageName>Intent.Java.Persistence.JPA.Queries</packageName>
+  <properties>
+    <property id="cd21b3d9-bde2-4543-9de5-4a726de96618">
+      <name>Table Alias</name>
+      <type>string</type>
+      <controlType>text</controlType>
+      <optionsSource>n/a</optionsSource>
+      <placeholder />
+      <valueOptions />
+      <lookupTypes />
+    </property>
+    <property id="6fe90143-4e58-48a0-a8c9-a67bf453a556">
+      <name>Distinct</name>
+      <type>string</type>
+      <controlType>checkbox</controlType>
+      <optionsSource>n/a</optionsSource>
+      <placeholder />
+      <defaultValue>false</defaultValue>
+      <valueOptions />
+      <lookupTypes />
+      <isActiveFunction />
+    </property>
+  </properties>
+</stereotypeDefinition>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<stereotypeDefinition id="481ee769-094e-4c56-a56a-24e7261e029b" version="3.1.0">
+  <name>Parameter Settings</name>
+  <targetMode>of-type</targetMode>
+  <targetTypes>
+    <type id="c8533d27-520e-46e2-9310-e13077f67988">Parameter</type>
+  </targetTypes>
+  <targetReferenceTypes />
+  <applyMode>always</applyMode>
+  <icon type="FontAwesome" source="cogs" />
+  <displayIcon>false</displayIcon>
+  <displayFunction />
+  <displayAsAnnotation>false</displayAsAnnotation>
+  <displayAsText>true</displayAsText>
+  <autoAdd>false</autoAdd>
+  <allowMultipleApplies>false</allowMultipleApplies>
+  <parentFolderId>6dc08da8-85c0-4cc1-b6ae-6a1871492db5</parentFolderId>
+  <order>0</order>
+  <packageId>1f412104-d5bd-42a6-9655-ce7e37bad8cb</packageId>
+  <packageName>Intent.Java.Persistence.JPA.Queries</packageName>
+  <properties>
+    <property id="0ce270f3-259a-4483-8555-ae6eae381f13">
+      <hint />
+      <name>Exclude From Parameter List</name>
+      <type>string</type>
+      <controlType>checkbox</controlType>
+      <optionsSource>n/a</optionsSource>
+      <placeholder />
+      <defaultValue>false</defaultValue>
+      <valueOptions />
+      <lookupTypes />
+    </property>
+    <property id="4f8ee817-4b35-4209-a5f0-a4fdc062b03b">
+      <name>Value</name>
+      <type>string</type>
+      <controlType>text</controlType>
+      <optionsSource>n/a</optionsSource>
+      <placeholder />
+      <valueOptions />
+      <lookupTypes />
+      <isActiveFunction>return properties["Exclude From Parameter List"].value;</isActiveFunction>
+      <isRequiredFunction>return true;</isRequiredFunction>
+    </property>
+  </properties>
+</stereotypeDefinition>

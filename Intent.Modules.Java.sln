@@ -28,7 +28,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Intent.Modules.Java.Spring.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Intent.Modules.Java.Services.CRUD", "Intent.Modules.Java.Services.CRUD\Intent.Modules.Java.Services.CRUD.csproj", "{EF69D81E-E67C-4251-984C-20C3FB2A945E}"
 EndProject
-Project("{52B49DB5-3EA9-4095-B1A7-DF1AC22D7DAE}") = "Intent.Modules.Java.Persistence.JPA.CustomQueries", "Intent.Modules.Java.Persistence.JPA.CustomQueries\Intent.Modules.Java.Persistence.JPA.CustomQueries.csproj", "{FE025313-A7D8-48A9-A0D5-9BD9328F82B0}"
+Project("{52B49DB5-3EA9-4095-B1A7-DF1AC22D7DAE}") = "Intent.Modules.Java.Persistence.JPA.Queries", "Intent.Modules.Java.Persistence.JPA.Queries\Intent.Modules.Java.Persistence.JPA.Queries.csproj", "{FE025313-A7D8-48A9-A0D5-9BD9328F82B0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
