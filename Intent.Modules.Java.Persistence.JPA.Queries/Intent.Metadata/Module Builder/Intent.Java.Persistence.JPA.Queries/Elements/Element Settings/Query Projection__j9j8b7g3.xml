@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <class id="b8819c07-fa52-4e38-a92c-439e21220c55" type="Element Settings" typeId="727577aa-3e07-4b41-be7d-7359bb1e48c8">
-  <name>Query Result</name>
-  <display>Query Result</display>
+  <name>Query Projection</name>
+  <display>Query Projection</display>
   <isAbstract>false</isAbstract>
   <sort-children>by-type-then-manually</sort-children>
   <genericTypes />
@@ -133,7 +133,7 @@
       <childElements>
         <childElement id="ff598975-9030-430e-b44c-bdea70e0d4d2" type="Element Mapping" typeId="4a16943b-702c-4fb0-bfcc-2afd98b8814c">
           <name>NewElementMapping</name>
-          <display>[mapping]: Class -&gt; Query Result (Map to Type)</display>
+          <display>[mapping]: Class -&gt; Query Projection (Map to Type)</display>
           <isAbstract>false</isAbstract>
           <sort-children>by-type-then-by-name</sort-children>
           <genericTypes />

@@ -92,8 +92,8 @@
       <ProjectId>b5d77679-3971-4c52-a455-ee11d331f760</ProjectId>
       <CorrelationId>Intent.ModuleBuilder.Templates.Api.ApiElementModel#b8819c07-fa52-4e38-a92c-439e21220c55</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
-      <ApplicationRelativeFilePath>Api/QueryResultModel.cs</ApplicationRelativeFilePath>
-      <ProjectRelativeFilePath>QueryResultModel.cs</ProjectRelativeFilePath>
+      <ApplicationRelativeFilePath>Api/QueryProjectionModel.cs</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>QueryProjectionModel.cs</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
@@ -228,24 +228,24 @@
       <ProjectId>ed51c3d4-bf68-4413-940f-5b4fcbdd1a02</ProjectId>
       <CorrelationId>Intent.ModuleBuilder.Java.Templates.JavaFileStringInterpolationTemplate#0ff18d4b-8069-4494-9fde-94ac99e01028</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
-      <ApplicationRelativeFilePath>Templates/QueryResult/QueryResultTemplate.cs</ApplicationRelativeFilePath>
-      <ProjectRelativeFilePath>QueryResult/QueryResultTemplate.cs</ProjectRelativeFilePath>
+      <ApplicationRelativeFilePath>Templates/QueryProjection/QueryProjectionTemplate.cs</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>QueryProjection/QueryProjectionTemplate.cs</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
       <ProjectId>ed51c3d4-bf68-4413-940f-5b4fcbdd1a02</ProjectId>
       <CorrelationId>Intent.ModuleBuilder.Java.Templates.JavaFileTemplatePartial#0ff18d4b-8069-4494-9fde-94ac99e01028</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
-      <ApplicationRelativeFilePath>Templates/QueryResult/QueryResultTemplatePartial.cs</ApplicationRelativeFilePath>
-      <ProjectRelativeFilePath>QueryResult/QueryResultTemplatePartial.cs</ProjectRelativeFilePath>
+      <ApplicationRelativeFilePath>Templates/QueryProjection/QueryProjectionTemplatePartial.cs</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>QueryProjection/QueryProjectionTemplatePartial.cs</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
       <ProjectId>ed51c3d4-bf68-4413-940f-5b4fcbdd1a02</ProjectId>
       <CorrelationId>Intent.ModuleBuilder.TemplateRegistration.FilePerModel#0ff18d4b-8069-4494-9fde-94ac99e01028</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
-      <ApplicationRelativeFilePath>Templates/QueryResult/QueryResultTemplateRegistration.cs</ApplicationRelativeFilePath>
-      <ProjectRelativeFilePath>QueryResult/QueryResultTemplateRegistration.cs</ProjectRelativeFilePath>
+      <ApplicationRelativeFilePath>Templates/QueryProjection/QueryProjectionTemplateRegistration.cs</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>QueryProjection/QueryProjectionTemplateRegistration.cs</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>

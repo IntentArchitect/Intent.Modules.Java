@@ -44,7 +44,7 @@ namespace Intent.Modules.Java.Persistence.JPA.Queries.Decorators
                 var whereClauses = new List<string>();
                 var annotatedParameters = new List<string>();
                 var parameters = new List<string>();
-                var queryResult = query.TypeReference.Element.AsQueryResultModel();
+                var queryProjection = query.TypeReference.Element.AsQueryProjectionModel();
 
                 // Get "root" table:
                 {
@@ -55,7 +55,7 @@ namespace Intent.Modules.Java.Persistence.JPA.Queries.Decorators
                     tables.Add(table);
                 }
 
-                foreach (var column in queryResult?.Columns ?? Enumerable.Empty<ColumnModel>())
+                foreach (var column in queryProjection?.Columns ?? Enumerable.Empty<ColumnModel>())
                 {
                     if (!column.InternalElement.IsMapped)
                     {

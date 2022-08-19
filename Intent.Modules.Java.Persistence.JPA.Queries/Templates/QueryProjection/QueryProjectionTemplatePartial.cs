@@ -11,16 +11,16 @@ using Intent.Templates;
 [assembly: DefaultIntentManaged(Mode.Merge)]
 [assembly: IntentTemplate("Intent.ModuleBuilder.Java.Templates.JavaFileTemplatePartial", Version = "1.0")]
 
-namespace Intent.Modules.Java.Persistence.JPA.Queries.Templates.QueryResult
+namespace Intent.Modules.Java.Persistence.JPA.Queries.Templates.QueryProjection
 {
     [IntentManaged(Mode.Merge, Signature = Mode.Fully)]
-    partial class QueryResultTemplate : JavaTemplateBase<Intent.Java.Persistence.JPA.Queries.Api.QueryResultModel>
+    partial class QueryProjectionTemplate : JavaTemplateBase<Intent.Java.Persistence.JPA.Queries.Api.QueryProjectionModel>
     {
         [IntentManaged(Mode.Fully)]
-        public const string TemplateId = "Intent.Java.Persistence.JPA.Queries.QueryResult";
+        public const string TemplateId = "Intent.Java.Persistence.JPA.Queries.QueryProjection";
 
         [IntentManaged(Mode.Merge, Signature = Mode.Fully)]
-        public QueryResultTemplate(IOutputTarget outputTarget, Intent.Java.Persistence.JPA.Queries.Api.QueryResultModel model) : base(TemplateId, outputTarget, model)
+        public QueryProjectionTemplate(IOutputTarget outputTarget, Intent.Java.Persistence.JPA.Queries.Api.QueryProjectionModel model) : base(TemplateId, outputTarget, model)
         {
         }
 

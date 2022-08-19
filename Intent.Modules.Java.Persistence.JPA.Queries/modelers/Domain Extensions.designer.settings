@@ -9,18 +9,18 @@
       <requiredPackages />
       <creationOptions>
         <option type="element">
-          <specializationType>Query Result</specializationType>
+          <specializationType>Query Projection</specializationType>
           <specializationTypeId>b8819c07-fa52-4e38-a92c-439e21220c55</specializationTypeId>
-          <text>New Query Result</text>
+          <text>New Query Projection</text>
           <shortcut>ctrl + shift + r</shortcut>
-          <defaultName>NewQueryResult</defaultName>
+          <defaultName>NewQueryProjection</defaultName>
           <icon type="UrlImagePath" source="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFAAAABQCAYAAACOEfKtAAAAAXNSR0IArs4c6QAAAjFJREFUeF7tnMFOwkAURV+7hcTCxkT/wg9io25hIZ+BC9iqGz7Iv9DEDdQEtsWUSAQltPSO2lcO67nweubOvJm+YSLjIxGIJDViA6BoAgACUCQgynFgSICLxeI8juNn8TsbLc+y7Krdbr9tHnLHgcvl8iKKopdGExAfbrVaXbZarVcAVgQJwIrgNjIA/jXANE2t3++LP+tTPplMLEmSneCPduBsNrNer+eTgBj1dDq1brcLwKocAViV3KcOgAAUCYhyHFg3gHlKj+O4dFhZllm+DMo/HrXBHfj48PQjrR+imS+Bbm6v1008agEodhwAAfi/wx8H4kAcSBbefhvjcSmixMwcWLc5cDS6t+Rs9wXjoYV0+p7acHi3buJRG9yBpfdwDWkIQLEjgwP0OAyVmIMDVDKaRy0A65aFPbpIiRkH4kD2wuyF2QsHPJmgTMgetSSRuiURj6VJJebgDhS3lu7kwQEqvelRGxzgvi8sKqxvzhaSRMwMgGbSCVUAArAwkW2f52EOrNs6kCHMEGYIFxIws1DnEpkD6zYHjsdj63Q6ZUywbjOfz20wGFBY559KX56RFtKlrdeQhsHnQKVI7VEbHKDHFwJKzACsWxZWetOjFgfiQArrFNYprFNYr/wHSZJI3ZKIx9KkEnNwBzZki1v6MYIA5OId8eKd0t11Ig2Pfp11IlxKPyYAS6Pa3xCAvwmQK0CL6R68ArRYTovvBLjFV/QEAAEoEhDlOBCAIgFR/gEumZy6QSwovwAAAABJRU5ErkJggg==" />
           <allowMultiple>true</allowMultiple>
         </option>
       </creationOptions>
       <scriptOptions />
       <typeOrder>
-        <type>Query Result</type>
+        <type>Query Projection</type>
       </typeOrder>
     </packageExtension>
   </packageExtensions>
@@ -42,7 +42,7 @@
         <displayName>Result Type</displayName>
         <isRequired>true</isRequired>
         <targetTypes>
-          <type>Query Result</type>
+          <type>Query Projection</type>
           <type>Type-Definition</type>
           <type>Class</type>
         </targetTypes>
@@ -168,7 +168,7 @@ return `${getName()}: ${typeReference.display} (where is ${whereIs})`;</displayF
         </childElementSetting>
       </childElementSettings>
     </elementSetting>
-    <elementSetting type="Query Result" typeId="b8819c07-fa52-4e38-a92c-439e21220c55">
+    <elementSetting type="Query Projection" typeId="b8819c07-fa52-4e38-a92c-439e21220c55">
       <icon type="UrlImagePath" source="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFAAAABQCAYAAACOEfKtAAAAAXNSR0IArs4c6QAAAjFJREFUeF7tnMFOwkAURV+7hcTCxkT/wg9io25hIZ+BC9iqGz7Iv9DEDdQEtsWUSAQltPSO2lcO67nweubOvJm+YSLjIxGIJDViA6BoAgACUCQgynFgSICLxeI8juNn8TsbLc+y7Krdbr9tHnLHgcvl8iKKopdGExAfbrVaXbZarVcAVgQJwIrgNjIA/jXANE2t3++LP+tTPplMLEmSneCPduBsNrNer+eTgBj1dDq1brcLwKocAViV3KcOgAAUCYhyHFg3gHlKj+O4dFhZllm+DMo/HrXBHfj48PQjrR+imS+Bbm6v1008agEodhwAAfi/wx8H4kAcSBbefhvjcSmixMwcWLc5cDS6t+Rs9wXjoYV0+p7acHi3buJRG9yBpfdwDWkIQLEjgwP0OAyVmIMDVDKaRy0A65aFPbpIiRkH4kD2wuyF2QsHPJmgTMgetSSRuiURj6VJJebgDhS3lu7kwQEqvelRGxzgvi8sKqxvzhaSRMwMgGbSCVUAArAwkW2f52EOrNs6kCHMEGYIFxIws1DnEpkD6zYHjsdj63Q6ZUywbjOfz20wGFBY559KX56RFtKlrdeQhsHnQKVI7VEbHKDHFwJKzACsWxZWetOjFgfiQArrFNYprFNYr/wHSZJI3ZKIx9KkEnNwBzZki1v6MYIA5OId8eKd0t11Ig2Pfp11IlxKPyYAS6Pa3xCAvwmQK0CL6R68ArRYTovvBLjFV/QEAAEoEhDlOBCAIgFR/gEumZy6QSwovwAAAABJRU5ErkJggg==" />
       <saveAsOwnFile>true</saveAsOwnFile>
       <allowRename>true</allowRename>
@@ -213,7 +213,7 @@ return `${getName()}: ${typeReference.display} (where is ${whereIs})`;</displayF
                 <isCollection p9:nil="true" xmlns:p9="http://www.w3.org/2001/XMLSchema-instance" />
                 <hasChildren p9:nil="true" xmlns:p9="http://www.w3.org/2001/XMLSchema-instance" />
               </criteria>
-              <mapTo specializationType="Query Result" childMappingMode="map-to-child" />
+              <mapTo specializationType="Query Projection" childMappingMode="map-to-child" />
               <behaviour autoSelectChildren="false" />
               <childMappings>
                 <mapping id="f58157b1-b7da-4081-95a5-7b7a26bd0c3f">
@@ -314,18 +314,18 @@ return `${getName()}: ${typeReference.display} (where is ${whereIs})`;</displayF
     <elementExtension type="Folder" typeId="4d95d53a-8855-4f35-aa82-e312643f5c5f">
       <creationOptions>
         <option type="element">
-          <specializationType>Query Result</specializationType>
+          <specializationType>Query Projection</specializationType>
           <specializationTypeId>b8819c07-fa52-4e38-a92c-439e21220c55</specializationTypeId>
-          <text>New Query Result</text>
+          <text>New Query Projection</text>
           <shortcut>ctrl + shift + r</shortcut>
-          <defaultName>NewQueryResult</defaultName>
+          <defaultName>NewQueryProjection</defaultName>
           <icon type="UrlImagePath" source="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFAAAABQCAYAAACOEfKtAAAAAXNSR0IArs4c6QAAAjFJREFUeF7tnMFOwkAURV+7hcTCxkT/wg9io25hIZ+BC9iqGz7Iv9DEDdQEtsWUSAQltPSO2lcO67nweubOvJm+YSLjIxGIJDViA6BoAgACUCQgynFgSICLxeI8juNn8TsbLc+y7Krdbr9tHnLHgcvl8iKKopdGExAfbrVaXbZarVcAVgQJwIrgNjIA/jXANE2t3++LP+tTPplMLEmSneCPduBsNrNer+eTgBj1dDq1brcLwKocAViV3KcOgAAUCYhyHFg3gHlKj+O4dFhZllm+DMo/HrXBHfj48PQjrR+imS+Bbm6v1008agEodhwAAfi/wx8H4kAcSBbefhvjcSmixMwcWLc5cDS6t+Rs9wXjoYV0+p7acHi3buJRG9yBpfdwDWkIQLEjgwP0OAyVmIMDVDKaRy0A65aFPbpIiRkH4kD2wuyF2QsHPJmgTMgetSSRuiURj6VJJebgDhS3lu7kwQEqvelRGxzgvi8sKqxvzhaSRMwMgGbSCVUAArAwkW2f52EOrNs6kCHMEGYIFxIws1DnEpkD6zYHjsdj63Q6ZUywbjOfz20wGFBY559KX56RFtKlrdeQhsHnQKVI7VEbHKDHFwJKzACsWxZWetOjFgfiQArrFNYprFNYr/wHSZJI3ZKIx9KkEnNwBzZki1v6MYIA5OId8eKd0t11Ig2Pfp11IlxKPyYAS6Pa3xCAvwmQK0CL6R68ArRYTovvBLjFV/QEAAEoEhDlOBCAIgFR/gEumZy6QSwovwAAAABJRU5ErkJggg==" />
           <allowMultiple>true</allowMultiple>
         </option>
       </creationOptions>
       <scriptOptions />
       <typeOrder>
-        <type>Query Result</type>
+        <type>Query Projection</type>
       </typeOrder>
       <mappingSettings />
     </elementExtension>

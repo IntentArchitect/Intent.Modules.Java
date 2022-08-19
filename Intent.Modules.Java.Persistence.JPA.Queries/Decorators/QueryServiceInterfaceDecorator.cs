@@ -1,5 +1,5 @@
 using Intent.Engine;
-using Intent.Modules.Java.Persistence.JPA.Queries.Templates.QueryResult;
+using Intent.Modules.Java.Persistence.JPA.Queries.Templates.QueryProjection;
 using Intent.Modules.Java.Services.Templates.ServiceInterface;
 using Intent.RoslynWeaver.Attributes;
 
@@ -25,7 +25,7 @@ namespace Intent.Modules.Java.Persistence.JPA.Queries.Decorators
             _template = template;
             _application = application;
 
-            _template.AddTypeSource(QueryResultTemplate.TemplateId).WithCollectionFormat("java.util.List<{0}>");
+            _template.AddTypeSource(QueryProjectionTemplate.TemplateId).WithCollectionFormat("java.util.List<{0}>");
         }
     }
 }

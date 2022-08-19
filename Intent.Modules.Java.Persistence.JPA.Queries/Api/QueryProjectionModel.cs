@@ -12,14 +12,14 @@ using Intent.RoslynWeaver.Attributes;
 namespace Intent.Java.Persistence.JPA.Queries.Api
 {
     [IntentManaged(Mode.Fully, Signature = Mode.Fully)]
-    public class QueryResultModel : IMetadataModel, IHasStereotypes, IHasName, IHasFolder
+    public class QueryProjectionModel : IMetadataModel, IHasStereotypes, IHasName, IHasFolder
     {
-        public const string SpecializationType = "Query Result";
+        public const string SpecializationType = "Query Projection";
         public const string SpecializationTypeId = "b8819c07-fa52-4e38-a92c-439e21220c55";
         protected readonly IElement _element;
 
         [IntentManaged(Mode.Fully)]
-        public QueryResultModel(IElement element, string requiredType = SpecializationType)
+        public QueryProjectionModel(IElement element, string requiredType = SpecializationType)
         {
             if (!requiredType.Equals(element.SpecializationType, StringComparison.InvariantCultureIgnoreCase))
             {
@@ -55,7 +55,7 @@ namespace Intent.Java.Persistence.JPA.Queries.Api
             return _element.ToString();
         }
 
-        public bool Equals(QueryResultModel other)
+        public bool Equals(QueryProjectionModel other)
         {
             return Equals(_element, other?._element);
         }
@@ -65,7 +65,7 @@ namespace Intent.Java.Persistence.JPA.Queries.Api
             if (ReferenceEquals(null, obj)) return false;
             if (ReferenceEquals(this, obj)) return true;
             if (obj.GetType() != this.GetType()) return false;
-            return Equals((QueryResultModel)obj);
+            return Equals((QueryProjectionModel)obj);
         }
 
         public override int GetHashCode()
@@ -75,25 +75,25 @@ namespace Intent.Java.Persistence.JPA.Queries.Api
     }
 
     [IntentManaged(Mode.Fully)]
-    public static class QueryResultModelExtensions
+    public static class QueryProjectionModelExtensions
     {
 
-        public static bool IsQueryResultModel(this ICanBeReferencedType type)
+        public static bool IsQueryProjectionModel(this ICanBeReferencedType type)
         {
-            return type != null && type is IElement element && element.SpecializationTypeId == QueryResultModel.SpecializationTypeId;
+            return type != null && type is IElement element && element.SpecializationTypeId == QueryProjectionModel.SpecializationTypeId;
         }
 
-        public static QueryResultModel AsQueryResultModel(this ICanBeReferencedType type)
+        public static QueryProjectionModel AsQueryProjectionModel(this ICanBeReferencedType type)
         {
-            return type.IsQueryResultModel() ? new QueryResultModel((IElement)type) : null;
+            return type.IsQueryProjectionModel() ? new QueryProjectionModel((IElement)type) : null;
         }
 
-        public static bool HasProjectFromClassMapping(this QueryResultModel type)
+        public static bool HasProjectFromClassMapping(this QueryProjectionModel type)
         {
             return type.Mapping?.MappingSettingsId == "23a4e11b-f188-4fd3-b1f7-ed3fa17e4447";
         }
 
-        public static IElementMapping GetProjectFromClassMapping(this QueryResultModel type)
+        public static IElementMapping GetProjectFromClassMapping(this QueryProjectionModel type)
         {
             return type.HasProjectFromClassMapping() ? type.Mapping : null;
         }

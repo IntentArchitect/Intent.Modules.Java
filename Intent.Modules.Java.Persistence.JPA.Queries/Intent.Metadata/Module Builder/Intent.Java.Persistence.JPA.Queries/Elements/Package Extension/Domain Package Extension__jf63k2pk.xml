@@ -37,8 +37,8 @@
       <metadata />
       <childElements>
         <childElement id="e7d4a048-a80a-4922-bdb9-9e9e0703a5a2" type="Element Creation Option" typeId="5fa12f89-da1e-49c5-b8e9-427b22407f19">
-          <name>New Query Result</name>
-          <display>New Query Result: Query Result</display>
+          <name>New Query Projection</name>
+          <display>New Query Projection: Query Projection</display>
           <isAbstract>false</isAbstract>
           <genericTypes />
           <typeReference id="b8d0b4f7-a14e-4044-a1f4-95be36fa6eef">

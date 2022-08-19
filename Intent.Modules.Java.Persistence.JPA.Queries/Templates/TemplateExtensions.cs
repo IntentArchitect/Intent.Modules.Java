@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 using Intent.Modules.Common.Templates;
-using Intent.Modules.Java.Persistence.JPA.Queries.Templates.QueryResult;
+using Intent.Modules.Java.Persistence.JPA.Queries.Templates.QueryProjection;
 using Intent.RoslynWeaver.Attributes;
 
 [assembly: DefaultIntentManaged(Mode.Fully)]
@@ -11,14 +11,14 @@ namespace Intent.Modules.Java.Persistence.JPA.Queries.Templates
 {
     public static class TemplateExtensions
     {
-        public static string GetQueryResultName<T>(this IntentTemplateBase<T> template) where T : Intent.Java.Persistence.JPA.Queries.Api.QueryResultModel
+        public static string GetQueryProjectionName<T>(this IntentTemplateBase<T> template) where T : Intent.Java.Persistence.JPA.Queries.Api.QueryProjectionModel
         {
-            return template.GetTypeName(QueryResultTemplate.TemplateId, template.Model);
+            return template.GetTypeName(QueryProjectionTemplate.TemplateId, template.Model);
         }
 
-        public static string GetQueryResultName(this IntentTemplateBase template, Intent.Java.Persistence.JPA.Queries.Api.QueryResultModel model)
+        public static string GetQueryProjectionName(this IntentTemplateBase template, Intent.Java.Persistence.JPA.Queries.Api.QueryProjectionModel model)
         {
-            return template.GetTypeName(QueryResultTemplate.TemplateId, model);
+            return template.GetTypeName(QueryProjectionTemplate.TemplateId, model);
         }
 
     }

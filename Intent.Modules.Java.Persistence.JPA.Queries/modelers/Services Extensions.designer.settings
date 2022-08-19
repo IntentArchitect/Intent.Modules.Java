@@ -15,7 +15,7 @@
           <type>DTO</type>
           <type>Type-Definition</type>
           <type>Enum</type>
-          <type>Query Result</type>
+          <type>Query Projection</type>
         </targetTypes>
         <allowIsNavigable>inherit</allowIsNavigable>
         <allowIsNullable>inherit</allowIsNullable>
@@ -30,7 +30,7 @@
           <type>DTO</type>
           <type>Type-Definition</type>
           <type>Enum</type>
-          <type>Query Result</type>
+          <type>Query Projection</type>
         </targetTypes>
         <allowIsNavigable>inherit</allowIsNavigable>
         <allowIsNullable>inherit</allowIsNullable>

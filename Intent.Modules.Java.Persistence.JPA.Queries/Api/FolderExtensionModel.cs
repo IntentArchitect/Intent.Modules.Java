@@ -19,9 +19,9 @@ namespace Intent.Java.Persistence.JPA.Queries.Api
         {
         }
 
-        public IList<QueryResultModel> QueryResults => _element.ChildElements
-            .GetElementsOfType(QueryResultModel.SpecializationTypeId)
-            .Select(x => new QueryResultModel(x))
+        public IList<QueryProjectionModel> QueryProjections => _element.ChildElements
+            .GetElementsOfType(QueryProjectionModel.SpecializationTypeId)
+            .Select(x => new QueryProjectionModel(x))
             .ToList();
 
     }

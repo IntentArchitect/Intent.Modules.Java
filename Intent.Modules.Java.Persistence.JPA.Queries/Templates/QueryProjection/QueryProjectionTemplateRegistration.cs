@@ -13,29 +13,29 @@ using Intent.Templates;
 [assembly: DefaultIntentManaged(Mode.Fully)]
 [assembly: IntentTemplate("Intent.ModuleBuilder.TemplateRegistration.FilePerModel", Version = "1.0")]
 
-namespace Intent.Modules.Java.Persistence.JPA.Queries.Templates.QueryResult
+namespace Intent.Modules.Java.Persistence.JPA.Queries.Templates.QueryProjection
 {
     [IntentManaged(Mode.Merge, Body = Mode.Merge, Signature = Mode.Fully)]
-    public class QueryResultTemplateRegistration : FilePerModelTemplateRegistration<QueryResultModel>
+    public class QueryProjectionTemplateRegistration : FilePerModelTemplateRegistration<QueryProjectionModel>
     {
         private readonly IMetadataManager _metadataManager;
 
-        public QueryResultTemplateRegistration(IMetadataManager metadataManager)
+        public QueryProjectionTemplateRegistration(IMetadataManager metadataManager)
         {
             _metadataManager = metadataManager;
         }
 
-        public override string TemplateId => QueryResultTemplate.TemplateId;
+        public override string TemplateId => QueryProjectionTemplate.TemplateId;
 
-        public override ITemplate CreateTemplateInstance(IOutputTarget outputTarget, QueryResultModel model)
+        public override ITemplate CreateTemplateInstance(IOutputTarget outputTarget, QueryProjectionModel model)
         {
-            return new QueryResultTemplate(outputTarget, model);
+            return new QueryProjectionTemplate(outputTarget, model);
         }
 
         [IntentManaged(Mode.Merge, Body = Mode.Ignore, Signature = Mode.Fully)]
-        public override IEnumerable<QueryResultModel> GetModels(IApplication application)
+        public override IEnumerable<QueryProjectionModel> GetModels(IApplication application)
         {
-            return _metadataManager.Domain(application).GetQueryResultModels();
+            return _metadataManager.Domain(application).GetQueryProjectionModels();
         }
     }
 }

@@ -7,10 +7,10 @@ using Intent.RoslynWeaver.Attributes;
 [assembly: DefaultIntentManaged(Mode.Fully)]
 [assembly:IntentTemplate("Intent.ModuleBuilder.Java.Templates.JavaFileStringInterpolationTemplate",Version= "1.0")]
 
-namespace Intent.Modules.Java.Persistence.JPA.Queries.Templates.QueryResult
+namespace Intent.Modules.Java.Persistence.JPA.Queries.Templates.QueryProjection
 {
     [IntentManaged(Mode.Fully, Body = Mode.Merge)]
-    public partial class QueryResultTemplate    {
+    public partial class QueryProjectionTemplate{
         [IntentManaged(Mode.Fully, Body = Mode.Ignore)]
         public override string TransformText()
         {

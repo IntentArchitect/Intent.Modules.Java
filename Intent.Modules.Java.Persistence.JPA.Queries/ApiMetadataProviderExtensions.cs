@@ -18,10 +18,10 @@ namespace Intent.Java.Persistence.JPA.Queries.Api
                 .ToList();
         }
 
-        public static IList<QueryResultModel> GetQueryResultModels(this IDesigner designer)
+        public static IList<QueryProjectionModel> GetQueryProjectionModels(this IDesigner designer)
         {
-            return designer.GetElementsOfType(QueryResultModel.SpecializationTypeId)
-                .Select(x => new QueryResultModel(x))
+            return designer.GetElementsOfType(QueryProjectionModel.SpecializationTypeId)
+                .Select(x => new QueryProjectionModel(x))
                 .ToList();
         }
 
