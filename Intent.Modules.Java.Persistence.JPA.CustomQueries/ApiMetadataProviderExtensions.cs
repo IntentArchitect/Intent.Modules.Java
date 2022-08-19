@@ -11,10 +11,10 @@ namespace Intent.Java.Persistence.JPA.CustomQueries.Api
 {
     public static class ApiMetadataProviderExtensions
     {
-        public static IList<CustomQueryModel> GetCustomQueryModels(this IDesigner designer)
+        public static IList<QueryModel> GetQueryModels(this IDesigner designer)
         {
-            return designer.GetElementsOfType(CustomQueryModel.SpecializationTypeId)
-                .Select(x => new CustomQueryModel(x))
+            return designer.GetElementsOfType(QueryModel.SpecializationTypeId)
+                .Select(x => new QueryModel(x))
                 .ToList();
         }
 

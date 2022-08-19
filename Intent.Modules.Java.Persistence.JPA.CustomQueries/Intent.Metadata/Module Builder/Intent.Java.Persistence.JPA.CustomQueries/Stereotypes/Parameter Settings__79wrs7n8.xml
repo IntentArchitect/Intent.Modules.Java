@@ -30,5 +30,16 @@
       <valueOptions />
       <lookupTypes />
     </property>
+    <property id="4f8ee817-4b35-4209-a5f0-a4fdc062b03b">
+      <name>Value</name>
+      <type>string</type>
+      <controlType>text</controlType>
+      <optionsSource>n/a</optionsSource>
+      <placeholder />
+      <valueOptions />
+      <lookupTypes />
+      <isActiveFunction>return properties["Exclude From Parameter List"].value;</isActiveFunction>
+      <isRequiredFunction>return true;</isRequiredFunction>
+    </property>
   </properties>
 </stereotypeDefinition>

@@ -35,8 +35,6 @@ namespace Intent.Java.Persistence.JPA.CustomQueries.Api
 
         public IEnumerable<IStereotype> Stereotypes => _element.Stereotypes;
 
-        public string Value => _element.Value;
-
         public ITypeReference TypeReference => _element.TypeReference;
 
         public IElement InternalElement => _element;

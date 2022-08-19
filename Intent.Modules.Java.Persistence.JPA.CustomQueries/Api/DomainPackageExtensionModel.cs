@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Intent.Metadata.Models;
+using Intent.Modelers.Domain.Api;
 using Intent.Modelers.Services.Api;
 using Intent.Modules.Common;
 using Intent.RoslynWeaver.Attributes;
@@ -12,10 +13,10 @@ using Intent.RoslynWeaver.Attributes;
 namespace Intent.Java.Persistence.JPA.CustomQueries.Api
 {
     [IntentManaged(Mode.Merge)]
-    public class PackageExtensionModel : ServicesPackageModel
+    public class DomainPackageExtensionModel : ServicesPackageModel
     {
         [IntentManaged(Mode.Ignore)]
-        public PackageExtensionModel(IPackage package) : base(package)
+        public DomainPackageExtensionModel(IPackage package) : base(package)
         {
         }
 

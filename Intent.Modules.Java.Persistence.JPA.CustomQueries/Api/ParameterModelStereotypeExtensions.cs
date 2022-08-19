@@ -52,6 +52,11 @@ namespace Intent.Java.Persistence.JPA.CustomQueries.Api
                 return _stereotype.GetProperty<bool>("Exclude From Parameter List");
             }
 
+            public string Value()
+            {
+                return _stereotype.GetProperty<string>("Value");
+            }
+
         }
 
     }

@@ -3,7 +3,7 @@
   <name>Query Settings</name>
   <targetMode>of-type</targetMode>
   <targetTypes>
-    <type id="4276d179-00df-4105-bad6-a467a06a799b">Custom Query</type>
+    <type id="4276d179-00df-4105-bad6-a467a06a799b">Query</type>
   </targetTypes>
   <targetReferenceTypes />
   <applyMode>always</applyMode>

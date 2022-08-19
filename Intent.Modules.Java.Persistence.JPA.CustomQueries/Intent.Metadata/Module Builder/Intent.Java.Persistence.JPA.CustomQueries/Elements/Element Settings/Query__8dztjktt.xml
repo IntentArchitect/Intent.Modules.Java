@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <class id="4276d179-00df-4105-bad6-a467a06a799b" type="Element Settings" typeId="727577aa-3e07-4b41-be7d-7359bb1e48c8">
-  <name>Custom Query</name>
-  <display>Custom Query</display>
+  <name>Query</name>
+  <display>Query</display>
   <isAbstract>false</isAbstract>
   <sort-children>by-type-then-manually</sort-children>
   <genericTypes />
@@ -133,7 +133,7 @@
       <childElements>
         <childElement id="e8ac7d6e-3df1-4849-9782-b014ff389e2d" type="Element Mapping" typeId="4a16943b-702c-4fb0-bfcc-2afd98b8814c">
           <name>NewElementMapping</name>
-          <display>[mapping]: Class -&gt; Custom Query (Map to Type)</display>
+          <display>[mapping]: Class -&gt; Query (Map to Type)</display>
           <isAbstract>false</isAbstract>
           <sort-children>by-type-then-by-name</sort-children>
           <genericTypes />

@@ -1,7 +1,7 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <package>
   <id>Intent.Java.Persistence.JPA.CustomQueries</id>
-  <version>3.3.0-pre.1</version>
+  <version>3.3.0</version>
   <supportedClientVersions>[3.2.0,4.0.0)</supportedClientVersions>
   <summary>A custom module for Intent.Modules.Java.</summary>
   <description>A custom module for Intent.Modules.Java.</description>
@@ -10,7 +10,7 @@
   <templates>
     <template id="Intent.Java.Persistence.JPA.CustomQueries.QueryResult" externalReference="0ff18d4b-8069-4494-9fde-94ac99e01028">
       <role>Data</role>
-      <location>views</location>
+      <location>results</location>
     </template>
   </templates>
   <decorators>

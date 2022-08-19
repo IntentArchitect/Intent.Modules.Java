@@ -10,21 +10,21 @@ using Intent.RoslynWeaver.Attributes;
 
 namespace Intent.Java.Persistence.JPA.CustomQueries.Api
 {
-    public static class CustomQueryModelStereotypeExtensions
+    public static class QueryModelStereotypeExtensions
     {
-        public static QuerySettings GetQuerySettings(this CustomQueryModel model)
+        public static QuerySettings GetQuerySettings(this QueryModel model)
         {
             var stereotype = model.GetStereotype("Query Settings");
             return stereotype != null ? new QuerySettings(stereotype) : null;
         }
 
 
-        public static bool HasQuerySettings(this CustomQueryModel model)
+        public static bool HasQuerySettings(this QueryModel model)
         {
             return model.HasStereotype("Query Settings");
         }
 
-        public static bool TryGetQuerySettings(this CustomQueryModel model, out QuerySettings stereotype)
+        public static bool TryGetQuerySettings(this QueryModel model, out QuerySettings stereotype)
         {
             if (!HasQuerySettings(model))
             {

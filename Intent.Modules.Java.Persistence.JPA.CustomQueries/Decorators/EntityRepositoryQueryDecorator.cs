@@ -37,18 +37,19 @@ namespace Intent.Modules.Java.Persistence.JPA.CustomQueries.Decorators
 
         public override IEnumerable<string> GetMembers()
         {
-            static CustomQueryData GetCustomQueryData(CustomQueryModel customQuery, EntityRepositoryTemplate template)
+            static QueryData GetQueryData(QueryModel query, EntityRepositoryTemplate template)
             {
                 var tables = new List<(string Name, string Alias)>();
                 var columns = new List<string>();
                 var whereClauses = new List<string>();
+                var annotatedParameters = new List<string>();
                 var parameters = new List<string>();
-                var queryResult = customQuery.TypeReference.Element.AsQueryResultModel();
+                var queryResult = query.TypeReference.Element.AsQueryResultModel();
 
                 // Get "root" table:
                 {
-                    var tableName = customQuery.InternalElement.ParentElement.Name.ToPascalCase();
-                    var tableAlias = customQuery.GetQuerySettings()?.TableAlias();
+                    var tableName = query.InternalElement.ParentElement.Name.ToPascalCase();
+                    var tableAlias = query.GetQuerySettings()?.TableAlias();
 
                     var table = (Name: tableName, Alias: !string.IsNullOrWhiteSpace(tableAlias) ? tableAlias : tableName);
                     tables.Add(table);
@@ -83,18 +84,26 @@ namespace Intent.Modules.Java.Persistence.JPA.CustomQueries.Decorators
                             continue;
                         }
 
+                        if (path.Element.SpecializationType == GeneralizationModel.SpecializationType)
+                        {
+                            continue;
+                        }
+
                         queryPath.Add(path.Name.ToCamelCase());
                     }
 
                     columns.Add($"{string.Join('.', queryPath)} as {column.Name.ToCamelCase()}");
                 }
 
-                foreach (var parameter in customQuery.Parameters)
+                foreach (var parameter in query.Parameters)
                 {
                     var excludeFromParamList = parameter.GetParameterSettings()?.ExcludeFromParameterList() == true;
                     if (!excludeFromParamList)
                     {
-                        parameters.Add($"@{template.ImportType("org.springframework.data.repository.query.Param")}(\"{parameter.Name}\") {template.GetTypeName(parameter)} {parameter.Name}");
+                        var annotation = $"@{template.ImportType("org.springframework.data.repository.query.Param")}(\"{parameter.Name}\") ";
+
+                        parameters.Add($"{template.GetTypeName(parameter)} {parameter.Name}");
+                        annotatedParameters.Add($"{annotation}{template.GetTypeName(parameter)} {parameter.Name}");
                     }
 
                     if (!parameter.InternalElement.IsMapped)
@@ -124,26 +133,44 @@ namespace Intent.Modules.Java.Persistence.JPA.CustomQueries.Decorators
                             continue;
                         }
 
+                        if (path.Element.SpecializationType == GeneralizationModel.SpecializationType)
+                        {
+                            continue;
+                        }
+
                         queryPath.Add(path.Name.ToCamelCase());
                     }
 
                     var equals = excludeFromParamList
-                        ? parameter.Value
+                        ? parameter.GetParameterSettings().Value()
                         : $":{parameter.Name}";
                     whereClauses.Add($"{string.Join('.', queryPath)} = {equals}");
                 }
 
-                return new CustomQueryData(tables, columns, whereClauses, parameters);
+                return new QueryData(tables, columns, whereClauses, parameters, annotatedParameters);
             }
 
-            foreach (var customQuery in new ClassExtensionModel(_template.Model.InternalElement).CustomQueries.Where(x => x.IsMapped))
+            foreach (var queryModel in new ClassExtensionModel(_template.Model.InternalElement).Queries)
             {
-                var distinct = customQuery.GetQuerySettings().Distinct();
-                var (tables, selectColumns, whereClauses, parameters) = GetCustomQueryData(customQuery, _template);
+                var (tables, selectColumns, whereClauses, parameters, annotatedParameters) = GetQueryData(queryModel, _template);
+                var distinct = queryModel.GetQuerySettings().Distinct();
+                var returnType = queryModel.TypeReference.IsCollection
+                    ? _template.GetTypeName(queryModel, $"{_template.ImportType("java.util.List")}<{{0}}>")
+                    : $"{_template.ImportType("java.util.Optional")}<{_template.GetTypeName(queryModel)}>";
+
+                // If we're returning the domain object and all parameters are simple included ones,
+                // then we can just make a method with an @Query annotation which is conventionally
+                // interpreted by JPA as a query filtering by each parameter.
+                if (queryModel.TypeReference.Element.Id == _template.Model.Id &&
+                    queryModel.Parameters.All(x => x.GetParameterSettings()?.ExcludeFromParameterList() != true))
+                {
+                    yield return $"{returnType} {queryModel.Name}({string.Join(", ", parameters)});";
+                    continue;
+                }
 
                 var lines = new List<string>();
 
-                if (customQuery.TypeReference.Element.IsClassModel())
+                if (queryModel.TypeReference.Element.IsClassModel())
                 {
                     lines.Add($"select {tables[0].Alias}");
                 }
@@ -168,7 +195,7 @@ namespace Intent.Modules.Java.Persistence.JPA.CustomQueries.Decorators
                 var query = $"\"{string.Join($" \" +{Environment.NewLine}            \"", lines)}\"";
 
                 yield return @$"@{_template.ImportType("org.springframework.data.jpa.repository.Query")}({query})
-    {_template.GetTypeName(customQuery, $"{_template.ImportType("java.util.List")}<{{0}}>")} {customQuery.Name}({string.Join(", ", parameters)});";
+    {returnType} {queryModel.Name}({string.Join(", ", annotatedParameters)});";
             }
 
             foreach (var member in base.GetMembers())

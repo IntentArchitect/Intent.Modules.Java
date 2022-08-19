@@ -11,14 +11,14 @@ using Intent.RoslynWeaver.Attributes;
 namespace Intent.Java.Persistence.JPA.CustomQueries.Api
 {
     [IntentManaged(Mode.Fully, Signature = Mode.Fully)]
-    public class CustomQueryModel : IMetadataModel, IHasStereotypes, IHasName, IHasTypeReference
+    public class QueryModel : IMetadataModel, IHasStereotypes, IHasName, IHasTypeReference
     {
-        public const string SpecializationType = "Custom Query";
+        public const string SpecializationType = "Query";
         public const string SpecializationTypeId = "4276d179-00df-4105-bad6-a467a06a799b";
         protected readonly IElement _element;
 
         [IntentManaged(Mode.Fully)]
-        public CustomQueryModel(IElement element, string requiredType = SpecializationType)
+        public QueryModel(IElement element, string requiredType = SpecializationType)
         {
             if (!requiredType.Equals(element.SpecializationType, StringComparison.InvariantCultureIgnoreCase))
             {
@@ -53,7 +53,7 @@ namespace Intent.Java.Persistence.JPA.CustomQueries.Api
             return _element.ToString();
         }
 
-        public bool Equals(CustomQueryModel other)
+        public bool Equals(QueryModel other)
         {
             return Equals(_element, other?._element);
         }
@@ -63,7 +63,7 @@ namespace Intent.Java.Persistence.JPA.CustomQueries.Api
             if (ReferenceEquals(null, obj)) return false;
             if (ReferenceEquals(this, obj)) return true;
             if (obj.GetType() != this.GetType()) return false;
-            return Equals((CustomQueryModel)obj);
+            return Equals((QueryModel)obj);
         }
 
         public override int GetHashCode()
@@ -73,25 +73,25 @@ namespace Intent.Java.Persistence.JPA.CustomQueries.Api
     }
 
     [IntentManaged(Mode.Fully)]
-    public static class CustomQueryModelExtensions
+    public static class QueryModelExtensions
     {
 
-        public static bool IsCustomQueryModel(this ICanBeReferencedType type)
+        public static bool IsQueryModel(this ICanBeReferencedType type)
         {
-            return type != null && type is IElement element && element.SpecializationTypeId == CustomQueryModel.SpecializationTypeId;
+            return type != null && type is IElement element && element.SpecializationTypeId == QueryModel.SpecializationTypeId;
         }
 
-        public static CustomQueryModel AsCustomQueryModel(this ICanBeReferencedType type)
+        public static QueryModel AsQueryModel(this ICanBeReferencedType type)
         {
-            return type.IsCustomQueryModel() ? new CustomQueryModel((IElement)type) : null;
+            return type.IsQueryModel() ? new QueryModel((IElement)type) : null;
         }
 
-        public static bool HasMapParametersMapping(this CustomQueryModel type)
+        public static bool HasMapParametersMapping(this QueryModel type)
         {
             return type.Mapping?.MappingSettingsId == "2290d513-2fd9-4425-8f88-14e17c008162";
         }
 
-        public static IElementMapping GetMapParametersMapping(this CustomQueryModel type)
+        public static IElementMapping GetMapParametersMapping(this QueryModel type)
         {
             return type.HasMapParametersMapping() ? type.Mapping : null;
         }

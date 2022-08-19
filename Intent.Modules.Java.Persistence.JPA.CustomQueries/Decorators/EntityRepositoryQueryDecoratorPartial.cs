@@ -5,9 +5,10 @@ namespace Intent.Modules.Java.Persistence.JPA.CustomQueries.Decorators;
 public partial class EntityRepositoryQueryDecorator
 {
     // This is in a partial file for now as the current RoslynWeaver (3.3.5) throws an exception when it encounters a "record struct".
-    private record struct CustomQueryData(
+    private record struct QueryData(
         IReadOnlyList<(string Name, string Alias)> Tables,
         IReadOnlyList<string> SelectColumns,
         IReadOnlyList<string> WhereClauses,
-        IReadOnlyList<string> Parameters);
+        IReadOnlyList<string> Parameters,
+        IReadOnlyList<string> AnnotatedParameters);
 }

@@ -3,7 +3,6 @@
   <name>Column</name>
   <display>Column</display>
   <isAbstract>false</isAbstract>
-  <sort-children>by-type-then-manually</sort-children>
   <order>1</order>
   <genericTypes />
   <isMapped>false</isMapped>
@@ -47,19 +46,5 @@
     </stereotype>
   </stereotypes>
   <metadata />
-  <childElements>
-    <childElement id="617614ba-edeb-401e-bb30-69ff25ba0718" type="Context Menu" typeId="d45e383d-90ba-4b64-aca7-34ca100cea21">
-      <name>[context menu]</name>
-      <display>[context menu]</display>
-      <isAbstract>false</isAbstract>
-      <genericTypes />
-      <isMapped>false</isMapped>
-      <parentFolderId>c00ed838-f31f-48e8-a3bc-6eb4a892584d</parentFolderId>
-      <packageId>1f412104-d5bd-42a6-9655-ce7e37bad8cb</packageId>
-      <packageName>Intent.Java.Persistence.JPA.CustomQueries</packageName>
-      <stereotypes />
-      <metadata />
-      <childElements />
-    </childElement>
-  </childElements>
+  <childElements />
 </class>

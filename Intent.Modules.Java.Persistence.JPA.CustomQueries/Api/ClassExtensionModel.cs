@@ -19,9 +19,9 @@ namespace Intent.Java.Persistence.JPA.CustomQueries.Api
         {
         }
 
-        public IList<CustomQueryModel> CustomQueries => _element.ChildElements
-            .GetElementsOfType(CustomQueryModel.SpecializationTypeId)
-            .Select(x => new CustomQueryModel(x))
+        public IList<QueryModel> Queries => _element.ChildElements
+            .GetElementsOfType(QueryModel.SpecializationTypeId)
+            .Select(x => new QueryModel(x))
             .ToList();
 
     }
