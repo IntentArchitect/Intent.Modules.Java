@@ -153,7 +153,8 @@ namespace Intent.Modules.Java.SpringBoot.Templates.RestController
             if (parameter.GetParameterSettings().Source().IsDefault())
             {
                 if ((GetTypeInfo(parameter.TypeReference).IsPrimitive ||
-                     GetTypeInfo(parameter.TypeReference).Name == "String") &&
+                     GetTypeInfo(parameter.TypeReference).Name == "String" ||
+                     GetTypeInfo(parameter.TypeReference).Name == "UUID") &&
                     !parameter.TypeReference.IsCollection)
                 {
                     if (GetPath(operation) != null && GetPath(operation).Split('/', StringSplitOptions.RemoveEmptyEntries).Any(x =>
