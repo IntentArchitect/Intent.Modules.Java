@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Intent.Engine;
+using Intent.Metadata.Models;
 using Intent.Metadata.RDBMS.Api;
 using Intent.Modelers.Domain.Api;
 using Intent.Modules.Common;
@@ -10,6 +11,7 @@ using Intent.Modules.Common.Java.Templates;
 using Intent.Modules.Common.Templates;
 using Intent.Modules.Java.Domain.Templates;
 using Intent.Modules.Java.Domain.Templates.DomainModel;
+using Intent.Modules.Metadata.RDBMS.Api.Indexes;
 using Intent.Modules.Metadata.RDBMS.Settings;
 using Intent.RoslynWeaver.Attributes;
 using Intent.Templates;
@@ -58,16 +60,15 @@ namespace Intent.Modules.Java.Spring.Data.Repositories.Templates.EntityRepositor
 
         private IEnumerable<string> GetQueriesFromIndexes()
         {
-            if (Model.Attributes.Any(x => x.HasIndex()))
-            {
-                var indexes = Model.Attributes
-                    .Where(x => x.HasIndex())
-                    .GroupBy(x => x.GetIndex().UniqueKey() ?? $"IX_{Model.Name}_{x.Name.ToCamelCase()}");
+            return Model.GetIndexes()
+                .Select(x =>
+                {
+                    var returnType = $"{ImportType("java.util.List")}<{this.GetDomainModelName()}>";
+                    var methodName = $"findBy{string.Join("And", x.KeyColumns.Select(c => c.Name.ToPascalCase()))}";
+                    var parameters = $"{string.Join(", ", x.KeyColumns.Select(c => $"{GetTypeName(c.SourceType.TypeReference)} {c.Name.ToCamelCase()}"))}";
 
-                return indexes.Select(x => $"{ImportType("java.util.List")}<{this.GetDomainModelName()}> findBy{string.Join("And", x.Select(c => c.Name.ToPascalCase()))}({string.Join(", ", x.Select(c => $"{GetTypeName(c)} {c.Name.ToCamelCase()}"))});");
-            }
-
-            return new string[0];
+                    return $"{returnType} {methodName}({parameters});";
+                });
         }
     }
 }
