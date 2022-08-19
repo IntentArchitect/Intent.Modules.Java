@@ -25,6 +25,18 @@ namespace Intent.Java.Persistence.JPA.Api
             return model.HasStereotype("Association JPA Settings");
         }
 
+        public static bool TryGetAssociationJPASettings(this AssociationTargetEndModel model, out AssociationJPASettings stereotype)
+        {
+            if (!HasAssociationJPASettings(model))
+            {
+                stereotype = null;
+                return false;
+            }
+
+            stereotype = new AssociationJPASettings(model.GetStereotype("Association JPA Settings"));
+            return true;
+        }
+
 
         public class AssociationJPASettings
         {

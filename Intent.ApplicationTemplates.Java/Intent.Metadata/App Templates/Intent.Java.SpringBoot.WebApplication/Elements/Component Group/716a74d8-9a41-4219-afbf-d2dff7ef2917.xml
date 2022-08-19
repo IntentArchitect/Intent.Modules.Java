@@ -3,6 +3,7 @@
   <name>Application</name>
   <display>Application</display>
   <isAbstract>false</isAbstract>
+  <sort-children>by-type-then-manually</sort-children>
   <order>2</order>
   <genericTypes />
   <isMapped>false</isMapped>
@@ -25,7 +26,7 @@
       <name>Service Handlers</name>
       <display>Service Handlers</display>
       <isAbstract>false</isAbstract>
-      <order>0</order>
+      <sort-children>by-type-then-manually</sort-children>
       <genericTypes />
       <isMapped>false</isMapped>
       <parentFolderId>716a74d8-9a41-4219-afbf-d2dff7ef2917</parentFolderId>
@@ -51,7 +52,6 @@
           <name>Intent.Java.Services</name>
           <display>Intent.Java.Services</display>
           <isAbstract>false</isAbstract>
-          <order>0</order>
           <genericTypes />
           <isMapped>false</isMapped>
           <parentFolderId>63b544b1-fcc8-41d2-853f-f2269b8e4002</parentFolderId>
@@ -76,7 +76,7 @@
       <name>ModelMapper</name>
       <display>ModelMapper</display>
       <isAbstract>false</isAbstract>
-      <order>1</order>
+      <sort-children>by-type-then-manually</sort-children>
       <genericTypes />
       <isMapped>false</isMapped>
       <parentFolderId>716a74d8-9a41-4219-afbf-d2dff7ef2917</parentFolderId>
@@ -102,7 +102,6 @@
           <name>Intent.Java.ModelMapper</name>
           <display>Intent.Java.ModelMapper</display>
           <isAbstract>false</isAbstract>
-          <order>0</order>
           <genericTypes />
           <isMapped>false</isMapped>
           <parentFolderId>f08fd95c-6d6c-43fb-a5af-6590bd5d3059</parentFolderId>
@@ -127,7 +126,7 @@
       <name>CRUD Implementations</name>
       <display>CRUD Implementations</display>
       <isAbstract>false</isAbstract>
-      <order>2</order>
+      <sort-children>by-type-then-manually</sort-children>
       <genericTypes />
       <isMapped>false</isMapped>
       <parentFolderId>716a74d8-9a41-4219-afbf-d2dff7ef2917</parentFolderId>
@@ -153,7 +152,6 @@
           <name>Intent.Java.Services.CRUD</name>
           <display>Intent.Java.Services.CRUD</display>
           <isAbstract>false</isAbstract>
-          <order>0</order>
           <genericTypes />
           <isMapped>false</isMapped>
           <parentFolderId>9cec07c7-26db-4070-bb2d-f1df9d96091c</parentFolderId>

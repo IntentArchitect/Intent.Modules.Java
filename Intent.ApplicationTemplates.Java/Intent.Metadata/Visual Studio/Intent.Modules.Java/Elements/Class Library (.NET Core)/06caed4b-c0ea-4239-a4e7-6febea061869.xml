@@ -4,7 +4,7 @@
   <name>Intent.ApplicationTemplates.Java</name>
   <display>Intent.ApplicationTemplates.Java</display>
   <isAbstract>false</isAbstract>
-  <order>1</order>
+  <sort-children>by-type-then-by-name</sort-children>
   <genericTypes />
   <isMapped>false</isMapped>
   <parentFolderId>6bc1816c-8318-4f89-a341-e154aeb9cd01</parentFolderId>
@@ -25,6 +25,7 @@
         <property name="f2956d24-b6da-427b-8728-c4f44714ce69" display="User Secrets Id" isActive="true" />
         <property name="42cdb74e-d5fd-4969-94ca-585d0527b862" display="Generate Runtime Configuration Files" isActive="true" />
         <property name="6111c054-9a40-4f92-9f7c-3a8372af14b8" display="Generate Documentation File" isActive="true" />
+        <property name="f236ad27-a4ab-490a-92d4-b6faf2d1e033" display="Assembly Name" isActive="true" />
       </properties>
     </stereotype>
     <stereotype stereotypeDefinitionId="d9b43864-0370-401b-9e71-b1d286919500" name="C# Project Options">
@@ -44,7 +45,6 @@
       <name>ApplicationTemplate.Builder.Templates.IatSpecFile</name>
       <display>ApplicationTemplate.Builder.Templates.IatSpecFile</display>
       <isAbstract>false</isAbstract>
-      <order>5</order>
       <genericTypes />
       <isMapped>false</isMapped>
       <parentFolderId>06caed4b-c0ea-4239-a4e7-6febea061869</parentFolderId>
@@ -59,7 +59,6 @@
       <display>Intent.ApplicationTemplate.Builder.Templates.IatSpecFile</display>
       <externalReference>Intent.ApplicationTemplate.Builder</externalReference>
       <isAbstract>false</isAbstract>
-      <order>6</order>
       <genericTypes />
       <isMapped>false</isMapped>
       <parentFolderId>06caed4b-c0ea-4239-a4e7-6febea061869</parentFolderId>
@@ -74,7 +73,6 @@
       <display>Intent.ApplicationTemplate.Builder.Templates.InstallationSettingsFile</display>
       <externalReference>Intent.ApplicationTemplate.Builder</externalReference>
       <isAbstract>false</isAbstract>
-      <order>7</order>
       <genericTypes />
       <isMapped>false</isMapped>
       <parentFolderId>06caed4b-c0ea-4239-a4e7-6febea061869</parentFolderId>
@@ -88,7 +86,6 @@
       <name>Intent.ModuleBuilder.IModeSpecFile</name>
       <display>Intent.ModuleBuilder.IModeSpecFile</display>
       <isAbstract>false</isAbstract>
-      <order>8</order>
       <genericTypes />
       <isMapped>false</isMapped>
       <parentFolderId>06caed4b-c0ea-4239-a4e7-6febea061869</parentFolderId>
@@ -102,7 +99,6 @@
       <name>Intent.ModuleBuilder.ReadMe</name>
       <display>Intent.ModuleBuilder.ReadMe</display>
       <isAbstract>false</isAbstract>
-      <order>9</order>
       <genericTypes />
       <isMapped>false</isMapped>
       <parentFolderId>06caed4b-c0ea-4239-a4e7-6febea061869</parentFolderId>
@@ -116,7 +112,6 @@
       <name>ModuleBuilder.Templates.Api.ApiMetadataDesignerExtensions</name>
       <display>ModuleBuilder.Templates.Api.ApiMetadataDesignerExtensions</display>
       <isAbstract>false</isAbstract>
-      <order>10</order>
       <genericTypes />
       <isMapped>false</isMapped>
       <parentFolderId>06caed4b-c0ea-4239-a4e7-6febea061869</parentFolderId>
@@ -130,7 +125,6 @@
       <name>ModuleBuilder.Templates.Api.ApiMetadataPackageExtensions</name>
       <display>ModuleBuilder.Templates.Api.ApiMetadataPackageExtensions</display>
       <isAbstract>false</isAbstract>
-      <order>11</order>
       <genericTypes />
       <isMapped>false</isMapped>
       <parentFolderId>06caed4b-c0ea-4239-a4e7-6febea061869</parentFolderId>
@@ -144,7 +138,6 @@
       <name>ModuleBuilder.Templates.Api.ApiMetadataProviderExtensions</name>
       <display>ModuleBuilder.Templates.Api.ApiMetadataProviderExtensions</display>
       <isAbstract>false</isAbstract>
-      <order>12</order>
       <genericTypes />
       <isMapped>false</isMapped>
       <parentFolderId>06caed4b-c0ea-4239-a4e7-6febea061869</parentFolderId>
@@ -158,7 +151,6 @@
       <name>Api</name>
       <display>Api</display>
       <isAbstract>false</isAbstract>
-      <order>13</order>
       <genericTypes />
       <isMapped>false</isMapped>
       <parentFolderId>06caed4b-c0ea-4239-a4e7-6febea061869</parentFolderId>
@@ -172,7 +164,6 @@
       <name>Decorators</name>
       <display>Decorators</display>
       <isAbstract>false</isAbstract>
-      <order>14</order>
       <genericTypes />
       <isMapped>false</isMapped>
       <parentFolderId>06caed4b-c0ea-4239-a4e7-6febea061869</parentFolderId>
@@ -186,7 +177,6 @@
       <name>DesignerConfig</name>
       <display>DesignerConfig</display>
       <isAbstract>false</isAbstract>
-      <order>15</order>
       <genericTypes />
       <isMapped>false</isMapped>
       <parentFolderId>06caed4b-c0ea-4239-a4e7-6febea061869</parentFolderId>
@@ -200,7 +190,6 @@
       <name>IModSpec</name>
       <display>IModSpec</display>
       <isAbstract>false</isAbstract>
-      <order>16</order>
       <genericTypes />
       <isMapped>false</isMapped>
       <parentFolderId>06caed4b-c0ea-4239-a4e7-6febea061869</parentFolderId>
@@ -214,7 +203,6 @@
       <name>Templates</name>
       <display>Templates</display>
       <isAbstract>false</isAbstract>
-      <order>17</order>
       <genericTypes />
       <isMapped>false</isMapped>
       <parentFolderId>06caed4b-c0ea-4239-a4e7-6febea061869</parentFolderId>

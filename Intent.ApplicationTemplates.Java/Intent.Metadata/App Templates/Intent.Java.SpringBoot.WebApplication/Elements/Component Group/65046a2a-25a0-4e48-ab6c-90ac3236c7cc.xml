@@ -3,6 +3,7 @@
   <name>Infrastructure</name>
   <display>Infrastructure</display>
   <isAbstract>false</isAbstract>
+  <sort-children>by-type-then-manually</sort-children>
   <order>4</order>
   <genericTypes />
   <isMapped>false</isMapped>
@@ -25,7 +26,7 @@
       <name>Java Persistence API</name>
       <display>Java Persistence API</display>
       <isAbstract>false</isAbstract>
-      <order>0</order>
+      <sort-children>by-type-then-manually</sort-children>
       <genericTypes />
       <isMapped>false</isMapped>
       <parentFolderId>65046a2a-25a0-4e48-ab6c-90ac3236c7cc</parentFolderId>
@@ -51,7 +52,6 @@
           <name>Intent.Java.Persistence.JPA</name>
           <display>Intent.Java.Persistence.JPA</display>
           <isAbstract>false</isAbstract>
-          <order>0</order>
           <genericTypes />
           <isMapped>false</isMapped>
           <parentFolderId>ac285896-21f8-456f-a237-ec6e4962f7cf</parentFolderId>
@@ -76,7 +76,7 @@
       <name>Spring JPA Repositories</name>
       <display>Spring JPA Repositories</display>
       <isAbstract>false</isAbstract>
-      <order>1</order>
+      <sort-children>by-type-then-manually</sort-children>
       <genericTypes />
       <isMapped>false</isMapped>
       <parentFolderId>65046a2a-25a0-4e48-ab6c-90ac3236c7cc</parentFolderId>
@@ -102,7 +102,6 @@
           <name>Intent.Java.Spring.Data.Repositories</name>
           <display>Intent.Java.Spring.Data.Repositories</display>
           <isAbstract>false</isAbstract>
-          <order>0</order>
           <genericTypes />
           <isMapped>false</isMapped>
           <parentFolderId>1de55731-a37e-4dc4-ac54-5318e1c34c4f</parentFolderId>

@@ -50,7 +50,7 @@
     </FileLog>
     <FileLog>
       <ProjectId>cb181c44-e0eb-4777-b2f1-110454210b8c</ProjectId>
-      <CorrelationId>Intent.ModuleBuilder.Java.Templates.JavaFileTemplate#161cbca5-2ef9-4c47-bf3e-265b9ef3c17a</CorrelationId>
+      <CorrelationId>Intent.ModuleBuilder.Java.Templates.JavaFileT4Template#161cbca5-2ef9-4c47-bf3e-265b9ef3c17a</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Templates/EntityRepository/EntityRepositoryTemplate.tt</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>EntityRepository/EntityRepositoryTemplate.tt</ProjectRelativeFilePath>

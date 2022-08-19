@@ -58,7 +58,7 @@
     </FileLog>
     <FileLog>
       <ProjectId>ccea972e-d4bf-492c-a8a3-58fdb0aac140</ProjectId>
-      <CorrelationId>Intent.ModuleBuilder.Java.Templates.JavaFileTemplate#781272e2-537c-488b-b4f8-0cd4b1ed743a</CorrelationId>
+      <CorrelationId>Intent.ModuleBuilder.Java.Templates.JavaFileT4Template#781272e2-537c-488b-b4f8-0cd4b1ed743a</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Templates/EntityToDtoMapping/EntityToDtoMappingTemplate.tt</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>EntityToDtoMapping/EntityToDtoMappingTemplate.tt</ProjectRelativeFilePath>
@@ -90,7 +90,7 @@
     </FileLog>
     <FileLog>
       <ProjectId>ccea972e-d4bf-492c-a8a3-58fdb0aac140</ProjectId>
-      <CorrelationId>Intent.ModuleBuilder.Java.Templates.JavaFileTemplate#f2af8499-cbaa-4618-9992-ee57acf31ffc</CorrelationId>
+      <CorrelationId>Intent.ModuleBuilder.Java.Templates.JavaFileT4Template#f2af8499-cbaa-4618-9992-ee57acf31ffc</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Templates/ModelMapperBean/ModelMapperBeanTemplate.tt</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>ModelMapperBean/ModelMapperBeanTemplate.tt</ProjectRelativeFilePath>

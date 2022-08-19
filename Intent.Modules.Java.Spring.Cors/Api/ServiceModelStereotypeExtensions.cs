@@ -25,6 +25,18 @@ namespace Intent.Java.Spring.Cors.Api
             return model.HasStereotype("CORS Settings");
         }
 
+        public static bool TryGetCORSSettings(this ServiceModel model, out CORSSettings stereotype)
+        {
+            if (!HasCORSSettings(model))
+            {
+                stereotype = null;
+                return false;
+            }
+
+            stereotype = new CORSSettings(model.GetStereotype("CORS Settings"));
+            return true;
+        }
+
 
         public class CORSSettings
         {

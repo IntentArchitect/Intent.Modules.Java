@@ -1,7 +1,7 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <package>
   <id>Intent.Java.Spring.Data.Repositories</id>
-  <version>3.3.5</version>
+  <version>3.3.6</version>
   <supportedClientVersions>[3.3.0-pre.0, 4.0.0)</supportedClientVersions>
   <summary>Spring-based entity repository interfaces.</summary>
   <description>Spring-based entity repository interfaces.</description>
@@ -10,13 +10,14 @@
   <templates>
     <template id="Intent.Java.Spring.Data.Repositories.EntityRepository" externalReference="161cbca5-2ef9-4c47-bf3e-265b9ef3c17a">
       <role>Data.Repositories</role>
+      <location></location>
     </template>
   </templates>
   <decorators></decorators>
   <factoryExtensions></factoryExtensions>
   <dependencies>
     <dependency id="Intent.Common" version="3.3.10" />
-    <dependency id="Intent.Common.Java" version="3.3.8" />
+    <dependency id="Intent.Common.Java" version="3.3.10" />
     <dependency id="Intent.Common.Types" version="3.3.4" />
     <dependency id="Intent.Java.Persistence.JPA" version="3.3.4" />
     <dependency id="Intent.Java.Weaving.Annotations" version="3.3.2" />

@@ -3,7 +3,6 @@
   <name>AbstractEntityDecorator</name>
   <display>AbstractEntityDecorator</display>
   <isAbstract>false</isAbstract>
-  <order>1</order>
   <genericTypes />
   <isMapped>false</isMapped>
   <parentFolderId>94c6a849-fc61-4d80-9bdc-2ad79268ac57</parentFolderId>

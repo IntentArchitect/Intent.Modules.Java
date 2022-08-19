@@ -3,6 +3,7 @@
   <name>Api</name>
   <display>Api</display>
   <isAbstract>false</isAbstract>
+  <sort-children>by-type-then-manually</sort-children>
   <order>1</order>
   <genericTypes />
   <isMapped>false</isMapped>
@@ -25,7 +26,7 @@
       <name>Spring Boot</name>
       <display>Spring Boot</display>
       <isAbstract>false</isAbstract>
-      <order>0</order>
+      <sort-children>by-type-then-manually</sort-children>
       <genericTypes />
       <isMapped>false</isMapped>
       <parentFolderId>8bef88fa-fb7d-42f0-aa0d-999b005aab2f</parentFolderId>
@@ -51,7 +52,6 @@
           <name>Intent.Java.SpringBoot</name>
           <display>Intent.Java.SpringBoot</display>
           <isAbstract>false</isAbstract>
-          <order>0</order>
           <genericTypes />
           <isMapped>false</isMapped>
           <parentFolderId>596e01eb-4756-43a2-8177-8923882bc0bc</parentFolderId>
@@ -76,7 +76,7 @@
       <name>OpenAPI</name>
       <display>OpenAPI</display>
       <isAbstract>false</isAbstract>
-      <order>1</order>
+      <sort-children>by-type-then-manually</sort-children>
       <genericTypes />
       <isMapped>false</isMapped>
       <parentFolderId>8bef88fa-fb7d-42f0-aa0d-999b005aab2f</parentFolderId>
@@ -102,7 +102,6 @@
           <name>Intent.Java.SpringFox.Swagger</name>
           <display>Intent.Java.SpringFox.Swagger</display>
           <isAbstract>false</isAbstract>
-          <order>0</order>
           <genericTypes />
           <isMapped>false</isMapped>
           <parentFolderId>4cd87a4a-3b82-490f-8561-40f78b6f1c32</parentFolderId>

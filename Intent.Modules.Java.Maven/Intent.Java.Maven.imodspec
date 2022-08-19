@@ -1,7 +1,7 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <package>
   <id>Intent.Java.Maven</id>
-  <version>3.3.3</version>
+  <version>3.3.4</version>
   <supportedClientVersions>[3.3.0-pre.0, 4.0.0)</supportedClientVersions>
   <summary>Maven POM file management.</summary>
   <description>Maven POM file management.</description>
@@ -10,6 +10,7 @@
   <templates>
     <template id="Intent.Java.Maven.PomFile" externalReference="cf1787cd-4aae-4887-b9f1-e9fdaf5bee4d">
       <role>Root</role>
+      <location></location>
     </template>
   </templates>
   <decorators></decorators>

@@ -4,12 +4,14 @@
   <FileLogs>
     <FileLog>
       <CorrelationId>Intent.VisualStudio.Projects.VisualStudio2015Solution#6bc1816c-8318-4f89-a341-e154aeb9cd01</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>../Intent.Modules.Java.sln</ApplicationRelativeFilePath>
       <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
       <ProjectId>06caed4b-c0ea-4239-a4e7-6febea061869</ProjectId>
       <CorrelationId>Intent.VisualStudio.Projects.CoreLibrary.CSProject#06caed4b-c0ea-4239-a4e7-6febea061869</CorrelationId>
+      <OverwriteBehaviour>once-off</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Intent.ApplicationTemplates.Java.csproj</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>Intent.ApplicationTemplates.Java.csproj</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
@@ -17,6 +19,7 @@
     <FileLog>
       <ProjectId>06caed4b-c0ea-4239-a4e7-6febea061869</ProjectId>
       <CorrelationId>Intent.ApplicationTemplate.Builder.Templates.IatSpecFile#84eb6eb9-30f5-429d-bf3c-06591e639eec</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Intent.Java.SpringBoot.WebApplication/metadata.iatspec</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>Intent.Java.SpringBoot.WebApplication/metadata.iatspec</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>

@@ -3,7 +3,6 @@
   <name>DomainModelDecorator</name>
   <display>DomainModelDecorator</display>
   <isAbstract>false</isAbstract>
-  <order>1</order>
   <genericTypes />
   <isMapped>false</isMapped>
   <parentFolderId>3060efbe-358f-4d3a-99d6-561534b80b70</parentFolderId>

@@ -3,7 +3,6 @@
   <name>DataTransferModelMappingDecorator</name>
   <display>DataTransferModelMappingDecorator: DataTransferModelDecorator</display>
   <isAbstract>false</isAbstract>
-  <order>3</order>
   <genericTypes />
   <typeReference id="30727c4c-2b6e-4c1e-b981-876dd86b72f0">
     <typeId>be604817-d78c-4648-ab9f-7d9879bf0eff</typeId>

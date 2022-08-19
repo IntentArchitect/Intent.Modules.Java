@@ -3,6 +3,7 @@
   <name>Utilities</name>
   <display>Utilities</display>
   <isAbstract>false</isAbstract>
+  <sort-children>by-type-then-manually</sort-children>
   <order>5</order>
   <genericTypes />
   <isMapped>false</isMapped>
@@ -25,7 +26,7 @@
       <name>Maven</name>
       <display>Maven</display>
       <isAbstract>false</isAbstract>
-      <order>0</order>
+      <sort-children>by-type-then-manually</sort-children>
       <genericTypes />
       <isMapped>false</isMapped>
       <parentFolderId>86a04b25-b783-43f3-9a54-9bc0c00d8dbd</parentFolderId>
@@ -51,7 +52,6 @@
           <name>Intent.Java.Maven</name>
           <display>Intent.Java.Maven</display>
           <isAbstract>false</isAbstract>
-          <order>0</order>
           <genericTypes />
           <isMapped>false</isMapped>
           <parentFolderId>e275be58-bb79-4dbf-828d-e7873e56481d</parentFolderId>
@@ -76,7 +76,7 @@
       <name>Folder Structure</name>
       <display>Folder Structure</display>
       <isAbstract>false</isAbstract>
-      <order>1</order>
+      <sort-children>by-type-then-manually</sort-children>
       <genericTypes />
       <isMapped>false</isMapped>
       <parentFolderId>86a04b25-b783-43f3-9a54-9bc0c00d8dbd</parentFolderId>
@@ -102,7 +102,6 @@
           <name>Intent.OutputTargets.Folders</name>
           <display>Intent.OutputTargets.Folders</display>
           <isAbstract>false</isAbstract>
-          <order>0</order>
           <genericTypes />
           <isMapped>false</isMapped>
           <parentFolderId>690640b6-ba68-4e2f-b244-e4ec61674ffe</parentFolderId>

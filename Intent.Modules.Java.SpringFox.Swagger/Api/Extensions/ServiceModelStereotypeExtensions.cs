@@ -25,6 +25,18 @@ namespace Intent.Java.SpringFox.Swagger.Api
             return model.HasStereotype("OpenAPI Settings");
         }
 
+        public static bool TryGetOpenAPISettings(this ServiceModel model, out OpenAPISettings stereotype)
+        {
+            if (!HasOpenAPISettings(model))
+            {
+                stereotype = null;
+                return false;
+            }
+
+            stereotype = new OpenAPISettings(model.GetStereotype("OpenAPI Settings"));
+            return true;
+        }
+
 
         public class OpenAPISettings
         {

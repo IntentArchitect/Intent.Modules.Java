@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using Intent.Engine;
 using Intent.Modelers.Services.Api;
@@ -5,6 +6,7 @@ using Intent.Modules.Common;
 using Intent.Modules.Common.Java;
 using Intent.Modules.Common.Java.Templates;
 using Intent.Modules.Common.Templates;
+using Intent.Modules.Common.Types.Api;
 using Intent.Modules.Java.ModelMapper.Templates.EntityToDtoMapping;
 using Intent.RoslynWeaver.Attributes;
 using Intent.Templates;
@@ -31,8 +33,8 @@ namespace Intent.Modules.Java.ModelMapper.Templates.ModelMapperBean
         {
             return new JavaFileConfig(
                 className: $"ModelMapperBean",
-                package: OutputTarget.GetPackage(),
-                relativeLocation: OutputTarget.GetPackageFolderPath()
+                package: this.GetPackage(),
+                relativeLocation: this.GetPackageFolderPath()
             );
         }
 

@@ -3,7 +3,7 @@
   <name>Settings</name>
   <display>Settings</display>
   <isAbstract>false</isAbstract>
-  <order>3</order>
+  <sort-children>by-type-then-by-name</sort-children>
   <genericTypes />
   <isMapped>false</isMapped>
   <parentFolderId>06caed4b-c0ea-4239-a4e7-6febea061869</parentFolderId>
@@ -25,7 +25,6 @@
       <name>ApplicationTemplate.Builder.Templates.InstallationSettingsFile</name>
       <display>ApplicationTemplate.Builder.Templates.InstallationSettingsFile</display>
       <isAbstract>false</isAbstract>
-      <order>0</order>
       <genericTypes />
       <isMapped>false</isMapped>
       <parentFolderId>896426fa-2d41-47cb-84d1-2c95fe45946f</parentFolderId>

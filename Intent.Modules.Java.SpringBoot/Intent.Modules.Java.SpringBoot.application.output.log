@@ -42,7 +42,7 @@
     </FileLog>
     <FileLog>
       <ProjectId>db8d1b7b-e26f-4baa-ba43-990a5ff65135</ProjectId>
-      <CorrelationId>Intent.ModuleBuilder.Java.Templates.JavaFileTemplate#352eb8e5-c7f0-42a9-8438-f1b95ea193de</CorrelationId>
+      <CorrelationId>Intent.ModuleBuilder.Java.Templates.JavaFileT4Template#352eb8e5-c7f0-42a9-8438-f1b95ea193de</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Templates/Application/ApplicationTemplate.tt</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>Application/ApplicationTemplate.tt</ProjectRelativeFilePath>
@@ -82,7 +82,7 @@
     </FileLog>
     <FileLog>
       <ProjectId>db8d1b7b-e26f-4baa-ba43-990a5ff65135</ProjectId>
-      <CorrelationId>Intent.ModuleBuilder.Java.Templates.JavaFileTemplate#33a60ef5-5613-4719-a96d-206d3732c9ba</CorrelationId>
+      <CorrelationId>Intent.ModuleBuilder.Java.Templates.JavaFileT4Template#33a60ef5-5613-4719-a96d-206d3732c9ba</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Templates/RestController/RestControllerTemplate.tt</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>RestController/RestControllerTemplate.tt</ProjectRelativeFilePath>

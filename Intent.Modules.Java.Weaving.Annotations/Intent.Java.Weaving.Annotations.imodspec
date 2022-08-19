@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <package>
   <id>Intent.Java.Weaving.Annotations</id>
   <version>3.3.3</version>
@@ -10,37 +10,46 @@
   <templates>
     <template id="Intent.Java.Weaving.Annotations.IntentCanAdd" externalReference="89933aaf-7faa-483b-b027-13b2944b4662">
       <role>Intent.Annotations</role>
+      <location></location>
     </template>
     <template id="Intent.Java.Weaving.Annotations.IntentCanRemove" externalReference="834ca01f-9c60-4b63-a349-8725dbc6c050">
       <role>Intent.Annotations</role>
+      <location></location>
     </template>
     <template id="Intent.Java.Weaving.Annotations.IntentCanUpdate" externalReference="7a9d3e63-370b-4252-86c5-b7f4db3eee30">
       <role>Intent.Annotations</role>
+      <location></location>
     </template>
     <template id="Intent.Java.Weaving.Annotations.IntentIgnore" externalReference="382d6e66-ff63-4b28-a528-f252ff145032">
       <role>Intent.Annotations</role>
+      <location></location>
     </template>
     <template id="Intent.Java.Weaving.Annotations.IntentIgnoreBody" externalReference="c0a50037-3948-4076-a7e0-27cfc15e548a">
       <role>Intent.Annotations</role>
+      <location></location>
     </template>
     <template id="Intent.Java.Weaving.Annotations.IntentManage" externalReference="e88d9b1f-b493-435e-97b6-e2a122d0e2fb">
       <role>Intent.Annotations</role>
+      <location></location>
     </template>
     <template id="Intent.Java.Weaving.Annotations.IntentManageClass" externalReference="f1c2d62b-7d01-4e9c-967e-4377a2efc4b1">
       <role>Intent.Annotations</role>
+      <location></location>
     </template>
     <template id="Intent.Java.Weaving.Annotations.IntentMerge" externalReference="7ac43274-c88a-406b-8cce-8a4900a47faf">
       <role>Intent.Annotations</role>
+      <location></location>
     </template>
     <template id="Intent.Java.Weaving.Annotations.ModeEnum" externalReference="d65432d9-673e-4fc6-87c4-f9d481c706bd">
       <role>Intent.Annotations</role>
+      <location></location>
     </template>
   </templates>
   <decorators></decorators>
   <factoryExtensions></factoryExtensions>
   <dependencies>
     <dependency id="Intent.Common" version="3.3.10" />
-    <dependency id="Intent.Common.Java" version="3.3.8" />
+    <dependency id="Intent.Common.Java" version="3.3.10" />
     <dependency id="Intent.Common.Types" version="3.3.4" />
   </dependencies>
   <files>

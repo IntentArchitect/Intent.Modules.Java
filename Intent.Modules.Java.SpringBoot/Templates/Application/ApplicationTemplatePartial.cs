@@ -37,8 +37,8 @@ namespace Intent.Modules.Java.SpringBoot.Templates.Application
         {
             return new JavaFileConfig(
                 className: $"Application",
-                package: OutputTarget.GetPackage(),
-                relativeLocation: OutputTarget.GetPackageFolderPath()
+                package: this.GetPackage(),
+                relativeLocation: this.GetPackageFolderPath()
             );
         }
 

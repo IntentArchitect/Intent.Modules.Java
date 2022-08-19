@@ -3,7 +3,6 @@
   <name>PomFile</name>
   <display>PomFile: Single File</display>
   <isAbstract>false</isAbstract>
-  <order>1</order>
   <genericTypes />
   <typeReference id="a721a44c-7c6d-4b6f-b6b9-d8a9566bf3c8">
     <typeId>f65d2904-88c9-4501-873a-a4eec8303b1d</typeId>

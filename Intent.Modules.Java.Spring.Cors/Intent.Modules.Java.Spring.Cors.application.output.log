@@ -74,7 +74,7 @@
     </FileLog>
     <FileLog>
       <ProjectId>89f29537-720d-4631-8c9e-bd9a316caee8</ProjectId>
-      <CorrelationId>Intent.ModuleBuilder.Java.Templates.JavaFileTemplate#217129c3-670d-447c-8cdc-955ab8249f96</CorrelationId>
+      <CorrelationId>Intent.ModuleBuilder.Java.Templates.JavaFileT4Template#217129c3-670d-447c-8cdc-955ab8249f96</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Templates/CorsConfig/CorsConfigTemplate.tt</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>CorsConfig/CorsConfigTemplate.tt</ProjectRelativeFilePath>

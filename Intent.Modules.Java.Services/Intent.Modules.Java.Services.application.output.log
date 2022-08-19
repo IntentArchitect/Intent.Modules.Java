@@ -98,7 +98,7 @@
     </FileLog>
     <FileLog>
       <ProjectId>32921436-c716-4bad-8ff1-2cc93f11b598</ProjectId>
-      <CorrelationId>Intent.ModuleBuilder.Java.Templates.JavaFileTemplate#be2a8f83-c156-4e1a-8095-00c402a0cb15</CorrelationId>
+      <CorrelationId>Intent.ModuleBuilder.Java.Templates.JavaFileT4Template#be2a8f83-c156-4e1a-8095-00c402a0cb15</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Templates/DataTransferModel/DataTransferModelTemplate.tt</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>DataTransferModel/DataTransferModelTemplate.tt</ProjectRelativeFilePath>
@@ -138,7 +138,7 @@
     </FileLog>
     <FileLog>
       <ProjectId>32921436-c716-4bad-8ff1-2cc93f11b598</ProjectId>
-      <CorrelationId>Intent.ModuleBuilder.Java.Templates.JavaFileTemplate#7ce91561-d9e7-4da5-870b-bc7f091513c7</CorrelationId>
+      <CorrelationId>Intent.ModuleBuilder.Java.Templates.JavaFileT4Template#7ce91561-d9e7-4da5-870b-bc7f091513c7</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Templates/ServiceImplementation/ServiceImplementationTemplate.tt</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>ServiceImplementation/ServiceImplementationTemplate.tt</ProjectRelativeFilePath>
@@ -178,7 +178,7 @@
     </FileLog>
     <FileLog>
       <ProjectId>32921436-c716-4bad-8ff1-2cc93f11b598</ProjectId>
-      <CorrelationId>Intent.ModuleBuilder.Java.Templates.JavaFileTemplate#592827c8-f46a-4c1a-a54d-ef454ff11210</CorrelationId>
+      <CorrelationId>Intent.ModuleBuilder.Java.Templates.JavaFileT4Template#592827c8-f46a-4c1a-a54d-ef454ff11210</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Templates/ServiceInterface/ServiceInterfaceTemplate.tt</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>ServiceInterface/ServiceInterfaceTemplate.tt</ProjectRelativeFilePath>

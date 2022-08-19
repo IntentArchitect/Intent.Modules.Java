@@ -50,7 +50,7 @@
     </FileLog>
     <FileLog>
       <ProjectId>ba8f91ca-3f8c-44a2-9194-e9d5ed6640bd</ProjectId>
-      <CorrelationId>Intent.ModuleBuilder.Java.Templates.JavaFileTemplate#94c6a849-fc61-4d80-9bdc-2ad79268ac57</CorrelationId>
+      <CorrelationId>Intent.ModuleBuilder.Java.Templates.JavaFileT4Template#94c6a849-fc61-4d80-9bdc-2ad79268ac57</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Templates/AbstractEntity/AbstractEntityTemplate.tt</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>AbstractEntity/AbstractEntityTemplate.tt</ProjectRelativeFilePath>
@@ -90,7 +90,7 @@
     </FileLog>
     <FileLog>
       <ProjectId>ba8f91ca-3f8c-44a2-9194-e9d5ed6640bd</ProjectId>
-      <CorrelationId>Intent.ModuleBuilder.Java.Templates.JavaFileTemplate#3060efbe-358f-4d3a-99d6-561534b80b70</CorrelationId>
+      <CorrelationId>Intent.ModuleBuilder.Java.Templates.JavaFileT4Template#3060efbe-358f-4d3a-99d6-561534b80b70</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Templates/DomainModel/DomainModelTemplate.tt</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>DomainModel/DomainModelTemplate.tt</ProjectRelativeFilePath>

@@ -3,7 +3,7 @@
   <name>Templates</name>
   <display>Templates</display>
   <isAbstract>false</isAbstract>
-  <order>5</order>
+  <sort-children>by-type-then-by-name</sort-children>
   <genericTypes />
   <isMapped>false</isMapped>
   <parentFolderId>ef69d81e-e67c-4251-984c-20c3fb2a945e</parentFolderId>
@@ -21,19 +21,36 @@
   </stereotypes>
   <metadata />
   <childElements>
-    <childElement id="34c7a53d-9305-4522-8503-358e29bfa59e" type="Template Output" typeId="d421c322-7a51-4094-89fa-e5d8a0a97b27">
-      <name>Intent.ModuleBuilder.Java.Templates.JavaFileTemplate</name>
-      <display>Intent.ModuleBuilder.Java.Templates.JavaFileTemplate</display>
+    <childElement id="a57defb3-469a-441e-9da1-ae184032f0e9" type="Template Output" typeId="d421c322-7a51-4094-89fa-e5d8a0a97b27">
+      <name>Intent.ModuleBuilder.Java.Templates.JavaFileStringInterpolationTemplate</name>
+      <display>Intent.ModuleBuilder.Java.Templates.JavaFileStringInterpolationTemplate</display>
       <externalReference>Intent.ModuleBuilder.Java</externalReference>
       <isAbstract>false</isAbstract>
-      <order>0</order>
       <genericTypes />
       <isMapped>false</isMapped>
       <parentFolderId>b48412e6-b5b9-400c-b03f-8ac95362c84c</parentFolderId>
       <packageId>aab5f39b-56e6-4a19-ad40-d00c9a6d5a0e</packageId>
       <packageName>Intent.Modules.Java</packageName>
       <stereotypes />
-      <metadata />
+      <metadata>
+        <entry key="status" value="assigned" />
+      </metadata>
+      <childElements />
+    </childElement>
+    <childElement id="ebc55d8d-53f9-4bfa-9abd-2cc6a564e02a" type="Template Output" typeId="d421c322-7a51-4094-89fa-e5d8a0a97b27">
+      <name>Intent.ModuleBuilder.Java.Templates.JavaFileT4Template</name>
+      <display>Intent.ModuleBuilder.Java.Templates.JavaFileT4Template</display>
+      <externalReference>Intent.ModuleBuilder.Java</externalReference>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <isMapped>false</isMapped>
+      <parentFolderId>b48412e6-b5b9-400c-b03f-8ac95362c84c</parentFolderId>
+      <packageId>aab5f39b-56e6-4a19-ad40-d00c9a6d5a0e</packageId>
+      <packageName>Intent.Modules.Java</packageName>
+      <stereotypes />
+      <metadata>
+        <entry key="status" value="assigned" />
+      </metadata>
       <childElements />
     </childElement>
     <childElement id="51dced6a-bf8a-4e07-88df-70e787234e07" type="Template Output" typeId="d421c322-7a51-4094-89fa-e5d8a0a97b27">
@@ -41,7 +58,6 @@
       <display>Intent.ModuleBuilder.Java.Templates.JavaFileTemplatePartial</display>
       <externalReference>Intent.ModuleBuilder.Java</externalReference>
       <isAbstract>false</isAbstract>
-      <order>1</order>
       <genericTypes />
       <isMapped>false</isMapped>
       <parentFolderId>b48412e6-b5b9-400c-b03f-8ac95362c84c</parentFolderId>
@@ -56,7 +72,6 @@
       <display>Intent.ModuleBuilder.Java.Templates.JavaTemplate.PreProcessT4</display>
       <externalReference>Intent.ModuleBuilder.Java</externalReference>
       <isAbstract>false</isAbstract>
-      <order>2</order>
       <genericTypes />
       <isMapped>false</isMapped>
       <parentFolderId>b48412e6-b5b9-400c-b03f-8ac95362c84c</parentFolderId>
@@ -71,7 +86,6 @@
       <display>Intent.ModuleBuilder.ProjectItemTemplate.Partial</display>
       <externalReference>Intent.ModuleBuilder</externalReference>
       <isAbstract>false</isAbstract>
-      <order>3</order>
       <genericTypes />
       <isMapped>false</isMapped>
       <parentFolderId>b48412e6-b5b9-400c-b03f-8ac95362c84c</parentFolderId>
@@ -86,7 +100,6 @@
       <display>Intent.ModuleBuilder.ProjectItemTemplate.T4Template</display>
       <externalReference>Intent.ModuleBuilder</externalReference>
       <isAbstract>false</isAbstract>
-      <order>4</order>
       <genericTypes />
       <isMapped>false</isMapped>
       <parentFolderId>b48412e6-b5b9-400c-b03f-8ac95362c84c</parentFolderId>
@@ -101,7 +114,6 @@
       <display>Intent.ModuleBuilder.ProjectItemTemplate.T4Template.PreProcessed</display>
       <externalReference>Intent.ModuleBuilder</externalReference>
       <isAbstract>false</isAbstract>
-      <order>5</order>
       <genericTypes />
       <isMapped>false</isMapped>
       <parentFolderId>b48412e6-b5b9-400c-b03f-8ac95362c84c</parentFolderId>
@@ -116,7 +128,6 @@
       <display>Intent.ModuleBuilder.TemplateRegistration.Custom</display>
       <externalReference>Intent.ModuleBuilder</externalReference>
       <isAbstract>false</isAbstract>
-      <order>6</order>
       <genericTypes />
       <isMapped>false</isMapped>
       <parentFolderId>b48412e6-b5b9-400c-b03f-8ac95362c84c</parentFolderId>
@@ -131,7 +142,6 @@
       <display>Intent.ModuleBuilder.TemplateRegistration.FilePerModel</display>
       <externalReference>Intent.ModuleBuilder</externalReference>
       <isAbstract>false</isAbstract>
-      <order>7</order>
       <genericTypes />
       <isMapped>false</isMapped>
       <parentFolderId>b48412e6-b5b9-400c-b03f-8ac95362c84c</parentFolderId>
@@ -146,7 +156,6 @@
       <display>Intent.ModuleBuilder.TemplateRegistration.SingleFileListModel</display>
       <externalReference>Intent.ModuleBuilder</externalReference>
       <isAbstract>false</isAbstract>
-      <order>8</order>
       <genericTypes />
       <isMapped>false</isMapped>
       <parentFolderId>b48412e6-b5b9-400c-b03f-8ac95362c84c</parentFolderId>
@@ -161,7 +170,6 @@
       <display>Intent.ModuleBuilder.TemplateRegistration.SingleFileNoModel</display>
       <externalReference>Intent.ModuleBuilder</externalReference>
       <isAbstract>false</isAbstract>
-      <order>9</order>
       <genericTypes />
       <isMapped>false</isMapped>
       <parentFolderId>b48412e6-b5b9-400c-b03f-8ac95362c84c</parentFolderId>
@@ -176,7 +184,6 @@
       <display>Intent.ModuleBuilder.Templates.StaticContentTemplateRegistration</display>
       <externalReference>Intent.ModuleBuilder</externalReference>
       <isAbstract>false</isAbstract>
-      <order>10</order>
       <genericTypes />
       <isMapped>false</isMapped>
       <parentFolderId>b48412e6-b5b9-400c-b03f-8ac95362c84c</parentFolderId>
@@ -193,7 +200,6 @@
       <display>Intent.ModuleBuilder.Templates.TemplateDecoratorContract</display>
       <externalReference>Intent.ModuleBuilder</externalReference>
       <isAbstract>false</isAbstract>
-      <order>11</order>
       <genericTypes />
       <isMapped>false</isMapped>
       <parentFolderId>b48412e6-b5b9-400c-b03f-8ac95362c84c</parentFolderId>
@@ -208,7 +214,6 @@
       <display>Intent.ModuleBuilder.Templates.TemplateExtensions</display>
       <externalReference>Intent.ModuleBuilder</externalReference>
       <isAbstract>false</isAbstract>
-      <order>12</order>
       <genericTypes />
       <isMapped>false</isMapped>
       <parentFolderId>b48412e6-b5b9-400c-b03f-8ac95362c84c</parentFolderId>

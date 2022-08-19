@@ -3,7 +3,6 @@
   <name>ValidationDomainModelDecorator</name>
   <display>ValidationDomainModelDecorator: DomainModelDecorator</display>
   <isAbstract>false</isAbstract>
-  <order>1</order>
   <genericTypes />
   <typeReference id="b04b4eb1-df2f-42da-bc40-f672841b0c5e">
     <typeId>a894136d-e504-4327-a9cd-0452c74dae9b</typeId>

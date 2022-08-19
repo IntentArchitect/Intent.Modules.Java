@@ -42,7 +42,7 @@
     </FileLog>
     <FileLog>
       <ProjectId>631ccc2a-ef75-4dd2-8106-edc7337d1209</ProjectId>
-      <CorrelationId>Intent.ModuleBuilder.Java.Templates.JavaFileTemplate#89933aaf-7faa-483b-b027-13b2944b4662</CorrelationId>
+      <CorrelationId>Intent.ModuleBuilder.Java.Templates.JavaFileT4Template#89933aaf-7faa-483b-b027-13b2944b4662</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Templates/IntentCanAdd/IntentCanAddTemplate.tt</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>IntentCanAdd/IntentCanAddTemplate.tt</ProjectRelativeFilePath>
@@ -74,7 +74,7 @@
     </FileLog>
     <FileLog>
       <ProjectId>631ccc2a-ef75-4dd2-8106-edc7337d1209</ProjectId>
-      <CorrelationId>Intent.ModuleBuilder.Java.Templates.JavaFileTemplate#834ca01f-9c60-4b63-a349-8725dbc6c050</CorrelationId>
+      <CorrelationId>Intent.ModuleBuilder.Java.Templates.JavaFileT4Template#834ca01f-9c60-4b63-a349-8725dbc6c050</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Templates/IntentCanRemove/IntentCanRemoveTemplate.tt</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>IntentCanRemove/IntentCanRemoveTemplate.tt</ProjectRelativeFilePath>
@@ -106,7 +106,7 @@
     </FileLog>
     <FileLog>
       <ProjectId>631ccc2a-ef75-4dd2-8106-edc7337d1209</ProjectId>
-      <CorrelationId>Intent.ModuleBuilder.Java.Templates.JavaFileTemplate#7a9d3e63-370b-4252-86c5-b7f4db3eee30</CorrelationId>
+      <CorrelationId>Intent.ModuleBuilder.Java.Templates.JavaFileT4Template#7a9d3e63-370b-4252-86c5-b7f4db3eee30</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Templates/IntentCanUpdate/IntentCanUpdateTemplate.tt</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>IntentCanUpdate/IntentCanUpdateTemplate.tt</ProjectRelativeFilePath>
@@ -138,7 +138,7 @@
     </FileLog>
     <FileLog>
       <ProjectId>631ccc2a-ef75-4dd2-8106-edc7337d1209</ProjectId>
-      <CorrelationId>Intent.ModuleBuilder.Java.Templates.JavaFileTemplate#382d6e66-ff63-4b28-a528-f252ff145032</CorrelationId>
+      <CorrelationId>Intent.ModuleBuilder.Java.Templates.JavaFileT4Template#382d6e66-ff63-4b28-a528-f252ff145032</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Templates/IntentIgnore/IntentIgnoreTemplate.tt</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>IntentIgnore/IntentIgnoreTemplate.tt</ProjectRelativeFilePath>
@@ -170,7 +170,7 @@
     </FileLog>
     <FileLog>
       <ProjectId>631ccc2a-ef75-4dd2-8106-edc7337d1209</ProjectId>
-      <CorrelationId>Intent.ModuleBuilder.Java.Templates.JavaFileTemplate#c0a50037-3948-4076-a7e0-27cfc15e548a</CorrelationId>
+      <CorrelationId>Intent.ModuleBuilder.Java.Templates.JavaFileT4Template#c0a50037-3948-4076-a7e0-27cfc15e548a</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Templates/IntentIgnoreBody/IntentIgnoreBodyTemplate.tt</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>IntentIgnoreBody/IntentIgnoreBodyTemplate.tt</ProjectRelativeFilePath>
@@ -202,7 +202,7 @@
     </FileLog>
     <FileLog>
       <ProjectId>631ccc2a-ef75-4dd2-8106-edc7337d1209</ProjectId>
-      <CorrelationId>Intent.ModuleBuilder.Java.Templates.JavaFileTemplate#e88d9b1f-b493-435e-97b6-e2a122d0e2fb</CorrelationId>
+      <CorrelationId>Intent.ModuleBuilder.Java.Templates.JavaFileT4Template#e88d9b1f-b493-435e-97b6-e2a122d0e2fb</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Templates/IntentManage/IntentManageTemplate.tt</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>IntentManage/IntentManageTemplate.tt</ProjectRelativeFilePath>
@@ -234,7 +234,7 @@
     </FileLog>
     <FileLog>
       <ProjectId>631ccc2a-ef75-4dd2-8106-edc7337d1209</ProjectId>
-      <CorrelationId>Intent.ModuleBuilder.Java.Templates.JavaFileTemplate#f1c2d62b-7d01-4e9c-967e-4377a2efc4b1</CorrelationId>
+      <CorrelationId>Intent.ModuleBuilder.Java.Templates.JavaFileT4Template#f1c2d62b-7d01-4e9c-967e-4377a2efc4b1</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Templates/IntentManageClass/IntentManageClassTemplate.tt</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>IntentManageClass/IntentManageClassTemplate.tt</ProjectRelativeFilePath>
@@ -266,7 +266,7 @@
     </FileLog>
     <FileLog>
       <ProjectId>631ccc2a-ef75-4dd2-8106-edc7337d1209</ProjectId>
-      <CorrelationId>Intent.ModuleBuilder.Java.Templates.JavaFileTemplate#7ac43274-c88a-406b-8cce-8a4900a47faf</CorrelationId>
+      <CorrelationId>Intent.ModuleBuilder.Java.Templates.JavaFileT4Template#7ac43274-c88a-406b-8cce-8a4900a47faf</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Templates/IntentMerge/IntentMergeTemplate.tt</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>IntentMerge/IntentMergeTemplate.tt</ProjectRelativeFilePath>
@@ -298,7 +298,7 @@
     </FileLog>
     <FileLog>
       <ProjectId>631ccc2a-ef75-4dd2-8106-edc7337d1209</ProjectId>
-      <CorrelationId>Intent.ModuleBuilder.Java.Templates.JavaFileTemplate#d65432d9-673e-4fc6-87c4-f9d481c706bd</CorrelationId>
+      <CorrelationId>Intent.ModuleBuilder.Java.Templates.JavaFileT4Template#d65432d9-673e-4fc6-87c4-f9d481c706bd</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Templates/ModeEnum/ModeEnumTemplate.tt</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>ModeEnum/ModeEnumTemplate.tt</ProjectRelativeFilePath>

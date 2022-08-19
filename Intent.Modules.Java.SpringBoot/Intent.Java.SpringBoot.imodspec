@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <package>
   <id>Intent.Java.SpringBoot</id>
   <version>3.3.4</version>
@@ -10,6 +10,7 @@
   <templates>
     <template id="Intent.Java.SpringBoot.Application" externalReference="352eb8e5-c7f0-42a9-8438-f1b95ea193de">
       <role>Startup</role>
+      <location></location>
     </template>
     <template id="Intent.Java.SpringBoot.RestController" externalReference="33a60ef5-5613-4719-a96d-206d3732c9ba">
       <role>Application</role>
@@ -20,7 +21,7 @@
   <factoryExtensions></factoryExtensions>
   <dependencies>
     <dependency id="Intent.Common" version="3.3.10" />
-    <dependency id="Intent.Common.Java" version="3.3.8" />
+    <dependency id="Intent.Common.Java" version="3.3.10" />
     <dependency id="Intent.Common.Types" version="3.3.4" />
     <dependency id="Intent.Java.Maven" version="3.3.2" />
     <dependency id="Intent.Java.Services" version="3.3.3" />

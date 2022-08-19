@@ -28,8 +28,8 @@ namespace Intent.Modules.Java.Weaving.Annotations.Templates.IntentManage
         {
             return new JavaFileConfig(
                 className: $"IntentManage",
-                package: OutputTarget.GetPackage(),
-                relativeLocation: OutputTarget.GetPackageFolderPath()
+                package: this.GetPackage(),
+                relativeLocation: this.GetPackageFolderPath()
             );
         }
 

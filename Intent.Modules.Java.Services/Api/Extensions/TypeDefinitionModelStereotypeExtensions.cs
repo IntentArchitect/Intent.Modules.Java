@@ -19,20 +19,22 @@ namespace Intent.Modules.Java.Services.Api
             return stereotype != null ? new CheckedExceptionHandling(stereotype) : null;
         }
 
-        public static IReadOnlyCollection<CheckedExceptionHandling> GetCheckedExceptionHandlings(this TypeDefinitionModel model)
-        {
-            var stereotypes = model
-                .GetStereotypes("Checked Exception Handling")
-                .Select(stereotype => new CheckedExceptionHandling(stereotype))
-                .ToArray();
-
-            return stereotypes;
-        }
-
 
         public static bool HasCheckedExceptionHandling(this TypeDefinitionModel model)
         {
             return model.HasStereotype("Checked Exception Handling");
+        }
+
+        public static bool TryGetCheckedExceptionHandling(this TypeDefinitionModel model, out CheckedExceptionHandling stereotype)
+        {
+            if (!HasCheckedExceptionHandling(model))
+            {
+                stereotype = null;
+                return false;
+            }
+
+            stereotype = new CheckedExceptionHandling(model.GetStereotype("Checked Exception Handling"));
+            return true;
         }
 
 

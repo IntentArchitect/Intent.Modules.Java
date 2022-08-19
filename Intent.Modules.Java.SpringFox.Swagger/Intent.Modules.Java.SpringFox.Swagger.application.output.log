@@ -74,7 +74,7 @@
     </FileLog>
     <FileLog>
       <ProjectId>1c020f5d-a54f-4469-b2f7-5b30ab67cb35</ProjectId>
-      <CorrelationId>Intent.ModuleBuilder.Java.Templates.JavaFileTemplate#2102a415-a12f-48ca-ad49-397d79e3ca88</CorrelationId>
+      <CorrelationId>Intent.ModuleBuilder.Java.Templates.JavaFileT4Template#2102a415-a12f-48ca-ad49-397d79e3ca88</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Templates/SpringFoxConfig/SpringFoxConfigTemplate.tt</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>SpringFoxConfig/SpringFoxConfigTemplate.tt</ProjectRelativeFilePath>

@@ -1,7 +1,7 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <package>
   <id>Intent.Java.BeanValidation</id>
-  <version>3.3.4</version>
+  <version>3.3.5</version>
   <supportedClientVersions>[3.3.0-pre.0, 4.0.0)</supportedClientVersions>
   <summary>Domain entity validation using the Jakarta Bean Validation framework.</summary>
   <description>Domain entity validation using the Jakarta Bean Validation framework.</description>
@@ -16,7 +16,7 @@
     <dependency id="Intent.Common" version="3.3.10" />
     <dependency id="Intent.Common.Java" version="3.3.8" />
     <dependency id="Intent.Common.Types" version="3.3.4" />
-    <dependency id="Intent.Java.Domain" version="3.3.2" />
+    <dependency id="Intent.Java.Domain" version="3.3.3" />
     <dependency id="Intent.Metadata.RDBMS" version="3.3.5" />
   </dependencies>
   <files>

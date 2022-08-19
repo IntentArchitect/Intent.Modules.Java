@@ -28,8 +28,8 @@ namespace Intent.Modules.Java.Spring.Cors.Templates.CorsConfig
         {
             return new JavaFileConfig(
                 className: $"CorsConfig",
-                package: OutputTarget.GetPackage(),
-                relativeLocation: OutputTarget.GetPackageFolderPath()
+                package: this.GetPackage(),
+                relativeLocation: this.GetPackageFolderPath()
             );
         }
 
