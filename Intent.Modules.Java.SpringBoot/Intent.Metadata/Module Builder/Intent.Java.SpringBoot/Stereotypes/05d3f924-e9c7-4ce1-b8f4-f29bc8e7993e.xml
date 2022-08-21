@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<stereotypeDefinition id="5fc2381f-b73a-4fe6-9afb-8ac97b65503c" version="3.1.0">
+<stereotypeDefinition id="05d3f924-e9c7-4ce1-b8f4-f29bc8e7993e" version="3.1.0">
+  <hint>How controllers should handle exceptions of this type when used as a checked exception on services.</hint>
   <name>Checked Exception Handling</name>
   <targetMode>of-type</targetMode>
   <targetTypes>
     <type id="d4e577cd-ad05-4180-9a2e-fff4ddea0e1e">Type-Definition</type>
+    <type id="625e3f28-5e29-4cd3-92e6-9a111dbbb32c">Exception Type</type>
   </targetTypes>
   <targetReferenceTypes />
-  <applyMode>manually</applyMode>
+  <applyMode>always</applyMode>
   <icon type="FontAwesome" source="exclamation-circle" />
   <displayIcon>false</displayIcon>
   <displayFunction />
@@ -14,17 +16,18 @@
   <displayAsText>true</displayAsText>
   <autoAdd>false</autoAdd>
   <allowMultipleApplies>false</allowMultipleApplies>
-  <parentFolderId>e3481ac6-e429-4423-8eba-b5b1bc890f1b</parentFolderId>
-  <order>0</order>
-  <packageId>e3481ac6-e429-4423-8eba-b5b1bc890f1b</packageId>
-  <packageName>Intent.Java.Services</packageName>
+  <parentFolderId>91c31304-fa5d-493f-a9f8-28517b85459e</parentFolderId>
+  <order>100</order>
+  <packageId>27f3b2d0-b9e5-47da-bece-d305c33b5945</packageId>
+  <packageName>Intent.Java.SpringBoot</packageName>
   <properties>
-    <property id="3ab32e11-28f6-4633-8b2d-658193052ed6">
+    <property id="995740c3-93e6-401a-b2d9-5e91c3d00886">
       <name>Http Response Status</name>
       <type>string</type>
       <controlType>select</controlType>
       <optionsSource>options</optionsSource>
       <placeholder />
+      <defaultValue>INTERNAL_SERVER_ERROR (500)</defaultValue>
       <valueOptions>
         <option>CONTINUE (100)</option>
         <option>SWITCHING_PROTOCOLS (101)</option>
@@ -91,13 +94,13 @@
       <lookupTypes />
       <isRequiredFunction>return true;</isRequiredFunction>
     </property>
-    <property id="0a9580f8-b5cd-4386-9a03-8c3fd3f4544a">
+    <property id="4372c9e8-2e2e-4c0d-bae9-3b4f09686940">
       <name>Log</name>
       <type>string</type>
       <controlType>checkbox</controlType>
       <optionsSource>n/a</optionsSource>
       <placeholder />
-      <defaultValue>false</defaultValue>
+      <defaultValue>true</defaultValue>
       <valueOptions />
       <lookupTypes />
     </property>

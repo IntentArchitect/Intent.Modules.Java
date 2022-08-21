@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <package>
   <id>Intent.Java.Services</id>
   <version>3.3.5</version>
@@ -11,6 +11,10 @@
     <template id="Intent.Java.Services.DataTransferModel" externalReference="be2a8f83-c156-4e1a-8095-00c402a0cb15">
       <role>Application</role>
       <location>models</location>
+    </template>
+    <template id="Intent.Java.Services.ExceptionType" externalReference="a8985c30-1c41-47f2-9558-3566aee989d4">
+      <role>Startup</role>
+      <location>exceptions</location>
     </template>
     <template id="Intent.Java.Services.ServiceImplementation" externalReference="7ce91561-d9e7-4da5-870b-bc7f091513c7">
       <role>Application</role>

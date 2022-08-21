@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<class id="70997c56-7ee3-48ff-9574-7baa84b52abc" type="Folder" typeId="4d95d53a-8855-4f35-aa82-e312643f5c5f">
+  <name>Stereotypes</name>
+  <display>Stereotypes</display>
+  <isAbstract>false</isAbstract>
+  <genericTypes />
+  <isMapped>false</isMapped>
+  <parentFolderId>e3481ac6-e429-4423-8eba-b5b1bc890f1b</parentFolderId>
+  <packageId>e3481ac6-e429-4423-8eba-b5b1bc890f1b</packageId>
+  <packageName>Intent.Java.Services</packageName>
+  <stereotypes />
+  <metadata />
+  <childElements />
+</class>

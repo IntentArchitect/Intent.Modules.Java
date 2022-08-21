@@ -11,10 +11,10 @@ namespace Intent.Modules.Java.Services.Api
 {
     public static class ApiMetadataProviderExtensions
     {
-        public static IList<CheckedExceptionModel> GetCheckedExceptionModels(this IDesigner designer)
+        public static IList<ExceptionTypeModel> GetExceptionTypeModels(this IDesigner designer)
         {
-            return designer.GetElementsOfType(CheckedExceptionModel.SpecializationTypeId)
-                .Select(x => new CheckedExceptionModel(x))
+            return designer.GetElementsOfType(ExceptionTypeModel.SpecializationTypeId)
+                .Select(x => new ExceptionTypeModel(x))
                 .ToList();
         }
 

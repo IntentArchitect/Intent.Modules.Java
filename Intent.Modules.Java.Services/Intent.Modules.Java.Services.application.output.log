@@ -17,6 +17,22 @@
       <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
+      <ProjectId>8d5141ef-033c-4e36-a065-f7d8cbec5b7b</ProjectId>
+      <CorrelationId>Intent.ModuleBuilder.Templates.Api.ApiElementModel#625e3f28-5e29-4cd3-92e6-9a111dbbb32c</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>Api/ExceptionTypeModel.cs</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>ExceptionTypeModel.cs</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
+      <ProjectId>64c684bc-7d0b-4cf2-8445-6558b97ef785</ProjectId>
+      <CorrelationId>Intent.ModuleBuilder.Templates.Api.ApiElementModelExtensions#625e3f28-5e29-4cd3-92e6-9a111dbbb32c</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>Api/Extensions/ExceptionTypeModelStereotypeExtensions.cs</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>ExceptionTypeModelStereotypeExtensions.cs</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
       <ProjectId>64c684bc-7d0b-4cf2-8445-6558b97ef785</ProjectId>
       <CorrelationId>Intent.ModuleBuilder.Templates.Api.ApiElementModelExtensions#e030c97a-e066-40a7-8188-808c275df3cb</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
@@ -25,11 +41,11 @@
       <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
-      <ProjectId>64c684bc-7d0b-4cf2-8445-6558b97ef785</ProjectId>
-      <CorrelationId>Intent.ModuleBuilder.Templates.Api.ApiElementModelExtensions#d4e577cd-ad05-4180-9a2e-fff4ddea0e1e</CorrelationId>
+      <ProjectId>8d5141ef-033c-4e36-a065-f7d8cbec5b7b</ProjectId>
+      <CorrelationId>Intent.ModuleBuilder.Templates.Api.ApiElementExtensionModel#740f5c05-dcc1-4c61-838e-9d86dd5b1e05</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
-      <ApplicationRelativeFilePath>Api/Extensions/TypeDefinitionModelStereotypeExtensions.cs</ApplicationRelativeFilePath>
-      <ProjectRelativeFilePath>TypeDefinitionModelStereotypeExtensions.cs</ProjectRelativeFilePath>
+      <ApplicationRelativeFilePath>Api/FolderExtensionModel.cs</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>FolderExtensionModel.cs</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
@@ -70,6 +86,14 @@
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>modelers/Services Designer Settings.designer.settings</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>Services Designer Settings.designer.settings</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
+      <ProjectId>9a39a5e5-1c2a-4df7-bab4-5d2760783b6d</ProjectId>
+      <CorrelationId>Intent.ModuleBuilder.Templates.Api.ApiPackageExtensionModel#41a851f3-5ac3-425c-8de2-513d75573a53</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>PackageExtensionModel.cs</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>PackageExtensionModel.cs</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
@@ -118,6 +142,30 @@
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Templates/DataTransferModel/DataTransferModelTemplateRegistration.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>DataTransferModel/DataTransferModelTemplateRegistration.cs</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
+      <ProjectId>32921436-c716-4bad-8ff1-2cc93f11b598</ProjectId>
+      <CorrelationId>Intent.ModuleBuilder.Java.Templates.JavaFileStringInterpolationTemplate#a8985c30-1c41-47f2-9558-3566aee989d4</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>Templates/ExceptionType/ExceptionTypeTemplate.cs</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>ExceptionType/ExceptionTypeTemplate.cs</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
+      <ProjectId>32921436-c716-4bad-8ff1-2cc93f11b598</ProjectId>
+      <CorrelationId>Intent.ModuleBuilder.Java.Templates.JavaFileTemplatePartial#a8985c30-1c41-47f2-9558-3566aee989d4</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>Templates/ExceptionType/ExceptionTypeTemplatePartial.cs</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>ExceptionType/ExceptionTypeTemplatePartial.cs</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
+      <ProjectId>32921436-c716-4bad-8ff1-2cc93f11b598</ProjectId>
+      <CorrelationId>Intent.ModuleBuilder.TemplateRegistration.FilePerModel#a8985c30-1c41-47f2-9558-3566aee989d4</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>Templates/ExceptionType/ExceptionTypeTemplateRegistration.cs</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>ExceptionType/ExceptionTypeTemplateRegistration.cs</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>

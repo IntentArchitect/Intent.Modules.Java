@@ -9,6 +9,7 @@ using Intent.Modules.Common.Java.Templates;
 using Intent.Modules.Common.Templates;
 using Intent.Modules.Java.Services.Api;
 using Intent.Modules.Java.Services.Templates.DataTransferModel;
+using Intent.Modules.Java.Services.Templates.ExceptionType;
 using Intent.RoslynWeaver.Attributes;
 using Intent.Templates;
 
@@ -28,6 +29,7 @@ namespace Intent.Modules.Java.Services.Templates.ServiceImplementation
         {
             AddDependency(JavaDependencies.Lombok);
             AddTypeSource(DataTransferModelTemplate.TemplateId).WithCollectionFormat("java.util.List<{0}>");
+            AddTypeSource(ExceptionTypeTemplate.TemplateId);
         }
 
         [IntentManaged(Mode.Merge, Body = Mode.Ignore, Signature = Mode.Fully)]

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<class id="91c31304-fa5d-493f-a9f8-28517b85459e" type="Folder" typeId="4d95d53a-8855-4f35-aa82-e312643f5c5f">
+  <name>Stereotypes</name>
+  <display>Stereotypes</display>
+  <isAbstract>false</isAbstract>
+  <genericTypes />
+  <isMapped>false</isMapped>
+  <parentFolderId>27f3b2d0-b9e5-47da-bece-d305c33b5945</parentFolderId>
+  <packageId>27f3b2d0-b9e5-47da-bece-d305c33b5945</packageId>
+  <packageName>Intent.Java.SpringBoot</packageName>
+  <stereotypes />
+  <metadata />
+  <childElements />
+</class>

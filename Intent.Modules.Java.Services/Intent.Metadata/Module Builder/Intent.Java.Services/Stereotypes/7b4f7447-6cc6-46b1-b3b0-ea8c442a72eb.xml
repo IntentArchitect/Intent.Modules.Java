@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<stereotypeDefinition id="b72430de-3a53-44de-af0a-75023119d64f" version="3.1.0">
-  <name>Transaction Options</name>
+<stereotypeDefinition id="7b4f7447-6cc6-46b1-b3b0-ea8c442a72eb" version="3.1.0">
+  <name>Exception Settings</name>
   <targetMode>of-type</targetMode>
   <targetTypes>
-    <type id="e030c97a-e066-40a7-8188-808c275df3cb">Operation</type>
+    <type id="625e3f28-5e29-4cd3-92e6-9a111dbbb32c">Exception</type>
   </targetTypes>
   <targetReferenceTypes />
-  <applyMode>manually</applyMode>
-  <icon type="FontAwesome" source="database" />
+  <applyMode>always</applyMode>
+  <icon type="FontAwesome" source="cogs" />
   <displayIcon>false</displayIcon>
   <displayFunction />
   <displayAsAnnotation>false</displayAsAnnotation>
@@ -15,12 +15,12 @@
   <autoAdd>false</autoAdd>
   <allowMultipleApplies>false</allowMultipleApplies>
   <parentFolderId>70997c56-7ee3-48ff-9574-7baa84b52abc</parentFolderId>
-  <order>10</order>
+  <order>0</order>
   <packageId>e3481ac6-e429-4423-8eba-b5b1bc890f1b</packageId>
   <packageName>Intent.Java.Services</packageName>
   <properties>
-    <property id="5b96293d-d351-4705-bb83-7ca3fdd4d8b3">
-      <name>Is Read Only</name>
+    <property id="a1f602c6-14cc-4be1-83dc-a0a4032a817c">
+      <name>Is External</name>
       <type>string</type>
       <controlType>checkbox</controlType>
       <optionsSource>n/a</optionsSource>
@@ -28,6 +28,17 @@
       <defaultValue>false</defaultValue>
       <valueOptions />
       <lookupTypes />
+    </property>
+    <property id="643b9ffb-f812-4db7-8368-f0d0faff90a3">
+      <name>Package</name>
+      <type>string</type>
+      <controlType>text</controlType>
+      <optionsSource>n/a</optionsSource>
+      <placeholder />
+      <valueOptions />
+      <lookupTypes />
+      <isActiveFunction>return properties["Is External"].value;</isActiveFunction>
+      <isRequiredFunction>return properties["Is External"].value;</isRequiredFunction>
     </property>
   </properties>
 </stereotypeDefinition>

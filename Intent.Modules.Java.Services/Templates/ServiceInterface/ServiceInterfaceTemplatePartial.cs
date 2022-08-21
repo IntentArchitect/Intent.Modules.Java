@@ -9,6 +9,7 @@ using Intent.Modules.Common.Java.Templates;
 using Intent.Modules.Common.Templates;
 using Intent.Modules.Java.Services.Api;
 using Intent.Modules.Java.Services.Templates.DataTransferModel;
+using Intent.Modules.Java.Services.Templates.ExceptionType;
 using Intent.RoslynWeaver.Attributes;
 using Intent.Templates;
 
@@ -27,6 +28,7 @@ namespace Intent.Modules.Java.Services.Templates.ServiceInterface
         public ServiceInterfaceTemplate(IOutputTarget outputTarget, Intent.Modelers.Services.Api.ServiceModel model) : base(TemplateId, outputTarget, model)
         {
             AddTypeSource(DataTransferModelTemplate.TemplateId).WithCollectionFormat("java.util.List<{0}>");
+            AddTypeSource(ExceptionTypeTemplate.TemplateId);
         }
 
         private string GetCheckedExceptions(OperationModel operation)

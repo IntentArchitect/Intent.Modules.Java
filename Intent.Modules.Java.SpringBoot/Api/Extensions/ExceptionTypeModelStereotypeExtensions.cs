@@ -3,29 +3,29 @@ using System.Collections.Generic;
 using System.Linq;
 using Intent.Metadata.Models;
 using Intent.Modules.Common;
-using Intent.Modules.Common.Types.Api;
+using Intent.Modules.Java.Services.Api;
 using Intent.RoslynWeaver.Attributes;
 
 [assembly: DefaultIntentManaged(Mode.Fully)]
 [assembly: IntentTemplate("Intent.ModuleBuilder.Templates.Api.ApiElementModelExtensions", Version = "1.0")]
 
-namespace Intent.Modules.Java.Services.Api
+namespace Intent.Modules.Java.SpringBoot.Api
 {
-    public static class TypeDefinitionModelStereotypeExtensions
+    public static class ExceptionTypeModelStereotypeExtensions
     {
-        public static CheckedExceptionHandling GetCheckedExceptionHandling(this TypeDefinitionModel model)
+        public static CheckedExceptionHandling GetCheckedExceptionHandling(this ExceptionTypeModel model)
         {
             var stereotype = model.GetStereotype("Checked Exception Handling");
             return stereotype != null ? new CheckedExceptionHandling(stereotype) : null;
         }
 
 
-        public static bool HasCheckedExceptionHandling(this TypeDefinitionModel model)
+        public static bool HasCheckedExceptionHandling(this ExceptionTypeModel model)
         {
             return model.HasStereotype("Checked Exception Handling");
         }
 
-        public static bool TryGetCheckedExceptionHandling(this TypeDefinitionModel model, out CheckedExceptionHandling stereotype)
+        public static bool TryGetCheckedExceptionHandling(this ExceptionTypeModel model, out CheckedExceptionHandling stereotype)
         {
             if (!HasCheckedExceptionHandling(model))
             {
@@ -36,7 +36,6 @@ namespace Intent.Modules.Java.Services.Api
             stereotype = new CheckedExceptionHandling(model.GetStereotype("Checked Exception Handling"));
             return true;
         }
-
 
         public class CheckedExceptionHandling
         {

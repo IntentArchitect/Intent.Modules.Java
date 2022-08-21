@@ -4,16 +4,16 @@ using System.Linq;
 using Intent.Engine;
 using Intent.Metadata.WebApi.Api;
 using Intent.Modelers.Services.Api;
-using Intent.Modules.Common;
 using Intent.Modules.Common.Java;
 using Intent.Modules.Common.Java.Templates;
 using Intent.Modules.Common.Templates;
 using Intent.Modules.Common.Types.Api;
 using Intent.Modules.Java.Services;
 using Intent.Modules.Java.Services.Api;
-using Intent.Modules.Java.Services.Templates;
 using Intent.Modules.Java.Services.Templates.DataTransferModel;
+using Intent.Modules.Java.Services.Templates.ExceptionType;
 using Intent.Modules.Java.Services.Templates.ServiceInterface;
+using Intent.Modules.Java.SpringBoot.Api;
 using Intent.RoslynWeaver.Attributes;
 using Intent.Templates;
 using OperationExtensionModel = Intent.Modules.Java.Services.Api.OperationExtensionModel;
@@ -34,6 +34,7 @@ namespace Intent.Modules.Java.SpringBoot.Templates.RestController
         {
             AddTypeSource(DataTransferModelTemplate.TemplateId).WithCollectionFormat("java.util.List<{0}>");
             AddDependency(JavaDependencies.Lombok);
+            AddTypeSource(ExceptionTypeTemplate.TemplateId);
         }
 
         public string RootName => Model.Name.RemoveSuffix("Service", "Controller", "Resource");
@@ -213,25 +214,75 @@ namespace Intent.Modules.Java.SpringBoot.Templates.RestController
             return new OperationExtensionModel(operation.InternalElement).CheckedExceptions.Any();
         }
 
+        private (string TypeName, string HttpResponse, bool Log) GetCheckedExceptionHandling(CheckedExceptionModel checkedException)
+        {
+            var typeName = GetTypeName(checkedException);
+
+            switch (checkedException.TypeReference.Element.SpecializationTypeId)
+            {
+                case TypeDefinitionModel.SpecializationTypeId:
+                    {
+                        var stereotype = checkedException.TypeReference.Element.AsTypeDefinitionModel()?.GetCheckedExceptionHandling();
+                        if (stereotype != null)
+                        {
+                            return (typeName, stereotype.HttpResponseStatus().Value, stereotype.Log());
+                        }
+
+                        break;
+                    }
+                case ExceptionTypeModel.SpecializationTypeId:
+                    {
+                        var stereotype = checkedException.TypeReference.Element.AsExceptionTypeModel()?.GetCheckedExceptionHandling();
+                        if (stereotype != null)
+                        {
+                            return (typeName, stereotype.HttpResponseStatus().Value, stereotype.Log());
+                        }
+
+                        break;
+                    }
+            }
+
+            return (typeName, "INTERNAL_SERVER_ERROR (500)", true);
+        }
+
         private IEnumerable<CheckedException> GetCheckedExceptions(OperationModel operation)
         {
-            return new OperationExtensionModel(operation.InternalElement).CheckedExceptions
-                .Select(checkedException => new
-                {
-                    TypeName = GetTypeName(checkedException),
-                    Handling = checkedException.TypeReference.Element.AsTypeDefinitionModel().GetCheckedExceptionHandling()
-                })
-                .Where(checkedException => checkedException.Handling != null)
+            var checkedExceptions = new OperationExtensionModel(operation.InternalElement).CheckedExceptions
+                .Select(GetCheckedExceptionHandling)
+                .ToArray();
+
+            return checkedExceptions
                 .GroupBy(
-                    checkedException => new
+                    checkedExceptionHandling => new
                     {
-                        HttpResponse = checkedException.Handling.HttpResponseStatus().Value,
-                        Log = checkedException.Handling.Log()
+                        checkedExceptionHandling.HttpResponse,
+                        checkedExceptionHandling.Log
                     },
-                    (key, groupItems) => new CheckedException(
-                        Types: string.Join(" | ", groupItems.Select(z => z.TypeName)),
-                        HttpStatus: key.HttpResponse.Split(' ')[0],
-                        Log: key.Log));
+                    (key, groupItems) =>
+                    {
+                        return new CheckedException(
+                            types: groupItems.Select(z => z.TypeName).ToArray(),
+                            httpStatus: key.HttpResponse.Split(' ')[0],
+                            log: key.Log);
+                    })
+                .OrderBy(x => x.IsBaseType);
+        }
+
+        private class CheckedException
+        {
+            public CheckedException(IReadOnlyCollection<string> types, string httpStatus, bool log)
+            {
+                (Types, IsBaseType) = types.Any(x => x == "Exception")
+                    ? ("Exception", true)
+                    : (string.Join(" | ", types), false);
+                HttpStatus = httpStatus;
+                Log = log;
+            }
+
+            public string Types { get; }
+            public string HttpStatus { get; }
+            public bool Log { get; }
+            public bool IsBaseType { get; }
         }
 
         public enum HttpVerb
