@@ -4,6 +4,7 @@ using System.Linq;
 using Intent.Engine;
 using Intent.Metadata.WebApi.Api;
 using Intent.Modelers.Services.Api;
+using Intent.Modules.Common;
 using Intent.Modules.Common.Java;
 using Intent.Modules.Common.Java.Templates;
 using Intent.Modules.Common.Templates;
@@ -55,7 +56,8 @@ namespace Intent.Modules.Java.SpringBoot.Templates.RestController
 
             if (Model.Operations
                 .Any(operation => new OperationExtensionModel(operation.InternalElement).CheckedExceptions
-                    .Any(checkException => checkException.TypeReference.Element.AsTypeDefinitionModel()?.GetCheckedExceptionHandling()?.Log() == true)))
+                    .Select(GetCheckedExceptionHandling)
+                    .Any(e => e.Log)))
             {
                 annotations.Add($"@{ImportType("lombok.extern.slf4j.Slf4j")}");
             }
