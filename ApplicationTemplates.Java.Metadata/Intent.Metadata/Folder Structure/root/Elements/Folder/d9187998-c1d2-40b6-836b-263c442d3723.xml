@@ -3,7 +3,7 @@
   <name>${application.name}</name>
   <display>${application.name}</display>
   <isAbstract>false</isAbstract>
-  <order>0</order>
+  <sort-children>by-type-then-by-name</sort-children>
   <genericTypes />
   <isMapped>false</isMapped>
   <parentFolderId>ccecf323-5f4d-4195-b47a-45f264eeb0ac</parentFolderId>
@@ -16,7 +16,6 @@
       <name>Startup</name>
       <display>Startup</display>
       <isAbstract>false</isAbstract>
-      <order>4</order>
       <genericTypes />
       <isMapped>false</isMapped>
       <parentFolderId>d9187998-c1d2-40b6-836b-263c442d3723</parentFolderId>

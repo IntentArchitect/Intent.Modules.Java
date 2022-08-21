@@ -3,7 +3,7 @@
   <name>intent</name>
   <display>intent</display>
   <isAbstract>false</isAbstract>
-  <order>3</order>
+  <sort-children>by-type-then-by-name</sort-children>
   <genericTypes />
   <isMapped>false</isMapped>
   <parentFolderId>d9187998-c1d2-40b6-836b-263c442d3723</parentFolderId>
@@ -16,7 +16,6 @@
       <name>Intent.Annotations</name>
       <display>Intent.Annotations</display>
       <isAbstract>false</isAbstract>
-      <order>0</order>
       <genericTypes />
       <isMapped>false</isMapped>
       <parentFolderId>1b13861b-eb93-44c6-9c4a-c1ff8f321b3d</parentFolderId>

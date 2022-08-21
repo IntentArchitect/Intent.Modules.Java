@@ -3,7 +3,7 @@
   <name>${solution.name}</name>
   <display>${solution.name}</display>
   <isAbstract>false</isAbstract>
-  <order>0</order>
+  <sort-children>by-type-then-by-name</sort-children>
   <genericTypes />
   <isMapped>false</isMapped>
   <parentFolderId>60e9d8fb-e1af-466e-a754-afcb5f6664e8</parentFolderId>

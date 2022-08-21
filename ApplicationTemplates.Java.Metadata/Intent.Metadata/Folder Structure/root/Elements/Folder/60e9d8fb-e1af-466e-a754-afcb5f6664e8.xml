@@ -3,7 +3,7 @@
   <name>com</name>
   <display>com</display>
   <isAbstract>false</isAbstract>
-  <order>0</order>
+  <sort-children>by-type-then-by-name</sort-children>
   <genericTypes />
   <isMapped>false</isMapped>
   <parentFolderId>a8fff636-8ce8-48cf-88ff-dca5db9d57f4</parentFolderId>

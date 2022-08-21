@@ -3,7 +3,7 @@
   <name>src</name>
   <display>src</display>
   <isAbstract>false</isAbstract>
-  <order>1</order>
+  <sort-children>by-type-then-by-name</sort-children>
   <genericTypes />
   <isMapped>false</isMapped>
   <parentFolderId>5b595dcd-0671-4389-be22-be212215b9a1</parentFolderId>
