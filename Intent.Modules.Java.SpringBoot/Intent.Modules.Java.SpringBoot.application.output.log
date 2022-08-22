@@ -82,6 +82,22 @@
     </FileLog>
     <FileLog>
       <ProjectId>db8d1b7b-e26f-4baa-ba43-990a5ff65135</ProjectId>
+      <CorrelationId>Intent.ModuleBuilder.ProjectItemTemplate.Partial#4fed9b15-da87-4198-863e-19dff07b1d68</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>Templates/ApplicationProperties/ApplicationPropertiesTemplatePartial.cs</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>ApplicationProperties/ApplicationPropertiesTemplatePartial.cs</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
+      <ProjectId>db8d1b7b-e26f-4baa-ba43-990a5ff65135</ProjectId>
+      <CorrelationId>Intent.ModuleBuilder.TemplateRegistration.SingleFileNoModel#4fed9b15-da87-4198-863e-19dff07b1d68</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>Templates/ApplicationProperties/ApplicationPropertiesTemplateRegistration.cs</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>ApplicationProperties/ApplicationPropertiesTemplateRegistration.cs</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
+      <ProjectId>db8d1b7b-e26f-4baa-ba43-990a5ff65135</ProjectId>
       <CorrelationId>Intent.ModuleBuilder.Templates.TemplateDecoratorContract#92b673b3-739b-4e6a-bf1a-9b58b76d598f</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Templates/RestController/RestControllerDecorator.cs</ApplicationRelativeFilePath>

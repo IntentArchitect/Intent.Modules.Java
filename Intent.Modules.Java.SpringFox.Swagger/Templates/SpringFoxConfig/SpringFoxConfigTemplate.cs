@@ -59,17 +59,88 @@ public class ");
             
             #line default
             #line hidden
-            this.Write(@" {
-
-    @Bean
-    public Docket api() { 
-        return new Docket(DocumentationType.SWAGGER_2)  
-          .select()                                  
-          .apis(RequestHandlerSelectors.any())              
-          .paths(PathSelectors.any())                          
-          .build();                                           
+            this.Write(" {\r\n\r\n    @Bean\r\n    public Docket api() {\r\n        return new Docket(Documentati" +
+                    "onType.SWAGGER_2)\r\n");
+            
+            #line 28 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.SpringFox.Swagger\Templates\SpringFoxConfig\SpringFoxConfigTemplate.tt"
+ if (_usesJwtAuth) { 
+            
+            #line default
+            #line hidden
+            this.Write("          .securityContexts(");
+            
+            #line 29 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.SpringFox.Swagger\Templates\SpringFoxConfig\SpringFoxConfigTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(ImportType("java.util.Arrays")));
+            
+            #line default
+            #line hidden
+            this.Write(".asList(securityContext()))\r\n          .securitySchemes(Arrays.asList(apiKey()))\r" +
+                    "\n");
+            
+            #line 31 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.SpringFox.Swagger\Templates\SpringFoxConfig\SpringFoxConfigTemplate.tt"
+ } 
+            
+            #line default
+            #line hidden
+            this.Write("          .select()\r\n          .apis(RequestHandlerSelectors.any())\r\n          .p" +
+                    "aths(PathSelectors.any())\r\n          .build();\r\n    }\r\n");
+            
+            #line 37 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.SpringFox.Swagger\Templates\SpringFoxConfig\SpringFoxConfigTemplate.tt"
+ if (_usesJwtAuth) { 
+            
+            #line default
+            #line hidden
+            this.Write("\r\n    private ");
+            
+            #line 39 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.SpringFox.Swagger\Templates\SpringFoxConfig\SpringFoxConfigTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(ImportType("springfox.documentation.spi.service.contexts.SecurityContext")));
+            
+            #line default
+            #line hidden
+            this.Write(" securityContext() {\r\n        return SecurityContext.builder().securityReferences" +
+                    "(defaultAuth()).build();\r\n    }\r\n\r\n    private ");
+            
+            #line 43 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.SpringFox.Swagger\Templates\SpringFoxConfig\SpringFoxConfigTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(ImportType("java.util.List")));
+            
+            #line default
+            #line hidden
+            this.Write("<");
+            
+            #line 43 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.SpringFox.Swagger\Templates\SpringFoxConfig\SpringFoxConfigTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(ImportType("springfox.documentation.service.SecurityReference")));
+            
+            #line default
+            #line hidden
+            this.Write("> defaultAuth() {\r\n        ");
+            
+            #line 44 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.SpringFox.Swagger\Templates\SpringFoxConfig\SpringFoxConfigTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(ImportType("springfox.documentation.service.AuthorizationScope")));
+            
+            #line default
+            #line hidden
+            this.Write(@" authorizationScope = new AuthorizationScope(""global"", ""accessEverything"");
+        AuthorizationScope[] authorizationScopes = new AuthorizationScope[1];
+        authorizationScopes[0] = authorizationScope;
+        return Arrays.asList(new SecurityReference(""JWT"", authorizationScopes));
     }
-}");
+
+    private ");
+            
+            #line 50 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.SpringFox.Swagger\Templates\SpringFoxConfig\SpringFoxConfigTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(ImportType("springfox.documentation.service.ApiKey")));
+            
+            #line default
+            #line hidden
+            this.Write(" apiKey() {\r\n        return new ApiKey(\"JWT\", \"Authorization\", \"header\");\r\n    }\r" +
+                    "\n");
+            
+            #line 53 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.SpringFox.Swagger\Templates\SpringFoxConfig\SpringFoxConfigTemplate.tt"
+ } 
+            
+            #line default
+            #line hidden
+            this.Write("}");
             return this.GenerationEnvironment.ToString();
         }
     }

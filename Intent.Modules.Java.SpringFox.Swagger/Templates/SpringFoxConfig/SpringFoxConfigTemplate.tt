@@ -23,11 +23,32 @@ import springfox.documentation.spring.web.plugins.Docket;
 public class <#= ClassName #> {
 
     @Bean
-    public Docket api() { 
-        return new Docket(DocumentationType.SWAGGER_2)  
-          .select()                                  
-          .apis(RequestHandlerSelectors.any())              
-          .paths(PathSelectors.any())                          
-          .build();                                           
+    public Docket api() {
+        return new Docket(DocumentationType.SWAGGER_2)
+<# if (_usesJwtAuth) { #>
+          .securityContexts(<#= ImportType("java.util.Arrays") #>.asList(securityContext()))
+          .securitySchemes(Arrays.asList(apiKey()))
+<# } #>
+          .select()
+          .apis(RequestHandlerSelectors.any())
+          .paths(PathSelectors.any())
+          .build();
     }
+<# if (_usesJwtAuth) { #>
+
+    private <#= ImportType("springfox.documentation.spi.service.contexts.SecurityContext") #> securityContext() {
+        return SecurityContext.builder().securityReferences(defaultAuth()).build();
+    }
+
+    private <#= ImportType("java.util.List") #><<#= ImportType("springfox.documentation.service.SecurityReference") #>> defaultAuth() {
+        <#= ImportType("springfox.documentation.service.AuthorizationScope") #> authorizationScope = new AuthorizationScope("global", "accessEverything");
+        AuthorizationScope[] authorizationScopes = new AuthorizationScope[1];
+        authorizationScopes[0] = authorizationScope;
+        return Arrays.asList(new SecurityReference("JWT", authorizationScopes));
+    }
+
+    private <#= ImportType("springfox.documentation.service.ApiKey") #> apiKey() {
+        return new ApiKey("JWT", "Authorization", "header");
+    }
+<# } #>
 }

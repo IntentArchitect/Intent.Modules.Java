@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<class id="3806cf2e-2aa5-474a-978e-9741bf9a10a6" type="Service" typeId="b16578a5-27b1-4047-a8df-f0b783d706bd">
+  <name>AuthService</name>
+  <display>AuthService</display>
+  <isAbstract>false</isAbstract>
+  <sort-children>by-type-then-manually</sort-children>
+  <genericTypes />
+  <isMapped>false</isMapped>
+  <parentFolderId>0cfb8a9a-9c39-4fc4-b868-b2d75deb98cb</parentFolderId>
+  <packageId>0cfb8a9a-9c39-4fc4-b868-b2d75deb98cb</packageId>
+  <packageName>Services</packageName>
+  <stereotypes>
+    <stereotype stereotypeDefinitionId="c29224ec-d473-4b95-ad4a-ec55c676c4fd" name="Http Service Settings">
+      <addedByDefault>true</addedByDefault>
+      <definitionPackageName>Intent.Metadata.WebApi</definitionPackageName>
+      <definitionPackageId>0011387a-b122-45d7-9cdb-8e21b315ab9f</definitionPackageId>
+      <properties>
+        <property name="1e223bd0-7a72-435a-8741-a612d88e4a12" display="Route" value="" isActive="true" />
+      </properties>
+    </stereotype>
+  </stereotypes>
+  <metadata />
+  <childElements>
+    <childElement id="966e2a8d-aad0-4eec-bf5a-0cd680156134" type="Operation" typeId="e030c97a-e066-40a7-8188-808c275df3cb">
+      <name>authenticate</name>
+      <display>authenticate(request: AuthenticationRequest): AuthenticationResult</display>
+      <isAbstract>false</isAbstract>
+      <sort-children>by-type-then-manually</sort-children>
+      <genericTypes />
+      <typeReference id="e41e0c68-22be-4eda-a8ca-f60ccd841105">
+        <typeId>30872af0-25b7-4add-a5bb-e4dc82920625</typeId>
+        <isNavigable>true</isNavigable>
+        <isNullable>false</isNullable>
+        <isCollection>false</isCollection>
+        <isRequired>true</isRequired>
+        <typePackageName>Services</typePackageName>
+        <typePackageId>0cfb8a9a-9c39-4fc4-b868-b2d75deb98cb</typePackageId>
+        <stereotypes />
+        <genericTypeParameters />
+      </typeReference>
+      <isMapped>false</isMapped>
+      <parentFolderId>3806cf2e-2aa5-474a-978e-9741bf9a10a6</parentFolderId>
+      <packageId>0cfb8a9a-9c39-4fc4-b868-b2d75deb98cb</packageId>
+      <packageName>Services</packageName>
+      <stereotypes>
+        <stereotype stereotypeDefinitionId="b4581ed2-42ec-4ae2-83dd-dcdd5f0837b6" name="Http Settings">
+          <addedByDefault>true</addedByDefault>
+          <definitionPackageName>Intent.Metadata.WebApi</definitionPackageName>
+          <definitionPackageId>0011387a-b122-45d7-9cdb-8e21b315ab9f</definitionPackageId>
+          <properties>
+            <property name="801c3e61-4431-4d81-93fa-7e57d33cb3fa" display="Verb" value="POST" isActive="true" />
+            <property name="5dd3e07d-76eb-45d4-9956-4325fb068acc" display="Route" value="" isActive="true" />
+          </properties>
+        </stereotype>
+      </stereotypes>
+      <metadata />
+      <childElements>
+        <childElement id="16a2282b-f641-4c23-96da-fa66a5cca6e9" type="Parameter" typeId="00208d20-469d-41cb-8501-768fd5eb796b">
+          <name>request</name>
+          <display>in : request: AuthenticationRequest</display>
+          <isAbstract>false</isAbstract>
+          <genericTypes />
+          <typeReference id="24105fbf-2a9c-4e19-ba50-092ca3b1807b">
+            <typeId>ddd760e6-5dc3-4f99-9208-ad3b0795da86</typeId>
+            <isNavigable>true</isNavigable>
+            <isNullable>false</isNullable>
+            <isCollection>false</isCollection>
+            <isRequired>true</isRequired>
+            <typePackageName>Services</typePackageName>
+            <typePackageId>0cfb8a9a-9c39-4fc4-b868-b2d75deb98cb</typePackageId>
+            <stereotypes />
+            <genericTypeParameters />
+          </typeReference>
+          <isMapped>false</isMapped>
+          <parentFolderId>966e2a8d-aad0-4eec-bf5a-0cd680156134</parentFolderId>
+          <packageId>0cfb8a9a-9c39-4fc4-b868-b2d75deb98cb</packageId>
+          <packageName>Services</packageName>
+          <stereotypes>
+            <stereotype stereotypeDefinitionId="d01df110-1208-4af8-a913-92a49d219552" name="Parameter Settings">
+              <addedByDefault>true</addedByDefault>
+              <definitionPackageName>Intent.Metadata.WebApi</definitionPackageName>
+              <definitionPackageId>0011387a-b122-45d7-9cdb-8e21b315ab9f</definitionPackageId>
+              <properties>
+                <property name="d2630e0f-f930-404f-b453-1e8052a712f5" display="Source" value="Default" isActive="true" />
+                <property name="7a331e9b-f13c-4b33-9013-bd59b4a4999c" display="Header Name" isActive="false" />
+              </properties>
+            </stereotype>
+          </stereotypes>
+          <metadata />
+          <childElements />
+        </childElement>
+        <childElement id="a5e30a49-9868-4897-9f4f-92c6b1ebfe41" type="Checked Exception" typeId="c5132b85-8cea-405b-abd5-9d3eccbc0d07">
+          <name>checkedException</name>
+          <display>throws AuthenticationFailedException</display>
+          <isAbstract>false</isAbstract>
+          <genericTypes />
+          <typeReference id="c1e793e3-56cd-4567-97e5-9e406c56bf77">
+            <typeId>d2a1a0d7-04a4-4736-bcd5-24a873f83bec</typeId>
+            <isNavigable>true</isNavigable>
+            <isNullable>false</isNullable>
+            <isCollection>false</isCollection>
+            <isRequired>true</isRequired>
+            <typePackageName>Services</typePackageName>
+            <typePackageId>0cfb8a9a-9c39-4fc4-b868-b2d75deb98cb</typePackageId>
+            <stereotypes />
+            <genericTypeParameters />
+          </typeReference>
+          <isMapped>false</isMapped>
+          <parentFolderId>966e2a8d-aad0-4eec-bf5a-0cd680156134</parentFolderId>
+          <packageId>0cfb8a9a-9c39-4fc4-b868-b2d75deb98cb</packageId>
+          <packageName>Services</packageName>
+          <stereotypes />
+          <metadata />
+          <childElements />
+        </childElement>
+      </childElements>
+    </childElement>
+  </childElements>
+</class>

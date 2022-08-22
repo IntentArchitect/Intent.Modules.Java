@@ -23,5 +23,7 @@
     <application id="107906ee-a9fd-4272-818a-28912b7ad043" name="Intent.Modules.Java.Services.CRUD" relativePath="Intent.Modules.Java.Services.CRUD/Intent.Modules.Java.Services.CRUD.application.config" />
     <application id="591f2bfb-b70f-4d42-977f-333a15ee80ab" name="ApplicationTemplates.Java.Metadata" relativePath="ApplicationTemplates.Java.Metadata/ApplicationTemplates.Java.Metadata.application.config" />
     <application id="91e4276a-bdfd-4c88-9e51-7edf9d77d9f5" name="Intent.Modules.Java.Persistence.JPA.Queries" relativePath="Intent.Modules.Java.Persistence.JPA.Queries/Intent.Modules.Java.Persistence.JPA.Queries.application.config" />
+    <application id="3a8d3506-4654-4e9c-ae9d-ac18fb71fd6a" name="Intent.Modules.Java.SpringBoot.Security" relativePath="Intent.Modules.Java.SpringBoot.Security/Intent.Modules.Java.SpringBoot.Security.application.config" />
+    <application id="39743c9c-ac35-475c-9856-57b5c4d9e7cb" name="Intent.Modules.Java.SpringBoot.Security.Metadata" relativePath="Intent.Modules.Java.SpringBoot.Security.Metadata/Intent.Modules.Java.SpringBoot.Security.Metadata.application.config" />
   </applications>
 </solution>

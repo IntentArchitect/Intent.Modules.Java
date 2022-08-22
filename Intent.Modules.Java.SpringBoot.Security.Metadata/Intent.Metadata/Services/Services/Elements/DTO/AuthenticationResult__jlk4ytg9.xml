@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<class id="30872af0-25b7-4add-a5bb-e4dc82920625" type="DTO" typeId="fee0edca-4aa0-4f77-a524-6bbd84e78734">
+  <name>AuthenticationResult</name>
+  <display>AuthenticationResult</display>
+  <isAbstract>false</isAbstract>
+  <sort-children>by-type-then-manually</sort-children>
+  <genericTypes />
+  <isMapped>false</isMapped>
+  <parentFolderId>58961d11-cfab-4ec7-b8c5-6fa5bcf0fbba</parentFolderId>
+  <packageId>0cfb8a9a-9c39-4fc4-b868-b2d75deb98cb</packageId>
+  <packageName>Services</packageName>
+  <stereotypes />
+  <metadata />
+  <childElements>
+    <childElement id="c09a43e0-3ed4-4327-b528-8d78ca90bb2a" type="DTO-Field" typeId="7baed1fd-469b-4980-8fd9-4cefb8331eb2">
+      <name>token</name>
+      <display>token: string</display>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <typeReference id="469ab856-1d67-4f01-9dd2-b1342ed71654">
+        <typeId>d384db9c-a279-45e1-801e-e4e8099625f2</typeId>
+        <isNavigable>true</isNavigable>
+        <isNullable>false</isNullable>
+        <isCollection>false</isCollection>
+        <isRequired>true</isRequired>
+        <typePackageName>Intent.Common.Types</typePackageName>
+        <typePackageId>870ad967-cbd4-4ea9-b86d-9c3a5d55ea67</typePackageId>
+        <stereotypes />
+        <genericTypeParameters />
+      </typeReference>
+      <isMapped>false</isMapped>
+      <parentFolderId>30872af0-25b7-4add-a5bb-e4dc82920625</parentFolderId>
+      <packageId>0cfb8a9a-9c39-4fc4-b868-b2d75deb98cb</packageId>
+      <packageName>Services</packageName>
+      <stereotypes />
+      <metadata />
+      <childElements />
+    </childElement>
+  </childElements>
+</class>

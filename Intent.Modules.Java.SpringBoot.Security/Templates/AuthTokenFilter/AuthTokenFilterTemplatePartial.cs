@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using System.Transactions;
 using Intent.Engine;
 using Intent.Modules.Common;
 using Intent.Modules.Common.Java;
@@ -12,36 +11,34 @@ using Intent.Templates;
 [assembly: DefaultIntentManaged(Mode.Merge)]
 [assembly: IntentTemplate("Intent.ModuleBuilder.Java.Templates.JavaFileTemplatePartial", Version = "1.0")]
 
-namespace Intent.Modules.Java.SpringFox.Swagger.Templates.SpringFoxConfig
+namespace Intent.Modules.Java.SpringBoot.Security.Templates.AuthTokenFilter
 {
     [IntentManaged(Mode.Merge, Signature = Mode.Fully)]
-    partial class SpringFoxConfigTemplate : JavaTemplateBase<object>
+    partial class AuthTokenFilterTemplate : JavaTemplateBase<object>
     {
-        private bool _usesJwtAuth;
-
         [IntentManaged(Mode.Fully)]
-        public const string TemplateId = "Intent.Java.SpringFox.Swagger.SpringFoxConfig";
+        public const string TemplateId = "Intent.Java.SpringBoot.Security.AuthTokenFilter";
 
         [IntentManaged(Mode.Merge, Signature = Mode.Fully)]
-        public SpringFoxConfigTemplate(IOutputTarget outputTarget, object model = null) : base(TemplateId, outputTarget, model)
+        public AuthTokenFilterTemplate(IOutputTarget outputTarget, object model = null) : base(TemplateId, outputTarget, model)
         {
-            AddDependency(new JavaDependency("io.springfox", "springfox-boot-starter", "3.0.0"));
-            AddDependency(new JavaDependency("io.springfox", "springfox-swagger-ui", "3.0.0"));
-            ExecutionContext.EventDispatcher.Subscribe<UsesJwtSecurityEvent>(Handle);
+            AddDependency(JavaDependencies.SpringBootSecurity);
         }
 
-        private void Handle(UsesJwtSecurityEvent _)
+        public override void BeforeTemplateExecution()
         {
-            _usesJwtAuth = true;
+            ExecutionContext.EventDispatcher.Publish(new UsesJwtSecurityEvent());
+
+            base.BeforeTemplateExecution();
         }
 
         [IntentManaged(Mode.Merge, Body = Mode.Ignore, Signature = Mode.Fully)]
         public override ITemplateFileConfig GetTemplateFileConfig()
         {
             return new JavaFileConfig(
-                className: $"SpringFoxConfig",
+                className: $"AuthTokenFilter",
                 package: this.GetPackage(),
-                relativeLocation: this.GetPackageFolderPath()
+                relativeLocation: this.GetFolderPath()
             );
         }
 
