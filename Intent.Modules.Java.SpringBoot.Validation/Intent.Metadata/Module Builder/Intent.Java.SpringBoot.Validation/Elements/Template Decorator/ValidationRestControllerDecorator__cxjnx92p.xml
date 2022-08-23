@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<class id="d2057bac-15f8-496e-adfa-4f95910cb6f1" type="Template Decorator" typeId="f0f46278-29ea-42bd-9206-0e7034f623bc">
+  <name>ValidationRestControllerDecorator</name>
+  <display>ValidationRestControllerDecorator: RestControllerDecorator</display>
+  <isAbstract>false</isAbstract>
+  <genericTypes />
+  <typeReference id="714ba36f-ef1b-43d1-987c-8d22ce0b34bc">
+    <typeId>92b673b3-739b-4e6a-bf1a-9b58b76d598f</typeId>
+    <isNavigable>true</isNavigable>
+    <isNullable>false</isNullable>
+    <isCollection>false</isCollection>
+    <isRequired>true</isRequired>
+    <typePackageName>Intent.Java.SpringBoot</typePackageName>
+    <typePackageId>27f3b2d0-b9e5-47da-bece-d305c33b5945</typePackageId>
+    <stereotypes />
+    <genericTypeParameters />
+  </typeReference>
+  <isMapped>false</isMapped>
+  <parentFolderId>5fbac7a8-1f34-4e1a-a4c2-75234de5bd69</parentFolderId>
+  <packageId>5fbac7a8-1f34-4e1a-a4c2-75234de5bd69</packageId>
+  <packageName>Intent.Java.SpringBoot.Validation</packageName>
+  <stereotypes />
+  <metadata />
+  <childElements />
+</class>

@@ -20,6 +20,9 @@ import lombok.NoArgsConstructor;
 @Data
 public class <#= ClassName #> {
 <#  foreach(var field in Model.Fields) { #>
+<#      foreach(var annotation in GetDecorators().SelectMany(x => x.GetFieldAnnotations(field))) { #>
+    <#= annotation #>
+<#      } #>
     private <#= GetTypeName(field.TypeReference) #> <#= field.Name #>;
 <#  } #><#= GetDecoratorsOutput(x => x.Methods()) #>
 }

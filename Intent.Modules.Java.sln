@@ -32,6 +32,8 @@ Project("{52B49DB5-3EA9-4095-B1A7-DF1AC22D7DAE}") = "Intent.Modules.Java.Persist
 EndProject
 Project("{52B49DB5-3EA9-4095-B1A7-DF1AC22D7DAE}") = "Intent.Modules.Java.SpringBoot.Security", "Intent.Modules.Java.SpringBoot.Security\Intent.Modules.Java.SpringBoot.Security.csproj", "{07D6A2D9-6893-4CDB-BF0C-1A1F01F0AAD8}"
 EndProject
+Project("{52B49DB5-3EA9-4095-B1A7-DF1AC22D7DAE}") = "Intent.Modules.Java.SpringBoot.Validation", "Intent.Modules.Java.SpringBoot.Validation\Intent.Modules.Java.SpringBoot.Validation.csproj", "{858C7EB2-2BB7-4927-9C44-A8D5BCAC8FBA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -98,6 +100,10 @@ Global
 		{07D6A2D9-6893-4CDB-BF0C-1A1F01F0AAD8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{07D6A2D9-6893-4CDB-BF0C-1A1F01F0AAD8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{07D6A2D9-6893-4CDB-BF0C-1A1F01F0AAD8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{858C7EB2-2BB7-4927-9C44-A8D5BCAC8FBA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{858C7EB2-2BB7-4927-9C44-A8D5BCAC8FBA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{858C7EB2-2BB7-4927-9C44-A8D5BCAC8FBA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{858C7EB2-2BB7-4927-9C44-A8D5BCAC8FBA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,3 +1,6 @@
+using System.Collections.Generic;
+using System.Linq;
+using Intent.Modelers.Services.Api;
 using Intent.RoslynWeaver.Attributes;
 using Intent.Templates;
 
@@ -11,9 +14,8 @@ namespace Intent.Modules.Java.Services.Templates.DataTransferModel
     {
         public int Priority { get; protected set; } = 0;
 
-        public virtual string Methods()
-        {
-            return null;
-        }
+        public virtual IEnumerable<string> GetFieldAnnotations(DTOFieldModel field) => Enumerable.Empty<string>();
+
+        public virtual string Methods() => null;
     }
 }
