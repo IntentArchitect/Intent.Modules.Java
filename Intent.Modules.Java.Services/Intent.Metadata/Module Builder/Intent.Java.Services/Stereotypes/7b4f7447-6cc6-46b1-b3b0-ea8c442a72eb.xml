@@ -3,7 +3,7 @@
   <name>Exception Settings</name>
   <targetMode>of-type</targetMode>
   <targetTypes>
-    <type id="625e3f28-5e29-4cd3-92e6-9a111dbbb32c">Exception</type>
+    <type id="625e3f28-5e29-4cd3-92e6-9a111dbbb32c">Exception Type</type>
   </targetTypes>
   <targetReferenceTypes />
   <applyMode>always</applyMode>

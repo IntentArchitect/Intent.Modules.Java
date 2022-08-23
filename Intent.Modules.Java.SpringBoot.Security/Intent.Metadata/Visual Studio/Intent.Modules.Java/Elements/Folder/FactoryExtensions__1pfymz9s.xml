@@ -3,10 +3,22 @@
   <name>FactoryExtensions</name>
   <display>FactoryExtensions</display>
   <isAbstract>false</isAbstract>
+  <sort-children>by-type-then-by-name</sort-children>
   <genericTypes />
   <isMapped>false</isMapped>
   <parentFolderId>07d6a2d9-6893-4cdb-bf0c-1a1f01f0aad8</parentFolderId>
-  <stereotypes />
+  <packageId>2678825b-8728-43ef-924a-e93294f0da37</packageId>
+  <packageName>Intent.Modules.Java</packageName>
+  <stereotypes>
+    <stereotype stereotypeDefinitionId="61132551-825d-4c6e-b9f1-0f95249d08d4" name="Folder Options">
+      <addedByDefault>true</addedByDefault>
+      <definitionPackageName>Intent.VisualStudio.Projects</definitionPackageName>
+      <definitionPackageId>a0636ab7-d3a1-430b-9609-11a18aa3cc7f</definitionPackageId>
+      <properties>
+        <property name="4bfbefd0-d22e-4ca0-9723-92ae273feca4" display="Namespace Provider" value="true" isActive="true" />
+      </properties>
+    </stereotype>
+  </stereotypes>
   <metadata />
   <childElements>
     <childElement id="f9ec25d9-caaa-45f6-be17-639a9fc02f2d" type="Template Output" typeId="d421c322-7a51-4094-89fa-e5d8a0a97b27">
@@ -17,6 +29,8 @@
       <genericTypes />
       <isMapped>false</isMapped>
       <parentFolderId>cf1f7b18-ab70-4959-a1a2-9b4040d307c8</parentFolderId>
+      <packageId>2678825b-8728-43ef-924a-e93294f0da37</packageId>
+      <packageName>Intent.Modules.Java</packageName>
       <stereotypes />
       <metadata>
         <entry key="status" value="assigned" />
