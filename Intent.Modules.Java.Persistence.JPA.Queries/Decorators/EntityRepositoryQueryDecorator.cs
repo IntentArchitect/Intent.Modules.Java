@@ -18,7 +18,7 @@ using Intent.RoslynWeaver.Attributes;
 namespace Intent.Modules.Java.Persistence.JPA.Queries.Decorators
 {
     [IntentManaged(Mode.Merge)]
-    public partial class EntityRepositoryQueryDecorator : EntityRepositoryDecorator
+    public class EntityRepositoryQueryDecorator : EntityRepositoryDecorator
     {
         [IntentManaged(Mode.Fully)]
         public const string DecoratorId = "Intent.Java.Persistence.JPA.Queries.EntityRepositoryQueryDecorator";
@@ -51,7 +51,7 @@ namespace Intent.Modules.Java.Persistence.JPA.Queries.Decorators
                     var tableName = query.InternalElement.ParentElement.Name.ToPascalCase();
                     var tableAlias = query.GetQuerySettings()?.TableAlias();
 
-                    var table = (Name: tableName, Alias: !string.IsNullOrWhiteSpace(tableAlias) ? tableAlias : tableName);
+                    var table = (Name: tableName, Alias: !string.IsNullOrWhiteSpace(tableAlias) ? tableAlias : tableName.ToCamelCase());
                     tables.Add(table);
                 }
 
@@ -203,5 +203,12 @@ namespace Intent.Modules.Java.Persistence.JPA.Queries.Decorators
                 yield return member;
             }
         }
+
+        private record struct QueryData(
+            IReadOnlyList<(string Name, string Alias)> Tables,
+            IReadOnlyList<string> SelectColumns,
+            IReadOnlyList<string> WhereClauses,
+            IReadOnlyList<string> Parameters,
+            IReadOnlyList<string> AnnotatedParameters);
     }
 }
