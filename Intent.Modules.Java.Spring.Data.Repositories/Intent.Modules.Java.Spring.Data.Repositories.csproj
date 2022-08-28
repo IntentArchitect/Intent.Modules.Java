@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
@@ -22,7 +22,7 @@
   <ItemGroup>
     <PackageReference Include="Intent.Modules.Common" Version="3.3.11" />
     <PackageReference Include="Intent.Modules.Common.Java" Version="3.3.12" />
-    <PackageReference Include="Intent.Modules.Java.Weaving.Annotations" Version="3.3.4" />
+    <PackageReference Include="Intent.Modules.Java.Weaving.Annotations" Version="3.3.5" />
     <PackageReference Include="Intent.Modules.Metadata.RDBMS" Version="3.3.7" />
     <PackageReference Include="Intent.Modules.Modelers.Domain" Version="3.3.6" />
     <PackageReference Include="Intent.Packager" Version="3.3.2">
