@@ -127,5 +127,15 @@
       </components>
     </group>
   </componentGroups>
-  <additionalSettings />
+  <additionalSettings>
+    <group id="11ac2c9d-9f1b-4df9-a50e-b3a68195cd95" title="Domain Settings">
+      <settings>
+        <setting id="c3789138-6649-47e4-901b-5f6469583cb7" title="Attribute Naming Convention" type="hidden">
+          <defaultValue>camel-case</defaultValue>
+          <isRequired>true</isRequired>
+          <options />
+        </setting>
+      </settings>
+    </group>
+  </additionalSettings>
 </applicationTemplate>
