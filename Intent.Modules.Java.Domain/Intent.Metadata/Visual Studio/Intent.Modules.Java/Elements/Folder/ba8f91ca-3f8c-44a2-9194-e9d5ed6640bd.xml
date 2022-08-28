@@ -172,6 +172,38 @@
       <metadata />
       <childElements />
     </childElement>
+    <childElement id="9afe79ea-891d-49dd-978b-a1a9c5883ab4" type="Template Output" typeId="d421c322-7a51-4094-89fa-e5d8a0a97b27">
+      <name>Intent.ModuleBuilder.Templates.FileTemplateStringInterpolation</name>
+      <display>Intent.ModuleBuilder.Templates.FileTemplateStringInterpolation</display>
+      <externalReference>Intent.ModuleBuilder</externalReference>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <isMapped>false</isMapped>
+      <parentFolderId>ba8f91ca-3f8c-44a2-9194-e9d5ed6640bd</parentFolderId>
+      <packageId>9a6b660c-89bd-4f4f-99d0-3c5601ef6c1b</packageId>
+      <packageName>Intent.Modules.Java</packageName>
+      <stereotypes />
+      <metadata>
+        <entry key="status" value="assigned" />
+      </metadata>
+      <childElements />
+    </childElement>
+    <childElement id="d3829b0d-20e6-45b3-babc-191fbf692ac8" type="Template Output" typeId="d421c322-7a51-4094-89fa-e5d8a0a97b27">
+      <name>Intent.ModuleBuilder.Templates.FileTemplateT4</name>
+      <display>Intent.ModuleBuilder.Templates.FileTemplateT4</display>
+      <externalReference>Intent.ModuleBuilder</externalReference>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <isMapped>false</isMapped>
+      <parentFolderId>ba8f91ca-3f8c-44a2-9194-e9d5ed6640bd</parentFolderId>
+      <packageId>9a6b660c-89bd-4f4f-99d0-3c5601ef6c1b</packageId>
+      <packageName>Intent.Modules.Java</packageName>
+      <stereotypes />
+      <metadata>
+        <entry key="status" value="assigned" />
+      </metadata>
+      <childElements />
+    </childElement>
     <childElement id="419d0f7c-a4dc-4aa8-bbdf-85655fbfec63" type="Template Output" typeId="d421c322-7a51-4094-89fa-e5d8a0a97b27">
       <name>Intent.ModuleBuilder.Templates.StaticContentTemplateRegistration</name>
       <display>Intent.ModuleBuilder.Templates.StaticContentTemplateRegistration</display>

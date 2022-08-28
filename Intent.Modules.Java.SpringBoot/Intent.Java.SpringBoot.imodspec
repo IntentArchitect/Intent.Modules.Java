@@ -30,7 +30,7 @@
     <dependency id="Intent.Java.Maven" version="3.3.5" />
     <dependency id="Intent.Java.Services" version="3.3.6" />
     <dependency id="Intent.Metadata.WebApi" version="3.3.5" />
-    <dependency id="Intent.Modelers.Services" version="3.3.3" />
+    <dependency id="Intent.Modelers.Services" version="3.3.4" />
   </dependencies>
   <files>
     <file src="$outDir$/$id$.dll" />

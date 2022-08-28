@@ -11,7 +11,7 @@
     <FileLog>
       <ProjectId>06caed4b-c0ea-4239-a4e7-6febea061869</ProjectId>
       <CorrelationId>Intent.VisualStudio.Projects.CoreLibrary.CSProject#06caed4b-c0ea-4239-a4e7-6febea061869</CorrelationId>
-      <OverwriteBehaviour>once-off</OverwriteBehaviour>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Intent.ApplicationTemplates.Java.csproj</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>Intent.ApplicationTemplates.Java.csproj</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>

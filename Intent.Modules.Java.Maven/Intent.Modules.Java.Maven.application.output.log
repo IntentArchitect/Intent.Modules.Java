@@ -42,7 +42,7 @@
     </FileLog>
     <FileLog>
       <ProjectId>73f1bfd6-6e37-4965-a6f6-64ba8f3f313c</ProjectId>
-      <CorrelationId>Intent.ModuleBuilder.ProjectItemTemplate.T4Template#cf1787cd-4aae-4887-b9f1-e9fdaf5bee4d</CorrelationId>
+      <CorrelationId>Intent.ModuleBuilder.Templates.FileTemplateT4#cf1787cd-4aae-4887-b9f1-e9fdaf5bee4d</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Templates/PomFile/PomFileTemplate.tt</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>PomFile/PomFileTemplate.tt</ProjectRelativeFilePath>

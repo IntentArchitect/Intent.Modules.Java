@@ -95,20 +95,6 @@
       <metadata />
       <childElements />
     </childElement>
-    <childElement id="7940c62f-52eb-432c-8cb9-25929505374e" type="Template Output" typeId="d421c322-7a51-4094-89fa-e5d8a0a97b27">
-      <name>Intent.ModuleBuilder.ProjectItemTemplate.T4Template</name>
-      <display>Intent.ModuleBuilder.ProjectItemTemplate.T4Template</display>
-      <externalReference>Intent.ModuleBuilder</externalReference>
-      <isAbstract>false</isAbstract>
-      <genericTypes />
-      <isMapped>false</isMapped>
-      <parentFolderId>89f29537-720d-4631-8c9e-bd9a316caee8</parentFolderId>
-      <packageId>7fc0390b-e1ea-4316-8fd8-6446d3c3e0f7</packageId>
-      <packageName>Intent.Modules.Java</packageName>
-      <stereotypes />
-      <metadata />
-      <childElements />
-    </childElement>
     <childElement id="7165bf76-74d8-4f35-8dbc-de42649fde24" type="Template Output" typeId="d421c322-7a51-4094-89fa-e5d8a0a97b27">
       <name>Intent.ModuleBuilder.ProjectItemTemplate.T4Template.PreProcessed</name>
       <display>Intent.ModuleBuilder.ProjectItemTemplate.T4Template.PreProcessed</display>
@@ -177,6 +163,38 @@
       <packageName>Intent.Modules.Java</packageName>
       <stereotypes />
       <metadata />
+      <childElements />
+    </childElement>
+    <childElement id="9984984c-bd07-4a99-9b8b-1f363fa2a198" type="Template Output" typeId="d421c322-7a51-4094-89fa-e5d8a0a97b27">
+      <name>Intent.ModuleBuilder.Templates.FileTemplateStringInterpolation</name>
+      <display>Intent.ModuleBuilder.Templates.FileTemplateStringInterpolation</display>
+      <externalReference>Intent.ModuleBuilder</externalReference>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <isMapped>false</isMapped>
+      <parentFolderId>89f29537-720d-4631-8c9e-bd9a316caee8</parentFolderId>
+      <packageId>7fc0390b-e1ea-4316-8fd8-6446d3c3e0f7</packageId>
+      <packageName>Intent.Modules.Java</packageName>
+      <stereotypes />
+      <metadata>
+        <entry key="status" value="assigned" />
+      </metadata>
+      <childElements />
+    </childElement>
+    <childElement id="e356e6c1-1ed6-44f3-862a-45ab14957a3c" type="Template Output" typeId="d421c322-7a51-4094-89fa-e5d8a0a97b27">
+      <name>Intent.ModuleBuilder.Templates.FileTemplateT4</name>
+      <display>Intent.ModuleBuilder.Templates.FileTemplateT4</display>
+      <externalReference>Intent.ModuleBuilder</externalReference>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <isMapped>false</isMapped>
+      <parentFolderId>89f29537-720d-4631-8c9e-bd9a316caee8</parentFolderId>
+      <packageId>7fc0390b-e1ea-4316-8fd8-6446d3c3e0f7</packageId>
+      <packageName>Intent.Modules.Java</packageName>
+      <stereotypes />
+      <metadata>
+        <entry key="status" value="assigned" />
+      </metadata>
       <childElements />
     </childElement>
     <childElement id="b4c56066-68ac-4fda-8995-dd8214d5d7a5" type="Template Output" typeId="d421c322-7a51-4094-89fa-e5d8a0a97b27">
