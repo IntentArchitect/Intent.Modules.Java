@@ -61,7 +61,13 @@ namespace Intent.Modules.Java.Maven.Templates.PomFile
 
         public override string RunTemplate()
         {
-            var doc = File.Exists(GetMetadata().GetFilePath()) ? XDocument.Load(GetMetadata().GetFilePath(), LoadOptions.PreserveWhitespace) : XDocument.Parse(TransformText(), LoadOptions.PreserveWhitespace);
+            if (!TryGetExistingFileContent(out var content))
+            {
+                content = TransformText();
+            }
+
+            var doc = XDocument.Load(content, LoadOptions.PreserveWhitespace);
+
             var namespaces = new XmlNamespaceManager(new NameTable());
             var @namespace = doc.Root!.GetDefaultNamespace();
             namespaces.AddNamespace("ns", @namespace.NamespaceName);
