@@ -28,11 +28,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Intent.Modules.Java.Spring.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Intent.Modules.Java.Services.CRUD", "Intent.Modules.Java.Services.CRUD\Intent.Modules.Java.Services.CRUD.csproj", "{EF69D81E-E67C-4251-984C-20C3FB2A945E}"
 EndProject
-Project("{52B49DB5-3EA9-4095-B1A7-DF1AC22D7DAE}") = "Intent.Modules.Java.Persistence.JPA.Queries", "Intent.Modules.Java.Persistence.JPA.Queries\Intent.Modules.Java.Persistence.JPA.Queries.csproj", "{FE025313-A7D8-48A9-A0D5-9BD9328F82B0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Intent.Modules.Java.Persistence.JPA.Queries", "Intent.Modules.Java.Persistence.JPA.Queries\Intent.Modules.Java.Persistence.JPA.Queries.csproj", "{FE025313-A7D8-48A9-A0D5-9BD9328F82B0}"
 EndProject
-Project("{52B49DB5-3EA9-4095-B1A7-DF1AC22D7DAE}") = "Intent.Modules.Java.SpringBoot.Security", "Intent.Modules.Java.SpringBoot.Security\Intent.Modules.Java.SpringBoot.Security.csproj", "{07D6A2D9-6893-4CDB-BF0C-1A1F01F0AAD8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Intent.Modules.Java.SpringBoot.Security", "Intent.Modules.Java.SpringBoot.Security\Intent.Modules.Java.SpringBoot.Security.csproj", "{07D6A2D9-6893-4CDB-BF0C-1A1F01F0AAD8}"
 EndProject
-Project("{52B49DB5-3EA9-4095-B1A7-DF1AC22D7DAE}") = "Intent.Modules.Java.SpringBoot.Validation", "Intent.Modules.Java.SpringBoot.Validation\Intent.Modules.Java.SpringBoot.Validation.csproj", "{858C7EB2-2BB7-4927-9C44-A8D5BCAC8FBA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Intent.Modules.Java.SpringBoot.Validation", "Intent.Modules.Java.SpringBoot.Validation\Intent.Modules.Java.SpringBoot.Validation.csproj", "{858C7EB2-2BB7-4927-9C44-A8D5BCAC8FBA}"
+EndProject
+Project("{52B49DB5-3EA9-4095-B1A7-DF1AC22D7DAE}") = "Intent.Modules.Java.Domain.Maven", "Intent.Modules.Java.Domain.Maven\Intent.Modules.Java.Domain.Maven.csproj", "{38A5446F-DC72-46C9-A14B-71727EF18B4F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -104,6 +106,10 @@ Global
 		{858C7EB2-2BB7-4927-9C44-A8D5BCAC8FBA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{858C7EB2-2BB7-4927-9C44-A8D5BCAC8FBA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{858C7EB2-2BB7-4927-9C44-A8D5BCAC8FBA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{38A5446F-DC72-46C9-A14B-71727EF18B4F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{38A5446F-DC72-46C9-A14B-71727EF18B4F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{38A5446F-DC72-46C9-A14B-71727EF18B4F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{38A5446F-DC72-46C9-A14B-71727EF18B4F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

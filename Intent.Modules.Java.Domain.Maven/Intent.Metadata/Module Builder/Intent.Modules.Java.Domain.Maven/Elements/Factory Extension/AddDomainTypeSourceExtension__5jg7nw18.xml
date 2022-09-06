@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<class id="31370750-498d-4ba6-a4a9-ae1e0a22d635" type="Factory Extension" typeId="7d008e84-bb28-4b10-ba28-7439202fca76">
+  <name>AddDomainTypeSourceExtension</name>
+  <display>AddDomainTypeSourceExtension</display>
+  <isAbstract>false</isAbstract>
+  <genericTypes />
+  <isMapped>false</isMapped>
+  <parentFolderId>6d2225a7-282e-495f-b587-e014ef045df1</parentFolderId>
+  <packageId>6d2225a7-282e-495f-b587-e014ef045df1</packageId>
+  <packageName>Intent.Modules.Java.Domain.Maven</packageName>
+  <stereotypes />
+  <metadata />
+  <childElements />
+</class>
