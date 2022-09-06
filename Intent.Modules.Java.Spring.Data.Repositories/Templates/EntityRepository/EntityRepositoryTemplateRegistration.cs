@@ -4,6 +4,7 @@ using System.Linq;
 using Intent.Engine;
 using Intent.Metadata.Models;
 using Intent.Modelers.Domain.Api;
+using Intent.Modelers.Domain.Repositories.Api;
 using Intent.Modules.Common;
 using Intent.Modules.Common.Registrations;
 using Intent.RoslynWeaver.Attributes;
@@ -34,7 +35,10 @@ namespace Intent.Modules.Java.Spring.Data.Repositories.Templates.EntityRepositor
         [IntentManaged(Mode.Merge, Body = Mode.Ignore, Signature = Mode.Fully)]
         public override IEnumerable<ClassModel> GetModels(IApplication application)
         {
-            return _metadataManager.Domain(application).GetClassModels();
+            var classes = _metadataManager.Domain(application).GetClassModels();
+            var repositories = _metadataManager.Domain(application).GetRepositoryModels().Select(x => ((IElement)x.TypeReference.Element).AsClassModel());
+
+            return classes.Concat(repositories).Distinct();
         }
     }
 }

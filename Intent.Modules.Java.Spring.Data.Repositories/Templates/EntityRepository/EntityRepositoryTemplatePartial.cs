@@ -9,6 +9,8 @@ using Intent.Modules.Common;
 using Intent.Modules.Common.Java;
 using Intent.Modules.Common.Java.Templates;
 using Intent.Modules.Common.Templates;
+using Intent.Modules.Common.TypeResolution;
+using Intent.Modules.Java.Domain.Events;
 using Intent.Modules.Java.Domain.Templates;
 using Intent.Modules.Java.Domain.Templates.DomainModel;
 using Intent.Modules.Metadata.RDBMS.Api.Indexes;
@@ -30,6 +32,13 @@ namespace Intent.Modules.Java.Spring.Data.Repositories.Templates.EntityRepositor
         [IntentManaged(Mode.Merge, Body = Mode.Ignore, Signature = Mode.Fully)]
         public EntityRepositoryTemplate(IOutputTarget outputTarget, Intent.Modelers.Domain.Api.ClassModel model) : base(TemplateId, outputTarget, model)
         {
+            AddTypeSource(DomainModelTemplate.TemplateId);
+            ExecutionContext.EventDispatcher.Subscribe<DomainEntityTypeSourceAvailableEvent>(Handle);
+        }
+
+        private void Handle(DomainEntityTypeSourceAvailableEvent @event)
+        {
+            AddTypeSource(@event.TypeSource);
         }
 
         [IntentManaged(Mode.Merge, Body = Mode.Ignore, Signature = Mode.Fully)]
@@ -44,7 +53,7 @@ namespace Intent.Modules.Java.Spring.Data.Repositories.Templates.EntityRepositor
 
         private string GetEntityType()
         {
-            return GetTypeName(DomainModelTemplate.TemplateId, Model);
+            return GetTypeName(Model.InternalElement);
         }
 
         private string GetEntityIdType()
