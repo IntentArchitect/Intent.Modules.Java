@@ -97,6 +97,14 @@
       <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
+      <ProjectId>b5d77679-3971-4c52-a455-ee11d331f760</ProjectId>
+      <CorrelationId>Intent.ModuleBuilder.Templates.Api.ApiElementExtensionModel#1bdbb2a8-53c9-4bdf-90cd-83d60bc2ad50</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>Api/RepositoryExtensionModel.cs</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>RepositoryExtensionModel.cs</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
       <ProjectId>fe025313-a7d8-48a9-a0d5-9bd9328f82b0</ProjectId>
       <CorrelationId>Intent.ModuleBuilder.Templates.Api.ApiMetadataProviderExtensions</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>

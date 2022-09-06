@@ -6,6 +6,7 @@ using Intent.Engine;
 using Intent.Java.Persistence.JPA.Queries.Api;
 using Intent.Metadata.Models;
 using Intent.Modelers.Domain.Api;
+using Intent.Modelers.Domain.Repositories.Api;
 using Intent.Modules.Common.Templates;
 using Intent.Modules.Java.Domain.Templates;
 using Intent.Modules.Java.Persistence.JPA.Queries.Templates;
@@ -36,6 +37,28 @@ namespace Intent.Modules.Java.Persistence.JPA.Queries.Decorators
         }
 
         public override IEnumerable<string> GetMembers()
+        {
+            var classQueries = new ClassExtensionModel(_template.Model.InternalElement).Queries;
+            var repositoryQueries = _application.MetadataManager
+                .Domain(_application)
+                .GetRepositoryModels()
+                .Where(x => x.TypeReference?.Element.Id == _template.Model.InternalElement.Id)
+                .SelectMany(model => new RepositoryExtensionModel(model.InternalElement).Queries);
+
+            var queryModels = classQueries.Concat(repositoryQueries).Distinct();
+
+            foreach (var queryModel in queryModels)
+            {
+                yield return GetMember(queryModel);
+            }
+
+            foreach (var member in base.GetMembers())
+            {
+                yield return member;
+            }
+        }
+
+        private string GetMember(QueryModel queryModel)
         {
             static QueryData GetQueryData(QueryModel query, EntityRepositoryTemplate template)
             {
@@ -150,58 +173,49 @@ namespace Intent.Modules.Java.Persistence.JPA.Queries.Decorators
                 return new QueryData(tables, columns, whereClauses, parameters, annotatedParameters);
             }
 
-            foreach (var queryModel in new ClassExtensionModel(_template.Model.InternalElement).Queries)
+            var (tables, selectColumns, whereClauses, parameters, annotatedParameters) = GetQueryData(queryModel, _template);
+            var distinct = queryModel.GetQuerySettings().Distinct();
+            var returnType = queryModel.TypeReference.IsCollection
+                ? _template.GetTypeName(queryModel, $"{_template.ImportType("java.util.List")}<{{0}}>")
+                : $"{_template.ImportType("java.util.Optional")}<{_template.GetTypeName(queryModel)}>";
+
+            // If we're returning the domain object and all parameters are simple included ones,
+            // then we can just make a method with an @Query annotation which is conventionally
+            // interpreted by JPA as a query filtering by each parameter.
+            if (queryModel.TypeReference.Element.Id == _template.Model.Id &&
+                queryModel.Parameters.All(x => x.GetParameterSettings()?.ExcludeFromParameterList() != true))
             {
-                var (tables, selectColumns, whereClauses, parameters, annotatedParameters) = GetQueryData(queryModel, _template);
-                var distinct = queryModel.GetQuerySettings().Distinct();
-                var returnType = queryModel.TypeReference.IsCollection
-                    ? _template.GetTypeName(queryModel, $"{_template.ImportType("java.util.List")}<{{0}}>")
-                    : $"{_template.ImportType("java.util.Optional")}<{_template.GetTypeName(queryModel)}>";
+                return $"{returnType} {queryModel.Name}({string.Join(", ", parameters)});";
+            }
 
-                // If we're returning the domain object and all parameters are simple included ones,
-                // then we can just make a method with an @Query annotation which is conventionally
-                // interpreted by JPA as a query filtering by each parameter.
-                if (queryModel.TypeReference.Element.Id == _template.Model.Id &&
-                    queryModel.Parameters.All(x => x.GetParameterSettings()?.ExcludeFromParameterList() != true))
+            var lines = new List<string>();
+
+            if (queryModel.TypeReference.Element.IsClassModel())
+            {
+                lines.Add($"select {tables[0].Alias}");
+            }
+            else
+            {
+                lines.Add($"select{(distinct ? " distinct" : string.Empty)}");
+
+                for (var i = 0; i < selectColumns.Count; i++)
                 {
-                    yield return $"{returnType} {queryModel.Name}({string.Join(", ", parameters)});";
-                    continue;
+                    var isLastItem = i == selectColumns.Count - 1;
+                    lines.Add($"{selectColumns[i]}{(!isLastItem ? "," : string.Empty)}");
                 }
+            }
 
-                var lines = new List<string>();
+            lines.Add($"from {string.Join(" join ", tables.Select(table => $"{table.Name} {table.Alias}"))}");
 
-                if (queryModel.TypeReference.Element.IsClassModel())
-                {
-                    lines.Add($"select {tables[0].Alias}");
-                }
-                else
-                {
-                    lines.Add($"select{(distinct ? " distinct" : string.Empty)}");
+            if (whereClauses.Count > 0)
+            {
+                lines.Add($"where {string.Join(" and ", whereClauses)}");
+            }
 
-                    for (var i = 0; i < selectColumns.Count; i++)
-                    {
-                        var isLastItem = i == selectColumns.Count - 1;
-                        lines.Add($"{selectColumns[i]}{(!isLastItem ? "," : string.Empty)}");
-                    }
-                }
+            var query = $"\"{string.Join($" \" +{Environment.NewLine}            \"", lines)}\"";
 
-                lines.Add($"from {string.Join(" join ", tables.Select(table => $"{table.Name} {table.Alias}"))}");
-
-                if (whereClauses.Count > 0)
-                {
-                    lines.Add($"where {string.Join(" and ", whereClauses)}");
-                }
-
-                var query = $"\"{string.Join($" \" +{Environment.NewLine}            \"", lines)}\"";
-
-                yield return @$"@{_template.ImportType("org.springframework.data.jpa.repository.Query")}({query})
+            return @$"@{_template.ImportType("org.springframework.data.jpa.repository.Query")}({query})
     {returnType} {queryModel.Name}({string.Join(", ", annotatedParameters)});";
-            }
-
-            foreach (var member in base.GetMembers())
-            {
-                yield return member;
-            }
         }
 
         private record struct QueryData(
