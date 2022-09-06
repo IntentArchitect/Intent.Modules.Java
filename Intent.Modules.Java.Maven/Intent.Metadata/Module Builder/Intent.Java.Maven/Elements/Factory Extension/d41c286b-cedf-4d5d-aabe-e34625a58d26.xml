@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<class id="d41c286b-cedf-4d5d-aabe-e34625a58d26" type="Factory Extension" typeId="7d008e84-bb28-4b10-ba28-7439202fca76">
+  <name>PomFileProcessor</name>
+  <display>PomFileProcessor</display>
+  <isAbstract>false</isAbstract>
+  <genericTypes />
+  <isMapped>false</isMapped>
+  <parentFolderId>eb73bd94-1133-4441-8344-3e9e461f36d3</parentFolderId>
+  <packageId>eb73bd94-1133-4441-8344-3e9e461f36d3</packageId>
+  <packageName>Intent.Java.Maven</packageName>
+  <stereotypes />
+  <metadata />
+  <childElements />
+</class>

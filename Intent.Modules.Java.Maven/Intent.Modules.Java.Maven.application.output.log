@@ -9,6 +9,14 @@
       <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
+      <ProjectId>6b37b738-4658-4915-8145-a98d42a16573</ProjectId>
+      <CorrelationId>Intent.ModuleBuilder.Templates.FactoryExtension#d41c286b-cedf-4d5d-aabe-e34625a58d26</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>FactoryExtensions/PomFileProcessor.cs</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>PomFileProcessor.cs</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
       <ProjectId>2aee7253-e4d7-4433-95b7-561ca904f214</ProjectId>
       <CorrelationId>Intent.ModuleBuilder.IModSpecFile</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
