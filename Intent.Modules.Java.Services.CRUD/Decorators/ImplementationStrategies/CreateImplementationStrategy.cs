@@ -29,7 +29,10 @@ namespace Intent.Modules.Java.Services.CRUD.Decorators.ImplementationStrategies
                 return false;
             }
 
-            if (operationModel.TypeReference.Element != null && !_decorator.Template.GetTypeInfo(operationModel.TypeReference).IsPrimitive)
+            // We seriously need a better way to check for a surrogate key here. This is not a good approach.
+            if (operationModel.TypeReference.Element != null
+                && !_decorator.Template.GetTypeInfo(operationModel.TypeReference).IsPrimitive
+                && operationModel.TypeReference.Element.Name != "guid")
             {
                 return false;
             }
@@ -37,14 +40,14 @@ namespace Intent.Modules.Java.Services.CRUD.Decorators.ImplementationStrategies
             var lowerDomainName = domainModel.Name.ToLower();
             var lowerOperationName = operationModel.Name.ToLower();
             return new[]
-            {
-                "post",
-                $"post{lowerDomainName}",
-                "create",
-                $"create{lowerDomainName}",
-                $"add{lowerDomainName}",
-            }
-            .Contains(lowerOperationName);
+                {
+                    "post",
+                    $"post{lowerDomainName}",
+                    "create",
+                    $"create{lowerDomainName}",
+                    $"add{lowerDomainName}",
+                }
+                .Contains(lowerOperationName);
         }
 
         public string GetImplementation(ClassModel domainModel, OperationModel operationModel)
@@ -55,11 +58,11 @@ namespace Intent.Modules.Java.Services.CRUD.Decorators.ImplementationStrategies
 
             statements.AddRange(GetPropertyAssignments(domainModel, operationModel.Parameters.Single()));
 
-            statements.Add($"{ domainModel.Name.ToCamelCase() }Repository.save({domainModel.Name.ToCamelCase()});");
+            statements.Add($"{domainModel.Name.ToCamelCase()}Repository.save({domainModel.Name.ToCamelCase()});");
 
             if (operationModel.TypeReference.Element != null)
             {
-                statements.Add($"{ domainModel.Name.ToCamelCase()}.getId();");
+                statements.Add($"return {domainModel.Name.ToCamelCase()}.getId();");
             }
 
             return string.Join(@"
@@ -87,11 +90,13 @@ namespace Intent.Modules.Java.Services.CRUD.Decorators.ImplementationStrategies
                     statements.Add($"// Warning: No matching field found for {dtoField.Name}");
                     continue;
                 }
+
                 if (domainAttribute.Type.Element.Id != dtoField.TypeReference.Element.Id)
                 {
                     statements.Add($"// Warning: No matching type for Domain: {domainAttribute.Name} and DTO: {dtoField.Name}");
                     continue;
                 }
+
                 statements.Add($"{domainModel.Name.ToCamelCase()}.set{domainAttribute.Name.ToPascalCase()}({operationParameterModel.Name}.get{dtoField.Name.ToPascalCase()}());");
             }
 
