@@ -10,6 +10,7 @@ using Intent.Modules.Common.Java.Templates;
 using Intent.Modules.Common.Templates;
 using Intent.Modules.Java.Domain.Templates.DomainModel;
 using Intent.RoslynWeaver.Attributes;
+using static Intent.Java.Persistence.JPA.Api.AssociationSourceEndModelStereotypeExtensions.AssociationJPASettings;
 
 [assembly: DefaultIntentManaged(Mode.Merge)]
 [assembly: IntentTemplate("Intent.ModuleBuilder.Templates.TemplateDecorator", Version = "1.0")]
@@ -65,7 +66,11 @@ namespace Intent.Modules.Java.Persistence.JPA.Decorators
         {
             var annotations = new List<string>();
             var columnSettings = new List<string>();
-            columnSettings.Add($"name = \"{model.Name.ToSnakeCase()}\"");
+
+            var columnName = !string.IsNullOrWhiteSpace(model.GetColumn()?.Name())
+                ? model.GetColumn().Name()
+                : model.Name.ToSnakeCase();
+            columnSettings.Add($"name = \"{columnName}\"");
             if (_template.GetTypeName(model.TypeReference) == "String" && model.GetTextConstraints()?.MaxLength() != null)
             {
                 columnSettings.Add($"length = {model.GetTextConstraints().MaxLength()}");
@@ -87,13 +92,10 @@ namespace Intent.Modules.Java.Persistence.JPA.Decorators
             {
                 AssociationSourceEndModel endModel => endModel.GetAssociationJPASettings()?.FetchType().Value,
                 AssociationTargetEndModel endModel => endModel.GetAssociationJPASettings()?.FetchType().Value,
-                _ => string.Empty
+                _ => null
             };
 
-            if (!string.IsNullOrWhiteSpace(fetchType))
-            {
-                fetchType = $"fetch = {_template.ImportType("javax.persistence.FetchType")}.{fetchType.ToUpperInvariant()}";
-            }
+            fetchType = $"fetch = {_template.ImportType("javax.persistence.FetchType")}.{(fetchType ?? FetchTypeOptionsEnum.Lazy.ToString()).ToUpperInvariant()}";
 
             if (!thatEnd.IsNavigable)
             {
