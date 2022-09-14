@@ -11,8 +11,11 @@
 <#@ import namespace="Intent.Modules.Java.Weaving.Annotations.Templates.IntentIgnoreBody" #>
 package <#= Package #>;
 
-<#= GetDecoratorsOutput(x => x.ClassAnnotations()) #>
-<#= this.IntentManageClassAnnotation() #>(privateMethods = <#= this.IntentModeIgnore() #>)
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+<#= GetClassAnnotations() #>
 public class <#= ClassName #> extends <#= GetBaseClass() #> {
     private static final long serialVersionUID = 1L;
 <#  foreach(var attribute in Model.Attributes.Where(x => !x.Name.Equals("id", StringComparison.InvariantCultureIgnoreCase))) { #>
@@ -25,31 +28,11 @@ public class <#= ClassName #> extends <#= GetBaseClass() #> {
     <#= GetDecoratorsOutput(x => x.BeforeField(associationEnd), @"
     ") #>private <#= GetTypeName(associationEnd) #> <#= associationEnd.Name.ToCamelCase() #>;
 <#  } #>
-<#  foreach(var attribute in Model.Attributes.Where(x => !x.Name.Equals("id", StringComparison.InvariantCultureIgnoreCase))) { #>
-
-    public <#= GetTypeName(attribute) #> get<#= attribute.Name.ToPascalCase() #>() {
-        return this.<#= attribute.Name.ToCamelCase() #>;
-    }
-
-    public void set<#= attribute.Name.ToPascalCase() #>(<#= GetTypeName(attribute) #> <#= attribute.Name.ToCamelCase() #>) {
-        this.<#= attribute.Name.ToCamelCase() #> = <#= attribute.Name.ToCamelCase() #>;
-    }
-<#  } #>
-<#  foreach(var association in Model.AssociatedClasses.Where(x => x.IsNavigable)) { #>
-
-    public <#= GetTypeName(association) #> get<#= association.Name.ToPascalCase() #>() {
-        return this.<#= association.Name.ToCamelCase() #>;
-    }
-
-    public void set<#= association.Name.ToPascalCase() #>(<#= GetTypeName(association) #> <#= association.Name.ToCamelCase() #>) {
-        this.<#= association.Name.ToCamelCase() #> = <#= association.Name.ToCamelCase() #>;
-    }
-<#  } #>
 <#  foreach(var operation in Model.Operations) { #>
 
     @<#= GetTypeName(IntentIgnoreBodyTemplate.TemplateId) #>
     public <#= GetTypeName(operation) #> <#= operation.Name.ToCamelCase() #>(<#= this.GetMethodParameters(operation.Parameters) #>) {
-		throw new UnsupportedOperationException("Write your implementation here...");
+        throw new UnsupportedOperationException("Write your implementation here...");
     }
 <#  } #>
 }
