@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using Intent.Modules.Common.Templates;
 using Intent.Modules.Java.SpringBoot.Templates.Application;
+using Intent.Modules.Java.SpringBoot.Templates.JsonResponse;
 using Intent.Modules.Java.SpringBoot.Templates.RestController;
 using Intent.RoslynWeaver.Attributes;
 
@@ -14,6 +15,11 @@ namespace Intent.Modules.Java.SpringBoot.Templates
         public static string GetApplicationName<T>(this IntentTemplateBase<T> template)
         {
             return template.GetTypeName(ApplicationTemplate.TemplateId);
+        }
+
+        public static string GetJsonResponseName<T>(this IntentTemplateBase<T> template)
+        {
+            return template.GetTypeName(JsonResponseTemplate.TemplateId);
         }
 
         public static string GetRestControllerName<T>(this IntentTemplateBase<T> template) where T : Intent.Modelers.Services.Api.ServiceModel

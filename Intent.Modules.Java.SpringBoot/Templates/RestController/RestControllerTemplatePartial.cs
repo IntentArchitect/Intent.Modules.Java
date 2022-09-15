@@ -27,8 +27,7 @@ namespace Intent.Modules.Java.SpringBoot.Templates.RestController
     [IntentManaged(Mode.Merge, Signature = Mode.Fully)]
     partial class RestControllerTemplate : JavaTemplateBase<Intent.Modelers.Services.Api.ServiceModel, RestControllerDecorator>
     {
-        [IntentManaged(Mode.Fully)]
-        public const string TemplateId = "Intent.Java.SpringBoot.RestController";
+        [IntentManaged(Mode.Fully)] public const string TemplateId = "Intent.Java.SpringBoot.RestController";
 
         [IntentManaged(Mode.Merge, Signature = Mode.Fully)]
         public RestControllerTemplate(IOutputTarget outputTarget, Intent.Modelers.Services.Api.ServiceModel model) : base(TemplateId, outputTarget, model)
@@ -121,6 +120,13 @@ namespace Intent.Modules.Java.SpringBoot.Templates.RestController
                 return "void";
             }
 
+            if (operation.GetHttpSettings().ReturnTypeMediatype().IsApplicationJson()
+                && (GetTypeInfo(operation.ReturnType).IsPrimitive || operation.ReturnType.HasStringType() || operation.ReturnType.Element.Name == "guid"))
+            {
+                var wrappedReturnType = $"{this.GetJsonResponseName()}<{GetTypeName(operation.TypeReference).AsReferenceType()}>";
+                return $"ResponseEntity<{wrappedReturnType}>";
+            }
+
             var returnType = operation.TypeReference.Element.Name != "object"
                 ? GetTypeName(operation.TypeReference).AsReferenceType()
                 : operation.TypeReference.IsCollection
@@ -128,6 +134,18 @@ namespace Intent.Modules.Java.SpringBoot.Templates.RestController
                     : "?";
 
             return $"ResponseEntity<{returnType}>";
+        }
+
+        private string GetResultValue(OperationModel operation)
+        {
+            if (operation.GetHttpSettings().ReturnTypeMediatype().IsApplicationJson()
+                && (GetTypeInfo(operation.ReturnType).IsPrimitive || operation.ReturnType.HasStringType() || operation.ReturnType.Element.Name == "guid"))
+            {
+                var wrappedReturnType = $"{this.GetJsonResponseName()}<{GetTypeName(operation.TypeReference).AsReferenceType()}>";
+                return $"new {wrappedReturnType}(result)";
+            }
+
+            return "result";
         }
 
         private static string GetPath(OperationModel operation)
@@ -161,13 +179,16 @@ namespace Intent.Modules.Java.SpringBoot.Templates.RestController
                     !parameter.TypeReference.IsCollection)
                 {
                     if (GetPath(operation) != null && GetPath(operation).Split('/', StringSplitOptions.RemoveEmptyEntries).Any(x =>
-                        x.Contains('{')
-                        && x.Contains('}')
-                        && x.Split(new[] { '{', '}' }, StringSplitOptions.RemoveEmptyEntries).Any(i => i == parameter.Name)))
+                            x.Contains('{')
+                            && x.Contains('}')
+                            && x.Split(new[] { '{', '}' }, StringSplitOptions.RemoveEmptyEntries).Any(i => i == parameter.Name)))
                     {
-                        return $"@PathVariable(value = \"{parameter.Name}\"{(parameter.Type.IsNullable ? $", required = {parameter.TypeReference.IsNullable.ToString().ToLower()}" : string.Empty)})";
+                        return
+                            $"@PathVariable(value = \"{parameter.Name}\"{(parameter.Type.IsNullable ? $", required = {parameter.TypeReference.IsNullable.ToString().ToLower()}" : string.Empty)})";
                     }
-                    return $"@RequestParam(value = \"{parameter.Name}\"{(parameter.Type.IsNullable ? $", required = {parameter.TypeReference.IsNullable.ToString().ToLower()}" : string.Empty)})";
+
+                    return
+                        $"@RequestParam(value = \"{parameter.Name}\"{(parameter.Type.IsNullable ? $", required = {parameter.TypeReference.IsNullable.ToString().ToLower()}" : string.Empty)})";
                 }
 
                 if (GetHttpVerb(operation) == HttpVerb.PATCH ||
@@ -194,12 +215,14 @@ namespace Intent.Modules.Java.SpringBoot.Templates.RestController
 
             if (parameter.GetParameterSettings().Source().IsFromQuery())
             {
-                return $"@RequestParam(value = \"{parameter.Name}\"{(parameter.Type.IsNullable ? $", required = {parameter.TypeReference.IsNullable.ToString().ToLower()}" : string.Empty)})";
+                return
+                    $"@RequestParam(value = \"{parameter.Name}\"{(parameter.Type.IsNullable ? $", required = {parameter.TypeReference.IsNullable.ToString().ToLower()}" : string.Empty)})";
             }
 
             if (parameter.GetParameterSettings().Source().IsFromRoute())
             {
-                return $"@PathVariable(value = \"{parameter.Name}\"{(parameter.Type.IsNullable ? $", required = {parameter.TypeReference.IsNullable.ToString().ToLower()}" : string.Empty)})";
+                return
+                    $"@PathVariable(value = \"{parameter.Name}\"{(parameter.Type.IsNullable ? $", required = {parameter.TypeReference.IsNullable.ToString().ToLower()}" : string.Empty)})";
             }
 
             return string.Empty;
@@ -223,25 +246,25 @@ namespace Intent.Modules.Java.SpringBoot.Templates.RestController
             switch (checkedException.TypeReference.Element.SpecializationTypeId)
             {
                 case TypeDefinitionModel.SpecializationTypeId:
+                {
+                    var stereotype = checkedException.TypeReference.Element.AsTypeDefinitionModel()?.GetCheckedExceptionHandling();
+                    if (stereotype != null)
                     {
-                        var stereotype = checkedException.TypeReference.Element.AsTypeDefinitionModel()?.GetCheckedExceptionHandling();
-                        if (stereotype != null)
-                        {
-                            return (typeName, stereotype.HttpResponseStatus().Value, stereotype.Log());
-                        }
-
-                        break;
+                        return (typeName, stereotype.HttpResponseStatus().Value, stereotype.Log());
                     }
+
+                    break;
+                }
                 case ExceptionTypeModel.SpecializationTypeId:
+                {
+                    var stereotype = checkedException.TypeReference.Element.AsExceptionTypeModel()?.GetCheckedExceptionHandling();
+                    if (stereotype != null)
                     {
-                        var stereotype = checkedException.TypeReference.Element.AsExceptionTypeModel()?.GetCheckedExceptionHandling();
-                        if (stereotype != null)
-                        {
-                            return (typeName, stereotype.HttpResponseStatus().Value, stereotype.Log());
-                        }
-
-                        break;
+                        return (typeName, stereotype.HttpResponseStatus().Value, stereotype.Log());
                     }
+
+                    break;
+                }
             }
 
             return (typeName, "INTERNAL_SERVER_ERROR (500)", true);

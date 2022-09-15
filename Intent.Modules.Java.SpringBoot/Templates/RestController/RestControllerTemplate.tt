@@ -45,7 +45,7 @@ public class <#= ClassName #> {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
 <#          } #>
-        return new ResponseEntity<>(result, <#= GetHttpResponseCode() #>);
+        return new ResponseEntity<>(<#= GetResultValue(operation) #>, <#= GetHttpResponseCode() #>);
 <#      } else { #>
         <#= GetServiceInterfaceName().ToCamelCase() #>.<#= operation.Name #>(<#= this.GetArguments(operation.Parameters) #>);
 <#      }
