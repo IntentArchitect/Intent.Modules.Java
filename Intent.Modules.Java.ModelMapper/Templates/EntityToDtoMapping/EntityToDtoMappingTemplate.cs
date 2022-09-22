@@ -49,7 +49,7 @@ namespace Intent.Modules.Java.ModelMapper.Templates.EntityToDtoMapping
             this.Write(" extends PropertyMap<");
             
             #line 14 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.ModelMapper\Templates\EntityToDtoMapping\EntityToDtoMappingTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(GetTypeName(EntityTemplate)));
+            this.Write(this.ToStringHelper.ToStringWithCulture(GetTypeName(_entity.InternalElement)));
             
             #line default
             #line hidden

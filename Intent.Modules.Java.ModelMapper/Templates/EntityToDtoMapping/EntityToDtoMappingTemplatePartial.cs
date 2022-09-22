@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using Intent.Engine;
 using Intent.Metadata.Models;
 using Intent.Modelers.Domain.Api;
@@ -8,6 +9,7 @@ using Intent.Modules.Common;
 using Intent.Modules.Common.Java;
 using Intent.Modules.Common.Java.Templates;
 using Intent.Modules.Common.Templates;
+using Intent.Modules.Java.Domain.Events;
 using Intent.Modules.Java.Domain.Templates.DomainModel;
 using Intent.Modules.Java.Services.Templates.DataTransferModel;
 using Intent.RoslynWeaver.Attributes;
@@ -32,6 +34,7 @@ namespace Intent.Modules.Java.ModelMapper.Templates.EntityToDtoMapping
         {
             _entity = new ClassModel((IElement)Model.Mapping.Element);
             AddTypeSource(DataTransferModelTemplate.TemplateId).TrackDependencies(false);
+            this.AddDomainEntityTypeSource();
         }
 
         [IntentManaged(Mode.Merge, Body = Mode.Ignore, Signature = Mode.Fully)]
@@ -43,10 +46,6 @@ namespace Intent.Modules.Java.ModelMapper.Templates.EntityToDtoMapping
                 relativeLocation: this.GetPackageFolderPath()
             );
         }
-
-        private DomainModelTemplate _entityTemplate;
-        public DomainModelTemplate EntityTemplate => _entityTemplate ??= GetTemplate<DomainModelTemplate>(DomainModelTemplate.TemplateId, Model.Mapping.ElementId);
-
 
         private string GetDtoType()
         {
@@ -60,7 +59,7 @@ namespace Intent.Modules.Java.ModelMapper.Templates.EntityToDtoMapping
             {
                 var shouldCast = GetTypeInfo(field.TypeReference).IsPrimitive &&
                                  field.Mapping.Element?.TypeReference != null &&
-                                 GetTypeInfo(field.TypeReference).Name != EntityTemplate.GetTypeInfo(field.Mapping.Element.TypeReference).Name;
+                                 GetTypeInfo(field.TypeReference).Name != GetTypeInfo(field.Mapping.Element.TypeReference).Name;
                 if ($"get{field.Name.ToPascalCase()}()" != GetPath(field.Mapping.Path) || shouldCast)
                 {
                     memberMappings.Add($@"map().set{field.Name.ToPascalCase()}({(shouldCast ? $"({GetTypeName(field)})" : "")}source.{GetPath(field.Mapping.Path)});");

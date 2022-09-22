@@ -11,7 +11,7 @@ package <#= Package #>;
 
 import org.modelmapper.PropertyMap;
 
-public class <#= ClassName #> extends PropertyMap<<#= GetTypeName(EntityTemplate) #>, <#= GetDtoType() #>> {
+public class <#= ClassName #> extends PropertyMap<<#= GetTypeName(_entity.InternalElement) #>, <#= GetDtoType() #>> {
     protected void configure() {
 <#  foreach(var mapping in GetMappings()) { #>
         <#= mapping #>

@@ -1,7 +1,8 @@
 using Intent.Engine;
+using Intent.Metadata.Models;
 using Intent.Modelers.Domain.Api;
 using Intent.Modules.Common.Templates;
-using Intent.Modules.Java.Domain.Templates.DomainModel;
+using Intent.Modules.Java.Domain.Events;
 using Intent.Modules.Java.Services.Templates.DataTransferModel;
 using Intent.RoslynWeaver.Attributes;
 
@@ -21,11 +22,13 @@ namespace Intent.Modules.Java.ModelMapper.Decorators
         [IntentManaged(Mode.Fully)]
         private readonly IApplication _application;
 
-        [IntentManaged(Mode.Merge, Body = Mode.Fully)]
+        [IntentManaged(Mode.Merge, Body = Mode.Ignore)]
         public DataTransferModelMappingDecorator(DataTransferModelTemplate template, IApplication application)
         {
             _template = template;
             _application = application;
+
+            _template.AddDomainEntityTypeSource();
         }
 
         public override string Methods()
@@ -50,7 +53,7 @@ namespace Intent.Modules.Java.ModelMapper.Decorators
 
         private string GetEntityTypeName()
         {
-            return _template.GetTypeName(DomainModelTemplate.TemplateId, _template.Model.Mapping.Element);
+            return _template.GetTypeName((IElement)_template.Model.Mapping.Element);
         }
     }
 }
