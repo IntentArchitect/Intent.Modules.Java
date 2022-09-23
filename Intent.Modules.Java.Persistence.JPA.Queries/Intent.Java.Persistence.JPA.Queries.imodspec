@@ -26,7 +26,7 @@
     <dependency id="Intent.Common" version="3.3.11" />
     <dependency id="Intent.Common.Java" version="3.3.12" />
     <dependency id="Intent.Common.Types" version="3.3.6" />
-    <dependency id="Intent.Java.Domain" version="3.3.6" />
+    <dependency id="Intent.Java.Domain" version="3.3.7" />
     <dependency id="Intent.Java.Persistence.JPA" version="3.3.8" />
     <dependency id="Intent.Java.Services" version="3.3.7" />
     <dependency id="Intent.Java.Spring.Data.Repositories" version="3.3.9" />
