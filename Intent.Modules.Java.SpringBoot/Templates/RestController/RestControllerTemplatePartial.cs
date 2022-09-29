@@ -246,25 +246,25 @@ namespace Intent.Modules.Java.SpringBoot.Templates.RestController
             switch (checkedException.TypeReference.Element.SpecializationTypeId)
             {
                 case TypeDefinitionModel.SpecializationTypeId:
-                {
-                    var stereotype = checkedException.TypeReference.Element.AsTypeDefinitionModel()?.GetCheckedExceptionHandling();
-                    if (stereotype != null)
                     {
-                        return (typeName, stereotype.HttpResponseStatus().Value, stereotype.Log());
-                    }
+                        var stereotype = checkedException.TypeReference.Element.AsTypeDefinitionModel()?.GetCheckedExceptionHandling();
+                        if (stereotype != null)
+                        {
+                            return (typeName, stereotype.HttpResponseStatus().Value, stereotype.Log());
+                        }
 
-                    break;
-                }
+                        break;
+                    }
                 case ExceptionTypeModel.SpecializationTypeId:
-                {
-                    var stereotype = checkedException.TypeReference.Element.AsExceptionTypeModel()?.GetCheckedExceptionHandling();
-                    if (stereotype != null)
                     {
-                        return (typeName, stereotype.HttpResponseStatus().Value, stereotype.Log());
-                    }
+                        var stereotype = checkedException.TypeReference.Element.AsExceptionTypeModel()?.GetCheckedExceptionHandling();
+                        if (stereotype != null)
+                        {
+                            return (typeName, stereotype.HttpResponseStatus().Value, stereotype.Log());
+                        }
 
-                    break;
-                }
+                        break;
+                    }
             }
 
             return (typeName, "INTERNAL_SERVER_ERROR (500)", true);
