@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<class id="a8a50809-3750-4305-a957-504f404230f1" type="Folder" typeId="4d95d53a-8855-4f35-aa82-e312643f5c5f">
+  <name>services</name>
+  <display>services</display>
+  <isAbstract>false</isAbstract>
+  <sort-children>by-type-then-by-name</sort-children>
+  <genericTypes />
+  <isMapped>false</isMapped>
+  <parentFolderId>c265cd13-be15-41e5-8f66-9b2a3e107048</parentFolderId>
+  <packageId>b6a94574-0fa4-49cd-8542-37adebc179a2</packageId>
+  <packageName>root</packageName>
+  <stereotypes />
+  <metadata />
+  <childElements>
+    <childElement id="df7dfa26-f4f3-44a9-81ad-e1050a61d3be" type="Template Output" typeId="09de2192-2507-41a2-8044-286c7ecadec2">
+      <name>Intent.Java.Services.ExceptionType</name>
+      <display>Intent.Java.Services.ExceptionType</display>
+      <externalReference>Intent.Java.Services</externalReference>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <isMapped>false</isMapped>
+      <parentFolderId>a8a50809-3750-4305-a957-504f404230f1</parentFolderId>
+      <packageId>b6a94574-0fa4-49cd-8542-37adebc179a2</packageId>
+      <packageName>root</packageName>
+      <stereotypes />
+      <metadata>
+        <entry key="status" value="unassigned" />
+      </metadata>
+      <childElements />
+    </childElement>
+    <childElement id="77653c5c-6dc4-4a4a-a15b-3211f4dec256" type="Template Output" typeId="09de2192-2507-41a2-8044-286c7ecadec2">
+      <name>Intent.Java.Services.ServiceImplementation</name>
+      <display>Intent.Java.Services.ServiceImplementation</display>
+      <externalReference>Intent.Java.Services</externalReference>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <isMapped>false</isMapped>
+      <parentFolderId>a8a50809-3750-4305-a957-504f404230f1</parentFolderId>
+      <packageId>b6a94574-0fa4-49cd-8542-37adebc179a2</packageId>
+      <packageName>root</packageName>
+      <stereotypes />
+      <metadata>
+        <entry key="status" value="unassigned" />
+      </metadata>
+      <childElements />
+    </childElement>
+  </childElements>
+</class>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<class id="c265cd13-be15-41e5-8f66-9b2a3e107048" type="Folder" typeId="4d95d53a-8855-4f35-aa82-e312643f5c5f">
+  <name>src</name>
+  <display>src</display>
+  <isAbstract>false</isAbstract>
+  <sort-children>by-type-then-by-name</sort-children>
+  <genericTypes />
+  <isMapped>false</isMapped>
+  <parentFolderId>b6a94574-0fa4-49cd-8542-37adebc179a2</parentFolderId>
+  <packageId>b6a94574-0fa4-49cd-8542-37adebc179a2</packageId>
+  <packageName>root</packageName>
+  <stereotypes />
+  <metadata />
+  <childElements>
+    <childElement id="485ff2d7-586b-47f6-b417-859a347696c7" type="Template Output" typeId="09de2192-2507-41a2-8044-286c7ecadec2">
+      <name>Intent.Java.Maven.PomFile</name>
+      <display>Intent.Java.Maven.PomFile</display>
+      <externalReference>Intent.Java.Maven</externalReference>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <isMapped>false</isMapped>
+      <parentFolderId>c265cd13-be15-41e5-8f66-9b2a3e107048</parentFolderId>
+      <packageId>b6a94574-0fa4-49cd-8542-37adebc179a2</packageId>
+      <packageName>root</packageName>
+      <stereotypes />
+      <metadata>
+        <entry key="status" value="unassigned" />
+      </metadata>
+      <childElements />
+    </childElement>
+    <childElement id="4e22596d-a595-49db-84b0-03da381fbdac" type="Template Output" typeId="09de2192-2507-41a2-8044-286c7ecadec2">
+      <name>Intent.Java.SpringBoot.Application</name>
+      <display>Intent.Java.SpringBoot.Application</display>
+      <externalReference>Intent.Java.SpringBoot</externalReference>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <isMapped>false</isMapped>
+      <parentFolderId>c265cd13-be15-41e5-8f66-9b2a3e107048</parentFolderId>
+      <packageId>b6a94574-0fa4-49cd-8542-37adebc179a2</packageId>
+      <packageName>root</packageName>
+      <stereotypes />
+      <metadata>
+        <entry key="status" value="unassigned" />
+      </metadata>
+      <childElements />
+    </childElement>
+    <childElement id="f706f954-9837-424f-8162-be2bb1c3d2a3" type="Template Output" typeId="09de2192-2507-41a2-8044-286c7ecadec2">
+      <name>Intent.Java.SpringBoot.ApplicationProperties</name>
+      <display>Intent.Java.SpringBoot.ApplicationProperties</display>
+      <externalReference>Intent.Java.SpringBoot</externalReference>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <isMapped>false</isMapped>
+      <parentFolderId>c265cd13-be15-41e5-8f66-9b2a3e107048</parentFolderId>
+      <packageId>b6a94574-0fa4-49cd-8542-37adebc179a2</packageId>
+      <packageName>root</packageName>
+      <stereotypes />
+      <metadata>
+        <entry key="status" value="unassigned" />
+      </metadata>
+      <childElements />
+    </childElement>
+    <childElement id="d486b5f9-1964-44c4-93ca-307650bca5fd" type="Role" typeId="8663c9f9-2852-45e7-aaa1-0883a2e6f1da">
+      <name>Root</name>
+      <display>Root</display>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <isMapped>false</isMapped>
+      <parentFolderId>c265cd13-be15-41e5-8f66-9b2a3e107048</parentFolderId>
+      <packageId>b6a94574-0fa4-49cd-8542-37adebc179a2</packageId>
+      <packageName>root</packageName>
+      <stereotypes />
+      <metadata />
+      <childElements />
+    </childElement>
+  </childElements>
+</class>
