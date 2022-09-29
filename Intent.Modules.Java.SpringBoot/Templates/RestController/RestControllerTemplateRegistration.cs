@@ -37,7 +37,7 @@ namespace Intent.Modules.Java.SpringBoot.Templates.RestController
         {
             return _metadataManager.Services(application).GetServiceModels()
                 .Where(p => p.Operations.Any(q => q.HasHttpSettings()))
-                .ToArray();;
+                .ToArray();
         }
     }
 }
