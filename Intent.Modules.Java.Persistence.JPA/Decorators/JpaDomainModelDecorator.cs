@@ -80,10 +80,12 @@ namespace Intent.Modules.Java.Persistence.JPA.Decorators
             {
                 columnSettings.Add("nullable = false");
             }
+
             annotations.Add($@"@{_template.ImportType("javax.persistence.Column")}({string.Join(", ", columnSettings)})");
 
-            return string.Join(@"
-    ", annotations);
+            const string newLine = @"
+    ";
+            return string.Join(newLine, annotations);
         }
 
         public override string BeforeField(AssociationEndModel thatEnd)
@@ -153,7 +155,8 @@ namespace Intent.Modules.Java.Persistence.JPA.Decorators
             }
             else if (sourceEnd.IsCollection && !thatEnd.IsCollection) // many-to-one
             {
-                var settings = new List<string>
+                var joinColumnParams = new List<string>();
+                var manyToOneSettings = new List<string>
                 {
                     $"optional = {thatEnd.IsNullable.ToString().ToLower()}",
                     $"cascade = {{ {_template.ImportType("javax.persistence.CascadeType")}.ALL }}"
@@ -161,11 +164,26 @@ namespace Intent.Modules.Java.Persistence.JPA.Decorators
 
                 if (!string.IsNullOrWhiteSpace(fetchType))
                 {
-                    settings.Add(fetchType);
+                    manyToOneSettings.Add(fetchType);
                 }
 
-                annotations.Add($"@{_template.ImportType("javax.persistence.ManyToOne")}({string.Join(", ", settings)})");
-                annotations.Add($"@{_template.ImportType("javax.persistence.JoinColumn")}(name=\"{thatEnd.Name.ToSnakeCase()}_id\", nullable = {thatEnd.IsNullable.ToString().ToLower()})");
+                // This needs to match up exactly to any potential FK field's column name and that
+                // required to dig into how any potential explicit FK was set on the designer.
+                var cleanedFkName = thatEnd.Name.Replace("_", " ").ToLower().ToCamelCase().Replace(" ", "");
+                joinColumnParams.Add($@"name = ""{cleanedFkName.ToSnakeCase()}_id""");
+                joinColumnParams.Add($@"nullable = {thatEnd.IsNullable.ToString().ToLower()}");
+
+                var hasAggregationForeignKey = _template.Model.Attributes.Any(p => p.Name.Equals((thatEnd.Name + "Id").Replace("_", ""), StringComparison.OrdinalIgnoreCase));
+                if (hasAggregationForeignKey)
+                {
+                    annotations.Add($@"@{_template.ImportType("lombok.Setter")}({_template.ImportType("lombok.AccessLevel")}.NONE)");
+                    
+                    joinColumnParams.Add($@"insertable = false");
+                    joinColumnParams.Add($@"updatable = false");
+                }
+                
+                annotations.Add($"@{_template.ImportType("javax.persistence.ManyToOne")}({string.Join(", ", manyToOneSettings)})");
+                annotations.Add($"@{_template.ImportType("javax.persistence.JoinColumn")}({string.Join(", ", joinColumnParams)})");
             }
             else if (sourceEnd.IsCollection && thatEnd.IsCollection) // many-to-many
             {
