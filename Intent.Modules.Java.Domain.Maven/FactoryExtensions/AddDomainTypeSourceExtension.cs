@@ -49,6 +49,13 @@ namespace Intent.Modules.Java.Domain.Maven.FactoryExtensions
                     return null;
                 }
 
+                // If the element has a Java stereotype with a set Package property, we use that
+                if (typeReference.Element.HasStereotype("Java") &&
+                    !string.IsNullOrWhiteSpace(typeReference.Element.GetStereotypeProperty<string>("Java", "Package")))
+                {
+                    return null;
+                }
+
                 var mavenDependency = new DomainPackageModel(typeReference.Element.Package).GetMavenDependency();
                 if (mavenDependency == null)
                 {
