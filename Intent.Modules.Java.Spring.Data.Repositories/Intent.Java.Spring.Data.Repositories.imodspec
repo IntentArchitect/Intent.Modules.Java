@@ -17,7 +17,7 @@
   <factoryExtensions></factoryExtensions>
   <dependencies>
     <dependency id="Intent.Common" version="3.3.11" />
-    <dependency id="Intent.Common.Java" version="3.3.15" />
+    <dependency id="Intent.Common.Java" version="3.3.16-pre.0" />
     <dependency id="Intent.Common.Types" version="3.3.5" />
     <dependency id="Intent.Java.Persistence.JPA" version="3.3.8" />
     <dependency id="Intent.Java.Weaving.Annotations" version="3.3.5" />
