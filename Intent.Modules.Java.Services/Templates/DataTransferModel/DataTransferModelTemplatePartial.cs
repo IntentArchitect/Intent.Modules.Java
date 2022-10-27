@@ -23,7 +23,7 @@ namespace Intent.Modules.Java.Services.Templates.DataTransferModel
         [IntentManaged(Mode.Merge, Signature = Mode.Fully)]
         public DataTransferModelTemplate(IOutputTarget outputTarget, Intent.Modelers.Services.Api.DTOModel model) : base(TemplateId, outputTarget, model)
         {
-            AddDependency(new JavaDependency("org.projectlombok", "lombok", "1.18.24"));
+            AddDependency(new JavaDependency("org.projectlombok", "lombok", optional: true));
             if (model.Fields.Any(x => x.TypeReference.IsCollection))
             {
                 SetDefaultTypeCollectionFormat("java.util.List<{0}>");

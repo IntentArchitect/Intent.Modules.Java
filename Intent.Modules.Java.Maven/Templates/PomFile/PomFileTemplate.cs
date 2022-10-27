@@ -31,54 +31,36 @@ namespace Intent.Modules.Java.Maven.Templates.PomFile
         public override string TransformText()
         {
             this.Write(@"<?xml version=""1.0"" encoding=""UTF-8""?>
-<project xmlns=""http://maven.apache.org/POM/4.0.0"" 
-         xmlns:xsi=""http://www.w3.org/2001/XMLSchema-instance""
-         xsi:schemaLocation=""http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd"">
-    <modelVersion>4.0.0</modelVersion>
+<project xmlns=""http://maven.apache.org/POM/4.0.0"" xmlns:xsi=""http://www.w3.org/2001/XMLSchema-instance""
+	xsi:schemaLocation=""http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd"">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId />
+	<artifactId />
+	<version />
+	<name />
+	<description />
+	<properties>
+		<java.version>17</java.version>
+	</properties>
+	<dependencies>
+	</dependencies>
 
-    <groupId>");
-            
-            #line 14 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Maven\Templates\PomFile\PomFileTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(GroupId));
-            
-            #line default
-            #line hidden
-            this.Write("</groupId>\r\n    <artifactId>");
-            
-            #line 15 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Maven\Templates\PomFile\PomFileTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(ArtifactId));
-            
-            #line default
-            #line hidden
-            this.Write("</artifactId>\r\n    <version>");
-            
-            #line 16 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Maven\Templates\PomFile\PomFileTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(Version));
-            
-            #line default
-            #line hidden
-            this.Write("</version>\r\n    <name>");
-            
-            #line 17 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Maven\Templates\PomFile\PomFileTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(Name));
-            
-            #line default
-            #line hidden
-            this.Write(@"</name>
-    <description></description>
-
-    <properties>
-        <java.version>14</java.version>
-    </properties>
-
-    <distributionManagement>
-    </distributionManagement>
-
-    <dependencies>
-    </dependencies>
-
-    <profiles>
-    </profiles>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<excludes>
+						<exclude>
+							<groupId>org.projectlombok</groupId>
+							<artifactId>lombok</artifactId>
+						</exclude>
+					</excludes>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
 
 </project>
 ");

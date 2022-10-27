@@ -1,8 +1,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Reflection.Metadata;
-using System.Threading;
 using System.Xml;
 using System.Xml.Linq;
 using System.Xml.XPath;
@@ -15,9 +13,7 @@ using Intent.Modules.Common.Templates;
 using Intent.Modules.Java.Maven.Templates;
 using Intent.Modules.Java.Maven.Templates.PomFile;
 using Intent.Modules.Java.Maven.Utils;
-using Intent.Plugins.FactoryExtensions;
 using Intent.RoslynWeaver.Attributes;
-using Intent.Templates;
 
 [assembly: DefaultIntentManaged(Mode.Fully)]
 [assembly: IntentTemplate("Intent.ModuleBuilder.Templates.FactoryExtension", Version = "1.0")]
@@ -99,18 +95,19 @@ namespace Intent.Modules.Java.Maven.FactoryExtensions
                 if (modelVersionElement != null && doc.XPathSelectElement("ns:project/ns:parent", namespaces) == null)
                 {
                     var element = XElement.Parse($@"
-    <parent>
-        <groupId>{_projectInheritance.GroupId}</groupId>
-        <artifactId>{_projectInheritance.ArtifactId}</artifactId>
-        <version>{_projectInheritance.Version}</version>
-    </parent>", LoadOptions.PreserveWhitespace);
-                    foreach (XElement e in element.DescendantsAndSelf())
+	<parent>
+		<groupId>{_projectInheritance.GroupId}</groupId>
+		<artifactId>{_projectInheritance.ArtifactId}</artifactId>
+		<version>{_projectInheritance.Version}</version>
+		<relativePath/> <!-- lookup parent from repository -->
+	</parent>", LoadOptions.PreserveWhitespace);
+                    foreach (var e in element.DescendantsAndSelf())
                     {
                         e.Name = @namespace + e.Name.LocalName; // remove namespaces
                     }
                     modelVersionElement.AddAfterSelf(element);
                     modelVersionElement.AddAfterSelf(@"
-    ");
+	");
                 }
             }
 
@@ -134,20 +131,39 @@ namespace Intent.Modules.Java.Maven.FactoryExtensions
                 if (dependencyElement == null)
                 {
                     dependencyElement = XElement.Parse($@"<dependency>
-            <groupId>{dependency.GroupId}</groupId>
-            <artifactId>{dependency.ArtifactId}</artifactId>
-        </dependency>", LoadOptions.PreserveWhitespace);
+			<groupId>{dependency.GroupId}</groupId>
+			<artifactId>{dependency.ArtifactId}</artifactId>
+		</dependency>", LoadOptions.PreserveWhitespace);
                     if (!string.IsNullOrWhiteSpace(dependency.Version))
                     {
-                        dependencyElement.Add("    ", XElement.Parse($@"<version>{dependency.Version}</version>"));
-                        dependencyElement.Add(Environment.NewLine + "        ");
+                        dependencyElement.Add("\t", XElement.Parse($@"<version>{dependency.Version}</version>"));
+                        dependencyElement.Add(Environment.NewLine + "\t\t");
                     }
                     foreach (var e in dependencyElement.DescendantsAndSelf())
                     {
                         e.Name = @namespace + e.Name.LocalName; // remove namespaces
                     }
-                    dependenciesElement.Add("    ", dependencyElement);
-                    dependenciesElement.Add(Environment.NewLine + "    ");
+                    dependenciesElement.Add("\t", dependencyElement);
+                    dependenciesElement.Add(Environment.NewLine + "\t");
+                }
+
+                var optionalElement = dependencyElement.Element(XName.Get("optional", @namespace.NamespaceName));
+                if (dependency.Optional)
+                {
+                    if (optionalElement == null)
+                    {
+                        optionalElement = new XElement(XName.Get("optional", @namespace.NamespaceName));
+                        dependencyElement.Add("\t", optionalElement, Environment.NewLine + "\t\t");
+                    }
+
+                    if (optionalElement.Value != "true")
+                    {
+                        optionalElement.SetValue("true");
+                    }
+                }
+                else
+                {
+                    optionalElement?.Remove();
                 }
 
                 var version = dependencyElement.Element(XName.Get("version", @namespace.NamespaceName));
@@ -170,13 +186,13 @@ namespace Intent.Modules.Java.Maven.FactoryExtensions
             foreach (var dependencyElement in sortedDependencyElements)
             {
                 dependenciesElement.Add(
-                    $"{Environment.NewLine}        ",
+                    $"{Environment.NewLine}\t\t",
                     dependencyElement);
             }
 
             if (dependenciesElement.HasElements)
             {
-                dependenciesElement.Add($"{Environment.NewLine}    ");
+                dependenciesElement.Add($"{Environment.NewLine}\t");
             }
 
             return doc.ToStringUTF8();

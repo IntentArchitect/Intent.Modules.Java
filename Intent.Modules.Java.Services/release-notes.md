@@ -1,3 +1,7 @@
+### Version 3.3.9
+
+- Modernized `pom.xml` file entries.
+
 ### 3.3.8
 
 - Fixed: Data Transfer Models will now output to the correct nested folder location.
