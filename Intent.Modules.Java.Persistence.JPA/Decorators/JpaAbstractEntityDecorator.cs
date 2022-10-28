@@ -38,17 +38,22 @@ namespace Intent.Modules.Java.Persistence.JPA.Decorators
 
         public override string Fields()
         {
-            var type = _application.Settings.GetDatabaseSettings().KeyType().AsEnum() switch
+            var (type, columnType) = _application.Settings.GetDatabaseSettings().KeyType().AsEnum() switch
             {
-                DatabaseSettings.KeyTypeOptionsEnum.Guid => _template.ImportType("java.util.UUID"),
-                DatabaseSettings.KeyTypeOptionsEnum.Long => "Long",
-                DatabaseSettings.KeyTypeOptionsEnum.Int => "Integer",
+                DatabaseSettings.KeyTypeOptionsEnum.Guid => (_template.ImportType("java.util.UUID"), "uuid"),
+                DatabaseSettings.KeyTypeOptionsEnum.Long => ("Long", null),
+                DatabaseSettings.KeyTypeOptionsEnum.Int => ("Integer", null),
                 _ => throw new ArgumentOutOfRangeException()
             };
 
+            var columnAnnotation = columnType != null
+                ? @$"
+    @{_template.ImportType("javax.persistence.Column")}(columnDefinition = ""{columnType}"")"
+                : string.Empty;
+
             return $@"
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.AUTO){columnAnnotation}
     private {type} id;
 
     public {type} getId() {{
