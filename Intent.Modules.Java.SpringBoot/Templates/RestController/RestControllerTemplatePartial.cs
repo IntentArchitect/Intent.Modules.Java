@@ -191,9 +191,9 @@ namespace Intent.Modules.Java.SpringBoot.Templates.RestController
                         $"@RequestParam(value = \"{parameter.Name}\"{(parameter.Type.IsNullable ? $", required = {parameter.TypeReference.IsNullable.ToString().ToLower()}" : string.Empty)})";
                 }
 
-                if (GetHttpVerb(operation) == HttpVerb.PATCH ||
-                    GetHttpVerb(operation) == HttpVerb.POST ||
-                    GetHttpVerb(operation) == HttpVerb.PUT)
+                if (GetHttpVerb(operation) == HttpVerb.Patch ||
+                    GetHttpVerb(operation) == HttpVerb.Post ||
+                    GetHttpVerb(operation) == HttpVerb.Put)
                 {
                     return "@RequestBody";
                 }
@@ -231,7 +231,8 @@ namespace Intent.Modules.Java.SpringBoot.Templates.RestController
         private static HttpVerb GetHttpVerb(OperationModel operation)
         {
             var verb = operation.GetHttpSettings().Verb();
-            return Enum.TryParse(verb.Value, out HttpVerb verbEnum) ? verbEnum : HttpVerb.POST;
+
+            return Enum.TryParse(verb.Value, ignoreCase: true, out HttpVerb verbEnum) ? verbEnum : HttpVerb.Post;
         }
 
         private static bool HasCheckedExceptions(OperationModel operation)
@@ -312,11 +313,11 @@ namespace Intent.Modules.Java.SpringBoot.Templates.RestController
 
         public enum HttpVerb
         {
-            DELETE,
-            GET,
-            PATCH,
-            POST,
-            PUT
+            Delete,
+            Get,
+            Patch,
+            Post,
+            Put
         }
     }
 }
