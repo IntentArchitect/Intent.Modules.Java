@@ -61,25 +61,33 @@ namespace Intent.Modules.Java.Maven.Templates.PomFile
             }
 
             var artifactIdElement = rootElement.Element(ns + "artifactId");
-            if (artifactIdElement != null && string.IsNullOrWhiteSpace(artifactIdElement.Value))
+            if (artifactIdElement != null &&
+                ArtifactId != null &&
+                string.IsNullOrWhiteSpace(artifactIdElement.Value))
             {
                 artifactIdElement.SetValue(ArtifactId);
             }
 
             var versionElement = rootElement.Element(ns + "version");
-            if (versionElement != null && string.IsNullOrWhiteSpace(versionElement.Value))
+            if (versionElement != null && 
+                Version != null &&
+                string.IsNullOrWhiteSpace(versionElement.Value))
             {
                 versionElement.SetValue(Version);
             }
 
             var nameElement = rootElement.Element(ns + "name");
-            if (nameElement != null && string.IsNullOrWhiteSpace(nameElement.Value))
+            if (nameElement != null &&
+                Name != null &&
+                string.IsNullOrWhiteSpace(nameElement.Value))
             {
                 nameElement.SetValue(Name);
             }
 
             var descriptionElement = rootElement.Element(ns + "description");
-            if (descriptionElement != null && string.IsNullOrWhiteSpace(descriptionElement.Value))
+            if (descriptionElement != null &&
+                Description != null &&
+                string.IsNullOrWhiteSpace(descriptionElement.Value))
             {
                 descriptionElement.SetValue(Description);
             }
