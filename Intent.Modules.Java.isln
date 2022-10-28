@@ -6,7 +6,7 @@
   <iconType>UrlImagePath</iconType>
   <metadataRelativePath>Intent.Metadata</metadataRelativePath>
   <modulesCacheRelativePath>.intent/modules</modulesCacheRelativePath>
-  <lastUsedApplicationTemplate id="Intent.ApplicationTemplate.ModuleBuilder" version="3.3.2" />
+  <lastUsedApplicationTemplate id="Intent.ApplicationTemplate.ModuleBuilder" version="3.3.5" />
   <applications>
     <application id="7525049d-c38e-46e8-84a5-ca06fb9f315f" name="Intent.Modules.Java.Services" relativePath="Intent.Modules.Java.Services/Intent.Modules.Java.Services.application.config" />
     <application id="40927c95-a61c-4636-8f22-200ed47e571f" name="Intent.Modules.Java.Domain" relativePath="Intent.Modules.Java.Domain/Intent.Modules.Java.Domain.application.config" />
@@ -27,5 +27,6 @@
     <application id="39743c9c-ac35-475c-9856-57b5c4d9e7cb" name="Intent.Modules.Java.SpringBoot.Security.Metadata" relativePath="Intent.Modules.Java.SpringBoot.Security.Metadata/Intent.Modules.Java.SpringBoot.Security.Metadata.application.config" />
     <application id="2eeddca7-faf7-4848-bd0e-c45c164af278" name="Intent.Modules.Java.SpringBoot.Validation" relativePath="Intent.Modules.Java.SpringBoot.Validation/Intent.Modules.Java.SpringBoot.Validation.application.config" />
     <application id="3b37b26f-6533-4e96-8a64-f93a1a6b9a17" name="Intent.Modules.Java.Domain.Maven" relativePath="Intent.Modules.Java.Domain.Maven/Intent.Modules.Java.Domain.Maven.application.config" />
+    <application id="6e21d1cd-2a2d-403f-b396-ea350ccc7b8b" name="Java.SpringDoc.OpenApi" relativePath="Intent.Modules.Java.SpringDoc.OpenApi/Intent.Modules.Java.SpringDoc.OpenApi.application.config" />
   </applications>
 </solution>

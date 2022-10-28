@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<class id="6e14eba5-4640-415c-93c4-a246d17acada" type="Template Decorator" typeId="f0f46278-29ea-42bd-9206-0e7034f623bc">
+  <name>OpenApiControllerDecorator</name>
+  <display>OpenApiControllerDecorator: RestControllerDecorator</display>
+  <isAbstract>false</isAbstract>
+  <genericTypes />
+  <typeReference id="a756f8a3-801d-406f-9bf9-7d5f8cfefb0a">
+    <typeId>92b673b3-739b-4e6a-bf1a-9b58b76d598f</typeId>
+    <isNavigable>true</isNavigable>
+    <isNullable>false</isNullable>
+    <isCollection>false</isCollection>
+    <isRequired>true</isRequired>
+    <typePackageName>Intent.Java.SpringBoot</typePackageName>
+    <typePackageId>27f3b2d0-b9e5-47da-bece-d305c33b5945</typePackageId>
+    <stereotypes />
+    <genericTypeParameters />
+  </typeReference>
+  <isMapped>false</isMapped>
+  <parentFolderId>a4d68385-e0ad-43a7-8f37-deea04770d82</parentFolderId>
+  <packageId>a4d68385-e0ad-43a7-8f37-deea04770d82</packageId>
+  <packageName>Intent.Modules.Java.SpringDoc.OpenApi</packageName>
+  <stereotypes />
+  <metadata />
+  <childElements />
+</class>
