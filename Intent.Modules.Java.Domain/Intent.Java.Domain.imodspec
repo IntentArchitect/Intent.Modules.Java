@@ -2,7 +2,7 @@
 <package>
   <id>Intent.Java.Domain</id>
   <version>3.3.8-pre.0</version>
-  <supportedClientVersions>[3.3.0-pre.0, 4.0.0)</supportedClientVersions>
+  <supportedClientVersions>[3.3.16, 4.0.0)</supportedClientVersions>
   <summary>Entity POJOs based on the Domain designer.</summary>
   <description>Entity POJOs based on the Domain designer.</description>
   <authors>Intent.Modules.Java</authors>

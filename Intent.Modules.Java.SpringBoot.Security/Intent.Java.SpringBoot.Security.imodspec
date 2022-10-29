@@ -2,7 +2,7 @@
 <package>
   <id>Intent.Java.SpringBoot.Security</id>
   <version>3.3.1</version>
-  <supportedClientVersions>[3.2.0,4.0.0)</supportedClientVersions>
+  <supportedClientVersions>[3.3.16, 4.0.0)</supportedClientVersions>
   <summary>Introduces OAuth security to the Spring Boot application</summary>
   <description>Introduces OAuth security to the Spring Boot application</description>
   <authors>Intent.Modules.Java</authors>

@@ -2,7 +2,7 @@
 <package>
   <id>Intent.Java.BeanValidation</id>
   <version>3.3.8</version>
-  <supportedClientVersions>[3.3.0-pre.0, 4.0.0)</supportedClientVersions>
+  <supportedClientVersions>[3.3.16, 4.0.0)</supportedClientVersions>
   <summary>Domain entity validation using the Jakarta Bean Validation framework.</summary>
   <description>Domain entity validation using the Jakarta Bean Validation framework.</description>
   <authors>Intent.Modules.Java</authors>

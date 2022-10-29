@@ -2,7 +2,7 @@
 <package>
   <id>Intent.Java.Services</id>
   <version>3.3.9-pre.0</version>
-  <supportedClientVersions>[3.3.0-pre.0, 4.0.0)</supportedClientVersions>
+  <supportedClientVersions>[3.3.16, 4.0.0)</supportedClientVersions>
   <summary>Service interfaces and implementation placeholders based on the Services designer.</summary>
   <description>Service interfaces and implementation placeholders based on the Services designer.</description>
   <authors>Intent.Modules.Java</authors>

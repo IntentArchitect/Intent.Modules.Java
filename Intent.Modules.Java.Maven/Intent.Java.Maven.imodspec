@@ -2,7 +2,7 @@
 <package>
   <id>Intent.Java.Maven</id>
   <version>3.3.8-pre.0</version>
-  <supportedClientVersions>[3.3.0-pre.0, 4.0.0)</supportedClientVersions>
+  <supportedClientVersions>[3.3.16, 4.0.0)</supportedClientVersions>
   <summary>Maven POM file management.</summary>
   <description>Maven POM file management.</description>
   <authors>Intent.Modules.Java</authors>

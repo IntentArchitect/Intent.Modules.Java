@@ -2,7 +2,7 @@
 <package>
   <id>Intent.Java.Persistence.JPA.Queries</id>
   <version>3.3.3</version>
-  <supportedClientVersions>[3.2.0,4.0.0)</supportedClientVersions>
+  <supportedClientVersions>[3.3.16, 4.0.0)</supportedClientVersions>
   <summary>Supports ability to create queries for Domain Entities within the Domain designer</summary>
   <description>Supports ability to create queries for Domain Entities within the Domain designer</description>
   <authors>Intent.Modules.Java</authors>

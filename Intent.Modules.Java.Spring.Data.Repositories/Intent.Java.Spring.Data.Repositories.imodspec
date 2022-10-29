@@ -2,7 +2,7 @@
 <package>
   <id>Intent.Java.Spring.Data.Repositories</id>
   <version>3.3.10</version>
-  <supportedClientVersions>[3.3.0-pre.0, 4.0.0)</supportedClientVersions>
+  <supportedClientVersions>[3.3.16, 4.0.0)</supportedClientVersions>
   <summary>Spring-based entity repository interfaces.</summary>
   <description>Spring-based entity repository interfaces.</description>
   <authors>Intent.Modules.Java</authors>

@@ -2,7 +2,7 @@
 <package>
   <id>Intent.Java.Weaving.Annotations</id>
   <version>3.3.6</version>
-  <supportedClientVersions>[3.3.0-pre.0, 4.0.0)</supportedClientVersions>
+  <supportedClientVersions>[3.3.16, 4.0.0)</supportedClientVersions>
   <summary>Annotations instructions Java code-management.</summary>
   <description>Annotations instructions Java code-management.</description>
   <authors>Intent.Modules.Java</authors>
