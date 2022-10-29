@@ -48,8 +48,8 @@
   <decorators></decorators>
   <factoryExtensions></factoryExtensions>
   <dependencies>
-    <dependency id="Intent.Common" version="3.3.11" />
-    <dependency id="Intent.Common.Java" version="3.3.16-pre.0" />
+    <dependency id="Intent.Common" version="3.3.13" />
+    <dependency id="Intent.Common.Java" version="3.3.16-pre.2" />
     <dependency id="Intent.Common.Types" version="3.3.6" />
   </dependencies>
   <files>

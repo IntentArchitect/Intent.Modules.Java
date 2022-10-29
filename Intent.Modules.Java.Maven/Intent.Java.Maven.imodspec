@@ -19,8 +19,8 @@
     <factoryExtension id="Intent.Java.Maven.PomFileProcessor" externalReference="d41c286b-cedf-4d5d-aabe-e34625a58d26" />
   </factoryExtensions>
   <dependencies>
-    <dependency id="Intent.Common" version="3.3.11" />
-    <dependency id="Intent.Common.Java" version="3.3.16-pre.0" />
+    <dependency id="Intent.Common" version="3.3.13" />
+    <dependency id="Intent.Common.Java" version="3.3.16-pre.2" />
     <dependency id="Intent.Common.Types" version="3.3.6" />
   </dependencies>
   <files>

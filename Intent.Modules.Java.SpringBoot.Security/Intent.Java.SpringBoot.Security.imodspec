@@ -32,8 +32,8 @@
   <factoryExtensions></factoryExtensions>
   <moduleSettings></moduleSettings>
   <dependencies>
-    <dependency id="Intent.Common" version="3.3.11" />
-    <dependency id="Intent.Common.Java" version="3.3.16-pre.0" />
+    <dependency id="Intent.Common" version="3.3.13" />
+    <dependency id="Intent.Common.Java" version="3.3.16-pre.2" />
     <dependency id="Intent.Common.Types" version="3.3.6" />
     <dependency id="Intent.Java.Services" version="3.3.8" />
     <dependency id="Intent.Java.SpringBoot" version="3.3.9" />
