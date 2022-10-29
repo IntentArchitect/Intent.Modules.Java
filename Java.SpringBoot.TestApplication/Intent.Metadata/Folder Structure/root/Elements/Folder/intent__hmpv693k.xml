@@ -24,7 +24,7 @@
       <packageName>root</packageName>
       <stereotypes />
       <metadata>
-        <entry key="status" value="unassigned" />
+        <entry key="status" value="assigned" />
       </metadata>
       <childElements />
     </childElement>
@@ -40,7 +40,7 @@
       <packageName>root</packageName>
       <stereotypes />
       <metadata>
-        <entry key="status" value="unassigned" />
+        <entry key="status" value="assigned" />
       </metadata>
       <childElements />
     </childElement>
@@ -56,7 +56,7 @@
       <packageName>root</packageName>
       <stereotypes />
       <metadata>
-        <entry key="status" value="unassigned" />
+        <entry key="status" value="assigned" />
       </metadata>
       <childElements />
     </childElement>
@@ -72,7 +72,7 @@
       <packageName>root</packageName>
       <stereotypes />
       <metadata>
-        <entry key="status" value="unassigned" />
+        <entry key="status" value="assigned" />
       </metadata>
       <childElements />
     </childElement>
@@ -88,7 +88,7 @@
       <packageName>root</packageName>
       <stereotypes />
       <metadata>
-        <entry key="status" value="unassigned" />
+        <entry key="status" value="assigned" />
       </metadata>
       <childElements />
     </childElement>
@@ -104,7 +104,7 @@
       <packageName>root</packageName>
       <stereotypes />
       <metadata>
-        <entry key="status" value="unassigned" />
+        <entry key="status" value="assigned" />
       </metadata>
       <childElements />
     </childElement>
@@ -120,7 +120,7 @@
       <packageName>root</packageName>
       <stereotypes />
       <metadata>
-        <entry key="status" value="unassigned" />
+        <entry key="status" value="assigned" />
       </metadata>
       <childElements />
     </childElement>
@@ -136,7 +136,7 @@
       <packageName>root</packageName>
       <stereotypes />
       <metadata>
-        <entry key="status" value="unassigned" />
+        <entry key="status" value="assigned" />
       </metadata>
       <childElements />
     </childElement>
@@ -152,7 +152,7 @@
       <packageName>root</packageName>
       <stereotypes />
       <metadata>
-        <entry key="status" value="unassigned" />
+        <entry key="status" value="assigned" />
       </metadata>
       <childElements />
     </childElement>
