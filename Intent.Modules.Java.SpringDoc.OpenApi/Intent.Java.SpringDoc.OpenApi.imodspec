@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <package>
-  <id>Intent.Modules.Java.SpringDoc.OpenApi</id>
-  <version>1.0.0-pre.1</version>
+  <id>Intent.Java.SpringDoc.OpenApi</id>
+  <version>1.0.0-pre.0</version>
   <supportedClientVersions>[3.3.16, 4.0.0)</supportedClientVersions>
   <summary>Adds OpenAPI 3 support using springdoc-openapi.</summary>
   <description>Adds OpenAPI 3 support using springdoc-openapi.</description>
@@ -10,7 +10,7 @@
   <releaseNotes>release-notes.md</releaseNotes>
   <templates></templates>
   <decorators>
-    <decorator id="Intent.Modules.Java.SpringDoc.OpenApi.OpenApiControllerDecorator" externalReference="6e14eba5-4640-415c-93c4-a246d17acada" />
+    <decorator id="Intent.Java.SpringDoc.OpenApi.OpenApiControllerDecorator" externalReference="6e14eba5-4640-415c-93c4-a246d17acada" />
   </decorators>
   <factoryExtensions></factoryExtensions>
   <moduleSettings></moduleSettings>

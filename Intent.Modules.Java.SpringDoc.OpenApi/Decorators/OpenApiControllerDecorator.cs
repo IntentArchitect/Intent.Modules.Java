@@ -20,7 +20,7 @@ namespace Intent.Modules.Java.SpringDoc.OpenApi.Decorators
     public class OpenApiControllerDecorator : RestControllerDecorator
     {
         [IntentManaged(Mode.Fully)]
-        public const string DecoratorId = "Intent.Modules.Java.SpringDoc.OpenApi.OpenApiControllerDecorator";
+        public const string DecoratorId = "Intent.Java.SpringDoc.OpenApi.OpenApiControllerDecorator";
 
         [IntentManaged(Mode.Fully)]
         private readonly RestControllerTemplate _template;
