@@ -37,7 +37,7 @@ namespace Intent.Modules.Java.Domain.Templates.DomainModel
             return new JavaFileConfig(
                 className: $"{Model.Name}",
                 package: this.GetPackage(),
-                relativeLocation: this.GetPackageFolderPath()
+                relativeLocation: this.GetFolderPath()
             );
         }
 

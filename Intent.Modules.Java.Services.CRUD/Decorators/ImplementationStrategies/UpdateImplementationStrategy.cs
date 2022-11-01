@@ -87,7 +87,7 @@ namespace Intent.Modules.Java.Services.CRUD.Decorators.ImplementationStrategies
                     sb.AppendLine($"        // Warning: No matching type for Domain: {domainAttribute.Name} and DTO: {dtoField.Name}");
                     continue;
                 }
-                sb.AppendLine($"        {domainVarName}.set{domainAttribute.Name.ToPascalCase()}({operationParameterModel.Name}.get{dtoField.Name.ToPascalCase()}());");
+                sb.AppendLine($"        {domainVarName}.{domainAttribute.Setter()}({operationParameterModel.Name}.{dtoField.Getter()}());");
             }
             return sb.ToString().Trim();
         }

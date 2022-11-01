@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Intent.Metadata.Models;
 using Intent.Modelers.Domain.Api;
 using Intent.Modelers.Services.Api;
 using Intent.Modules.Common.Templates;
@@ -97,7 +98,7 @@ namespace Intent.Modules.Java.Services.CRUD.Decorators.ImplementationStrategies
                     continue;
                 }
 
-                statements.Add($"{domainModel.Name.ToCamelCase()}.set{domainAttribute.Name.ToPascalCase()}({operationParameterModel.Name}.get{dtoField.Name.ToPascalCase()}());");
+                statements.Add($"{domainModel.Name.ToCamelCase()}.{domainAttribute.Setter()}({operationParameterModel.Name}.{dtoField.Getter()}());");
             }
 
             return statements;

@@ -45,7 +45,7 @@ namespace Intent.Modules.Java.SpringBoot.Templates.RestController
             return new JavaFileConfig(
                 className: $"{RootName}Controller",
                 package: this.GetPackage(),
-                relativeLocation: this.GetPackageFolderPath()
+                relativeLocation: this.GetFolderPath()
             );
         }
 

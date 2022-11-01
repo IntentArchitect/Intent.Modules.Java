@@ -30,7 +30,7 @@ namespace Intent.Modules.Java.Persistence.JPA.Queries.Templates.QueryProjection
             return new JavaFileConfig(
                 className: $"{Model.Name}",
                 package: this.GetPackage(),
-                relativeLocation: this.GetPackageFolderPath()
+                relativeLocation: this.GetFolderPath()
             );
         }
     }

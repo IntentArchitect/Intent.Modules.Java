@@ -39,7 +39,7 @@ namespace Intent.Modules.Java.Spring.Data.Repositories.Templates.EntityRepositor
             return new JavaFileConfig(
                 className: $"{Model.Name}Repository",
                 package: this.GetPackage(),
-                relativeLocation: this.GetPackageFolderPath()
+                relativeLocation: this.GetFolderPath()
             );
         }
 

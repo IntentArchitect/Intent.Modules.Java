@@ -40,7 +40,7 @@ namespace Intent.Modules.Java.Services.Templates.ExceptionType
             return new JavaFileConfig(
                 className: $"{Model.Name}",
                 package: package,
-                relativeLocation: this.GetPackageFolderPath()
+                relativeLocation: this.GetFolderPath()
             );
         }
 

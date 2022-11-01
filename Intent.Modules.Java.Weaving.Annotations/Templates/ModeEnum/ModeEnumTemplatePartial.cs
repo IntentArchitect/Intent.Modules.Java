@@ -29,7 +29,7 @@ namespace Intent.Modules.Java.Weaving.Annotations.Templates.ModeEnum
             return new JavaFileConfig(
                 className: $"Mode",
                 package: this.GetPackage(),
-                relativeLocation: this.GetPackageFolderPath()
+                relativeLocation: this.GetFolderPath()
             );
         }
 

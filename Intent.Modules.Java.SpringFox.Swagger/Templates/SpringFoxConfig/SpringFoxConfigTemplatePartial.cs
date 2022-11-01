@@ -41,7 +41,7 @@ namespace Intent.Modules.Java.SpringFox.Swagger.Templates.SpringFoxConfig
             return new JavaFileConfig(
                 className: $"SpringFoxConfig",
                 package: this.GetPackage(),
-                relativeLocation: this.GetPackageFolderPath()
+                relativeLocation: this.GetFolderPath()
             );
         }
 

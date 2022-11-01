@@ -29,7 +29,7 @@ namespace Intent.Modules.Java.Weaving.Annotations.Templates.IntentIgnore
             return new JavaFileConfig(
                 className: $"IntentIgnore",
                 package: this.GetPackage(),
-                relativeLocation: this.GetPackageFolderPath()
+                relativeLocation: this.GetFolderPath()
             );
         }
 

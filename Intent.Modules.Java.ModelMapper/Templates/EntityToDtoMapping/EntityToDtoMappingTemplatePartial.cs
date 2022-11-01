@@ -43,7 +43,7 @@ namespace Intent.Modules.Java.ModelMapper.Templates.EntityToDtoMapping
             return new JavaFileConfig(
                 className: $"{_entity.Name}To{Model.Name}Mapping",
                 package: this.GetPackage(),
-                relativeLocation: this.GetPackageFolderPath()
+                relativeLocation: this.GetFolderPath()
             );
         }
 

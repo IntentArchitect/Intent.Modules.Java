@@ -31,7 +31,7 @@ namespace Intent.Modules.Java.Domain.Templates.AbstractEntity
             return new JavaFileConfig(
                 className: $"AbstractEntity",
                 package: this.GetPackage(),
-                relativeLocation: this.GetPackageFolderPath()
+                relativeLocation: this.GetFolderPath()
             );
         }
 
