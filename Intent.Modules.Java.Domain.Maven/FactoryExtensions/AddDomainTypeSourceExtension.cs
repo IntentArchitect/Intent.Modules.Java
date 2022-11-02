@@ -62,10 +62,14 @@ namespace Intent.Modules.Java.Domain.Maven.FactoryExtensions
                     return null;
                 }
 
-                _application.EventDispatcher.Publish(new JavaDependency(
-                    groupId: mavenDependency.GroupId(),
-                    artifactId: mavenDependency.ArtifactId(),
-                    version: mavenDependency.Version()));
+                if (!string.IsNullOrWhiteSpace(mavenDependency.GroupId()) &&
+                    !string.IsNullOrWhiteSpace(mavenDependency.ArtifactId()))
+                {
+                    _application.EventDispatcher.Publish(new JavaDependency(
+                        groupId: mavenDependency.GroupId(),
+                        artifactId: mavenDependency.ArtifactId(),
+                        version: mavenDependency.Version()));
+                }
 
                 return JavaResolvedTypeInfo.Create(
                     name: typeReference.Element.Name.ToPascalCase(),
