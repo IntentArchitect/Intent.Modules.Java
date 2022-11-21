@@ -10,11 +10,11 @@
   <releaseNotes>release-notes.md</releaseNotes>
   <templates>
     <template id="Intent.Java.Domain.AbstractEntity" externalReference="94c6a849-fc61-4d80-9bdc-2ad79268ac57">
-      <role>Domain</role>
+      <role>Domain.AbstractEntity</role>
       <location>models</location>
     </template>
     <template id="Intent.Java.Domain.DomainModel" externalReference="3060efbe-358f-4d3a-99d6-561534b80b70">
-      <role>Domain</role>
+      <role>Domain.Entity</role>
       <location>models</location>
     </template>
     <template id="Intent.Java.Domain.Enum" externalReference="f069f0b4-fc6b-4372-be61-bbbd2bc730d4">

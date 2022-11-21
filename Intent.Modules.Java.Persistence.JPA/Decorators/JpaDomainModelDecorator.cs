@@ -9,6 +9,7 @@ using Intent.Modelers.Domain.Api;
 using Intent.Modules.Common.Java.Templates;
 using Intent.Modules.Common.Templates;
 using Intent.Modules.Java.Domain.Templates.DomainModel;
+using Intent.Modules.Metadata.RDBMS.Settings;
 using Intent.RoslynWeaver.Attributes;
 using static Intent.Java.Persistence.JPA.Api.AssociationSourceEndModelStereotypeExtensions.AssociationJPASettings;
 
@@ -18,7 +19,7 @@ using static Intent.Java.Persistence.JPA.Api.AssociationSourceEndModelStereotype
 namespace Intent.Modules.Java.Persistence.JPA.Decorators
 {
     [IntentManaged(Mode.Merge)]
-    public class JpaDomainModelDecorator : DomainModelDecorator
+    public class JpaDomainModelDecorator : DomainModelDecorator, IDeclareImports
     {
         [IntentManaged(Mode.Fully)]
         public const string DecoratorId = "Intent.Java.Persistence.JPA.JpaDomainModelDecorator";
@@ -210,6 +211,79 @@ namespace Intent.Modules.Java.Persistence.JPA.Decorators
 
             return string.Join(@"
     ", annotations);
+        }
+
+        public override string GetAdditionalFields()
+        {
+            if (HasInheritedClass())
+            {
+                return string.Empty;
+            }
+            
+            var (type, columnType) = _application.Settings.GetDatabaseSettings().KeyType().AsEnum() switch
+            {
+                DatabaseSettings.KeyTypeOptionsEnum.Guid => (_template.ImportType("java.util.UUID"), "uuid"),
+                DatabaseSettings.KeyTypeOptionsEnum.Long => ("Long", null),
+                DatabaseSettings.KeyTypeOptionsEnum.Int => ("Integer", null),
+                _ => throw new ArgumentOutOfRangeException()
+            };
+
+            var columnAnnotation = columnType != null
+                ? @$"
+    @{_template.ImportType("javax.persistence.Column")}(columnDefinition = ""{columnType}"")"
+                : string.Empty;
+                
+            return $@"
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO){columnAnnotation}
+    private {type} id;";
+        }
+
+        public override string GetAdditionalMethods()
+        {
+            if (HasInheritedClass())
+            {
+                return string.Empty;
+            }
+            
+            var (type, columnType) = _application.Settings.GetDatabaseSettings().KeyType().AsEnum() switch
+            {
+                DatabaseSettings.KeyTypeOptionsEnum.Guid => (_template.ImportType("java.util.UUID"), "uuid"),
+                DatabaseSettings.KeyTypeOptionsEnum.Long => ("Long", null),
+                DatabaseSettings.KeyTypeOptionsEnum.Int => ("Integer", null),
+                _ => throw new ArgumentOutOfRangeException()
+            };
+            
+            return $@"public {type} getId() {{
+        return id;
+    }}
+
+    public void setId({type} id) {{
+        this.id = id;
+    }}
+
+    public boolean isNew() {{
+        return this.id == null;
+    }}
+";
+        }
+
+        public IEnumerable<string> DeclareImports()
+        {
+            if (HasInheritedClass())
+            {
+                yield break;
+            }
+            
+            yield return "javax.persistence.GeneratedValue";
+            yield return "javax.persistence.GenerationType";
+            yield return "javax.persistence.Id";
+            yield return "javax.persistence.MappedSuperclass";
+        }
+        
+        private bool HasInheritedClass()
+        {
+            return _template.Model.ParentClass != null || _template.TryGetTypeName("Domain.AbstractEntity", out var abstractTemplateName);
         }
     }
 }
