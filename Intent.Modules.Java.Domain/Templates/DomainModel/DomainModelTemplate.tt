@@ -18,19 +18,17 @@ import lombok.NoArgsConstructor;
 <#= GetClassAnnotations() #>
 public class <#= ClassName #><#= GetBaseClass() #> {
     private static final long serialVersionUID = 1L;
-<#  foreach(var attribute in Model.Attributes.Where(x => !x.Name.Equals("id", StringComparison.InvariantCultureIgnoreCase))) { #>
+<#  foreach(var attribute in Model.Attributes) 
+    {
+        if (ShouldSkipAttribute(attribute))
+        {
+            continue;
+        }
+#>
 
     <#= GetDecoratorsOutput(x => x.BeforeField(attribute), @"
     ") #>private <#= GetTypeName(attribute) #> <#= attribute.Name.ToCamelCase() #>;
-<#  } #><#
-    foreach (var field in GetDecorators().Select(s => s.GetAdditionalFields()).Where(p => !string.IsNullOrEmpty(p)))
-    {
-#>
-        <#= field #>
-
-<#
-    }
-#>
+<#  } #>
 <#  foreach(var associationEnd in Model.AssociatedClasses.Where(x => x.IsNavigable)) { #>
 
     <#= GetDecoratorsOutput(x => x.BeforeField(associationEnd), @"
@@ -42,13 +40,5 @@ public class <#= ClassName #><#= GetBaseClass() #> {
     public <#= GetTypeName(operation) #> <#= operation.Name.ToCamelCase() #>(<#= this.GetMethodParameters(operation.Parameters) #>) {
         throw new UnsupportedOperationException("Write your implementation here...");
     }
-<#  } #><#
-    foreach (var method in GetDecorators().Select(s => s.GetAdditionalMethods()).Where(p => !string.IsNullOrEmpty(p)))
-    {
-#>
-        <#= method #>
-
-<#
-    }
-#>
+<#  } #>
 }

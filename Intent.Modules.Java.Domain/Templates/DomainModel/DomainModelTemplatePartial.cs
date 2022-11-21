@@ -73,5 +73,12 @@ namespace Intent.Modules.Java.Domain.Templates.DomainModel
 
             return string.Empty;
         }
+
+        private bool ShouldSkipAttribute(AttributeModel attribute)
+        {
+            return attribute.Name.Equals("id", StringComparison.InvariantCultureIgnoreCase) && 
+                   (Model.ParentClass != null || 
+                    TryGetTypeName(AbstractEntityTemplate.TemplateId, out var abstractTemplateName));
+        }
     }
 }

@@ -9,6 +9,7 @@ using Intent.Modelers.Domain.Api;
 using Intent.Modules.Common.Java.Templates;
 using Intent.Modules.Common.Templates;
 using Intent.Modules.Java.Domain.Templates.DomainModel;
+using Intent.Modules.Metadata.RDBMS.Api.Indexes;
 using Intent.Modules.Metadata.RDBMS.Settings;
 using Intent.RoslynWeaver.Attributes;
 using static Intent.Java.Persistence.JPA.Api.AssociationSourceEndModelStereotypeExtensions.AssociationJPASettings;
@@ -43,24 +44,48 @@ namespace Intent.Modules.Java.Persistence.JPA.Decorators
         {
             return $@"
 @{_template.ImportType("javax.persistence.Entity")}
-@{_template.ImportType("javax.persistence.Table")}(name = ""{(_template.Model.HasTable() ? _template.Model.GetTable().Name() : _template.Model.Name.ToPluralName().ToSnakeCase())}""{GetIndexes()})";
+@{_template.ImportType("javax.persistence.Table")}({string.Join(", ", GetTableAttributes())})";
         }
 
-        private string GetIndexes()
+        private IEnumerable<string> GetTableAttributes()
         {
-            if (_template.Model.Attributes.Any(x => x.HasIndex()))
+            var attributes = new List<string>();
+
+            attributes.Add($@"name = ""{(_template.Model.HasTable() ? _template.Model.GetTable().Name() : _template.Model.Name.ToPluralName().ToSnakeCase())}""");
+
+            if (!string.IsNullOrEmpty(_template.Model.GetTable()?.Schema()))
             {
-                var indexes = _template.Model.Attributes
-                    .Where(x => x.HasIndex())
-                    .GroupBy(x => x.GetIndex().UniqueKey() ?? "IX_" + _template.Model.Name + "_" + x.Name);
-
-                return $@", indexes = {{
-    {string.Join(@",
-    ", indexes.Select(x => $"@{_template.ImportType("javax.persistence.Index")}(name = \"{x.Key}\", columnList = \"{string.Join(",", x.Select(c => c.Name.ToCamelCase()))}\")"))}
-}}";
+                attributes.Add($@"schema = ""{_template.Model.GetTable().Schema()}""");
             }
+            
+            if (_template.Model.Attributes.Any(x => x.HasIndex()) || _template.Model.GetIndexes().Any())
+            {
+                var stereotypeIndexes = _template.Model.Attributes
+                    .Where(x => x.HasIndex())
+                    .GroupBy(x => x.GetIndex().UniqueKey() ?? "IX_" + _template.Model.Name + "_" + x.Name)
+                    .ToList();
 
-            return string.Empty;
+                var elementIndexes = _template.Model.GetIndexes()
+                    .ToList();
+
+                var indexList = new List<string>();
+                
+                foreach (var stereotypeIndex in stereotypeIndexes)
+                {
+                    indexList.Add($"@{_template.ImportType("javax.persistence.Index")}(name = \"{stereotypeIndex.Key}\", columnList = \"{string.Join(",", stereotypeIndex.Select(c => c.Name.ToSnakeCase()))}\")");
+                }
+
+                foreach (var elementIndex in elementIndexes)
+                {
+                    indexList.Add($"@{_template.ImportType("javax.persistence.Index")}(name = \"{elementIndex.Name}\", columnList = \"{string.Join(",", elementIndex.KeyColumns.Select(c => c.Name.ToSnakeCase()))}\")");
+                }
+
+                const string newLine = @",
+        ";
+                attributes.Add($@"indexes = {string.Join(newLine, indexList)}");
+            }
+            
+            return attributes;
         }
 
         public override string BeforeField(AttributeModel model)
@@ -68,18 +93,35 @@ namespace Intent.Modules.Java.Persistence.JPA.Decorators
             var annotations = new List<string>();
             var columnSettings = new List<string>();
 
-            var columnName = !string.IsNullOrWhiteSpace(model.GetColumn()?.Name())
-                ? model.GetColumn().Name()
-                : model.Name.ToSnakeCase();
-            columnSettings.Add($"name = \"{columnName}\"");
-            if (_template.GetTypeName(model.TypeReference) == "String" && model.GetTextConstraints()?.MaxLength() != null)
+            if (model.Name.Equals("id", StringComparison.InvariantCultureIgnoreCase) && !HasInheritedClass())
             {
-                columnSettings.Add($"length = {model.GetTextConstraints().MaxLength()}");
-            }
+                var (type, columnType) = _application.Settings.GetDatabaseSettings().KeyType().AsEnum() switch
+                {
+                    DatabaseSettings.KeyTypeOptionsEnum.Guid => (_template.ImportType("java.util.UUID"), "uuid"),
+                    DatabaseSettings.KeyTypeOptionsEnum.Long => ("Long", null),
+                    DatabaseSettings.KeyTypeOptionsEnum.Int => ("Integer", null),
+                    _ => throw new ArgumentOutOfRangeException()
+                };
 
-            if (!model.TypeReference.IsNullable)
+                annotations.Add($"@Id");
+                annotations.Add($"@GeneratedValue(strategy = GenerationType.AUTO)");
+                columnSettings.Add($@"columnDefinition = ""{columnType}""");
+            }
+            else
             {
-                columnSettings.Add("nullable = false");
+                var columnName = !string.IsNullOrWhiteSpace(model.GetColumn()?.Name())
+                    ? model.GetColumn().Name()
+                    : model.Name.ToSnakeCase();
+                columnSettings.Add($"name = \"{columnName}\"");
+                if (_template.GetTypeName(model.TypeReference) == "String" && model.GetTextConstraints()?.MaxLength() != null)
+                {
+                    columnSettings.Add($"length = {model.GetTextConstraints().MaxLength()}");
+                }
+
+                if (!model.TypeReference.IsNullable)
+                {
+                    columnSettings.Add("nullable = false");
+                }
             }
 
             annotations.Add($@"@{_template.ImportType("javax.persistence.Column")}({string.Join(", ", columnSettings)})");
@@ -213,61 +255,61 @@ namespace Intent.Modules.Java.Persistence.JPA.Decorators
     ", annotations);
         }
 
-        public override string GetAdditionalFields()
-        {
-            if (HasInheritedClass())
-            {
-                return string.Empty;
-            }
-            
-            var (type, columnType) = _application.Settings.GetDatabaseSettings().KeyType().AsEnum() switch
-            {
-                DatabaseSettings.KeyTypeOptionsEnum.Guid => (_template.ImportType("java.util.UUID"), "uuid"),
-                DatabaseSettings.KeyTypeOptionsEnum.Long => ("Long", null),
-                DatabaseSettings.KeyTypeOptionsEnum.Int => ("Integer", null),
-                _ => throw new ArgumentOutOfRangeException()
-            };
-
-            var columnAnnotation = columnType != null
-                ? @$"
-    @{_template.ImportType("javax.persistence.Column")}(columnDefinition = ""{columnType}"")"
-                : string.Empty;
-                
-            return $@"
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO){columnAnnotation}
-    private {type} id;";
-        }
-
-        public override string GetAdditionalMethods()
-        {
-            if (HasInheritedClass())
-            {
-                return string.Empty;
-            }
-            
-            var (type, columnType) = _application.Settings.GetDatabaseSettings().KeyType().AsEnum() switch
-            {
-                DatabaseSettings.KeyTypeOptionsEnum.Guid => (_template.ImportType("java.util.UUID"), "uuid"),
-                DatabaseSettings.KeyTypeOptionsEnum.Long => ("Long", null),
-                DatabaseSettings.KeyTypeOptionsEnum.Int => ("Integer", null),
-                _ => throw new ArgumentOutOfRangeException()
-            };
-            
-            return $@"
-    public {type} getId() {{
-        return id;
-    }}
-
-    public void setId({type} id) {{
-        this.id = id;
-    }}
-
-    public boolean isNew() {{
-        return this.id == null;
-    }}
-";
-        }
+//         public override string GetAdditionalFields()
+//         {
+//             if (HasInheritedClass())
+//             {
+//                 return string.Empty;
+//             }
+//             
+//             var (type, columnType) = _application.Settings.GetDatabaseSettings().KeyType().AsEnum() switch
+//             {
+//                 DatabaseSettings.KeyTypeOptionsEnum.Guid => (_template.ImportType("java.util.UUID"), "uuid"),
+//                 DatabaseSettings.KeyTypeOptionsEnum.Long => ("Long", null),
+//                 DatabaseSettings.KeyTypeOptionsEnum.Int => ("Integer", null),
+//                 _ => throw new ArgumentOutOfRangeException()
+//             };
+//
+//             var columnAnnotation = columnType != null
+//                 ? @$"
+//     @{_template.ImportType("javax.persistence.Column")}(columnDefinition = ""{columnType}"")"
+//                 : string.Empty;
+//                 
+//             return $@"
+//     @Id
+//     @GeneratedValue(strategy = GenerationType.AUTO){columnAnnotation}
+//     private {type} id;";
+//         }
+//
+//         public override string GetAdditionalMethods()
+//         {
+//             if (HasInheritedClass())
+//             {
+//                 return string.Empty;
+//             }
+//             
+//             var (type, columnType) = _application.Settings.GetDatabaseSettings().KeyType().AsEnum() switch
+//             {
+//                 DatabaseSettings.KeyTypeOptionsEnum.Guid => (_template.ImportType("java.util.UUID"), "uuid"),
+//                 DatabaseSettings.KeyTypeOptionsEnum.Long => ("Long", null),
+//                 DatabaseSettings.KeyTypeOptionsEnum.Int => ("Integer", null),
+//                 _ => throw new ArgumentOutOfRangeException()
+//             };
+//             
+//             return $@"
+//     public {type} getId() {{
+//         return id;
+//     }}
+//
+//     public void setId({type} id) {{
+//         this.id = id;
+//     }}
+//
+//     public boolean isNew() {{
+//         return this.id == null;
+//     }}
+// ";
+//         }
 
         public IEnumerable<string> DeclareImports()
         {
@@ -284,7 +326,8 @@ namespace Intent.Modules.Java.Persistence.JPA.Decorators
         
         private bool HasInheritedClass()
         {
-            return _template.Model.ParentClass != null || _template.TryGetTypeName("Domain.AbstractEntity", out var abstractTemplateName);
+            return _template.Model.ParentClass != null || 
+                   _template.TryGetTypeName("Domain.AbstractEntity", out var abstractTemplateName);
         }
     }
 }

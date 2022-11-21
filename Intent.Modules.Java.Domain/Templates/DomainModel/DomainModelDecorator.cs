@@ -19,9 +19,5 @@ namespace Intent.Modules.Java.Domain.Templates.DomainModel
         public virtual string BeforeField(AttributeModel model) => null;
 
         public virtual string BeforeField(AssociationEndModel model) => null;
-
-        public virtual string GetAdditionalFields() => null;
-
-        public virtual string GetAdditionalMethods() => null;
     }
 }
