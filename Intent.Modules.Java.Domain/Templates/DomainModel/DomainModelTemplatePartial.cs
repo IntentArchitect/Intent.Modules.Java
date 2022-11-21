@@ -21,8 +21,7 @@ namespace Intent.Modules.Java.Domain.Templates.DomainModel
     [IntentManaged(Mode.Merge, Signature = Mode.Fully)]
     partial class DomainModelTemplate : JavaTemplateBase<Intent.Modelers.Domain.Api.ClassModel, DomainModelDecorator>
     {
-        [IntentManaged(Mode.Fully)]
-        public const string TemplateId = "Intent.Java.Domain.DomainModel";
+        [IntentManaged(Mode.Fully)] public const string TemplateId = "Intent.Java.Domain.DomainModel";
 
         [IntentManaged(Mode.Merge, Body = Mode.Ignore, Signature = Mode.Fully)]
         public DomainModelTemplate(IOutputTarget outputTarget, Intent.Modelers.Domain.Api.ClassModel model) : base(TemplateId, outputTarget, model)
@@ -62,7 +61,12 @@ namespace Intent.Modules.Java.Domain.Templates.DomainModel
 
         public string GetBaseClass()
         {
-            return GetTypeName(AbstractEntityTemplate.TemplateId);
+            if (Model.ParentClass == null)
+            {
+                return GetTypeName(AbstractEntityTemplate.TemplateId);
+            }
+
+            return GetTypeName(DomainModelTemplate.TemplateId, Model.ParentClass.InternalElement);
         }
     }
 }
