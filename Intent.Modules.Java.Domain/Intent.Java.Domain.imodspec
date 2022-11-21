@@ -1,7 +1,7 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <package>
   <id>Intent.Java.Domain</id>
-  <version>3.3.8</version>
+  <version>3.3.9-pre.0</version>
   <supportedClientVersions>[3.3.16, 4.0.0)</supportedClientVersions>
   <summary>Entity POJOs based on the Domain designer.</summary>
   <description>Entity POJOs based on the Domain designer.</description>
@@ -15,6 +15,10 @@
     </template>
     <template id="Intent.Java.Domain.DomainModel" externalReference="3060efbe-358f-4d3a-99d6-561534b80b70">
       <role>Domain</role>
+      <location>models</location>
+    </template>
+    <template id="Intent.Java.Domain.Enum" externalReference="f069f0b4-fc6b-4372-be61-bbbd2bc730d4">
+      <role>Domain.Enum</role>
       <location>models</location>
     </template>
   </templates>

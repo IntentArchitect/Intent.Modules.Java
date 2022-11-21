@@ -114,6 +114,38 @@
     </FileLog>
     <FileLog>
       <ProjectId>ba8f91ca-3f8c-44a2-9194-e9d5ed6640bd</ProjectId>
+      <CorrelationId>Intent.ModuleBuilder.Java.Templates.JavaTemplate.PreProcessT4#f069f0b4-fc6b-4372-be61-bbbd2bc730d4</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>Templates/Enum/EnumTemplate.cs</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>Enum/EnumTemplate.cs</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
+      <ProjectId>ba8f91ca-3f8c-44a2-9194-e9d5ed6640bd</ProjectId>
+      <CorrelationId>Intent.ModuleBuilder.Java.Templates.JavaFileT4Template#f069f0b4-fc6b-4372-be61-bbbd2bc730d4</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>Templates/Enum/EnumTemplate.tt</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>Enum/EnumTemplate.tt</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
+      <ProjectId>ba8f91ca-3f8c-44a2-9194-e9d5ed6640bd</ProjectId>
+      <CorrelationId>Intent.ModuleBuilder.Java.Templates.JavaFileTemplatePartial#f069f0b4-fc6b-4372-be61-bbbd2bc730d4</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>Templates/Enum/EnumTemplatePartial.cs</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>Enum/EnumTemplatePartial.cs</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
+      <ProjectId>ba8f91ca-3f8c-44a2-9194-e9d5ed6640bd</ProjectId>
+      <CorrelationId>Intent.ModuleBuilder.TemplateRegistration.FilePerModel#f069f0b4-fc6b-4372-be61-bbbd2bc730d4</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>Templates/Enum/EnumTemplateRegistration.cs</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>Enum/EnumTemplateRegistration.cs</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
+      <ProjectId>ba8f91ca-3f8c-44a2-9194-e9d5ed6640bd</ProjectId>
       <CorrelationId>Intent.ModuleBuilder.Templates.TemplateExtensions</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Templates/TemplateExtensions.cs</ApplicationRelativeFilePath>

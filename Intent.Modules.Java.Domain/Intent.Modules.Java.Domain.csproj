@@ -1,8 +1,8 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
-    <Version>3.3.8</Version>
+    <Version>3.3.9-pre.0</Version>
     <Authors>Intent Architect</Authors>
     <Description />
     <Copyright>Copyright 2022</Copyright>
@@ -24,6 +24,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>AbstractEntityTemplate.tt</DependentUpon>
     </Compile>
+    <Compile Update="Templates\Enum\EnumTemplate.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>EnumTemplate.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
 
   <ItemGroup>
@@ -34,6 +39,10 @@
     <None Update="Templates\AbstractEntity\AbstractEntityTemplate.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>AbstractEntityTemplate.cs</LastGenOutput>
+    </None>
+    <None Update="Templates\Enum\EnumTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>EnumTemplate.cs</LastGenOutput>
     </None>
   </ItemGroup>
 

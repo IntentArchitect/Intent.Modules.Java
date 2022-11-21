@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using Intent.Modules.Common.Templates;
 using Intent.Modules.Java.Domain.Templates.AbstractEntity;
 using Intent.Modules.Java.Domain.Templates.DomainModel;
+using Intent.Modules.Java.Domain.Templates.Enum;
 using Intent.RoslynWeaver.Attributes;
 
 [assembly: DefaultIntentManaged(Mode.Fully)]
@@ -24,6 +25,16 @@ namespace Intent.Modules.Java.Domain.Templates
         public static string GetDomainModelName(this IntentTemplateBase template, Intent.Modelers.Domain.Api.ClassModel model)
         {
             return template.GetTypeName(DomainModelTemplate.TemplateId, model);
+        }
+
+        public static string GetEnumName<T>(this IntentTemplateBase<T> template) where T : Intent.Modules.Common.Types.Api.EnumModel
+        {
+            return template.GetTypeName(EnumTemplate.TemplateId, template.Model);
+        }
+
+        public static string GetEnumName(this IntentTemplateBase template, Intent.Modules.Common.Types.Api.EnumModel model)
+        {
+            return template.GetTypeName(EnumTemplate.TemplateId, model);
         }
 
     }
