@@ -80,5 +80,14 @@ namespace Intent.Modules.Java.Domain.Templates.DomainModel
                    (Model.ParentClass != null || 
                     TryGetTypeName(AbstractEntityTemplate.TemplateId, out var abstractTemplateName));
         }
+
+        private string GetAbstractDefinition()
+        {
+            if (Model.IsAbstract)
+            {
+                return " abstract";
+            }
+            return string.Empty;
+        }
     }
 }

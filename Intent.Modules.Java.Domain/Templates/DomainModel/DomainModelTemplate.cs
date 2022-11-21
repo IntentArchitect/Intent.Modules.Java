@@ -48,7 +48,14 @@ namespace Intent.Modules.Java.Domain.Templates.DomainModel
             
             #line default
             #line hidden
-            this.Write("\r\npublic class ");
+            this.Write("\r\npublic");
+            
+            #line 19 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Domain\Templates\DomainModel\DomainModelTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(GetAbstractDefinition()));
+            
+            #line default
+            #line hidden
+            this.Write(" class ");
             
             #line 19 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Domain\Templates\DomainModel\DomainModelTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(ClassName));
