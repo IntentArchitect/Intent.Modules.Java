@@ -16,7 +16,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 <#= GetClassAnnotations() #>
-public class <#= ClassName #> extends <#= GetBaseClass() #> {
+public class <#= ClassName #><#= GetBaseClass() #> {
     private static final long serialVersionUID = 1L;
 <#  foreach(var attribute in Model.Attributes.Where(x => !x.Name.Equals("id", StringComparison.InvariantCultureIgnoreCase))) { #>
 

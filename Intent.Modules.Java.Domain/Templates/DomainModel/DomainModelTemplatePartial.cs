@@ -61,12 +61,17 @@ namespace Intent.Modules.Java.Domain.Templates.DomainModel
 
         public string GetBaseClass()
         {
-            if (Model.ParentClass == null)
+            if (Model.ParentClass != null)
             {
-                return GetTypeName(AbstractEntityTemplate.TemplateId);
+                return $" extends {GetTypeName(DomainModelTemplate.TemplateId, Model.ParentClass.InternalElement)}";                    
             }
 
-            return GetTypeName(DomainModelTemplate.TemplateId, Model.ParentClass.InternalElement);
+            if (TryGetTypeName(AbstractEntityTemplate.TemplateId, out var abstractTemplateName))
+            {
+                return $" extends {abstractTemplateName}";
+            }
+
+            return string.Empty;
         }
     }
 }
