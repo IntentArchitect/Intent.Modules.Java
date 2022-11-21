@@ -254,7 +254,8 @@ namespace Intent.Modules.Java.Persistence.JPA.Decorators
                 _ => throw new ArgumentOutOfRangeException()
             };
             
-            return $@"public {type} getId() {{
+            return $@"
+    public {type} getId() {{
         return id;
     }}
 
