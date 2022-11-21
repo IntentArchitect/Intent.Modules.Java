@@ -29,6 +29,7 @@ namespace Intent.Modules.Java.Services.Templates.DataTransferModel
                 SetDefaultTypeCollectionFormat("java.util.List<{0}>");
             }
             AddTypeSource(TemplateId).WithCollectionFormat("java.util.List<{0}>");
+            AddTypeSource("Domain.Enum");
         }
 
         [IntentManaged(Mode.Merge, Body = Mode.Ignore, Signature = Mode.Fully)]
