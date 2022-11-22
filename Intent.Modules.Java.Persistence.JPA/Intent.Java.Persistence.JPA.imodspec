@@ -1,7 +1,7 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <package>
   <id>Intent.Java.Persistence.JPA</id>
-  <version>3.3.12-pre.0</version>
+  <version>3.3.12-pre.1</version>
   <supportedClientVersions>[3.3.16, 4.0.0)</supportedClientVersions>
   <summary>JPA Annotation decoration of Domain entities.</summary>
   <description>JPA Annotation decoration of Domain entities.</description>
@@ -30,5 +30,19 @@
     <install target="Domain" src="Intent.Metadata/Module Builder/Intent.Java.Persistence.JPA/Intent.Java.Persistence.JPA.pkg.config" externalReference="2e4398f1-893d-432e-badb-ab0c4ea3280e" />
   </metadata>
   <moduleSettings />
-  <moduleSettingsExtensions />
+  <moduleSettingsExtensions>
+    <groupExtension id="3a2fbba6-a2e0-4d36-90f9-18b8fec07ecf" groupId="ac0a788e-d8b3-4eea-b56d-538608f1ded9" externalReference="3a2fbba6-a2e0-4d36-90f9-18b8fec07ecf">
+      <settings>
+        <setting id="8d56d60a-3778-4a95-ae26-ab640f7e5270" title="Table Naming Convention" type="select">
+          <isRequired>true</isRequired>
+          <hint>The naming convention to apply to names of the tables in the database. Can be overridden on a table-by-table basis by applying the "Table" stereotype to a Class.</hint>
+          <defaultValue>pluralized</defaultValue>
+          <options>
+            <option value="pluralized" description="Pluralized" />
+            <option value="singularized" description="Singularized" />
+          </options>
+        </setting>
+      </settings>
+    </groupExtension>
+  </moduleSettingsExtensions>
 </package>

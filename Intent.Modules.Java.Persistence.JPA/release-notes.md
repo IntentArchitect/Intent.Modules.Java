@@ -1,3 +1,7 @@
+### Version 3.3.12
+
+- It's now possible to choose between "singularized" and "pluralized" conventions for default table names in Application Settings. Table names can still be overwritten using the `Table` stereotype.
+
 ### Version 3.3.11
 
 - Fixed: `.FindById(...)` would fail to find items when `UUID` was used as the primary key type.
