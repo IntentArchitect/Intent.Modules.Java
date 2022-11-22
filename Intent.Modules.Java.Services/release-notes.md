@@ -1,3 +1,7 @@
+### Version 3.3.10
+
+- Added support for annotating classes to `DataTransferModelDecorator`.
+
 ### Version 3.3.9
 
 - Modernized `pom.xml` file entries.

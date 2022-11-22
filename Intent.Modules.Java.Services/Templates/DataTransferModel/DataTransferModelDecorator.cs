@@ -14,6 +14,8 @@ namespace Intent.Modules.Java.Services.Templates.DataTransferModel
     {
         public int Priority { get; protected set; } = 0;
 
+        public virtual IEnumerable<string> GetClassAnnotations() => Enumerable.Empty<string>();
+
         public virtual IEnumerable<string> GetFieldAnnotations(DTOFieldModel field) => Enumerable.Empty<string>();
 
         public virtual string Methods() => null;
