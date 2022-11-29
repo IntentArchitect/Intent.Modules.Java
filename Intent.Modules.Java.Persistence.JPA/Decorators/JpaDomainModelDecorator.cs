@@ -253,8 +253,16 @@ namespace Intent.Modules.Java.Persistence.JPA.Decorators
                 annotations.Add($"@{_template.ImportType($"javax.persistence.ManyToMany")}({string.Join(", ", settings)})");
                 if (thatEnd.IsTargetEnd())
                 {
+                    var sourceEndName = sourceEnd.Element.Name;
+                    var thatEndName = _application.Settings.GetDatabaseSettings()?.TableNamingConvention()?.AsEnum() switch
+                    {
+                        DatabaseSettingsExtensions.TableNamingConventionOptionsEnum.Pluralized => thatEnd.Element.Name.Pluralize(),
+                        DatabaseSettingsExtensions.TableNamingConventionOptionsEnum.Singularized => thatEnd.Element.Name.Singularize(),
+                        _ => throw new ArgumentOutOfRangeException()
+                    };
+
                     annotations.Add($@"@{_template.ImportType("javax.persistence.JoinTable")}(
-            name = ""{sourceEnd.Element.Name.ToSnakeCase()}_{thatEnd.Element.Name.ToPluralName().ToSnakeCase()}"",
+            name = ""{sourceEndName.ToSnakeCase()}_{thatEndName.ToSnakeCase()}"",
             joinColumns = {{ @{_template.ImportType("javax.persistence.JoinColumn")}(name = ""{sourceEnd.Element.Name.ToSnakeCase()}_id"") }},
             inverseJoinColumns = {{ @{_template.ImportType("javax.persistence.JoinColumn")}(name = ""{thatEnd.Element.Name.ToSnakeCase()}_id"") }}
     )");
