@@ -11,19 +11,21 @@
 <#@ import namespace="Intent.Modules.Java.Weaving.Annotations.Templates.IntentIgnoreBody" #>
 package <#= Package #>;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
 import lombok.NoArgsConstructor;
 
-<#= GetClassAnnotations() #>
+<#  foreach (var annotation in GetClassAnnotations()) { #>
+<#= annotation #>
+<#  } #>
 public<#= GetAbstractDefinition() #> class <#= ClassName #><#= GetBaseClass() #> {
+<#  if (!Model.IsAbstract) { #>
     private static final long serialVersionUID = 1L;
+<#  } #>
+<#  foreach(var field in GetDecorators().SelectMany(x => x.Fields())) { #>
+
+    <#= field #>
+<#  } #>
 <#  foreach(var attribute in Model.Attributes) 
     {
-        if (ShouldSkipAttribute(attribute))
-        {
-            continue;
-        }
 #>
 
     <#= GetDecoratorsOutput(x => x.BeforeField(attribute), @"
@@ -40,5 +42,9 @@ public<#= GetAbstractDefinition() #> class <#= ClassName #><#= GetBaseClass() #>
     public <#= GetTypeName(operation) #> <#= operation.Name.ToCamelCase() #>(<#= this.GetMethodParameters(operation.Parameters) #>) {
         throw new UnsupportedOperationException("Write your implementation here...");
     }
+<#  } #>
+<#  foreach(var method in GetDecorators().SelectMany(x => x.Methods())) { #>
+
+    <#= method #>
 <#  } #>
 }

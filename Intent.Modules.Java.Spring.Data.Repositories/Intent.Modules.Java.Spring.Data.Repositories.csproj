@@ -38,6 +38,7 @@
     <ProjectReference Include="..\Intent.Modules.Java.Domain\Intent.Modules.Java.Domain.csproj">
       <PrivateAssets>All</PrivateAssets>
     </ProjectReference>
+    <ProjectReference Include="..\Intent.Modules.Java.Persistence.JPA\Intent.Modules.Java.Persistence.JPA.csproj" />
   </ItemGroup>
 
   <ItemGroup>

@@ -34,46 +34,6 @@
     </FileLog>
     <FileLog>
       <ProjectId>ba8f91ca-3f8c-44a2-9194-e9d5ed6640bd</ProjectId>
-      <CorrelationId>Intent.ModuleBuilder.Templates.TemplateDecoratorContract#3fcf4180-ae9a-4214-a4e9-4fdf4ec57f4a</CorrelationId>
-      <OverwriteBehaviour>always</OverwriteBehaviour>
-      <ApplicationRelativeFilePath>Templates/AbstractEntity/AbstractEntityDecorator.cs</ApplicationRelativeFilePath>
-      <ProjectRelativeFilePath>AbstractEntity/AbstractEntityDecorator.cs</ProjectRelativeFilePath>
-      <IsIgnored>false</IsIgnored>
-    </FileLog>
-    <FileLog>
-      <ProjectId>ba8f91ca-3f8c-44a2-9194-e9d5ed6640bd</ProjectId>
-      <CorrelationId>Intent.ModuleBuilder.Java.Templates.JavaTemplate.PreProcessT4#94c6a849-fc61-4d80-9bdc-2ad79268ac57</CorrelationId>
-      <OverwriteBehaviour>always</OverwriteBehaviour>
-      <ApplicationRelativeFilePath>Templates/AbstractEntity/AbstractEntityTemplate.cs</ApplicationRelativeFilePath>
-      <ProjectRelativeFilePath>AbstractEntity/AbstractEntityTemplate.cs</ProjectRelativeFilePath>
-      <IsIgnored>false</IsIgnored>
-    </FileLog>
-    <FileLog>
-      <ProjectId>ba8f91ca-3f8c-44a2-9194-e9d5ed6640bd</ProjectId>
-      <CorrelationId>Intent.ModuleBuilder.Java.Templates.JavaFileT4Template#94c6a849-fc61-4d80-9bdc-2ad79268ac57</CorrelationId>
-      <OverwriteBehaviour>always</OverwriteBehaviour>
-      <ApplicationRelativeFilePath>Templates/AbstractEntity/AbstractEntityTemplate.tt</ApplicationRelativeFilePath>
-      <ProjectRelativeFilePath>AbstractEntity/AbstractEntityTemplate.tt</ProjectRelativeFilePath>
-      <IsIgnored>false</IsIgnored>
-    </FileLog>
-    <FileLog>
-      <ProjectId>ba8f91ca-3f8c-44a2-9194-e9d5ed6640bd</ProjectId>
-      <CorrelationId>Intent.ModuleBuilder.Java.Templates.JavaFileTemplatePartial#94c6a849-fc61-4d80-9bdc-2ad79268ac57</CorrelationId>
-      <OverwriteBehaviour>always</OverwriteBehaviour>
-      <ApplicationRelativeFilePath>Templates/AbstractEntity/AbstractEntityTemplatePartial.cs</ApplicationRelativeFilePath>
-      <ProjectRelativeFilePath>AbstractEntity/AbstractEntityTemplatePartial.cs</ProjectRelativeFilePath>
-      <IsIgnored>false</IsIgnored>
-    </FileLog>
-    <FileLog>
-      <ProjectId>ba8f91ca-3f8c-44a2-9194-e9d5ed6640bd</ProjectId>
-      <CorrelationId>Intent.ModuleBuilder.TemplateRegistration.SingleFileNoModel#94c6a849-fc61-4d80-9bdc-2ad79268ac57</CorrelationId>
-      <OverwriteBehaviour>always</OverwriteBehaviour>
-      <ApplicationRelativeFilePath>Templates/AbstractEntity/AbstractEntityTemplateRegistration.cs</ApplicationRelativeFilePath>
-      <ProjectRelativeFilePath>AbstractEntity/AbstractEntityTemplateRegistration.cs</ProjectRelativeFilePath>
-      <IsIgnored>false</IsIgnored>
-    </FileLog>
-    <FileLog>
-      <ProjectId>ba8f91ca-3f8c-44a2-9194-e9d5ed6640bd</ProjectId>
       <CorrelationId>Intent.ModuleBuilder.Templates.TemplateDecoratorContract#a894136d-e504-4327-a9cd-0452c74dae9b</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Templates/DomainModel/DomainModelDecorator.cs</ApplicationRelativeFilePath>

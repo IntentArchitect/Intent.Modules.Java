@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using Intent.Engine;
 using Intent.Java.Persistence.JPA.Api;
 using Intent.Metadata.RDBMS.Api;
@@ -10,6 +9,7 @@ using Intent.Modules.Common.Java.Templates;
 using Intent.Modules.Common.Templates;
 using Intent.Modules.Java.Domain.Templates.DomainModel;
 using Intent.Modules.Java.Persistence.JPA.Settings;
+using Intent.Modules.Java.Persistence.JPA.Templates;
 using Intent.Modules.Metadata.RDBMS.Api.Indexes;
 using Intent.Modules.Metadata.RDBMS.Settings;
 using Intent.RoslynWeaver.Attributes;
@@ -21,7 +21,7 @@ using static Intent.Java.Persistence.JPA.Api.AssociationSourceEndModelStereotype
 namespace Intent.Modules.Java.Persistence.JPA.Decorators
 {
     [IntentManaged(Mode.Merge)]
-    public class JpaDomainModelDecorator : DomainModelDecorator, IDeclareImports
+    public class JpaDomainModelDecorator : DomainModelDecorator
     {
         [IntentManaged(Mode.Fully)]
         public const string DecoratorId = "Intent.Java.Persistence.JPA.JpaDomainModelDecorator";
@@ -41,70 +41,134 @@ namespace Intent.Modules.Java.Persistence.JPA.Decorators
             _template.AddDependency(new JavaDependency("com.h2database", "h2"));
         }
 
-        public override string ClassAnnotations()
+        public override IEnumerable<string> ClassAnnotations()
         {
-            return $@"
-@{_template.ImportType("javax.persistence.Entity")}
-@{_template.ImportType("javax.persistence.Table")}({string.Join(", ", GetTableAttributes())})";
+            if (_template.Model.IsAbstract)
+            {
+                yield return $"@{_template.ImportType("javax.persistence.MappedSuperclass")}";
+            }
+            else
+            {
+                yield return $"@{_template.ImportType("javax.persistence.Entity")}";
+            }
+
+            if (TryGetSecondaryTableName(out _))
+            {
+                yield return $"@{_template.ImportType("javax.persistence.SecondaryTable")}(name = {_template.ClassName}.TABLE_NAME)";
+
+            }
+            else if (_template.Model.GetParentClasses().All(x => !x.IsAbstract) &&
+                     (!_template.Model.IsAbstract || _template.Model.HasTable()))
+            {
+                yield return $"@{_template.ImportType("javax.persistence.Table")}({string.Join(", ", GetTableAttributes())})";
+            }
+
+            if (_template.Model.Attributes.Count(x => x.HasPrimaryKey()) > 1)
+            {
+                yield return $"@{_template.ImportType("javax.persistence.IdClass")}({_template.GetCompositeIdName(_template.Model)}.class)";
+            }
+
+            if (!_template.Model.IsAbstract &&
+                !DerivesFromNonAbstractClass(_template.Model) &&
+                _template.Model.ChildClasses.Any())
+            {
+                yield return $"@{_template.ImportType("javax.persistence.Inheritance")}(strategy = {_template.ImportType("javax.persistence.InheritanceType")}.SINGLE_TABLE)";
+            }
+        }
+
+        private static bool DerivesFromNonAbstractClass(ClassModel model)
+        {
+            while (model != null)
+            {
+                if (model.ParentClass?.IsAbstract == false)
+                {
+                    return true;
+                }
+
+                model = model.ParentClass;
+            }
+
+            return false;
+        }
+
+        private bool TryGetSecondaryTableName(out string tableName)
+        {
+            tableName = default;
+
+            var model = _template.Model;
+            if (model.IsAbstract ||
+                !model.HasTable() ||
+                !DerivesFromNonAbstractClass(model))
+            {
+                return false;
+            }
+
+            tableName = !string.IsNullOrWhiteSpace(model.GetTable().Name())
+                ? model.GetTable().Name()
+                : model.Name;
+
+            tableName = ApplyTableNameConvention(tableName).ToSnakeCase();
+            return true;
         }
 
         private IEnumerable<string> GetTableAttributes()
         {
-            var attributes = new List<string>();
-
             var tableName = _template.Model.HasTable()
                 ? _template.Model.GetTable().Name()
-                : _application.Settings.GetDatabaseSettings()?.TableNamingConvention()?.AsEnum() switch
-                {
-                    DatabaseSettingsExtensions.TableNamingConventionOptionsEnum.Pluralized => _template.Model.Name.Pluralize().ToSnakeCase(),
-                    DatabaseSettingsExtensions.TableNamingConventionOptionsEnum.Singularized => _template.Model.Name.Singularize().ToSnakeCase(),
-                    _ => throw new ArgumentOutOfRangeException()
-                };
+                : ApplyTableNameConvention(_template.Model.Name).ToSnakeCase();
 
-            attributes.Add($@"name = ""{tableName}""");
+            yield return $@"name = ""{tableName}""";
 
             if (!string.IsNullOrEmpty(_template.Model.GetTable()?.Schema()))
             {
-                attributes.Add($@"schema = ""{_template.Model.GetTable().Schema()}""");
+                yield return $@"schema = ""{_template.Model.GetTable().Schema()}""";
             }
 
-            if (_template.Model.Attributes.Any(x => x.HasIndex()) || _template.Model.GetIndexes().Any())
+            if (!_template.Model.Attributes.Any(x => x.HasIndex()) && !_template.Model.GetIndexes().Any())
             {
-                var stereotypeIndexes = _template.Model.Attributes
-                    .Where(x => x.HasIndex())
-                    .GroupBy(x => x.GetIndex().UniqueKey() ?? "IX_" + _template.Model.Name + "_" + x.Name)
-                    .ToList();
-
-                var elementIndexes = _template.Model.GetIndexes()
-                    .ToList();
-
-                var indexList = new List<string>();
-
-                foreach (var stereotypeIndex in stereotypeIndexes)
-                {
-                    indexList.Add($"@{_template.ImportType("javax.persistence.Index")}(name = \"{stereotypeIndex.Key}\", columnList = \"{string.Join(",", stereotypeIndex.Select(c => c.Name.ToSnakeCase()))}\")");
-                }
-
-                foreach (var elementIndex in elementIndexes)
-                {
-                    indexList.Add($"@{_template.ImportType("javax.persistence.Index")}(name = \"{elementIndex.Name}\", columnList = \"{string.Join(",", elementIndex.KeyColumns.Select(c => c.Name.ToSnakeCase()))}\")");
-                }
-
-                const string newLine = @",
-        ";
-                attributes.Add($@"indexes = {string.Join(newLine, indexList)}");
+                yield break;
             }
 
-            return attributes;
+            var stereotypeIndexes = _template.Model.Attributes
+                .Where(x => x.HasIndex())
+                .GroupBy(x => x.GetIndex().UniqueKey() ?? "IX_" + _template.Model.Name + "_" + x.Name)
+                .ToList();
+
+            var elementIndexes = _template.Model.GetIndexes()
+                .ToList();
+
+            var indexList = new List<string>();
+
+            foreach (var stereotypeIndex in stereotypeIndexes)
+            {
+                indexList.Add(
+                    $"@{_template.ImportType("javax.persistence.Index")}(name = \"{stereotypeIndex.Key}\", columnList = \"{string.Join(",", stereotypeIndex.Select(c => c.Name.ToSnakeCase()))}\")");
+            }
+
+            foreach (var elementIndex in elementIndexes)
+            {
+                indexList.Add(
+                    $"@{_template.ImportType("javax.persistence.Index")}(name = \"{elementIndex.Name}\", columnList = \"{string.Join(",", elementIndex.KeyColumns.Select(c => c.Name.ToSnakeCase()))}\")");
+            }
+
+            const string newLine = @",
+        ";
+            yield return $@"indexes = {string.Join(newLine, indexList)}";
         }
 
-        public override string BeforeField(AttributeModel model)
+        public override IEnumerable<string> Fields()
         {
-            var annotations = new List<string>();
-            var columnSettings = new List<string>();
-
-            if (model.Name.Equals("id", StringComparison.InvariantCultureIgnoreCase) && !HasInheritedClass())
+            if (TryGetSecondaryTableName(out var tableName))
             {
+                yield return $"static final String TABLE_NAME = \"{tableName}\";";
+            }
+
+            if (!_template.Model.Attributes.Any(x => x.HasPrimaryKey()) &&
+                !_template.Model.GetParentClasses()
+                    .Any(x => !x.IsAbstract || x.Attributes
+                        .Any(a => a.HasPrimaryKey())))
+            {
+                // Return implicit primary key
                 var (type, columnType) = _application.Settings.GetDatabaseSettings().KeyType().AsEnum() switch
                 {
                     DatabaseSettings.KeyTypeOptionsEnum.Guid => (_template.ImportType("java.util.UUID"), "uuid"),
@@ -113,25 +177,46 @@ namespace Intent.Modules.Java.Persistence.JPA.Decorators
                     _ => throw new ArgumentOutOfRangeException()
                 };
 
-                annotations.Add($"@Id");
-                annotations.Add($"@GeneratedValue(strategy = GenerationType.AUTO)");
-                columnSettings.Add($@"columnDefinition = ""{columnType}""");
+                yield return @$"@{_template.ImportType("javax.persistence.Id")}
+    @{_template.ImportType("javax.persistence.GeneratedValue")}(strategy = {_template.ImportType("javax.persistence.GenerationType")}.AUTO)
+    @{_template.ImportType("javax.persistence.Column")}(columnDefinition = ""{columnType}"")
+    private {type} id;";
             }
-            else
-            {
-                var columnName = !string.IsNullOrWhiteSpace(model.GetColumn()?.Name())
-                    ? model.GetColumn().Name()
-                    : model.Name.ToSnakeCase();
-                columnSettings.Add($"name = \"{columnName}\"");
-                if (_template.GetTypeName(model.TypeReference) == "String" && model.GetTextConstraints()?.MaxLength() != null)
-                {
-                    columnSettings.Add($"length = {model.GetTextConstraints().MaxLength()}");
-                }
+        }
 
-                if (!model.TypeReference.IsNullable)
+        public override string BeforeField(AttributeModel model)
+        {
+            var annotations = new List<string>();
+            var columnSettings = new List<string>();
+
+            if (model.HasPrimaryKey())
+            {
+                annotations.Add($"@{_template.ImportType("javax.persistence.Id")}");
+                annotations.Add($"@{_template.ImportType("javax.persistence.GeneratedValue")}(strategy = {_template.ImportType("javax.persistence.GenerationType")}.AUTO)");
+                if (model.TypeReference.Element.Name.ToLowerInvariant() is "guid" or "uuid")
                 {
-                    columnSettings.Add("nullable = false");
+                    columnSettings.Add(@"columnDefinition = ""uuid""");
                 }
+            }
+
+            var columnName = !string.IsNullOrWhiteSpace(model.GetColumn()?.Name())
+                ? model.GetColumn().Name()
+                : model.Name.ToSnakeCase();
+            columnSettings.Add($"name = \"{columnName}\"");
+            if (_template.GetTypeName(model.TypeReference) == "String" &&
+                model.GetTextConstraints()?.MaxLength() != null)
+            {
+                columnSettings.Add($"length = {model.GetTextConstraints().MaxLength()}");
+            }
+
+            if (TryGetSecondaryTableName(out _))
+            {
+                columnSettings.Add("table = TABLE_NAME");
+            }
+
+            if (!model.TypeReference.IsNullable)
+            {
+                columnSettings.Add("nullable = false");
             }
 
             annotations.Add($@"@{_template.ImportType("javax.persistence.Column")}({string.Join(", ", columnSettings)})");
@@ -254,12 +339,7 @@ namespace Intent.Modules.Java.Persistence.JPA.Decorators
                 if (thatEnd.IsTargetEnd())
                 {
                     var sourceEndName = sourceEnd.Element.Name;
-                    var thatEndName = _application.Settings.GetDatabaseSettings()?.TableNamingConvention()?.AsEnum() switch
-                    {
-                        DatabaseSettingsExtensions.TableNamingConventionOptionsEnum.Pluralized => thatEnd.Element.Name.Pluralize(),
-                        DatabaseSettingsExtensions.TableNamingConventionOptionsEnum.Singularized => thatEnd.Element.Name.Singularize(),
-                        _ => throw new ArgumentOutOfRangeException()
-                    };
+                    var thatEndName = ApplyTableNameConvention(thatEnd.Element.Name);
 
                     annotations.Add($@"@{_template.ImportType("javax.persistence.JoinTable")}(
             name = ""{sourceEndName.ToSnakeCase()}_{thatEndName.ToSnakeCase()}"",
@@ -273,79 +353,24 @@ namespace Intent.Modules.Java.Persistence.JPA.Decorators
     ", annotations);
         }
 
-        //         public override string GetAdditionalFields()
-        //         {
-        //             if (HasInheritedClass())
-        //             {
-        //                 return string.Empty;
-        //             }
-        //             
-        //             var (type, columnType) = _application.Settings.GetDatabaseSettings().KeyType().AsEnum() switch
-        //             {
-        //                 DatabaseSettings.KeyTypeOptionsEnum.Guid => (_template.ImportType("java.util.UUID"), "uuid"),
-        //                 DatabaseSettings.KeyTypeOptionsEnum.Long => ("Long", null),
-        //                 DatabaseSettings.KeyTypeOptionsEnum.Int => ("Integer", null),
-        //                 _ => throw new ArgumentOutOfRangeException()
-        //             };
-        //
-        //             var columnAnnotation = columnType != null
-        //                 ? @$"
-        //     @{_template.ImportType("javax.persistence.Column")}(columnDefinition = ""{columnType}"")"
-        //                 : string.Empty;
-        //                 
-        //             return $@"
-        //     @Id
-        //     @GeneratedValue(strategy = GenerationType.AUTO){columnAnnotation}
-        //     private {type} id;";
-        //         }
-        //
-        //         public override string GetAdditionalMethods()
-        //         {
-        //             if (HasInheritedClass())
-        //             {
-        //                 return string.Empty;
-        //             }
-        //             
-        //             var (type, columnType) = _application.Settings.GetDatabaseSettings().KeyType().AsEnum() switch
-        //             {
-        //                 DatabaseSettings.KeyTypeOptionsEnum.Guid => (_template.ImportType("java.util.UUID"), "uuid"),
-        //                 DatabaseSettings.KeyTypeOptionsEnum.Long => ("Long", null),
-        //                 DatabaseSettings.KeyTypeOptionsEnum.Int => ("Integer", null),
-        //                 _ => throw new ArgumentOutOfRangeException()
-        //             };
-        //             
-        //             return $@"
-        //     public {type} getId() {{
-        //         return id;
-        //     }}
-        //
-        //     public void setId({type} id) {{
-        //         this.id = id;
-        //     }}
-        //
-        //     public boolean isNew() {{
-        //         return this.id == null;
-        //     }}
-        // ";
-        //         }
-
-        public IEnumerable<string> DeclareImports()
+        private string ApplyTableNameConvention(string tableName)
         {
-            if (HasInheritedClass())
+            return _application.Settings.GetDatabaseSettings()?.TableNamingConvention()?.AsEnum() switch
             {
-                yield break;
-            }
-
-            yield return "javax.persistence.GeneratedValue";
-            yield return "javax.persistence.GenerationType";
-            yield return "javax.persistence.Id";
-            yield return "javax.persistence.MappedSuperclass";
+                DatabaseSettingsExtensions.TableNamingConventionOptionsEnum.Pluralized => tableName.Pluralize(),
+                DatabaseSettingsExtensions.TableNamingConventionOptionsEnum.Singularized => tableName.Singularize(),
+                _ => throw new ArgumentOutOfRangeException()
+            };
         }
 
-        private bool HasInheritedClass()
+        public override IEnumerable<string> Methods()
         {
-            return _template.Model.ParentClass != null ||
-                   _template.TryGetTypeName("Domain.AbstractEntity", out var abstractTemplateName);
+            if (_template.Model.ParentClass == null)
+            {
+                yield return @"public boolean isNew() {{
+        return this.id == null;
+    }}";
+            }
         }
     }
 }

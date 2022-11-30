@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using Intent.Modules.Common.Templates;
-using Intent.Modules.Java.Domain.Templates.AbstractEntity;
 using Intent.Modules.Java.Domain.Templates.DomainModel;
 using Intent.Modules.Java.Domain.Templates.Enum;
 using Intent.RoslynWeaver.Attributes;
@@ -12,10 +11,6 @@ namespace Intent.Modules.Java.Domain.Templates
 {
     public static class TemplateExtensions
     {
-        public static string GetAbstractEntityName<T>(this IntentTemplateBase<T> template)
-        {
-            return template.GetTypeName(AbstractEntityTemplate.TemplateId);
-        }
 
         public static string GetDomainModelName<T>(this IntentTemplateBase<T> template) where T : Intent.Modelers.Domain.Api.ClassModel
         {

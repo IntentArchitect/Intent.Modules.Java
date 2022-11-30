@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using Intent.Engine;
 using Intent.Metadata.Models;
@@ -11,6 +12,8 @@ using Intent.Modules.Common.Java.Templates;
 using Intent.Modules.Common.Templates;
 using Intent.Modules.Java.Domain.Events;
 using Intent.Modules.Java.Domain.Templates;
+using Intent.Modules.Java.Persistence.JPA;
+using Intent.Modules.Java.Persistence.JPA.Templates;
 using Intent.Modules.Metadata.RDBMS.Api.Indexes;
 using Intent.Modules.Metadata.RDBMS.Settings;
 using Intent.RoslynWeaver.Attributes;
@@ -50,12 +53,19 @@ namespace Intent.Modules.Java.Spring.Data.Repositories.Templates.EntityRepositor
 
         private string GetEntityIdType()
         {
-            return OutputTarget.ExecutionContext.Settings.GetDatabaseSettings().KeyType().AsEnum() switch
+            var (primaryKeys, fromClass) = Model.GetPrimaryKeys();
+
+            return primaryKeys.Count switch
             {
-                DatabaseSettings.KeyTypeOptionsEnum.Guid => ImportType("java.util.UUID"),
-                DatabaseSettings.KeyTypeOptionsEnum.Long => "Long",
-                DatabaseSettings.KeyTypeOptionsEnum.Int => "Integer",
-                _ => throw new ArgumentOutOfRangeException()
+                0 => OutputTarget.ExecutionContext.Settings.GetDatabaseSettings().KeyType().AsEnum() switch
+                {
+                    DatabaseSettings.KeyTypeOptionsEnum.Guid => ImportType("java.util.UUID"),
+                    DatabaseSettings.KeyTypeOptionsEnum.Long => "Long",
+                    DatabaseSettings.KeyTypeOptionsEnum.Int => "Integer",
+                    _ => throw new ArgumentOutOfRangeException()
+                },
+                1 => GetTypeName(primaryKeys[0]),
+                _ => this.GetCompositeIdName(fromClass)
             };
         }
 

@@ -26,22 +26,6 @@
     </FileLog>
     <FileLog>
       <ProjectId>5fa9e7c0-0bd2-466b-bac0-3a2ffbb77f19</ProjectId>
-      <CorrelationId>Intent.ModuleBuilder.Templates.TemplateDecorator#4cc94355-f5eb-4ed0-953c-2ed915f3ffc6</CorrelationId>
-      <OverwriteBehaviour>always</OverwriteBehaviour>
-      <ApplicationRelativeFilePath>Decorators/JpaAbstractEntityDecorator.cs</ApplicationRelativeFilePath>
-      <ProjectRelativeFilePath>JpaAbstractEntityDecorator.cs</ProjectRelativeFilePath>
-      <IsIgnored>false</IsIgnored>
-    </FileLog>
-    <FileLog>
-      <ProjectId>5fa9e7c0-0bd2-466b-bac0-3a2ffbb77f19</ProjectId>
-      <CorrelationId>Intent.ModuleBuilder.Templates.TemplateDecoratorRegistration#4cc94355-f5eb-4ed0-953c-2ed915f3ffc6</CorrelationId>
-      <OverwriteBehaviour>always</OverwriteBehaviour>
-      <ApplicationRelativeFilePath>Decorators/JpaAbstractEntityDecoratorRegistration.cs</ApplicationRelativeFilePath>
-      <ProjectRelativeFilePath>JpaAbstractEntityDecoratorRegistration.cs</ProjectRelativeFilePath>
-      <IsIgnored>false</IsIgnored>
-    </FileLog>
-    <FileLog>
-      <ProjectId>5fa9e7c0-0bd2-466b-bac0-3a2ffbb77f19</ProjectId>
       <CorrelationId>Intent.ModuleBuilder.Templates.TemplateDecorator#bf2de9f1-760a-47b5-838b-e76fdbc8e7f7</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Decorators/JpaDomainModelDecorator.cs</ApplicationRelativeFilePath>
@@ -86,6 +70,38 @@
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Settings/ModuleSettingsExtensions.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>ModuleSettingsExtensions.cs</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
+      <ProjectId>50226b6e-7f63-4887-b28a-4c534328cd10</ProjectId>
+      <CorrelationId>Intent.ModuleBuilder.Java.Templates.JavaFileStringInterpolationTemplate#7d42e56d-ed1e-4e84-9688-7f71691a568a</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>Templates/CompositeId/CompositeIdTemplate.cs</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>CompositeId/CompositeIdTemplate.cs</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
+      <ProjectId>50226b6e-7f63-4887-b28a-4c534328cd10</ProjectId>
+      <CorrelationId>Intent.ModuleBuilder.Java.Templates.JavaFileTemplatePartial#7d42e56d-ed1e-4e84-9688-7f71691a568a</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>Templates/CompositeId/CompositeIdTemplatePartial.cs</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>CompositeId/CompositeIdTemplatePartial.cs</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
+      <ProjectId>50226b6e-7f63-4887-b28a-4c534328cd10</ProjectId>
+      <CorrelationId>Intent.ModuleBuilder.TemplateRegistration.FilePerModel#7d42e56d-ed1e-4e84-9688-7f71691a568a</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>Templates/CompositeId/CompositeIdTemplateRegistration.cs</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>CompositeId/CompositeIdTemplateRegistration.cs</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
+      <ProjectId>50226b6e-7f63-4887-b28a-4c534328cd10</ProjectId>
+      <CorrelationId>Intent.ModuleBuilder.Templates.TemplateExtensions</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>Templates/TemplateExtensions.cs</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>TemplateExtensions.cs</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
     </FileLog>
   </FileLogs>

@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using Intent.Modelers.Domain.Api;
 using Intent.Modules.Common.Java.Templates;
 using Intent.RoslynWeaver.Attributes;
@@ -14,10 +15,14 @@ namespace Intent.Modules.Java.Domain.Templates.DomainModel
     {
         public int Priority { get; protected set; } = 0;
 
-        public virtual string ClassAnnotations() => null;
+        public virtual IEnumerable<string> ClassAnnotations() => null;
 
         public virtual string BeforeField(AttributeModel model) => null;
 
         public virtual string BeforeField(AssociationEndModel model) => null;
+
+        public virtual IEnumerable<string> Fields() => Enumerable.Empty<string>();
+
+        public virtual IEnumerable<string> Methods() => Enumerable.Empty<string>();
     }
 }

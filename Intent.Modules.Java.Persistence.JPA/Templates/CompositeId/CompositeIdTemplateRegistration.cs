@@ -5,44 +5,38 @@ using Intent.Engine;
 using Intent.Metadata.Models;
 using Intent.Metadata.RDBMS.Api;
 using Intent.Modelers.Domain.Api;
-using Intent.Modelers.Domain.Repositories.Api;
 using Intent.Modules.Common;
 using Intent.Modules.Common.Registrations;
 using Intent.RoslynWeaver.Attributes;
 using Intent.Templates;
 
-[assembly: DefaultIntentManaged(Mode.Merge)]
+[assembly: DefaultIntentManaged(Mode.Fully)]
 [assembly: IntentTemplate("Intent.ModuleBuilder.TemplateRegistration.FilePerModel", Version = "1.0")]
 
-namespace Intent.Modules.Java.Spring.Data.Repositories.Templates.EntityRepository
+namespace Intent.Modules.Java.Persistence.JPA.Templates.CompositeId
 {
     [IntentManaged(Mode.Merge, Body = Mode.Merge, Signature = Mode.Fully)]
-    public class EntityRepositoryTemplateRegistration : FilePerModelTemplateRegistration<ClassModel>
+    public class CompositeIdTemplateRegistration : FilePerModelTemplateRegistration<ClassModel>
     {
         private readonly IMetadataManager _metadataManager;
 
-        public EntityRepositoryTemplateRegistration(IMetadataManager metadataManager)
+        public CompositeIdTemplateRegistration(IMetadataManager metadataManager)
         {
             _metadataManager = metadataManager;
         }
 
-        public override string TemplateId => EntityRepositoryTemplate.TemplateId;
+        public override string TemplateId => CompositeIdTemplate.TemplateId;
 
         public override ITemplate CreateTemplateInstance(IOutputTarget outputTarget, ClassModel model)
         {
-            return new EntityRepositoryTemplate(outputTarget, model);
+            return new CompositeIdTemplate(outputTarget, model);
         }
 
         [IntentManaged(Mode.Merge, Body = Mode.Ignore, Signature = Mode.Fully)]
         public override IEnumerable<ClassModel> GetModels(IApplication application)
         {
-            var classes = _metadataManager.Domain(application).GetClassModels()
-                .Where(x => !x.IsAbstract || x.HasTable());
-
-            var repositories = _metadataManager.Domain(application).GetRepositoryModels()
-                .Select(x => ((IElement)x.TypeReference.Element).AsClassModel());
-
-            return classes.Concat(repositories).Distinct();
+            return _metadataManager.Domain(application).GetClassModels()
+                .Where(x => x.Attributes.Count(a => a.HasPrimaryKey()) > 1);
         }
     }
 }

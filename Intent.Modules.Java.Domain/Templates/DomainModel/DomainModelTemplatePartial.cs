@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using Intent.Engine;
@@ -6,9 +5,7 @@ using Intent.Modelers.Domain.Api;
 using Intent.Modules.Common;
 using Intent.Modules.Common.Java;
 using Intent.Modules.Common.Java.Templates;
-using Intent.Modules.Common.Java.TypeResolvers;
 using Intent.Modules.Common.Templates;
-using Intent.Modules.Java.Domain.Templates.AbstractEntity;
 using Intent.Modules.Java.Domain.Templates.Enum;
 using Intent.RoslynWeaver.Attributes;
 using Intent.Templates;
@@ -42,52 +39,38 @@ namespace Intent.Modules.Java.Domain.Templates.DomainModel
             );
         }
 
-        private string GetClassAnnotations()
+        private IEnumerable<string> GetClassAnnotations()
         {
-            var annotations = new List<string>();
-
-            annotations.AddRange(GetDecoratorsOutput(x => x.ClassAnnotations()).Trim()
-                .Replace("\r\n", "\n")
-                .Split("\n")
-                .Select(x => x.Trim()));
-
-            annotations.Add("@Data");
-            annotations.Add("@AllArgsConstructor");
-            annotations.Add("@NoArgsConstructor");
-            annotations.Add($"{this.IntentManageClassAnnotation()}(privateMethods = {this.IntentModeIgnore()})");
-
-            return string.Join(Environment.NewLine, annotations);
-        }
-
-        public string GetBaseClass()
-        {
-            if (Model.ParentClass != null)
+            foreach (var annotation in GetDecorators().SelectMany(x => x.ClassAnnotations()))
             {
-                return $" extends {GetTypeName(DomainModelTemplate.TemplateId, Model.ParentClass.InternalElement)}";
+                yield return annotation;
             }
 
-            if (TryGetTypeName(AbstractEntityTemplate.TemplateId, out var abstractTemplateName))
-            {
-                return $" extends {abstractTemplateName}";
-            }
-
-            return string.Empty;
-        }
-
-        private bool ShouldSkipAttribute(AttributeModel attribute)
-        {
-            return attribute.Name.Equals("id", StringComparison.InvariantCultureIgnoreCase) && 
-                   (Model.ParentClass != null || 
-                    TryGetTypeName(AbstractEntityTemplate.TemplateId, out var abstractTemplateName));
-        }
-
-        private string GetAbstractDefinition()
-        {
             if (Model.IsAbstract)
             {
-                return " abstract";
+                yield return $"@{ImportType("lombok.Getter")}";
+                yield return $"@{ImportType("lombok.Setter")}";
             }
-            return string.Empty;
+            else
+            {
+                yield return $"@{ImportType("lombok.Data")}";
+            }
+
+            if (Model.Attributes.Any() || GetDecorators().SelectMany(x => x.Fields()).Any())
+            {
+                yield return $"@{ImportType("lombok.AllArgsConstructor")}";
+            }
+
+            yield return "@NoArgsConstructor";
+            yield return $"{this.IntentManageClassAnnotation()}(privateMethods = {this.IntentModeIgnore()})";
         }
+
+        public string GetBaseClass() => Model.ParentClass != null
+            ? $" extends {GetTypeName(TemplateId, Model.ParentClass.InternalElement)}"
+            : $" implements {ImportType("java.io.Serializable")}";
+
+        private string GetAbstractDefinition() => Model.IsAbstract
+            ? " abstract"
+            : string.Empty;
     }
 }
