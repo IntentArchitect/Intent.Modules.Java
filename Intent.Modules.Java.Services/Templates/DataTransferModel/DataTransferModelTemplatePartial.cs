@@ -6,6 +6,7 @@ using Intent.Modules.Common;
 using Intent.Modules.Common.Java;
 using Intent.Modules.Common.Java.Templates;
 using Intent.Modules.Common.Templates;
+using Intent.Modules.Java.Services.Templates.Enum;
 using Intent.RoslynWeaver.Attributes;
 using Intent.Templates;
 
@@ -30,6 +31,7 @@ namespace Intent.Modules.Java.Services.Templates.DataTransferModel
             }
             AddTypeSource(TemplateId).WithCollectionFormat("java.util.List<{0}>");
             AddTypeSource("Domain.Enum");
+            AddTypeSource(EnumTemplate.TemplateId);
         }
 
         [IntentManaged(Mode.Merge, Body = Mode.Ignore, Signature = Mode.Fully)]

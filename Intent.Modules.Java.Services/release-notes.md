@@ -1,6 +1,7 @@
 ### Version 3.3.10
 
 - Added support for annotating classes to `DataTransferModelDecorator`.
+- Generate Enums from the Services designer.
 
 ### Version 3.3.9
 

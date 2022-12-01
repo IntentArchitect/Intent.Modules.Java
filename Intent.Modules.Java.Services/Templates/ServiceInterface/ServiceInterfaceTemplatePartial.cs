@@ -9,6 +9,7 @@ using Intent.Modules.Common.Java.Templates;
 using Intent.Modules.Common.Templates;
 using Intent.Modules.Java.Services.Api;
 using Intent.Modules.Java.Services.Templates.DataTransferModel;
+using Intent.Modules.Java.Services.Templates.Enum;
 using Intent.Modules.Java.Services.Templates.ExceptionType;
 using Intent.RoslynWeaver.Attributes;
 using Intent.Templates;
@@ -29,6 +30,8 @@ namespace Intent.Modules.Java.Services.Templates.ServiceInterface
         {
             AddTypeSource(DataTransferModelTemplate.TemplateId).WithCollectionFormat("java.util.List<{0}>");
             AddTypeSource(ExceptionTypeTemplate.TemplateId);
+            AddTypeSource("Domain.Enum");
+            AddTypeSource(EnumTemplate.TemplateId);
         }
 
         private string GetCheckedExceptions(OperationModel operation)
