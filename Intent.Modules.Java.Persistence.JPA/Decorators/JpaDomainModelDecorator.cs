@@ -93,6 +93,8 @@ namespace Intent.Modules.Java.Persistence.JPA.Decorators
 
         private bool TryGetSecondaryTableName(out string tableName)
         {
+            // Table-per-class pattern as per:
+            // https://thorben-janssen.com/hibernate-mix-inheritance-mappings/
             tableName = default;
 
             var model = _template.Model;
