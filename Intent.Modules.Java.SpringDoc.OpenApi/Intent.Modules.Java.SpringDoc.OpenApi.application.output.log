@@ -9,6 +9,22 @@
       <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
+      <ProjectId>dc534467-ffcd-402f-a919-09adf5be887c</ProjectId>
+      <CorrelationId>Intent.ModuleBuilder.Templates.Api.ApiElementModelExtensions#e030c97a-e066-40a7-8188-808c275df3cb</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>Api/OperationModelStereotypeExtensions.cs</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>OperationModelStereotypeExtensions.cs</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
+      <ProjectId>dc534467-ffcd-402f-a919-09adf5be887c</ProjectId>
+      <CorrelationId>Intent.ModuleBuilder.Templates.Api.ApiElementModelExtensions#b16578a5-27b1-4047-a8df-f0b783d706bd</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>Api/ServiceModelStereotypeExtensions.cs</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>ServiceModelStereotypeExtensions.cs</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
       <ProjectId>94e11ad0-8fef-4279-b39f-8f7b36c4e772</ProjectId>
       <CorrelationId>Intent.ModuleBuilder.Templates.TemplateDecorator#6e14eba5-4640-415c-93c4-a246d17acada</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>

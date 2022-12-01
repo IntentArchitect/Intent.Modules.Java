@@ -4,6 +4,7 @@ using System.Linq;
 using System.Reflection;
 using System.Threading;
 using Intent.Engine;
+using Intent.Java.SpringDoc.OpenApi.Api;
 using Intent.Metadata.WebApi.Api;
 using Intent.Modelers.Services.Api;
 using Intent.Modules.Common.Java.Templates;
@@ -39,25 +40,24 @@ namespace Intent.Modules.Java.SpringDoc.OpenApi.Decorators
 
         public override IEnumerable<string> ControllerAnnotations()
         {
-            var options = new Dictionary<string, string>
-            {
-                {"name", $"\"{_template.Model.Name}\""}
-            };
+            var tags = _template.Model.GetOpenAPITags().Any()
+                ? _template.Model.GetOpenAPITags().Select(x => (x.Name(), x.Description()))
+                : new[] { (_template.Model.Name, _template.Model.InternalElement.Comment) };
 
-            if (!string.IsNullOrWhiteSpace(_template.Model.InternalElement.Comment))
+            foreach (var tag in GetTagAnnotations(tags))
             {
-                options.Add("description", $"\"{Escape(_template.Model.InternalElement.Comment)}\"");
+                yield return tag;
             }
-
-            yield return $"@{_template.ImportType("io.swagger.v3.oas.annotations.tags.Tag")}({string.Join(", ", options.Select(x => $"{x.Key} = {x.Value}"))})";
         }
 
         public override IEnumerable<string> OperationAnnotations(OperationModel operation)
         {
-            var operationOptions = new Dictionary<string, string>
-            {
-                {"summary", $"\"{operation.Name}\""}
-            };
+            var operationOptions = new Dictionary<string, string>();
+
+            var summary = !string.IsNullOrWhiteSpace(operation.GetOpenAPIOperation()?.Summary())
+                ? operation.GetOpenAPIOperation().Summary()
+                : operation.Name;
+            operationOptions["summary"] = $"\"{summary}\"";
 
             if (!string.IsNullOrWhiteSpace(operation.InternalElement.Comment))
             {
@@ -65,6 +65,11 @@ namespace Intent.Modules.Java.SpringDoc.OpenApi.Decorators
             }
 
             yield return $"@{_template.ImportType("io.swagger.v3.oas.annotations.Operation")}({string.Join(", ", operationOptions.Select(x => $"{x.Key} = {x.Value}"))})";
+
+            foreach (var tag in GetTagAnnotations(operation.GetOpenAPITags().Select(x => (x.Name(), x.Description()))))
+            {
+                yield return tag;
+            }
 
             var apiResponses = new List<(string Code, string Description)>();
             var verb = GetHttpVerb(operation);
@@ -108,7 +113,45 @@ namespace Intent.Modules.Java.SpringDoc.OpenApi.Decorators
         @{_template.ImportType("io.swagger.v3.oas.annotations.responses.ApiResponse")}(responseCode = ""{x.Code}"", description = ""{Escape(x.Description)}"")");
 
             yield return $"@{_template.ImportType("io.swagger.v3.oas.annotations.responses.ApiResponses")}(value = {{{string.Join(',', values)} }})";
+        }
 
+        public override IEnumerable<string> ParameterAnnotations(ParameterModel parameter)
+        {
+            var fields = new List<string>(2);
+
+            if (!string.IsNullOrWhiteSpace(parameter.Comment))
+            {
+                fields.Add($"description = \"{Escape(parameter.Comment)}\"");
+            }
+
+            if (!parameter.TypeReference.IsNullable)
+            {
+                fields.Add("required = true");
+            }
+
+            if (fields.Count > 0)
+            {
+                yield return $"@{_template.ImportType("io.swagger.v3.oas.annotations.Parameter")}({string.Join(", ", fields)})";
+            }
+        }
+
+        private IEnumerable<string> GetTagAnnotations(IEnumerable<(string Name, string Description)> tags)
+        {
+            foreach (var tag in tags)
+            {
+                var fields = new List<string>(2);
+                if (!string.IsNullOrWhiteSpace(tag.Name))
+                {
+                    fields.Add($"name = \"{Escape(tag.Name)}\"");
+                }
+
+                if (!string.IsNullOrWhiteSpace(tag.Description))
+                {
+                    fields.Add($"description = \"{Escape(tag.Description)}\"");
+                }
+
+                yield return $"@{_template.ImportType("io.swagger.v3.oas.annotations.tags.Tag")}({string.Join(", ", fields)})";
+            }
         }
 
         private static HttpVerb GetHttpVerb(OperationModel operation)

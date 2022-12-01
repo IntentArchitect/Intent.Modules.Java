@@ -1,7 +1,7 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <package>
   <id>Intent.Java.SpringDoc.OpenApi</id>
-  <version>1.0.0</version>
+  <version>1.0.1-pre.1</version>
   <supportedClientVersions>[3.3.16, 4.0.0)</supportedClientVersions>
   <summary>Adds OpenAPI 3 support using springdoc-openapi.</summary>
   <description>Adds OpenAPI 3 support using springdoc-openapi.</description>
@@ -26,5 +26,7 @@
     <file src="$outDir$/$id$.pdb" />
   </files>
   <moduleSettingsExtensions />
-  <metadata />
+  <metadata>
+    <install target="Services" src="Intent.Metadata/Module Builder/Intent.Java.SpringDoc.OpenApi/Intent.Java.SpringDoc.OpenApi.pkg.config" externalReference="a4d68385-e0ad-43a7-8f37-deea04770d82" />
+  </metadata>
 </package>
