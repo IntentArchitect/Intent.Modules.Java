@@ -1,3 +1,7 @@
+### Version 3.3.11
+
+- Support for `ApplicationPropertyRequiredEvent` from the `Intent.Common.Java` module.
+
 ### Version 3.3.10
 
 - Modernized `pom.xml` file entries.
