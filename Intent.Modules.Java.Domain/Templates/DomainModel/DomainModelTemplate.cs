@@ -77,6 +77,12 @@ namespace Intent.Modules.Java.Domain.Templates.DomainModel
             #line hidden
             
             #line 19 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Domain\Templates\DomainModel\DomainModelTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(GetGenericTypeParameters()));
+            
+            #line default
+            #line hidden
+            
+            #line 19 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Domain\Templates\DomainModel\DomainModelTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(GetBaseClass()));
             
             #line default

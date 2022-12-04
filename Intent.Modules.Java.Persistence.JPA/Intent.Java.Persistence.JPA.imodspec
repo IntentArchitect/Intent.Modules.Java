@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <package>
   <id>Intent.Java.Persistence.JPA</id>
-  <version>4.0.0-pre.0</version>
+  <version>4.0.0-pre.1</version>
   <supportedClientVersions>[3.3.16, 4.0.0)</supportedClientVersions>
   <summary>JPA Annotation decoration of Domain entities.</summary>
   <description>JPA Annotation decoration of Domain entities.</description>
@@ -19,12 +19,12 @@
   </decorators>
   <factoryExtensions></factoryExtensions>
   <dependencies>
-    <dependency id="Intent.Common" version="3.3.13" />
-    <dependency id="Intent.Common.Java" version="3.3.16" />
+    <dependency id="Intent.Common" version="3.3.15" />
+    <dependency id="Intent.Common.Java" version="3.3.17-pre.0" />
     <dependency id="Intent.Common.Types" version="3.3.6" />
     <dependency id="Intent.Java.Domain" version="4.0.0-pre.0" />
-    <dependency id="Intent.Metadata.RDBMS" version="3.3.10" />
-    <dependency id="Intent.Modelers.Domain" version="3.3.7" />
+    <dependency id="Intent.Metadata.RDBMS" version="3.3.11-pre.2" />
+    <dependency id="Intent.Modelers.Domain" version="3.3.9" />
   </dependencies>
   <files>
     <file src="$outDir$/$id$.dll" />
@@ -39,11 +39,22 @@
       <settings>
         <setting id="8d56d60a-3778-4a95-ae26-ab640f7e5270" title="Table Naming Convention" type="select">
           <isRequired>true</isRequired>
-          <hint>The naming convention to apply to names of the tables in the database. Can be overridden on a table-by-table basis by applying the "Table" stereotype to a Class.</hint>
+          <hint>Database table naming convention, can be overridden on a table-by-table basis by applying the "Table" stereotype to a Class.</hint>
           <defaultValue>pluralized</defaultValue>
           <options>
             <option value="pluralized" description="Pluralized" />
             <option value="singularized" description="Singularized" />
+          </options>
+        </setting>
+        <setting id="976df8f4-09c5-4186-bb69-a946e6b00b9c" title="Database Provider" type="select">
+          <isRequired>true</isRequired>
+          <hint>Underlying database technology.</hint>
+          <defaultValue>h2</defaultValue>
+          <options>
+            <option value="h2" description="H2" />
+            <option value="mysql" description="MySQL" />
+            <option value="postgresql" description="PostgreSQL" />
+            <option value="sql-server" description="SQL Server" />
           </options>
         </setting>
       </settings>

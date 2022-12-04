@@ -15,11 +15,11 @@
   </factoryExtensions>
   <moduleSettings></moduleSettings>
   <dependencies>
-    <dependency id="Intent.Common" version="3.3.13" />
-    <dependency id="Intent.Common.Java" version="3.3.16-pre.2" />
+    <dependency id="Intent.Common" version="3.3.15" />
+    <dependency id="Intent.Common.Java" version="3.3.17-pre.0" />
     <dependency id="Intent.Common.Types" version="3.3.6" />
     <dependency id="Intent.Java.Domain" version="3.3.7" />
-    <dependency id="Intent.Modelers.Domain" version="3.3.7" />
+    <dependency id="Intent.Modelers.Domain" version="3.3.9" />
   </dependencies>
   <files>
     <file src="$outDir$/$id$.dll" />

@@ -31,14 +31,66 @@ namespace Intent.Modules.Java.Persistence.JPA.Decorators
         [IntentManaged(Mode.Fully)]
         private readonly IApplication _application;
 
+        private static readonly object LockObject = new();
+        private static bool _onceOffInitializationComplete;
+
         [IntentManaged(Mode.Merge, Body = Mode.Ignore)]
         public JpaDomainModelDecorator(DomainModelTemplate template, IApplication application)
         {
             _template = template;
             _application = application;
-            _template.AddDependency(new JavaDependency("org.springframework.boot", "spring-boot-starter-data-jpa"));
-            _template.AddDependency(new JavaDependency("org.springframework.boot", "spring-boot-starter-jdbc"));
-            _template.AddDependency(new JavaDependency("com.h2database", "h2"));
+            PerformOnceOffInitialization();
+        }
+
+        private void PerformOnceOffInitialization()
+        {
+            lock (LockObject)
+            {
+                if (_onceOffInitializationComplete)
+                {
+                    return;
+                }
+
+                _template.AddDependency(new JavaDependency("org.springframework.boot", "spring-boot-starter-data-jpa"));
+                _template.AddDependency(new JavaDependency("org.springframework.boot", "spring-boot-starter-jdbc"));
+
+                // https://github.com/vladmihalcea/hibernate-types#installation
+                _template.AddDependency(new JavaDependency("com.vladmihalcea", "hibernate-types-55", "2.20.0"));
+
+                switch (_template.ExecutionContext.Settings.GetDatabaseSettings().DatabaseProvider().AsEnum())
+                {
+                    case DatabaseSettingsExtensions.DatabaseProviderOptionsEnum.H2:
+                        _template.AddDependency(new JavaDependency("com.h2database", "h2"));
+                        break;
+                    case DatabaseSettingsExtensions.DatabaseProviderOptionsEnum.Mysql:
+                        _template.AddDependency(new JavaDependency("com.mysql", "mysql-connector-j"));
+                        _template.ApplyApplicationProperty("spring.datasource.url", $"jdbc:mysql://localhost:3306/{_application.Name.ToCamelCase()}?useUnicode=true");
+                        _template.ApplyApplicationProperty("spring.datasource.username", $"{_application.Name.ToCamelCase()}");
+                        _template.ApplyApplicationProperty("spring.datasource.password", "");
+                        _template.ApplyApplicationProperty("spring.jpa.hibernate.ddl-auto", "update");
+                        break;
+                    case DatabaseSettingsExtensions.DatabaseProviderOptionsEnum.Postgresql:
+                        _template.AddDependency(new JavaDependency("org.postgresql", "postgresql"));
+                        _template.ApplyApplicationProperty("spring.datasource.url", $"jdbc:postgresql://localhost:5432/{_application.Name.ToCamelCase()}");
+                        _template.ApplyApplicationProperty("spring.datasource.username", $"{_application.Name.ToCamelCase()}");
+                        _template.ApplyApplicationProperty("spring.datasource.password", "");
+                        _template.ApplyApplicationProperty("spring.jpa.hibernate.ddl-auto", "update");
+                        break;
+                    case DatabaseSettingsExtensions.DatabaseProviderOptionsEnum.SqlServer:
+                        _template.AddDependency(new JavaDependency("com.microsoft.sqlserver", "mssql-jdbc"));
+
+                        // https://learn.microsoft.com/azure/developer/java/spring-framework/configure-spring-data-jpa-with-azure-sql-server#configure-spring-boot-to-use-azure-sql-database
+                        _template.ApplyApplicationProperty("spring.datasource.url", $"jdbc:sqlserver://localhost:1433;database={_application.Name.ToCamelCase()};encrypt=true;trustServerCertificate=true;loginTimeout=30;");
+                        _template.ApplyApplicationProperty("spring.datasource.username", $"{_application.Name.ToCamelCase()}");
+                        _template.ApplyApplicationProperty("spring.datasource.password", "");
+                        _template.ApplyApplicationProperty("spring.jpa.hibernate.ddl-auto", "update");
+                        break;
+                    default:
+                        throw new ArgumentOutOfRangeException();
+                }
+
+                _onceOffInitializationComplete = true;
+            }
         }
 
         public override IEnumerable<string> ClassAnnotations()
@@ -52,10 +104,14 @@ namespace Intent.Modules.Java.Persistence.JPA.Decorators
                 yield return $"@{_template.ImportType("javax.persistence.Entity")}";
             }
 
+            if (_template.Model.Attributes.Any(IsJsonColumn))
+            {
+                yield return $"@{_template.ImportType("org.hibernate.annotations.TypeDef")}(name = \"json\", typeClass = {_template.ImportType("com.vladmihalcea.hibernate.type.json.JsonType")}.class)";
+            }
+
             if (TryGetSecondaryTableName(out _))
             {
                 yield return $"@{_template.ImportType("javax.persistence.SecondaryTable")}(name = {_template.ClassName}.TABLE_NAME)";
-
             }
             else if (_template.Model.GetParentClasses().All(x => !x.IsAbstract) &&
                      (!_template.Model.IsAbstract || _template.Model.HasTable()))
@@ -191,14 +247,33 @@ namespace Intent.Modules.Java.Persistence.JPA.Decorators
             var annotations = new List<string>();
             var columnSettings = new List<string>();
 
+            if (IsJsonColumn(model))
+            {
+                annotations.Add($"@{_template.ImportType("org.hibernate.annotations.Type")}(type = \"json\")");
+            }
+
             if (model.HasPrimaryKey())
             {
                 annotations.Add($"@{_template.ImportType("javax.persistence.Id")}");
                 annotations.Add($"@{_template.ImportType("javax.persistence.GeneratedValue")}(strategy = {_template.ImportType("javax.persistence.GenerationType")}.AUTO)");
-                if (model.TypeReference.Element.Name.ToLowerInvariant() is "guid" or "uuid")
+            }
+
+            if (!string.IsNullOrWhiteSpace(model.GetColumn()?.Type()))
+            {
+                columnSettings.Add($"columnDefinition = \"{model.GetColumn().Type()}\"");
+            }
+            else if (model.TypeReference.Element.Name.ToLowerInvariant() is "guid" or "uuid")
+            {
+                var columnDefinition = _application.Settings.GetDatabaseSettings().DatabaseProvider().AsEnum() switch
                 {
-                    columnSettings.Add(@"columnDefinition = ""uuid""");
-                }
+                    DatabaseSettingsExtensions.DatabaseProviderOptionsEnum.H2 => "uuid",
+                    DatabaseSettingsExtensions.DatabaseProviderOptionsEnum.Mysql => "CHAR(36)",
+                    DatabaseSettingsExtensions.DatabaseProviderOptionsEnum.Postgresql => "uuid",
+                    DatabaseSettingsExtensions.DatabaseProviderOptionsEnum.SqlServer => "uniqueidentifier",
+                    _ => throw new ArgumentOutOfRangeException()
+                };
+
+                columnSettings.Add($"columnDefinition = \"{columnDefinition}\"");
             }
 
             var columnName = !string.IsNullOrWhiteSpace(model.GetColumn()?.Name())
@@ -353,6 +428,25 @@ namespace Intent.Modules.Java.Persistence.JPA.Decorators
 
             return string.Join(@"
     ", annotations);
+        }
+
+        private bool IsJsonColumn(AttributeModel model)
+        {
+            //columnSettings.Add("columnDefinition = \"NVARCHAR(max) CHECK(ISJSON(properties) = 1)\"");
+
+            return _application.Settings.GetDatabaseSettings().DatabaseProvider().AsEnum() switch
+            {
+                DatabaseSettingsExtensions.DatabaseProviderOptionsEnum.H2 =>
+                    model.GetColumn()?.Type() is "json",
+                DatabaseSettingsExtensions.DatabaseProviderOptionsEnum.Mysql =>
+                    model.GetColumn()?.Type() is "json",
+                DatabaseSettingsExtensions.DatabaseProviderOptionsEnum.Postgresql =>
+                    model.GetColumn()?.Type() is "json" or "jsonb",
+                // EG: NVARCHAR(max) CHECK(ISJSON(properties) = 1)
+                DatabaseSettingsExtensions.DatabaseProviderOptionsEnum.SqlServer =>
+                    model.GetColumn()?.Type().Contains("ISJSON(") == true,
+                _ => throw new ArgumentOutOfRangeException()
+            };
         }
 
         private string ApplyTableNameConvention(string tableName)

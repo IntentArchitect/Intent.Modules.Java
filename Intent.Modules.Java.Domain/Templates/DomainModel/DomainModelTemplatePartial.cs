@@ -66,11 +66,21 @@ namespace Intent.Modules.Java.Domain.Templates.DomainModel
         }
 
         public string GetBaseClass() => Model.ParentClass != null
-            ? $" extends {GetTypeName(TemplateId, Model.ParentClass.InternalElement)}"
+            ? $" extends {GetTypeName(Model.Generalizations()[0].TypeReference)}"
             : $" implements {ImportType("java.io.Serializable")}";
 
         private string GetAbstractDefinition() => Model.IsAbstract
             ? " abstract"
             : string.Empty;
+
+        private string GetGenericTypeParameters()
+        {
+            if (!Model.GenericTypes.Any())
+            {
+                return string.Empty;
+            }
+
+            return $"<{string.Join(',', Model.GenericTypes)}>";
+        }
     }
 }
