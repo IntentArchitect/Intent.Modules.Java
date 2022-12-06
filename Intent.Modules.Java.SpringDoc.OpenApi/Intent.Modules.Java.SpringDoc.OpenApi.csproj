@@ -17,6 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Intent.Modules.Java.Services\Intent.Modules.Java.Services.csproj" />
     <ProjectReference Include="..\Intent.Modules.Java.SpringBoot\Intent.Modules.Java.SpringBoot.csproj" />
   </ItemGroup>
 

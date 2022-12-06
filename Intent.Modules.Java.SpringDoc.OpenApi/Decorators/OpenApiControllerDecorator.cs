@@ -1,8 +1,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Reflection;
-using System.Threading;
 using Intent.Engine;
 using Intent.Java.SpringDoc.OpenApi.Api;
 using Intent.Metadata.WebApi.Api;
@@ -61,7 +59,7 @@ namespace Intent.Modules.Java.SpringDoc.OpenApi.Decorators
 
             if (!string.IsNullOrWhiteSpace(operation.InternalElement.Comment))
             {
-                operationOptions.Add("description", $"\"{Escape(operation.InternalElement.Comment)}\"");
+                operationOptions.Add("description", $"\"{operation.InternalElement.Comment.EscapeJavaString()}\"");
             }
 
             yield return $"@{_template.ImportType("io.swagger.v3.oas.annotations.Operation")}({string.Join(", ", operationOptions.Select(x => $"{x.Key} = {x.Value}"))})";
@@ -110,7 +108,7 @@ namespace Intent.Modules.Java.SpringDoc.OpenApi.Decorators
 
             var values = apiResponses
                 .Select(x => @$"
-        @{_template.ImportType("io.swagger.v3.oas.annotations.responses.ApiResponse")}(responseCode = ""{x.Code}"", description = ""{Escape(x.Description)}"")");
+        @{_template.ImportType("io.swagger.v3.oas.annotations.responses.ApiResponse")}(responseCode = ""{x.Code}"", description = ""{x.Description.EscapeJavaString()}"")");
 
             yield return $"@{_template.ImportType("io.swagger.v3.oas.annotations.responses.ApiResponses")}(value = {{{string.Join(',', values)} }})";
         }
@@ -121,7 +119,7 @@ namespace Intent.Modules.Java.SpringDoc.OpenApi.Decorators
 
             if (!string.IsNullOrWhiteSpace(parameter.Comment))
             {
-                fields.Add($"description = \"{Escape(parameter.Comment)}\"");
+                fields.Add($"description = \"{parameter.Comment.EscapeJavaString()}\"");
             }
 
             if (!parameter.TypeReference.IsNullable)
@@ -142,12 +140,12 @@ namespace Intent.Modules.Java.SpringDoc.OpenApi.Decorators
                 var fields = new List<string>(2);
                 if (!string.IsNullOrWhiteSpace(tag.Name))
                 {
-                    fields.Add($"name = \"{Escape(tag.Name)}\"");
+                    fields.Add($"name = \"{tag.Name.EscapeJavaString()}\"");
                 }
 
                 if (!string.IsNullOrWhiteSpace(tag.Description))
                 {
-                    fields.Add($"description = \"{Escape(tag.Description)}\"");
+                    fields.Add($"description = \"{tag.Description.EscapeJavaString()}\"");
                 }
 
                 yield return $"@{_template.ImportType("io.swagger.v3.oas.annotations.tags.Tag")}({string.Join(", ", fields)})";
@@ -169,20 +167,6 @@ namespace Intent.Modules.Java.SpringDoc.OpenApi.Decorators
         private bool IsOperationSecured(OperationModel operation)
         {
             return (IsControllerSecured() || operation.HasSecured()) && !operation.HasUnsecured();
-        }
-
-        private static string Escape(string @string)
-        {
-            return @string
-                .Replace("\\", "\\\\")
-                .Replace("\t", "\\t")
-                .Replace("\b", "\\b")
-                .Replace("\n", "\\n")
-                .Replace("\r", "\\r")
-                .Replace("\f", "\\f")
-                .Replace("\'", "\\'")
-                .Replace("\"", "\\\"")
-                ;
         }
     }
 }

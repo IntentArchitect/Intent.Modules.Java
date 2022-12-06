@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <package>
   <id>Intent.Java.SpringDoc.OpenApi</id>
-  <version>1.0.1</version>
+  <version>1.0.2-pre.0</version>
   <supportedClientVersions>[3.3.16, 4.0.0)</supportedClientVersions>
   <summary>Adds OpenAPI 3 support using springdoc-openapi.</summary>
   <description>Adds OpenAPI 3 support using springdoc-openapi.</description>
@@ -11,6 +11,7 @@
   <templates></templates>
   <decorators>
     <decorator id="Intent.Java.SpringDoc.OpenApi.OpenApiControllerDecorator" externalReference="6e14eba5-4640-415c-93c4-a246d17acada" />
+    <decorator id="Intent.Java.SpringDoc.OpenApi.OpenApiDtoDecorator" externalReference="1107a042-9985-4842-bd62-65d990b4730c" />
   </decorators>
   <factoryExtensions></factoryExtensions>
   <moduleSettings></moduleSettings>
@@ -18,7 +19,11 @@
     <dependency id="Intent.Common" version="3.3.15" />
     <dependency id="Intent.Common.Java" version="3.3.17" />
     <dependency id="Intent.Common.Types" version="3.3.1" />
-    <dependency id="Intent.Java.SpringBoot" version="3.3.9" />
+    <dependency id="Intent.Java.Maven" version="3.3.7" />
+    <dependency id="Intent.Java.Services" version="3.3.10" />
+    <dependency id="Intent.Java.SpringBoot" version="3.3.11" />
+    <dependency id="Intent.Java.Weaving.Annotations" version="3.3.6" />
+    <dependency id="Intent.Metadata.WebApi" version="3.3.10" />
     <dependency id="Intent.Modelers.Services" version="3.3.5" />
   </dependencies>
   <files>
