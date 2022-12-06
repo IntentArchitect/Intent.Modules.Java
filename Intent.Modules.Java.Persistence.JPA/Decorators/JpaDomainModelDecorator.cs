@@ -113,8 +113,9 @@ namespace Intent.Modules.Java.Persistence.JPA.Decorators
             {
                 yield return $"@{_template.ImportType("javax.persistence.SecondaryTable")}(name = {_template.ClassName}.TABLE_NAME)";
             }
-            else if (_template.Model.GetParentClasses().All(x => !x.IsAbstract) &&
-                     (!_template.Model.IsAbstract || _template.Model.HasTable()))
+            if (_template.Model.HasTable() ||
+                !_template.Model.IsAbstract &&
+                _template.Model.GetParentClasses().All(x => x.IsAbstract))
             {
                 yield return $"@{_template.ImportType("javax.persistence.Table")}({string.Join(", ", GetTableAttributes())})";
             }

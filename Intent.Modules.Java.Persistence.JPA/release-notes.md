@@ -1,6 +1,7 @@
 ### Version 4.0.1
 
 - Names of generated CompositeIds are now always PascalCased.
+- Fixed: `@Table` annotation wasn't being added for derived types.
 
 ### Version 4.0.0
 
