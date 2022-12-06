@@ -41,7 +41,7 @@ namespace Intent.Modules.Java.ModelMapper.Templates.EntityToDtoMapping
         public override ITemplateFileConfig GetTemplateFileConfig()
         {
             return new JavaFileConfig(
-                className: $"{_entity.Name}To{Model.Name}Mapping",
+                className: $"{_entity.Name.ToPascalCase()}To{Model.Name.ToPascalCase()}Mapping",
                 package: this.GetPackage(),
                 relativeLocation: this.GetFolderPath()
             );

@@ -3,6 +3,7 @@ using Intent.Metadata.Models;
 using Intent.Modelers.Domain.Api;
 using Intent.Modules.Common.Templates;
 using Intent.Modules.Java.Domain.Events;
+using Intent.Modules.Java.Domain.Templates;
 using Intent.Modules.Java.Services.Templates.DataTransferModel;
 using Intent.RoslynWeaver.Attributes;
 
@@ -38,22 +39,26 @@ namespace Intent.Modules.Java.ModelMapper.Decorators
                 return null;
             }
 
+            var typeName = GetEntityTypeName();
+            var typeNameCamelCased = typeName.ToCamelCase();
+            var typeNamePascalCased = typeName.ToPascalCase();
+
             return $@"
-    public static {_template.ClassName} mapFrom{GetEntityTypeName()}({GetEntityTypeName()} {GetEntityTypeName().ToCamelCase()}, {_template.ImportType("org.modelmapper.ModelMapper")} mapper) {{
-        return mapper.map({GetEntityTypeName().ToCamelCase()}, {_template.ClassName}.class);
+    public static {_template.ClassName} mapFrom{typeNamePascalCased}({typeName} {typeNameCamelCased}, {_template.ImportType("org.modelmapper.ModelMapper")} mapper) {{
+        return mapper.map({typeNameCamelCased}, {_template.ClassName}.class);
     }}
 
-    public static {_template.ImportType("java.util.List")}<{_template.ClassName}> mapFrom{GetEntityTypeName().ToPluralName()}({_template.ImportType("java.util.Collection")}<{GetEntityTypeName()}> {GetEntityTypeName().ToCamelCase().ToPluralName()}, {_template.ImportType("org.modelmapper.ModelMapper")} mapper) {{
-        return {GetEntityTypeName().ToCamelCase().ToPluralName()}
+    public static {_template.ImportType("java.util.List")}<{_template.ClassName}> mapFrom{typeNamePascalCased.Pluralize()}({_template.ImportType("java.util.Collection")}<{typeName}> {typeNameCamelCased.Pluralize()}, {_template.ImportType("org.modelmapper.ModelMapper")} mapper) {{
+        return {typeNameCamelCased.Pluralize()}
             .stream()
-            .map({GetEntityTypeName().ToCamelCase()} -> {_template.ClassName}.mapFrom{GetEntityTypeName()}({GetEntityTypeName().ToCamelCase()}, mapper))
+            .map({typeNameCamelCased} -> {_template.ClassName}.mapFrom{typeName}({typeNameCamelCased}, mapper))
             .collect({_template.ImportType("java.util.stream.Collectors")}.toList());
     }}";
         }
 
         private string GetEntityTypeName()
         {
-            return _template.GetTypeName((IElement)_template.Model.Mapping.Element);
+            return _template.GetDomainModelName(((IElement)_template.Model.Mapping.Element).AsClassModel());
         }
     }
 }

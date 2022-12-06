@@ -1,3 +1,7 @@
+### Version 3.3.11
+
+- Names of generated Data Transfer Models are now always PascalCased.
+
 ### Version 3.3.10
 
 - Added support for annotating classes to `DataTransferModelDecorator`.

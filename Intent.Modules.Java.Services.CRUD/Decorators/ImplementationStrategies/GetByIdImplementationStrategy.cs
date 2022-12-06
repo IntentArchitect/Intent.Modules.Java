@@ -4,9 +4,9 @@ using System.Linq;
 using Intent.Modelers.Domain.Api;
 using Intent.Modelers.Services.Api;
 using Intent.Modules.Common.Templates;
+using Intent.Modules.Java.Persistence.JPA;
 using Intent.Modules.Java.Services.Templates;
 using Intent.Modules.Java.Services.Templates.ServiceImplementation;
-using Intent.Modules.Java.Spring.Data.Repositories.Templates.EntityRepository;
 using OperationModel = Intent.Modelers.Services.Api.OperationModel;
 
 namespace Intent.Modules.Java.Services.CRUD.Decorators.ImplementationStrategies
@@ -41,6 +41,11 @@ namespace Intent.Modules.Java.Services.CRUD.Decorators.ImplementationStrategies
                 return false;
             }
 
+            // Support for composite primary keys not implemented:
+            if (domainModel.GetPrimaryKeys().PrimaryKeys.Count > 1)
+            {
+                return false;
+            }
 
             return new[]
             {
@@ -57,23 +62,23 @@ namespace Intent.Modules.Java.Services.CRUD.Decorators.ImplementationStrategies
 
         public string GetImplementation(ClassModel domainModel, OperationModel operationModel)
         {
-            var dto = operationModel.TypeReference.Element.AsDTOModel();
+            var domainType = _decorator.GetDomainTypeName(domainModel);
+            var domainTypeCamelCased = domainType.ToCamelCase();
+            var domainTypePascalCased = domainType.ToPascalCase();
+            var repositoryFieldName = _decorator.GetRepositoryDependency(domainModel).Name;
+            var dtoType = _decorator.GetDtoTypeName(operationModel.TypeReference.Element);
 
-            return $@"var {domainModel.Name.ToCamelCase()} = {domainModel.Name.ToCamelCase()}Repository.findById({operationModel.Parameters.First().Name.ToCamelCase()});
-        if (!{domainModel.Name.ToCamelCase()}.isPresent()) {{
+            return $@"var {domainTypeCamelCased} = {repositoryFieldName}.findById({operationModel.Parameters.First().Name.ToCamelCase()});
+        if (!{domainTypeCamelCased}.isPresent()) {{
             return null;
         }}
-        return {_decorator.Template.GetDataTransferModelName(dto)}.mapFrom{domainModel.Name.ToPascalCase()}({domainModel.Name.ToCamelCase()}.get(), mapper);";
+        return {dtoType}.mapFrom{domainTypePascalCased}({domainTypeCamelCased}.get(), mapper);";
         }
 
         public IEnumerable<ClassDependency> GetRequiredServices(ClassModel targetEntity)
         {
-            var repo = _decorator.Template.GetTypeName(EntityRepositoryTemplate.TemplateId, targetEntity);
-            return new[]
-            {
-                new ClassDependency(repo, repo.ToCamelCase()),
-                new ClassDependency("org.modelmapper.ModelMapper", "mapper"), 
-            };
+            yield return _decorator.GetRepositoryDependency(targetEntity);
+            yield return new ClassDependency("org.modelmapper.ModelMapper", "mapper");
         }
     }
 }

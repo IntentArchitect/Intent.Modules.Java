@@ -32,6 +32,7 @@ namespace Intent.Modules.Java.Persistence.JPA
                 model = model.ParentClass;
             }
         }
+
         public static IEnumerable<ClassModel> GetChildClasses(this ClassModel model)
         {
             foreach (var childClass in model.ChildClasses)

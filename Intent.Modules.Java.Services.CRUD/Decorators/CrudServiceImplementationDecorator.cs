@@ -2,11 +2,15 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Intent.Engine;
+using Intent.Metadata.Models;
 using Intent.Modelers.Domain.Api;
 using Intent.Modelers.Services.Api;
 using Intent.Modules.Common.Templates;
+using Intent.Modules.Java.Domain.Templates.DomainModel;
 using Intent.Modules.Java.Services.CRUD.Decorators.ImplementationStrategies;
+using Intent.Modules.Java.Services.Templates.DataTransferModel;
 using Intent.Modules.Java.Services.Templates.ServiceImplementation;
+using Intent.Modules.Java.Spring.Data.Repositories.Templates.EntityRepository;
 using Intent.RoslynWeaver.Attributes;
 using OperationModel = Intent.Modelers.Services.Api.OperationModel;
 
@@ -46,6 +50,28 @@ namespace Intent.Modules.Java.Services.CRUD.Decorators
         }
 
         public ServiceImplementationTemplate Template => _template;
+
+        public string GetDomainTypeName(ClassModel classModel)
+        {
+            return Template.TryGetTypeName(DomainModelTemplate.TemplateId, classModel, out var result)
+                ? result
+                : classModel.Name;
+        }
+
+        public ClassDependency GetRepositoryDependency(ClassModel classModel)
+        {
+            var repositoryTypeName = Template.GetTypeName(EntityRepositoryTemplate.TemplateId, classModel);
+            return new ClassDependency(repositoryTypeName, repositoryTypeName.ToCamelCase());
+        }
+
+        public string GetDtoTypeName(ICanBeReferencedType element)
+        {
+            var dtoModel = element.AsDTOModel();
+
+            return Template.TryGetTypeName(DataTransferModelTemplate.TemplateId, dtoModel, out var dtoName)
+                ? dtoName
+                : dtoModel.Name.ToPascalCase();
+        }
 
         public override IEnumerable<ClassDependency> GetClassDependencies()
         {

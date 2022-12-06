@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Intent.Modelers.Domain.Api;
 using Intent.Modules.Common.Templates;
+using Intent.Modules.Java.Persistence.JPA;
 using Intent.Modules.Java.Services.Templates.ServiceImplementation;
 using Intent.Modules.Java.Spring.Data.Repositories.Templates.EntityRepository;
 using OperationModel = Intent.Modelers.Services.Api.OperationModel;
@@ -38,6 +39,12 @@ namespace Intent.Modules.Java.Services.CRUD.Decorators.ImplementationStrategies
                 return false;
             }
 
+            // Support for composite primary keys not implemented:
+            if (domainModel.GetPrimaryKeys().PrimaryKeys.Count > 1)
+            {
+                return false;
+            }
+
             return new[]
             {
                 "delete",
@@ -48,17 +55,17 @@ namespace Intent.Modules.Java.Services.CRUD.Decorators.ImplementationStrategies
 
         public string GetImplementation(ClassModel domainModel, OperationModel operationModel)
         {
-            return $@"var {domainModel.Name.ToCamelCase()} = {domainModel.Name.ToCamelCase()}Repository.findById({operationModel.Parameters.Single().Name.ToCamelCase()}).get();
-        {domainModel.Name.ToCamelCase()}Repository.delete({domainModel.Name.ToCamelCase()});";
+            var domainType = _decorator.GetDomainTypeName(domainModel);
+            var domainTypeCamelCased = domainType.ToCamelCase();
+            var repositoryFieldName = _decorator.GetRepositoryDependency(domainModel).Name;
+
+            return $@"var {domainTypeCamelCased} = {repositoryFieldName}.findById({operationModel.Parameters.Single().Name.ToCamelCase()}).get();
+        {repositoryFieldName}.delete({domainTypeCamelCased});";
         }
 
         public IEnumerable<ClassDependency> GetRequiredServices(ClassModel targetEntity)
         {
-            var repo = _decorator.Template.GetTypeName(EntityRepositoryTemplate.TemplateId, targetEntity);
-            return new[]
-            {
-                new ClassDependency(repo, repo.ToCamelCase()),
-            };
+            yield return _decorator.GetRepositoryDependency(targetEntity);
         }
     }
 }

@@ -15,11 +15,11 @@ namespace Intent.Modules.Java.Domain.Templates.DomainModel
     {
         public int Priority { get; protected set; } = 0;
 
-        public virtual IEnumerable<string> ClassAnnotations() => null;
+        public virtual IEnumerable<string> ClassAnnotations() => Enumerable.Empty<string>();
 
-        public virtual string BeforeField(AttributeModel model) => null;
+        public virtual string BeforeField(AttributeModel model) => string.Empty;
 
-        public virtual string BeforeField(AssociationEndModel model) => null;
+        public virtual string BeforeField(AssociationEndModel model) => string.Empty;
 
         public virtual IEnumerable<string> Fields() => Enumerable.Empty<string>();
 

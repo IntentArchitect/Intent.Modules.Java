@@ -1,4 +1,8 @@
-### Version 3.3.12
+### Version 4.0.1
+
+- Names of generated CompositeIds are now always PascalCased.
+
+### Version 4.0.0
 
 - It's now possible to choose between `Singularized` and `Pluralized` conventions for default table names in Application Settings. Table names can still be overridden using the `Table` stereotype.
 - Can now choose between `H2`, `MySQL`, `PostgreSQL` and `SQL Server` as the database provider.

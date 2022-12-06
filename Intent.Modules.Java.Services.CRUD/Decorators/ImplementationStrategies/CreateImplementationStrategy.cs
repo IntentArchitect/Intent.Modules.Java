@@ -6,7 +6,9 @@ using Intent.Metadata.Models;
 using Intent.Modelers.Domain.Api;
 using Intent.Modelers.Services.Api;
 using Intent.Modules.Common.Templates;
+using Intent.Modules.Java.Domain.Templates;
 using Intent.Modules.Java.Domain.Templates.DomainModel;
+using Intent.Modules.Java.Persistence.JPA;
 using Intent.Modules.Java.Services.Templates.ServiceImplementation;
 using Intent.Modules.Java.Spring.Data.Repositories.Templates.EntityRepository;
 using OperationModel = Intent.Modelers.Services.Api.OperationModel;
@@ -25,7 +27,7 @@ namespace Intent.Modules.Java.Services.CRUD.Decorators.ImplementationStrategies
 
         public bool Match(ClassModel domainModel, OperationModel operationModel)
         {
-            if (operationModel.Parameters.Count() != 1)
+            if (operationModel.Parameters.Count != 1)
             {
                 return false;
             }
@@ -34,6 +36,12 @@ namespace Intent.Modules.Java.Services.CRUD.Decorators.ImplementationStrategies
             if (operationModel.TypeReference.Element != null
                 && !_decorator.Template.GetTypeInfo(operationModel.TypeReference).IsPrimitive
                 && operationModel.TypeReference.Element.Name != "guid")
+            {
+                return false;
+            }
+
+            // Support for composite primary keys not implemented:
+            if (domainModel.GetPrimaryKeys().PrimaryKeys.Count > 1)
             {
                 return false;
             }
@@ -53,17 +61,24 @@ namespace Intent.Modules.Java.Services.CRUD.Decorators.ImplementationStrategies
 
         public string GetImplementation(ClassModel domainModel, OperationModel operationModel)
         {
-            var entityName = _decorator.Template.GetTypeName(DomainModelTemplate.TemplateId, domainModel, new TemplateDiscoveryOptions() { ThrowIfNotFound = false });
-            var statements = new List<string>();
-            statements.Add($"var {domainModel.Name.ToCamelCase()} = new {entityName ?? domainModel.Name}();");
+            var domainType = _decorator.GetDomainTypeName(domainModel);
+            var domainTypeCamelCased = domainType.ToCamelCase();
+            var repositoryFieldName = _decorator.GetRepositoryDependency(domainModel).Name;
 
-            statements.AddRange(GetPropertyAssignments(domainModel, operationModel.Parameters.Single()));
+            var statements = new List<string>
+            {
+                $"var {domainTypeCamelCased} = new {domainType}();"
+            };
 
-            statements.Add($"{domainModel.Name.ToCamelCase()}Repository.save({domainModel.Name.ToCamelCase()});");
+            statements.AddRange(GetPropertyAssignments(domainModel, operationModel.Parameters.Single(), domainTypeCamelCased));
+
+            statements.Add($"{repositoryFieldName}.save({domainTypeCamelCased});");
 
             if (operationModel.TypeReference.Element != null)
             {
-                statements.Add($"return {domainModel.Name.ToCamelCase()}.getId();");
+                var idField = domainModel.GetPrimaryKeys().PrimaryKeys.SingleOrDefault()?.Name.ToCamelCase() ?? "Id";
+
+                statements.Add($"return {domainTypeCamelCased}.get{idField}();");
             }
 
             return string.Join(@"
@@ -72,36 +87,32 @@ namespace Intent.Modules.Java.Services.CRUD.Decorators.ImplementationStrategies
 
         public IEnumerable<ClassDependency> GetRequiredServices(ClassModel targetEntity)
         {
-            var repo = _decorator.Template.GetTypeName(EntityRepositoryTemplate.TemplateId, targetEntity);
-            return new[]
-            {
-                new ClassDependency(repo, repo.ToCamelCase()),
-            };
+            yield return _decorator.GetRepositoryDependency(targetEntity);
         }
 
-        private List<string> GetPropertyAssignments(ClassModel domainModel, ParameterModel operationParameterModel)
+        private IEnumerable<string> GetPropertyAssignments(
+            ClassModel domainModel,
+            ParameterModel operationParameterModel,
+            string variableName)
         {
-            var statements = new List<string>();
             var dto = operationParameterModel.TypeReference.Element.AsDTOModel();
             foreach (var dtoField in dto.Fields)
             {
                 var domainAttribute = domainModel.Attributes.FirstOrDefault(p => p.Name.Equals(dtoField.Name, StringComparison.OrdinalIgnoreCase));
                 if (domainAttribute == null)
                 {
-                    statements.Add($"// Warning: No matching field found for {dtoField.Name}");
+                    yield return $"// Warning: No matching field found for {dtoField.Name}";
                     continue;
                 }
 
                 if (domainAttribute.Type.Element.Id != dtoField.TypeReference.Element.Id)
                 {
-                    statements.Add($"// Warning: No matching type for Domain: {domainAttribute.Name} and DTO: {dtoField.Name}");
+                    yield return $"// Warning: No matching type for Domain: {domainAttribute.Name} and DTO: {dtoField.Name}";
                     continue;
                 }
 
-                statements.Add($"{domainModel.Name.ToCamelCase()}.{domainAttribute.Setter()}({operationParameterModel.Name}.{dtoField.Getter()}());");
+                yield return $"{variableName}.{domainAttribute.Setter()}({operationParameterModel.Name}.{dtoField.Getter()}());";
             }
-
-            return statements;
         }
     }
 }

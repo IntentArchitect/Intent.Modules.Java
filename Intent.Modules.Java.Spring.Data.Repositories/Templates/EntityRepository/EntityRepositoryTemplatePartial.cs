@@ -40,7 +40,7 @@ namespace Intent.Modules.Java.Spring.Data.Repositories.Templates.EntityRepositor
         public override ITemplateFileConfig GetTemplateFileConfig()
         {
             return new JavaFileConfig(
-                className: $"{Model.Name}Repository",
+                className: $"{Model.Name.ToPascalCase()}Repository",
                 package: this.GetPackage(),
                 relativeLocation: this.GetFolderPath()
             );

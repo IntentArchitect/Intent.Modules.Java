@@ -38,7 +38,7 @@ namespace Intent.Modules.Java.Services.Templates.DataTransferModel
         public override ITemplateFileConfig GetTemplateFileConfig()
         {
             return new JavaFileConfig(
-                className: $"{Model.Name}",
+                className: $"{Model.Name.ToPascalCase()}",
                 package: this.GetPackage(),
                 relativeLocation: this.GetFolderPath()
             );

@@ -33,7 +33,7 @@ namespace Intent.Modules.Java.Domain.Templates.DomainModel
         public override ITemplateFileConfig GetTemplateFileConfig()
         {
             return new JavaFileConfig(
-                className: $"{Model.Name}",
+                className: $"{Model.Name.ToPascalCase()}",
                 package: this.GetPackage(),
                 relativeLocation: this.GetFolderPath()
             );

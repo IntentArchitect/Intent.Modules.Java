@@ -1,12 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using Intent.Modelers.Domain.Api;
 using Intent.Modelers.Services.Api;
 using Intent.Modules.Common.Templates;
+using Intent.Modules.Java.Persistence.JPA;
 using Intent.Modules.Java.Services.Templates.ServiceImplementation;
-using Intent.Modules.Java.Spring.Data.Repositories.Templates.EntityRepository;
 using OperationModel = Intent.Modelers.Services.Api.OperationModel;
 using ParameterModel = Intent.Modelers.Services.Api.ParameterModel;
 
@@ -41,6 +40,12 @@ namespace Intent.Modules.Java.Services.CRUD.Decorators.ImplementationStrategies
                 return false;
             }
 
+            // Support for composite primary keys not implemented:
+            if (domainModel.GetPrimaryKeys().PrimaryKeys.Count > 1)
+            {
+                return false;
+            }
+
             return new[]
             {
                 "put",
@@ -53,43 +58,47 @@ namespace Intent.Modules.Java.Services.CRUD.Decorators.ImplementationStrategies
 
         public string GetImplementation(ClassModel domainModel, OperationModel operationModel)
         {
+            var domainType = _decorator.GetDomainTypeName(domainModel);
+            var domainTypeCamelCased = domainType.ToCamelCase();
+            var repositoryFieldName = _decorator.GetRepositoryDependency(domainModel).Name;
             var idParam = operationModel.Parameters.First(p => p.Name.EndsWith("id", StringComparison.OrdinalIgnoreCase));
             var dtoParam = operationModel.Parameters.First(p => !p.Name.EndsWith("id", StringComparison.OrdinalIgnoreCase));
+            var assignments = string.Join(@"
+        ", GetPropertyAssignments(domainModel, dtoParam, domainTypeCamelCased));
 
-            return $@"var {domainModel.Name.ToCamelCase()} = {domainModel.Name.ToCamelCase()}Repository.findById({idParam.Name}).get();
-        {EmitPropertyAssignments(domainModel, domainModel.Name.ToCamelCase(), dtoParam)}
-        { domainModel.Name.ToCamelCase() }Repository.save({domainModel.Name.ToCamelCase()});";
+            return $@"var {domainTypeCamelCased} = {repositoryFieldName}.findById({idParam.Name.ToCamelCase()}).get();
+        {assignments}
+        {repositoryFieldName}.save({domainTypeCamelCased});";
         }
 
         public IEnumerable<ClassDependency> GetRequiredServices(ClassModel targetEntity)
         {
-            var repo = _decorator.Template.GetTypeName(EntityRepositoryTemplate.TemplateId, targetEntity);
-            return new[]
-            {
-                new ClassDependency(repo, repo.ToCamelCase()),
-            };
+            yield return _decorator.GetRepositoryDependency(targetEntity);
         }
 
-        private string EmitPropertyAssignments(ClassModel domainModel, string domainVarName, ParameterModel operationParameterModel)
+        private IEnumerable<string> GetPropertyAssignments(
+            ClassModel domainModel,
+            ParameterModel operationParameterModel,
+            string variableName)
         {
-            var sb = new StringBuilder();
             var dto = operationParameterModel.TypeReference.Element.AsDTOModel();
             foreach (var dtoField in dto.Fields)
             {
                 var domainAttribute = domainModel.Attributes.FirstOrDefault(p => p.Name.Equals(dtoField.Name, StringComparison.OrdinalIgnoreCase));
                 if (domainAttribute == null)
                 {
-                    sb.AppendLine($"        // Warning: No matching field found for {dtoField.Name}");
+                    yield return $"// Warning: No matching field found for {dtoField.Name}";
                     continue;
                 }
+
                 if (domainAttribute.Type.Element.Id != dtoField.TypeReference.Element.Id)
                 {
-                    sb.AppendLine($"        // Warning: No matching type for Domain: {domainAttribute.Name} and DTO: {dtoField.Name}");
+                    yield return $"// Warning: No matching type for Domain: {domainAttribute.Name} and DTO: {dtoField.Name}";
                     continue;
                 }
-                sb.AppendLine($"        {domainVarName}.{domainAttribute.Setter()}({operationParameterModel.Name}.{dtoField.Getter()}());");
+
+                yield return $"{variableName}.{domainAttribute.Setter()}({operationParameterModel.Name}.{dtoField.Getter()}());";
             }
-            return sb.ToString().Trim();
         }
     }
 }

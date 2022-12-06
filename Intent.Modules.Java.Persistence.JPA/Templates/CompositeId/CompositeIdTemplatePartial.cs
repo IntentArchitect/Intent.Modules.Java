@@ -30,7 +30,7 @@ namespace Intent.Modules.Java.Persistence.JPA.Templates.CompositeId
         public override ITemplateFileConfig GetTemplateFileConfig()
         {
             return new JavaFileConfig(
-                className: $"{Model.Name}Id",
+                className: $"{Model.Name.ToPascalCase()}Id",
                 package: this.GetPackage(),
                 relativeLocation: this.GetFolderPath()
             );
