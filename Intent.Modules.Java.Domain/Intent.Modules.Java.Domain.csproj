@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
-    <Version>4.0.1-pre.0</Version>
+    <Version>4.0.1-pre.1</Version>
     <Authors>Intent Architect</Authors>
     <Description />
     <Copyright>Copyright 2022</Copyright>
@@ -12,6 +12,10 @@
     <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
     <PackageIcon>logo.png</PackageIcon>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="..\Intent.Modules.Java.Enums\EnumGenerator.cs" Link="Templates\Enum\EnumGenerator.cs" />
+  </ItemGroup>
 
   <ItemGroup>
     <Compile Update="Templates\DomainModel\DomainModelTemplate.cs">
@@ -24,11 +28,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>AbstractEntityTemplate.tt</DependentUpon>
     </Compile>
-    <Compile Update="Templates\Enum\EnumTemplate.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>EnumTemplate.tt</DependentUpon>
-    </Compile>
   </ItemGroup>
 
   <ItemGroup>
@@ -39,10 +38,6 @@
     <None Update="Templates\AbstractEntity\AbstractEntityTemplate.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>AbstractEntityTemplate.cs</LastGenOutput>
-    </None>
-    <None Update="Templates\Enum\EnumTemplate.tt">
-      <Generator>TextTemplatingFilePreprocessor</Generator>
-      <LastGenOutput>EnumTemplate.cs</LastGenOutput>
     </None>
   </ItemGroup>
 

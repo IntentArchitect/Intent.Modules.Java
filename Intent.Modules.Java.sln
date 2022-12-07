@@ -34,9 +34,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Intent.Modules.Java.SpringB
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Intent.Modules.Java.SpringBoot.Validation", "Intent.Modules.Java.SpringBoot.Validation\Intent.Modules.Java.SpringBoot.Validation.csproj", "{858C7EB2-2BB7-4927-9C44-A8D5BCAC8FBA}"
 EndProject
-Project("{52B49DB5-3EA9-4095-B1A7-DF1AC22D7DAE}") = "Intent.Modules.Java.Domain.Maven", "Intent.Modules.Java.Domain.Maven\Intent.Modules.Java.Domain.Maven.csproj", "{38A5446F-DC72-46C9-A14B-71727EF18B4F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Intent.Modules.Java.Domain.Maven", "Intent.Modules.Java.Domain.Maven\Intent.Modules.Java.Domain.Maven.csproj", "{38A5446F-DC72-46C9-A14B-71727EF18B4F}"
 EndProject
-Project("{52B49DB5-3EA9-4095-B1A7-DF1AC22D7DAE}") = "Intent.Modules.Java.SpringDoc.OpenApi", "Intent.Modules.Java.SpringDoc.OpenApi\Intent.Modules.Java.SpringDoc.OpenApi.csproj", "{6C983176-1042-4A96-9391-B0576C4272C9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Intent.Modules.Java.SpringDoc.OpenApi", "Intent.Modules.Java.SpringDoc.OpenApi\Intent.Modules.Java.SpringDoc.OpenApi.csproj", "{6C983176-1042-4A96-9391-B0576C4272C9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Intent.Modules.Java.Enums", "Intent.Modules.Java.Enums\Intent.Modules.Java.Enums.csproj", "{47FE04B4-ACD2-4C63-BEC4-3767A094CA73}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -116,6 +118,10 @@ Global
 		{6C983176-1042-4A96-9391-B0576C4272C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6C983176-1042-4A96-9391-B0576C4272C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6C983176-1042-4A96-9391-B0576C4272C9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{47FE04B4-ACD2-4C63-BEC4-3767A094CA73}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{47FE04B4-ACD2-4C63-BEC4-3767A094CA73}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{47FE04B4-ACD2-4C63-BEC4-3767A094CA73}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{47FE04B4-ACD2-4C63-BEC4-3767A094CA73}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

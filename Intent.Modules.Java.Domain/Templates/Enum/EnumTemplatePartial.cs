@@ -29,25 +29,10 @@ namespace Intent.Modules.Java.Domain.Templates.Enum
         public override ITemplateFileConfig GetTemplateFileConfig()
         {
             return new JavaFileConfig(
-                className: $"{Model.Name}",
+                className: $"{Model.Name.ToPascalCase()}",
                 package: this.GetPackage(),
                 relativeLocation: this.GetFolderPath()
             );
-        }
-
-        private static string GetEnumLiterals(IEnumerable<EnumLiteralModel> literals)
-        {
-            return string.Join(@",
-    ", literals.Select(GetEnumLiteral));
-        }
-
-        private static string GetEnumLiteral(EnumLiteralModel literal)
-        {
-            // Java Enums don't have the literal values like C#, etc.
-            // If you want to store the literal values, you need a constructor
-            // and a field that can store int's.
-            // Example: https://www.baeldung.com/a-guide-to-java-enums#fields-methods-and-constructors-in-enums
-            return $"{literal.Name.ToJavaIdentifier(CapitalizationBehaviour.AsIs)}";
         }
     }
 }
