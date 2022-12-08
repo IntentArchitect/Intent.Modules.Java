@@ -81,10 +81,29 @@ namespace Intent.Modules.Java.Services.Templates.DataTransferModel
             
             #line default
             #line hidden
-            this.Write("public class ");
+            this.Write("public");
+            
+            #line 24 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Services\Templates\DataTransferModel\DataTransferModelTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(GetAbstractDefinition()));
+            
+            #line default
+            #line hidden
+            this.Write(" class ");
             
             #line 24 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Services\Templates\DataTransferModel\DataTransferModelTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(ClassName));
+            
+            #line default
+            #line hidden
+            
+            #line 24 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Services\Templates\DataTransferModel\DataTransferModelTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(GetGenericTypeParameters()));
+            
+            #line default
+            #line hidden
+            
+            #line 24 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Services\Templates\DataTransferModel\DataTransferModelTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(GetBaseType()));
             
             #line default
             #line hidden

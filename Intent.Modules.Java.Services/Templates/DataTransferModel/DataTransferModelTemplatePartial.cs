@@ -44,5 +44,22 @@ namespace Intent.Modules.Java.Services.Templates.DataTransferModel
             );
         }
 
+        private string GetAbstractDefinition() => Model.IsAbstract
+            ? " abstract"
+            : string.Empty;
+
+        public string GetBaseType() => Model.ParentDtoTypeReference != null
+            ? $" extends {GetTypeName(Model.ParentDtoTypeReference)}"
+            : string.Empty;
+
+        private string GetGenericTypeParameters()
+        {
+            if (!Model.GenericTypes.Any())
+            {
+                return string.Empty;
+            }
+
+            return $"<{string.Join(',', Model.GenericTypes)}>";
+        }
     }
 }

@@ -73,13 +73,13 @@ namespace Intent.Modules.Java.Domain.Templates.DomainModel
             yield return $"{this.IntentManageClassAnnotation()}(privateMethods = {this.IntentModeIgnore()})";
         }
 
-        public string GetBaseClass() => Model.ParentClass != null
-            ? $" extends {GetTypeName(Model.Generalizations()[0].TypeReference)}"
-            : $" implements {ImportType("java.io.Serializable")}";
-
         private string GetAbstractDefinition() => Model.IsAbstract
             ? " abstract"
             : string.Empty;
+
+        public string GetBaseType() => Model.ParentClassTypeReference != null
+            ? $" extends {GetTypeName(Model.ParentClassTypeReference)}"
+            : $" implements {ImportType("java.io.Serializable")}";
 
         private string GetGenericTypeParameters()
         {

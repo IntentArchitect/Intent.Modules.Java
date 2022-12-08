@@ -16,7 +16,7 @@ import lombok.NoArgsConstructor;
 <#  foreach (var annotation in GetClassAnnotations()) { #>
 <#= annotation #>
 <#  } #>
-public<#= GetAbstractDefinition() #> class <#= ClassName #><#= GetGenericTypeParameters() #><#= GetBaseClass() #> {
+public<#= GetAbstractDefinition() #> class <#= ClassName #><#= GetGenericTypeParameters() #><#= GetBaseType() #> {
 <#  if (!Model.IsAbstract) { #>
     private static final long serialVersionUID = 1L;
 <#  } #>

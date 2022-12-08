@@ -5,6 +5,7 @@
     - Now generate with snake_cased and all upper cased literals.
     - Literal values are now applied. If all literal values are blank, then literals have no value, if all can be parsed as an integer, then the value type will be `int`, otherwise `long` is attempted and if that fails then it will be of type `String`.
     - Enum names are now always PascalCased.
+- Now possible to have DTOs inherit from other DTOs.
 
 ### Version 3.3.10
 

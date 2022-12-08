@@ -21,7 +21,7 @@ import lombok.NoArgsConstructor;
 <#      foreach(var annotation in GetDecorators().SelectMany(x => x.GetClassAnnotations())) { #>
 <#= annotation #>
 <#      } #>
-public class <#= ClassName #> {
+public<#= GetAbstractDefinition() #> class <#= ClassName #><#= GetGenericTypeParameters() #><#= GetBaseType() #> {
 <#  foreach(var field in Model.Fields) { #>
 <#      foreach(var annotation in GetDecorators().SelectMany(x => x.GetFieldAnnotations(field))) { #>
     <#= annotation #>
