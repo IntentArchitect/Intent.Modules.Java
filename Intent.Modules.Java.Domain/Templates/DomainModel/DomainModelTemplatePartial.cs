@@ -39,6 +39,14 @@ namespace Intent.Modules.Java.Domain.Templates.DomainModel
             );
         }
 
+        public override void BeforeTemplateExecution()
+        {
+            foreach (var decorator in GetDecorators())
+            {
+                decorator.BeforeTemplateExecution();
+            }
+        }
+
         private IEnumerable<string> GetClassAnnotations()
         {
             foreach (var annotation in GetDecorators().SelectMany(x => x.ClassAnnotations()))

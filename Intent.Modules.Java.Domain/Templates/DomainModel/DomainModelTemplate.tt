@@ -28,12 +28,12 @@ public<#= GetAbstractDefinition() #> class <#= ClassName #><#= GetGenericTypePar
     {
 #>
 
-    <#= GetDecoratorsOutput(x => x.BeforeField(attribute), @"
+    <#= GetDecoratorsOutput(x => x.FieldAnnotations(attribute), @"
     ") #>private <#= GetTypeName(attribute) #> <#= attribute.Name.ToCamelCase() #>;
 <#  } #>
 <#  foreach(var associationEnd in Model.AssociatedClasses.Where(x => x.IsNavigable)) { #>
 
-    <#= GetDecoratorsOutput(x => x.BeforeField(associationEnd), @"
+    <#= GetDecoratorsOutput(x => x.FieldAnnotations(associationEnd), @"
     ") #>private <#= GetTypeName(associationEnd) #> <#= associationEnd.Name.ToCamelCase() #>;
 <#  } #>
 <#  foreach(var operation in Model.Operations) { #>

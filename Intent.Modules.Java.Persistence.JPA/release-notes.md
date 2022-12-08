@@ -2,6 +2,7 @@
 
 - Names of generated CompositeIds are now always PascalCased.
 - Fixed: `@Table` annotation wasn't being added for derived types.
+- Regard attributes named `id` implicitly as being primary keys when no explicit primary key.
 
 ### Version 4.0.0
 

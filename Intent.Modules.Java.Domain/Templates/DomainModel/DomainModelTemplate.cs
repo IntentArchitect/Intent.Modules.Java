@@ -132,7 +132,7 @@ namespace Intent.Modules.Java.Domain.Templates.DomainModel
             this.Write("\r\n    ");
             
             #line 31 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Domain\Templates\DomainModel\DomainModelTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(GetDecoratorsOutput(x => x.BeforeField(attribute), @"
+            this.Write(this.ToStringHelper.ToStringWithCulture(GetDecoratorsOutput(x => x.FieldAnnotations(attribute), @"
     ")));
             
             #line default
@@ -167,7 +167,7 @@ namespace Intent.Modules.Java.Domain.Templates.DomainModel
             this.Write("\r\n    ");
             
             #line 36 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Domain\Templates\DomainModel\DomainModelTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(GetDecoratorsOutput(x => x.BeforeField(associationEnd), @"
+            this.Write(this.ToStringHelper.ToStringWithCulture(GetDecoratorsOutput(x => x.FieldAnnotations(associationEnd), @"
     ")));
             
             #line default
