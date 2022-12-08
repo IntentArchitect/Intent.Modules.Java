@@ -25,8 +25,8 @@
     <dependency id="Intent.Common.Types" version="3.3.6" />
     <dependency id="Intent.Java.Services" version="3.3.8" />
     <dependency id="Intent.Java.SpringBoot" version="3.3.9" />
-    <dependency id="Intent.Modelers.Domain" version="3.3.9" />
-    <dependency id="Intent.Modelers.Services" version="3.3.5" />
+    <dependency id="Intent.Modelers.Domain" version="3.3.10-pre.0" />
+    <dependency id="Intent.Modelers.Services" version="3.3.6-pre.0" />
   </dependencies>
   <files>
     <file src="$outDir$/$id$.dll" />

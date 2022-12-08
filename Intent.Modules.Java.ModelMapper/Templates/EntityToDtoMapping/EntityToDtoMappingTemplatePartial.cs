@@ -14,6 +14,7 @@ using Intent.Modules.Java.Domain.Templates.DomainModel;
 using Intent.Modules.Java.Services.Templates.DataTransferModel;
 using Intent.RoslynWeaver.Attributes;
 using Intent.Templates;
+using GeneralizationModel = Intent.Modelers.Domain.Api.GeneralizationModel;
 using OperationModel = Intent.Modelers.Domain.Api.OperationModel;
 
 [assembly: DefaultIntentManaged(Mode.Merge)]

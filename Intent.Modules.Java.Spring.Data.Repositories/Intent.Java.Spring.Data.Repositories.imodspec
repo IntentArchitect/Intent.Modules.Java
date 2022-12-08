@@ -22,7 +22,7 @@
     <dependency id="Intent.Common.Types" version="3.3.5" />
     <dependency id="Intent.Java.Persistence.JPA" version="4.0.0" />
     <dependency id="Intent.Java.Weaving.Annotations" version="3.3.6" />
-    <dependency id="Intent.Modelers.Domain" version="3.3.9" />
+    <dependency id="Intent.Modelers.Domain" version="3.3.10-pre.0" />
     <dependency id="Intent.Modelers.Domain.Repositories" version="3.3.0" />
     <dependency id="Intent.Metadata.RDBMS" version="3.3.10" />
   </dependencies>
