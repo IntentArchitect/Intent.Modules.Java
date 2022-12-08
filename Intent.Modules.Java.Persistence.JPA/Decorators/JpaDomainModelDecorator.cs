@@ -485,9 +485,9 @@ namespace Intent.Modules.Java.Persistence.JPA.Decorators
         {
             if (_template.Model.ParentClass == null)
             {
-                yield return @"public boolean isNew() {{
+                yield return @"public boolean isNew() {
         return this.id == null;
-    }}";
+    }";
             }
         }
     }
