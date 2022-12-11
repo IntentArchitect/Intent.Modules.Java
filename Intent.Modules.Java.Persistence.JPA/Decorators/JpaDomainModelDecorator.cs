@@ -454,8 +454,6 @@ namespace Intent.Modules.Java.Persistence.JPA.Decorators
 
         private bool IsJsonColumn(AttributeModel model)
         {
-            //columnSettings.Add("columnDefinition = \"NVARCHAR(max) CHECK(ISJSON(properties) = 1)\"");
-
             return _application.Settings.GetDatabaseSettings().DatabaseProvider().AsEnum() switch
             {
                 DatabaseSettingsExtensions.DatabaseProviderOptionsEnum.H2 =>
@@ -483,11 +481,29 @@ namespace Intent.Modules.Java.Persistence.JPA.Decorators
 
         public override IEnumerable<string> Methods()
         {
+            var primaryKeys = _template.Model.GetPrimaryKeys();
+            if (primaryKeys.FromClass != null && primaryKeys.FromClass != _template.Model)
+            {
+                // Will be handled by base class where the primary id(s) is defined
+                yield break;
+            }
+
+            var checks = primaryKeys.PrimaryKeys
+                .Select(x => $"this.{x.Name.ToCamelCase()} == null")
+                .ToArray();
+
+            if (checks.Length == 0)
+            {
+                // Implicit primary key field name:
+                checks = new[] { "this.id == null" };
+            }
+
             if (_template.Model.ParentClass == null)
             {
-                yield return @"public boolean isNew() {
-        return this.id == null;
-    }";
+                yield return @$"public boolean isNew() {{
+        return {string.Join(@" &&
+               ", checks)};
+    }}";
             }
         }
     }
