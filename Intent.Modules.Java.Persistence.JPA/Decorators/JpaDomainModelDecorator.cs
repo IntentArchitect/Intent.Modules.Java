@@ -346,9 +346,13 @@ namespace Intent.Modules.Java.Persistence.JPA.Decorators
             {
                 var settings = new List<string>
                 {
-                    $"optional = {thatEnd.IsNullable.ToString().ToLower()}",
-                    $"cascade = {{ {_template.ImportType("javax.persistence.CascadeType")}.ALL }}"
+                    $"optional = {thatEnd.IsNullable.ToString().ToLower()}"
                 };
+
+                if (IsCompositeOwner(thatEnd))
+                {
+                    settings.Add($"cascade = {{ {_template.ImportType("javax.persistence.CascadeType")}.ALL }}");
+                }
 
                 if (sourceEnd.IsNullable)
                 {
@@ -368,10 +372,12 @@ namespace Intent.Modules.Java.Persistence.JPA.Decorators
             }
             else if (!sourceEnd.IsCollection && thatEnd.IsCollection) // one-to-many
             {
-                var settings = new List<string>
+                var settings = new List<string>();
+
+                if (IsCompositeOwner(thatEnd))
                 {
-                    $"cascade = {{ {_template.ImportType("javax.persistence.CascadeType")}.ALL }}"
-                };
+                    settings.Add($"cascade = {{ {_template.ImportType("javax.persistence.CascadeType")}.ALL }}");
+                }
 
                 if (sourceEnd.IsNavigable)
                 {
@@ -395,9 +401,13 @@ namespace Intent.Modules.Java.Persistence.JPA.Decorators
                 var joinColumnParams = new List<string>();
                 var manyToOneSettings = new List<string>
                 {
-                    $"optional = {thatEnd.IsNullable.ToString().ToLower()}",
-                    $"cascade = {{ {_template.ImportType("javax.persistence.CascadeType")}.ALL }}"
+                    $"optional = {thatEnd.IsNullable.ToString().ToLower()}"
                 };
+
+                if (IsCompositeOwner(thatEnd))
+                {
+                    manyToOneSettings.Add($"cascade = {{ {_template.ImportType("javax.persistence.CascadeType")}.ALL }}");
+                }
 
                 if (!string.IsNullOrWhiteSpace(fetchType))
                 {
@@ -424,10 +434,7 @@ namespace Intent.Modules.Java.Persistence.JPA.Decorators
             }
             else if (sourceEnd.IsCollection && thatEnd.IsCollection) // many-to-many
             {
-                var settings = new List<string>
-                {
-                    $"cascade = {{ {_template.ImportType("javax.persistence.CascadeType")}.ALL }}"
-                };
+                var settings = new List<string>();
 
                 if (!string.IsNullOrWhiteSpace(fetchType))
                 {
@@ -450,6 +457,12 @@ namespace Intent.Modules.Java.Persistence.JPA.Decorators
 
             return string.Join(@"
     ", annotations);
+
+            static bool IsCompositeOwner(AssociationEndModel associationEnd)
+            {
+                return associationEnd.Equals(associationEnd.Association.TargetEnd) &&
+                       associationEnd.Association.SourceEnd.Multiplicity == Multiplicity.One;
+            }
         }
 
         private bool IsJsonColumn(AttributeModel model)
