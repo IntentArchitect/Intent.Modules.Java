@@ -414,10 +414,7 @@ namespace Intent.Modules.Java.Persistence.JPA.Decorators
                     manyToOneSettings.Add(fetchType);
                 }
 
-                // This needs to match up exactly to any potential FK field's column name and that
-                // required to dig into how any potential explicit FK was set on the designer.
-                var cleanedFkName = thatEnd.Name.Replace("_", " ").ToLower().ToCamelCase().Replace(" ", "");
-                joinColumnParams.Add($@"name = ""{cleanedFkName.ToSnakeCase()}_id""");
+                joinColumnParams.Add($@"name = ""{thatEnd.Name.ToSnakeCase()}_id""");
                 joinColumnParams.Add($@"nullable = {thatEnd.IsNullable.ToString().ToLower()}");
 
                 var hasAggregationForeignKey = _template.Model.Attributes.Any(p => p.Name.Equals((thatEnd.Name + "Id").Replace("_", ""), StringComparison.OrdinalIgnoreCase));

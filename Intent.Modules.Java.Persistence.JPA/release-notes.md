@@ -4,6 +4,7 @@
 - Fixed: `@Table` annotation wasn't being added for derived types.
 - Regard attributes named `id` implicitly as being primary keys when no explicit primary key.
 - Fixed: `cascade = javax.persistence.CascadeType.ALL` was being indiscriminately applied to all relationships, it will now only be applied on navigations from a composite owner.
+- Fixed: Snake-casing was being properly applied to `@JoinColumn` `name`s for many-to-one relationships.
 
 ### Version 4.0.0
 
