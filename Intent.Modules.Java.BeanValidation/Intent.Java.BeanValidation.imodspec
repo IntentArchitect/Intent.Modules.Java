@@ -17,7 +17,7 @@
     <dependency id="Intent.Common.Java" version="3.3.17" />
     <dependency id="Intent.Common.Types" version="3.3.6" />
     <dependency id="Intent.Java.Domain" version="3.3.7" />
-    <dependency id="Intent.Metadata.RDBMS" version="3.3.10" />
+    <dependency id="Intent.Metadata.RDBMS" version="3.3.12" />
   </dependencies>
   <files>
     <file src="$outDir$/$id$.dll" />
