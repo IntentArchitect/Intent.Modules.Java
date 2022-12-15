@@ -48,26 +48,41 @@ namespace Intent.Modules.Java.ModelMapper.Templates.ModelMapperBean
             
             #line default
             #line hidden
-            this.Write(" {\r\n    @Bean\r\n    public ModelMapper modelMapper() {\r\n        var modelMapper = " +
-                    "new ModelMapper();\r\n\r\n        InitializeMappings(modelMapper);\r\n\r\n        return" +
-                    " modelMapper;\r\n    }\r\n\r\n    private void InitializeMappings(ModelMapper modelMap" +
-                    "per) {\r\n");
+            this.Write(@" {
+    @Bean
+    public ModelMapper modelMapper() {
+        var modelMapper = new ModelMapper();
+
+        InitializeMappings(modelMapper);
+
+        return modelMapper;
+    }
+
+    private void InitializeMappings(ModelMapper modelMapper) {
+        modelMapper.getConfiguration().setMatchingStrategy(");
             
             #line 28 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.ModelMapper\Templates\ModelMapperBean\ModelMapperBeanTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(ImportType("org.modelmapper.convention.MatchingStrategies")));
+            
+            #line default
+            #line hidden
+            this.Write(".STRICT);\r\n");
+            
+            #line 29 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.ModelMapper\Templates\ModelMapperBean\ModelMapperBeanTemplate.tt"
   foreach(var mapping in GetMappings()) { 
             
             #line default
             #line hidden
             this.Write("        modelMapper.addMappings(new ");
             
-            #line 29 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.ModelMapper\Templates\ModelMapperBean\ModelMapperBeanTemplate.tt"
+            #line 30 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.ModelMapper\Templates\ModelMapperBean\ModelMapperBeanTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(mapping));
             
             #line default
             #line hidden
             this.Write("());\r\n");
             
-            #line 30 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.ModelMapper\Templates\ModelMapperBean\ModelMapperBeanTemplate.tt"
+            #line 31 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.ModelMapper\Templates\ModelMapperBean\ModelMapperBeanTemplate.tt"
   } 
             
             #line default

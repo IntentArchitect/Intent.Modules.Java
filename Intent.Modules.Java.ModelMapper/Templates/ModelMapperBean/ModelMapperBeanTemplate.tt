@@ -25,6 +25,7 @@ public class <#= ClassName #> {
     }
 
     private void InitializeMappings(ModelMapper modelMapper) {
+        modelMapper.getConfiguration().setMatchingStrategy(<#= ImportType("org.modelmapper.convention.MatchingStrategies") #>.STRICT);
 <#  foreach(var mapping in GetMappings()) { #>
         modelMapper.addMappings(new <#= mapping #>());
 <#  } #>
