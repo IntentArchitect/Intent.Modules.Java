@@ -37,12 +37,12 @@ namespace Intent.Modules.Java.Spring.Data.Repositories.Templates.EntityRepositor
         public override IEnumerable<ClassModel> GetModels(IApplication application)
         {
             var classes = _metadataManager.Domain(application).GetClassModels()
-                .Where(x => !x.IsAbstract || x.HasTable());
+                .Where(x => x.IsAggregateRoot() && (!x.IsAbstract || x.HasTable()));
 
             var repositories = _metadataManager.Domain(application).GetRepositoryModels()
                 .Select(x => ((IElement)x.TypeReference.Element).AsClassModel());
 
-            return classes.Concat(repositories).Distinct();
+            return classes.Union(repositories);
         }
     }
 }
