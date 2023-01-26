@@ -1,3 +1,8 @@
+### Version 4.0.2
+
+- Maven dependencies weren't always being applied.
+- `NotNull` and `Max` attributes are now applied on domain entity fields.
+
 ### Version 4.0.1
 
 - Names of generated Domain Models are now always PascalCased.

@@ -1,5 +1,7 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Xml.Linq;
 using Intent.Engine;
 using Intent.Modelers.Domain.Api;
 using Intent.Modules.Common;
@@ -45,6 +47,8 @@ namespace Intent.Modules.Java.Domain.Templates.DomainModel
             {
                 decorator.BeforeTemplateExecution();
             }
+
+            base.BeforeTemplateExecution();
         }
 
         private IEnumerable<string> GetClassAnnotations()
@@ -89,6 +93,37 @@ namespace Intent.Modules.Java.Domain.Templates.DomainModel
             }
 
             return $"<{string.Join(',', Model.GenericTypes)}>";
+        }
+
+        private IEnumerable<string> GetAnnotations(AttributeModel attribute)
+        {
+            if (!attribute.TypeReference.IsNullable)
+            {
+                yield return $"@{ImportType("javax.validation.constraints.NotNull")}";
+            }
+
+            if (attribute.HasStereotype("Text Constraints") && attribute.GetStereotypeProperty<int?>("Text Constraints", "MaxLength") != null)
+            {
+                yield return $"@{ImportType("javax.validation.constraints.Size")}(max = {attribute.GetStereotypeProperty<int?>("Text Constraints", "MaxLength"):D})";
+            }
+
+            foreach (var annotation in GetDecorators().Select(x => x.FieldAnnotations(attribute)))
+            {
+                yield return annotation.Trim();
+            }
+        }
+
+        private IEnumerable<string> GetAnnotations(AssociationEndModel associationEnd)
+        {
+            if (!associationEnd.TypeReference.IsNullable)
+            {
+                yield return $"@{ImportType("javax.validation.constraints.NotNull")}";
+            }
+
+            foreach (var annotation in GetDecorators().Select(x => x.FieldAnnotations(associationEnd)))
+            {
+                yield return annotation.Trim();
+            }
         }
     }
 }
