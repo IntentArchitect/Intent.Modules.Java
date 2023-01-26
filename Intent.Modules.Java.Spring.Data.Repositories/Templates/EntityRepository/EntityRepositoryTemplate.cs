@@ -50,7 +50,7 @@ namespace Intent.Modules.Java.Spring.Data.Repositories.Templates.EntityRepositor
             this.Write(" entity.\r\n */\r\n");
             
             #line 17 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Spring.Data.Repositories\Templates\EntityRepository\EntityRepositoryTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(this.IntentMergeAnnotation()));
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.IntentIgnoreBodyAnnotation()));
             
             #line default
             #line hidden

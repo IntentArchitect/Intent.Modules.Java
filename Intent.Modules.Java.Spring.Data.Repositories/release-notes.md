@@ -1,6 +1,7 @@
 ### Version 4.0.2
 
 - Update: Repositories will now only be generated for Entities that are Aggregate Roots or have explicit Repositories defined.
+- Repositories by default now have `@IntentIgnoreBody` instead of `@IntentMerge`.
 
 ### Version 4.0.1
 

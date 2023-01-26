@@ -14,7 +14,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 /**
  * Spring Data JPA repository for the <#= GetEntityType() #> entity.
  */
-<#= this.IntentMergeAnnotation() #>
+<#= this.IntentIgnoreBodyAnnotation() #>
 public interface <#= ClassName #> extends JpaRepository<<#= GetEntityType() #>, <#= GetEntityIdType() #>> {
 <#  foreach(var query in GetQueriesFromIndexes()) { #>
     <#= query #>
