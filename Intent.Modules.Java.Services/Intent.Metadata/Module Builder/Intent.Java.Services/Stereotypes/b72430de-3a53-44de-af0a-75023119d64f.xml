@@ -9,6 +9,7 @@
   <applyMode>manually</applyMode>
   <icon type="FontAwesome" source="database" />
   <displayIcon>false</displayIcon>
+  <displayIconFunction>return false;</displayIconFunction>
   <displayFunction />
   <displayAsAnnotation>false</displayAsAnnotation>
   <displayAsText>true</displayAsText>

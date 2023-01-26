@@ -202,22 +202,6 @@
     </FileLog>
     <FileLog>
       <ProjectId>32921436-c716-4bad-8ff1-2cc93f11b598</ProjectId>
-      <CorrelationId>Intent.ModuleBuilder.Java.Templates.JavaTemplate.PreProcessT4#7ce91561-d9e7-4da5-870b-bc7f091513c7</CorrelationId>
-      <OverwriteBehaviour>always</OverwriteBehaviour>
-      <ApplicationRelativeFilePath>Templates/ServiceImplementation/ServiceImplementationTemplate.cs</ApplicationRelativeFilePath>
-      <ProjectRelativeFilePath>ServiceImplementation/ServiceImplementationTemplate.cs</ProjectRelativeFilePath>
-      <IsIgnored>false</IsIgnored>
-    </FileLog>
-    <FileLog>
-      <ProjectId>32921436-c716-4bad-8ff1-2cc93f11b598</ProjectId>
-      <CorrelationId>Intent.ModuleBuilder.Java.Templates.JavaFileT4Template#7ce91561-d9e7-4da5-870b-bc7f091513c7</CorrelationId>
-      <OverwriteBehaviour>always</OverwriteBehaviour>
-      <ApplicationRelativeFilePath>Templates/ServiceImplementation/ServiceImplementationTemplate.tt</ApplicationRelativeFilePath>
-      <ProjectRelativeFilePath>ServiceImplementation/ServiceImplementationTemplate.tt</ProjectRelativeFilePath>
-      <IsIgnored>false</IsIgnored>
-    </FileLog>
-    <FileLog>
-      <ProjectId>32921436-c716-4bad-8ff1-2cc93f11b598</ProjectId>
       <CorrelationId>Intent.ModuleBuilder.Java.Templates.JavaFileTemplatePartial#7ce91561-d9e7-4da5-870b-bc7f091513c7</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Templates/ServiceImplementation/ServiceImplementationTemplatePartial.cs</ApplicationRelativeFilePath>

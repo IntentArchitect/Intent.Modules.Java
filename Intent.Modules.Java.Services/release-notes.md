@@ -1,3 +1,7 @@
+### Version 3.4.0
+
+- New: Upgraded Service Implementation to make use of the Java File Builder Pattern to ease extensibility.
+
 ### Version 3.3.11
 
 - Names of generated Data Transfer Models are now always PascalCased.

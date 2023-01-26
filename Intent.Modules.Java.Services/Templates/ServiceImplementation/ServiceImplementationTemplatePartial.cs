@@ -5,6 +5,7 @@ using Intent.Engine;
 using Intent.Modelers.Services.Api;
 using Intent.Modules.Common;
 using Intent.Modules.Common.Java;
+using Intent.Modules.Common.Java.Builder;
 using Intent.Modules.Common.Java.Templates;
 using Intent.Modules.Common.Templates;
 using Intent.Modules.Java.Services.Api;
@@ -13,14 +14,15 @@ using Intent.Modules.Java.Services.Templates.Enum;
 using Intent.Modules.Java.Services.Templates.ExceptionType;
 using Intent.RoslynWeaver.Attributes;
 using Intent.Templates;
+using JavaFileConfig = Intent.Modules.Common.Java.Templates.JavaFileConfig;
 
 [assembly: DefaultIntentManaged(Mode.Merge)]
 [assembly: IntentTemplate("Intent.ModuleBuilder.Java.Templates.JavaFileTemplatePartial", Version = "1.0")]
 
 namespace Intent.Modules.Java.Services.Templates.ServiceImplementation
 {
-    [IntentManaged(Mode.Merge, Signature = Mode.Fully)]
-    partial class ServiceImplementationTemplate : JavaTemplateBase<Intent.Modelers.Services.Api.ServiceModel, ServiceImplementationDecorator>
+    [IntentManaged(Mode.Merge, Signature = Mode.Merge)]
+    public partial class ServiceImplementationTemplate : JavaTemplateBase<Intent.Modelers.Services.Api.ServiceModel, ServiceImplementationDecorator>, IJavaFileBuilderTemplate
     {
         [IntentManaged(Mode.Fully)]
         public const string TemplateId = "Intent.Java.Services.ServiceImplementation";
@@ -33,16 +35,51 @@ namespace Intent.Modules.Java.Services.Templates.ServiceImplementation
             AddTypeSource(ExceptionTypeTemplate.TemplateId);
             AddTypeSource("Domain.Enum");
             AddTypeSource(EnumTemplate.TemplateId);
+
+            JavaFile = new JavaFile(this.GetPackage(), this.GetFolderPath())
+                .AddImport("lombok.AllArgsConstructor")
+                .AddImport("org.springframework.stereotype.Service")
+                .AddImport("org.springframework.transaction.annotation.Transactional")
+                .AddImport(this.IntentMergeAnnotation())
+                .AddClass($"{Model.Name.RemoveSuffix("Controller", "Service")}ServiceImpl", @class =>
+                {
+                    @class.AddAnnotation("Service")
+                        .AddAnnotation("AllArgsConstructor");
+                    @class.ImplementsInterface(GetTypeName(ServiceInterface.ServiceInterfaceTemplate.TemplateId, Model));
+                    var dependencies = GetConstructorDependencies();
+                    foreach (var dependency in dependencies)
+                    {
+                        @class.AddField(ImportType(dependency.Type), dependency.Name.ToCamelCase(), field => field.Private());
+                    }
+                    foreach (var operation in Model.Operations)
+                    {
+                        @class.AddMethod(GetTypeName(operation), operation.Name, method =>
+                        {
+                            method.AddAnnotation("Override")
+                                .AddAnnotation("Transactional", ann => ann.AddArgument($"readOnly = {IsReadOnly(operation)}"))
+                                .AddAnnotation(this.IntentIgnoreBodyAnnotation());
+                            foreach (var parameter in operation.Parameters)
+                            {
+                                method.AddParameter(GetTypeName(parameter), parameter.Name.ToCamelCase());
+                            }
+
+                            method.AddStatements(GetImplementation(operation));
+                        });
+                    }
+                });
         }
+
+        public JavaFile JavaFile { get; set; }
 
         [IntentManaged(Mode.Merge, Body = Mode.Ignore, Signature = Mode.Fully)]
         public override ITemplateFileConfig GetTemplateFileConfig()
         {
-            return new JavaFileConfig(
-                className: $"{Model.Name.RemoveSuffix("Controller", "Service")}ServiceImpl",
-                package: this.GetPackage(),
-                relativeLocation: this.GetFolderPath()
-            );
+            return JavaFile.GetConfig();
+        }
+        
+        public override string TransformText()
+        {
+            return JavaFile.ToString();
         }
 
         public string IsReadOnly(OperationModel operation)
