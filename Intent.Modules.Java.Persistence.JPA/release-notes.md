@@ -1,3 +1,7 @@
+### Version 4.0.2
+
+- Fixed: `@OneToMany` annotations were missing corresponding `@JoinColumn` annotation.
+
 ### Version 4.0.1
 
 - Names of generated CompositeIds are now always PascalCased.

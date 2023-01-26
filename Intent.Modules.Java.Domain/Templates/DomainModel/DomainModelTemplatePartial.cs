@@ -97,7 +97,9 @@ namespace Intent.Modules.Java.Domain.Templates.DomainModel
 
         private IEnumerable<string> GetAnnotations(AttributeModel attribute)
         {
-            if (!attribute.TypeReference.IsNullable)
+            if (!attribute.TypeReference.IsNullable &&
+                !attribute.HasStereotype("Primary Key") &&
+                !attribute.HasStereotype("Foreign Key"))
             {
                 yield return $"@{ImportType("javax.validation.constraints.NotNull")}";
             }

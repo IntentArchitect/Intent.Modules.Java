@@ -395,6 +395,7 @@ namespace Intent.Modules.Java.Persistence.JPA.Decorators
                 }
 
                 annotations.Add($"@{_template.ImportType("javax.persistence.OneToMany")}({string.Join(", ", settings)})");
+                annotations.Add($"@{_template.ImportType("javax.persistence.JoinColumn")}(name = \"{sourceEnd.Name.ToSnakeCase()}_id\")");
             }
             else if (sourceEnd.IsCollection && !thatEnd.IsCollection) // many-to-one
             {
