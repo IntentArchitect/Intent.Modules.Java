@@ -24,7 +24,7 @@
     <PackageReference Include="Intent.Modules.Common.Java" Version="3.3.17" />
     <PackageReference Include="Intent.Modules.Java.Weaving.Annotations" Version="3.3.5" />
     <PackageReference Include="Intent.Modules.Modelers.Services" Version="3.3.6" />
-    <PackageReference Include="Intent.Packager" Version="3.3.2">
+    <PackageReference Include="Intent.Packager" Version="3.4.0">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
