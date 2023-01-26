@@ -37,26 +37,30 @@ namespace Intent.Modules.Java.Services.Templates.ServiceImplementation
             AddTypeSource(EnumTemplate.TemplateId);
 
             JavaFile = new JavaFile(this.GetPackage(), this.GetFolderPath())
-                .AddImport("lombok.AllArgsConstructor")
-                .AddImport("org.springframework.stereotype.Service")
-                .AddImport("org.springframework.transaction.annotation.Transactional")
-                .AddImport(this.IntentMergeAnnotation())
-                .AddClass($"{Model.Name.RemoveSuffix("Controller", "Service")}ServiceImpl", @class =>
+                .AddClass($"{Model.Name.RemoveSuffix("Controller", "Service")}ServiceImpl")
+                .OnBuild(file =>
                 {
+                    file.AddImport("lombok.AllArgsConstructor")
+                        .AddImport("org.springframework.stereotype.Service")
+                        .AddImport("org.springframework.transaction.annotation.Transactional");
+                    
+                    var @class = file.Classes.First();
                     @class.AddAnnotation("Service")
-                        .AddAnnotation("AllArgsConstructor");
+                        .AddAnnotation("AllArgsConstructor")
+                        .AddAnnotation(this.IntentMergeAnnotation());
                     @class.ImplementsInterface(GetTypeName(ServiceInterface.ServiceInterfaceTemplate.TemplateId, Model));
                     var dependencies = GetConstructorDependencies();
                     foreach (var dependency in dependencies)
                     {
                         @class.AddField(ImportType(dependency.Type), dependency.Name.ToCamelCase(), field => field.Private());
                     }
+
                     foreach (var operation in Model.Operations)
                     {
                         @class.AddMethod(GetTypeName(operation), operation.Name, method =>
                         {
-                            method.AddAnnotation("Override")
-                                .AddAnnotation("Transactional", ann => ann.AddArgument($"readOnly = {IsReadOnly(operation)}"))
+                            method.Override();
+                            method.AddAnnotation("Transactional", ann => ann.AddArgument($"readOnly = {IsReadOnly(operation)}"))
                                 .AddAnnotation(this.IntentIgnoreBodyAnnotation());
                             foreach (var parameter in operation.Parameters)
                             {
