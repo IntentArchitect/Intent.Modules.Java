@@ -37,13 +37,14 @@ namespace Intent.Modules.Java.Services.Templates.ServiceImplementation
             AddTypeSource(EnumTemplate.TemplateId);
 
             JavaFile = new JavaFile(this.GetPackage(), this.GetFolderPath())
-                .AddClass($"{Model.Name.RemoveSuffix("Controller", "Service")}ServiceImpl")
+                .AddClass($"{Model.Name.RemoveSuffix("Controller", "Service")}ServiceImpl", c => c
+                    .AddMetadata("model", Model))
                 .OnBuild(file =>
                 {
                     file.AddImport("lombok.AllArgsConstructor")
                         .AddImport("org.springframework.stereotype.Service")
                         .AddImport("org.springframework.transaction.annotation.Transactional");
-                    
+
                     var @class = file.Classes.First();
                     @class.AddAnnotation("Service")
                         .AddAnnotation("AllArgsConstructor")
@@ -80,7 +81,7 @@ namespace Intent.Modules.Java.Services.Templates.ServiceImplementation
         {
             return JavaFile.GetConfig();
         }
-        
+
         public override string TransformText()
         {
             return JavaFile.ToString();
