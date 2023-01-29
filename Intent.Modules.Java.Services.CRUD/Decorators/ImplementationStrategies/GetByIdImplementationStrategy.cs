@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Intent.Engine;
 using Intent.Modelers.Domain.Api;
 using Intent.Modelers.Services.Api;
 using Intent.Modules.Common.Templates;
@@ -13,11 +14,19 @@ namespace Intent.Modules.Java.Services.CRUD.Decorators.ImplementationStrategies
 {
     public class GetByIdImplementationStrategy : IImplementationStrategy
     {
-        private readonly CrudServiceImplementationDecorator _decorator;
-
-        public GetByIdImplementationStrategy(CrudServiceImplementationDecorator decorator)
+        public GetByIdImplementationStrategy(ServiceImplementationTemplate template, IApplication application)
         {
-            _decorator = decorator;
+            
+        }
+        
+        public bool IsMatch(OperationModel operationModel)
+        {
+            return false;
+        }
+
+        public void ApplyStrategy(OperationModel operationModel)
+        {
+            throw new NotImplementedException();
         }
 
         public bool Match(ClassModel domainModel, OperationModel operationModel)
@@ -60,25 +69,25 @@ namespace Intent.Modules.Java.Services.CRUD.Decorators.ImplementationStrategies
             .Contains(lowerOperationName);
         }
 
-        public string GetImplementation(ClassModel domainModel, OperationModel operationModel)
-        {
-            var domainType = _decorator.GetDomainTypeName(domainModel);
-            var domainTypeCamelCased = domainType.ToCamelCase();
-            var domainTypePascalCased = domainType.ToPascalCase();
-            var repositoryFieldName = _decorator.GetRepositoryDependency(domainModel).Name;
-            var dtoType = _decorator.GetDtoTypeName(operationModel.TypeReference.Element);
-
-            return $@"var {domainTypeCamelCased} = {repositoryFieldName}.findById({operationModel.Parameters.First().Name.ToCamelCase()});
-        if (!{domainTypeCamelCased}.isPresent()) {{
-            return null;
-        }}
-        return {dtoType}.mapFrom{domainTypePascalCased}({domainTypeCamelCased}.get(), mapper);";
-        }
-
-        public IEnumerable<ClassDependency> GetRequiredServices(ClassModel targetEntity)
-        {
-            yield return _decorator.GetRepositoryDependency(targetEntity);
-            yield return new ClassDependency("org.modelmapper.ModelMapper", "mapper");
-        }
+        // public string GetImplementation(ClassModel domainModel, OperationModel operationModel)
+        // {
+        //     var domainType = _decorator.GetDomainTypeName(domainModel);
+        //     var domainTypeCamelCased = domainType.ToCamelCase();
+        //     var domainTypePascalCased = domainType.ToPascalCase();
+        //     var repositoryFieldName = _decorator.GetRepositoryDependency(domainModel).Name;
+        //     var dtoType = _decorator.GetDtoTypeName(operationModel.TypeReference.Element);
+        //
+        //     return $@"var {domainTypeCamelCased} = {repositoryFieldName}.findById({operationModel.Parameters.First().Name.ToCamelCase()});
+        // if (!{domainTypeCamelCased}.isPresent()) {{
+        //     return null;
+        // }}
+        // return {dtoType}.mapFrom{domainTypePascalCased}({domainTypeCamelCased}.get(), mapper);";
+        // }
+        //
+        // public IEnumerable<ClassDependency> GetRequiredServices(ClassModel targetEntity)
+        // {
+        //     yield return _decorator.GetRepositoryDependency(targetEntity);
+        //     yield return new ClassDependency("org.modelmapper.ModelMapper", "mapper");
+        // }
     }
 }

@@ -1,22 +1,30 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Intent.Engine;
 using Intent.Modelers.Domain.Api;
 using Intent.Modules.Common.Templates;
 using Intent.Modules.Java.Persistence.JPA;
 using Intent.Modules.Java.Services.Templates.ServiceImplementation;
-using Intent.Modules.Java.Spring.Data.Repositories.Templates.EntityRepository;
 using OperationModel = Intent.Modelers.Services.Api.OperationModel;
 
 namespace Intent.Modules.Java.Services.CRUD.Decorators.ImplementationStrategies
 {
     public class DeleteImplementationStrategy : IImplementationStrategy
     {
-        private readonly CrudServiceImplementationDecorator _decorator;
-
-        public DeleteImplementationStrategy(CrudServiceImplementationDecorator decorator)
+        public DeleteImplementationStrategy(ServiceImplementationTemplate template, IApplication application)
         {
-            _decorator = decorator;
+            
+        }
+        
+        public bool IsMatch(OperationModel operationModel)
+        {
+            return false;
+        }
+
+        public void ApplyStrategy(OperationModel operationModel)
+        {
+            throw new NotImplementedException();
         }
 
         public bool Match(ClassModel domainModel, OperationModel operationModel)
@@ -53,19 +61,19 @@ namespace Intent.Modules.Java.Services.CRUD.Decorators.ImplementationStrategies
             .Contains(lowerOperationName);
         }
 
-        public string GetImplementation(ClassModel domainModel, OperationModel operationModel)
-        {
-            var domainType = _decorator.GetDomainTypeName(domainModel);
-            var domainTypeCamelCased = domainType.ToCamelCase();
-            var repositoryFieldName = _decorator.GetRepositoryDependency(domainModel).Name;
-
-            return $@"var {domainTypeCamelCased} = {repositoryFieldName}.findById({operationModel.Parameters.Single().Name.ToCamelCase()}).get();
-        {repositoryFieldName}.delete({domainTypeCamelCased});";
-        }
-
-        public IEnumerable<ClassDependency> GetRequiredServices(ClassModel targetEntity)
-        {
-            yield return _decorator.GetRepositoryDependency(targetEntity);
-        }
+        // public string GetImplementation(ClassModel domainModel, OperationModel operationModel)
+        // {
+        //     var domainType = _decorator.GetDomainTypeName(domainModel);
+        //     var domainTypeCamelCased = domainType.ToCamelCase();
+        //     var repositoryFieldName = _decorator.GetRepositoryDependency(domainModel).Name;
+        //
+        //     return $@"var {domainTypeCamelCased} = {repositoryFieldName}.findById({operationModel.Parameters.Single().Name.ToCamelCase()}).get();
+        // {repositoryFieldName}.delete({domainTypeCamelCased});";
+        // }
+        //
+        // public IEnumerable<ClassDependency> GetRequiredServices(ClassModel targetEntity)
+        // {
+        //     yield return _decorator.GetRepositoryDependency(targetEntity);
+        // }
     }
 }

@@ -7,8 +7,7 @@ namespace Intent.Modules.Java.Services.CRUD.Decorators.ImplementationStrategies
 {
     public interface IImplementationStrategy
     {
-        bool Match(ClassModel domainModel, OperationModel operationModel);
-        string GetImplementation(ClassModel domainModel, OperationModel operationModel);
-        IEnumerable<ClassDependency> GetRequiredServices(ClassModel targetEntity);
+        bool IsMatch(OperationModel operationModel);
+        void ApplyStrategy(OperationModel operationModel);
     }
 }

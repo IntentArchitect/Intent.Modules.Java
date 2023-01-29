@@ -9,19 +9,11 @@
       <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
-      <ProjectId>14f11349-6906-42d9-b346-ad87f48aeac4</ProjectId>
-      <CorrelationId>Intent.ModuleBuilder.Templates.TemplateDecorator#fb8e2f24-d222-40d1-a948-2a989b655d9a</CorrelationId>
+      <ProjectId>145ba3c3-7bc0-4bf0-8f6d-c95f632522fc</ProjectId>
+      <CorrelationId>Intent.ModuleBuilder.Templates.FactoryExtension#18b30dd9-2af1-4330-a183-a6c64f1af28b</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
-      <ApplicationRelativeFilePath>Decorators/CrudServiceImplementationDecorator.cs</ApplicationRelativeFilePath>
-      <ProjectRelativeFilePath>CrudServiceImplementationDecorator.cs</ProjectRelativeFilePath>
-      <IsIgnored>false</IsIgnored>
-    </FileLog>
-    <FileLog>
-      <ProjectId>14f11349-6906-42d9-b346-ad87f48aeac4</ProjectId>
-      <CorrelationId>Intent.ModuleBuilder.Templates.TemplateDecoratorRegistration#fb8e2f24-d222-40d1-a948-2a989b655d9a</CorrelationId>
-      <OverwriteBehaviour>always</OverwriteBehaviour>
-      <ApplicationRelativeFilePath>Decorators/CrudServiceImplementationDecoratorRegistration.cs</ApplicationRelativeFilePath>
-      <ProjectRelativeFilePath>CrudServiceImplementationDecoratorRegistration.cs</ProjectRelativeFilePath>
+      <ApplicationRelativeFilePath>FactoryExtensions/CrudServiceFactoryExtension.cs</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>CrudServiceFactoryExtension.cs</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
