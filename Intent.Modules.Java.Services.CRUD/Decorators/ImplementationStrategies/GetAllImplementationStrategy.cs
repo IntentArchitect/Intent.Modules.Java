@@ -85,23 +85,5 @@ namespace Intent.Modules.Java.Services.CRUD.Decorators.ImplementationStrategies
             method.Statements.Clear();
             method.AddStatements(codeLines.ToList());
         }
-
-        // public string GetImplementation(ClassModel domainModel, OperationModel operationModel)
-        // {
-        //     var domainType = _decorator.GetDomainTypeName(domainModel);
-        //     var domainTypeCamelCased = domainType.ToCamelCase();
-        //     var domainTypePascalCased = domainType.ToPascalCase();
-        //     var repositoryFieldName = _decorator.GetRepositoryDependency(domainModel).Name;
-        //     var dtoType = _decorator.GetDtoTypeName(operationModel.TypeReference.Element);
-        //
-        //     return $@"var {domainTypeCamelCased.Pluralize()} = {repositoryFieldName}.findAll();
-        // return {dtoType}.mapFrom{domainTypePascalCased.Pluralize()}({domainTypeCamelCased.Pluralize()}, mapper);";
-        // }
-        //
-        // public IEnumerable<ClassDependency> GetRequiredServices(ClassModel targetEntity)
-        // {
-        //     yield return _decorator.GetRepositoryDependency(targetEntity);
-        //     yield return new ClassDependency("org.modelmapper.ModelMapper", "mapper");
-        // }
     }
 }
