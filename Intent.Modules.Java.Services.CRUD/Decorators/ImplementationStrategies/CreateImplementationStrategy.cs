@@ -61,18 +61,9 @@ namespace Intent.Modules.Java.Services.CRUD.Decorators.ImplementationStrategies
             {
                 return false;
             }
-
-            var lowerDomainName = domainModel.Name.ToLower();
+            
             var lowerOperationName = operationModel.Name.ToLower();
-            return new[]
-                {
-                    "post",
-                    $"post{lowerDomainName}",
-                    "create",
-                    $"create{lowerDomainName}",
-                    $"add{lowerDomainName}",
-                }
-                .Contains(lowerOperationName);
+            return new[] { "post", "create", "add" }.Any(x => lowerOperationName.Contains(x));
         }
 
         public void ApplyStrategy(OperationModel operationModel)
@@ -83,13 +74,14 @@ namespace Intent.Modules.Java.Services.CRUD.Decorators.ImplementationStrategies
                 ? result
                 : domainModel.Name;
             var domainTypeCamelCased = domainType.ToCamelCase();
-            var repositoryTypeName = _template.GetTypeName(EntityRepositoryTemplate.TemplateId, domainModel).ToCamelCase();
+            var repositoryTypeName = _template.GetTypeName(EntityRepositoryTemplate.TemplateId, domainModel);
+            var repositoryFieldName = repositoryTypeName.ToCamelCase();
             
             var codeLines = new JavaStatementAggregator();
             codeLines.Add($@"var {domainTypeCamelCased} = new {domainType}();");
             codeLines.AddRange(GetDTOPropertyAssignments(domainTypeCamelCased, "dto", domainModel.InternalElement, dtoModel.Fields));
             
-            codeLines.Add($"{repositoryTypeName}.save({domainTypeCamelCased});");
+            codeLines.Add($"{repositoryFieldName}.save({domainTypeCamelCased});");
             
             if (operationModel.TypeReference.Element != null)
             {
@@ -99,6 +91,11 @@ namespace Intent.Modules.Java.Services.CRUD.Decorators.ImplementationStrategies
             }
 
             var @class = _template.JavaFile.Classes.First();
+            if (@class.Fields.All(p => p.Type != repositoryTypeName))
+            {
+                
+                @class.AddField(_template.ImportType(repositoryTypeName), repositoryFieldName);
+            }
             var method = @class.FindMethod(m => m.Name.Equals(operationModel.Name, StringComparison.OrdinalIgnoreCase));
             method.Statements.Clear();
             method.AddStatements(codeLines.ToList());

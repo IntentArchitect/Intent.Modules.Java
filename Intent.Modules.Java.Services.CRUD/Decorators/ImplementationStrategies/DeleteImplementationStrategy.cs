@@ -12,53 +12,53 @@ namespace Intent.Modules.Java.Services.CRUD.Decorators.ImplementationStrategies
 {
     public class DeleteImplementationStrategy : IImplementationStrategy
     {
+        private readonly ServiceImplementationTemplate _template;
+        private readonly IApplication _application;
+
         public DeleteImplementationStrategy(ServiceImplementationTemplate template, IApplication application)
         {
-            
+            _template = template;
+            _application = application;
         }
         
         public bool IsMatch(OperationModel operationModel)
         {
             return false;
+            // var lowerDomainName = domainModel.Name.ToLower();
+            // var lowerOperationName = operationModel.Name.ToLower();
+            // if (operationModel.Parameters.Count() != 1)
+            // {
+            //     return false;
+            // }
+            //
+            // if (!operationModel.Parameters.Any(p => string.Equals(p.Name, "id", StringComparison.InvariantCultureIgnoreCase) ||
+            //                                         string.Equals(p.Name, $"{lowerDomainName}Id", StringComparison.InvariantCultureIgnoreCase)))
+            // {
+            //     return false;
+            // }
+            //
+            // if (operationModel.TypeReference.Element != null)
+            // {
+            //     return false;
+            // }
+            //
+            // // Support for composite primary keys not implemented:
+            // if (domainModel.GetPrimaryKeys().PrimaryKeys.Count > 1)
+            // {
+            //     return false;
+            // }
+            //
+            // return new[]
+            //     {
+            //         "delete",
+            //         $"delete{lowerDomainName}"
+            //     }
+            //     .Contains(lowerOperationName);
         }
 
         public void ApplyStrategy(OperationModel operationModel)
         {
             throw new NotImplementedException();
-        }
-
-        public bool Match(ClassModel domainModel, OperationModel operationModel)
-        {
-            var lowerDomainName = domainModel.Name.ToLower();
-            var lowerOperationName = operationModel.Name.ToLower();
-            if (operationModel.Parameters.Count() != 1)
-            {
-                return false;
-            }
-
-            if (!operationModel.Parameters.Any(p => string.Equals(p.Name, "id", StringComparison.InvariantCultureIgnoreCase) ||
-                                                    string.Equals(p.Name, $"{lowerDomainName}Id", StringComparison.InvariantCultureIgnoreCase)))
-            {
-                return false;
-            }
-
-            if (operationModel.TypeReference.Element != null)
-            {
-                return false;
-            }
-
-            // Support for composite primary keys not implemented:
-            if (domainModel.GetPrimaryKeys().PrimaryKeys.Count > 1)
-            {
-                return false;
-            }
-
-            return new[]
-            {
-                "delete",
-                $"delete{lowerDomainName}"
-            }
-            .Contains(lowerOperationName);
         }
 
         // public string GetImplementation(ClassModel domainModel, OperationModel operationModel)
