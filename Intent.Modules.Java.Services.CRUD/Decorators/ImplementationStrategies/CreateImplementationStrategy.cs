@@ -104,32 +104,6 @@ namespace Intent.Modules.Java.Services.CRUD.Decorators.ImplementationStrategies
             method.AddStatements(codeLines.ToList());
         }
 
-        // public string GetImplementation(ClassModel domainModel, OperationModel operationModel)
-        // {
-        //     var domainType = _template.GetDomainTypeName(domainModel);
-        //     var domainTypeCamelCased = domainType.ToCamelCase();
-        //     var repositoryFieldName = _decorator.GetRepositoryDependency(domainModel).Name;
-        //
-        //     var statements = new List<string>
-        //     {
-        //         $"var {domainTypeCamelCased} = new {domainType}();"
-        //     };
-        //
-        //     statements.AddRange(GetPropertyAssignments(domainModel, operationModel.Parameters.Single(), domainTypeCamelCased));
-        //
-        //     statements.Add($"{repositoryFieldName}.save({domainTypeCamelCased});");
-        //
-        //     if (operationModel.TypeReference.Element != null)
-        //     {
-        //         var idField = domainModel.GetPrimaryKeys().PrimaryKeys.SingleOrDefault()?.Name.ToCamelCase() ?? "Id";
-        //
-        //         statements.Add($"return {domainTypeCamelCased}.get{idField}();");
-        //     }
-        //
-        //     return string.Join(@"
-        // ", statements);
-        // }
-
         private IEnumerable<JavaStatement> GetDTOPropertyAssignments(string entityVarName, string dtoVarName, IElement domainModel, IList<DTOFieldModel> dtoFields)
         {
             if (string.IsNullOrEmpty(entityVarName))
@@ -206,7 +180,9 @@ namespace Intent.Modules.Java.Services.CRUD.Decorators.ImplementationStrategies
                         var @class = _template.JavaFile.Classes.First();
                         @class.AddMethod(_template.GetTypeName(targetType),
                             GetCreateMethodName(targetType, attributeName),
-                            method => method.Private()
+                            method => method
+                                .Private()
+                                .Static()
                                 .AddParameter(_template.GetTypeName((IElement)field.TypeReference.Element), "dto")
                                 .AddStatement($"var {entityVarName} = new {targetType.Name.ToPascalCase()}();")
                                 .AddStatements(GetDTOPropertyAssignments(entityVarName, $"dto", targetType,
@@ -224,30 +200,5 @@ namespace Intent.Modules.Java.Services.CRUD.Decorators.ImplementationStrategies
         {
             return $"create{classModel.Name.ToPascalCase()}";
         }
-        
-        // private IEnumerable<string> GetPropertyAssignments(
-        //     ClassModel domainModel,
-        //     ParameterModel operationParameterModel,
-        //     string variableName)
-        // {
-        //     var dto = operationParameterModel.TypeReference.Element.AsDTOModel();
-        //     foreach (var dtoField in dto.Fields)
-        //     {
-        //         var domainAttribute = domainModel.Attributes.FirstOrDefault(p => p.Name.Equals(dtoField.Name, StringComparison.OrdinalIgnoreCase));
-        //         if (domainAttribute == null)
-        //         {
-        //             yield return $"// Warning: No matching field found for {dtoField.Name}";
-        //             continue;
-        //         }
-        //
-        //         if (domainAttribute.Type.Element.Id != dtoField.TypeReference.Element.Id)
-        //         {
-        //             yield return $"// Warning: No matching type for Domain: {domainAttribute.Name} and DTO: {dtoField.Name}";
-        //             continue;
-        //         }
-        //
-        //         yield return $"{variableName}.{domainAttribute.Setter()}({operationParameterModel.Name}.{dtoField.Getter()}());";
-        //     }
-        // }
     }
 }
