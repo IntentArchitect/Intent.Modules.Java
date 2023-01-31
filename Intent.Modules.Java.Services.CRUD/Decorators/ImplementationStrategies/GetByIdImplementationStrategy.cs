@@ -39,11 +39,6 @@ namespace Intent.Modules.Java.Services.CRUD.Decorators.ImplementationStrategies
                 return false;
             }
 
-            if (operationModel.TypeReference?.IsCollection != true)
-            {
-                return false;
-            }
-
             var dtoModel = operationModel.TypeReference.Element?.AsDTOModel();
             if (dtoModel == null)
             {

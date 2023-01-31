@@ -76,11 +76,11 @@ namespace Intent.Modules.Java.Services.CRUD.Decorators.ImplementationStrategies
             var domainTypeCamelCased = domainType.ToCamelCase();
             var repositoryTypeName = _template.GetTypeName(EntityRepositoryTemplate.TemplateId, domainModel);
             var repositoryFieldName = repositoryTypeName.ToCamelCase();
+            var dtoParam = operationModel.Parameters.First();
             
             var codeLines = new JavaStatementAggregator();
             codeLines.Add($@"var {domainTypeCamelCased} = new {domainType}();");
-            codeLines.AddRange(GetDTOPropertyAssignments(domainTypeCamelCased, "dto", domainModel.InternalElement, dtoModel.Fields));
-            
+            codeLines.AddRange(GetDTOPropertyAssignments(domainTypeCamelCased, dtoParam.Name.ToCamelCase(), domainModel.InternalElement, dtoModel.Fields));
             codeLines.Add($"{repositoryFieldName}.save({domainTypeCamelCased});");
             
             if (operationModel.TypeReference.Element != null)
@@ -154,11 +154,11 @@ namespace Intent.Modules.Java.Services.CRUD.Decorators.ImplementationStrategies
                             if (field.TypeReference.IsNullable)
                             {
                                 codeLines.Add(new JavaStatementBlock($"if ({dtoVarName}.get{field.Name.ToPascalCase()}() != null)")
-                                    .AddStatement($"{entityVarExpr}.set{attributeName.ToPascalCase()}({GetCreateMethodName(targetType, attributeName)}({dtoVarName}.get{field.Name.ToPascalCase()}));"));
+                                    .AddStatement($"{entityVarExpr}.set{attributeName.ToPascalCase()}({GetCreateMethodName(targetType)}({dtoVarName}.get{field.Name.ToPascalCase()}));"));
                             }
                             else
                             {
-                                codeLines.Add($"{entityVarExpr}.set{attributeName.ToPascalCase()}({GetCreateMethodName(targetType, attributeName)}({dtoVarName}.get{field.Name.ToPascalCase()}));");
+                                codeLines.Add($"{entityVarExpr}.set{attributeName.ToPascalCase()}({GetCreateMethodName(targetType)}({dtoVarName}.get{field.Name.ToPascalCase()}));");
                             }
                         }
                         else
@@ -166,17 +166,17 @@ namespace Intent.Modules.Java.Services.CRUD.Decorators.ImplementationStrategies
                             if (field.TypeReference.IsNullable)
                             {
                                 codeLines.Add(new JavaStatementBlock($"if ({dtoVarName}.get{field.Name.ToPascalCase()}() != null)")
-                                    .AddStatement($"{entityVarExpr}.set{attributeName.ToPascalCase()}(dto.get{field.Name.ToPascalCase()}().stream().map(x -> {GetCreateMethodName(targetType, attributeName)}(x)).collect(Collectors.toList()));"));
+                                    .AddStatement($"{entityVarExpr}.set{attributeName.ToPascalCase()}(dto.get{field.Name.ToPascalCase()}().stream().map(x -> {GetCreateMethodName(targetType)}(x)).collect(Collectors.toList()));"));
                             }
                             else
                             {
-                                codeLines.Add($"{entityVarExpr}.set{attributeName.ToPascalCase()}(dto.get{field.Name.ToPascalCase()}().stream().map(x -> {GetCreateMethodName(targetType, attributeName)}(x)).collect(Collectors.toList()));");
+                                codeLines.Add($"{entityVarExpr}.set{attributeName.ToPascalCase()}(dto.get{field.Name.ToPascalCase()}().stream().map(x -> {GetCreateMethodName(targetType)}(x)).collect(Collectors.toList()));");
                             }
                         }
 
                         var @class = _template.JavaFile.Classes.First();
                         @class.AddMethod(_template.GetTypeName(targetType),
-                            GetCreateMethodName(targetType, attributeName),
+                            GetCreateMethodName(targetType),
                             method => method
                                 .Private()
                                 .Static()
@@ -193,7 +193,7 @@ namespace Intent.Modules.Java.Services.CRUD.Decorators.ImplementationStrategies
             return codeLines;
         }
         
-        private string GetCreateMethodName(ICanBeReferencedType classModel, [CanBeNull] string attributeName)
+        private string GetCreateMethodName(ICanBeReferencedType classModel)
         {
             return $"create{classModel.Name.ToPascalCase()}";
         }
