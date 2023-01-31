@@ -318,6 +318,19 @@ namespace Intent.Modules.Java.Persistence.JPA.Decorators
                 columnSettings.Add("nullable = false");
             }
 
+            if (model.HasForeignKey() &&
+                model.InternalElement.Metadata.TryGetValue("association", out var associationId))
+            {
+                var association = model.Class.AssociatedClasses.Single(x => x.Association.Id == associationId).Association;
+
+                if (association.TargetEnd.Association.Equals(association) &&
+                    association.SourceEnd.Association.IsOneToMany())
+                {
+                    columnSettings.Add("insertable = false");
+                    columnSettings.Add("updatable = false");
+                }
+            }
+
             annotations.Add($@"@{_template.ImportType("javax.persistence.Column")}({string.Join(", ", columnSettings)})");
 
             const string newLine = @"
@@ -341,8 +354,8 @@ namespace Intent.Modules.Java.Persistence.JPA.Decorators
                 throw new InvalidOperationException("Cannot call this method if associationEnd is not navigable.");
             }
             var annotations = new List<string>();
-            var sourceEnd = thatEnd.OtherEnd();
-            if (!sourceEnd.IsCollection && !thatEnd.IsCollection) // one-to-one
+            var otherEnd = thatEnd.OtherEnd();
+            if (!otherEnd.IsCollection && !thatEnd.IsCollection) // one-to-one
             {
                 var settings = new List<string>
                 {
@@ -354,7 +367,7 @@ namespace Intent.Modules.Java.Persistence.JPA.Decorators
                     settings.Add($"cascade = {{ {_template.ImportType("javax.persistence.CascadeType")}.ALL }}");
                 }
 
-                if (sourceEnd.IsNullable)
+                if (otherEnd.IsNullable)
                 {
                     settings.Add("orphanRemoval = true");
                 }
@@ -370,23 +383,23 @@ namespace Intent.Modules.Java.Persistence.JPA.Decorators
                     annotations.Add($"@{_template.ImportType("javax.persistence.JoinColumn")}(name=\"{thatEnd.Name.ToSnakeCase()}_id\", nullable = {thatEnd.IsNullable.ToString().ToLower()})");
                 }
             }
-            else if (!sourceEnd.IsCollection && thatEnd.IsCollection) // one-to-many
+            else if (!otherEnd.IsCollection && thatEnd.IsCollection) // one-to-many
             {
                 var settings = new List<string>();
 
                 if (IsCompositeOwner(thatEnd))
                 {
                     settings.Add($"cascade = {{ {_template.ImportType("javax.persistence.CascadeType")}.ALL }}");
+
+                    if (!otherEnd.IsNullable)
+                    {
+                        settings.Add("orphanRemoval = true");
+                    }
                 }
 
-                if (sourceEnd.IsNavigable)
+                if (otherEnd.IsNavigable)
                 {
-                    settings.Add($"mappedBy=\"{sourceEnd.Name.ToCamelCase()}\"");
-                }
-
-                if (!sourceEnd.IsNullable)
-                {
-                    settings.Add("orphanRemoval = true");
+                    settings.Add($"mappedBy=\"{otherEnd.Name.ToCamelCase()}\"");
                 }
 
                 if (!string.IsNullOrWhiteSpace(fetchType))
@@ -395,9 +408,13 @@ namespace Intent.Modules.Java.Persistence.JPA.Decorators
                 }
 
                 annotations.Add($"@{_template.ImportType("javax.persistence.OneToMany")}({string.Join(", ", settings)})");
-                annotations.Add($"@{_template.ImportType("javax.persistence.JoinColumn")}(name = \"{sourceEnd.Name.ToSnakeCase()}_id\")");
+
+                if (!otherEnd.IsNavigable)
+                {
+                    annotations.Add($"@{_template.ImportType("javax.persistence.JoinColumn")}(name = \"{otherEnd.Name.ToSnakeCase()}_id\", nullable = false)");
+                }
             }
-            else if (sourceEnd.IsCollection && !thatEnd.IsCollection) // many-to-one
+            else if (otherEnd.IsCollection && !thatEnd.IsCollection) // many-to-one
             {
                 var joinColumnParams = new List<string>();
                 var manyToOneSettings = new List<string>
@@ -430,7 +447,7 @@ namespace Intent.Modules.Java.Persistence.JPA.Decorators
                 annotations.Add($"@{_template.ImportType("javax.persistence.ManyToOne")}({string.Join(", ", manyToOneSettings)})");
                 annotations.Add($"@{_template.ImportType("javax.persistence.JoinColumn")}({string.Join(", ", joinColumnParams)})");
             }
-            else if (sourceEnd.IsCollection && thatEnd.IsCollection) // many-to-many
+            else if (otherEnd.IsCollection && thatEnd.IsCollection) // many-to-many
             {
                 var settings = new List<string>();
 
@@ -442,12 +459,12 @@ namespace Intent.Modules.Java.Persistence.JPA.Decorators
                 annotations.Add($"@{_template.ImportType($"javax.persistence.ManyToMany")}({string.Join(", ", settings)})");
                 if (thatEnd.IsTargetEnd())
                 {
-                    var sourceEndName = sourceEnd.Element.Name;
+                    var sourceEndName = otherEnd.Element.Name;
                     var thatEndName = ApplyTableNameConvention(thatEnd.Element.Name);
 
                     annotations.Add($@"@{_template.ImportType("javax.persistence.JoinTable")}(
             name = ""{sourceEndName.ToSnakeCase()}_{thatEndName.ToSnakeCase()}"",
-            joinColumns = {{ @{_template.ImportType("javax.persistence.JoinColumn")}(name = ""{sourceEnd.Element.Name.ToSnakeCase()}_id"") }},
+            joinColumns = {{ @{_template.ImportType("javax.persistence.JoinColumn")}(name = ""{otherEnd.Element.Name.ToSnakeCase()}_id"") }},
             inverseJoinColumns = {{ @{_template.ImportType("javax.persistence.JoinColumn")}(name = ""{thatEnd.Element.Name.ToSnakeCase()}_id"") }}
     )");
                 }

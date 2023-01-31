@@ -115,14 +115,19 @@ namespace Intent.Modules.Java.Domain.Templates.DomainModel
             }
         }
 
-        private IEnumerable<string> GetAnnotations(AssociationEndModel associationEnd)
+        private IEnumerable<string> GetAnnotations(AssociationEndModel thatEnd)
         {
-            if (!associationEnd.TypeReference.IsNullable)
+            var otherEnd = thatEnd.OtherEnd();
+            var isManyToOne = otherEnd.IsCollection && !thatEnd.IsCollection;
+            var hasAggregationForeignKey = Model.Attributes.Any(p => p.Name.Equals((thatEnd.Name + "Id").Replace("_", ""), StringComparison.OrdinalIgnoreCase));
+
+            if (!thatEnd.TypeReference.IsNullable &&
+                !(isManyToOne && hasAggregationForeignKey))
             {
                 yield return $"@{ImportType("javax.validation.constraints.NotNull")}";
             }
 
-            foreach (var annotation in GetDecorators().Select(x => x.FieldAnnotations(associationEnd)))
+            foreach (var annotation in GetDecorators().Select(x => x.FieldAnnotations(thatEnd)))
             {
                 yield return annotation.Trim();
             }
