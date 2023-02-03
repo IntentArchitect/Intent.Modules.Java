@@ -28,7 +28,7 @@ namespace Intent.Modules.Java.Services.CRUD.Decorators.ImplementationStrategies
         
         public bool IsMatch(OperationModel operationModel)
         {
-            if (operationModel.Parameters.Count != 0)
+            if (operationModel.Parameters.Count != 1)
             {
                 return false;
             }
@@ -57,7 +57,7 @@ namespace Intent.Modules.Java.Services.CRUD.Decorators.ImplementationStrategies
             }
             
             var lowerOperationName = operationModel.Name.ToLower();
-            return new[] { "delete", domainModel.Name }.Any(x => lowerOperationName.Contains(x));
+            return new[] { "delete" }.Any(x => lowerOperationName.Contains(x));
         }
 
         public void ApplyStrategy(OperationModel operationModel)
@@ -80,9 +80,9 @@ namespace Intent.Modules.Java.Services.CRUD.Decorators.ImplementationStrategies
             codeLines.Add($@"if (!{domainTypeCamelCased}.isPresent()) {{");
             codeLines.Add($@"   return null;");
             codeLines.Add($@"}}");
-            codeLines.Add($@"var found{domainTypePascalCased} = {dtoType}.mapFrom{domainTypePascalCased}({domainTypeCamelCased}.get(), mapper);");
+            codeLines.Add($@"var deleted{domainTypePascalCased} = {dtoType}.mapFrom{domainTypePascalCased}({domainTypeCamelCased}.get(), mapper);");
             codeLines.Add($@"{repositoryFieldName}.delete({domainTypeCamelCased});");
-            codeLines.Add($@"return found{domainTypePascalCased};");
+            codeLines.Add($@"return deleted{domainTypePascalCased};");
             
             var @class = _template.JavaFile.Classes.First();
             if (@class.Fields.All(p => p.Type != repositoryTypeName))

@@ -29,7 +29,7 @@ namespace Intent.Modules.Java.Services.CRUD.Decorators.ImplementationStrategies
         
         public bool IsMatch(OperationModel operationModel)
         {
-            if (operationModel.Parameters.Count != 0)
+            if (operationModel.Parameters.Count != 1)
             {
                 return false;
             }

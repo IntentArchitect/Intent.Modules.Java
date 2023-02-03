@@ -45,7 +45,7 @@ namespace Intent.Modules.Java.Services.CRUD.Decorators.ImplementationStrategies
                 return false;
             }
 
-            var dtoModel = operationModel.Parameters.First().TypeReference.Element.AsDTOModel();
+            var dtoModel = operationModel.Parameters.FirstOrDefault(x => x.TypeReference?.Element?.IsDTOModel() == true)?.TypeReference?.Element?.AsDTOModel();
             if (dtoModel == null)
             {
                 return false;
@@ -69,7 +69,7 @@ namespace Intent.Modules.Java.Services.CRUD.Decorators.ImplementationStrategies
 
         public void ApplyStrategy(OperationModel operationModel)
         {
-            var dtoModel = operationModel.Parameters.First().TypeReference.Element.AsDTOModel();
+            var dtoModel = operationModel.Parameters.FirstOrDefault(x => x.TypeReference.Element.IsDTOModel()).TypeReference.Element.AsDTOModel();
             var domainModel = dtoModel.Mapping.Element.AsClassModel();
             var domainType = _template.TryGetTypeName(DomainModelTemplate.TemplateId, domainModel, out var result)
                 ? result
