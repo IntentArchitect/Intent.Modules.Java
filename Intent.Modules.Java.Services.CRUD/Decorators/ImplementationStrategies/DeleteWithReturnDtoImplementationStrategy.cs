@@ -15,12 +15,12 @@ using OperationModel = Intent.Modelers.Services.Api.OperationModel;
 
 namespace Intent.Modules.Java.Services.CRUD.Decorators.ImplementationStrategies
 {
-    public class DeleteImplementationStrategy : IImplementationStrategy
+    public class DeleteWithReturnDtoImplementationStrategy : IImplementationStrategy
     {
         private readonly ServiceImplementationTemplate _template;
         private readonly IApplication _application;
 
-        public DeleteImplementationStrategy(ServiceImplementationTemplate template, IApplication application)
+        public DeleteWithReturnDtoImplementationStrategy(ServiceImplementationTemplate template, IApplication application)
         {
             _template = template;
             _application = application;
@@ -82,7 +82,7 @@ namespace Intent.Modules.Java.Services.CRUD.Decorators.ImplementationStrategies
             codeLines.Add($@"}}");
             codeLines.Add($@"var deleted{domainTypePascalCased} = {dtoType}.mapFrom{domainTypePascalCased}({domainTypeCamelCased}.get(), mapper);");
             codeLines.Add($@"{repositoryFieldName}.delete({domainTypeCamelCased});");
-            codeLines.Add($@"return deleted{domainTypePascalCased};");
+            codeLines.Add($@"return found{domainTypePascalCased};");
             
             var @class = _template.JavaFile.Classes.First();
             if (@class.Fields.All(p => p.Type != repositoryTypeName))

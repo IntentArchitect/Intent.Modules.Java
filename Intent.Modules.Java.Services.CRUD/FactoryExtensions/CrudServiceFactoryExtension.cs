@@ -44,7 +44,8 @@ namespace Intent.Modules.Java.Services.CRUD.FactoryExtensions
                     new GetByIdImplementationStrategy(template, application),
                     new CreateImplementationStrategy(template, application),
                     new UpdateImplementationStrategy(template, application),
-                    new DeleteImplementationStrategy(template, application)
+                    new DeleteWithReturnDtoImplementationStrategy(template, application),
+                    new LegacyDeleteImplementationStrategy(template, application)
                 };
 
                 foreach (var operation in template.Model.Operations)
