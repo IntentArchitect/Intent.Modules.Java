@@ -85,12 +85,14 @@ namespace Intent.Modules.Java.Services.CRUD.Decorators.ImplementationStrategies
             codeLines.AddRange(GetDTOPropertyAssignments(domainTypeCamelCased, dtoParam.Name.ToCamelCase(), domainModel.InternalElement, dtoModel.Fields));
             codeLines.Add($"{repositoryFieldName}.save({domainTypeCamelCased});");
 
+            _template.JavaFile.AddImport("java.util.stream.Collectors");
             var @class = _template.JavaFile.Classes.First();
             if (@class.Fields.All(p => p.Type != repositoryTypeName))
             {
                 @class.AddField(_template.ImportType(repositoryTypeName), repositoryFieldName);
             }
             var method = @class.FindMethod(m => m.Name.Equals(operationModel.Name, StringComparison.OrdinalIgnoreCase));
+            method.Annotations.Where(p => p.Name.Contains("IntentIgnoreBody")).ToList().ForEach(x => method.Annotations.Remove(x));
             method.Statements.Clear();
             method.AddStatements(codeLines.ToList());
         }
@@ -125,7 +127,7 @@ namespace Intent.Modules.Java.Services.CRUD.Decorators.ImplementationStrategies
                                         ?? domainModel.ChildElements.First(p => p.Name == field.Name);
                         if (!attribute.Name.Equals("Id", StringComparison.OrdinalIgnoreCase))
                         {
-                            codeLines.Add($"{entityVarExpr}.set{attribute.Name.ToPascalCase()}({dtoVarName}.{field.Name.ToCamelCase()});");
+                            codeLines.Add($"{entityVarExpr}.set{attribute.Name.ToPascalCase()}({dtoVarName}.get{field.Name.ToPascalCase()}());");
                             break;
                         }
 
@@ -148,37 +150,67 @@ namespace Intent.Modules.Java.Services.CRUD.Decorators.ImplementationStrategies
                             if (field.TypeReference.IsNullable)
                             {
                                 codeLines.Add(new JavaStatementBlock($"if ({dtoVarName}.get{field.Name.ToPascalCase()}() != null)")
-                                    .AddStatement($"{entityVarExpr}.set{attributeName.ToPascalCase()}({GetUpdateMethodName(targetType)}({dtoVarName}.get{field.Name.ToPascalCase()}));"));
+                                    .AddStatement($"{GetUpdateMethodName(targetType)}({entityVarExpr}.get{attributeName.ToPascalCase()}(), {dtoVarName}.get{field.Name.ToPascalCase()}());"));
                             }
                             else
                             {
-                                codeLines.Add($"{entityVarExpr}.set{attributeName.ToPascalCase()}({GetUpdateMethodName(targetType)}({dtoVarName}.get{field.Name.ToPascalCase()}));");
+                                codeLines.Add($"{GetUpdateMethodName(targetType)}({entityVarExpr}.get{attributeName.ToPascalCase()}(), {dtoVarName}.get{field.Name.ToPascalCase()}());");
                             }
+                            
+                            var @class = _template.JavaFile.Classes.First();
+                            @class.AddMethod("void",
+                                GetUpdateMethodName(targetType),
+                                method => method
+                                    .Private()
+                                    .Static()
+                                    .AddParameter(targetType.Name.ToPascalCase(), "entity")
+                                    .AddParameter(_template.GetTypeName((IElement)field.TypeReference.Element), "dto")
+                                    .AddStatements(GetDTOPropertyAssignments("entity", $"dto", targetType,
+                                        ((IElement)field.TypeReference.Element).ChildElements.Where(x => x.IsDTOFieldModel()).Select(x => x.AsDTOFieldModel()).ToList())));
                         }
                         else
                         {
                             if (field.TypeReference.IsNullable)
                             {
                                 codeLines.Add(new JavaStatementBlock($"if ({dtoVarName}.get{field.Name.ToPascalCase()}() != null)")
-                                    .AddStatement($"{entityVarExpr}.set{attributeName.ToPascalCase()}(dto.get{field.Name.ToPascalCase()}().stream().map(x -> {GetUpdateMethodName(targetType)}(x)).collect(Collectors.toList()));"));
+                                    .AddStatement($"{GetUpdateListMethodName(targetType)}({entityVarExpr}.get{attributeName.ToPascalCase()}(), {dtoVarName}.get{field.Name.ToPascalCase()}());"));
                             }
                             else
                             {
-                                codeLines.Add($"{entityVarExpr}.set{attributeName.ToPascalCase()}(dto.get{field.Name.ToPascalCase()}().stream().map(x -> {GetUpdateMethodName(targetType)}(x)).collect(Collectors.toList()));");
+                                codeLines.Add($"{GetUpdateListMethodName(targetType)}({entityVarExpr}.get{attributeName.ToPascalCase()}(), {dtoVarName}.get{field.Name.ToPascalCase()}());");
                             }
+                            
+                            var @class = _template.JavaFile.Classes.First();
+                            @class.AddMethod("void",
+                                GetUpdateListMethodName(targetType),
+                                method => method
+                                    .Private()
+                                    .Static()
+                                    .AddParameter($"List<{targetType.Name.ToPascalCase()}>", "existingList")
+                                    .AddParameter($"List<{_template.GetTypeName((IElement)field.TypeReference.Element)}>", "updatedList")
+                                    .AddStatement($"var updatedEntityMap = updatedList.stream().collect(Collectors.toMap({_template.GetTypeName((IElement)field.TypeReference.Element)}::getId, Function.identity()));")
+                                    .AddStatement(new JavaStatementBlock($"for ({targetType.Name.ToPascalCase()} existingEntity : existingList.stream().toList())")
+                                        .AddStatement($"var updatedEntity = updatedEntityMap.get(existingEntity.getId());")
+                                        .AddStatement(new JavaStatementBlock($"if (updatedEntity != null)")
+                                            .AddStatements(GetDTOPropertyAssignments("existingEntity", $"updatedEntity", targetType,
+                                                ((IElement)field.TypeReference.Element).ChildElements.Where(x => x.IsDTOFieldModel()).Select(x => x.AsDTOFieldModel()).ToList()))
+                                            .AddStatement($"updatedEntityMap.remove(existingEntity.getId());"))
+                                        .AddStatement(new JavaStatementBlock("else")
+                                            .AddStatement($"existingList.remove(existingEntity);")))
+                                    .AddStatement(new JavaStatementBlock($"for (var newEntity : updatedEntityMap.values())")
+                                        .AddStatement($"existingList.add({GetCreateMethodName(targetType)}(newEntity));")));
+                            
+                            @class.AddMethod(_template.GetTypeName(targetType),
+                                GetCreateMethodName(targetType),
+                                method => method
+                                    .Private()
+                                    .Static()
+                                    .AddParameter(_template.GetTypeName((IElement)field.TypeReference.Element), "dto")
+                                    .AddStatement($"var entity = new {targetType.Name.ToPascalCase()}();")
+                                    .AddStatements(GetDTOPropertyAssignments("entity", $"dto", targetType,
+                                        ((IElement)field.TypeReference.Element).ChildElements.Where(x => x.IsDTOFieldModel()).Select(x => x.AsDTOFieldModel()).ToList()))
+                                    .AddStatement($"return entity;"));
                         }
-
-                        var @class = _template.JavaFile.Classes.First();
-                        @class.AddMethod(_template.GetTypeName(targetType),
-                            GetUpdateMethodName(targetType),
-                            method => method
-                                .Private()
-                                .Static()
-                                .AddParameter(_template.GetTypeName((IElement)field.TypeReference.Element), "dto")
-                                .AddStatement($"var {entityVarName} = new {targetType.Name.ToPascalCase()}();")
-                                .AddStatements(GetDTOPropertyAssignments(entityVarName, $"dto", targetType,
-                                    ((IElement)field.TypeReference.Element).ChildElements.Where(x => x.IsDTOFieldModel()).Select(x => x.AsDTOFieldModel()).ToList()))
-                                .AddStatement($"return {entityVarName};"));
                     }
                         break;
                 }
@@ -187,9 +219,19 @@ namespace Intent.Modules.Java.Services.CRUD.Decorators.ImplementationStrategies
             return codeLines;
         }
         
+        private string GetCreateMethodName(ICanBeReferencedType classModel)
+        {
+            return $"create{classModel.Name.ToPascalCase()}";
+        }
+        
         private string GetUpdateMethodName(ICanBeReferencedType classModel)
         {
             return $"update{classModel.Name.ToPascalCase()}";
+        }
+        
+        private string GetUpdateListMethodName(ICanBeReferencedType classModel)
+        {
+            return $"update{classModel.Name.ToPascalCase().Pluralize()}";
         }
     }
 }

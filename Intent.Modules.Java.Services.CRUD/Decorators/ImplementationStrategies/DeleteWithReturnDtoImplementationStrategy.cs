@@ -80,20 +80,21 @@ namespace Intent.Modules.Java.Services.CRUD.Decorators.ImplementationStrategies
             codeLines.Add($@"if (!{domainTypeCamelCased}.isPresent()) {{");
             codeLines.Add($@"   return null;");
             codeLines.Add($@"}}");
-            codeLines.Add($@"var deleted{domainTypePascalCased} = {dtoType}.mapFrom{domainTypePascalCased}({domainTypeCamelCased}.get(), mapper);");
-            codeLines.Add($@"{repositoryFieldName}.delete({domainTypeCamelCased});");
-            codeLines.Add($@"return found{domainTypePascalCased};");
+            codeLines.Add($@"var {domainTypeCamelCased}Dto = {dtoType}.mapFrom{domainTypePascalCased}({domainTypeCamelCased}.get(), mapper);");
+            codeLines.Add($@"{repositoryFieldName}.delete({domainTypeCamelCased}.get());");
+            codeLines.Add($@"return {domainTypeCamelCased}Dto;");
             
             var @class = _template.JavaFile.Classes.First();
             if (@class.Fields.All(p => p.Type != repositoryTypeName))
             {
                 @class.AddField(_template.ImportType(repositoryTypeName), repositoryFieldName);
             }
-            if (@class.Fields.All(p => p.Type != "org.modelmapper.ModelMapper"))
+            if (@class.Fields.All(p => p.Type != "ModelMapper"))
             {
                 @class.AddField(_template.ImportType("org.modelmapper.ModelMapper"), "mapper");
             }
             var method = @class.FindMethod(m => m.Name.Equals(operationModel.Name, StringComparison.OrdinalIgnoreCase));
+            method.Annotations.Where(p => p.Name.Contains("IntentIgnoreBody")).ToList().ForEach(x => method.Annotations.Remove(x));
             method.Statements.Clear();
             method.AddStatements(codeLines.ToList());
         }

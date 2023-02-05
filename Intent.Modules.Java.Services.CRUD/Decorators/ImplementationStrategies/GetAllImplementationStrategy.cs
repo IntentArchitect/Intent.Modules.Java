@@ -77,11 +77,12 @@ namespace Intent.Modules.Java.Services.CRUD.Decorators.ImplementationStrategies
             {
                 @class.AddField(_template.ImportType(repositoryTypeName), repositoryFieldName);
             }
-            if (@class.Fields.All(p => p.Type != "org.modelmapper.ModelMapper"))
+            if (@class.Fields.All(p => p.Type != "ModelMapper"))
             {
                 @class.AddField(_template.ImportType("org.modelmapper.ModelMapper"), "mapper");
             }
             var method = @class.FindMethod(m => m.Name.Equals(operationModel.Name, StringComparison.OrdinalIgnoreCase));
+            method.Annotations.Where(p => p.Name.Contains("IntentIgnoreBody")).ToList().ForEach(x => method.Annotations.Remove(x));
             method.Statements.Clear();
             method.AddStatements(codeLines.ToList());
         }

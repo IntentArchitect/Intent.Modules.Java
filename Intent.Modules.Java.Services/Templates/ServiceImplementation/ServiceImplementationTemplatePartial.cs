@@ -35,6 +35,7 @@ namespace Intent.Modules.Java.Services.Templates.ServiceImplementation
             AddTypeSource(ExceptionTypeTemplate.TemplateId);
             AddTypeSource("Domain.Enum");
             AddTypeSource(EnumTemplate.TemplateId);
+            AddTypeSource("Domain.Entity");
 
             JavaFile = new JavaFile(this.GetPackage(), this.GetFolderPath())
                 .AddClass($"{Model.Name.RemoveSuffix("Controller", "Service")}ServiceImpl", c => c

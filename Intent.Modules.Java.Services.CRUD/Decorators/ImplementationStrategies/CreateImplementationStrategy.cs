@@ -90,13 +90,14 @@ namespace Intent.Modules.Java.Services.CRUD.Decorators.ImplementationStrategies
                 codeLines.Add($"return {domainTypeCamelCased}.get{idField.ToPascalCase()}();");
             }
 
+            _template.JavaFile.AddImport("java.util.stream.Collectors");
             var @class = _template.JavaFile.Classes.First();
             if (@class.Fields.All(p => p.Type != repositoryTypeName))
             {
-                
                 @class.AddField(_template.ImportType(repositoryTypeName), repositoryFieldName);
             }
             var method = @class.FindMethod(m => m.Name.Equals(operationModel.Name, StringComparison.OrdinalIgnoreCase));
+            method.Annotations.Where(p => p.Name.Contains("IntentIgnoreBody")).ToList().ForEach(x => method.Annotations.Remove(x));
             method.Statements.Clear();
             method.AddStatements(codeLines.ToList());
         }
@@ -131,7 +132,7 @@ namespace Intent.Modules.Java.Services.CRUD.Decorators.ImplementationStrategies
                                         ?? domainModel.ChildElements.First(p => p.Name == field.Name);
                         if (!attribute.Name.Equals("Id", StringComparison.OrdinalIgnoreCase))
                         {
-                            codeLines.Add($"{entityVarExpr}.set{attribute.Name.ToPascalCase()}({dtoVarName}.{field.Name.ToCamelCase()});");
+                            codeLines.Add($"{entityVarExpr}.set{attribute.Name.ToPascalCase()}({dtoVarName}.get{field.Name.ToPascalCase()}());");
                             break;
                         }
 
@@ -154,11 +155,11 @@ namespace Intent.Modules.Java.Services.CRUD.Decorators.ImplementationStrategies
                             if (field.TypeReference.IsNullable)
                             {
                                 codeLines.Add(new JavaStatementBlock($"if ({dtoVarName}.get{field.Name.ToPascalCase()}() != null)")
-                                    .AddStatement($"{entityVarExpr}.set{attributeName.ToPascalCase()}({GetCreateMethodName(targetType)}({dtoVarName}.get{field.Name.ToPascalCase()}));"));
+                                    .AddStatement($"{entityVarExpr}.set{attributeName.ToPascalCase()}({GetCreateMethodName(targetType)}({dtoVarName}.get{field.Name.ToPascalCase()}()));"));
                             }
                             else
                             {
-                                codeLines.Add($"{entityVarExpr}.set{attributeName.ToPascalCase()}({GetCreateMethodName(targetType)}({dtoVarName}.get{field.Name.ToPascalCase()}));");
+                                codeLines.Add($"{entityVarExpr}.set{attributeName.ToPascalCase()}({GetCreateMethodName(targetType)}({dtoVarName}.get{field.Name.ToPascalCase()}()));");
                             }
                         }
                         else
@@ -181,10 +182,10 @@ namespace Intent.Modules.Java.Services.CRUD.Decorators.ImplementationStrategies
                                 .Private()
                                 .Static()
                                 .AddParameter(_template.GetTypeName((IElement)field.TypeReference.Element), "dto")
-                                .AddStatement($"var {entityVarName} = new {targetType.Name.ToPascalCase()}();")
-                                .AddStatements(GetDTOPropertyAssignments(entityVarName, $"dto", targetType,
+                                .AddStatement($"var entity = new {targetType.Name.ToPascalCase()}();")
+                                .AddStatements(GetDTOPropertyAssignments("entity", $"dto", targetType,
                                     ((IElement)field.TypeReference.Element).ChildElements.Where(x => x.IsDTOFieldModel()).Select(x => x.AsDTOFieldModel()).ToList()))
-                                .AddStatement($"return {entityVarName};"));
+                                .AddStatement($"return entity;"));
                     }
                         break;
                 }
