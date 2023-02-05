@@ -86,6 +86,7 @@ namespace Intent.Modules.Java.Services.CRUD.Decorators.ImplementationStrategies
             codeLines.Add($"{repositoryFieldName}.save({domainTypeCamelCased});");
 
             _template.JavaFile.AddImport("java.util.stream.Collectors");
+            _template.JavaFile.AddImport("java.util.function.Function");
             var @class = _template.JavaFile.Classes.First();
             if (@class.Fields.All(p => p.Type != repositoryTypeName))
             {
@@ -158,15 +159,18 @@ namespace Intent.Modules.Java.Services.CRUD.Decorators.ImplementationStrategies
                             }
                             
                             var @class = _template.JavaFile.Classes.First();
-                            @class.AddMethod("void",
-                                GetUpdateMethodName(targetType),
-                                method => method
-                                    .Private()
-                                    .Static()
-                                    .AddParameter(targetType.Name.ToPascalCase(), "entity")
-                                    .AddParameter(_template.GetTypeName((IElement)field.TypeReference.Element), "dto")
-                                    .AddStatements(GetDTOPropertyAssignments("entity", $"dto", targetType,
-                                        ((IElement)field.TypeReference.Element).ChildElements.Where(x => x.IsDTOFieldModel()).Select(x => x.AsDTOFieldModel()).ToList())));
+                            if (@class.FindMethod(GetUpdateMethodName(targetType)) == null)
+                            {
+                                @class.AddMethod("void",
+                                    GetUpdateMethodName(targetType),
+                                    method => method
+                                        .Private()
+                                        .Static()
+                                        .AddParameter(targetType.Name.ToPascalCase(), "entity")
+                                        .AddParameter(_template.GetTypeName((IElement)field.TypeReference.Element), "dto")
+                                        .AddStatements(GetDTOPropertyAssignments("entity", $"dto", targetType,
+                                            ((IElement)field.TypeReference.Element).ChildElements.Where(x => x.IsDTOFieldModel()).Select(x => x.AsDTOFieldModel()).ToList())));                                
+                            }
                         }
                         else
                         {
@@ -181,35 +185,42 @@ namespace Intent.Modules.Java.Services.CRUD.Decorators.ImplementationStrategies
                             }
                             
                             var @class = _template.JavaFile.Classes.First();
-                            @class.AddMethod("void",
-                                GetUpdateListMethodName(targetType),
-                                method => method
-                                    .Private()
-                                    .Static()
-                                    .AddParameter($"List<{targetType.Name.ToPascalCase()}>", "existingList")
-                                    .AddParameter($"List<{_template.GetTypeName((IElement)field.TypeReference.Element)}>", "updatedList")
-                                    .AddStatement($"var updatedEntityMap = updatedList.stream().collect(Collectors.toMap({_template.GetTypeName((IElement)field.TypeReference.Element)}::getId, Function.identity()));")
-                                    .AddStatement(new JavaStatementBlock($"for ({targetType.Name.ToPascalCase()} existingEntity : existingList.stream().toList())")
-                                        .AddStatement($"var updatedEntity = updatedEntityMap.get(existingEntity.getId());")
-                                        .AddStatement(new JavaStatementBlock($"if (updatedEntity != null)")
-                                            .AddStatements(GetDTOPropertyAssignments("existingEntity", $"updatedEntity", targetType,
-                                                ((IElement)field.TypeReference.Element).ChildElements.Where(x => x.IsDTOFieldModel()).Select(x => x.AsDTOFieldModel()).ToList()))
-                                            .AddStatement($"updatedEntityMap.remove(existingEntity.getId());"))
-                                        .AddStatement(new JavaStatementBlock("else")
-                                            .AddStatement($"existingList.remove(existingEntity);")))
-                                    .AddStatement(new JavaStatementBlock($"for (var newEntity : updatedEntityMap.values())")
-                                        .AddStatement($"existingList.add({GetCreateMethodName(targetType)}(newEntity));")));
-                            
-                            @class.AddMethod(_template.GetTypeName(targetType),
-                                GetCreateMethodName(targetType),
-                                method => method
-                                    .Private()
-                                    .Static()
-                                    .AddParameter(_template.GetTypeName((IElement)field.TypeReference.Element), "dto")
-                                    .AddStatement($"var entity = new {targetType.Name.ToPascalCase()}();")
-                                    .AddStatements(GetDTOPropertyAssignments("entity", $"dto", targetType,
-                                        ((IElement)field.TypeReference.Element).ChildElements.Where(x => x.IsDTOFieldModel()).Select(x => x.AsDTOFieldModel()).ToList()))
-                                    .AddStatement($"return entity;"));
+                            if (@class.FindMethod(GetUpdateListMethodName(targetType)) == null)
+                            {
+                                @class.AddMethod("void",
+                                    GetUpdateListMethodName(targetType),
+                                    method => method
+                                        .Private()
+                                        .Static()
+                                        .AddParameter($"List<{targetType.Name.ToPascalCase()}>", "existingList")
+                                        .AddParameter($"List<{_template.GetTypeName((IElement)field.TypeReference.Element)}>", "updatedList")
+                                        .AddStatement($"var updatedEntityMap = updatedList.stream().collect(Collectors.toMap({_template.GetTypeName((IElement)field.TypeReference.Element)}::getId, Function.identity()));")
+                                        .AddStatement(new JavaStatementBlock($"for ({targetType.Name.ToPascalCase()} existingEntity : existingList.stream().toList())")
+                                            .AddStatement($"var updatedEntity = updatedEntityMap.get(existingEntity.getId());")
+                                            .AddStatement(new JavaStatementBlock($"if (updatedEntity != null)")
+                                                .AddStatements(GetDTOPropertyAssignments("existingEntity", $"updatedEntity", targetType,
+                                                    ((IElement)field.TypeReference.Element).ChildElements.Where(x => x.IsDTOFieldModel()).Select(x => x.AsDTOFieldModel()).ToList()))
+                                                .AddStatement($"updatedEntityMap.remove(existingEntity.getId());"))
+                                            .AddStatement(new JavaStatementBlock("else")
+                                                .AddStatement($"existingList.remove(existingEntity);")))
+                                        .AddStatement(new JavaStatementBlock($"for (var newEntity : updatedEntityMap.values())")
+                                            .AddStatement($"existingList.add({GetCreateMethodName(targetType)}(newEntity));")));   
+                            }
+
+                            if (@class.FindMethod(x => x.Name == GetCreateMethodName(targetType) && 
+                                                       x.Parameters.First().Type == _template.GetTypeName((IElement)field.TypeReference.Element)) == null)
+                            {
+                                @class.AddMethod(_template.GetTypeName(targetType),
+                                    GetCreateMethodName(targetType),
+                                    method => method
+                                        .Private()
+                                        .Static()
+                                        .AddParameter(_template.GetTypeName((IElement)field.TypeReference.Element), "dto")
+                                        .AddStatement($"var entity = new {targetType.Name.ToPascalCase()}();")
+                                        .AddStatements(GetDTOPropertyAssignments("entity", $"dto", targetType,
+                                            ((IElement)field.TypeReference.Element).ChildElements.Where(x => x.IsDTOFieldModel()).Select(x => x.AsDTOFieldModel()).ToList()))
+                                        .AddStatement($"return entity;"));
+                            }
                         }
                     }
                         break;
