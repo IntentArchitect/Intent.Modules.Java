@@ -102,7 +102,7 @@ namespace Intent.Modules.Java.Services.CRUD.Decorators.ImplementationStrategies
             method.AddStatements(codeLines.ToList());
         }
 
-        private IEnumerable<JavaStatement> GetDTOPropertyAssignments(string entityVarName, string dtoVarName, IElement domainModel, IList<DTOFieldModel> dtoFields)
+        internal IEnumerable<JavaStatement> GetDTOPropertyAssignments(string entityVarName, string dtoVarName, IElement domainModel, IList<DTOFieldModel> dtoFields)
         {
             if (string.IsNullOrEmpty(entityVarName))
             {
@@ -152,15 +152,7 @@ namespace Intent.Modules.Java.Services.CRUD.Decorators.ImplementationStrategies
                         if (association.Multiplicity is Multiplicity.One or Multiplicity.ZeroToOne)
                         {
                             
-                            if (field.TypeReference.IsNullable)
-                            {
-                                codeLines.Add(new JavaStatementBlock($"if ({dtoVarName}.get{field.Name.ToPascalCase()}() != null)")
-                                    .AddStatement($"{entityVarExpr}.set{attributeName.ToPascalCase()}({GetCreateMethodName(targetType)}({dtoVarName}.get{field.Name.ToPascalCase()}()));"));
-                            }
-                            else
-                            {
-                                codeLines.Add($"{entityVarExpr}.set{attributeName.ToPascalCase()}({GetCreateMethodName(targetType)}({dtoVarName}.get{field.Name.ToPascalCase()}()));");
-                            }
+                            codeLines.Add($"{entityVarExpr}.set{attributeName.ToPascalCase()}({GetCreateMethodName(targetType)}({dtoVarName}.get{field.Name.ToPascalCase()}()));");
                         }
                         else
                         {
@@ -176,16 +168,31 @@ namespace Intent.Modules.Java.Services.CRUD.Decorators.ImplementationStrategies
                         }
 
                         var @class = _template.JavaFile.Classes.First();
-                        @class.AddMethod(_template.GetTypeName(targetType),
-                            GetCreateMethodName(targetType),
-                            method => method
-                                .Private()
-                                .Static()
-                                .AddParameter(_template.GetTypeName((IElement)field.TypeReference.Element), "dto")
-                                .AddStatement($"var entity = new {targetType.Name.ToPascalCase()}();")
-                                .AddStatements(GetDTOPropertyAssignments("entity", $"dto", targetType,
-                                    ((IElement)field.TypeReference.Element).ChildElements.Where(x => x.IsDTOFieldModel()).Select(x => x.AsDTOFieldModel()).ToList()))
-                                .AddStatement($"return entity;"));
+                        if (@class.FindMethod(x => x.Name == GetCreateMethodName(targetType) &&
+                                                   x.Parameters.First().Type == _template.GetTypeName((IElement)field.TypeReference.Element)) == null)
+                        {
+                            @class.AddMethod(_template.GetTypeName(targetType),
+                                GetCreateMethodName(targetType),
+                                method =>
+                                {
+                                    var dtoType = _template.GetTypeName((IElement)field.TypeReference.Element);
+                                    var domainVarName = targetType.Name.ToCamelCase();
+                                    method
+                                        .Private()
+                                        .Static()
+                                        .AddParameter(dtoType, "dto")
+                                        .AddStatement($"var {domainVarName} = new {targetType.Name.ToPascalCase()}();")
+                                        .AddStatements(GetDTOPropertyAssignments(domainVarName, $"dto", targetType,
+                                            ((IElement)field.TypeReference.Element).ChildElements.Where(x => x.IsDTOFieldModel()).Select(x => x.AsDTOFieldModel()).ToList()))
+                                        .AddStatement($"return {domainVarName};");
+
+                                    if (field.TypeReference.IsNullable)
+                                    {
+                                        method.InsertStatement(0, new JavaStatementBlock($@"if (dto == null)")
+                                            .AddStatement($@"return null;"));
+                                    }
+                                });
+                        }
                     }
                         break;
                 }

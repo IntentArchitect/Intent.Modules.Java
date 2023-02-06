@@ -73,7 +73,9 @@ public class LegacyDeleteImplementationStrategy : IImplementationStrategy
 
         var codeLines = new JavaStatementAggregator();
         codeLines.Add($@"var {domainTypeCamelCased} = {repositoryFieldName}.findById({operationModel.Parameters.First().Name.ToCamelCase()});");
-        codeLines.Add($@"{repositoryFieldName}.delete({domainTypeCamelCased});");
+        codeLines.Add(new JavaStatementBlock($@"if (!{domainTypeCamelCased}.isPresent())")
+            .AddStatement($@"return;"));
+        codeLines.Add($@"{repositoryFieldName}.delete({domainTypeCamelCased}.get());");
 
         var @class = _template.JavaFile.Classes.First();
         if (@class.Fields.All(p => p.Type != repositoryTypeName))
@@ -81,12 +83,13 @@ public class LegacyDeleteImplementationStrategy : IImplementationStrategy
             @class.AddField(_template.ImportType(repositoryTypeName), repositoryFieldName);
         }
 
-        if (@class.Fields.All(p => p.Type != "org.modelmapper.ModelMapper"))
+        if (@class.Fields.All(p => p.Type != "ModelMapper"))
         {
             @class.AddField(_template.ImportType("org.modelmapper.ModelMapper"), "mapper");
         }
 
         var method = @class.FindMethod(m => m.Name.Equals(operationModel.Name, StringComparison.OrdinalIgnoreCase));
+        method.Annotations.Where(p => p.Name.Contains("IntentIgnoreBody")).ToList().ForEach(x => method.Annotations.Remove(x));
         method.Statements.Clear();
         method.AddStatements(codeLines.ToList());
     }

@@ -77,9 +77,8 @@ namespace Intent.Modules.Java.Services.CRUD.Decorators.ImplementationStrategies
             
             var codeLines = new JavaStatementAggregator();
             codeLines.Add($@"var {domainTypeCamelCased} = {repositoryFieldName}.findById({operationModel.Parameters.First().Name.ToCamelCase()});");
-            codeLines.Add($@"if (!{domainTypeCamelCased}.isPresent()) {{");
-            codeLines.Add($@"   return null;");
-            codeLines.Add($@"}}");
+            codeLines.Add(new JavaStatementBlock($"if (!{domainTypeCamelCased}.isPresent())")
+                .AddStatement("return null;"));
             codeLines.Add($@"var {domainTypeCamelCased}Dto = {dtoType}.mapFrom{domainTypePascalCased}({domainTypeCamelCased}.get(), mapper);");
             codeLines.Add($@"{repositoryFieldName}.delete({domainTypeCamelCased}.get());");
             codeLines.Add($@"return {domainTypeCamelCased}Dto;");
