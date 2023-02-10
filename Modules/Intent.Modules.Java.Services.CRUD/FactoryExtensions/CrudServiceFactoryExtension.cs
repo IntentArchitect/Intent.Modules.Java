@@ -35,8 +35,8 @@ namespace Intent.Modules.Java.Services.CRUD.FactoryExtensions
         /// </remarks>
         protected override void OnBeforeTemplateExecution(IApplication application)
         {
-            var template = application.FindTemplateInstance<ServiceImplementationTemplate>(TemplateDependency.OnTemplate(ServiceImplementationTemplate.TemplateId));
-            if (template != null)
+            var templates = application.FindTemplateInstances<ServiceImplementationTemplate>(TemplateDependency.OnTemplate(ServiceImplementationTemplate.TemplateId));
+            foreach (var template in templates)
             {
                 var strategies = new List<IImplementationStrategy>
                 {

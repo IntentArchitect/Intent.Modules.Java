@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<class id="9b6c669a-33f1-46f4-8957-5338101afbb9" type="Folder" typeId="4d95d53a-8855-4f35-aa82-e312643f5c5f">
+  <name>ClassAS</name>
+  <display>ClassAS</display>
+  <isAbstract>false</isAbstract>
+  <sort-children>by-type-then-by-name</sort-children>
+  <genericTypes />
+  <isMapped>false</isMapped>
+  <parentFolderId>cf0a1026-41c5-43de-beee-e12dce9327cb</parentFolderId>
+  <packageId>cf0a1026-41c5-43de-beee-e12dce9327cb</packageId>
+  <packageName>Standard.SpringBoot.TestApplication.Services</packageName>
+  <stereotypes />
+  <metadata />
+  <childElements />
+</class>

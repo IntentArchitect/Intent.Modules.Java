@@ -28,6 +28,11 @@ public class LegacyDeleteImplementationStrategy : IImplementationStrategy
     public bool IsMatch(OperationModel operationModel)
     {
         var domainModel = GetDomainForService(operationModel.ParentService);
+        if (domainModel == null)
+        {
+            return false;
+        }
+        
         var lowerDomainName = domainModel.Name.ToLower();
         var lowerOperationName = operationModel.Name.ToLower();
         if (operationModel.Parameters.Count != 1)

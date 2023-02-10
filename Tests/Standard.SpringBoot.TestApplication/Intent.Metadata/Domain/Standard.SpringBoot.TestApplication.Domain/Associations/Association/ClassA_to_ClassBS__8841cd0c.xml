@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<association id="254b8c77-094d-4c4d-8e9e-173146beb2d6">
+  <sourceEnd id="f1997a16-2dff-4616-9b44-1f4cc7da946c" type="Association Source End" typeId="8d9d2e5b-bd55-4f36-9ae4-2b9e84fd4e58">
+    <name>ClassA</name>
+    <display>ClassA: ClassA</display>
+    <order>0</order>
+    <typeReference id="710cee01-8c90-47d5-9a9f-34fa694e5170">
+      <typeId>96340753-4096-47c5-84c7-0fd61884cfe9</typeId>
+      <isNavigable>false</isNavigable>
+      <isNullable>false</isNullable>
+      <isCollection>false</isCollection>
+      <isRequired>true</isRequired>
+      <typePackageName>Standard.SpringBoot.TestApplication.Domain</typePackageName>
+      <typePackageId>3531c1e5-6176-40ea-8e6e-1b136deb744d</typePackageId>
+      <stereotypes />
+      <genericTypeParameters />
+    </typeReference>
+    <stereotypes>
+      <stereotype stereotypeDefinitionId="49de8cd7-872f-4b37-b9a2-2056304434dd" name="Association JPA Settings">
+        <addedByDefault>true</addedByDefault>
+        <definitionPackageName>Intent.Java.Persistence.JPA</definitionPackageName>
+        <definitionPackageId>2e4398f1-893d-432e-badb-ab0c4ea3280e</definitionPackageId>
+        <properties>
+          <property name="abe22345-1d55-483e-b1f4-54c60cb53539" display="Fetch Type" isActive="true" />
+        </properties>
+      </stereotype>
+    </stereotypes>
+    <metadata />
+  </sourceEnd>
+  <targetEnd id="254b8c77-094d-4c4d-8e9e-173146beb2d6" type="Association Target End" typeId="0a66489f-30aa-417b-a75d-b945863366fd">
+    <name>ClassBS</name>
+    <display>ClassBS: ClassB[*]</display>
+    <order>2</order>
+    <typeReference id="2fbe51b5-788a-4d2e-8b10-c08fd9b552e7">
+      <typeId>1d3da9fc-b825-4135-828e-51b941d85f4f</typeId>
+      <isNavigable>true</isNavigable>
+      <isNullable>false</isNullable>
+      <isCollection>true</isCollection>
+      <isRequired>true</isRequired>
+      <typePackageName>Standard.SpringBoot.TestApplication.Domain</typePackageName>
+      <typePackageId>3531c1e5-6176-40ea-8e6e-1b136deb744d</typePackageId>
+      <stereotypes />
+      <genericTypeParameters />
+    </typeReference>
+    <stereotypes>
+      <stereotype stereotypeDefinitionId="49de8cd7-872f-4b37-b9a2-2056304434dd" name="Association JPA Settings">
+        <addedByDefault>true</addedByDefault>
+        <definitionPackageName>Intent.Java.Persistence.JPA</definitionPackageName>
+        <definitionPackageId>2e4398f1-893d-432e-badb-ab0c4ea3280e</definitionPackageId>
+        <properties>
+          <property name="abe22345-1d55-483e-b1f4-54c60cb53539" display="Fetch Type" isActive="true" />
+        </properties>
+      </stereotype>
+    </stereotypes>
+    <metadata />
+  </targetEnd>
+  <associationType>Association</associationType>
+  <associationTypeId>eaf9ed4e-0b61-4ac1-ba88-09f912c12087</associationTypeId>
+  <stereotypes>
+    <stereotype stereotypeDefinitionId="49de8cd7-872f-4b37-b9a2-2056304434dd" name="Association JPA Settings">
+      <addedByDefault>true</addedByDefault>
+      <definitionPackageName>Intent.Java.Persistence.JPA</definitionPackageName>
+      <definitionPackageId>2e4398f1-893d-432e-badb-ab0c4ea3280e</definitionPackageId>
+      <properties>
+        <property name="abe22345-1d55-483e-b1f4-54c60cb53539" display="Fetch Type" isActive="true" />
+      </properties>
+    </stereotype>
+  </stereotypes>
+</association>

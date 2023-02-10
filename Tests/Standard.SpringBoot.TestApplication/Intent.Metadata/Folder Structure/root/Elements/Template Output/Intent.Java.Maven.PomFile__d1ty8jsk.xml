@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<class id="6eb37cae-140a-4e35-b8fb-a1f4f13b5c42" type="Template Output" typeId="09de2192-2507-41a2-8044-286c7ecadec2">
+  <name>Intent.Java.Maven.PomFile</name>
+  <display>Intent.Java.Maven.PomFile</display>
+  <externalReference>Intent.Java.Maven</externalReference>
+  <isAbstract>false</isAbstract>
+  <genericTypes />
+  <isMapped>false</isMapped>
+  <parentFolderId>561239c6-8123-4bbe-afdc-fbbab4f5661e</parentFolderId>
+  <stereotypes />
+  <metadata>
+    <entry key="status" value="assigned" />
+  </metadata>
+  <childElements />
+</class>

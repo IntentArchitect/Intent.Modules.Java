@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<class id="dfc1a6fa-64e8-4836-b83b-882c8d6af2dc" type="Folder" typeId="4d95d53a-8855-4f35-aa82-e312643f5c5f">
+  <name>models</name>
+  <display>models</display>
+  <isAbstract>false</isAbstract>
+  <genericTypes />
+  <isMapped>false</isMapped>
+  <parentFolderId>1995251e-714b-44c8-8740-5ed5bf29f157</parentFolderId>
+  <stereotypes />
+  <metadata />
+  <childElements>
+    <childElement id="52504450-331d-4cf2-a9bc-6781eb6059d9" type="Template Output" typeId="09de2192-2507-41a2-8044-286c7ecadec2">
+      <name>Intent.Java.Services.DataTransferModel</name>
+      <display>Intent.Java.Services.DataTransferModel</display>
+      <externalReference>Intent.Java.Services</externalReference>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <isMapped>false</isMapped>
+      <parentFolderId>dfc1a6fa-64e8-4836-b83b-882c8d6af2dc</parentFolderId>
+      <stereotypes />
+      <metadata>
+        <entry key="status" value="assigned" />
+      </metadata>
+      <childElements />
+    </childElement>
+    <childElement id="bb5f9f3d-127e-4b88-a4f6-ecae4e0b2bcf" type="Template Output" typeId="09de2192-2507-41a2-8044-286c7ecadec2">
+      <name>Intent.Java.Services.Enum</name>
+      <display>Intent.Java.Services.Enum</display>
+      <externalReference>Intent.Java.Services</externalReference>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <isMapped>false</isMapped>
+      <parentFolderId>dfc1a6fa-64e8-4836-b83b-882c8d6af2dc</parentFolderId>
+      <stereotypes />
+      <metadata>
+        <entry key="status" value="assigned" />
+      </metadata>
+      <childElements />
+    </childElement>
+  </childElements>
+</class>

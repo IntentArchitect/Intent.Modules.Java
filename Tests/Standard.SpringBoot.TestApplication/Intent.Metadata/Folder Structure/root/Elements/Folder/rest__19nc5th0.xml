@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<class id="fdf6f912-98b9-427b-9fbe-943aa386cedd" type="Folder" typeId="4d95d53a-8855-4f35-aa82-e312643f5c5f">
+  <name>rest</name>
+  <display>rest</display>
+  <isAbstract>false</isAbstract>
+  <genericTypes />
+  <isMapped>false</isMapped>
+  <parentFolderId>1995251e-714b-44c8-8740-5ed5bf29f157</parentFolderId>
+  <stereotypes />
+  <metadata />
+  <childElements>
+    <childElement id="70d1ee66-c9c4-4b28-a6f1-fceac247eaad" type="Template Output" typeId="09de2192-2507-41a2-8044-286c7ecadec2">
+      <name>Intent.Java.SpringBoot.JsonResponse</name>
+      <display>Intent.Java.SpringBoot.JsonResponse</display>
+      <externalReference>Intent.Java.SpringBoot</externalReference>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <isMapped>false</isMapped>
+      <parentFolderId>fdf6f912-98b9-427b-9fbe-943aa386cedd</parentFolderId>
+      <stereotypes />
+      <metadata>
+        <entry key="status" value="assigned" />
+      </metadata>
+      <childElements />
+    </childElement>
+    <childElement id="7a87430c-4b3a-431d-a9d5-f26f1a7712c4" type="Template Output" typeId="09de2192-2507-41a2-8044-286c7ecadec2">
+      <name>Intent.Java.SpringBoot.RestController</name>
+      <display>Intent.Java.SpringBoot.RestController</display>
+      <externalReference>Intent.Java.SpringBoot</externalReference>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <isMapped>false</isMapped>
+      <parentFolderId>fdf6f912-98b9-427b-9fbe-943aa386cedd</parentFolderId>
+      <stereotypes />
+      <metadata>
+        <entry key="status" value="assigned" />
+      </metadata>
+      <childElements />
+    </childElement>
+    <childElement id="acba97d0-2c65-4557-a663-1db3c8cab920" type="Template Output" typeId="09de2192-2507-41a2-8044-286c7ecadec2">
+      <name>Intent.Java.SpringBoot.Validation.RestResponseEntityExceptionHandler</name>
+      <display>Intent.Java.SpringBoot.Validation.RestResponseEntityExceptionHandler</display>
+      <externalReference>Intent.Java.SpringBoot.Validation</externalReference>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <isMapped>false</isMapped>
+      <parentFolderId>fdf6f912-98b9-427b-9fbe-943aa386cedd</parentFolderId>
+      <stereotypes />
+      <metadata>
+        <entry key="status" value="assigned" />
+      </metadata>
+      <childElements />
+    </childElement>
+  </childElements>
+</class>

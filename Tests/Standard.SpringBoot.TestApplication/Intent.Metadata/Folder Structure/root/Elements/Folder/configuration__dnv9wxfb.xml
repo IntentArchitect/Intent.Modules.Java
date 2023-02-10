@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<class id="dd665cb7-50a4-4e3b-adf6-c5505f4181ee" type="Folder" typeId="4d95d53a-8855-4f35-aa82-e312643f5c5f">
+  <name>configuration</name>
+  <display>configuration</display>
+  <isAbstract>false</isAbstract>
+  <genericTypes />
+  <isMapped>false</isMapped>
+  <parentFolderId>a0053403-772f-4a98-9023-551e7c818312</parentFolderId>
+  <stereotypes />
+  <metadata />
+  <childElements>
+    <childElement id="4458535c-8bfb-4bf8-85c9-0247b677f048" type="Template Output" typeId="09de2192-2507-41a2-8044-286c7ecadec2">
+      <name>Intent.Java.ModelMapper.ModelMapperBean</name>
+      <display>Intent.Java.ModelMapper.ModelMapperBean</display>
+      <externalReference>Intent.Java.ModelMapper</externalReference>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <isMapped>false</isMapped>
+      <parentFolderId>dd665cb7-50a4-4e3b-adf6-c5505f4181ee</parentFolderId>
+      <stereotypes />
+      <metadata>
+        <entry key="status" value="assigned" />
+      </metadata>
+      <childElements />
+    </childElement>
+  </childElements>
+</class>

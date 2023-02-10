@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<class id="c1f8c983-6326-4bbe-a3d0-0b940f12f320" type="Folder" typeId="4d95d53a-8855-4f35-aa82-e312643f5c5f">
+  <name>models</name>
+  <display>models</display>
+  <isAbstract>false</isAbstract>
+  <genericTypes />
+  <isMapped>false</isMapped>
+  <parentFolderId>677f0d15-a001-4263-8dea-633421de49ea</parentFolderId>
+  <stereotypes />
+  <metadata />
+  <childElements>
+    <childElement id="c2b6acf2-f34a-49de-b491-ee7a3b5c308a" type="Template Output" typeId="09de2192-2507-41a2-8044-286c7ecadec2">
+      <name>Intent.Java.Domain.DomainModel</name>
+      <display>Intent.Java.Domain.DomainModel</display>
+      <externalReference>Intent.Java.Domain</externalReference>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <isMapped>false</isMapped>
+      <parentFolderId>c1f8c983-6326-4bbe-a3d0-0b940f12f320</parentFolderId>
+      <stereotypes />
+      <metadata>
+        <entry key="status" value="assigned" />
+      </metadata>
+      <childElements />
+    </childElement>
+    <childElement id="d6611f1f-62b7-4862-9540-357d2e48fdaf" type="Template Output" typeId="09de2192-2507-41a2-8044-286c7ecadec2">
+      <name>Intent.Java.Domain.Enum</name>
+      <display>Intent.Java.Domain.Enum</display>
+      <externalReference>Intent.Java.Domain</externalReference>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <isMapped>false</isMapped>
+      <parentFolderId>c1f8c983-6326-4bbe-a3d0-0b940f12f320</parentFolderId>
+      <stereotypes />
+      <metadata>
+        <entry key="status" value="assigned" />
+      </metadata>
+      <childElements />
+    </childElement>
+    <childElement id="bd8f8315-ff75-4b7e-a6d8-934ae7613720" type="Template Output" typeId="09de2192-2507-41a2-8044-286c7ecadec2">
+      <name>Intent.Java.Persistence.JPA.CompositeId</name>
+      <display>Intent.Java.Persistence.JPA.CompositeId</display>
+      <externalReference>Intent.Java.Persistence.JPA</externalReference>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <isMapped>false</isMapped>
+      <parentFolderId>c1f8c983-6326-4bbe-a3d0-0b940f12f320</parentFolderId>
+      <stereotypes />
+      <metadata>
+        <entry key="status" value="assigned" />
+      </metadata>
+      <childElements />
+    </childElement>
+  </childElements>
+</class>

@@ -7,7 +7,8 @@
   <iconType>FontAwesome</iconType>
   <metadataRelativePath>Intent.Metadata</metadataRelativePath>
   <modulesCacheRelativePath>.intent/modules</modulesCacheRelativePath>
+  <lastUsedApplicationTemplate id="Intent.Java.SpringBoot.WebApplication" version="3.3.9" />
   <applications>
-    
+    <application id="bcc9ac0a-2cc1-4f78-ab3f-f847093c7680" name="Standard.SpringBoot.TestApplication" relativePath="Standard.SpringBoot.TestApplication/Standard.SpringBoot.TestApplication.application.config" />
   </applications>
 </solution>
