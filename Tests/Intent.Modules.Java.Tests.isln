@@ -8,6 +8,6 @@
   <metadataRelativePath>Intent.Metadata</metadataRelativePath>
   <modulesCacheRelativePath>.intent/modules</modulesCacheRelativePath>
   <applications>
-    <application id="b6f490c6-2384-494f-9766-3bb0742e9248" name="Java.SpringBoot.TestApplication" relativePath="Java.SpringBoot.TestApplication/Java.SpringBoot.TestApplication.application.config" />
+    
   </applications>
 </solution>
