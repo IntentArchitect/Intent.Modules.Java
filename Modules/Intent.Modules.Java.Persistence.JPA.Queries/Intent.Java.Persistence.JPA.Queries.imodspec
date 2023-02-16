@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <package>
   <id>Intent.Java.Persistence.JPA.Queries</id>
-  <version>3.3.4</version>
+  <version>3.3.5-pre.0</version>
   <supportedClientVersions>[3.3.16, 4.0.0)</supportedClientVersions>
   <summary>Supports ability to create queries for Domain Entities within the Domain designer</summary>
   <description>Supports ability to create queries for Domain Entities within the Domain designer</description>
@@ -23,19 +23,21 @@
   <factoryExtensions></factoryExtensions>
   <moduleSettings></moduleSettings>
   <dependencies>
-    <dependency id="Intent.Common" version="3.3.15" />
-    <dependency id="Intent.Common.Java" version="3.3.17" />
-    <dependency id="Intent.Common.Types" version="3.3.6" />
-    <dependency id="Intent.Java.Domain" version="3.3.7" />
-    <dependency id="Intent.Java.Persistence.JPA" version="3.3.10" />
-    <dependency id="Intent.Java.Services" version="3.3.8" />
-    <dependency id="Intent.Java.Spring.Data.Repositories" version="3.3.10" />
-    <dependency id="Intent.Java.SpringBoot" version="3.3.9" />
+    <dependency id="Intent.Common" version="3.3.18" />
+    <dependency id="Intent.Common.Java" version="3.4.1-pre.0" />
+    <dependency id="Intent.Common.Types" version="3.3.7" />
+    <dependency id="Intent.Java.Domain" version="4.0.2" />
+    <dependency id="Intent.Java.Maven" version="3.3.8" />
+    <dependency id="Intent.Java.Persistence.JPA" version="4.0.2" />
+    <dependency id="Intent.Java.Services" version="3.4.0" />
+    <dependency id="Intent.Java.Spring.Data.Repositories" version="4.0.2" />
+    <dependency id="Intent.Java.SpringBoot" version="3.3.11" />
     <dependency id="Intent.Java.Weaving.Annotations" version="3.3.6" />
-    <dependency id="Intent.Metadata.RDBMS" version="3.3.12" />
+    <dependency id="Intent.Metadata.RDBMS" version="3.4.0" />
+    <dependency id="Intent.Metadata.WebApi" version="3.3.10" />
     <dependency id="Intent.Modelers.Domain" version="3.3.10" />
     <dependency id="Intent.Modelers.Domain.Repositories" version="3.3.0" />
-    <dependency id="Intent.Modelers.Services" version="3.3.6" />
+    <dependency id="Intent.Modelers.Services" version="3.3.7" />
   </dependencies>
   <files>
     <file src="$outDir$/$id$.dll" />

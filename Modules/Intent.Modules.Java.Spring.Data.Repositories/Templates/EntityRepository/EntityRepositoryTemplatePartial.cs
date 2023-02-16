@@ -8,6 +8,7 @@ using Intent.Metadata.RDBMS.Api;
 using Intent.Modelers.Domain.Api;
 using Intent.Modules.Common;
 using Intent.Modules.Common.Java;
+using Intent.Modules.Common.Java.Builder;
 using Intent.Modules.Common.Java.Templates;
 using Intent.Modules.Common.Templates;
 using Intent.Modules.Java.Domain.Events;
@@ -24,8 +25,8 @@ using Intent.Templates;
 
 namespace Intent.Modules.Java.Spring.Data.Repositories.Templates.EntityRepository
 {
-    [IntentManaged(Mode.Merge, Signature = Mode.Fully)]
-    partial class EntityRepositoryTemplate : JavaTemplateBase<Intent.Modelers.Domain.Api.ClassModel, EntityRepositoryDecorator>
+    [IntentManaged(Mode.Merge, Signature = Mode.Merge)]
+    public partial class EntityRepositoryTemplate : JavaTemplateBase<Intent.Modelers.Domain.Api.ClassModel, EntityRepositoryDecorator>, IJavaFileBuilderTemplate
     {
         [IntentManaged(Mode.Fully)]
         public const string TemplateId = "Intent.Java.Spring.Data.Repositories.EntityRepository";
@@ -34,16 +35,43 @@ namespace Intent.Modules.Java.Spring.Data.Repositories.Templates.EntityRepositor
         public EntityRepositoryTemplate(IOutputTarget outputTarget, Intent.Modelers.Domain.Api.ClassModel model) : base(TemplateId, outputTarget, model)
         {
             this.AddDomainEntityTypeSource();
+            JavaFile = new JavaFile(this.GetPackage(), this.GetFolderPath())
+                .AddImport("org.springframework.data.jpa.repository.JpaRepository")
+                .AddInterface($"{Model.Name.ToPascalCase()}Repository", inter =>
+                {
+                    inter.WithComments(@"Spring Data JPA repository for the <#= GetEntityType() #> entity.")
+                        .AddAnnotation(this.IntentIgnoreBodyAnnotation())
+                        .ExtendsInterface($"JpaRepository<{GetEntityType()}, {GetEntityIdType()}>");
+                    
+                    foreach (var query in GetQueriesFromIndexes())
+                    {
+                        inter.AddMethod(query.ReturnType, query.MethodName, method =>
+                        {
+                            foreach (var param in query.Params)
+                            {
+                                method.AddParameter(param.Key, param.Value);
+                            }
+                        });
+                    }
+
+                    foreach (var member in GetDecorators().SelectMany(x => x.GetMembers()))
+                    {
+                        inter.AddCodeBlock(member);
+                    }
+                });
         }
+        
+        public JavaFile JavaFile { get; }
 
         [IntentManaged(Mode.Merge, Body = Mode.Ignore, Signature = Mode.Fully)]
         public override ITemplateFileConfig GetTemplateFileConfig()
         {
-            return new JavaFileConfig(
-                className: $"{Model.Name.ToPascalCase()}Repository",
-                package: this.GetPackage(),
-                relativeLocation: this.GetFolderPath()
-            );
+            return JavaFile.GetConfig();
+        }
+
+        public override string TransformText()
+        {
+            return JavaFile.ToString();
         }
 
         private string GetEntityType()
@@ -69,16 +97,20 @@ namespace Intent.Modules.Java.Spring.Data.Repositories.Templates.EntityRepositor
             };
         }
 
-        private IEnumerable<string> GetQueriesFromIndexes()
+        private IEnumerable<(string ReturnType, string MethodName, IEnumerable<KeyValuePair<string, string>> Params)> GetQueriesFromIndexes()
         {
             return Model.GetIndexes()
                 .Select(x =>
                 {
                     var returnType = $"{ImportType("java.util.List")}<{this.GetDomainModelName()}>";
                     var methodName = $"findBy{string.Join("And", x.KeyColumns.Select(c => c.Name.ToPascalCase()))}";
-                    var parameters = $"{string.Join(", ", x.KeyColumns.Select(c => $"{GetTypeName(c.SourceType.TypeReference)} {c.Name.ToCamelCase()}"))}";
+                    var parameters = x.KeyColumns.Select(c => new KeyValuePair<string, string>(GetTypeName(c.SourceType.TypeReference), c.Name.ToCamelCase()));
 
-                    return $"{returnType} {methodName}({parameters});";
+                    return (
+                        returnType,
+                        methodName,
+                        parameters
+                    );
                 });
         }
     }

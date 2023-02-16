@@ -27,7 +27,7 @@
     <FileLog>
       <ProjectId>ef69d81e-e67c-4251-984c-20c3fb2a945e</ProjectId>
       <CorrelationId>Intent.VisualStudio.Projects.CoreLibrary.CSProject#ef69d81e-e67c-4251-984c-20c3fb2a945e</CorrelationId>
-      <OverwriteBehaviour>once-off</OverwriteBehaviour>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Intent.Modules.Java.Services.CRUD.csproj</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>Intent.Modules.Java.Services.CRUD.csproj</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>

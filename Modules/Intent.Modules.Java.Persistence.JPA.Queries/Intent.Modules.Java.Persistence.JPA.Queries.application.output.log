@@ -203,7 +203,7 @@
     <FileLog>
       <ProjectId>fe025313-a7d8-48a9-a0d5-9bd9328f82b0</ProjectId>
       <CorrelationId>Intent.VisualStudio.Projects.CoreLibrary.CSProject#fe025313-a7d8-48a9-a0d5-9bd9328f82b0</CorrelationId>
-      <OverwriteBehaviour>once-off</OverwriteBehaviour>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Intent.Modules.Java.Persistence.JPA.Queries.csproj</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>Intent.Modules.Java.Persistence.JPA.Queries.csproj</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>

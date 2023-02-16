@@ -19,7 +19,7 @@
     <FileLog>
       <ProjectId>5ee9053b-4284-4568-9e38-3a4aa5a53ac2</ProjectId>
       <CorrelationId>Intent.VisualStudio.Projects.CoreLibrary.CSProject#5ee9053b-4284-4568-9e38-3a4aa5a53ac2</CorrelationId>
-      <OverwriteBehaviour>once-off</OverwriteBehaviour>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Intent.Modules.Java.Spring.Data.Repositories.csproj</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>Intent.Modules.Java.Spring.Data.Repositories.csproj</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
@@ -38,22 +38,6 @@
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Templates/EntityRepository/EntityRepositoryDecorator.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>EntityRepository/EntityRepositoryDecorator.cs</ProjectRelativeFilePath>
-      <IsIgnored>false</IsIgnored>
-    </FileLog>
-    <FileLog>
-      <ProjectId>cb181c44-e0eb-4777-b2f1-110454210b8c</ProjectId>
-      <CorrelationId>Intent.ModuleBuilder.Java.Templates.JavaTemplate.PreProcessT4#161cbca5-2ef9-4c47-bf3e-265b9ef3c17a</CorrelationId>
-      <OverwriteBehaviour>always</OverwriteBehaviour>
-      <ApplicationRelativeFilePath>Templates/EntityRepository/EntityRepositoryTemplate.cs</ApplicationRelativeFilePath>
-      <ProjectRelativeFilePath>EntityRepository/EntityRepositoryTemplate.cs</ProjectRelativeFilePath>
-      <IsIgnored>false</IsIgnored>
-    </FileLog>
-    <FileLog>
-      <ProjectId>cb181c44-e0eb-4777-b2f1-110454210b8c</ProjectId>
-      <CorrelationId>Intent.ModuleBuilder.Java.Templates.JavaFileT4Template#161cbca5-2ef9-4c47-bf3e-265b9ef3c17a</CorrelationId>
-      <OverwriteBehaviour>always</OverwriteBehaviour>
-      <ApplicationRelativeFilePath>Templates/EntityRepository/EntityRepositoryTemplate.tt</ApplicationRelativeFilePath>
-      <ProjectRelativeFilePath>EntityRepository/EntityRepositoryTemplate.tt</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>

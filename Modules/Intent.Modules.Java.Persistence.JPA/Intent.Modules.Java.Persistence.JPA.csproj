@@ -2,6 +2,16 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
+    <Version>4.0.2</Version>
+    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+    <Authors>Intent Architect</Authors>
+    <Description>Base classes and weaving capabilities for modules that output Java files for Intent Architect.</Description>
+    <Copyright>Copyright 2020</Copyright>
+    <PackageProjectUrl>https://intentarchitect.com</PackageProjectUrl>
+    <PackageIconUrl></PackageIconUrl>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+    <PackageIcon>logo.png</PackageIcon>
   </PropertyGroup>
 
   <ItemGroup>
@@ -10,6 +20,7 @@
     <PackageReference Include="Intent.Modules.Java.Weaving.Annotations" Version="3.3.5" />
     <PackageReference Include="Intent.Modules.Metadata.RDBMS" Version="3.3.12" />
     <PackageReference Include="Intent.Modules.Modelers.Domain" Version="3.3.10" />
+    <PackageReference Include="Intent.Modules.Java.Domain" Version="4.0.1" />
     <PackageReference Include="Intent.Packager" Version="3.4.0">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -19,7 +30,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Intent.Modules.Java.Domain\Intent.Modules.Java.Domain.csproj" />
+    <None Include="..\..\logo.png" Link="logo.png">
+      <PackagePath></PackagePath>
+      <Pack>True</Pack>
+    </None>
   </ItemGroup>
 
 </Project>
