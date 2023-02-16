@@ -37,12 +37,18 @@ namespace Intent.Modules.Java.Spring.Data.Repositories.Templates.EntityRepositor
             this.AddDomainEntityTypeSource();
             JavaFile = new JavaFile(this.GetPackage(), this.GetFolderPath())
                 .AddImport("org.springframework.data.jpa.repository.JpaRepository")
-                .AddInterface($"{Model.Name.ToPascalCase()}Repository", inter =>
+                .AddInterface($"{Model.Name.ToPascalCase()}Repository")
+                .OnBuild(file =>
                 {
+                    var inter = file.Interfaces.First();
+                    inter.AddMetadata("model", Model);
                     inter.WithComments(@"Spring Data JPA repository for the <#= GetEntityType() #> entity.")
                         .AddAnnotation(this.IntentIgnoreBodyAnnotation())
                         .ExtendsInterface($"JpaRepository<{GetEntityType()}, {GetEntityIdType()}>");
-                    
+                })
+                .AfterBuild(file =>
+                {
+                    var inter = file.Interfaces.First();
                     foreach (var query in GetQueriesFromIndexes())
                     {
                         inter.AddMethod(query.ReturnType, query.MethodName, method =>
