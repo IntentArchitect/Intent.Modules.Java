@@ -3,8 +3,13 @@ package com.Intent.Modules.Java.Tests.Standard.SpringBoot.TestApplication.config
 import org.modelmapper.ModelMapper;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import com.Intent.Modules.Java.Tests.Standard.SpringBoot.TestApplication.application.mappings.ClassAS.ClassAToClassADTOMapping;
 import org.modelmapper.convention.MatchingStrategies;
+import com.Intent.Modules.Java.Tests.Standard.SpringBoot.TestApplication.application.mappings.Users.RoleToCreateUserRoleDtoMapping;
+import com.Intent.Modules.Java.Tests.Standard.SpringBoot.TestApplication.application.mappings.Users.RoleToUpdateUserRoleDtoMapping;
+import com.Intent.Modules.Java.Tests.Standard.SpringBoot.TestApplication.application.mappings.Users.RoleToUserRoleDtoMapping;
+import com.Intent.Modules.Java.Tests.Standard.SpringBoot.TestApplication.application.mappings.Users.UserToUserCreateDtoMapping;
+import com.Intent.Modules.Java.Tests.Standard.SpringBoot.TestApplication.application.mappings.Users.UserToUserDtoMapping;
+import com.Intent.Modules.Java.Tests.Standard.SpringBoot.TestApplication.application.mappings.Users.UserToUserUpdateDtoMapping;
 
 @Configuration
 public class ModelMapperBean {
@@ -19,6 +24,11 @@ public class ModelMapperBean {
 
     private void InitializeMappings(ModelMapper modelMapper) {
         modelMapper.getConfiguration().setMatchingStrategy(MatchingStrategies.STRICT);
-        modelMapper.addMappings(new ClassAToClassADTOMapping());
+        modelMapper.addMappings(new RoleToCreateUserRoleDtoMapping());
+        modelMapper.addMappings(new RoleToUpdateUserRoleDtoMapping());
+        modelMapper.addMappings(new UserToUserCreateDtoMapping());
+        modelMapper.addMappings(new UserToUserDtoMapping());
+        modelMapper.addMappings(new RoleToUserRoleDtoMapping());
+        modelMapper.addMappings(new UserToUserUpdateDtoMapping());
     }
 }
