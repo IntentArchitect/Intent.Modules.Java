@@ -233,7 +233,7 @@ namespace Intent.Modules.Java.Persistence.JPA.Decorators
 
             const string newLine = @",
         ";
-            yield return $@"indexes = {string.Join(newLine, indexList)}";
+            yield return $@"indexes = {{ {string.Join(newLine, indexList)} }}";
         }
 
         public override IEnumerable<string> Fields()

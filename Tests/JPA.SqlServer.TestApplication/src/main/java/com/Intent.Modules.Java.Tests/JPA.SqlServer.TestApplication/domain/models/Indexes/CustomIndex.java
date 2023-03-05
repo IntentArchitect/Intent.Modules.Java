@@ -17,7 +17,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 
 @Entity
-@Table(name = "custom_indices", indexes = @Index(name = "IX_CustomIndices_IndexField", columnList = "index_field"))
+@Table(name = "custom_indices", indexes = { @Index(name = "IX_CustomIndices_IndexField", columnList = "index_field") })
 @Data
 @AllArgsConstructor
 @NoArgsConstructor

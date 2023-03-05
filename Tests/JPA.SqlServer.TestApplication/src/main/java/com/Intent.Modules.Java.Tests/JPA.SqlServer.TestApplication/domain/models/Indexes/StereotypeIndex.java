@@ -17,12 +17,13 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 
 @Entity
-@Table(name = "stereotype_indices", indexes = @Index(name = "IX_StereotypeIndex_defaultIndexField", columnList = "default_index_field"),
+
+@Table(name = "stereotype_indices", indexes = { @Index(name = "IX_StereotypeIndex_defaultIndexField", columnList = "default_index_field"),
         @Index(name = "CustomIndexField", columnList = "custom_index_field"),
         @Index(name = "GroupedIndexField", columnList = "grouped_index_field_a,grouped_index_field_b"),
         @Index(name = "", columnList = "default_index_field"),
         @Index(name = "CustomIndexField", columnList = "custom_index_field"),
-        @Index(name = "GroupedIndexField", columnList = "grouped_index_field_a,grouped_index_field_b"))
+        @Index(name = "GroupedIndexField", columnList = "grouped_index_field_a,grouped_index_field_b") })
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
