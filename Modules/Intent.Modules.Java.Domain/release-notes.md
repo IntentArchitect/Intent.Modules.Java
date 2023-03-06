@@ -1,3 +1,7 @@
+### Version 4.0.3B
+
+- Enums now support serialization.
+
 ### Version 4.0.2
 
 - Maven dependencies weren't always being applied.

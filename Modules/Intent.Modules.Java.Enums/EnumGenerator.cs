@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
+using Intent.Modules.Common.Java.Templates;
 using Intent.Modules.Common.Templates;
 using Intent.Modules.Common.Types.Api;
 
@@ -30,6 +32,8 @@ namespace Intent.Modules.Java.Enums
             return $@"
 package {_package};
 
+import com.fasterxml.jackson.annotation.JsonValue;
+
 public enum {_className} {{{GetLiterals()}{GetMembers()}
 }}";
         }
@@ -51,6 +55,7 @@ public enum {_className} {{{GetLiterals()}{GetMembers()}
 
             return $@"
 
+    @JsonValue
     public final {type} value;
 
     private {_className}({type} value) {{

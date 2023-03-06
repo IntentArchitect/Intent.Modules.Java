@@ -1,3 +1,7 @@
+### Version 3.4.1
+
+- Enums now support serialization.
+
 ### Version 3.4.0
 
 - New: Upgraded Service Implementation to make use of the Java File Builder Pattern to ease extensibility.
