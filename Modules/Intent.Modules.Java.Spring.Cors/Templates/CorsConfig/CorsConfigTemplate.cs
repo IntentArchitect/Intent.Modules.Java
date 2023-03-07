@@ -22,7 +22,7 @@ namespace Intent.Modules.Java.Spring.Cors.Templates.CorsConfig
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Spring.Cors\Templates\CorsConfig\CorsConfigTemplate.tt"
+    #line 1 "C:\Dev\Intent.Modules.Java\Modules\Intent.Modules.Java.Spring.Cors\Templates\CorsConfig\CorsConfigTemplate.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "17.0.0.0")]
     public partial class CorsConfigTemplate : JavaTemplateBase<object>
     {
@@ -34,7 +34,7 @@ namespace Intent.Modules.Java.Spring.Cors.Templates.CorsConfig
         {
             this.Write("package ");
             
-            #line 10 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Spring.Cors\Templates\CorsConfig\CorsConfigTemplate.tt"
+            #line 10 "C:\Dev\Intent.Modules.Java\Modules\Intent.Modules.Java.Spring.Cors\Templates\CorsConfig\CorsConfigTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Package));
             
             #line default
@@ -49,7 +49,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 @Configuration
 public class ");
             
-            #line 18 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Spring.Cors\Templates\CorsConfig\CorsConfigTemplate.tt"
+            #line 18 "C:\Dev\Intent.Modules.Java\Modules\Intent.Modules.Java.Spring.Cors\Templates\CorsConfig\CorsConfigTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(ClassName));
             
             #line default

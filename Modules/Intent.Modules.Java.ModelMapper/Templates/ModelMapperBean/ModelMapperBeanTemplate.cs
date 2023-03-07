@@ -22,7 +22,7 @@ namespace Intent.Modules.Java.ModelMapper.Templates.ModelMapperBean
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.ModelMapper\Templates\ModelMapperBean\ModelMapperBeanTemplate.tt"
+    #line 1 "C:\Dev\Intent.Modules.Java\Modules\Intent.Modules.Java.ModelMapper\Templates\ModelMapperBean\ModelMapperBeanTemplate.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "17.0.0.0")]
     public partial class ModelMapperBeanTemplate : JavaTemplateBase<IList<Intent.Modelers.Services.Api.DTOModel>>
     {
@@ -34,7 +34,7 @@ namespace Intent.Modules.Java.ModelMapper.Templates.ModelMapperBean
         {
             this.Write("package ");
             
-            #line 10 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.ModelMapper\Templates\ModelMapperBean\ModelMapperBeanTemplate.tt"
+            #line 10 "C:\Dev\Intent.Modules.Java\Modules\Intent.Modules.Java.ModelMapper\Templates\ModelMapperBean\ModelMapperBeanTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Package));
             
             #line default
@@ -43,7 +43,7 @@ namespace Intent.Modules.Java.ModelMapper.Templates.ModelMapperBean
                     "tation.Bean;\r\nimport org.springframework.context.annotation.Configuration;\r\n\r\n@C" +
                     "onfiguration\r\npublic class ");
             
-            #line 17 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.ModelMapper\Templates\ModelMapperBean\ModelMapperBeanTemplate.tt"
+            #line 17 "C:\Dev\Intent.Modules.Java\Modules\Intent.Modules.Java.ModelMapper\Templates\ModelMapperBean\ModelMapperBeanTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(ClassName));
             
             #line default
@@ -61,28 +61,28 @@ namespace Intent.Modules.Java.ModelMapper.Templates.ModelMapperBean
     private void InitializeMappings(ModelMapper modelMapper) {
         modelMapper.getConfiguration().setMatchingStrategy(");
             
-            #line 28 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.ModelMapper\Templates\ModelMapperBean\ModelMapperBeanTemplate.tt"
+            #line 28 "C:\Dev\Intent.Modules.Java\Modules\Intent.Modules.Java.ModelMapper\Templates\ModelMapperBean\ModelMapperBeanTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(ImportType("org.modelmapper.convention.MatchingStrategies")));
             
             #line default
             #line hidden
             this.Write(".STRICT);\r\n");
             
-            #line 29 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.ModelMapper\Templates\ModelMapperBean\ModelMapperBeanTemplate.tt"
+            #line 29 "C:\Dev\Intent.Modules.Java\Modules\Intent.Modules.Java.ModelMapper\Templates\ModelMapperBean\ModelMapperBeanTemplate.tt"
   foreach(var mapping in GetMappings()) { 
             
             #line default
             #line hidden
             this.Write("        modelMapper.addMappings(new ");
             
-            #line 30 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.ModelMapper\Templates\ModelMapperBean\ModelMapperBeanTemplate.tt"
+            #line 30 "C:\Dev\Intent.Modules.Java\Modules\Intent.Modules.Java.ModelMapper\Templates\ModelMapperBean\ModelMapperBeanTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(mapping));
             
             #line default
             #line hidden
             this.Write("());\r\n");
             
-            #line 31 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.ModelMapper\Templates\ModelMapperBean\ModelMapperBeanTemplate.tt"
+            #line 31 "C:\Dev\Intent.Modules.Java\Modules\Intent.Modules.Java.ModelMapper\Templates\ModelMapperBean\ModelMapperBeanTemplate.tt"
   } 
             
             #line default

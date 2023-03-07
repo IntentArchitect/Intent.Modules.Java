@@ -22,7 +22,7 @@ namespace Intent.Modules.Java.SpringBoot.Templates.JsonResponse
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.SpringBoot\Templates\JsonResponse\JsonResponseTemplate.tt"
+    #line 1 "C:\Dev\Intent.Modules.Java\Modules\Intent.Modules.Java.SpringBoot\Templates\JsonResponse\JsonResponseTemplate.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "17.0.0.0")]
     public partial class JsonResponseTemplate : JavaTemplateBase<object>
     {
@@ -34,21 +34,21 @@ namespace Intent.Modules.Java.SpringBoot.Templates.JsonResponse
         {
             this.Write("package ");
             
-            #line 10 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.SpringBoot\Templates\JsonResponse\JsonResponseTemplate.tt"
+            #line 10 "C:\Dev\Intent.Modules.Java\Modules\Intent.Modules.Java.SpringBoot\Templates\JsonResponse\JsonResponseTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Package));
             
             #line default
             #line hidden
             this.Write(";\r\n\r\npublic class ");
             
-            #line 12 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.SpringBoot\Templates\JsonResponse\JsonResponseTemplate.tt"
+            #line 12 "C:\Dev\Intent.Modules.Java\Modules\Intent.Modules.Java.SpringBoot\Templates\JsonResponse\JsonResponseTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(ClassName));
             
             #line default
             #line hidden
             this.Write("<T> {\r\n    public ");
             
-            #line 13 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.SpringBoot\Templates\JsonResponse\JsonResponseTemplate.tt"
+            #line 13 "C:\Dev\Intent.Modules.Java\Modules\Intent.Modules.Java.SpringBoot\Templates\JsonResponse\JsonResponseTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(ClassName));
             
             #line default

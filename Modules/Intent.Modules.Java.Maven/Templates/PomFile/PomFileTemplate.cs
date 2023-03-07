@@ -20,7 +20,7 @@ namespace Intent.Modules.Java.Maven.Templates.PomFile
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.Maven\Templates\PomFile\PomFileTemplate.tt"
+    #line 1 "C:\Dev\Intent.Modules.Java\Modules\Intent.Modules.Java.Maven\Templates\PomFile\PomFileTemplate.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "17.0.0.0")]
     public partial class PomFileTemplate : IntentTemplateBase<object>
     {

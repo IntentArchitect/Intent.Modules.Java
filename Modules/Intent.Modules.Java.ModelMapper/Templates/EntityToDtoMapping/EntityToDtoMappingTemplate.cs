@@ -22,7 +22,7 @@ namespace Intent.Modules.Java.ModelMapper.Templates.EntityToDtoMapping
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.ModelMapper\Templates\EntityToDtoMapping\EntityToDtoMappingTemplate.tt"
+    #line 1 "C:\Dev\Intent.Modules.Java\Modules\Intent.Modules.Java.ModelMapper\Templates\EntityToDtoMapping\EntityToDtoMappingTemplate.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "17.0.0.0")]
     public partial class EntityToDtoMappingTemplate : JavaTemplateBase<Intent.Modelers.Services.Api.DTOModel>
     {
@@ -34,49 +34,49 @@ namespace Intent.Modules.Java.ModelMapper.Templates.EntityToDtoMapping
         {
             this.Write("package ");
             
-            #line 10 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.ModelMapper\Templates\EntityToDtoMapping\EntityToDtoMappingTemplate.tt"
+            #line 10 "C:\Dev\Intent.Modules.Java\Modules\Intent.Modules.Java.ModelMapper\Templates\EntityToDtoMapping\EntityToDtoMappingTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Package));
             
             #line default
             #line hidden
             this.Write(";\r\n\r\nimport org.modelmapper.PropertyMap;\r\n\r\npublic class ");
             
-            #line 14 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.ModelMapper\Templates\EntityToDtoMapping\EntityToDtoMappingTemplate.tt"
+            #line 14 "C:\Dev\Intent.Modules.Java\Modules\Intent.Modules.Java.ModelMapper\Templates\EntityToDtoMapping\EntityToDtoMappingTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(ClassName));
             
             #line default
             #line hidden
             this.Write(" extends PropertyMap<");
             
-            #line 14 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.ModelMapper\Templates\EntityToDtoMapping\EntityToDtoMappingTemplate.tt"
+            #line 14 "C:\Dev\Intent.Modules.Java\Modules\Intent.Modules.Java.ModelMapper\Templates\EntityToDtoMapping\EntityToDtoMappingTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(GetTypeName(_entity.InternalElement)));
             
             #line default
             #line hidden
             this.Write(", ");
             
-            #line 14 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.ModelMapper\Templates\EntityToDtoMapping\EntityToDtoMappingTemplate.tt"
+            #line 14 "C:\Dev\Intent.Modules.Java\Modules\Intent.Modules.Java.ModelMapper\Templates\EntityToDtoMapping\EntityToDtoMappingTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(GetDtoType()));
             
             #line default
             #line hidden
             this.Write("> {\r\n    protected void configure() {\r\n");
             
-            #line 16 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.ModelMapper\Templates\EntityToDtoMapping\EntityToDtoMappingTemplate.tt"
+            #line 16 "C:\Dev\Intent.Modules.Java\Modules\Intent.Modules.Java.ModelMapper\Templates\EntityToDtoMapping\EntityToDtoMappingTemplate.tt"
   foreach(var mapping in GetMappings()) { 
             
             #line default
             #line hidden
             this.Write("        ");
             
-            #line 17 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.ModelMapper\Templates\EntityToDtoMapping\EntityToDtoMappingTemplate.tt"
+            #line 17 "C:\Dev\Intent.Modules.Java\Modules\Intent.Modules.Java.ModelMapper\Templates\EntityToDtoMapping\EntityToDtoMappingTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(mapping));
             
             #line default
             #line hidden
             this.Write("\r\n");
             
-            #line 18 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.ModelMapper\Templates\EntityToDtoMapping\EntityToDtoMappingTemplate.tt"
+            #line 18 "C:\Dev\Intent.Modules.Java\Modules\Intent.Modules.Java.ModelMapper\Templates\EntityToDtoMapping\EntityToDtoMappingTemplate.tt"
   } 
             
             #line default

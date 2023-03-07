@@ -22,7 +22,7 @@ namespace Intent.Modules.Java.SpringBoot.Templates.Application
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.SpringBoot\Templates\Application\ApplicationTemplate.tt"
+    #line 1 "C:\Dev\Intent.Modules.Java\Modules\Intent.Modules.Java.SpringBoot\Templates\Application\ApplicationTemplate.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "17.0.0.0")]
     public partial class ApplicationTemplate : JavaTemplateBase<object>
     {
@@ -34,7 +34,7 @@ namespace Intent.Modules.Java.SpringBoot.Templates.Application
         {
             this.Write("package ");
             
-            #line 10 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.SpringBoot\Templates\Application\ApplicationTemplate.tt"
+            #line 10 "C:\Dev\Intent.Modules.Java\Modules\Intent.Modules.Java.SpringBoot\Templates\Application\ApplicationTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Package));
             
             #line default
@@ -43,7 +43,7 @@ namespace Intent.Modules.Java.SpringBoot.Templates.Application
                     "rk.boot.autoconfigure.SpringBootApplication;\r\n\r\n@SpringBootApplication\r\npublic c" +
                     "lass ");
             
-            #line 16 "C:\Dev\Intent.Modules.Java\Intent.Modules.Java.SpringBoot\Templates\Application\ApplicationTemplate.tt"
+            #line 16 "C:\Dev\Intent.Modules.Java\Modules\Intent.Modules.Java.SpringBoot\Templates\Application\ApplicationTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(ClassName));
             
             #line default
