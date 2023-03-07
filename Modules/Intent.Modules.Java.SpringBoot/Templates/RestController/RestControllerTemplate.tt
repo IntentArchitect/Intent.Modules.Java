@@ -41,11 +41,7 @@ public class <#= ClassName #> {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
 <#          } #>
-<#          if (!operation.ReturnType.IsNullable && operation.ReturnType.IsCollection) { #>
-        if (result.isEmpty()) {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        }
-<#          } #>
+
         return new ResponseEntity<>(<#= GetResultValue(operation) #>, <#= GetHttpResponseCode() #>);
 <#      } else { #>
         <#= GetServiceInterfaceName().ToCamelCase() #>.<#= operation.Name #>(<#= this.GetArguments(operation.Parameters) #>);

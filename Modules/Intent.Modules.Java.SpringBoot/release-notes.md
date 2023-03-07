@@ -1,3 +1,7 @@
+### Version 3.3.12
+
+- Fixed: Controllers would return 404 result for empty collections.
+
 ### Version 3.3.11
 
 - Support for `ApplicationPropertyRequiredEvent` from the `Intent.Common.Java` module.

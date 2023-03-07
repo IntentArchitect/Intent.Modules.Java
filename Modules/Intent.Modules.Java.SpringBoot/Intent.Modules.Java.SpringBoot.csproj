@@ -58,7 +58,7 @@
     </PackageReference>
     <PackageReference Include="Intent.RoslynWeaver.Attributes" Version="2.0.1" />
     <PackageReference Include="Intent.SoftwareFactory.SDK" Version="3.3.3" />
-    <PackageReference Include="Intent.Modules.Java.Services" Version="3.3.8" />
+    <PackageReference Include="Intent.Modules.Java.Services" Version="3.3.10" />
   </ItemGroup>
 
   <ItemGroup>

@@ -170,65 +170,51 @@ namespace Intent.Modules.Java.SpringBoot.Templates.RestController
             
             #line default
             #line hidden
+            this.Write("\r\n        return new ResponseEntity<>(");
             
-            #line 44 "C:\Dev\Intent.Modules.Java\Modules\Intent.Modules.Java.SpringBoot\Templates\RestController\RestControllerTemplate.tt"
-          if (!operation.ReturnType.IsNullable && operation.ReturnType.IsCollection) { 
-            
-            #line default
-            #line hidden
-            this.Write("        if (result.isEmpty()) {\r\n            return new ResponseEntity<>(HttpStat" +
-                    "us.NOT_FOUND);\r\n        }\r\n");
-            
-            #line 48 "C:\Dev\Intent.Modules.Java\Modules\Intent.Modules.Java.SpringBoot\Templates\RestController\RestControllerTemplate.tt"
-          } 
-            
-            #line default
-            #line hidden
-            this.Write("        return new ResponseEntity<>(");
-            
-            #line 49 "C:\Dev\Intent.Modules.Java\Modules\Intent.Modules.Java.SpringBoot\Templates\RestController\RestControllerTemplate.tt"
+            #line 45 "C:\Dev\Intent.Modules.Java\Modules\Intent.Modules.Java.SpringBoot\Templates\RestController\RestControllerTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(GetResultValue(operation)));
             
             #line default
             #line hidden
             this.Write(", ");
             
-            #line 49 "C:\Dev\Intent.Modules.Java\Modules\Intent.Modules.Java.SpringBoot\Templates\RestController\RestControllerTemplate.tt"
+            #line 45 "C:\Dev\Intent.Modules.Java\Modules\Intent.Modules.Java.SpringBoot\Templates\RestController\RestControllerTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(GetHttpResponseCode()));
             
             #line default
             #line hidden
             this.Write(");\r\n");
             
-            #line 50 "C:\Dev\Intent.Modules.Java\Modules\Intent.Modules.Java.SpringBoot\Templates\RestController\RestControllerTemplate.tt"
+            #line 46 "C:\Dev\Intent.Modules.Java\Modules\Intent.Modules.Java.SpringBoot\Templates\RestController\RestControllerTemplate.tt"
       } else { 
             
             #line default
             #line hidden
             this.Write("        ");
             
-            #line 51 "C:\Dev\Intent.Modules.Java\Modules\Intent.Modules.Java.SpringBoot\Templates\RestController\RestControllerTemplate.tt"
+            #line 47 "C:\Dev\Intent.Modules.Java\Modules\Intent.Modules.Java.SpringBoot\Templates\RestController\RestControllerTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(GetServiceInterfaceName().ToCamelCase()));
             
             #line default
             #line hidden
             this.Write(".");
             
-            #line 51 "C:\Dev\Intent.Modules.Java\Modules\Intent.Modules.Java.SpringBoot\Templates\RestController\RestControllerTemplate.tt"
+            #line 47 "C:\Dev\Intent.Modules.Java\Modules\Intent.Modules.Java.SpringBoot\Templates\RestController\RestControllerTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("(");
             
-            #line 51 "C:\Dev\Intent.Modules.Java\Modules\Intent.Modules.Java.SpringBoot\Templates\RestController\RestControllerTemplate.tt"
+            #line 47 "C:\Dev\Intent.Modules.Java\Modules\Intent.Modules.Java.SpringBoot\Templates\RestController\RestControllerTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.GetArguments(operation.Parameters)));
             
             #line default
             #line hidden
             this.Write(");\r\n");
             
-            #line 52 "C:\Dev\Intent.Modules.Java\Modules\Intent.Modules.Java.SpringBoot\Templates\RestController\RestControllerTemplate.tt"
+            #line 48 "C:\Dev\Intent.Modules.Java\Modules\Intent.Modules.Java.SpringBoot\Templates\RestController\RestControllerTemplate.tt"
       }
 
         if (hasCheckedExceptions)
@@ -241,14 +227,14 @@ namespace Intent.Modules.Java.SpringBoot.Templates.RestController
             #line hidden
             this.Write("        } catch (");
             
-            #line 59 "C:\Dev\Intent.Modules.Java\Modules\Intent.Modules.Java.SpringBoot\Templates\RestController\RestControllerTemplate.tt"
+            #line 55 "C:\Dev\Intent.Modules.Java\Modules\Intent.Modules.Java.SpringBoot\Templates\RestController\RestControllerTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(checkedException.Types));
             
             #line default
             #line hidden
             this.Write(" e) {\r\n");
             
-            #line 60 "C:\Dev\Intent.Modules.Java\Modules\Intent.Modules.Java.SpringBoot\Templates\RestController\RestControllerTemplate.tt"
+            #line 56 "C:\Dev\Intent.Modules.Java\Modules\Intent.Modules.Java.SpringBoot\Templates\RestController\RestControllerTemplate.tt"
 
                 if (checkedException.Log) { 
             
@@ -256,49 +242,49 @@ namespace Intent.Modules.Java.SpringBoot.Templates.RestController
             #line hidden
             this.Write("            log.error(e.getMessage(), e);\r\n");
             
-            #line 63 "C:\Dev\Intent.Modules.Java\Modules\Intent.Modules.Java.SpringBoot\Templates\RestController\RestControllerTemplate.tt"
+            #line 59 "C:\Dev\Intent.Modules.Java\Modules\Intent.Modules.Java.SpringBoot\Templates\RestController\RestControllerTemplate.tt"
               } 
             
             #line default
             #line hidden
             this.Write("            throw new ");
             
-            #line 64 "C:\Dev\Intent.Modules.Java\Modules\Intent.Modules.Java.SpringBoot\Templates\RestController\RestControllerTemplate.tt"
+            #line 60 "C:\Dev\Intent.Modules.Java\Modules\Intent.Modules.Java.SpringBoot\Templates\RestController\RestControllerTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(ImportType("org.springframework.web.server.ResponseStatusException")));
             
             #line default
             #line hidden
             this.Write("(");
             
-            #line 64 "C:\Dev\Intent.Modules.Java\Modules\Intent.Modules.Java.SpringBoot\Templates\RestController\RestControllerTemplate.tt"
+            #line 60 "C:\Dev\Intent.Modules.Java\Modules\Intent.Modules.Java.SpringBoot\Templates\RestController\RestControllerTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(ImportType("org.springframework.http.HttpStatus")));
             
             #line default
             #line hidden
             this.Write(".");
             
-            #line 64 "C:\Dev\Intent.Modules.Java\Modules\Intent.Modules.Java.SpringBoot\Templates\RestController\RestControllerTemplate.tt"
+            #line 60 "C:\Dev\Intent.Modules.Java\Modules\Intent.Modules.Java.SpringBoot\Templates\RestController\RestControllerTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(checkedException.HttpStatus));
             
             #line default
             #line hidden
             this.Write(");\r\n");
             
-            #line 65 "C:\Dev\Intent.Modules.Java\Modules\Intent.Modules.Java.SpringBoot\Templates\RestController\RestControllerTemplate.tt"
+            #line 61 "C:\Dev\Intent.Modules.Java\Modules\Intent.Modules.Java.SpringBoot\Templates\RestController\RestControllerTemplate.tt"
           } 
             
             #line default
             #line hidden
             this.Write("        }\r\n");
             
-            #line 67 "C:\Dev\Intent.Modules.Java\Modules\Intent.Modules.Java.SpringBoot\Templates\RestController\RestControllerTemplate.tt"
+            #line 63 "C:\Dev\Intent.Modules.Java\Modules\Intent.Modules.Java.SpringBoot\Templates\RestController\RestControllerTemplate.tt"
       } 
             
             #line default
             #line hidden
             this.Write("    }\r\n");
             
-            #line 69 "C:\Dev\Intent.Modules.Java\Modules\Intent.Modules.Java.SpringBoot\Templates\RestController\RestControllerTemplate.tt"
+            #line 65 "C:\Dev\Intent.Modules.Java\Modules\Intent.Modules.Java.SpringBoot\Templates\RestController\RestControllerTemplate.tt"
 
     } 
             
