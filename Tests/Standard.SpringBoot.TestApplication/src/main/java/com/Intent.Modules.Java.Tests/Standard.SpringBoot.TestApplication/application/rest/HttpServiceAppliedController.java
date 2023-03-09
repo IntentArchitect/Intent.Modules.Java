@@ -28,6 +28,7 @@ public class HttpServiceAppliedController {
         if (result == null) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
+
         return new ResponseEntity<>(result, HttpStatus.OK);
     }
 

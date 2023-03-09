@@ -34,6 +34,7 @@ public class UsersController {
         if (result == null) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
+
         return new ResponseEntity<>(new JsonResponse<UUID>(result), HttpStatus.OK);
     }
 
@@ -48,6 +49,7 @@ public class UsersController {
         if (result == null) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
+
         return new ResponseEntity<>(result, HttpStatus.OK);
     }
 
@@ -57,9 +59,7 @@ public class UsersController {
         @ApiResponse(responseCode = "200", description = "Returns the specified List<UserDto>.") })
     public ResponseEntity<List<UserDto>> FindAll() {
         final List<UserDto> result = usersService.FindAll();
-        if (result.isEmpty()) {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        }
+
         return new ResponseEntity<>(result, HttpStatus.OK);
     }
 
@@ -83,6 +83,7 @@ public class UsersController {
         if (result == null) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
+
         return new ResponseEntity<>(result, HttpStatus.OK);
     }
 }
