@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using Intent.Modules.Common.Templates;
 using Intent.Modules.Common.Types.Api;
@@ -69,35 +68,50 @@ public enum {_className} {{{GetLiterals()}{GetMembers()}
                 return string.Empty;
             }
 
+            var currentNumber = -1L;
+
             return string.Join(@",", _model.Literals
                 .Select(literal => $"{Environment.NewLine}    {literal.Name.ToSnakeCase().ToUpperInvariant()}{GetLiteralValue(literal)}")) + ";";
-        }
 
-        private string GetLiteralValue(EnumLiteralModel model)
-        {
-            return _literalType switch
+            string GetLiteralValue(EnumLiteralModel literal)
             {
-                LiteralType.None => string.Empty,
-                LiteralType.Int => $"({model.Value.Trim()})",
-                LiteralType.Long => $"({model.Value.Trim()}L)",
-                LiteralType.String => $"(\"{model.Value.Trim()}\")",
-                _ => throw new ArgumentOutOfRangeException()
-            };
+                switch (_literalType)
+                {
+                    case LiteralType.None:
+                        return string.Empty;
+                    case LiteralType.Int:
+                        currentNumber = string.IsNullOrWhiteSpace(literal.Value?.Trim())
+                            ? currentNumber += 1
+                            : int.Parse(literal.Value.Trim());
+                        return $"({currentNumber:D})";
+                    case LiteralType.Long:
+                        currentNumber = string.IsNullOrWhiteSpace(literal.Value?.Trim())
+                            ? currentNumber += 1
+                            : long.Parse(literal.Value.Trim());
+                        return $"({currentNumber:D}L)";
+                    case LiteralType.String:
+                        return $"(\"{(literal.Value ?? literal.Name).Trim()}\")";
+                    default:
+                        throw new ArgumentOutOfRangeException();
+                }
+            }
         }
 
         private static LiteralType DetermineLiteralType(EnumModel model)
         {
-            if (model.Literals.All(x => string.IsNullOrWhiteSpace(x.Value)))
+            if (model.Literals.All(x => string.IsNullOrWhiteSpace(x.Value?.Trim())))
             {
                 return LiteralType.None;
             }
 
-            if (model.Literals.All(x => int.TryParse(x.Value.Trim(), out _)))
+            if (model.Literals.Any(x => int.TryParse(x.Value?.Trim(), out _)) &&
+                model.Literals.All(x => string.IsNullOrWhiteSpace(x.Value?.Trim()) || int.TryParse(x.Value.Trim(), out _)))
             {
                 return LiteralType.Int;
             }
 
-            if (model.Literals.All(x => long.TryParse(x.Value.Trim(), out _)))
+            if (model.Literals.Any(x => long.TryParse(x.Value?.Trim(), out _)) &&
+                model.Literals.All(x => string.IsNullOrWhiteSpace(x.Value?.Trim()) || long.TryParse(x.Value.Trim(), out _)))
             {
                 return LiteralType.Long;
             }

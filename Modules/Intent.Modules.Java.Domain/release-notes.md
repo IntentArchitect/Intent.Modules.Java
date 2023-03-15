@@ -1,4 +1,8 @@
-### Version 4.0.3B
+### Version 4.0.4
+
+- Provided at least one of an enum's literals has a numeric value specified, all literals without values specified for the same enum will automatically have values assigned in the generated code.
+
+### Version 4.0.3
 
 - Enums now support serialization.
 
