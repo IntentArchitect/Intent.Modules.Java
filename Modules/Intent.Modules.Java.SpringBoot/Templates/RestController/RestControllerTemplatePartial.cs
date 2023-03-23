@@ -171,6 +171,8 @@ namespace Intent.Modules.Java.SpringBoot.Templates.RestController
 
         private string GetParameterBindingDecorator(OperationModel operation, ParameterModel parameter)
         {
+            var required = parameter.Type.IsNullable ? ", required = false" : string.Empty;
+
             if (parameter.GetParameterSettings().Source().IsDefault())
             {
                 if ((GetTypeInfo(parameter.TypeReference).IsPrimitive ||
@@ -178,17 +180,18 @@ namespace Intent.Modules.Java.SpringBoot.Templates.RestController
                      GetTypeInfo(parameter.TypeReference).Name == "UUID") &&
                     !parameter.TypeReference.IsCollection)
                 {
+
                     if (GetPath(operation) != null && GetPath(operation).Split('/', StringSplitOptions.RemoveEmptyEntries).Any(x =>
                             x.Contains('{')
                             && x.Contains('}')
                             && x.Split(new[] { '{', '}' }, StringSplitOptions.RemoveEmptyEntries).Any(i => i == parameter.Name)))
                     {
                         return
-                            $"@PathVariable(value = \"{parameter.Name}\"{(parameter.Type.IsNullable ? $", required = {parameter.TypeReference.IsNullable.ToString().ToLower()}" : string.Empty)})";
+                            $"@PathVariable(value = \"{parameter.Name}\"{required})";
                     }
 
                     return
-                        $"@RequestParam(value = \"{parameter.Name}\"{(parameter.Type.IsNullable ? $", required = {parameter.TypeReference.IsNullable.ToString().ToLower()}" : string.Empty)})";
+                        $"@RequestParam(value = \"{parameter.Name}\"{required})";
                 }
 
                 if (GetHttpVerb(operation) == HttpVerb.Patch ||
@@ -216,13 +219,13 @@ namespace Intent.Modules.Java.SpringBoot.Templates.RestController
             if (parameter.GetParameterSettings().Source().IsFromQuery())
             {
                 return
-                    $"@RequestParam(value = \"{parameter.Name}\"{(parameter.Type.IsNullable ? $", required = {parameter.TypeReference.IsNullable.ToString().ToLower()}" : string.Empty)})";
+                    $"@RequestParam(value = \"{parameter.Name}\"{required})";
             }
 
             if (parameter.GetParameterSettings().Source().IsFromRoute())
             {
                 return
-                    $"@PathVariable(value = \"{parameter.Name}\"{(parameter.Type.IsNullable ? $", required = {parameter.TypeReference.IsNullable.ToString().ToLower()}" : string.Empty)})";
+                    $"@PathVariable(value = \"{parameter.Name}\"{required})";
             }
 
             return string.Empty;

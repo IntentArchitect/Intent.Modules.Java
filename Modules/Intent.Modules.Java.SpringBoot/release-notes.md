@@ -1,3 +1,7 @@
+### Version 3.3.13
+
+- Fixed: When a service operation's parameter had `Is Nullable` checked then `required = true` would be added to it.
+
 ### Version 3.3.12
 
 - Fixed: Controllers would return 404 result for empty collections.
