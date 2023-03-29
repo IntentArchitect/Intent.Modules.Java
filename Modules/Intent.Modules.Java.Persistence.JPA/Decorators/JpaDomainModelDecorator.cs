@@ -351,10 +351,27 @@ namespace Intent.Modules.Java.Persistence.JPA.Decorators
                 {
                     annotations.Add($@"@{_template.ImportType("org.hibernate.annotations.ColumnDefault")}(""Current_Timestamp"")");
                 }
+                else if (model.TypeReference.Element.IsEnumModel())
+                {
+                    annotations.Add($@"@{_template.ImportType("org.hibernate.annotations.ColumnDefault")}(""'{model.Value}'"")");
+                }
                 else
                 {
                     annotations.Add($@"@{_template.ImportType("org.hibernate.annotations.ColumnDefault")}(""{model.Value}"")");
                 }
+            }
+            else if (model.TypeReference.Element.IsEnumModel() && model.TypeReference.Element.AsEnumModel()?.Literals.Any(p => !string.IsNullOrWhiteSpace(p.Value)) != true)
+            {
+                annotations.Add($@"@{_template.ImportType("org.hibernate.annotations.ColumnDefault")}(LITERAL VALUE MISSING FOR {model.Name})");
+            }
+            
+            if (model.TypeReference.Element.AsEnumModel()?.Literals.Any(p => !string.IsNullOrWhiteSpace(p.Value)) == true)
+            {
+                annotations.Add($"@{_template.ImportType("javax.persistence.Enumerated")}(EnumType.STRING)");
+            }
+            else if (model.TypeReference.Element.IsEnumModel())
+            {
+                annotations.Add($"@{_template.ImportType("javax.persistence.Enumerated")}(EnumType.ORDINAL)");
             }
 
             annotations.Add($@"@{_template.ImportType("javax.persistence.Column")}({string.Join(", ", columnSettings)})");
