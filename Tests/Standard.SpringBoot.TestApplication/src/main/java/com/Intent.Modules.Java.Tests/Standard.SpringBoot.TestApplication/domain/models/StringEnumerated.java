@@ -2,14 +2,14 @@ package com.Intent.Modules.Java.Tests.Standard.SpringBoot.TestApplication.domain
 
 import com.fasterxml.jackson.annotation.JsonValue;
 
-public enum TestEnum {
+public enum StringEnumerated {
     VALUE_ONE(1),
     VALUE_TWO(2);
 
     @JsonValue
     public final int value;
 
-    private TestEnum(int value) {
+    private StringEnumerated(int value) {
         this.value = value;
     }
 }

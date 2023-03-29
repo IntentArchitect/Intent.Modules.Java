@@ -8,18 +8,18 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.OffsetDateTime;
 import java.util.UUID;
-import javax.persistence.*;
-import javax.validation.constraints.NotNull;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import org.hibernate.annotations.ColumnDefault;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import javax.persistence.Enumerated;
+import javax.validation.constraints.NotNull;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import org.hibernate.annotations.ColumnDefault;
+import javax.persistence.EnumType;
 
 @Entity
 @Table(name = "default_values")
@@ -46,12 +46,6 @@ public class DefaultValues implements Serializable {
     private Integer intDefault = 42;
 
     @NotNull
-    @ColumnDefault("'2'")
-    @Enumerated(EnumType.STRING)
-    @Column(name = "enum_default", nullable = false)
-    private TestEnum enumDefault = TestEnum.VALUE_TWO;
-
-    @NotNull
     @ColumnDefault("true")
     @Column(name = "bool_default1", nullable = false)
     private Boolean boolDefault1 = true;
@@ -75,6 +69,17 @@ public class DefaultValues implements Serializable {
     @ColumnDefault("Current_Timestamp")
     @Column(name = "dateonly", nullable = false)
     private LocalDate dateonly = LocalDate.now();
+
+    @NotNull
+    @ColumnDefault("'2'")
+    @Enumerated(EnumType.STRING)
+    @Column(name = "str_enum", nullable = false)
+    private StringEnumerated strEnum = StringEnumerated.VALUE_TWO;
+
+    @NotNull
+    @Enumerated(EnumType.ORDINAL)
+    @Column(name = "ord_enum", nullable = false)
+    private OrdinalEnumerated ordEnum;
 
     public boolean isNew() {
         return this.id == null;

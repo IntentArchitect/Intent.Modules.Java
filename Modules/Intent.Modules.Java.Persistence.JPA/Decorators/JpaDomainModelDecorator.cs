@@ -363,11 +363,11 @@ namespace Intent.Modules.Java.Persistence.JPA.Decorators
 
             if (model.TypeReference.Element.AsEnumModel()?.Literals.Any(p => !string.IsNullOrWhiteSpace(p.Value)) == true)
             {
-                annotations.Add($"@{_template.ImportType("javax.persistence.Enumerated")}(EnumType.STRING)");
+                annotations.Add($"@{_template.ImportType("javax.persistence.Enumerated")}({_template.ImportType("javax.persistence.EnumType")}.STRING)");
             }
             else if (model.TypeReference.Element.IsEnumModel())
             {
-                annotations.Add($"@{_template.ImportType("javax.persistence.Enumerated")}(EnumType.ORDINAL)");
+                annotations.Add($"@{_template.ImportType("javax.persistence.Enumerated")}({_template.ImportType("javax.persistence.EnumType")}.ORDINAL)");
             }
 
             annotations.Add($@"@{_template.ImportType("javax.persistence.Column")}({string.Join(", ", columnSettings)})");

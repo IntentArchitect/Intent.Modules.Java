@@ -108,31 +108,6 @@
       <metadata />
       <childElements />
     </childElement>
-    <childElement id="7569fc01-2e18-49f8-8c0f-87b0ef1ec048" type="Attribute" typeId="0090fb93-483e-41af-a11d-5ad2dc796adf">
-      <name>enumDefault</name>
-      <display>enumDefault: TestEnum = 2</display>
-      <isAbstract>false</isAbstract>
-      <value>2</value>
-      <genericTypes />
-      <typeReference id="52270674-4147-40b0-8f0e-a3a48798c69c">
-        <typeId>104b8ecd-1595-487c-bdcb-8f5e37e5fc6e</typeId>
-        <isNavigable>true</isNavigable>
-        <isNullable>false</isNullable>
-        <isCollection>false</isCollection>
-        <isRequired>true</isRequired>
-        <typePackageName>Standard.SpringBoot.TestApplication.Domain</typePackageName>
-        <typePackageId>3531c1e5-6176-40ea-8e6e-1b136deb744d</typePackageId>
-        <stereotypes />
-        <genericTypeParameters />
-      </typeReference>
-      <isMapped>false</isMapped>
-      <parentFolderId>53fe142c-675b-48a1-a124-a7f1f88aaacd</parentFolderId>
-      <packageId>3531c1e5-6176-40ea-8e6e-1b136deb744d</packageId>
-      <packageName>Standard.SpringBoot.TestApplication.Domain</packageName>
-      <stereotypes />
-      <metadata />
-      <childElements />
-    </childElement>
     <childElement id="c8d43e2c-7a2b-4f12-a28e-b844ba5d2a7d" type="Attribute" typeId="0090fb93-483e-41af-a11d-5ad2dc796adf">
       <name>boolDefault1</name>
       <display>boolDefault1: Boolean = true</display>
@@ -247,6 +222,55 @@
         <isRequired>true</isRequired>
         <typePackageName>Intent.Common.Types</typePackageName>
         <typePackageId>870ad967-cbd4-4ea9-b86d-9c3a5d55ea67</typePackageId>
+        <stereotypes />
+        <genericTypeParameters />
+      </typeReference>
+      <isMapped>false</isMapped>
+      <parentFolderId>53fe142c-675b-48a1-a124-a7f1f88aaacd</parentFolderId>
+      <packageId>3531c1e5-6176-40ea-8e6e-1b136deb744d</packageId>
+      <packageName>Standard.SpringBoot.TestApplication.Domain</packageName>
+      <stereotypes />
+      <metadata />
+      <childElements />
+    </childElement>
+    <childElement id="7569fc01-2e18-49f8-8c0f-87b0ef1ec048" type="Attribute" typeId="0090fb93-483e-41af-a11d-5ad2dc796adf">
+      <name>strEnum</name>
+      <display>strEnum: StringEnumerated = 2</display>
+      <isAbstract>false</isAbstract>
+      <value>2</value>
+      <genericTypes />
+      <typeReference id="52270674-4147-40b0-8f0e-a3a48798c69c">
+        <typeId>104b8ecd-1595-487c-bdcb-8f5e37e5fc6e</typeId>
+        <isNavigable>true</isNavigable>
+        <isNullable>false</isNullable>
+        <isCollection>false</isCollection>
+        <isRequired>true</isRequired>
+        <typePackageName>Standard.SpringBoot.TestApplication.Domain</typePackageName>
+        <typePackageId>3531c1e5-6176-40ea-8e6e-1b136deb744d</typePackageId>
+        <stereotypes />
+        <genericTypeParameters />
+      </typeReference>
+      <isMapped>false</isMapped>
+      <parentFolderId>53fe142c-675b-48a1-a124-a7f1f88aaacd</parentFolderId>
+      <packageId>3531c1e5-6176-40ea-8e6e-1b136deb744d</packageId>
+      <packageName>Standard.SpringBoot.TestApplication.Domain</packageName>
+      <stereotypes />
+      <metadata />
+      <childElements />
+    </childElement>
+    <childElement id="b8e9b927-2aab-4e06-b1c6-b59c965a09c0" type="Attribute" typeId="0090fb93-483e-41af-a11d-5ad2dc796adf">
+      <name>ordEnum</name>
+      <display>ordEnum: OrdinalEnumerated</display>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <typeReference id="84ab2ec0-2104-465c-8a4a-c7e906d76dd8">
+        <typeId>79250d62-8cbb-423a-81fe-588bdab814a6</typeId>
+        <isNavigable>true</isNavigable>
+        <isNullable>false</isNullable>
+        <isCollection>false</isCollection>
+        <isRequired>true</isRequired>
+        <typePackageName>Standard.SpringBoot.TestApplication.Domain</typePackageName>
+        <typePackageId>3531c1e5-6176-40ea-8e6e-1b136deb744d</typePackageId>
         <stereotypes />
         <genericTypeParameters />
       </typeReference>
