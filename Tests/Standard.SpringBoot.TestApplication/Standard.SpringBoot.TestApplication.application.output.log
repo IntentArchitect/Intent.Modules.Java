@@ -204,6 +204,14 @@
     </FileLog>
     <FileLog>
       <ProjectId>c30c700a-cd96-4491-a9be-7a94e1ea645c</ProjectId>
+      <CorrelationId>Intent.Java.Spring.Data.Repositories.EntityRepository#53fe142c-675b-48a1-a124-a7f1f88aaacd</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>src/main/java/com/Intent.Modules.Java.Tests/Standard.SpringBoot.TestApplication/data/DefaultValuesRepository.java</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>DefaultValuesRepository.java</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
+      <ProjectId>c30c700a-cd96-4491-a9be-7a94e1ea645c</ProjectId>
       <CorrelationId>Intent.Java.Spring.Data.Repositories.EntityRepository#e2406a5f-494a-4541-ae7a-a81b41901ccb</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>src/main/java/com/Intent.Modules.Java.Tests/Standard.SpringBoot.TestApplication/data/UserRepository.java</ApplicationRelativeFilePath>
@@ -212,10 +220,26 @@
     </FileLog>
     <FileLog>
       <ProjectId>c1f8c983-6326-4bbe-a3d0-0b940f12f320</ProjectId>
+      <CorrelationId>Intent.Java.Domain.DomainModel#53fe142c-675b-48a1-a124-a7f1f88aaacd</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>src/main/java/com/Intent.Modules.Java.Tests/Standard.SpringBoot.TestApplication/domain/models/DefaultValues.java</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>DefaultValues.java</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
+      <ProjectId>c1f8c983-6326-4bbe-a3d0-0b940f12f320</ProjectId>
       <CorrelationId>Intent.Java.Domain.DomainModel#cafcf0b6-2b88-4b4a-b766-8931dfe2199f</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>src/main/java/com/Intent.Modules.Java.Tests/Standard.SpringBoot.TestApplication/domain/models/Role.java</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>Role.java</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
+      <ProjectId>c1f8c983-6326-4bbe-a3d0-0b940f12f320</ProjectId>
+      <CorrelationId>Intent.Java.Domain.Enum#f80c000b-8d90-47b8-a9b0-5d763cec1986</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>src/main/java/com/Intent.Modules.Java.Tests/Standard.SpringBoot.TestApplication/domain/models/TestEnum.java</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>TestEnum.java</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
