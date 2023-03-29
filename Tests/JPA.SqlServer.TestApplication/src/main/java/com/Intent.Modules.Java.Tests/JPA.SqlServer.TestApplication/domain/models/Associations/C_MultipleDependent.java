@@ -1,8 +1,13 @@
 package com.Intent.Modules.Java.Tests.JPA.SqlServer.TestApplication.domain.models.Associations;
-
-import lombok.NoArgsConstructor;
 import com.Intent.Modules.Java.Tests.JPA.SqlServer.TestApplication.intent.IntentManageClass;
 import com.Intent.Modules.Java.Tests.JPA.SqlServer.TestApplication.intent.Mode;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+
+import lombok.NoArgsConstructor;
+
+import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 import java.util.List;
 import java.util.UUID;
@@ -16,9 +21,6 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import javax.validation.constraints.NotNull;
-import lombok.AllArgsConstructor;
-import lombok.Data;
 
 @Entity
 @Table(name = "c_multiple_dependents")
@@ -31,7 +33,7 @@ public class C_MultipleDependent implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(columnDefinition = "uuid", name = "id", nullable = false)
+    @Column(columnDefinition = "uniqueidentifier", name = "id", nullable = false)
     private UUID id;
 
     @NotNull

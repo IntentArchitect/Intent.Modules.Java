@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<class id="1c67bbde-15a5-4355-870b-e97b3e3f7b2d" type="Enum" typeId="85fba0e9-9161-4c85-a603-a229ef312beb">
+  <name>StringEnumerated</name>
+  <display>StringEnumerated</display>
+  <isAbstract>false</isAbstract>
+  <sort-children>by-type-then-manually</sort-children>
+  <genericTypes />
+  <isMapped>false</isMapped>
+  <parentFolderId>6240679b-91ad-4837-b4be-c89572ffe5c1</parentFolderId>
+  <packageId>264605e5-49c3-4144-92c7-d48d328fe6ee</packageId>
+  <packageName>JPA.SqlServer.TestApplication.Domain</packageName>
+  <stereotypes />
+  <metadata />
+  <childElements>
+    <childElement id="1ede762c-7271-4eed-af4e-36228f9310c8" type="Enum-Literal" typeId="4215f417-25d2-4509-9309-5076a1452eaa">
+      <name>ValueOne</name>
+      <display>ValueOne = 1</display>
+      <isAbstract>false</isAbstract>
+      <value>1</value>
+      <genericTypes />
+      <isMapped>false</isMapped>
+      <parentFolderId>1c67bbde-15a5-4355-870b-e97b3e3f7b2d</parentFolderId>
+      <packageId>264605e5-49c3-4144-92c7-d48d328fe6ee</packageId>
+      <packageName>JPA.SqlServer.TestApplication.Domain</packageName>
+      <stereotypes />
+      <metadata />
+      <childElements />
+    </childElement>
+    <childElement id="fbef0178-845d-45c6-9e6b-e1610d2e91dc" type="Enum-Literal" typeId="4215f417-25d2-4509-9309-5076a1452eaa">
+      <name>ValueTwo</name>
+      <display>ValueTwo = 2</display>
+      <isAbstract>false</isAbstract>
+      <value>2</value>
+      <genericTypes />
+      <isMapped>false</isMapped>
+      <parentFolderId>1c67bbde-15a5-4355-870b-e97b3e3f7b2d</parentFolderId>
+      <packageId>264605e5-49c3-4144-92c7-d48d328fe6ee</packageId>
+      <packageName>JPA.SqlServer.TestApplication.Domain</packageName>
+      <stereotypes />
+      <metadata />
+      <childElements />
+    </childElement>
+  </childElements>
+</class>

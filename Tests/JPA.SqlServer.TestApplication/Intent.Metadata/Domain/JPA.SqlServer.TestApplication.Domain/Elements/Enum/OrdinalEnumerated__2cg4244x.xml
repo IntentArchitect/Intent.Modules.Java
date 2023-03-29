@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<class id="4a074922-41ae-4da5-998f-d08ee843e870" type="Enum" typeId="85fba0e9-9161-4c85-a603-a229ef312beb">
+  <name>OrdinalEnumerated</name>
+  <display>OrdinalEnumerated</display>
+  <isAbstract>false</isAbstract>
+  <sort-children>by-type-then-manually</sort-children>
+  <genericTypes />
+  <isMapped>false</isMapped>
+  <parentFolderId>6240679b-91ad-4837-b4be-c89572ffe5c1</parentFolderId>
+  <packageId>264605e5-49c3-4144-92c7-d48d328fe6ee</packageId>
+  <packageName>JPA.SqlServer.TestApplication.Domain</packageName>
+  <stereotypes />
+  <metadata />
+  <childElements>
+    <childElement id="171e2dfc-7aaf-4915-a6e3-4be1dee06ce2" type="Enum-Literal" typeId="4215f417-25d2-4509-9309-5076a1452eaa">
+      <name>LiteralOne</name>
+      <display>LiteralOne</display>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <isMapped>false</isMapped>
+      <parentFolderId>4a074922-41ae-4da5-998f-d08ee843e870</parentFolderId>
+      <packageId>264605e5-49c3-4144-92c7-d48d328fe6ee</packageId>
+      <packageName>JPA.SqlServer.TestApplication.Domain</packageName>
+      <stereotypes />
+      <metadata />
+      <childElements />
+    </childElement>
+    <childElement id="18d0e16c-eb6b-4cfa-922d-3b53facdc0b1" type="Enum-Literal" typeId="4215f417-25d2-4509-9309-5076a1452eaa">
+      <name>LiteralTwo</name>
+      <display>LiteralTwo</display>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <isMapped>false</isMapped>
+      <parentFolderId>4a074922-41ae-4da5-998f-d08ee843e870</parentFolderId>
+      <packageId>264605e5-49c3-4144-92c7-d48d328fe6ee</packageId>
+      <packageName>JPA.SqlServer.TestApplication.Domain</packageName>
+      <stereotypes />
+      <metadata />
+      <childElements />
+    </childElement>
+  </childElements>
+</class>

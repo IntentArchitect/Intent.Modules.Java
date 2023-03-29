@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<association id="320473fc-728c-46a8-96d2-5d617c539d38">
+  <sourceEnd id="154103fc-4cf4-4ec2-a078-a4214418dd47" type="Comment Source End" typeId="7e98213c-4a9c-4d6f-98fc-f185948cc9e8">
+    <name>Abstract Note</name>
+    <display>Abstract Note: Abstract Note</display>
+    <order>1</order>
+    <typeReference id="e5a9dbe3-cefa-4abe-9da2-a348ae7595d9">
+      <typeId>47a02c02-9e78-42a6-951b-b041bff6f96d</typeId>
+      <isNavigable>true</isNavigable>
+      <isNullable>false</isNullable>
+      <isCollection>false</isCollection>
+      <isRequired>true</isRequired>
+      <typePackageName>JPA.SqlServer.TestApplication.Domain</typePackageName>
+      <typePackageId>264605e5-49c3-4144-92c7-d48d328fe6ee</typePackageId>
+      <stereotypes />
+      <genericTypeParameters />
+    </typeReference>
+    <stereotypes />
+    <metadata />
+    <childElements />
+  </sourceEnd>
+  <targetEnd id="320473fc-728c-46a8-96d2-5d617c539d38" type="Comment Target End" typeId="b7edce45-ccf0-47ed-b79f-86d5145c9f62">
+    <name>tphPoly_TopLevel</name>
+    <display>tphPoly_TopLevel: tphPoly_TopLevel</display>
+    <order>0</order>
+    <typeReference id="fd7e6a37-759e-4f7e-84eb-cab6d001e2f7">
+      <typeId>1c2e6786-5e40-40d1-9fcc-83f682ab61c5</typeId>
+      <isNavigable>true</isNavigable>
+      <isNullable>false</isNullable>
+      <isCollection>false</isCollection>
+      <isRequired>true</isRequired>
+      <typePackageName>JPA.SqlServer.TestApplication.Domain</typePackageName>
+      <typePackageId>264605e5-49c3-4144-92c7-d48d328fe6ee</typePackageId>
+      <stereotypes />
+      <genericTypeParameters />
+    </typeReference>
+    <stereotypes />
+    <metadata />
+    <childElements />
+  </targetEnd>
+  <associationType>Comment Association</associationType>
+  <associationTypeId>5264c135-e856-468d-8bd7-154b75842256</associationTypeId>
+  <stereotypes />
+</association>

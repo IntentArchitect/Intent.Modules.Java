@@ -251,7 +251,7 @@ namespace Intent.Modules.Java.Persistence.JPA.Decorators
                 // Return implicit primary key
                 var (type, columnType) = _application.Settings.GetDatabaseSettings().KeyType().AsEnum() switch
                 {
-                    DatabaseSettings.KeyTypeOptionsEnum.Guid => (_template.ImportType("java.util.UUID"), "uuid"),
+                    DatabaseSettings.KeyTypeOptionsEnum.Guid => (_template.ImportType("java.util.UUID"), GetGuidColumnDefinition()),
                     DatabaseSettings.KeyTypeOptionsEnum.Long => ("Long", null),
                     DatabaseSettings.KeyTypeOptionsEnum.Int => ("Integer", null),
                     _ => throw new ArgumentOutOfRangeException()
@@ -289,14 +289,7 @@ namespace Intent.Modules.Java.Persistence.JPA.Decorators
             }
             else if (model.TypeReference.Element.Name.ToLowerInvariant() is "guid" or "uuid")
             {
-                var columnDefinition = _application.Settings.GetDatabaseSettings().DatabaseProvider().AsEnum() switch
-                {
-                    DatabaseSettingsExtensions.DatabaseProviderOptionsEnum.H2 => "uuid",
-                    DatabaseSettingsExtensions.DatabaseProviderOptionsEnum.Mysql => "CHAR(36)",
-                    DatabaseSettingsExtensions.DatabaseProviderOptionsEnum.Postgresql => "uuid",
-                    DatabaseSettingsExtensions.DatabaseProviderOptionsEnum.SqlServer => "uniqueidentifier",
-                    _ => throw new ArgumentOutOfRangeException()
-                };
+                var columnDefinition = GetGuidColumnDefinition();
 
                 columnSettings.Add($"columnDefinition = \"{columnDefinition}\"");
             }
@@ -355,6 +348,23 @@ namespace Intent.Modules.Java.Persistence.JPA.Decorators
                 {
                     annotations.Add($@"@{_template.ImportType("org.hibernate.annotations.ColumnDefault")}(""'{model.Value}'"")");
                 }
+                else if (model.TypeReference.HasBoolType() || model.TypeReference.HasJavaBooleanType())
+                {
+                    bool.TryParse(model.Value, out var boolVal);
+                    var boolExpression = _application.Settings.GetDatabaseSettings().DatabaseProvider().AsEnum() switch
+                    {
+                        DatabaseSettingsExtensions.DatabaseProviderOptionsEnum.H2 =>
+                            boolVal.ToString().ToLower(),
+                        DatabaseSettingsExtensions.DatabaseProviderOptionsEnum.Mysql =>
+                            boolVal.ToString().ToLower(),
+                        DatabaseSettingsExtensions.DatabaseProviderOptionsEnum.Postgresql =>
+                            boolVal.ToString().ToLower(),
+                        DatabaseSettingsExtensions.DatabaseProviderOptionsEnum.SqlServer =>
+                            boolVal ? "1" : "0",
+                        _ => throw new ArgumentOutOfRangeException()
+                    };
+                    annotations.Add($@"@{_template.ImportType("org.hibernate.annotations.ColumnDefault")}(""{boolExpression}"")");
+                }
                 else
                 {
                     annotations.Add($@"@{_template.ImportType("org.hibernate.annotations.ColumnDefault")}(""{model.Value}"")");
@@ -375,6 +385,19 @@ namespace Intent.Modules.Java.Persistence.JPA.Decorators
             const string newLine = @"
     ";
             return string.Join(newLine, annotations);
+        }
+
+        private string GetGuidColumnDefinition()
+        {
+            var columnDefinition = _application.Settings.GetDatabaseSettings().DatabaseProvider().AsEnum() switch
+            {
+                DatabaseSettingsExtensions.DatabaseProviderOptionsEnum.H2 => "uuid",
+                DatabaseSettingsExtensions.DatabaseProviderOptionsEnum.Mysql => "CHAR(36)",
+                DatabaseSettingsExtensions.DatabaseProviderOptionsEnum.Postgresql => "uuid",
+                DatabaseSettingsExtensions.DatabaseProviderOptionsEnum.SqlServer => "uniqueidentifier",
+                _ => throw new ArgumentOutOfRangeException()
+            };
+            return columnDefinition;
         }
 
         public override string FieldAnnotations(AssociationEndModel thatEnd)

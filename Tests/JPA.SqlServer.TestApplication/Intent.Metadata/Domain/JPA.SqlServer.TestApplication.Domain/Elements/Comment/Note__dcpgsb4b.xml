@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<class id="505a16b3-01b7-4a8b-8ab9-2609db876256" type="Comment" typeId="c4c0c77f-720b-4e91-9c48-b58d2164d30a">
+  <comment>Composite Keys haven't been really implemented in JPA yet</comment>
+  <name>Note</name>
+  <display>Note</display>
+  <isAbstract>false</isAbstract>
+  <genericTypes />
+  <isMapped>false</isMapped>
+  <parentFolderId>264605e5-49c3-4144-92c7-d48d328fe6ee</parentFolderId>
+  <packageId>264605e5-49c3-4144-92c7-d48d328fe6ee</packageId>
+  <packageName>JPA.SqlServer.TestApplication.Domain</packageName>
+  <stereotypes />
+  <metadata />
+  <childElements />
+</class>

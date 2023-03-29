@@ -21,7 +21,7 @@
   </sourceEnd>
   <targetEnd id="188298ed-6680-48a3-a85f-cdf4b2b45880" type="Comment Target End" typeId="b7edce45-ccf0-47ed-b79f-86d5145c9f62">
     <name>AbstractBaseClass</name>
-    <display>AbstractBaseClass: AbstractBaseClass</display>
+    <display>AbstractBaseClass: tpcAbstractBaseClass</display>
     <order>0</order>
     <typeReference id="fdfbc0cd-6848-4ea4-96b9-6d7de519d7c6">
       <typeId>c9baa815-b3b8-4df0-bc77-6b8a2edfcccd</typeId>

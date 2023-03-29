@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<association id="1452f309-3728-4f57-b421-2f6e463ed90e">
+  <sourceEnd id="ab2b499f-040a-487b-b44f-31ff0cdbbd84" type="Comment Source End" typeId="7e98213c-4a9c-4d6f-98fc-f185948cc9e8">
+    <name>Self Reference Note</name>
+    <display>Self Reference Note: Self Reference Note</display>
+    <order>1</order>
+    <typeReference id="26cfcd69-d790-45f2-a7ee-84b14c2c213a">
+      <typeId>cc34c556-e01b-4f00-a2e8-b532ea9a2294</typeId>
+      <isNavigable>true</isNavigable>
+      <isNullable>false</isNullable>
+      <isCollection>false</isCollection>
+      <isRequired>true</isRequired>
+      <typePackageName>JPA.SqlServer.TestApplication.Domain</typePackageName>
+      <typePackageId>264605e5-49c3-4144-92c7-d48d328fe6ee</typePackageId>
+      <stereotypes />
+      <genericTypeParameters />
+    </typeReference>
+    <stereotypes />
+    <metadata />
+    <childElements />
+  </sourceEnd>
+  <targetEnd id="1452f309-3728-4f57-b421-2f6e463ed90e" type="Comment Target End" typeId="b7edce45-ccf0-47ed-b79f-86d5145c9f62">
+    <name>L_SelfReferenceMultiple</name>
+    <display>L_SelfReferenceMultiple: L_SelfReferenceMultiple</display>
+    <order>0</order>
+    <typeReference id="a4d1821c-a1fe-4ed2-aa57-64e14a45739c">
+      <typeId>62dc7002-7f32-437b-b33e-1100d27edb22</typeId>
+      <isNavigable>true</isNavigable>
+      <isNullable>false</isNullable>
+      <isCollection>false</isCollection>
+      <isRequired>true</isRequired>
+      <typePackageName>JPA.SqlServer.TestApplication.Domain</typePackageName>
+      <typePackageId>264605e5-49c3-4144-92c7-d48d328fe6ee</typePackageId>
+      <stereotypes />
+      <genericTypeParameters />
+    </typeReference>
+    <stereotypes />
+    <metadata />
+    <childElements />
+  </targetEnd>
+  <associationType>Comment Association</associationType>
+  <associationTypeId>5264c135-e856-468d-8bd7-154b75842256</associationTypeId>
+  <stereotypes />
+</association>

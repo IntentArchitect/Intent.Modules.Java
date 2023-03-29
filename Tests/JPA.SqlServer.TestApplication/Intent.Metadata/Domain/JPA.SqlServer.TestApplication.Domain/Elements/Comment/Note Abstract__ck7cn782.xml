@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<class id="b8d234a7-75f4-47f6-91e7-34b40cf89594" type="Comment" typeId="c4c0c77f-720b-4e91-9c48-b58d2164d30a">
+  <comment>@OneToOne or @ManyToOne on com.Intent.Modules.Java.Tests.JPA.SqlServer.TestApplication.domain.models.TPH.InheritanceAssociations.TphAbstractBaseClassAssociated.abstractBaseClass references an unknown entity: com.Intent.Modules.Java.Tests.JPA.SqlServer.TestApplication.domain.models.TPH.InheritanceAssociations.TphAbstractBaseClass</comment>
+  <name>Note Abstract</name>
+  <display>Note Abstract</display>
+  <isAbstract>false</isAbstract>
+  <genericTypes />
+  <isMapped>false</isMapped>
+  <parentFolderId>0a430d02-d4d6-41e6-a936-216c918770f4</parentFolderId>
+  <packageId>264605e5-49c3-4144-92c7-d48d328fe6ee</packageId>
+  <packageName>JPA.SqlServer.TestApplication.Domain</packageName>
+  <stereotypes />
+  <metadata />
+  <childElements />
+</class>

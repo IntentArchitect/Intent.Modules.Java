@@ -1,8 +1,13 @@
 package com.Intent.Modules.Java.Tests.JPA.SqlServer.TestApplication.domain.models.Indexes;
-
-import lombok.NoArgsConstructor;
 import com.Intent.Modules.Java.Tests.JPA.SqlServer.TestApplication.intent.IntentManageClass;
 import com.Intent.Modules.Java.Tests.JPA.SqlServer.TestApplication.intent.Mode;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+
+import lombok.NoArgsConstructor;
+
+import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 import java.util.UUID;
 import javax.persistence.Column;
@@ -12,9 +17,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Index;
 import javax.persistence.Table;
-import javax.validation.constraints.NotNull;
-import lombok.AllArgsConstructor;
-import lombok.Data;
 
 @Entity
 
@@ -33,23 +35,23 @@ public class StereotypeIndex implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(columnDefinition = "uuid", name = "id", nullable = false)
+    @Column(columnDefinition = "uniqueidentifier", name = "id", nullable = false)
     private UUID id;
 
     @NotNull
-    @Column(columnDefinition = "uuid", name = "default_index_field", nullable = false)
+    @Column(columnDefinition = "uniqueidentifier", name = "default_index_field", nullable = false)
     private UUID defaultIndexField;
 
     @NotNull
-    @Column(columnDefinition = "uuid", name = "custom_index_field", nullable = false)
+    @Column(columnDefinition = "uniqueidentifier", name = "custom_index_field", nullable = false)
     private UUID customIndexField;
 
     @NotNull
-    @Column(columnDefinition = "uuid", name = "grouped_index_field_a", nullable = false)
+    @Column(columnDefinition = "uniqueidentifier", name = "grouped_index_field_a", nullable = false)
     private UUID groupedIndexFieldA;
 
     @NotNull
-    @Column(columnDefinition = "uuid", name = "grouped_index_field_b", nullable = false)
+    @Column(columnDefinition = "uniqueidentifier", name = "grouped_index_field_b", nullable = false)
     private UUID groupedIndexFieldB;
 
     public boolean isNew() {
