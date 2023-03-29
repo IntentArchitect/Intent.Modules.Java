@@ -8,6 +8,7 @@ using Intent.Modules.Common;
 using Intent.Modules.Common.Java;
 using Intent.Modules.Common.Java.Templates;
 using Intent.Modules.Common.Templates;
+using Intent.Modules.Common.Types.Api;
 using Intent.Modules.Java.Domain.Templates.Enum;
 using Intent.RoslynWeaver.Attributes;
 using Intent.Templates;
@@ -75,6 +76,36 @@ namespace Intent.Modules.Java.Domain.Templates.DomainModel
 
             yield return "@NoArgsConstructor";
             yield return $"{this.IntentManageClassAnnotation()}(privateMethods = {this.IntentModeIgnore()})";
+        }
+
+        private string GetDefaultValueSpecification(AttributeModel attributeModel)
+        {
+            if (string.IsNullOrWhiteSpace(attributeModel.Value))
+            {
+                return string.Empty;
+            }
+
+            if (attributeModel.TypeReference.HasStringType() || attributeModel.TypeReference.HasJavaStringType())
+            {
+                var stringValue = attributeModel.Value;
+                if (stringValue.StartsWith("\"") || stringValue.StartsWith("\'"))
+                {
+                    stringValue = stringValue.Substring(1, stringValue.Length - 2);
+                }
+                return $@" = ""{stringValue}""";
+            }
+
+            if (attributeModel.TypeReference.Element.IsEnumModel())
+            {
+                var enumModel = attributeModel.TypeReference.Element.AsEnumModel();
+                var foundLiteral = enumModel.Literals.FirstOrDefault(p => p.Value.Equals(attributeModel.Value));
+                if (foundLiteral != null)
+                {
+                    return $@" = {GetTypeName(enumModel.InternalElement)}.{foundLiteral.Name.ToSnakeCase().ToUpperInvariant()}";
+                }
+            }
+
+            return $" = {attributeModel.Value}";
         }
 
         private string GetAbstractDefinition() => Model.IsAbstract

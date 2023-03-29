@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <package>
   <id>Intent.Java.BeanValidation</id>
-  <version>3.3.8</version>
+  <version>3.3.9-pre.0</version>
   <supportedClientVersions>[3.3.16, 4.0.0)</supportedClientVersions>
   <summary>Domain entity validation using the Jakarta Bean Validation framework.</summary>
   <description>Domain entity validation using the Jakarta Bean Validation framework.</description>

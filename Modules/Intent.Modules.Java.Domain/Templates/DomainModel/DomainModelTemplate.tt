@@ -34,7 +34,7 @@ public<#= GetAbstractDefinition() #> class <#= ClassName #><#= GetGenericTypePar
     <#= annotation #>
 <#      }
 #>
-    private <#= GetTypeName(attribute) #> <#= attribute.Name.ToCamelCase() #>;
+    private <#= GetTypeName(attribute) #> <#= attribute.Name.ToCamelCase() #><#= GetDefaultValueSpecification(attribute) #>;
 <#  } #>
 <#  foreach(var associationEnd in Model.AssociatedClasses.Where(x => x.IsNavigable)) { #>
 

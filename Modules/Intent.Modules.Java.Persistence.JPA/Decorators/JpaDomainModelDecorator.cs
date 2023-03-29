@@ -5,8 +5,11 @@ using Intent.Engine;
 using Intent.Java.Persistence.JPA.Api;
 using Intent.Metadata.RDBMS.Api;
 using Intent.Modelers.Domain.Api;
+using Intent.Modules.Common;
+using Intent.Modules.Common.Java;
 using Intent.Modules.Common.Java.Templates;
 using Intent.Modules.Common.Templates;
+using Intent.Modules.Common.Types.Api;
 using Intent.Modules.Java.Domain.Templates.DomainModel;
 using Intent.Modules.Java.Persistence.JPA.Settings;
 using Intent.Modules.Java.Persistence.JPA.Templates;
@@ -331,6 +334,29 @@ namespace Intent.Modules.Java.Persistence.JPA.Decorators
                 }
             }
 
+            if (!string.IsNullOrWhiteSpace(model.Value))
+            {
+                if (model.TypeReference.HasStringType() || model.TypeReference.HasJavaStringType())
+                {
+                    var stringValue = model.Value;
+                    if (stringValue.StartsWith("\"") || stringValue.StartsWith("\'"))
+                    {
+                        stringValue = stringValue.Substring(1, stringValue.Length - 2);
+                    }
+                    annotations.Add($@"@ColumnDefault(""'{stringValue}'"")");
+                }
+                else if (model.TypeReference.HasDateType() ||
+                         model.TypeReference.HasDateTimeType() ||
+                         model.TypeReference.HasDateTimeOffsetType())
+                {
+                    annotations.Add($@"@ColumnDefault(""Current_Timestamp"")");
+                }
+                else
+                {
+                    annotations.Add($@"@ColumnDefault(""{model.Value}"")");
+                }
+            }
+
             annotations.Add($@"@{_template.ImportType("javax.persistence.Column")}({string.Join(", ", columnSettings)})");
 
             const string newLine = @"
@@ -353,6 +379,7 @@ namespace Intent.Modules.Java.Persistence.JPA.Decorators
             {
                 throw new InvalidOperationException("Cannot call this method if associationEnd is not navigable.");
             }
+            
             var annotations = new List<string>();
             var otherEnd = thatEnd.OtherEnd();
             if (!otherEnd.IsCollection && !thatEnd.IsCollection) // one-to-one

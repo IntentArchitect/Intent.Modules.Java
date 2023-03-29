@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<class id="f80c000b-8d90-47b8-a9b0-5d763cec1986" type="Enum" typeId="85fba0e9-9161-4c85-a603-a229ef312beb">
+<class id="104b8ecd-1595-487c-bdcb-8f5e37e5fc6e" type="Enum" typeId="85fba0e9-9161-4c85-a603-a229ef312beb">
   <name>TestEnum</name>
   <display>TestEnum</display>
   <isAbstract>false</isAbstract>
@@ -12,28 +12,28 @@
   <stereotypes />
   <metadata />
   <childElements>
-    <childElement id="c77d693a-f4f8-4b91-8343-a2ebc8477fb6" type="Enum-Literal" typeId="4215f417-25d2-4509-9309-5076a1452eaa">
+    <childElement id="19bf8e86-ba6b-4034-84bc-ba52bc5ccfd2" type="Enum-Literal" typeId="4215f417-25d2-4509-9309-5076a1452eaa">
       <name>ValueOne</name>
       <display>ValueOne = 1</display>
       <isAbstract>false</isAbstract>
       <value>1</value>
       <genericTypes />
       <isMapped>false</isMapped>
-      <parentFolderId>f80c000b-8d90-47b8-a9b0-5d763cec1986</parentFolderId>
+      <parentFolderId>104b8ecd-1595-487c-bdcb-8f5e37e5fc6e</parentFolderId>
       <packageId>3531c1e5-6176-40ea-8e6e-1b136deb744d</packageId>
       <packageName>Standard.SpringBoot.TestApplication.Domain</packageName>
       <stereotypes />
       <metadata />
       <childElements />
     </childElement>
-    <childElement id="28362571-8879-4cf0-a066-ec2b5738ddbf" type="Enum-Literal" typeId="4215f417-25d2-4509-9309-5076a1452eaa">
+    <childElement id="6293d472-ebcc-4dc2-8483-c86fc842bdef" type="Enum-Literal" typeId="4215f417-25d2-4509-9309-5076a1452eaa">
       <name>ValueTwo</name>
       <display>ValueTwo = 2</display>
       <isAbstract>false</isAbstract>
       <value>2</value>
       <genericTypes />
       <isMapped>false</isMapped>
-      <parentFolderId>f80c000b-8d90-47b8-a9b0-5d763cec1986</parentFolderId>
+      <parentFolderId>104b8ecd-1595-487c-bdcb-8f5e37e5fc6e</parentFolderId>
       <packageId>3531c1e5-6176-40ea-8e6e-1b136deb744d</packageId>
       <packageName>Standard.SpringBoot.TestApplication.Domain</packageName>
       <stereotypes />
