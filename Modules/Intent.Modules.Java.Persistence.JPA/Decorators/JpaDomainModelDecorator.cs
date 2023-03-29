@@ -343,17 +343,17 @@ namespace Intent.Modules.Java.Persistence.JPA.Decorators
                     {
                         stringValue = stringValue.Substring(1, stringValue.Length - 2);
                     }
-                    annotations.Add($@"@ColumnDefault(""'{stringValue}'"")");
+                    annotations.Add($@"@{_template.ImportType("org.hibernate.annotations.ColumnDefault")}(""'{stringValue}'"")");
                 }
                 else if (model.TypeReference.HasDateType() ||
                          model.TypeReference.HasDateTimeType() ||
                          model.TypeReference.HasDateTimeOffsetType())
                 {
-                    annotations.Add($@"@ColumnDefault(""Current_Timestamp"")");
+                    annotations.Add($@"@{_template.ImportType("org.hibernate.annotations.ColumnDefault")}(""Current_Timestamp"")");
                 }
                 else
                 {
-                    annotations.Add($@"@ColumnDefault(""{model.Value}"")");
+                    annotations.Add($@"@{_template.ImportType("org.hibernate.annotations.ColumnDefault")}(""{model.Value}"")");
                 }
             }
 
