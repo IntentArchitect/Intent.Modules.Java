@@ -79,9 +79,10 @@ public class DefaultValues implements Serializable {
     private StringEnumerated strEnum = StringEnumerated.VALUE_TWO;
 
     @NotNull
+    @ColumnDefault("1")
     @Enumerated(EnumType.ORDINAL)
     @Column(name = "ord_enum", nullable = false)
-    private OrdinalEnumerated ordEnum;
+    private OrdinalEnumerated ordEnum = OrdinalEnumerated.LITERAL_TWO;
 
     public boolean isNew() {
         return this.id == null;

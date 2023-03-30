@@ -326,6 +326,9 @@ namespace Intent.Modules.Java.Persistence.JPA.Decorators
                     columnSettings.Add("updatable = false");
                 }
             }
+            
+            var isStringEnumerated = model.TypeReference.Element.AsEnumModel()?.Literals.Any(p => !string.IsNullOrWhiteSpace(p.Value)) == true;
+            var isOrdinalEnumerated = model.TypeReference.Element.IsEnumModel() && !isStringEnumerated;
 
             if (!string.IsNullOrWhiteSpace(model.Value))
             {
@@ -346,7 +349,19 @@ namespace Intent.Modules.Java.Persistence.JPA.Decorators
                 }
                 else if (model.TypeReference.Element.IsEnumModel())
                 {
-                    annotations.Add($@"@{_template.ImportType("org.hibernate.annotations.ColumnDefault")}(""'{model.Value}'"")");
+                    var enumModel = model.TypeReference.Element.AsEnumModel();
+                    var foundLiteral = enumModel.Literals.FirstOrDefault(p =>
+                        string.Equals(p.Value, model.Value, StringComparison.OrdinalIgnoreCase) ||
+                        string.Equals(p.Name, model.Value, StringComparison.OrdinalIgnoreCase));
+                    if (foundLiteral != null)
+                    {
+                        var defaultExpr = isStringEnumerated ? $"'{foundLiteral.Value}'" : enumModel.Literals.IndexOf(foundLiteral).ToString();
+                        annotations.Add($@"@{_template.ImportType("org.hibernate.annotations.ColumnDefault")}(""{defaultExpr}"")");                        
+                    }
+                    else
+                    {
+                        annotations.Add($@"@{_template.ImportType("org.hibernate.annotations.ColumnDefault")}(Enum literal not found based on value: {model.Value})");
+                    }
                 }
                 else if (model.TypeReference.HasBoolType() || model.TypeReference.HasJavaBooleanType())
                 {
@@ -356,7 +371,7 @@ namespace Intent.Modules.Java.Persistence.JPA.Decorators
                         DatabaseSettingsExtensions.DatabaseProviderOptionsEnum.H2 =>
                             boolVal.ToString().ToLower(),
                         DatabaseSettingsExtensions.DatabaseProviderOptionsEnum.Mysql =>
-                            boolVal.ToString().ToLower(),
+                            boolVal ? "1" : "0",
                         DatabaseSettingsExtensions.DatabaseProviderOptionsEnum.Postgresql =>
                             boolVal.ToString().ToLower(),
                         DatabaseSettingsExtensions.DatabaseProviderOptionsEnum.SqlServer =>
@@ -371,11 +386,11 @@ namespace Intent.Modules.Java.Persistence.JPA.Decorators
                 }
             }
 
-            if (model.TypeReference.Element.AsEnumModel()?.Literals.Any(p => !string.IsNullOrWhiteSpace(p.Value)) == true)
+            if (isStringEnumerated)
             {
                 annotations.Add($"@{_template.ImportType("javax.persistence.Enumerated")}({_template.ImportType("javax.persistence.EnumType")}.STRING)");
             }
-            else if (model.TypeReference.Element.IsEnumModel())
+            else if (isOrdinalEnumerated)
             {
                 annotations.Add($"@{_template.ImportType("javax.persistence.Enumerated")}({_template.ImportType("javax.persistence.EnumType")}.ORDINAL)");
             }

@@ -260,8 +260,9 @@
     </childElement>
     <childElement id="80fc9919-0677-437a-b507-bc8ac90044b8" type="Attribute" typeId="0090fb93-483e-41af-a11d-5ad2dc796adf">
       <name>ordEnum</name>
-      <display>ordEnum: OrdinalEnumerated</display>
+      <display>ordEnum: OrdinalEnumerated = LiteralTwo</display>
       <isAbstract>false</isAbstract>
+      <value>LiteralTwo</value>
       <genericTypes />
       <typeReference id="d7285375-5a6e-4127-b089-a1680725c5e2">
         <typeId>4a074922-41ae-4da5-998f-d08ee843e870</typeId>

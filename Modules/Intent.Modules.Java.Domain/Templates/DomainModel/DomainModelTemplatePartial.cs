@@ -98,7 +98,9 @@ namespace Intent.Modules.Java.Domain.Templates.DomainModel
             if (attributeModel.TypeReference.Element.IsEnumModel())
             {
                 var enumModel = attributeModel.TypeReference.Element.AsEnumModel();
-                var foundLiteral = enumModel.Literals.FirstOrDefault(p => p.Value.Equals(attributeModel.Value));
+                var foundLiteral = enumModel.Literals.FirstOrDefault(p =>
+                    string.Equals(p.Value, attributeModel.Value, StringComparison.OrdinalIgnoreCase) ||
+                    string.Equals(p.Name, attributeModel.Value, StringComparison.OrdinalIgnoreCase));
                 if (foundLiteral != null)
                 {
                     return $@" = {GetTypeName(enumModel.InternalElement)}.{foundLiteral.Name.ToSnakeCase().ToUpperInvariant()}";
