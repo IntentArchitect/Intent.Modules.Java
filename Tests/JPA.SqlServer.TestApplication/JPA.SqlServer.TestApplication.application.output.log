@@ -172,6 +172,22 @@
     </FileLog>
     <FileLog>
       <ProjectId>444d827b-8967-470f-a9ac-4c96fbec42e2</ProjectId>
+      <CorrelationId>Intent.Java.Spring.Data.Repositories.EntityRepository#4f8fff37-a424-4b43-8fc2-563ab1432ada</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>src/main/java/com/Intent.Modules.Java.Tests/JPA.SqlServer.TestApplication/data/Associations/OverrideTestSideARepository.java</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>Associations/OverrideTestSideARepository.java</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
+      <ProjectId>444d827b-8967-470f-a9ac-4c96fbec42e2</ProjectId>
+      <CorrelationId>Intent.Java.Spring.Data.Repositories.EntityRepository#50b3fb3e-e6f0-4f6a-8085-4db49bbc8067</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>src/main/java/com/Intent.Modules.Java.Tests/JPA.SqlServer.TestApplication/data/Associations/OverrideTestSideBRepository.java</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>Associations/OverrideTestSideBRepository.java</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
+      <ProjectId>444d827b-8967-470f-a9ac-4c96fbec42e2</ProjectId>
       <CorrelationId>Intent.Java.Spring.Data.Repositories.EntityRepository#4eff7f56-2934-42e5-b724-b53bb63c106a</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>src/main/java/com/Intent.Modules.Java.Tests/JPA.SqlServer.TestApplication/data/Attributes/DefaultValuesRepository.java</ApplicationRelativeFilePath>
@@ -752,6 +768,22 @@
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>src/main/java/com/Intent.Modules.Java.Tests/JPA.SqlServer.TestApplication/domain/models/Associations/M_SelfReferenceBiNav.java</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>Associations/M_SelfReferenceBiNav.java</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
+      <ProjectId>c869480a-37d6-4c58-8cef-c98d3d41491d</ProjectId>
+      <CorrelationId>Intent.Java.Domain.DomainModel#4f8fff37-a424-4b43-8fc2-563ab1432ada</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>src/main/java/com/Intent.Modules.Java.Tests/JPA.SqlServer.TestApplication/domain/models/Associations/OverrideTestSideA.java</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>Associations/OverrideTestSideA.java</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
+      <ProjectId>c869480a-37d6-4c58-8cef-c98d3d41491d</ProjectId>
+      <CorrelationId>Intent.Java.Domain.DomainModel#50b3fb3e-e6f0-4f6a-8085-4db49bbc8067</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>src/main/java/com/Intent.Modules.Java.Tests/JPA.SqlServer.TestApplication/domain/models/Associations/OverrideTestSideB.java</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>Associations/OverrideTestSideB.java</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>

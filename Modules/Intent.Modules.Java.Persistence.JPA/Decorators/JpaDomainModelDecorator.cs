@@ -539,9 +539,15 @@ namespace Intent.Modules.Java.Persistence.JPA.Decorators
                 {
                     var sourceEndName = otherEnd.Element.Name;
                     var thatEndName = ApplyTableNameConvention(thatEnd.Element.Name);
+                    var joinTableName = $"{sourceEndName.ToSnakeCase()}_{thatEndName.ToSnakeCase()}";
+                    
+                    if (!string.IsNullOrWhiteSpace(thatEnd.Association.TargetEnd.GetJoinTable()?.Name()))
+                    {
+                        joinTableName = thatEnd.Association.TargetEnd.GetJoinTable().Name();
+                    }
 
                     annotations.Add($@"@{_template.ImportType("javax.persistence.JoinTable")}(
-            name = ""{sourceEndName.ToSnakeCase()}_{thatEndName.ToSnakeCase()}"",
+            name = ""{joinTableName}"",
             joinColumns = {{ @{_template.ImportType("javax.persistence.JoinColumn")}(name = ""{otherEnd.Element.Name.ToSnakeCase()}_id"") }},
             inverseJoinColumns = {{ @{_template.ImportType("javax.persistence.JoinColumn")}(name = ""{thatEnd.Element.Name.ToSnakeCase()}_id"") }}
     )");

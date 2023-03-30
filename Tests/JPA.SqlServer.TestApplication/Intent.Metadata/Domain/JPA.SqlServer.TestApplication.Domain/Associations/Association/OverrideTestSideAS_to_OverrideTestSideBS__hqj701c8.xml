@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<association id="50c68ce3-67de-45e4-8ee9-b9eed8a14d63">
+  <sourceEnd id="416da534-b5b4-47e0-8c42-5c0f230d3075" type="Association Source End" typeId="8d9d2e5b-bd55-4f36-9ae4-2b9e84fd4e58">
+    <name>OverrideTestSideAS</name>
+    <display>OverrideTestSideAS: OverrideTestSideA[*]</display>
+    <order>0</order>
+    <typeReference id="fc24e207-d61d-4857-bf33-29034fe7e758">
+      <typeId>4f8fff37-a424-4b43-8fc2-563ab1432ada</typeId>
+      <isNavigable>false</isNavigable>
+      <isNullable>false</isNullable>
+      <isCollection>true</isCollection>
+      <isRequired>true</isRequired>
+      <typePackageName>JPA.SqlServer.TestApplication.Domain</typePackageName>
+      <typePackageId>264605e5-49c3-4144-92c7-d48d328fe6ee</typePackageId>
+      <stereotypes />
+      <genericTypeParameters />
+    </typeReference>
+    <stereotypes>
+      <stereotype stereotypeDefinitionId="49de8cd7-872f-4b37-b9a2-2056304434dd" name="Association JPA Settings">
+        <addedByDefault>true</addedByDefault>
+        <definitionPackageName>Intent.Java.Persistence.JPA</definitionPackageName>
+        <definitionPackageId>2e4398f1-893d-432e-badb-ab0c4ea3280e</definitionPackageId>
+        <properties>
+          <property name="abe22345-1d55-483e-b1f4-54c60cb53539" display="Fetch Type" isActive="true" />
+        </properties>
+      </stereotype>
+    </stereotypes>
+    <metadata />
+    <childElements />
+  </sourceEnd>
+  <targetEnd id="50c68ce3-67de-45e4-8ee9-b9eed8a14d63" type="Association Target End" typeId="0a66489f-30aa-417b-a75d-b945863366fd">
+    <name>OverrideTestSideBS</name>
+    <display>OverrideTestSideBS: OverrideTestSideB[*]</display>
+    <order>2</order>
+    <typeReference id="3e2b057b-499b-473f-9ca0-2f9f0c4c467d">
+      <typeId>50b3fb3e-e6f0-4f6a-8085-4db49bbc8067</typeId>
+      <isNavigable>true</isNavigable>
+      <isNullable>false</isNullable>
+      <isCollection>true</isCollection>
+      <isRequired>true</isRequired>
+      <typePackageName>JPA.SqlServer.TestApplication.Domain</typePackageName>
+      <typePackageId>264605e5-49c3-4144-92c7-d48d328fe6ee</typePackageId>
+      <stereotypes />
+      <genericTypeParameters />
+    </typeReference>
+    <stereotypes>
+      <stereotype stereotypeDefinitionId="49de8cd7-872f-4b37-b9a2-2056304434dd" name="Association JPA Settings">
+        <addedByDefault>true</addedByDefault>
+        <definitionPackageName>Intent.Java.Persistence.JPA</definitionPackageName>
+        <definitionPackageId>2e4398f1-893d-432e-badb-ab0c4ea3280e</definitionPackageId>
+        <properties>
+          <property name="abe22345-1d55-483e-b1f4-54c60cb53539" display="Fetch Type" isActive="true" />
+        </properties>
+      </stereotype>
+      <stereotype stereotypeDefinitionId="5679fb86-e403-4dc0-bf25-8446ef2d1d03" name="Join Table">
+        <addedByDefault>false</addedByDefault>
+        <definitionPackageName>Intent.Metadata.RDBMS</definitionPackageName>
+        <definitionPackageId>AF8F3810-745C-42A2-93C8-798860DC45B1</definitionPackageId>
+        <properties>
+          <property name="9221d9ba-36a8-496e-8aea-7c2d782cc66b" display="Name" value="Many_Many_Custom_Name" isActive="true" />
+        </properties>
+      </stereotype>
+    </stereotypes>
+    <metadata />
+    <childElements />
+  </targetEnd>
+  <associationType>Association</associationType>
+  <associationTypeId>eaf9ed4e-0b61-4ac1-ba88-09f912c12087</associationTypeId>
+  <stereotypes>
+    <stereotype stereotypeDefinitionId="49de8cd7-872f-4b37-b9a2-2056304434dd" name="Association JPA Settings">
+      <addedByDefault>true</addedByDefault>
+      <definitionPackageName>Intent.Java.Persistence.JPA</definitionPackageName>
+      <definitionPackageId>2e4398f1-893d-432e-badb-ab0c4ea3280e</definitionPackageId>
+      <properties>
+        <property name="abe22345-1d55-483e-b1f4-54c60cb53539" display="Fetch Type" isActive="true" />
+      </properties>
+    </stereotype>
+    <stereotype stereotypeDefinitionId="5679fb86-e403-4dc0-bf25-8446ef2d1d03" name="Join Table">
+      <addedByDefault>false</addedByDefault>
+      <definitionPackageName>Intent.Metadata.RDBMS</definitionPackageName>
+      <definitionPackageId>AF8F3810-745C-42A2-93C8-798860DC45B1</definitionPackageId>
+      <properties>
+        <property name="9221d9ba-36a8-496e-8aea-7c2d782cc66b" display="Name" value="Many_Many_Custom_Name" isActive="true" />
+      </properties>
+    </stereotype>
+  </stereotypes>
+</association>
