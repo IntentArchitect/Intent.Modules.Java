@@ -1,13 +1,8 @@
 package com.Intent.Modules.Java.Tests.JPA.SqlServer.TestApplication.domain.models.Indexes;
-import com.Intent.Modules.Java.Tests.JPA.SqlServer.TestApplication.intent.IntentManageClass;
-import com.Intent.Modules.Java.Tests.JPA.SqlServer.TestApplication.intent.Mode;
-import lombok.AllArgsConstructor;
-import lombok.Data;
 
 import lombok.NoArgsConstructor;
-
-import javax.persistence.*;
-import javax.validation.constraints.NotNull;
+import com.Intent.Modules.Java.Tests.JPA.SqlServer.TestApplication.intent.IntentManageClass;
+import com.Intent.Modules.Java.Tests.JPA.SqlServer.TestApplication.intent.Mode;
 import java.io.Serializable;
 import java.util.UUID;
 import javax.persistence.Column;
@@ -17,9 +12,11 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Index;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
+import lombok.AllArgsConstructor;
+import lombok.Data;
 
 @Entity
-
 @Table(name = "stereotype_indices", indexes = { @Index(name = "IX_StereotypeIndex_defaultIndexField", columnList = "default_index_field"),
         @Index(name = "CustomIndexField", columnList = "custom_index_field"),
         @Index(name = "GroupedIndexField", columnList = "grouped_index_field_a,grouped_index_field_b"),

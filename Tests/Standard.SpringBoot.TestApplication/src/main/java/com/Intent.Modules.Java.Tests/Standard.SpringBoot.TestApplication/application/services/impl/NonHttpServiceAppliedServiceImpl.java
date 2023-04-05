@@ -11,7 +11,6 @@ import com.Intent.Modules.Java.Tests.Standard.SpringBoot.TestApplication.intent.
 @AllArgsConstructor
 @IntentMerge
 public class NonHttpServiceAppliedServiceImpl implements NonHttpServiceAppliedService {
-
     @Override
     @Transactional(readOnly = false)
     @IntentIgnoreBody

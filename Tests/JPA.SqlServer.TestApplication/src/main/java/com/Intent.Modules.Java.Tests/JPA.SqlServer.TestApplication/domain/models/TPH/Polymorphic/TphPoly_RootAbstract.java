@@ -1,14 +1,8 @@
 package com.Intent.Modules.Java.Tests.JPA.SqlServer.TestApplication.domain.models.TPH.Polymorphic;
-import com.Intent.Modules.Java.Tests.JPA.SqlServer.TestApplication.intent.IntentManageClass;
-import com.Intent.Modules.Java.Tests.JPA.SqlServer.TestApplication.intent.Mode;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
 
 import lombok.NoArgsConstructor;
-import lombok.Setter;
-
-import javax.persistence.*;
-import javax.validation.constraints.NotNull;
+import com.Intent.Modules.Java.Tests.JPA.SqlServer.TestApplication.intent.IntentManageClass;
+import com.Intent.Modules.Java.Tests.JPA.SqlServer.TestApplication.intent.Mode;
 import java.io.Serializable;
 import java.util.UUID;
 import javax.persistence.CascadeType;
@@ -22,6 +16,10 @@ import javax.persistence.ManyToOne;
 import javax.persistence.MappedSuperclass;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
 
 @MappedSuperclass
 @Table(name = "TphPoly_RootAbstract")

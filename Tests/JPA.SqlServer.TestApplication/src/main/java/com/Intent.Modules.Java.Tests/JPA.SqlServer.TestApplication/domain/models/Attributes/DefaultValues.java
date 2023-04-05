@@ -1,14 +1,8 @@
 package com.Intent.Modules.Java.Tests.JPA.SqlServer.TestApplication.domain.models.Attributes;
-import com.Intent.Modules.Java.Tests.JPA.SqlServer.TestApplication.intent.IntentManageClass;
-import com.Intent.Modules.Java.Tests.JPA.SqlServer.TestApplication.intent.Mode;
-import lombok.AllArgsConstructor;
-import lombok.Data;
 
 import lombok.NoArgsConstructor;
-import org.hibernate.annotations.ColumnDefault;
-
-import javax.persistence.*;
-import javax.validation.constraints.NotNull;
+import com.Intent.Modules.Java.Tests.JPA.SqlServer.TestApplication.intent.IntentManageClass;
+import com.Intent.Modules.Java.Tests.JPA.SqlServer.TestApplication.intent.Mode;
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -22,6 +16,10 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import org.hibernate.annotations.ColumnDefault;
 
 @Entity
 @Table(name = "default_values")

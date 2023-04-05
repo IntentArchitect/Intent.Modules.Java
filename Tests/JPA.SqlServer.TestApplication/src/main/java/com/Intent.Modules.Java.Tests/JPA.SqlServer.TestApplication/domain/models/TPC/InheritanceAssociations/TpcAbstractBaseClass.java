@@ -1,15 +1,8 @@
 package com.Intent.Modules.Java.Tests.JPA.SqlServer.TestApplication.domain.models.TPC.InheritanceAssociations;
-import com.Intent.Modules.Java.Tests.JPA.SqlServer.TestApplication.intent.IntentManageClass;
-import com.Intent.Modules.Java.Tests.JPA.SqlServer.TestApplication.intent.Mode;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
 
 import lombok.NoArgsConstructor;
-import lombok.Setter;
-
-import javax.persistence.*;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
+import com.Intent.Modules.Java.Tests.JPA.SqlServer.TestApplication.intent.IntentManageClass;
+import com.Intent.Modules.Java.Tests.JPA.SqlServer.TestApplication.intent.Mode;
 import java.io.Serializable;
 import java.util.UUID;
 import javax.persistence.Column;
@@ -17,6 +10,11 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
 
 @MappedSuperclass
 @Getter

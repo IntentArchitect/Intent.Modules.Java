@@ -3,13 +3,13 @@ package com.Intent.Modules.Java.Tests.Standard.SpringBoot.TestApplication.config
 import org.modelmapper.ModelMapper;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.modelmapper.convention.MatchingStrategies;
 import com.Intent.Modules.Java.Tests.Standard.SpringBoot.TestApplication.application.mappings.Users.RoleToCreateUserRoleDtoMapping;
 import com.Intent.Modules.Java.Tests.Standard.SpringBoot.TestApplication.application.mappings.Users.RoleToUpdateUserRoleDtoMapping;
 import com.Intent.Modules.Java.Tests.Standard.SpringBoot.TestApplication.application.mappings.Users.RoleToUserRoleDtoMapping;
 import com.Intent.Modules.Java.Tests.Standard.SpringBoot.TestApplication.application.mappings.Users.UserToUserCreateDtoMapping;
 import com.Intent.Modules.Java.Tests.Standard.SpringBoot.TestApplication.application.mappings.Users.UserToUserDtoMapping;
 import com.Intent.Modules.Java.Tests.Standard.SpringBoot.TestApplication.application.mappings.Users.UserToUserUpdateDtoMapping;
+import org.modelmapper.convention.MatchingStrategies;
 
 @Configuration
 public class ModelMapperBean {

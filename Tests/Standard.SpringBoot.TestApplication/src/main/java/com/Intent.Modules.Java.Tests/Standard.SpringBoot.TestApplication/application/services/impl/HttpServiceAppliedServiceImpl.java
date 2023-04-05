@@ -11,7 +11,6 @@ import com.Intent.Modules.Java.Tests.Standard.SpringBoot.TestApplication.intent.
 @AllArgsConstructor
 @IntentMerge
 public class HttpServiceAppliedServiceImpl implements HttpServiceAppliedService {
-
     @Override
     @Transactional(readOnly = true)
     @IntentIgnoreBody
