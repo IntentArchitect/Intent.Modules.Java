@@ -43,7 +43,7 @@ namespace Intent.Modules.Java.Spring.Data.Repositories.Templates.EntityRepositor
                     var inter = file.Interfaces.First();
                     inter.AddMetadata("model", Model);
                     inter.WithComments(@"Spring Data JPA repository for the <#= GetEntityType() #> entity.")
-                        .AddAnnotation(this.IntentIgnoreBodyAnnotation())
+                        .AddAnnotation(this.IntentMergeAnnotation())
                         .ExtendsInterface($"JpaRepository<{GetEntityType()}, {GetEntityIdType()}>");
                 })
                 .AfterBuild(file =>
