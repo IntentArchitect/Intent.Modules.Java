@@ -8,6 +8,5 @@ import java.util.UUID;
 
 @IntentMerge
 public interface ComplexDefaultIndexRepository extends JpaRepository<ComplexDefaultIndex, UUID> {
-
     List<ComplexDefaultIndex> findByFieldAAndFieldB(UUID fieldA, UUID fieldB);
 }

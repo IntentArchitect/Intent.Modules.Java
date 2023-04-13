@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <package>
   <id>Intent.Java.Services</id>
-  <version>3.4.2-pre.0</version>
+  <version>3.4.2</version>
   <supportedClientVersions>[3.3.16, 4.0.0)</supportedClientVersions>
   <summary>Service interfaces and implementation placeholders based on the Services designer.</summary>
   <description>Service interfaces and implementation placeholders based on the Services designer.</description>

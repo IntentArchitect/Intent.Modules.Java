@@ -8,6 +8,5 @@ import java.util.UUID;
 
 @IntentMerge
 public interface CustomIndexRepository extends JpaRepository<CustomIndex, UUID> {
-
     List<CustomIndex> findByIndexField(UUID indexField);
 }

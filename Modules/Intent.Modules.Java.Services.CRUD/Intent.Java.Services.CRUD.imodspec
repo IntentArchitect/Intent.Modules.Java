@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <package>
   <id>Intent.Java.Services.CRUD</id>
-  <version>3.4.2-pre.0</version>
+  <version>3.4.2</version>
   <supportedClientVersions>[3.3.16, 4.0.0)</supportedClientVersions>
   <summary>Anemic CRUD implementation strategies based on service conventions.</summary>
   <description>Anemic CRUD implementation strategies based on service conventions.</description>
@@ -15,8 +15,8 @@
   </factoryExtensions>
   <moduleSettings></moduleSettings>
   <dependencies>
-    <dependency id="Intent.Common" version="3.3.18" />
-    <dependency id="Intent.Common.Java" version="3.4.2-pre.0" />
+    <dependency id="Intent.Common" version="3.3.19" />
+    <dependency id="Intent.Common.Java" version="3.4.2" />
     <dependency id="Intent.Common.Types" version="3.3.7" />
     <dependency id="Intent.Java.Domain" version="3.3.7" />
     <dependency id="Intent.Java.Services" version="3.4.0" />

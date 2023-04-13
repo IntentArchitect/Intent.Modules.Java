@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <package>
   <id>Intent.Java.Persistence.JPA.Queries</id>
-  <version>3.3.6-pre.0</version>
+  <version>3.3.6</version>
   <supportedClientVersions>[3.3.16, 4.0.0)</supportedClientVersions>
   <summary>Supports ability to create queries for Domain Entities within the Domain designer</summary>
   <description>Supports ability to create queries for Domain Entities within the Domain designer</description>
@@ -23,8 +23,8 @@
   <factoryExtensions></factoryExtensions>
   <moduleSettings></moduleSettings>
   <dependencies>
-    <dependency id="Intent.Common" version="3.3.18" />
-    <dependency id="Intent.Common.Java" version="3.4.2-pre.0" />
+    <dependency id="Intent.Common" version="3.3.19" />
+    <dependency id="Intent.Common.Java" version="3.4.2" />
     <dependency id="Intent.Common.Types" version="3.3.7" />
     <dependency id="Intent.Java.Domain" version="4.0.2" />
     <dependency id="Intent.Java.Maven" version="3.3.8" />

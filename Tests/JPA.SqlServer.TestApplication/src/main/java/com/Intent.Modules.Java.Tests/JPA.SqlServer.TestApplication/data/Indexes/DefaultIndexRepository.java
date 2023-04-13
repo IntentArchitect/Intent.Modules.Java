@@ -8,6 +8,5 @@ import java.util.UUID;
 
 @IntentMerge
 public interface DefaultIndexRepository extends JpaRepository<DefaultIndex, UUID> {
-
     List<DefaultIndex> findByIndexField(String indexField);
 }

@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <package>
   <id>Intent.Java.Persistence.JPA</id>
-  <version>4.0.4-pre.7</version>
+  <version>4.0.4</version>
   <supportedClientVersions>[3.3.16, 4.0.0)</supportedClientVersions>
   <summary>JPA Annotation decoration of Domain entities.</summary>
   <description>JPA Annotation decoration of Domain entities.</description>
@@ -19,11 +19,11 @@
   </decorators>
   <factoryExtensions></factoryExtensions>
   <dependencies>
-    <dependency id="Intent.Common" version="3.3.18" />
-    <dependency id="Intent.Common.Java" version="3.4.2-pre.0" />
+    <dependency id="Intent.Common" version="3.3.19" />
+    <dependency id="Intent.Common.Java" version="3.4.2" />
     <dependency id="Intent.Common.Types" version="3.3.7" />
     <dependency id="Intent.Java.Domain" version="4.0.1" />
-    <dependency id="Intent.Metadata.RDBMS" version="3.4.3-pre.0" />
+    <dependency id="Intent.Metadata.RDBMS" version="3.4.3" />
     <dependency id="Intent.Modelers.Domain" version="3.3.10" />
   </dependencies>
   <files>

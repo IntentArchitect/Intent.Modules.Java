@@ -8,7 +8,6 @@ import java.util.UUID;
 
 @IntentMerge
 public interface StereotypeIndexRepository extends JpaRepository<StereotypeIndex, UUID> {
-
     List<StereotypeIndex> findByDefaultIndexField(UUID defaultIndexField);
     List<StereotypeIndex> findByCustomIndexField(UUID customIndexField);
     List<StereotypeIndex> findByGroupedIndexFieldAAndGroupedIndexFieldB(UUID groupedIndexFieldA, UUID groupedIndexFieldB);
