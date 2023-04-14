@@ -62,7 +62,7 @@ namespace Intent.Modules.Java.Services.Templates.ServiceImplementation
                         @class.AddMethod(GetTypeName(operation), operation.Name, method =>
                         {
                             method.Override();
-                            method.AddAnnotation("Transactional", ann => ann.AddArgument($"readOnly = {IsReadOnly(operation)}"))
+                            method.AddAnnotation("Transactional", ann => ann.AddArgument($"readOnly = {(IsReadOnly(operation) ? "true" : "false")}"))
                                 .AddAnnotation(this.IntentIgnoreBodyAnnotation());
                             foreach (var parameter in operation.Parameters)
                             {
@@ -88,10 +88,13 @@ namespace Intent.Modules.Java.Services.Templates.ServiceImplementation
             return JavaFile.ToString();
         }
 
-        public string IsReadOnly(OperationModel operation)
+        public bool IsReadOnly(OperationModel operation)
         {
-            return operation.GetTransactionOptions()?.IsReadOnly().ToString().ToLower() ??
-                (operation.GetStereotype("Http Settings")?.GetProperty<string>("Verb") == "GET" ? "true" : "false");
+            return operation.GetTransactionOptions()?.IsReadOnly() == true ||
+                operation.GetStereotype("Http Settings")?.GetProperty<string>("Verb") == "GET" ||
+                operation.Name.ToLower().StartsWith("find") ||
+                operation.Name.ToLower().StartsWith("get") ||
+                operation.Name.ToLower().StartsWith("lookup");
         }
 
         private string GetImplementation(OperationModel operation)
