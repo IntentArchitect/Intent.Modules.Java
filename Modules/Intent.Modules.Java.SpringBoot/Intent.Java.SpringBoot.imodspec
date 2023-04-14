@@ -1,8 +1,8 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <package>
   <id>Intent.Java.SpringBoot</id>
-  <version>3.3.13</version>
-  <supportedClientVersions>[3.3.16, 4.0.0)</supportedClientVersions>
+  <version>3.4.0-pre.0</version>
+  <supportedClientVersions>[4.0.0-beta.0, 5.0.0)</supportedClientVersions>
   <summary>Java Spring Boot controllers and Application class.</summary>
   <description>Java Spring Boot controllers and Application class.</description>
   <authors>Intent.Modules.Java</authors>
@@ -34,8 +34,8 @@
     <dependency id="Intent.Common.Types" version="3.3.7" />
     <dependency id="Intent.Java.Maven" version="3.3.7" />
     <dependency id="Intent.Java.Services" version="3.3.8" />
-    <dependency id="Intent.Metadata.WebApi" version="3.3.10" />
-    <dependency id="Intent.Modelers.Services" version="3.3.6" />
+    <dependency id="Intent.Metadata.WebApi" version="4.0.0-pre.0" />
+    <dependency id="Intent.Modelers.Services" version="3.4.0" />
   </dependencies>
   <files>
     <file src="$outDir$/$id$.dll" />
@@ -43,7 +43,6 @@
   </files>
   <metadata>
     <install target="Module Builder;Services" src="Intent.Metadata/Module Builder/Intent.Java.SpringBoot/Intent.Java.SpringBoot.pkg.config" externalReference="27f3b2d0-b9e5-47da-bece-d305c33b5945" />
-    <install target="Services" src="modelers/Java Controller Settings.designer.settings" externalReference="69001e12-56d1-48d1-bc7a-851f078c9bb5" />
   </metadata>
   <moduleSettings />
   <moduleSettingsExtensions />

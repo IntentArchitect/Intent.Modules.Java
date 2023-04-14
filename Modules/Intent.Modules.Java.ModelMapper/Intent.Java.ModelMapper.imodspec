@@ -2,7 +2,7 @@
 <package>
   <id>Intent.Java.ModelMapper</id>
   <version>3.3.10</version>
-  <supportedClientVersions>[3.3.16, 4.0.0)</supportedClientVersions>
+  <supportedClientVersions>[3.3.16, 5.0.0)</supportedClientVersions>
   <summary>Mapping from Domain entities to DTOs using the ModelMapper framework.</summary>
   <description>Mapping from Domain entities to DTOs using the ModelMapper framework.</description>
   <authors>Intent.Modules.Java</authors>

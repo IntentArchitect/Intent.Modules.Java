@@ -2,7 +2,7 @@
 <package>
   <id>Intent.Java.Spring.Cors</id>
   <version>3.3.10</version>
-  <supportedClientVersions>[3.3.16, 4.0.0)</supportedClientVersions>
+  <supportedClientVersions>[3.3.16, 5.0.0)</supportedClientVersions>
   <summary>Sets up CORS configuration class.</summary>
   <description>Sets up CORS configuration class.</description>
   <authors>Intent.Modules.Java</authors>

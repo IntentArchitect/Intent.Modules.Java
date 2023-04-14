@@ -2,7 +2,7 @@
 <package>
   <id>Intent.Java.Persistence.JPA</id>
   <version>4.0.4</version>
-  <supportedClientVersions>[3.3.16, 4.0.0)</supportedClientVersions>
+  <supportedClientVersions>[3.3.16, 5.0.0)</supportedClientVersions>
   <summary>JPA Annotation decoration of Domain entities.</summary>
   <description>JPA Annotation decoration of Domain entities.</description>
   <authors>Intent.Modules.Java</authors>
