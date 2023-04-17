@@ -1,3 +1,7 @@
+### Version 3.5.0
+
+- Supports new CRUD approach which is agnostic to whether the services are exposed as Http Endpoints or not.
+
 ### Version 3.3.12
 
 - Implementations will no longer generate code which causes compilation errors when classes in the domain designer have been modelled starting with a lower case letter.

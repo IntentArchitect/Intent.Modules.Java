@@ -1,3 +1,7 @@
+### Version 3.4.0
+
+- Support for application services that are agnostic to whether they are exposed as Http Endpoints or not.
+
 ### Version 3.3.13
 
 - Fixed: When a service operation's parameter had `Is Nullable` checked then `required = true` would be added to it.

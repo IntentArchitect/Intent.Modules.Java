@@ -158,7 +158,7 @@ namespace Intent.Modules.Java.SpringBoot.Templates.RestController
             this.Write(");\r\n");
             
             #line 39 "C:\Dev\Intent.Modules.Java\Modules\Intent.Modules.Java.SpringBoot\Templates\RestController\RestControllerTemplate.tt"
-          if (!operation.ReturnType.IsNullable && !GetTypeInfo(operation.ReturnType).IsPrimitive && !operation.ReturnType.IsCollection) { 
+          if (!operation.ReturnType.IsNullable && GetTypeInfo(operation.ReturnType).Template != null && !operation.ReturnType.IsCollection) { 
             
             #line default
             #line hidden

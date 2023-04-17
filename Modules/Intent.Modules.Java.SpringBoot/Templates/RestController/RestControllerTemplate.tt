@@ -36,7 +36,7 @@ public class <#= ClassName #> {
 
         if (operation.ReturnType != null) { #>
         final <#= GetTypeName(operation) #> result = <#= GetServiceInterfaceName().ToCamelCase() #>.<#= operation.Name #>(<#= this.GetArguments(operation.Parameters) #>);
-<#          if (!operation.ReturnType.IsNullable && !GetTypeInfo(operation.ReturnType).IsPrimitive && !operation.ReturnType.IsCollection) { #>
+<#          if (!operation.ReturnType.IsNullable && GetTypeInfo(operation.ReturnType).Template != null && !operation.ReturnType.IsCollection) { #>
         if (result == null) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
