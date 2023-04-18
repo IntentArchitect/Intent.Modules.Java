@@ -31,9 +31,6 @@ public class UsersController {
         @ApiResponse(responseCode = "400", description = "One or more validation errors have occurred.") })
     public ResponseEntity<JsonResponse<UUID>> Create(@Valid @Parameter(required = true) @RequestBody UserCreateDto dto) {
         final UUID result = usersService.Create(dto);
-        if (result == null) {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        }
 
         return new ResponseEntity<>(new JsonResponse<UUID>(result), HttpStatus.OK);
     }

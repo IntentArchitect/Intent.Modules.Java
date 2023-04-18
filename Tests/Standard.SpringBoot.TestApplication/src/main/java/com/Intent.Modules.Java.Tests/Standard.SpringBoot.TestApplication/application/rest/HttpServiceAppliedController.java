@@ -25,9 +25,6 @@ public class HttpServiceAppliedController {
         @ApiResponse(responseCode = "404", description = "Can\'t find an String with the parameters provided.") })
     public ResponseEntity<String> GetValue() {
         final String result = httpServiceAppliedService.GetValue();
-        if (result == null) {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        }
 
         return new ResponseEntity<>(result, HttpStatus.OK);
     }
