@@ -1,4 +1,8 @@
-﻿### Version 1.0.2
+### Version 1.0.3
+
+- Updated supported client version to [3.3.16, 5.0.0).
+
+### Version 1.0.2
 
 - Comments captured for `DTO`s and `DTO Field`s are now generated as `@Schema(description = "<comment>")` on Data Transfer Models.
 
