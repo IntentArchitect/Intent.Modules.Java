@@ -1,3 +1,7 @@
+### Version 3.5.1
+
+- Updated dependencies and supported client versions to prevent warnings when used with Intent Architect 4.x.
+
 ### Version 3.5.0
 
 - Supports new CRUD approach which is agnostic to whether the services are exposed as Http Endpoints or not.

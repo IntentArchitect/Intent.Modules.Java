@@ -1,8 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <package>
   <id>Intent.Java.SpringFox.Swagger</id>
-  <version>3.3.9</version>
-  <supportedClientVersions>[3.3.16, 5.0.0)</supportedClientVersions>
+  <version>3.3.10</version>
+  <supportedClientVersions>[3.3.16, 5.0.0-a)</supportedClientVersions>
+  <releaseNotes>release-notes.md</releaseNotes>
   <summary>Open API configuration using SpringFox.</summary>
   <description>Open API configuration using SpringFox.</description>
   <authors>Intent.Modules.Java</authors>
@@ -18,11 +19,11 @@
   </decorators>
   <factoryExtensions></factoryExtensions>
   <dependencies>
-    <dependency id="Intent.Common" version="3.3.15" />
-    <dependency id="Intent.Common.Java" version="3.3.17" />
-    <dependency id="Intent.Common.Types" version="3.3.6" />
-    <dependency id="Intent.Java.SpringBoot" version="3.3.9" />
-    <dependency id="Intent.Modelers.Services" version="3.3.6" />
+    <dependency id="Intent.Common" version="3.4.1" />
+    <dependency id="Intent.Common.Java" version="3.4.3" />
+    <dependency id="Intent.Common.Types" version="3.3.9" />
+    <dependency id="Intent.Java.SpringBoot" version="3.4.1" />
+    <dependency id="Intent.Modelers.Services" version="3.4.2" />
   </dependencies>
   <files>
     <file src="$outDir$/$id$.dll" />

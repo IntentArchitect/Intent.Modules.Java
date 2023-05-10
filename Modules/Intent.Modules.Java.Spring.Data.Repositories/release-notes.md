@@ -1,3 +1,7 @@
+### Version 4.1.2
+
+- Updated dependencies and supported client versions to prevent warnings when used with Intent Architect 4.x.
+
 ### Version 4.0.2
 
 - Update: Repositories will now only be generated for Entities that are Aggregate Roots or have explicit Repositories defined.

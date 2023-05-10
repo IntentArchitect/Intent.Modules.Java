@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <package>
   <id>Intent.Java.Spring.Data.Repositories</id>
-  <version>4.1.1</version>
-  <supportedClientVersions>[3.3.16, 5.0.0)</supportedClientVersions>
+  <version>4.1.2</version>
+  <supportedClientVersions>[3.3.16, 5.0.0-a)</supportedClientVersions>
   <summary>Spring-based entity repository interfaces.</summary>
   <description>Spring-based entity repository interfaces.</description>
   <authors>Intent.Modules.Java</authors>
@@ -17,14 +17,14 @@
   <decorators></decorators>
   <factoryExtensions></factoryExtensions>
   <dependencies>
-    <dependency id="Intent.Common" version="3.3.19" />
-    <dependency id="Intent.Common.Java" version="3.4.1" />
-    <dependency id="Intent.Common.Types" version="3.3.7" />
-    <dependency id="Intent.Java.Persistence.JPA" version="4.0.0" />
-    <dependency id="Intent.Java.Weaving.Annotations" version="3.3.6" />
-    <dependency id="Intent.Metadata.RDBMS" version="3.3.12" />
-    <dependency id="Intent.Modelers.Domain" version="3.3.10" />
-    <dependency id="Intent.Modelers.Domain.Repositories" version="3.3.0" />
+    <dependency id="Intent.Common" version="3.4.1" />
+    <dependency id="Intent.Common.Java" version="3.4.3" />
+    <dependency id="Intent.Common.Types" version="3.3.9" />
+    <dependency id="Intent.Java.Persistence.JPA" version="4.0.5" />
+    <dependency id="Intent.Java.Weaving.Annotations" version="3.3.8" />
+    <dependency id="Intent.Metadata.RDBMS" version="3.5.1" />
+    <dependency id="Intent.Modelers.Domain" version="3.4.2" />
+    <dependency id="Intent.Modelers.Domain.Repositories" version="3.3.2" />
   </dependencies>
   <files>
     <file src="$outDir$/$id$.dll" />

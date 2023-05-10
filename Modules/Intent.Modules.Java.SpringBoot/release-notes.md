@@ -1,3 +1,7 @@
+### Version 3.4.1
+
+- Updated dependencies and supported client versions to prevent warnings when used with Intent Architect 4.x.
+
 ### Version 3.4.0
 
 - Support for application services that are agnostic to whether they are exposed as Http Endpoints or not.

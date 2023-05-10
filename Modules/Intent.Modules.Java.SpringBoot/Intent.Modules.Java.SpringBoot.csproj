@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
@@ -48,7 +48,7 @@
 
   <ItemGroup>
     <PackageReference Include="Intent.Modules.Common.Java" Version="3.4.2" />
-    <PackageReference Include="Intent.Modules.Java.Services" Version="3.4.2-pre.0" />
+    <PackageReference Include="Intent.Modules.Java.Services" Version="3.4.2" />
     <PackageReference Include="Intent.Modules.Java.Weaving.Annotations" Version="3.3.6" />
     <PackageReference Include="Intent.Modules.Metadata.WebApi" Version="3.4.0" />
     <PackageReference Include="Intent.Modules.Modelers.Services" Version="3.4.0" />
