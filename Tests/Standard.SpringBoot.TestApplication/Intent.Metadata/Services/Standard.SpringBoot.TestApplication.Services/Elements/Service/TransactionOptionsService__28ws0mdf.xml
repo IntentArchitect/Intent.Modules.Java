@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="utf-8"?>
+<class id="bf271721-f3b7-4a33-b26d-9d24d11c8421" type="Service" typeId="b16578a5-27b1-4047-a8df-f0b783d706bd">
+  <name>TransactionOptionsService</name>
+  <display>TransactionOptionsService</display>
+  <isAbstract>false</isAbstract>
+  <sort-children>by-type-then-manually</sort-children>
+  <genericTypes />
+  <isMapped>false</isMapped>
+  <parentFolderId>cf0a1026-41c5-43de-beee-e12dce9327cb</parentFolderId>
+  <packageId>cf0a1026-41c5-43de-beee-e12dce9327cb</packageId>
+  <packageName>Standard.SpringBoot.TestApplication.Services</packageName>
+  <stereotypes>
+    <stereotype stereotypeDefinitionId="c29224ec-d473-4b95-ad4a-ec55c676c4fd" name="Http Service Settings">
+      <addedByDefault>false</addedByDefault>
+      <definitionPackageName>Intent.Metadata.WebApi</definitionPackageName>
+      <definitionPackageId>0011387a-b122-45d7-9cdb-8e21b315ab9f</definitionPackageId>
+      <properties>
+        <property name="1e223bd0-7a72-435a-8741-a612d88e4a12" display="Route" value="api/transaction-options" isActive="true" />
+      </properties>
+    </stereotype>
+  </stereotypes>
+  <metadata />
+  <childElements>
+    <childElement id="7960a98f-3d8c-4b40-8379-0bec293b8203" type="Operation" typeId="e030c97a-e066-40a7-8188-808c275df3cb">
+      <name>TransactionDefault</name>
+      <display>TransactionDefault(): void</display>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <typeReference id="0bca9752-e816-400f-ac14-b985cd3cc88e">
+        <isNavigable>true</isNavigable>
+        <isNullable>false</isNullable>
+        <isCollection>false</isCollection>
+        <isRequired>true</isRequired>
+        <stereotypes />
+        <genericTypeParameters />
+      </typeReference>
+      <isMapped>false</isMapped>
+      <parentFolderId>bf271721-f3b7-4a33-b26d-9d24d11c8421</parentFolderId>
+      <packageId>cf0a1026-41c5-43de-beee-e12dce9327cb</packageId>
+      <packageName>Standard.SpringBoot.TestApplication.Services</packageName>
+      <stereotypes>
+        <stereotype stereotypeDefinitionId="b4581ed2-42ec-4ae2-83dd-dcdd5f0837b6" name="Http Settings">
+          <addedByDefault>false</addedByDefault>
+          <definitionPackageName>Intent.Metadata.WebApi</definitionPackageName>
+          <definitionPackageId>0011387a-b122-45d7-9cdb-8e21b315ab9f</definitionPackageId>
+          <properties>
+            <property name="801c3e61-4431-4d81-93fa-7e57d33cb3fa" display="Verb" value="POST" isActive="true" />
+            <property name="5dd3e07d-76eb-45d4-9956-4325fb068acc" display="Route" value="transaction-default" isActive="true" />
+            <property name="4490e212-1e99-43ce-b3dd-048ed2a6bae8" display="Return Type Mediatype" value="Default" isActive="true" />
+          </properties>
+        </stereotype>
+      </stereotypes>
+      <metadata />
+      <childElements />
+    </childElement>
+    <childElement id="0f6672e3-0682-4d13-baf2-054e66b4350d" type="Operation" typeId="e030c97a-e066-40a7-8188-808c275df3cb">
+      <name>NoTransaction</name>
+      <display>NoTransaction(): void</display>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <typeReference id="96ffccb1-3664-4317-a3f7-cb27b6e46118">
+        <isNavigable>true</isNavigable>
+        <isNullable>false</isNullable>
+        <isCollection>false</isCollection>
+        <isRequired>true</isRequired>
+        <stereotypes />
+        <genericTypeParameters />
+      </typeReference>
+      <isMapped>false</isMapped>
+      <parentFolderId>bf271721-f3b7-4a33-b26d-9d24d11c8421</parentFolderId>
+      <packageId>cf0a1026-41c5-43de-beee-e12dce9327cb</packageId>
+      <packageName>Standard.SpringBoot.TestApplication.Services</packageName>
+      <stereotypes>
+        <stereotype stereotypeDefinitionId="b4581ed2-42ec-4ae2-83dd-dcdd5f0837b6" name="Http Settings">
+          <addedByDefault>false</addedByDefault>
+          <definitionPackageName>Intent.Metadata.WebApi</definitionPackageName>
+          <definitionPackageId>0011387a-b122-45d7-9cdb-8e21b315ab9f</definitionPackageId>
+          <properties>
+            <property name="801c3e61-4431-4d81-93fa-7e57d33cb3fa" display="Verb" value="POST" isActive="true" />
+            <property name="5dd3e07d-76eb-45d4-9956-4325fb068acc" display="Route" value="no-transaction" isActive="true" />
+            <property name="4490e212-1e99-43ce-b3dd-048ed2a6bae8" display="Return Type Mediatype" value="Default" isActive="true" />
+          </properties>
+        </stereotype>
+        <stereotype stereotypeDefinitionId="b72430de-3a53-44de-af0a-75023119d64f" name="Transaction Options">
+          <addedByDefault>false</addedByDefault>
+          <definitionPackageName>Intent.Java.Services</definitionPackageName>
+          <definitionPackageId>e3481ac6-e429-4423-8eba-b5b1bc890f1b</definitionPackageId>
+          <properties>
+            <property name="364b5b49-7469-4d89-ba02-98f045ebb27f" display="Is Enabled" value="false" isActive="true" />
+            <property name="5b96293d-d351-4705-bb83-7ca3fdd4d8b3" display="Is Read Only" value="true" isActive="true" />
+            <property name="2d46c091-7f14-47fd-b022-3a3cc8b8c571" display="Timeout" value="-1" isActive="true" />
+            <property name="e93dd9fd-d1e3-4ca9-bd35-b675084f4fde" display="Isolation Level" value="Default" isActive="true" />
+            <property name="5405be0c-a4db-4ce9-a4d3-69df33d5da63" display="Propagation" value="Required" isActive="true" />
+          </properties>
+        </stereotype>
+      </stereotypes>
+      <metadata />
+      <childElements />
+    </childElement>
+    <childElement id="9e8cbd80-1e15-400d-b09f-18509e4dafc9" type="Operation" typeId="e030c97a-e066-40a7-8188-808c275df3cb">
+      <name>TransactionReadOnly</name>
+      <display>TransactionReadOnly(): void</display>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <typeReference id="c1d86ee0-0059-44a1-8759-1e2a9f913fc8">
+        <isNavigable>true</isNavigable>
+        <isNullable>false</isNullable>
+        <isCollection>false</isCollection>
+        <isRequired>true</isRequired>
+        <stereotypes />
+        <genericTypeParameters />
+      </typeReference>
+      <isMapped>false</isMapped>
+      <parentFolderId>bf271721-f3b7-4a33-b26d-9d24d11c8421</parentFolderId>
+      <packageId>cf0a1026-41c5-43de-beee-e12dce9327cb</packageId>
+      <packageName>Standard.SpringBoot.TestApplication.Services</packageName>
+      <stereotypes>
+        <stereotype stereotypeDefinitionId="b4581ed2-42ec-4ae2-83dd-dcdd5f0837b6" name="Http Settings">
+          <addedByDefault>false</addedByDefault>
+          <definitionPackageName>Intent.Metadata.WebApi</definitionPackageName>
+          <definitionPackageId>0011387a-b122-45d7-9cdb-8e21b315ab9f</definitionPackageId>
+          <properties>
+            <property name="801c3e61-4431-4d81-93fa-7e57d33cb3fa" display="Verb" value="POST" isActive="true" />
+            <property name="5dd3e07d-76eb-45d4-9956-4325fb068acc" display="Route" value="transaction-read-only" isActive="true" />
+            <property name="4490e212-1e99-43ce-b3dd-048ed2a6bae8" display="Return Type Mediatype" value="Default" isActive="true" />
+          </properties>
+        </stereotype>
+        <stereotype stereotypeDefinitionId="b72430de-3a53-44de-af0a-75023119d64f" name="Transaction Options">
+          <addedByDefault>false</addedByDefault>
+          <definitionPackageName>Intent.Java.Services</definitionPackageName>
+          <definitionPackageId>e3481ac6-e429-4423-8eba-b5b1bc890f1b</definitionPackageId>
+          <properties>
+            <property name="364b5b49-7469-4d89-ba02-98f045ebb27f" display="Is Enabled" value="true" isActive="true" />
+            <property name="5b96293d-d351-4705-bb83-7ca3fdd4d8b3" display="Is Read Only" value="true" isActive="true" />
+            <property name="2d46c091-7f14-47fd-b022-3a3cc8b8c571" display="Timeout" value="-1" isActive="true" />
+            <property name="e93dd9fd-d1e3-4ca9-bd35-b675084f4fde" display="Isolation Level" value="Default" isActive="true" />
+            <property name="5405be0c-a4db-4ce9-a4d3-69df33d5da63" display="Propagation" value="Required" isActive="true" />
+          </properties>
+        </stereotype>
+      </stereotypes>
+      <metadata />
+      <childElements />
+    </childElement>
+    <childElement id="44a4a8a8-26c1-4c38-88f2-3167f04da62e" type="Operation" typeId="e030c97a-e066-40a7-8188-808c275df3cb">
+      <name>TransactionIsolationLevel</name>
+      <display>TransactionIsolationLevel(): void</display>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <typeReference id="da364687-a825-494f-9815-36250fe2105b">
+        <isNavigable>true</isNavigable>
+        <isNullable>false</isNullable>
+        <isCollection>false</isCollection>
+        <isRequired>true</isRequired>
+        <stereotypes />
+        <genericTypeParameters />
+      </typeReference>
+      <isMapped>false</isMapped>
+      <parentFolderId>bf271721-f3b7-4a33-b26d-9d24d11c8421</parentFolderId>
+      <packageId>cf0a1026-41c5-43de-beee-e12dce9327cb</packageId>
+      <packageName>Standard.SpringBoot.TestApplication.Services</packageName>
+      <stereotypes>
+        <stereotype stereotypeDefinitionId="b4581ed2-42ec-4ae2-83dd-dcdd5f0837b6" name="Http Settings">
+          <addedByDefault>false</addedByDefault>
+          <definitionPackageName>Intent.Metadata.WebApi</definitionPackageName>
+          <definitionPackageId>0011387a-b122-45d7-9cdb-8e21b315ab9f</definitionPackageId>
+          <properties>
+            <property name="801c3e61-4431-4d81-93fa-7e57d33cb3fa" display="Verb" value="POST" isActive="true" />
+            <property name="5dd3e07d-76eb-45d4-9956-4325fb068acc" display="Route" value="transaction-isolation-level" isActive="true" />
+            <property name="4490e212-1e99-43ce-b3dd-048ed2a6bae8" display="Return Type Mediatype" value="Default" isActive="true" />
+          </properties>
+        </stereotype>
+        <stereotype stereotypeDefinitionId="b72430de-3a53-44de-af0a-75023119d64f" name="Transaction Options">
+          <addedByDefault>false</addedByDefault>
+          <definitionPackageName>Intent.Java.Services</definitionPackageName>
+          <definitionPackageId>e3481ac6-e429-4423-8eba-b5b1bc890f1b</definitionPackageId>
+          <properties>
+            <property name="364b5b49-7469-4d89-ba02-98f045ebb27f" display="Is Enabled" value="true" isActive="true" />
+            <property name="5b96293d-d351-4705-bb83-7ca3fdd4d8b3" display="Is Read Only" value="false" isActive="true" />
+            <property name="2d46c091-7f14-47fd-b022-3a3cc8b8c571" display="Timeout" value="-1" isActive="true" />
+            <property name="e93dd9fd-d1e3-4ca9-bd35-b675084f4fde" display="Isolation Level" value="Read Committed" isActive="true" />
+            <property name="5405be0c-a4db-4ce9-a4d3-69df33d5da63" display="Propagation" value="Required" isActive="true" />
+          </properties>
+        </stereotype>
+      </stereotypes>
+      <metadata />
+      <childElements />
+    </childElement>
+    <childElement id="30935d43-1799-4761-b8f9-c9109d5f7f1f" type="Operation" typeId="e030c97a-e066-40a7-8188-808c275df3cb">
+      <name>TransactionPropagationLevel</name>
+      <display>TransactionPropagationLevel(): void</display>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <typeReference id="fa4c5d84-f3e0-471a-8b40-448f74793b84">
+        <isNavigable>true</isNavigable>
+        <isNullable>false</isNullable>
+        <isCollection>false</isCollection>
+        <isRequired>true</isRequired>
+        <stereotypes />
+        <genericTypeParameters />
+      </typeReference>
+      <isMapped>false</isMapped>
+      <parentFolderId>bf271721-f3b7-4a33-b26d-9d24d11c8421</parentFolderId>
+      <packageId>cf0a1026-41c5-43de-beee-e12dce9327cb</packageId>
+      <packageName>Standard.SpringBoot.TestApplication.Services</packageName>
+      <stereotypes>
+        <stereotype stereotypeDefinitionId="b4581ed2-42ec-4ae2-83dd-dcdd5f0837b6" name="Http Settings">
+          <addedByDefault>false</addedByDefault>
+          <definitionPackageName>Intent.Metadata.WebApi</definitionPackageName>
+          <definitionPackageId>0011387a-b122-45d7-9cdb-8e21b315ab9f</definitionPackageId>
+          <properties>
+            <property name="801c3e61-4431-4d81-93fa-7e57d33cb3fa" display="Verb" value="POST" isActive="true" />
+            <property name="5dd3e07d-76eb-45d4-9956-4325fb068acc" display="Route" value="transaction-propagation-level" isActive="true" />
+            <property name="4490e212-1e99-43ce-b3dd-048ed2a6bae8" display="Return Type Mediatype" value="Default" isActive="true" />
+          </properties>
+        </stereotype>
+        <stereotype stereotypeDefinitionId="b72430de-3a53-44de-af0a-75023119d64f" name="Transaction Options">
+          <addedByDefault>false</addedByDefault>
+          <definitionPackageName>Intent.Java.Services</definitionPackageName>
+          <definitionPackageId>e3481ac6-e429-4423-8eba-b5b1bc890f1b</definitionPackageId>
+          <properties>
+            <property name="364b5b49-7469-4d89-ba02-98f045ebb27f" display="Is Enabled" value="true" isActive="true" />
+            <property name="5b96293d-d351-4705-bb83-7ca3fdd4d8b3" display="Is Read Only" value="false" isActive="true" />
+            <property name="2d46c091-7f14-47fd-b022-3a3cc8b8c571" display="Timeout" value="-1" isActive="true" />
+            <property name="e93dd9fd-d1e3-4ca9-bd35-b675084f4fde" display="Isolation Level" value="Default" isActive="true" />
+            <property name="5405be0c-a4db-4ce9-a4d3-69df33d5da63" display="Propagation" value="Requires New" isActive="true" />
+          </properties>
+        </stereotype>
+      </stereotypes>
+      <metadata />
+      <childElements />
+    </childElement>
+    <childElement id="c7cfd05f-e7f5-45cc-8784-39451be5eeb0" type="Operation" typeId="e030c97a-e066-40a7-8188-808c275df3cb">
+      <name>TransactionTimeout</name>
+      <display>TransactionTimeout(): void</display>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <typeReference id="e58c64b0-735b-4fa1-9c4c-559ed47b18e9">
+        <isNavigable>true</isNavigable>
+        <isNullable>false</isNullable>
+        <isCollection>false</isCollection>
+        <isRequired>true</isRequired>
+        <stereotypes />
+        <genericTypeParameters />
+      </typeReference>
+      <isMapped>false</isMapped>
+      <parentFolderId>bf271721-f3b7-4a33-b26d-9d24d11c8421</parentFolderId>
+      <packageId>cf0a1026-41c5-43de-beee-e12dce9327cb</packageId>
+      <packageName>Standard.SpringBoot.TestApplication.Services</packageName>
+      <stereotypes>
+        <stereotype stereotypeDefinitionId="b4581ed2-42ec-4ae2-83dd-dcdd5f0837b6" name="Http Settings">
+          <addedByDefault>false</addedByDefault>
+          <definitionPackageName>Intent.Metadata.WebApi</definitionPackageName>
+          <definitionPackageId>0011387a-b122-45d7-9cdb-8e21b315ab9f</definitionPackageId>
+          <properties>
+            <property name="801c3e61-4431-4d81-93fa-7e57d33cb3fa" display="Verb" value="POST" isActive="true" />
+            <property name="5dd3e07d-76eb-45d4-9956-4325fb068acc" display="Route" value="transaction-timeout" isActive="true" />
+            <property name="4490e212-1e99-43ce-b3dd-048ed2a6bae8" display="Return Type Mediatype" value="Default" isActive="true" />
+          </properties>
+        </stereotype>
+        <stereotype stereotypeDefinitionId="b72430de-3a53-44de-af0a-75023119d64f" name="Transaction Options">
+          <addedByDefault>false</addedByDefault>
+          <definitionPackageName>Intent.Java.Services</definitionPackageName>
+          <definitionPackageId>e3481ac6-e429-4423-8eba-b5b1bc890f1b</definitionPackageId>
+          <properties>
+            <property name="364b5b49-7469-4d89-ba02-98f045ebb27f" display="Is Enabled" value="true" isActive="true" />
+            <property name="5b96293d-d351-4705-bb83-7ca3fdd4d8b3" display="Is Read Only" value="false" isActive="true" />
+            <property name="2d46c091-7f14-47fd-b022-3a3cc8b8c571" display="Timeout" value="30" isActive="true" />
+            <property name="e93dd9fd-d1e3-4ca9-bd35-b675084f4fde" display="Isolation Level" value="Default" isActive="true" />
+            <property name="5405be0c-a4db-4ce9-a4d3-69df33d5da63" display="Propagation" value="Required" isActive="true" />
+          </properties>
+        </stereotype>
+      </stereotypes>
+      <metadata />
+      <childElements />
+    </childElement>
+  </childElements>
+</class>

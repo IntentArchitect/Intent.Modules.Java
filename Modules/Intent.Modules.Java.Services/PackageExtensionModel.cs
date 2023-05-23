@@ -19,6 +19,7 @@ namespace Intent.Modules.Java.Services.Api
         {
         }
 
+        [IntentManaged(Mode.Fully)]
         public IList<ExceptionTypeModel> ExceptionTypes => UnderlyingPackage.ChildElements
             .GetElementsOfType(ExceptionTypeModel.SpecializationTypeId)
             .Select(x => new ExceptionTypeModel(x))

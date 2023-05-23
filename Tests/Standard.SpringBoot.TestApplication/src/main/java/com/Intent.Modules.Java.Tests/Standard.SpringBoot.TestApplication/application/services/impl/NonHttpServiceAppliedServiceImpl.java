@@ -14,7 +14,8 @@ public class NonHttpServiceAppliedServiceImpl implements NonHttpServiceAppliedSe
     @Override
     @Transactional(readOnly = false)
     @IntentIgnoreBody
-    public void Operation1() {
+    public void BasicOperation() {
         throw new UnsupportedOperationException("Your implementation here...");
     }
+
 }

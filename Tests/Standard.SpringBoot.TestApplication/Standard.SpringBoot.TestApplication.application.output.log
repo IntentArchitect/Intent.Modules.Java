@@ -140,6 +140,14 @@
     </FileLog>
     <FileLog>
       <ProjectId>fdf6f912-98b9-427b-9fbe-943aa386cedd</ProjectId>
+      <CorrelationId>Intent.Java.SpringBoot.RestController#bf271721-f3b7-4a33-b26d-9d24d11c8421</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>src/main/java/com/Intent.Modules.Java.Tests/Standard.SpringBoot.TestApplication/application/rest/TransactionOptionsController.java</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>TransactionOptionsController.java</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
+      <ProjectId>fdf6f912-98b9-427b-9fbe-943aa386cedd</ProjectId>
       <CorrelationId>Intent.Java.SpringBoot.RestController#b7d6da59-4405-4b0a-a838-ae64145c4105</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>src/main/java/com/Intent.Modules.Java.Tests/Standard.SpringBoot.TestApplication/application/rest/UsersController.java</ApplicationRelativeFilePath>
@@ -172,6 +180,14 @@
     </FileLog>
     <FileLog>
       <ProjectId>d695fc71-35ed-44d8-8c28-58008eaf6f73</ProjectId>
+      <CorrelationId>Intent.Java.Services.ServiceImplementation#bf271721-f3b7-4a33-b26d-9d24d11c8421</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>src/main/java/com/Intent.Modules.Java.Tests/Standard.SpringBoot.TestApplication/application/services/impl/TransactionOptionsServiceImpl.java</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>TransactionOptionsServiceImpl.java</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
+      <ProjectId>d695fc71-35ed-44d8-8c28-58008eaf6f73</ProjectId>
       <CorrelationId>Intent.Java.Services.ServiceImplementation#b7d6da59-4405-4b0a-a838-ae64145c4105</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>src/main/java/com/Intent.Modules.Java.Tests/Standard.SpringBoot.TestApplication/application/services/impl/UsersServiceImpl.java</ApplicationRelativeFilePath>
@@ -184,6 +200,14 @@
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>src/main/java/com/Intent.Modules.Java.Tests/Standard.SpringBoot.TestApplication/application/services/NonHttpServiceAppliedService.java</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>NonHttpServiceAppliedService.java</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
+      <ProjectId>17313b42-7aa4-4276-bbde-c5f8bb96566c</ProjectId>
+      <CorrelationId>Intent.Java.Services.ServiceInterface#bf271721-f3b7-4a33-b26d-9d24d11c8421</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>src/main/java/com/Intent.Modules.Java.Tests/Standard.SpringBoot.TestApplication/application/services/TransactionOptionsService.java</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>TransactionOptionsService.java</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>

@@ -39,7 +39,7 @@
       <definitionPackageName>Intent.ModuleBuilder.Java</definitionPackageName>
       <definitionPackageId>b6978589-6e21-40a6-88b3-0854c11f4388</definitionPackageId>
       <properties>
-        <property name="aa8ff690-2b59-4466-b522-31d6c74d081c" display="Templating Method" value="Custom" isActive="true" />
+        <property name="aa8ff690-2b59-4466-b522-31d6c74d081c" display="Templating Method" value="Java File Builder" isActive="true" />
       </properties>
     </stereotype>
   </stereotypes>

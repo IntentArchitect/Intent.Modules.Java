@@ -1,3 +1,7 @@
+### Version 3.5.0
+
+- `Transaction Options` stereotype enhanced with ability to disable transactions, set propagation types, isolation levels, time out times, etc.
+
 ### Version 3.4.3
 
 - Updated dependencies and supported client versions to prevent warnings when used with Intent Architect 4.x.

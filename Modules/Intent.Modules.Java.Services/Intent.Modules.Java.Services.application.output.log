@@ -75,7 +75,7 @@
     <FileLog>
       <ProjectId>9a39a5e5-1c2a-4df7-bab4-5d2760783b6d</ProjectId>
       <CorrelationId>Intent.VisualStudio.Projects.CoreLibrary.CSProject#9a39a5e5-1c2a-4df7-bab4-5d2760783b6d</CorrelationId>
-      <OverwriteBehaviour>once-off</OverwriteBehaviour>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Intent.Modules.Java.Services.csproj</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>Intent.Modules.Java.Services.csproj</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
@@ -262,7 +262,7 @@
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Templates/TemplateExtensions.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>TemplateExtensions.cs</ProjectRelativeFilePath>
-      <IsIgnored>false</IsIgnored>
+      <IsIgnored>true</IsIgnored>
     </FileLog>
   </FileLogs>
 </outputLog>

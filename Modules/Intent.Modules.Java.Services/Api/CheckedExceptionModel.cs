@@ -38,6 +38,8 @@ namespace Intent.Modules.Java.Services.Api
 
         public ITypeReference TypeReference => _element.TypeReference;
 
+        public ITypeReference ExceptionType => TypeReference?.Element != null ? TypeReference : null;
+
         public IElement InternalElement => _element;
 
         public override string ToString()
