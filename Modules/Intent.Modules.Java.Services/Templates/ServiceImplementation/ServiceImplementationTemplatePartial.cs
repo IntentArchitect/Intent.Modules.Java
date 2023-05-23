@@ -38,16 +38,15 @@ public partial class
         AddTypeSource("Domain.Enum");
         AddTypeSource(EnumTemplate.TemplateId);
         AddTypeSource("Domain.Entity");
-    
+
         JavaFile = new JavaFile(this.GetPackage(), this.GetFolderPath())
             .AddClass($"{Model.Name.RemoveSuffix("Controller", "Service")}ServiceImpl", c => c
                 .AddMetadata("model", Model))
             .OnBuild(file =>
             {
                 file.AddImport("lombok.AllArgsConstructor")
-                    .AddImport("org.springframework.stereotype.Service")
-                    .AddImport("org.springframework.transaction.annotation.Transactional");
-    
+                    .AddImport("org.springframework.stereotype.Service");
+
                 var @class = file.Classes.First();
                 @class.AddAnnotation("Service")
                     .AddAnnotation("AllArgsConstructor")
@@ -59,7 +58,7 @@ public partial class
                     @class.AddField(ImportType(dependency.Type), dependency.Name.ToCamelCase(),
                         field => field.Private());
                 }
-    
+
                 foreach (var operation in Model.Operations)
                 {
                     @class.AddMethod(GetTypeName(operation), operation.Name, method =>
@@ -68,10 +67,10 @@ public partial class
                         if (operation.GetTransactionOptions() == null ||
                             operation.GetTransactionOptions().IsEnabled())
                         {
-                            method.AddAnnotation("Transactional", ann =>
+                            method.AddAnnotation(ImportType("org.springframework.transaction.annotation.Transactional"), ann =>
                             {
                                 ann.AddArgument($"readOnly = {(IsReadOnly(operation) ? "true" : "false")}");
-    
+
                                 var transactionOptions = operation.GetTransactionOptions();
                                 if (transactionOptions == null)
                                 {
@@ -98,14 +97,14 @@ public partial class
                                 }
                             });
                         }
-    
+
                         method.AddAnnotation(this.IntentIgnoreBodyAnnotation());
-    
+
                         foreach (var parameter in operation.Parameters)
                         {
                             method.AddParameter(GetTypeName(parameter), parameter.Name.ToCamelCase());
                         }
-    
+
                         method.AddStatements(GetImplementation(operation));
                     });
                 }
