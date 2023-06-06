@@ -30,7 +30,7 @@
   </sourceEnd>
   <targetEnd id="3464573f-d2f7-4772-ab55-cab05877bd83" type="Association Target End" typeId="0a66489f-30aa-417b-a75d-b945863366fd">
     <name>Poly_RootAbstract_Aggr</name>
-    <display>Poly_RootAbstract_Aggr: tptPoly_RootAbstract_Aggr?</display>
+    <display>Poly_RootAbstract_Aggr: tptPoly_RootAbstract_Aggr?   [* --&gt; 0..1]</display>
     <order>1</order>
     <typeReference id="91edd272-42b7-42c8-85cc-b72da3ca2d79">
       <typeId>0975e1cb-3f15-4283-b267-f5a609dd653d</typeId>

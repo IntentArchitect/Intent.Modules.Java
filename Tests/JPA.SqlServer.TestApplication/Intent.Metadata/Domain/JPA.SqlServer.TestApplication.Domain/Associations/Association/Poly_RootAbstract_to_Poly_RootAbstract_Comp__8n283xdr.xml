@@ -30,7 +30,7 @@
   </sourceEnd>
   <targetEnd id="4a451f7d-4154-4bc2-a4aa-d58f8b30fb5d" type="Association Target End" typeId="0a66489f-30aa-417b-a75d-b945863366fd">
     <name>Poly_RootAbstract_Comp</name>
-    <display>Poly_RootAbstract_Comp: tpcPoly_RootAbstract_Comp?</display>
+    <display>Poly_RootAbstract_Comp: tpcPoly_RootAbstract_Comp?   [1 --&gt; 0..1]</display>
     <order>2</order>
     <typeReference id="9bfe3d36-1c19-4a7f-81f0-117b9b6d6398">
       <typeId>0bc3e735-812f-41f7-99b8-32a0c934b5de</typeId>

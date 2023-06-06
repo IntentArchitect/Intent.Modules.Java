@@ -30,7 +30,7 @@
   </sourceEnd>
   <targetEnd id="50c68ce3-67de-45e4-8ee9-b9eed8a14d63" type="Association Target End" typeId="0a66489f-30aa-417b-a75d-b945863366fd">
     <name>OverrideTestSideBS</name>
-    <display>OverrideTestSideBS: OverrideTestSideB[*]</display>
+    <display>OverrideTestSideBS: OverrideTestSideB[*]   [* --&gt; *]</display>
     <order>2</order>
     <typeReference id="3e2b057b-499b-473f-9ca0-2f9f0c4c467d">
       <typeId>50b3fb3e-e6f0-4f6a-8085-4db49bbc8067</typeId>

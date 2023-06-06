@@ -30,7 +30,7 @@
   </sourceEnd>
   <targetEnd id="b5d8080a-f2d8-42cd-b58f-c49ded54e1b6" type="Association Target End" typeId="0a66489f-30aa-417b-a75d-b945863366fd">
     <name>DerivedClassForAbstract</name>
-    <display>DerivedClassForAbstract: tpcDerivedClassForAbstract</display>
+    <display>DerivedClassForAbstract: tpcDerivedClassForAbstract   [* --&gt; 1]</display>
     <order>1</order>
     <typeReference id="23b85852-865c-4f02-a78f-819ce83d7628">
       <typeId>03a5ec19-a5e9-4e73-96ca-f4cf8200bcbb</typeId>

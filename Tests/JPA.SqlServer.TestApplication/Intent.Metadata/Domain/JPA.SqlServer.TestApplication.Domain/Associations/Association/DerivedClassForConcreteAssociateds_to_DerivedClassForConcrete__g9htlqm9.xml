@@ -30,7 +30,7 @@
   </sourceEnd>
   <targetEnd id="a7cc01cf-7e81-4b40-8998-4eb02af6468a" type="Association Target End" typeId="0a66489f-30aa-417b-a75d-b945863366fd">
     <name>DerivedClassForConcrete</name>
-    <display>DerivedClassForConcrete: tpcDerivedClassForConcrete</display>
+    <display>DerivedClassForConcrete: tpcDerivedClassForConcrete   [* --&gt; 1]</display>
     <order>1</order>
     <typeReference id="e04da7ce-7690-4b38-bae2-854e0228edbf">
       <typeId>7596fb59-a5b4-46d2-bba9-b930f7b37183</typeId>

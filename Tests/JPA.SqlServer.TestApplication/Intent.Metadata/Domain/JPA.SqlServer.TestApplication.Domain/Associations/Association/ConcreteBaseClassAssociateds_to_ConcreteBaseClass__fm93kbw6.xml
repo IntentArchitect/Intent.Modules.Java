@@ -30,7 +30,7 @@
   </sourceEnd>
   <targetEnd id="c2b31ac5-1e74-4d8b-8a86-044c0cba2503" type="Association Target End" typeId="0a66489f-30aa-417b-a75d-b945863366fd">
     <name>ConcreteBaseClass</name>
-    <display>ConcreteBaseClass: tpcConcreteBaseClass</display>
+    <display>ConcreteBaseClass: tpcConcreteBaseClass   [* --&gt; 1]</display>
     <order>1</order>
     <typeReference id="679c2e52-889c-4727-9ba0-b9060b9bd3aa">
       <typeId>fa7e2985-397e-470d-8984-ce262eae051c</typeId>
