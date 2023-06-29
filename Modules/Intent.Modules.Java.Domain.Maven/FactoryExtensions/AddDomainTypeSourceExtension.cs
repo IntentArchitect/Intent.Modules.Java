@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http.Headers;
 using Intent.Engine;
+using Intent.Java.Domain.Maven.Api;
 using Intent.Metadata.Models;
 using Intent.Modelers.Domain.Api;
 using Intent.Modules.Common;
@@ -11,7 +12,6 @@ using Intent.Modules.Common.Plugins;
 using Intent.Modules.Common.Templates;
 using Intent.Modules.Common.TypeResolution;
 using Intent.Modules.Java.Domain.Events;
-using Intent.Modules.Java.Domain.Maven.Api;
 using Intent.Plugins.FactoryExtensions;
 using Intent.RoslynWeaver.Attributes;
 
@@ -23,7 +23,7 @@ namespace Intent.Modules.Java.Domain.Maven.FactoryExtensions
     [IntentManaged(Mode.Fully, Body = Mode.Merge)]
     public class AddDomainTypeSourceExtension : FactoryExtensionBase
     {
-        public override string Id => "Intent.Modules.Java.Domain.Maven.AddDomainTypeSourceExtension";
+        public override string Id => "Intent.Java.Domain.Maven.AddDomainTypeSourceExtension";
 
         [IntentManaged(Mode.Ignore)]
         public override int Order => 0;

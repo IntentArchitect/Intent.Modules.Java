@@ -29,7 +29,7 @@
         <property name="00d3537c-f71f-4450-8cc8-d9e87c12baee" display="Designer" isActive="true" />
         <property name="75b89367-1808-43f8-9f18-785915ec1630" display="Model Type" value="" isActive="true" />
         <property name="d1e89313-0647-48bd-81da-b04b644db475" display="Model Name" value="object" isActive="false" />
-        <property name="f1d88e59-1ca6-426e-b52d-42f3467e6bd5" display="Role" value="Startup" isActive="true" />
+        <property name="f1d88e59-1ca6-426e-b52d-42f3467e6bd5" display="Role" value="Startup, Startup.Application" isActive="true" />
         <property name="1ac0fa39-ecea-48f8-92e4-41616a639586" display="Default Location" isActive="true" />
       </properties>
     </stereotype>
@@ -38,7 +38,7 @@
       <definitionPackageName>Intent.ModuleBuilder.Java</definitionPackageName>
       <definitionPackageId>b6978589-6e21-40a6-88b3-0854c11f4388</definitionPackageId>
       <properties>
-        <property name="aa8ff690-2b59-4466-b522-31d6c74d081c" display="Templating Method" value="T4 Template" isActive="true" />
+        <property name="aa8ff690-2b59-4466-b522-31d6c74d081c" display="Templating Method" value="Java File Builder" isActive="true" />
       </properties>
     </stereotype>
   </stereotypes>

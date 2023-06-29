@@ -20,7 +20,7 @@ namespace Intent.Modules.Java.SpringBoot.Templates.Application
 
         public override ITemplate CreateTemplateInstance(IOutputTarget outputTarget)
         {
-            return new ApplicationTemplate(outputTarget, null);
+            return new ApplicationTemplate(outputTarget);
         }
     }
 }

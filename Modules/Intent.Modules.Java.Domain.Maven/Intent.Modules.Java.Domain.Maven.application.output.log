@@ -25,19 +25,27 @@
       <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
-      <ProjectId>38a5446f-dc72-46c9-a14b-71727ef18b4f</ProjectId>
-      <CorrelationId>Intent.VisualStudio.Projects.CoreLibrary.CSProject#38a5446f-dc72-46c9-a14b-71727ef18b4f</CorrelationId>
-      <OverwriteBehaviour>once-off</OverwriteBehaviour>
-      <ApplicationRelativeFilePath>Intent.Modules.Java.Domain.Maven.csproj</ApplicationRelativeFilePath>
-      <ProjectRelativeFilePath>Intent.Modules.Java.Domain.Maven.csproj</ProjectRelativeFilePath>
+      <ProjectId>610dda5c-eae7-4ef0-b1df-cf6fc2ebfafd</ProjectId>
+      <CorrelationId>Intent.ModuleBuilder.Templates.FactoryExtension#b137a3b9-54a9-4b97-a720-c03a807fec5f</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>FactoryExtensions/InstallPackagesForScanning.cs</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>InstallPackagesForScanning.cs</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
       <ProjectId>38a5446f-dc72-46c9-a14b-71727ef18b4f</ProjectId>
       <CorrelationId>Intent.ModuleBuilder.IModSpecFile</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
-      <ApplicationRelativeFilePath>Intent.Modules.Java.Domain.Maven.imodspec</ApplicationRelativeFilePath>
-      <ProjectRelativeFilePath>Intent.Modules.Java.Domain.Maven.imodspec</ProjectRelativeFilePath>
+      <ApplicationRelativeFilePath>Intent.Java.Domain.Maven.imodspec</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>Intent.Java.Domain.Maven.imodspec</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
+      <ProjectId>38a5446f-dc72-46c9-a14b-71727ef18b4f</ProjectId>
+      <CorrelationId>Intent.VisualStudio.Projects.CoreLibrary.CSProject#38a5446f-dc72-46c9-a14b-71727ef18b4f</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>Intent.Modules.Java.Domain.Maven.csproj</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>Intent.Modules.Java.Domain.Maven.csproj</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>

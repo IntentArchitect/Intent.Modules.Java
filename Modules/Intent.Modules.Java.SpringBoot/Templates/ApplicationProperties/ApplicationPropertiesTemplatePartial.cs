@@ -42,6 +42,7 @@ namespace Intent.Modules.Java.SpringBoot.Templates.ApplicationProperties
             _properties.Add(name, new ApplicationProperty(value, profile, Environment.StackTrace));
         }
 
+        [IntentManaged(Mode.Fully, Body = Mode.Ignore)]
         public override ITemplateFileConfig GetTemplateFileConfig()
         {
             return new TemplateFileConfig(
@@ -50,6 +51,7 @@ namespace Intent.Modules.Java.SpringBoot.Templates.ApplicationProperties
             );
         }
 
+        [IntentManaged(Mode.Fully, Body = Mode.Ignore)]
         public override string TransformText()
         {
             if (!TryGetExistingFileContent(out var content))

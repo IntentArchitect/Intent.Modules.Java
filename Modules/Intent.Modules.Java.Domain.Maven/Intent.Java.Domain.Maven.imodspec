@@ -1,7 +1,7 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <package>
   <id>Intent.Java.Domain.Maven</id>
-  <version>1.0.3</version>
+  <version>1.1.0-pre.0</version>
   <supportedClientVersions>[3.3.16, 5.0.0-a)</supportedClientVersions>
   <summary>A custom module for Intent.Modules.Java.</summary>
   <description>A custom module for Intent.Modules.Java.</description>
@@ -11,7 +11,8 @@
   <templates></templates>
   <decorators></decorators>
   <factoryExtensions>
-    <factoryExtension id="Intent.Modules.Java.Domain.Maven.AddDomainTypeSourceExtension" externalReference="31370750-498d-4ba6-a4a9-ae1e0a22d635" />
+    <factoryExtension id="Intent.Java.Domain.Maven.AddDomainTypeSourceExtension" externalReference="31370750-498d-4ba6-a4a9-ae1e0a22d635" />
+    <factoryExtension id="Intent.Java.Domain.Maven.InstallPackagesForScanning" externalReference="b137a3b9-54a9-4b97-a720-c03a807fec5f" />
   </factoryExtensions>
   <moduleSettings></moduleSettings>
   <dependencies>
@@ -27,6 +28,7 @@
   </files>
   <moduleSettingsExtensions />
   <metadata>
-    <install target="Domain" src="Intent.Metadata/Module Builder/Intent.Modules.Java.Domain.Maven/Intent.Modules.Java.Domain.Maven.pkg.config" externalReference="6d2225a7-282e-495f-b587-e014ef045df1" />
+    <install target="Domain" src="Intent.Metadata/Module Builder/Intent.Java.Domain.Maven/Intent.Java.Domain.Maven.pkg.config" externalReference="6d2225a7-282e-495f-b587-e014ef045df1" />
   </metadata>
+  <tags />
 </package>

@@ -12,22 +12,22 @@ namespace Intent.Modules.Java.SpringBoot.Templates
 {
     public static class TemplateExtensions
     {
-        public static string GetApplicationName<T>(this IntentTemplateBase<T> template)
+        public static string GetApplicationName(this IIntentTemplate template)
         {
             return template.GetTypeName(ApplicationTemplate.TemplateId);
         }
 
-        public static string GetJsonResponseName<T>(this IntentTemplateBase<T> template)
+        public static string GetJsonResponseName(this IIntentTemplate template)
         {
             return template.GetTypeName(JsonResponseTemplate.TemplateId);
         }
 
-        public static string GetRestControllerName<T>(this IntentTemplateBase<T> template) where T : Intent.Modelers.Services.Api.ServiceModel
+        public static string GetRestControllerName<T>(this IIntentTemplate<T> template) where T : Intent.Modelers.Services.Api.ServiceModel
         {
             return template.GetTypeName(RestControllerTemplate.TemplateId, template.Model);
         }
 
-        public static string GetRestControllerName(this IntentTemplateBase template, Intent.Modelers.Services.Api.ServiceModel model)
+        public static string GetRestControllerName(this IIntentTemplate template, Intent.Modelers.Services.Api.ServiceModel model)
         {
             return template.GetTypeName(RestControllerTemplate.TemplateId, model);
         }

@@ -35,7 +35,7 @@
     <FileLog>
       <ProjectId>915037d0-3d43-4cda-9777-bb75b8bd5c63</ProjectId>
       <CorrelationId>Intent.VisualStudio.Projects.CoreLibrary.CSProject#915037d0-3d43-4cda-9777-bb75b8bd5c63</CorrelationId>
-      <OverwriteBehaviour>once-off</OverwriteBehaviour>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Intent.Modules.Java.SpringBoot.csproj</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>Intent.Modules.Java.SpringBoot.csproj</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
@@ -46,22 +46,6 @@
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>README.txt</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>README.txt</ProjectRelativeFilePath>
-      <IsIgnored>false</IsIgnored>
-    </FileLog>
-    <FileLog>
-      <ProjectId>db8d1b7b-e26f-4baa-ba43-990a5ff65135</ProjectId>
-      <CorrelationId>Intent.ModuleBuilder.Java.Templates.JavaTemplate.PreProcessT4#352eb8e5-c7f0-42a9-8438-f1b95ea193de</CorrelationId>
-      <OverwriteBehaviour>always</OverwriteBehaviour>
-      <ApplicationRelativeFilePath>Templates/Application/ApplicationTemplate.cs</ApplicationRelativeFilePath>
-      <ProjectRelativeFilePath>Application/ApplicationTemplate.cs</ProjectRelativeFilePath>
-      <IsIgnored>false</IsIgnored>
-    </FileLog>
-    <FileLog>
-      <ProjectId>db8d1b7b-e26f-4baa-ba43-990a5ff65135</ProjectId>
-      <CorrelationId>Intent.ModuleBuilder.Java.Templates.JavaFileT4Template#352eb8e5-c7f0-42a9-8438-f1b95ea193de</CorrelationId>
-      <OverwriteBehaviour>always</OverwriteBehaviour>
-      <ApplicationRelativeFilePath>Templates/Application/ApplicationTemplate.tt</ApplicationRelativeFilePath>
-      <ProjectRelativeFilePath>Application/ApplicationTemplate.tt</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
