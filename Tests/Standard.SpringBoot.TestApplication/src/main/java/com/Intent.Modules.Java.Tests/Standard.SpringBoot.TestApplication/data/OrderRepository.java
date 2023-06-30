@@ -11,7 +11,6 @@ import com.Intent.Modules.Java.Tests.Standard.SpringBoot.TestApplication.data.pr
 
 @IntentMerge
 public interface OrderRepository extends JpaRepository<Order, UUID> {
-
     @Query("select " +
                 "order.number as number, " +
                 "order.id as id " +
