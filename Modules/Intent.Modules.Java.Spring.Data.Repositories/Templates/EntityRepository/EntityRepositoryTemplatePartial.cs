@@ -35,6 +35,7 @@ namespace Intent.Modules.Java.Spring.Data.Repositories.Templates.EntityRepositor
         public EntityRepositoryTemplate(IOutputTarget outputTarget, Intent.Modelers.Domain.Api.ClassModel model) : base(TemplateId, outputTarget, model)
         {
             this.AddDomainEntityTypeSource();
+            AddTypeSource("Data.QueryProjection");
             JavaFile = new JavaFile(this.GetPackage(), this.GetFolderPath())
                 .AddImport("org.springframework.data.jpa.repository.JpaRepository")
                 .AddInterface($"{Model.Name.ToPascalCase()}Repository")
@@ -66,7 +67,7 @@ namespace Intent.Modules.Java.Spring.Data.Repositories.Templates.EntityRepositor
                     }
                 });
         }
-        
+
         public JavaFile JavaFile { get; }
 
         [IntentManaged(Mode.Merge, Body = Mode.Ignore, Signature = Mode.Fully)]
@@ -75,6 +76,7 @@ namespace Intent.Modules.Java.Spring.Data.Repositories.Templates.EntityRepositor
             return JavaFile.GetConfig();
         }
 
+        [IntentManaged(Mode.Fully, Body = Mode.Ignore)]
         public override string TransformText()
         {
             return JavaFile.ToString();

@@ -37,6 +37,8 @@ namespace Intent.Java.Persistence.JPA.Queries.Api
 
         public ITypeReference TypeReference => _element.TypeReference;
 
+        public ITypeReference ResultType => TypeReference?.Element != null ? TypeReference : null;
+
         public bool IsMapped => _element.IsMapped;
 
         public IElementMapping Mapping => _element.MappedElement;

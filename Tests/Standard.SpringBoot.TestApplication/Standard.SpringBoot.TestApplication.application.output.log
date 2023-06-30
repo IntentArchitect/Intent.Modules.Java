@@ -228,6 +228,22 @@
     </FileLog>
     <FileLog>
       <ProjectId>c30c700a-cd96-4491-a9be-7a94e1ea645c</ProjectId>
+      <CorrelationId>Intent.Java.Spring.Data.Repositories.EntityRepository#8b4569c6-a070-49fb-ac35-3e2c9d83eff6</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>src/main/java/com/Intent.Modules.Java.Tests/Standard.SpringBoot.TestApplication/data/OrderRepository.java</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>OrderRepository.java</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
+      <ProjectId>48451de6-58da-468d-b014-15b64a9b5648</ProjectId>
+      <CorrelationId>Intent.Java.Persistence.JPA.Queries.QueryProjection#31ce6fce-3b65-4c54-adab-638dd0a1fe2b</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>src/main/java/com/Intent.Modules.Java.Tests/Standard.SpringBoot.TestApplication/data/projections/OrderQueryProjection.java</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>OrderQueryProjection.java</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
+      <ProjectId>c30c700a-cd96-4491-a9be-7a94e1ea645c</ProjectId>
       <CorrelationId>Intent.Java.Spring.Data.Repositories.EntityRepository#e2406a5f-494a-4541-ae7a-a81b41901ccb</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>src/main/java/com/Intent.Modules.Java.Tests/Standard.SpringBoot.TestApplication/data/UserRepository.java</ApplicationRelativeFilePath>

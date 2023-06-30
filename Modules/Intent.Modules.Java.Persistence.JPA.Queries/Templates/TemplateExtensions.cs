@@ -11,12 +11,12 @@ namespace Intent.Modules.Java.Persistence.JPA.Queries.Templates
 {
     public static class TemplateExtensions
     {
-        public static string GetQueryProjectionName<T>(this IntentTemplateBase<T> template) where T : Intent.Java.Persistence.JPA.Queries.Api.QueryProjectionModel
+        public static string GetQueryProjectionName<T>(this IIntentTemplate<T> template) where T : Intent.Java.Persistence.JPA.Queries.Api.QueryProjectionModel
         {
             return template.GetTypeName(QueryProjectionTemplate.TemplateId, template.Model);
         }
 
-        public static string GetQueryProjectionName(this IntentTemplateBase template, Intent.Java.Persistence.JPA.Queries.Api.QueryProjectionModel model)
+        public static string GetQueryProjectionName(this IIntentTemplate template, Intent.Java.Persistence.JPA.Queries.Api.QueryProjectionModel model)
         {
             return template.GetTypeName(QueryProjectionTemplate.TemplateId, model);
         }

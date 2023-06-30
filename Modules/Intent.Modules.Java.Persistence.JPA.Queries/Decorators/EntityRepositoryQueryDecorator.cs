@@ -71,7 +71,7 @@ namespace Intent.Modules.Java.Persistence.JPA.Queries.Decorators
 
                 // Get "root" table:
                 {
-                    var tableName = query.InternalElement.ParentElement.Name.ToPascalCase();
+                    var tableName = GetQueryEntity(query).Name.ToPascalCase();
                     var tableAlias = query.GetQuerySettings()?.TableAlias();
 
                     var table = (Name: tableName, Alias: !string.IsNullOrWhiteSpace(tableAlias) ? tableAlias : tableName.ToCamelCase());
@@ -216,6 +216,17 @@ namespace Intent.Modules.Java.Persistence.JPA.Queries.Decorators
 
             return @$"@{_template.ImportType("org.springframework.data.jpa.repository.Query")}({query})
     {returnType} {queryModel.Name}({string.Join(", ", annotatedParameters)});";
+        }
+
+        private static ClassModel GetQueryEntity(QueryModel query)
+        {
+            var element = query.InternalElement.ParentElement;
+            return element switch
+            {
+                _ when element.IsClassModel() => element.AsClassModel(),
+                _ when element.IsRepositoryModel() => element.AsRepositoryModel().TypeReference.Element.AsClassModel(),
+                _ => throw new ArgumentOutOfRangeException()
+            };
         }
 
         private record struct QueryData(
