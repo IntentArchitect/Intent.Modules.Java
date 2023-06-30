@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<class id="08ea9cf2-0a34-4c47-9053-dc9a549c5ceb" type="Factory Extension" typeId="7d008e84-bb28-4b10-ba28-7439202fca76">
+  <name>DatabaseProviderSetupExtension</name>
+  <display>DatabaseProviderSetupExtension</display>
+  <isAbstract>false</isAbstract>
+  <genericTypes />
+  <isMapped>false</isMapped>
+  <parentFolderId>2e4398f1-893d-432e-badb-ab0c4ea3280e</parentFolderId>
+  <packageId>2e4398f1-893d-432e-badb-ab0c4ea3280e</packageId>
+  <packageName>Intent.Java.Persistence.JPA</packageName>
+  <stereotypes />
+  <metadata />
+  <childElements />
+</class>

@@ -7,7 +7,6 @@ using Intent.Metadata.RDBMS.Api;
 using Intent.Modelers.Domain.Api;
 using Intent.Modules.Common;
 using Intent.Modules.Common.Java;
-using Intent.Modules.Common.Java.Templates;
 using Intent.Modules.Common.Templates;
 using Intent.Modules.Common.Types.Api;
 using Intent.Modules.Java.Domain.Templates.DomainModel;
@@ -34,71 +33,11 @@ namespace Intent.Modules.Java.Persistence.JPA.Decorators
         [IntentManaged(Mode.Fully)]
         private readonly IApplication _application;
 
-        private static readonly object LockObject = new();
-        private static bool _onceOffInitializationComplete;
-
         [IntentManaged(Mode.Merge, Body = Mode.Ignore)]
         public JpaDomainModelDecorator(DomainModelTemplate template, IApplication application)
         {
             _template = template;
             _application = application;
-        }
-
-        public override void BeforeTemplateExecution()
-        {
-            lock (LockObject)
-            {
-                if (_onceOffInitializationComplete)
-                {
-                    return;
-                }
-
-                _onceOffInitializationComplete = true;
-            }
-
-            _template.AddDependency(new JavaDependency("org.springframework.boot", "spring-boot-starter-data-jpa"));
-            _template.AddDependency(new JavaDependency("org.springframework.boot", "spring-boot-starter-jdbc"));
-
-            // https://github.com/vladmihalcea/hibernate-types#installation
-            _template.AddDependency(new JavaDependency("com.vladmihalcea", "hibernate-types-55", "2.20.0"));
-
-            switch (_template.ExecutionContext.Settings.GetDatabaseSettings().DatabaseProvider().AsEnum())
-            {
-                case DatabaseSettingsExtensions.DatabaseProviderOptionsEnum.H2:
-                    _template.AddDependency(new JavaDependency("com.h2database", "h2"));
-                    break;
-                case DatabaseSettingsExtensions.DatabaseProviderOptionsEnum.Mysql:
-                    _template.AddDependency(new JavaDependency("com.mysql", "mysql-connector-j"));
-                    _template.ApplyApplicationProperty("spring.datasource.url",
-                        $"jdbc:mysql://localhost:3306/{_application.Name.ToCamelCase()}?useUnicode=true");
-                    _template.ApplyApplicationProperty("spring.datasource.username",
-                        $"{_application.Name.ToCamelCase()}");
-                    _template.ApplyApplicationProperty("spring.datasource.password", "");
-                    _template.ApplyApplicationProperty("spring.jpa.hibernate.ddl-auto", "update");
-                    break;
-                case DatabaseSettingsExtensions.DatabaseProviderOptionsEnum.Postgresql:
-                    _template.AddDependency(new JavaDependency("org.postgresql", "postgresql"));
-                    _template.ApplyApplicationProperty("spring.datasource.url",
-                        $"jdbc:postgresql://localhost:5432/{_application.Name.ToCamelCase()}");
-                    _template.ApplyApplicationProperty("spring.datasource.username",
-                        $"{_application.Name.ToCamelCase()}");
-                    _template.ApplyApplicationProperty("spring.datasource.password", "");
-                    _template.ApplyApplicationProperty("spring.jpa.hibernate.ddl-auto", "update");
-                    break;
-                case DatabaseSettingsExtensions.DatabaseProviderOptionsEnum.SqlServer:
-                    _template.AddDependency(new JavaDependency("com.microsoft.sqlserver", "mssql-jdbc"));
-
-                    // https://learn.microsoft.com/azure/developer/java/spring-framework/configure-spring-data-jpa-with-azure-sql-server#configure-spring-boot-to-use-azure-sql-database
-                    _template.ApplyApplicationProperty("spring.datasource.url",
-                        $"jdbc:sqlserver://localhost:1433;database={_application.Name.ToCamelCase()};encrypt=true;trustServerCertificate=true;loginTimeout=30;");
-                    _template.ApplyApplicationProperty("spring.datasource.username",
-                        $"{_application.Name.ToCamelCase()}");
-                    _template.ApplyApplicationProperty("spring.datasource.password", "");
-                    _template.ApplyApplicationProperty("spring.jpa.hibernate.ddl-auto", "update");
-                    break;
-                default:
-                    throw new ArgumentOutOfRangeException();
-            }
         }
 
         public override IEnumerable<string> ClassAnnotations()
@@ -326,7 +265,7 @@ namespace Intent.Modules.Java.Persistence.JPA.Decorators
                     columnSettings.Add("updatable = false");
                 }
             }
-            
+
             var isStringEnumerated = model.TypeReference.Element.AsEnumModel()?.Literals.Any(p => !string.IsNullOrWhiteSpace(p.Value)) == true;
             var isOrdinalEnumerated = model.TypeReference.Element.IsEnumModel() && !isStringEnumerated;
 
@@ -356,7 +295,7 @@ namespace Intent.Modules.Java.Persistence.JPA.Decorators
                     if (foundLiteral != null)
                     {
                         var defaultExpr = isStringEnumerated ? $"'{foundLiteral.Value}'" : enumModel.Literals.IndexOf(foundLiteral).ToString();
-                        annotations.Add($@"@{_template.ImportType("org.hibernate.annotations.ColumnDefault")}(""{defaultExpr}"")");                        
+                        annotations.Add($@"@{_template.ImportType("org.hibernate.annotations.ColumnDefault")}(""{defaultExpr}"")");
                     }
                     else
                     {
@@ -430,7 +369,7 @@ namespace Intent.Modules.Java.Persistence.JPA.Decorators
             {
                 throw new InvalidOperationException("Cannot call this method if associationEnd is not navigable.");
             }
-            
+
             var annotations = new List<string>();
             var otherEnd = thatEnd.OtherEnd();
             if (!otherEnd.IsCollection && !thatEnd.IsCollection) // one-to-one
@@ -540,7 +479,7 @@ namespace Intent.Modules.Java.Persistence.JPA.Decorators
                     var sourceEndName = otherEnd.Element.Name;
                     var thatEndName = ApplyTableNameConvention(thatEnd.Element.Name);
                     var joinTableName = $"{sourceEndName.ToSnakeCase()}_{thatEndName.ToSnakeCase()}";
-                    
+
                     if (!string.IsNullOrWhiteSpace(thatEnd.Association.TargetEnd.GetJoinTable()?.Name()))
                     {
                         joinTableName = thatEnd.Association.TargetEnd.GetJoinTable().Name();

@@ -41,6 +41,14 @@
       <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
+      <ProjectId>58a3d143-b319-4136-902d-69d409c10ca6</ProjectId>
+      <CorrelationId>Intent.ModuleBuilder.Templates.FactoryExtension#08ea9cf2-0a34-4c47-9053-dc9a549c5ceb</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>FactoryExtensions/DatabaseProviderSetupExtension.cs</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>DatabaseProviderSetupExtension.cs</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
       <ProjectId>f92df344-0995-48cf-9967-db535ad749b6</ProjectId>
       <CorrelationId>Intent.ModuleBuilder.IModSpecFile</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
@@ -51,7 +59,7 @@
     <FileLog>
       <ProjectId>f92df344-0995-48cf-9967-db535ad749b6</ProjectId>
       <CorrelationId>Intent.VisualStudio.Projects.CoreLibrary.CSProject#f92df344-0995-48cf-9967-db535ad749b6</CorrelationId>
-      <OverwriteBehaviour>once-off</OverwriteBehaviour>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Intent.Modules.Java.Persistence.JPA.csproj</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>Intent.Modules.Java.Persistence.JPA.csproj</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>

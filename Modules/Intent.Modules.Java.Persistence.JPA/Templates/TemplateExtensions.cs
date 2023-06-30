@@ -11,12 +11,12 @@ namespace Intent.Modules.Java.Persistence.JPA.Templates
 {
     public static class TemplateExtensions
     {
-        public static string GetCompositeIdName<T>(this IntentTemplateBase<T> template) where T : Intent.Modelers.Domain.Api.ClassModel
+        public static string GetCompositeIdName<T>(this IIntentTemplate<T> template) where T : Intent.Modelers.Domain.Api.ClassModel
         {
             return template.GetTypeName(CompositeIdTemplate.TemplateId, template.Model);
         }
 
-        public static string GetCompositeIdName(this IntentTemplateBase template, Intent.Modelers.Domain.Api.ClassModel model)
+        public static string GetCompositeIdName(this IIntentTemplate template, Intent.Modelers.Domain.Api.ClassModel model)
         {
             return template.GetTypeName(CompositeIdTemplate.TemplateId, model);
         }

@@ -1,3 +1,7 @@
+### Version 4.1.0
+
+- Fixed: Database configuration even when no Domain entity is available.
+
 ### Version 4.0.5
 
 - Updated dependencies and supported client versions to prevent warnings when used with Intent Architect 4.x.
