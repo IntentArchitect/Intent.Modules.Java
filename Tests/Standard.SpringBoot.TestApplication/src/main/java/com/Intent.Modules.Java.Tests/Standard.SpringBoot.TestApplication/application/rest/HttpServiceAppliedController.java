@@ -29,7 +29,7 @@ public class HttpServiceAppliedController {
         return new ResponseEntity<>(result, HttpStatus.OK);
     }
 
-    @ResponseStatus(HttpStatus.OK)
+    @ResponseStatus(HttpStatus.CREATED)
     @PostMapping
     @Operation(summary = "PostValue")
     @ApiResponses(value = {

@@ -32,7 +32,7 @@ public class UsersController {
     public ResponseEntity<JsonResponse<UUID>> Create(@Valid @Parameter(required = true) @RequestBody UserCreateDto dto) {
         final UUID result = usersService.Create(dto);
 
-        return new ResponseEntity<>(new JsonResponse<UUID>(result), HttpStatus.OK);
+        return new ResponseEntity<>(new JsonResponse<UUID>(result), HttpStatus.CREATED);
     }
 
     @GetMapping(path = "/{id}")
@@ -60,7 +60,7 @@ public class UsersController {
         return new ResponseEntity<>(result, HttpStatus.OK);
     }
 
-    @ResponseStatus(HttpStatus.OK)
+    @ResponseStatus(HttpStatus.NO_CONTENT)
     @PutMapping(path = "/{id}")
     @Operation(summary = "Put")
     @ApiResponses(value = {

@@ -17,7 +17,7 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 public class TransactionOptionsController {
     private final TransactionOptionsService transactionOptionsService;
 
-    @ResponseStatus(HttpStatus.OK)
+    @ResponseStatus(HttpStatus.CREATED)
     @PostMapping(path = "/transaction-default")
     @Operation(summary = "TransactionDefault")
     @ApiResponses(value = {
@@ -26,7 +26,7 @@ public class TransactionOptionsController {
         transactionOptionsService.TransactionDefault();
     }
 
-    @ResponseStatus(HttpStatus.OK)
+    @ResponseStatus(HttpStatus.CREATED)
     @PostMapping(path = "/no-transaction")
     @Operation(summary = "NoTransaction")
     @ApiResponses(value = {
@@ -35,7 +35,7 @@ public class TransactionOptionsController {
         transactionOptionsService.NoTransaction();
     }
 
-    @ResponseStatus(HttpStatus.OK)
+    @ResponseStatus(HttpStatus.CREATED)
     @PostMapping(path = "/transaction-read-only")
     @Operation(summary = "TransactionReadOnly")
     @ApiResponses(value = {
@@ -44,7 +44,7 @@ public class TransactionOptionsController {
         transactionOptionsService.TransactionReadOnly();
     }
 
-    @ResponseStatus(HttpStatus.OK)
+    @ResponseStatus(HttpStatus.CREATED)
     @PostMapping(path = "/transaction-isolation-level")
     @Operation(summary = "TransactionIsolationLevel")
     @ApiResponses(value = {
@@ -53,7 +53,7 @@ public class TransactionOptionsController {
         transactionOptionsService.TransactionIsolationLevel();
     }
 
-    @ResponseStatus(HttpStatus.OK)
+    @ResponseStatus(HttpStatus.CREATED)
     @PostMapping(path = "/transaction-propagation-level")
     @Operation(summary = "TransactionPropagationLevel")
     @ApiResponses(value = {
@@ -62,7 +62,7 @@ public class TransactionOptionsController {
         transactionOptionsService.TransactionPropagationLevel();
     }
 
-    @ResponseStatus(HttpStatus.OK)
+    @ResponseStatus(HttpStatus.CREATED)
     @PostMapping(path = "/transaction-timeout")
     @Operation(summary = "TransactionTimeout")
     @ApiResponses(value = {

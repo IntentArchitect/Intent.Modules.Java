@@ -42,7 +42,7 @@ public class <#= ClassName #> {
         }
 <#          } #>
 
-        return new ResponseEntity<>(<#= GetResultValue(operation) #>, <#= GetHttpResponseCode() #>);
+        return new ResponseEntity<>(<#= GetResultValue(operation) #>, <#= GetHttpResponseCode(operation) #>);
 <#      } else { #>
         <#= GetServiceInterfaceName().ToCamelCase() #>.<#= operation.Name #>(<#= this.GetArguments(operation.Parameters) #>);
 <#      }

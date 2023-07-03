@@ -83,7 +83,7 @@ namespace Intent.Modules.Java.SpringBoot.Templates.RestController
 
             if (operation.ReturnType == null)
             {
-                annotations.Add($"@ResponseStatus({GetHttpResponseCode()})");
+                annotations.Add($"@ResponseStatus({GetHttpResponseCode(operation)})");
             }
 
             if (GetPath(operation) != null)
@@ -108,9 +108,24 @@ namespace Intent.Modules.Java.SpringBoot.Templates.RestController
     ", annotations);
         }
 
-        private static string GetHttpResponseCode()
+        private static string GetHttpResponseCode(OperationModel operation)
         {
-            return "HttpStatus.OK";
+            var verb = GetHttpVerb(operation);
+            switch (verb)
+            {
+                case HttpVerb.Get:
+                    return "HttpStatus.OK";
+                case HttpVerb.Post:
+                    return "HttpStatus.CREATED";
+                case HttpVerb.Patch:
+                case HttpVerb.Put:
+                    return operation.ReturnType != null ? "HttpStatus.OK" : "HttpStatus.NO_CONTENT";
+                case HttpVerb.Delete:
+                    return operation.ReturnType != null ? "HttpStatus.OK" : "HttpStatus.NO_CONTENT";
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException();
+            }
         }
 
         private string GetReturnType(OperationModel operation)

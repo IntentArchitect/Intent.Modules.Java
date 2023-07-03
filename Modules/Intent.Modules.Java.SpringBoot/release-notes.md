@@ -1,3 +1,8 @@
+### Version 3.5.0
+
+- New: Application Template has been rebuilt with File Builder pattern.
+- Update: Rest Controllers will now return Http response codes that correlate with the Open API description for successful responses.
+
 ### Version 3.4.1
 
 - Updated dependencies and supported client versions to prevent warnings when used with Intent Architect 4.x.

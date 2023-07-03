@@ -84,7 +84,7 @@ namespace Intent.Modules.Java.SpringDoc.OpenApi.Decorators
                     apiResponses.Add((operation.ReturnType != null ? "200" : "204", "Successfully updated."));
                     break;
                 case HttpVerb.Delete:
-                    apiResponses.Add(("200", "Successfully deleted."));
+                    apiResponses.Add((operation.ReturnType != null ? "200" : "204", "Successfully deleted."));
                     break;
                 default:
                     throw new ArgumentOutOfRangeException();

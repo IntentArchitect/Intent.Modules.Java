@@ -1,3 +1,7 @@
+### Version 1.0.5
+
+- Deleted operation http status response will either return 200 or 204 depending on whether there is content returned or not. 
+
 ### Version 1.0.4
 
 - Updated dependencies and supported client versions to prevent warnings when used with Intent Architect 4.x.
