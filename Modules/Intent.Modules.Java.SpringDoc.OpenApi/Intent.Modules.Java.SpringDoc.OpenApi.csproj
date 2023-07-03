@@ -6,7 +6,7 @@
 
   <ItemGroup>
     <PackageReference Include="Intent.Modules.Common" Version="3.4.1" />
-    <PackageReference Include="Intent.Modules.Common.Java" Version="3.4.4-pre.0" />
+    <PackageReference Include="Intent.Modules.Common.Java" Version="3.4.4" />
     <PackageReference Include="Intent.Modules.Modelers.Services" Version="3.4.0" />
     <PackageReference Include="Intent.Modules.Java.Services" Version="3.4.2" />
     <PackageReference Include="Intent.Packager" Version="3.4.0">
