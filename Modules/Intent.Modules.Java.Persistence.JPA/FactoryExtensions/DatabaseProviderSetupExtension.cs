@@ -6,6 +6,7 @@ using Intent.Modules.Common.Plugins;
 using Intent.Modules.Common.Templates;
 using Intent.Modules.Java.Persistence.JPA.Settings;
 using Intent.Modules.Metadata.RDBMS.Settings;
+using Intent.Plugins.FactoryExtensions;
 using Intent.RoslynWeaver.Attributes;
 
 [assembly: DefaultIntentManaged(Mode.Fully)]
@@ -28,7 +29,7 @@ namespace Intent.Modules.Java.Persistence.JPA.FactoryExtensions
 
             // https://github.com/vladmihalcea/hibernate-types#installation
             PublishDependency(application, new JavaDependency("com.vladmihalcea", "hibernate-types-55", "2.20.0"));
-            
+
             switch (application.Settings.GetDatabaseSettings().DatabaseProvider().AsEnum())
             {
                 case DatabaseSettingsExtensions.DatabaseProviderOptionsEnum.H2:
@@ -67,7 +68,7 @@ namespace Intent.Modules.Java.Persistence.JPA.FactoryExtensions
                     throw new ArgumentOutOfRangeException();
             }
         }
-        
+
         private static void PublishDependency(IApplication application, JavaDependency dependency)
         {
             application.EventDispatcher.Publish(dependency);

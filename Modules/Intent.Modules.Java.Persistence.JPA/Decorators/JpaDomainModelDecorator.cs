@@ -197,10 +197,26 @@ namespace Intent.Modules.Java.Persistence.JPA.Decorators
                 };
 
                 yield return @$"@{_template.ImportType("javax.persistence.Id")}
-    @{_template.ImportType("javax.persistence.GeneratedValue")}(strategy = {_template.ImportType("javax.persistence.GenerationType")}.AUTO)
+    @{_template.ImportType("javax.persistence.GeneratedValue")}(strategy = {GetGenerationType(_template.Model)})
     @{_template.ImportType("javax.persistence.Column")}(columnDefinition = ""{columnType}"", name = ""id"", nullable = false)
     private {type} id;";
             }
+        }
+
+        private string GetGenerationType(ClassModel model)
+        {
+            var primaryKey = model.Attributes.FirstOrDefault(p => p.HasPrimaryKey());
+            return GetGenerationType(primaryKey);
+        }
+
+        private string GetGenerationType(AttributeModel model)
+        {
+            var primaryKey = model?.GetPrimaryKey();
+            if (primaryKey is null)
+            {
+                return $"{_template.ImportType("javax.persistence.GenerationType")}.AUTO";
+            }
+            return $"{_template.ImportType("javax.persistence.GenerationType")}.{(primaryKey.Identity() ? "IDENTITY" : "AUTO")}";
         }
 
         public override string FieldAnnotations(AttributeModel model)
@@ -219,7 +235,7 @@ namespace Intent.Modules.Java.Persistence.JPA.Decorators
                     !HasPrimaryKey(_template.Model.ParentClass)))
             {
                 annotations.Add($"@{_template.ImportType("javax.persistence.Id")}");
-                annotations.Add($"@{_template.ImportType("javax.persistence.GeneratedValue")}(strategy = {_template.ImportType("javax.persistence.GenerationType")}.AUTO)");
+                annotations.Add($"@{_template.ImportType("javax.persistence.GeneratedValue")}(strategy = {GetGenerationType(model)})");
             }
 
             if (!string.IsNullOrWhiteSpace(model.GetColumn()?.Type()))

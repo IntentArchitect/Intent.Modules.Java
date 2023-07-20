@@ -1,3 +1,7 @@
+### Version 4.1.1
+
+- Update: It will now look at the Identity checkbox on the Primary Key stereotype to determine the GenerationType.
+
 ### Version 4.1.0
 
 - Fixed: Database configuration even when no Domain entity is available.
