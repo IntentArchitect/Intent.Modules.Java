@@ -219,8 +219,12 @@ namespace Intent.Modules.Java.SpringBoot.Templates.RestController
                 return string.Empty;
             }
 
-            if (parameter.GetParameterSettings().Source().IsFromBody() ||
-                parameter.GetParameterSettings().Source().IsFromForm())
+            if (parameter.GetParameterSettings().Source().IsFromBody())
+            {
+                return "@RequestBody";
+            }
+            
+            if (parameter.GetParameterSettings().Source().IsFromForm())
             {
                 return string.Empty;
             }

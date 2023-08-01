@@ -1,3 +1,7 @@
+### Version 3.5.1
+
+- Fixed: Parameter set to `From Body` will now add `@RequestBody`. 
+
 ### Version 3.5.0
 
 - New: Application Template has been rebuilt with File Builder pattern.
