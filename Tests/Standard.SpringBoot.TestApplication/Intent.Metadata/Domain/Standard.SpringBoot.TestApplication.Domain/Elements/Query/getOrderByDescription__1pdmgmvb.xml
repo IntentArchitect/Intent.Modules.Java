@@ -36,7 +36,7 @@
       <definitionPackageName>Intent.Java.Persistence.JPA.Queries</definitionPackageName>
       <definitionPackageId>1f412104-d5bd-42a6-9655-ce7e37bad8cb</definitionPackageId>
       <properties>
-        <property name="cd21b3d9-bde2-4543-9de5-4a726de96618" display="Table Alias" isActive="true" />
+        <property name="cd21b3d9-bde2-4543-9de5-4a726de96618" display="Table Alias" value="ord" isActive="true" />
         <property name="6fe90143-4e58-48a0-a8c9-a67bf453a556" display="Distinct" value="false" isActive="true" />
       </properties>
     </stereotype>

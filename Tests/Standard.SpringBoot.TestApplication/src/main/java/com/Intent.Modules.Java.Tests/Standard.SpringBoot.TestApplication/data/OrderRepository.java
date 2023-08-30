@@ -12,9 +12,9 @@ import com.Intent.Modules.Java.Tests.Standard.SpringBoot.TestApplication.data.pr
 @IntentMerge
 public interface OrderRepository extends JpaRepository<Order, UUID> {
     @Query("select " +
-                "order.number as number, " +
-                "order.id as id " +
-                "from Order order join order.orderItems orderItem " +
+                "ord.number as number, " +
+                "ord.id as id " +
+                "from Order ord join ord.orderItems orderItem " +
                 "where orderItem.description = :description")
         Optional<OrderQueryProjection> getOrderByDescription(@Param("description") String description);
 }

@@ -5,8 +5,11 @@ import com.Intent.Modules.Java.Tests.Standard.SpringBoot.TestApplication.intent.
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.domain.EntityScan;
 
-@SpringBootApplication
+@IntentManage(annotations = Mode.Ignore)
+@SpringBootApplication()
+@EntityScan(basePackages = {"com.Intent.Modules.Java.Tests.Standard.SpringBoot.TestApplication", "za.myorg.mypackage"})
 public class Application {
     public static void main(final String[] args) {
         SpringApplication.run(Application.class, args);
