@@ -58,7 +58,10 @@ namespace Intent.Modules.Java.Maven.FactoryExtensions
                 throw new Exception("Could not get content for POM file.");
             }
 
-            var updatedContent = Process(content);
+            var updatedContent = Process(
+                content: content,
+                projectInheritance: _projectInheritance,
+                javaDependencies: _javaDependencies);
             if (IsSemanticallyTheSame(content, updatedContent))
             {
                 return;
@@ -81,7 +84,10 @@ namespace Intent.Modules.Java.Maven.FactoryExtensions
             change.ChangeContent(updatedContent);
         }
 
-        private string Process(string content)
+        /// <remarks>
+        /// Marked <see langword="internal"/> so that can be unit tested.
+        /// </remarks>
+        internal static string Process(string content, JavaDependency projectInheritance, IEnumerable<JavaDependency> javaDependencies)
         {
             var doc = XDocument.Parse(content, LoadOptions.PreserveWhitespace);
 
@@ -89,16 +95,16 @@ namespace Intent.Modules.Java.Maven.FactoryExtensions
             var @namespace = doc.Root!.GetDefaultNamespace();
             namespaces.AddNamespace("ns", @namespace.NamespaceName);
 
-            if (_projectInheritance != null)
+            if (projectInheritance != null)
             {
                 var modelVersionElement = doc.XPathSelectElement("ns:project/ns:modelVersion", namespaces);
                 if (modelVersionElement != null && doc.XPathSelectElement("ns:project/ns:parent", namespaces) == null)
                 {
                     var element = XElement.Parse($@"
 	<parent>
-		<groupId>{_projectInheritance.GroupId}</groupId>
-		<artifactId>{_projectInheritance.ArtifactId}</artifactId>
-		<version>{_projectInheritance.Version}</version>
+		<groupId>{projectInheritance.GroupId}</groupId>
+		<artifactId>{projectInheritance.ArtifactId}</artifactId>
+		<version>{projectInheritance.Version}</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>", LoadOptions.PreserveWhitespace);
                     foreach (var e in element.DescendantsAndSelf())
@@ -125,7 +131,7 @@ namespace Intent.Modules.Java.Maven.FactoryExtensions
                 projectElement.Add(dependenciesElement);
             }
 
-            foreach (var dependency in _javaDependencies)
+            foreach (var dependency in javaDependencies)
             {
                 var dependencyElement = doc.XPathSelectElement($"ns:project/ns:dependencies/ns:dependency[ns:groupId[text() = \"{dependency.GroupId}\"] and ns:artifactId[text() = \"{dependency.ArtifactId}\"]]", namespaces);
                 if (dependencyElement == null)
@@ -136,7 +142,7 @@ namespace Intent.Modules.Java.Maven.FactoryExtensions
 		</dependency>", LoadOptions.PreserveWhitespace);
                     if (!string.IsNullOrWhiteSpace(dependency.Version))
                     {
-                        dependencyElement.Add("\t", XElement.Parse($@"<version>{dependency.Version}</version>"));
+                        dependencyElement.Add("\t", XElement.Parse($"<version>{dependency.Version}</version>"));
                         dependencyElement.Add(Environment.NewLine + "\t\t");
                     }
                     foreach (var e in dependencyElement.DescendantsAndSelf())
