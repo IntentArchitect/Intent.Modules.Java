@@ -87,6 +87,20 @@ public class ComparableVersion : IComparable<ComparableVersion>, IComparable, IE
         return new ComparableVersion(version);
     }
 
+    public static bool TryParse(string version, out ComparableVersion? result)
+    {
+        try
+        {
+            result = Parse(version);
+            return true;
+        }
+        catch (Exception )
+        {
+            result = default;
+            return false;
+        }
+    }
+
     private ComparableVersion(string version)
     {
         _value = version;

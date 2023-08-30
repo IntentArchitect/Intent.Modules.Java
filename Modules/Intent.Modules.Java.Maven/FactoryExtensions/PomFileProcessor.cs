@@ -153,31 +153,85 @@ namespace Intent.Modules.Java.Maven.FactoryExtensions
                     dependenciesElement.Add(Environment.NewLine + "\t");
                 }
 
-                var optionalElement = dependencyElement.Element(XName.Get("optional", @namespace.NamespaceName));
-                if (dependency.Optional)
+                var groupIdElement = dependencyElement.Element(XName.Get("groupId", @namespace.NamespaceName))!;
+                var lastElement = groupIdElement;
+
+                var artifactIdElement = dependencyElement.Element(XName.Get("artifactId", @namespace.NamespaceName));
+                lastElement = artifactIdElement ?? lastElement;
+
+                // <version>
                 {
-                    if (optionalElement == null)
+                    var versionElement = dependencyElement.Element(XName.Get("version", @namespace.NamespaceName));
+                    if (versionElement != null &&
+                        dependency.Version != null &&
+                        ComparableVersion.Parse(versionElement.Value) < ComparableVersion.Parse(dependency.Version))
                     {
-                        optionalElement = new XElement(XName.Get("optional", @namespace.NamespaceName));
-                        dependencyElement.Add("\t", optionalElement, Environment.NewLine + "\t\t");
+                        versionElement.Value = dependency.Version;
                     }
 
-                    if (optionalElement.Value != "true")
-                    {
-                        optionalElement.SetValue("true");
-                    }
-                }
-                else
-                {
-                    optionalElement?.Remove();
+                    lastElement = versionElement ?? lastElement;
                 }
 
-                var version = dependencyElement.Element(XName.Get("version", @namespace.NamespaceName));
-                if (version != null &&
-                    dependency.Version != null &&
-                    ComparableVersion.Parse(version.Value) < ComparableVersion.Parse(dependency.Version))
+                // <type>
                 {
-                    version.Value = dependency.Version;
+                    var typeElement = dependencyElement.Element(XName.Get("type", @namespace.NamespaceName));
+                    if (typeElement == null &&
+                        dependency.Type != null)
+                    {
+                        typeElement = new XElement(XName.Get("type", @namespace.NamespaceName));
+                        lastElement.AddAfterSelf(Environment.NewLine + "\t\t\t", typeElement);
+                    }
+
+                    if (typeElement != null &&
+                        dependency.Type != null &&
+                        !string.Equals(typeElement.Value, dependency.Type, StringComparison.OrdinalIgnoreCase))
+                    {
+                        typeElement.SetValue(dependency.Type);
+                    }
+
+                    lastElement = typeElement ?? lastElement;
+                }
+
+                // <scope>
+                {
+                    var scopeElement = dependencyElement.Element(XName.Get("scope", @namespace.NamespaceName));
+                    if (scopeElement == null &&
+                        dependency.Scope != null)
+                    {
+                        scopeElement = new XElement(XName.Get("scope", @namespace.NamespaceName));
+                        lastElement.AddAfterSelf(Environment.NewLine + "\t\t\t", scopeElement);
+                    }
+
+                    if (scopeElement != null &&
+                        dependency.Scope != null &&
+                        !string.Equals(scopeElement.Value, dependency.Scope.Value.ToString(), StringComparison.OrdinalIgnoreCase))
+                    {
+                        scopeElement.SetValue(dependency.Scope.Value.ToString().ToLowerInvariant());
+                    }
+
+                    lastElement = scopeElement ?? lastElement;
+                }
+
+                // <optional>
+                {
+                    var optionalElement = dependencyElement.Element(XName.Get("optional", @namespace.NamespaceName));
+                    if (dependency.Optional)
+                    {
+                        if (optionalElement == null)
+                        {
+                            optionalElement = new XElement(XName.Get("optional", @namespace.NamespaceName));
+                            lastElement.AddAfterSelf(Environment.NewLine + "\t\t\t", optionalElement);
+                        }
+
+                        if (optionalElement.Value != "true")
+                        {
+                            optionalElement.SetValue("true");
+                        }
+                    }
+                    else
+                    {
+                        optionalElement?.Remove();
+                    }
                 }
             }
 
