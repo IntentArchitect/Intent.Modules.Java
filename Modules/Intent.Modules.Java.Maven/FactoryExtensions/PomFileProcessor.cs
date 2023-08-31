@@ -106,11 +106,8 @@ namespace Intent.Modules.Java.Maven.FactoryExtensions
 		<artifactId>{projectInheritance.ArtifactId}</artifactId>
 		<version>{projectInheritance.Version}</version>
 		<relativePath/> <!-- lookup parent from repository -->
-	</parent>", LoadOptions.PreserveWhitespace);
-                    foreach (var e in element.DescendantsAndSelf())
-                    {
-                        e.Name = @namespace + e.Name.LocalName; // remove namespaces
-                    }
+	</parent>", LoadOptions.PreserveWhitespace).WithoutNamespaces(@namespace);
+
                     modelVersionElement.AddAfterSelf(element);
                     modelVersionElement.AddAfterSelf(@"
 	");
@@ -139,15 +136,11 @@ namespace Intent.Modules.Java.Maven.FactoryExtensions
                     dependencyElement = XElement.Parse($@"<dependency>
 			<groupId>{dependency.GroupId}</groupId>
 			<artifactId>{dependency.ArtifactId}</artifactId>
-		</dependency>", LoadOptions.PreserveWhitespace);
+		</dependency>", LoadOptions.PreserveWhitespace).WithoutNamespaces(@namespace);
                     if (!string.IsNullOrWhiteSpace(dependency.Version))
                     {
-                        dependencyElement.Add("\t", XElement.Parse($"<version>{dependency.Version}</version>"));
+                        dependencyElement.Add("\t", XElement.Parse($"<version>{dependency.Version}</version>").WithoutNamespaces(@namespace));
                         dependencyElement.Add(Environment.NewLine + "\t\t");
-                    }
-                    foreach (var e in dependencyElement.DescendantsAndSelf())
-                    {
-                        e.Name = @namespace + e.Name.LocalName; // remove namespaces
                     }
                     dependenciesElement.Add("\t", dependencyElement);
                     dependenciesElement.Add(Environment.NewLine + "\t");
@@ -170,6 +163,36 @@ namespace Intent.Modules.Java.Maven.FactoryExtensions
                     }
 
                     lastElement = versionElement ?? lastElement;
+                }
+
+                // <exclusions>
+                {
+                    var exclusionsElement = dependencyElement.Element(XName.Get("exclusions", @namespace.NamespaceName));
+                    if (exclusionsElement == null &&
+                        dependency.Exclusions?.Any() == true)
+                    {
+                        exclusionsElement = new XElement(XName.Get("exclusions", @namespace.NamespaceName), Environment.NewLine, "\t\t\t");
+                        lastElement.AddAfterSelf(Environment.NewLine + "\t\t\t", exclusionsElement);
+                    }
+
+                    foreach (var exclusion in dependency.Exclusions ?? Enumerable.Empty<JavaDependencyExclusion>())
+                    {
+                        var exclusionElement = exclusionsElement.XPathSelectElement(
+                            $"ns:exclusion[ns:groupId[text() = \"{exclusion.GroupId}\"] and ns:artifactId[text() = \"{exclusion.ArtifactId}\"]]", namespaces);
+                        if (exclusionElement != null)
+                        {
+                            continue;
+                        }
+
+                        exclusionElement = XElement.Parse($@"<exclusion>
+					<groupId>{exclusion.GroupId}</groupId>
+					<artifactId>{exclusion.ArtifactId}</artifactId>
+				</exclusion>", LoadOptions.PreserveWhitespace).WithoutNamespaces(@namespace);
+
+                        exclusionsElement.Add("\t", exclusionElement, Environment.NewLine, "\t\t\t");
+                    }
+
+                    lastElement = exclusionsElement ?? lastElement;
                 }
 
                 // <type>

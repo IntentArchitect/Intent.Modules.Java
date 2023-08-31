@@ -1,6 +1,6 @@
 ### Version 3.3.11
 
-- Improvement: Add support to `pom.xml` `dependencies` for `type` and `scope` options 
+- Improvement: Add support to `pom.xml` `dependencies` for `exclusions`, `type` and `scope` options 
 
 ### Version 3.3.10
 

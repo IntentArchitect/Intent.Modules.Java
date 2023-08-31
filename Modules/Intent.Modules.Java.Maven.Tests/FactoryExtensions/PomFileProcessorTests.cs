@@ -177,6 +177,61 @@ namespace Intent.Modules.Java.Maven.Tests.FactoryExtensions
 
 </project>".ReplaceLineEndings());
             }
+
+            [Fact]
+            public void ItShouldAddExclusion()
+            {
+                // Arrange
+                var javaDependency = new JavaDependency(
+                    groupId: "myGroup",
+                    artifactId: "artifactId",
+                    version: default,
+                    exclusions: new List<JavaDependencyExclusion>
+                    {
+                        new JavaDependencyExclusion
+                        {
+                            GroupId = "group1",
+                            ArtifactId = "artifact1"
+                        }
+                    },
+                    type: default,
+                    scope: null,
+                    optional: default);
+
+                var content = @"<?xml version=""1.0"" encoding=""utf-8""?>
+<project xmlns=""http://maven.apache.org/POM/4.0.0"" xmlns:xsi=""http://www.w3.org/2001/XMLSchema-instance"" xsi:schemaLocation=""http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd"">
+
+	<dependencies>
+		<dependency>
+			<groupId>myGroup</groupId>
+			<artifactId>artifactId</artifactId>
+		</dependency>
+	</dependencies>
+
+</project>".ReplaceLineEndings();
+
+                // Act
+                var result = PomFileProcessor.Process(content, null, new[] { javaDependency });
+
+                // Assert
+                result.ShouldBe(@"<?xml version=""1.0"" encoding=""utf-8""?>
+<project xmlns=""http://maven.apache.org/POM/4.0.0"" xmlns:xsi=""http://www.w3.org/2001/XMLSchema-instance"" xsi:schemaLocation=""http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd"">
+
+	<dependencies>
+		<dependency>
+			<groupId>myGroup</groupId>
+			<artifactId>artifactId</artifactId>
+			<exclusions>
+				<exclusion>
+					<groupId>group1</groupId>
+					<artifactId>artifact1</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+	</dependencies>
+
+</project>".ReplaceLineEndings());
+            }
         }
     }
 }
