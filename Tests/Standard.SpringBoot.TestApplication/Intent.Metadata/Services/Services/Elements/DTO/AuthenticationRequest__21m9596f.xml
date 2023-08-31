@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<class id="4b10b21d-ee26-44ee-a6de-d32b6943d048" type="DTO" typeId="fee0edca-4aa0-4f77-a524-6bbd84e78734">
+  <name>AuthenticationRequest</name>
+  <display>AuthenticationRequest</display>
+  <externalReference>ddd760e6-5dc3-4f99-9208-ad3b0795da86</externalReference>
+  <isAbstract>false</isAbstract>
+  <sort-children>by-type-then-manually</sort-children>
+  <genericTypes />
+  <isMapped>false</isMapped>
+  <parentFolderId>348d6d5c-cc12-4b56-a9e3-ef333eff3500</parentFolderId>
+  <packageId>38d52a09-fe55-4183-9042-be4e041f19b4</packageId>
+  <packageName>Services</packageName>
+  <stereotypes />
+  <metadata />
+  <childElements>
+    <childElement id="b5a52169-8b5f-4c3f-b9b2-f5d6c9123997" type="DTO-Field" typeId="7baed1fd-469b-4980-8fd9-4cefb8331eb2">
+      <name>username</name>
+      <display>username: string</display>
+      <externalReference>b8283dcc-6322-4620-b28e-deab9610bb43</externalReference>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <typeReference id="39d042dd-afaa-4bfb-bcd8-1097e16d09c3">
+        <typeId>d384db9c-a279-45e1-801e-e4e8099625f2</typeId>
+        <isNavigable>true</isNavigable>
+        <isNullable>false</isNullable>
+        <isCollection>false</isCollection>
+        <isRequired>true</isRequired>
+        <typePackageName>Intent.Common.Types</typePackageName>
+        <typePackageId>870ad967-cbd4-4ea9-b86d-9c3a5d55ea67</typePackageId>
+        <stereotypes />
+        <genericTypeParameters />
+      </typeReference>
+      <isMapped>false</isMapped>
+      <parentFolderId>4b10b21d-ee26-44ee-a6de-d32b6943d048</parentFolderId>
+      <packageId>38d52a09-fe55-4183-9042-be4e041f19b4</packageId>
+      <packageName>Services</packageName>
+      <stereotypes>
+        <stereotype stereotypeDefinitionId="2ec1d83e-7980-435c-b8ac-8ba4f3c5d5ea" name="Validations">
+          <addedByDefault>true</addedByDefault>
+          <definitionPackageName>Intent.Java.SpringBoot.Validation</definitionPackageName>
+          <definitionPackageId>5fbac7a8-1f34-4e1a-a4c2-75234de5bd69</definitionPackageId>
+          <properties>
+            <property name="f291c52d-91f0-441f-9bdb-9f4b5e76645d" display="AssertFalse" value="false" isActive="false" />
+            <property name="9ee651af-d1d6-4d9c-b362-6be88cf27bfb" display="AssertTrue" value="false" isActive="false" />
+            <property name="49322ec6-a86f-48a6-bbc4-1e9a7325917d" display="DecimalMax" isActive="false" />
+            <property name="30683d9e-bdf2-44bc-842b-06e6e0084668" display="DecimalMax Inclusive" value="false" isActive="false" />
+            <property name="e68ceb92-bb4b-409d-9705-1cdbb9f286d8" display="DecimalMin" isActive="false" />
+            <property name="f0030114-4021-443e-8eb5-8a7efb3b6aa3" display="DecimalMin Inclusive" value="false" isActive="false" />
+            <property name="f1ea5799-6a14-498b-9298-b41ac8cca2f8" display="Digits Integer" isActive="false" />
+            <property name="da47f870-edf8-4980-88b4-483e0cfd3a3a" display="Digits Fraction" isActive="false" />
+            <property name="9426f2ea-b0c7-4940-9474-3fae5b955d03" display="Future" value="false" isActive="false" />
+            <property name="e02dd137-d34f-4c50-8429-48d156175975" display="Max" isActive="false" />
+            <property name="14d771fe-d256-4c7d-93aa-b21b1874a1cc" display="Min" isActive="false" />
+            <property name="565243d8-e039-4910-8134-51f8d8d09503" display="NotNull" value="false" isActive="true" />
+            <property name="670a84f0-7008-4fbb-97b8-e171123a6caa" display="Null" value="false" isActive="true" />
+            <property name="b996e4ae-0115-4fdf-9dcd-a00e1717e3b9" display="Past" value="false" isActive="false" />
+            <property name="d0869c2d-e946-4c94-9963-e90a8cc2f51e" display="Pattern" isActive="true" />
+            <property name="8c5f3979-b801-41f4-bfe5-331137a62217" display="Pattern Flags" isActive="false" />
+            <property name="7433e66d-75a7-4ace-b1ae-45d9ad6cfabb" display="Size Min" isActive="true" />
+            <property name="10ad374f-e7fc-4f5c-9842-7f7915822088" display="Size Max" isActive="true" />
+          </properties>
+        </stereotype>
+      </stereotypes>
+      <metadata />
+      <childElements />
+    </childElement>
+    <childElement id="890fc252-e4ed-4a01-85aa-686f89ce4a98" type="DTO-Field" typeId="7baed1fd-469b-4980-8fd9-4cefb8331eb2">
+      <name>password</name>
+      <display>password: string</display>
+      <externalReference>32478ddc-c5d5-4f25-b0b3-d9e3867c7027</externalReference>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <typeReference id="8c566857-aa6e-45bd-894f-04c7c19bc7c5">
+        <typeId>d384db9c-a279-45e1-801e-e4e8099625f2</typeId>
+        <isNavigable>true</isNavigable>
+        <isNullable>false</isNullable>
+        <isCollection>false</isCollection>
+        <isRequired>true</isRequired>
+        <typePackageName>Intent.Common.Types</typePackageName>
+        <typePackageId>870ad967-cbd4-4ea9-b86d-9c3a5d55ea67</typePackageId>
+        <stereotypes />
+        <genericTypeParameters />
+      </typeReference>
+      <isMapped>false</isMapped>
+      <parentFolderId>4b10b21d-ee26-44ee-a6de-d32b6943d048</parentFolderId>
+      <packageId>38d52a09-fe55-4183-9042-be4e041f19b4</packageId>
+      <packageName>Services</packageName>
+      <stereotypes>
+        <stereotype stereotypeDefinitionId="2ec1d83e-7980-435c-b8ac-8ba4f3c5d5ea" name="Validations">
+          <addedByDefault>true</addedByDefault>
+          <definitionPackageName>Intent.Java.SpringBoot.Validation</definitionPackageName>
+          <definitionPackageId>5fbac7a8-1f34-4e1a-a4c2-75234de5bd69</definitionPackageId>
+          <properties>
+            <property name="f291c52d-91f0-441f-9bdb-9f4b5e76645d" display="AssertFalse" value="false" isActive="false" />
+            <property name="9ee651af-d1d6-4d9c-b362-6be88cf27bfb" display="AssertTrue" value="false" isActive="false" />
+            <property name="49322ec6-a86f-48a6-bbc4-1e9a7325917d" display="DecimalMax" isActive="false" />
+            <property name="30683d9e-bdf2-44bc-842b-06e6e0084668" display="DecimalMax Inclusive" value="false" isActive="false" />
+            <property name="e68ceb92-bb4b-409d-9705-1cdbb9f286d8" display="DecimalMin" isActive="false" />
+            <property name="f0030114-4021-443e-8eb5-8a7efb3b6aa3" display="DecimalMin Inclusive" value="false" isActive="false" />
+            <property name="f1ea5799-6a14-498b-9298-b41ac8cca2f8" display="Digits Integer" isActive="false" />
+            <property name="da47f870-edf8-4980-88b4-483e0cfd3a3a" display="Digits Fraction" isActive="false" />
+            <property name="9426f2ea-b0c7-4940-9474-3fae5b955d03" display="Future" value="false" isActive="false" />
+            <property name="e02dd137-d34f-4c50-8429-48d156175975" display="Max" isActive="false" />
+            <property name="14d771fe-d256-4c7d-93aa-b21b1874a1cc" display="Min" isActive="false" />
+            <property name="565243d8-e039-4910-8134-51f8d8d09503" display="NotNull" value="false" isActive="true" />
+            <property name="670a84f0-7008-4fbb-97b8-e171123a6caa" display="Null" value="false" isActive="true" />
+            <property name="b996e4ae-0115-4fdf-9dcd-a00e1717e3b9" display="Past" value="false" isActive="false" />
+            <property name="d0869c2d-e946-4c94-9963-e90a8cc2f51e" display="Pattern" isActive="true" />
+            <property name="8c5f3979-b801-41f4-bfe5-331137a62217" display="Pattern Flags" isActive="false" />
+            <property name="7433e66d-75a7-4ace-b1ae-45d9ad6cfabb" display="Size Min" isActive="true" />
+            <property name="10ad374f-e7fc-4f5c-9842-7f7915822088" display="Size Max" isActive="true" />
+          </properties>
+        </stereotype>
+      </stereotypes>
+      <metadata />
+      <childElements />
+    </childElement>
+  </childElements>
+</class>

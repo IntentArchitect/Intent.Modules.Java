@@ -24,14 +24,17 @@ import lombok.Data;
 public class Role implements Serializable {
     private static final long serialVersionUID = 1L;
 
+    @NotNull
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(columnDefinition = "uuid", name = "id", nullable = false)
     private UUID id;
 
+    @NotNull
     @Column(columnDefinition = "uuid", name = "user_id", nullable = false, insertable = false, updatable = false)
     private UUID userId;
 
+    @NotNull
     @NotNull
     @Column(name = "name", nullable = false)
     private String name;

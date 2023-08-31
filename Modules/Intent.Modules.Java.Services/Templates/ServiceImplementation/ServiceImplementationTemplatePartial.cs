@@ -64,6 +64,14 @@ public partial class
                     @class.AddMethod(GetTypeName(operation), operation.Name, method =>
                     {
                         method.Override();
+                        var checkedExceptions = new OperationExtensionModel(operation.InternalElement).CheckedExceptions
+                            .Select(GetTypeName)
+                            .ToArray();
+                        foreach (var exception in checkedExceptions)
+                        {
+                            method.Throws(exception);
+                        }
+                        
                         if (operation.GetTransactionOptions() == null ||
                             operation.GetTransactionOptions().IsEnabled())
                         {

@@ -9,7 +9,16 @@
   <parentFolderId>cf0a1026-41c5-43de-beee-e12dce9327cb</parentFolderId>
   <packageId>cf0a1026-41c5-43de-beee-e12dce9327cb</packageId>
   <packageName>Standard.SpringBoot.TestApplication.Services</packageName>
-  <stereotypes />
+  <stereotypes>
+    <stereotype stereotypeDefinitionId="824d3c4c-8e15-4413-afb7-6bcd372fe557" name="CORS Settings">
+      <addedByDefault>true</addedByDefault>
+      <definitionPackageName>Intent.Java.Spring.Cors</definitionPackageName>
+      <definitionPackageId>697b3afa-5cbc-4332-8476-351bd64446b9</definitionPackageId>
+      <properties>
+        <property name="470eec96-2dc7-4a8b-833b-55c25e797a82" display="Allow Cross Origin Requests" value="false" isActive="true" />
+      </properties>
+    </stereotype>
+  </stereotypes>
   <metadata />
   <childElements>
     <childElement id="4746d523-efe1-4d1a-b0ce-8454c50ebb84" type="Operation" typeId="e030c97a-e066-40a7-8188-808c275df3cb">
@@ -29,7 +38,16 @@
       <parentFolderId>93c20c66-9965-401a-af2c-492ecd868a89</parentFolderId>
       <packageId>cf0a1026-41c5-43de-beee-e12dce9327cb</packageId>
       <packageName>Standard.SpringBoot.TestApplication.Services</packageName>
-      <stereotypes />
+      <stereotypes>
+        <stereotype stereotypeDefinitionId="824d3c4c-8e15-4413-afb7-6bcd372fe557" name="CORS Settings">
+          <addedByDefault>true</addedByDefault>
+          <definitionPackageName>Intent.Java.Spring.Cors</definitionPackageName>
+          <definitionPackageId>697b3afa-5cbc-4332-8476-351bd64446b9</definitionPackageId>
+          <properties>
+            <property name="470eec96-2dc7-4a8b-833b-55c25e797a82" display="Allow Cross Origin Requests" value="false" isActive="true" />
+          </properties>
+        </stereotype>
+      </stereotypes>
       <metadata />
       <childElements />
     </childElement>

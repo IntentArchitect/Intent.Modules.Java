@@ -68,6 +68,22 @@
     </FileLog>
     <FileLog>
       <ProjectId>dfc1a6fa-64e8-4836-b83b-882c8d6af2dc</ProjectId>
+      <CorrelationId>Intent.Java.Services.DataTransferModel#4b10b21d-ee26-44ee-a6de-d32b6943d048</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>src/main/java/com/Intent.Modules.Java.Tests/Standard.SpringBoot.TestApplication/application/models/authentication/AuthenticationRequest.java</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>authentication/AuthenticationRequest.java</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
+      <ProjectId>dfc1a6fa-64e8-4836-b83b-882c8d6af2dc</ProjectId>
+      <CorrelationId>Intent.Java.Services.DataTransferModel#f7a7b0ef-e70c-4377-940e-aaf63a41e4c0</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>src/main/java/com/Intent.Modules.Java.Tests/Standard.SpringBoot.TestApplication/application/models/authentication/AuthenticationResult.java</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>authentication/AuthenticationResult.java</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
+      <ProjectId>dfc1a6fa-64e8-4836-b83b-882c8d6af2dc</ProjectId>
       <CorrelationId>Intent.Java.Services.DataTransferModel#fbce6481-59c6-4e63-9416-898ddc3a81b4</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>src/main/java/com/Intent.Modules.Java.Tests/Standard.SpringBoot.TestApplication/application/models/Users/CreateUserRoleDto.java</ApplicationRelativeFilePath>
@@ -116,6 +132,14 @@
     </FileLog>
     <FileLog>
       <ProjectId>fdf6f912-98b9-427b-9fbe-943aa386cedd</ProjectId>
+      <CorrelationId>Intent.Java.SpringBoot.RestController#628b4e5b-7bda-4340-b5ce-6ffa1bbda24e</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>src/main/java/com/Intent.Modules.Java.Tests/Standard.SpringBoot.TestApplication/application/rest/AuthController.java</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>AuthController.java</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
+      <ProjectId>fdf6f912-98b9-427b-9fbe-943aa386cedd</ProjectId>
       <CorrelationId>Intent.Java.SpringBoot.RestController#8a0d883c-8d79-481f-9d47-857703e1acc4</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>src/main/java/com/Intent.Modules.Java.Tests/Standard.SpringBoot.TestApplication/application/rest/HttpServiceAppliedController.java</ApplicationRelativeFilePath>
@@ -156,10 +180,26 @@
     </FileLog>
     <FileLog>
       <ProjectId>17313b42-7aa4-4276-bbde-c5f8bb96566c</ProjectId>
+      <CorrelationId>Intent.Java.Services.ServiceInterface#628b4e5b-7bda-4340-b5ce-6ffa1bbda24e</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>src/main/java/com/Intent.Modules.Java.Tests/Standard.SpringBoot.TestApplication/application/services/AuthService.java</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>AuthService.java</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
+      <ProjectId>17313b42-7aa4-4276-bbde-c5f8bb96566c</ProjectId>
       <CorrelationId>Intent.Java.Services.ServiceInterface#8a0d883c-8d79-481f-9d47-857703e1acc4</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>src/main/java/com/Intent.Modules.Java.Tests/Standard.SpringBoot.TestApplication/application/services/HttpServiceAppliedService.java</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>HttpServiceAppliedService.java</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
+      <ProjectId>d695fc71-35ed-44d8-8c28-58008eaf6f73</ProjectId>
+      <CorrelationId>Intent.Java.Services.ServiceImplementation#628b4e5b-7bda-4340-b5ce-6ffa1bbda24e</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>src/main/java/com/Intent.Modules.Java.Tests/Standard.SpringBoot.TestApplication/application/services/impl/AuthServiceImpl.java</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>AuthServiceImpl.java</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
@@ -220,10 +260,34 @@
     </FileLog>
     <FileLog>
       <ProjectId>dd665cb7-50a4-4e3b-adf6-c5505f4181ee</ProjectId>
+      <CorrelationId>Intent.Java.Spring.Cors.CorsConfig</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>src/main/java/com/Intent.Modules.Java.Tests/Standard.SpringBoot.TestApplication/configuration/CorsConfig.java</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>CorsConfig.java</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
+      <ProjectId>dd665cb7-50a4-4e3b-adf6-c5505f4181ee</ProjectId>
+      <CorrelationId>Intent.Java.SpringBoot.Security.MethodSecurityConfig</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>src/main/java/com/Intent.Modules.Java.Tests/Standard.SpringBoot.TestApplication/configuration/MethodSecurityConfig.java</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>MethodSecurityConfig.java</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
+      <ProjectId>dd665cb7-50a4-4e3b-adf6-c5505f4181ee</ProjectId>
       <CorrelationId>Intent.Java.ModelMapper.ModelMapperBean</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>src/main/java/com/Intent.Modules.Java.Tests/Standard.SpringBoot.TestApplication/configuration/ModelMapperBean.java</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>ModelMapperBean.java</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
+      <ProjectId>dd665cb7-50a4-4e3b-adf6-c5505f4181ee</ProjectId>
+      <CorrelationId>Intent.Java.SpringBoot.Security.WebSecurityConfig</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>src/main/java/com/Intent.Modules.Java.Tests/Standard.SpringBoot.TestApplication/configuration/WebSecurityConfig.java</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>WebSecurityConfig.java</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
@@ -264,6 +328,14 @@
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>src/main/java/com/Intent.Modules.Java.Tests/Standard.SpringBoot.TestApplication/domain/models/User.java</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>User.java</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
+      <ProjectId>9d042d9e-5054-4b47-aef1-b9eadbac9677</ProjectId>
+      <CorrelationId>Intent.Java.Services.ExceptionType#2d1308b5-33d5-429d-9144-4992b9b28f2b</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>src/main/java/com/Intent.Modules.Java.Tests/Standard.SpringBoot.TestApplication/exceptions/AuthenticationFailedException.java</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>AuthenticationFailedException.java</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
@@ -336,6 +408,22 @@
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>src/main/java/com/Intent.Modules.Java.Tests/Standard.SpringBoot.TestApplication/intent/Mode.java</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>Mode.java</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
+      <ProjectId>7e0639ea-dbc4-4719-9782-1fa5423b3df1</ProjectId>
+      <CorrelationId>Intent.Java.SpringBoot.Security.AuthTokenFilter</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>src/main/java/com/Intent.Modules.Java.Tests/Standard.SpringBoot.TestApplication/security/AuthTokenFilter.java</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>AuthTokenFilter.java</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
+      <ProjectId>7e0639ea-dbc4-4719-9782-1fa5423b3df1</ProjectId>
+      <CorrelationId>Intent.Java.SpringBoot.Security.JwtUtils</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>src/main/java/com/Intent.Modules.Java.Tests/Standard.SpringBoot.TestApplication/security/JwtUtils.java</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>JwtUtils.java</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>

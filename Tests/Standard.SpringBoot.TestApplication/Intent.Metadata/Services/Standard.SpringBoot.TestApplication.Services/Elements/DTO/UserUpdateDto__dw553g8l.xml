@@ -9,7 +9,7 @@
   <mappedClass>
     <applicationId>bcc9ac0a-2cc1-4f78-ab3f-f847093c7680</applicationId>
     <metadataId>6ab29b31-27af-4f56-a67c-986d82097d63</metadataId>
-    <mappingSettingsId>01d74d4f-e478-4fde-a2f0-9ea92255f3c5</mappingSettingsId>
+    <mappingSettingsId>942eae46-49f1-450e-9274-a92d40ac35fa</mappingSettingsId>
     <autoSyncTypeReference>true</autoSyncTypeReference>
     <mappedPath>
       <target id="e2406a5f-494a-4541-ae7a-a81b41901ccb" name="User" type="element" specialization="Class" />

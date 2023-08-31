@@ -19,6 +19,7 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import javax.validation.constraints.Email;
 
 @Entity
 @Table(name = "users")
@@ -29,20 +30,25 @@ import lombok.Data;
 public class User implements Serializable {
     private static final long serialVersionUID = 1L;
 
+    @NotNull
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(columnDefinition = "uuid", name = "id", nullable = false)
     private UUID id;
 
     @NotNull
+    @NotNull
     @Column(name = "username", nullable = false)
     private String username;
 
+    @NotNull
+    @Email
     @NotNull
     @Column(name = "email", nullable = false)
     private String email;
 
     @NotNull
+    
     @OneToMany(cascade = { CascadeType.ALL }, orphanRemoval = true, fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id", nullable = false)
     private List<Role> roles;

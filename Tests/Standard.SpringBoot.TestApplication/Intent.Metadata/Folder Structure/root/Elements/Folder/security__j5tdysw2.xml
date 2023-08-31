@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<class id="7e0639ea-dbc4-4719-9782-1fa5423b3df1" type="Folder" typeId="4d95d53a-8855-4f35-aa82-e312643f5c5f">
+  <name>security</name>
+  <display>security</display>
+  <isAbstract>false</isAbstract>
+  <genericTypes />
+  <isMapped>false</isMapped>
+  <parentFolderId>a0053403-772f-4a98-9023-551e7c818312</parentFolderId>
+  <stereotypes />
+  <metadata />
+  <childElements>
+    <childElement id="bbb6700c-6312-4ab2-aa0b-9dab9e064ebf" type="Template Output" typeId="09de2192-2507-41a2-8044-286c7ecadec2">
+      <name>Intent.Java.SpringBoot.Security.AuthTokenFilter</name>
+      <display>Intent.Java.SpringBoot.Security.AuthTokenFilter</display>
+      <externalReference>Intent.Java.SpringBoot.Security</externalReference>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <isMapped>false</isMapped>
+      <parentFolderId>7e0639ea-dbc4-4719-9782-1fa5423b3df1</parentFolderId>
+      <stereotypes />
+      <metadata>
+        <entry key="status" value="assigned" />
+      </metadata>
+      <childElements />
+    </childElement>
+    <childElement id="697df514-2298-474c-b353-5d3e130016cb" type="Template Output" typeId="09de2192-2507-41a2-8044-286c7ecadec2">
+      <name>Intent.Java.SpringBoot.Security.JwtUtils</name>
+      <display>Intent.Java.SpringBoot.Security.JwtUtils</display>
+      <externalReference>Intent.Java.SpringBoot.Security</externalReference>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <isMapped>false</isMapped>
+      <parentFolderId>7e0639ea-dbc4-4719-9782-1fa5423b3df1</parentFolderId>
+      <stereotypes />
+      <metadata>
+        <entry key="status" value="assigned" />
+      </metadata>
+      <childElements />
+    </childElement>
+  </childElements>
+</class>
