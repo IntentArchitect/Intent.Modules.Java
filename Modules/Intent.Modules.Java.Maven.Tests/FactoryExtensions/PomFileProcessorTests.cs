@@ -188,11 +188,7 @@ namespace Intent.Modules.Java.Maven.Tests.FactoryExtensions
                     version: default,
                     exclusions: new List<JavaDependencyExclusion>
                     {
-                        new JavaDependencyExclusion
-                        {
-                            GroupId = "group1",
-                            ArtifactId = "artifact1"
-                        }
+                        new("group1","artifact1")
                     },
                     type: default,
                     scope: null,
