@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<class id="1ff64f95-236c-47a6-b7a7-4690000ebddc" type="Solution Folder" typeId="0dc2b846-c968-49eb-99b7-8776919313a8">
+  <name>Obsolete</name>
+  <display>Obsolete</display>
+  <isAbstract>false</isAbstract>
+  <sort-children>by-type-then-by-name</sort-children>
+  <genericTypes />
+  <isMapped>false</isMapped>
+  <parentFolderId>f67daf4c-35fc-420a-afcc-5cf9e482aca7</parentFolderId>
+  <packageId>f67daf4c-35fc-420a-afcc-5cf9e482aca7</packageId>
+  <packageName>Intent.Modules.Java</packageName>
+  <stereotypes />
+  <metadata />
+  <childElements />
+</class>

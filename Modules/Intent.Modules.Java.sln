@@ -42,6 +42,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Intent.Modules.Java.Enums",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Intent.Modules.Java.Maven.Tests", "Intent.Modules.Java.Maven.Tests\Intent.Modules.Java.Maven.Tests.csproj", "{93784488-FDB5-4098-88B5-0F0C36EDF2B7}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Obsolete", "Obsolete", "{D9A6B7C8-E502-4FDA-8773-09BEEC42E5A4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -134,5 +136,8 @@ Global
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {DAEF00C2-32D0-437F-BBBC-96B2DC1C90B4}
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{AD411F25-020A-4D8A-89C8-166EDEE814B5} = {D9A6B7C8-E502-4FDA-8773-09BEEC42E5A4}
 	EndGlobalSection
 EndGlobal
