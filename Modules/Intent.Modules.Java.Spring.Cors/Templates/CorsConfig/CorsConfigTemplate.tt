@@ -25,7 +25,7 @@ public class <#= ClassName #> {
         return new WebMvcConfigurer() {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
-                registry.addMapping("/**")
+                registry.addMapping("/api/**")
                         .allowedOrigins(origin)
                         .allowedMethods("*")
                         .maxAge(3600)

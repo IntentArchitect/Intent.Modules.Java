@@ -46,7 +46,7 @@ namespace Intent.Modules.Java.Spring.Cors.Templates.CorsConfig
             
             #line default
             #line hidden
-            this.Write(" {\r\n    @Value(\"${cors.origin}\")\r\n    private String origin;\r\n\r\n    @Bean\r\n    public WebMvcConfigurer corsConfigurer() {\r\n        return new WebMvcConfigurer() {\r\n            @Override\r\n            public void addCorsMappings(CorsRegistry registry) {\r\n                registry.addMapping(\"/**\")\r\n                        .allowedOrigins(origin)\r\n                        .allowedMethods(\"*\")\r\n                        .maxAge(3600)\r\n                        .allowedHeaders(\"*\")\r\n                        .exposedHeaders(\"*\");\r\n            }\r\n        };\r\n    }\r\n}\r\n");
+            this.Write(" {\r\n    @Value(\"${cors.origin}\")\r\n    private String origin;\r\n\r\n    @Bean\r\n    public WebMvcConfigurer corsConfigurer() {\r\n        return new WebMvcConfigurer() {\r\n            @Override\r\n            public void addCorsMappings(CorsRegistry registry) {\r\n                registry.addMapping(\"/api/**\")\r\n                        .allowedOrigins(origin)\r\n                        .allowedMethods(\"*\")\r\n                        .maxAge(3600)\r\n                        .allowedHeaders(\"*\")\r\n                        .exposedHeaders(\"*\");\r\n            }\r\n        };\r\n    }\r\n}\r\n");
             return this.GenerationEnvironment.ToString();
         }
     }
