@@ -1,3 +1,8 @@
+### Version 4.2.0
+
+- Improvement: Support for Spring Boot v3.1.3.
+- Improvement: Updated modules.
+
 ### Version 4.1.1
 
 - Update: It will now look at the Identity checkbox on the Primary Key stereotype to determine the GenerationType.

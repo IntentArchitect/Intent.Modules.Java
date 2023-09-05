@@ -24,19 +24,19 @@ namespace Intent.Modules.Java.Persistence.JPA.FactoryExtensions
 
         protected override void OnBeforeTemplateExecution(IApplication application)
         {
-            PublishDependency(application, new JavaDependency("org.springframework.boot", "spring-boot-starter-data-jpa"));
-            PublishDependency(application, new JavaDependency("org.springframework.boot", "spring-boot-starter-jdbc"));
+            PublishDependency(application, JavaDependencies.SpringBootStarterDataJpa(application));
+            PublishDependency(application, JavaDependencies.SpringBootStarterJdbc(application));
 
             // https://github.com/vladmihalcea/hibernate-types#installation
-            PublishDependency(application, new JavaDependency("com.vladmihalcea", "hibernate-types-55", "2.20.0"));
+            PublishDependency(application, JavaDependencies.HibernateTypes(application));
 
             switch (application.Settings.GetDatabaseSettings().DatabaseProvider().AsEnum())
             {
                 case DatabaseSettingsExtensions.DatabaseProviderOptionsEnum.H2:
-                    PublishDependency(application, new JavaDependency("com.h2database", "h2"));
+                    PublishDependency(application, JavaDependencies.H2Database(application));
                     break;
                 case DatabaseSettingsExtensions.DatabaseProviderOptionsEnum.Mysql:
-                    PublishDependency(application, new JavaDependency("com.mysql", "mysql-connector-j"));
+                    PublishDependency(application, JavaDependencies.MysqlConnector(application));
                     PublishApplicationProperty(application, "spring.datasource.url",
                         $"jdbc:mysql://localhost:3306/{application.Name.ToCamelCase()}?useUnicode=true");
                     PublishApplicationProperty(application, "spring.datasource.username",
@@ -45,7 +45,7 @@ namespace Intent.Modules.Java.Persistence.JPA.FactoryExtensions
                     PublishApplicationProperty(application, "spring.jpa.hibernate.ddl-auto", "update");
                     break;
                 case DatabaseSettingsExtensions.DatabaseProviderOptionsEnum.Postgresql:
-                    PublishDependency(application, new JavaDependency("org.postgresql", "postgresql"));
+                    PublishDependency(application, JavaDependencies.PostgreSql(application));
                     PublishApplicationProperty(application, "spring.datasource.url",
                         $"jdbc:postgresql://localhost:5432/{application.Name.ToCamelCase()}");
                     PublishApplicationProperty(application, "spring.datasource.username",
@@ -54,7 +54,7 @@ namespace Intent.Modules.Java.Persistence.JPA.FactoryExtensions
                     PublishApplicationProperty(application, "spring.jpa.hibernate.ddl-auto", "update");
                     break;
                 case DatabaseSettingsExtensions.DatabaseProviderOptionsEnum.SqlServer:
-                    PublishDependency(application, new JavaDependency("com.microsoft.sqlserver", "mssql-jdbc"));
+                    PublishDependency(application, JavaDependencies.MssqlJdbc(application));
 
                     // https://learn.microsoft.com/azure/developer/java/spring-framework/configure-spring-data-jpa-with-azure-sql-server#configure-spring-boot-to-use-azure-sql-database
                     PublishApplicationProperty(application, "spring.datasource.url",
