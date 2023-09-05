@@ -6,6 +6,7 @@ using Intent.Java.SpringDoc.OpenApi.Api;
 using Intent.Metadata.WebApi.Api;
 using Intent.Modelers.Services.Api;
 using Intent.Modules.Common.Java.Templates;
+using Intent.Modules.Java.SpringBoot.Settings;
 using Intent.Modules.Java.SpringBoot.Templates.RestController;
 using Intent.RoslynWeaver.Attributes;
 using static Intent.Modules.Java.SpringBoot.Templates.RestController.RestControllerTemplate;
@@ -32,8 +33,8 @@ namespace Intent.Modules.Java.SpringDoc.OpenApi.Decorators
             _template = template;
             _application = application;
 
-            _template.AddDependency(new JavaDependency("org.springdoc", "springdoc-openapi-ui", "1.6.12"));
-            _template.AddDependency(new JavaDependency("io.swagger.core.v3", "swagger-annotations", "2.2.4"));
+            _template.AddDependency(JavaDependencies.SpringDocOpenapiUi(application));
+            _template.AddDependency(JavaDependencies.SwaggerAnnotations(application));
         }
 
         public override IEnumerable<string> ControllerAnnotations()

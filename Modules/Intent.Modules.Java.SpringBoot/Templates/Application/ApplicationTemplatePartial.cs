@@ -6,6 +6,7 @@ using Intent.Modules.Common.Java.Builder;
 using Intent.Modules.Common.Java.Templates;
 using Intent.Modules.Common.Templates;
 using Intent.Modules.Java.Maven.Templates;
+using Intent.Modules.Java.SpringBoot.Settings;
 using Intent.RoslynWeaver.Attributes;
 using Intent.Templates;
 
@@ -44,7 +45,7 @@ namespace Intent.Modules.Java.SpringBoot.Templates.Application
         public override void BeforeTemplateExecution()
         {
             base.BeforeTemplateExecution();
-            ExecutionContext.EventDispatcher.Publish(new MavenProjectInheritanceRequest("org.springframework.boot", "spring-boot-starter-parent", "2.7.5"));
+            ExecutionContext.EventDispatcher.Publish(new MavenProjectInheritanceRequest("org.springframework.boot", "spring-boot-starter-parent", ExecutionContext.Settings.GetSpringBoot().TargetVersion().ToString()));
         }
 
         [IntentManaged(Mode.Fully)]

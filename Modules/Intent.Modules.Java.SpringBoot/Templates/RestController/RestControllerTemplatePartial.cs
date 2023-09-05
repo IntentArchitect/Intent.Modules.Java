@@ -288,6 +288,8 @@ namespace Intent.Modules.Java.SpringBoot.Templates.RestController
 
                         break;
                     }
+                default:
+                    break;
             }
 
             return (typeName, "INTERNAL_SERVER_ERROR (500)", true);

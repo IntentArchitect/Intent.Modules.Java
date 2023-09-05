@@ -68,6 +68,12 @@ namespace Intent.Modules.Java.SpringBoot.Settings
             {
                 return Value == "V3_1_3";
             }
+
+            [IntentIgnore]
+            public override string ToString()
+            {
+                return Value.RemovePrefix("V").Replace("_", ".");
+            }
         }
 
         public enum TargetVersionOptionsEnum

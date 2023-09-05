@@ -1,5 +1,6 @@
 ### Version 1.1.0
 
+- Improvement: Support for Spring Boot v3.1.3.
 - Improvement: Updated modules.
 
 ### Version 1.0.5
