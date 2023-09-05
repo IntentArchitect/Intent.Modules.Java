@@ -8,6 +8,7 @@ using Intent.Modelers.Domain.Api;
 using Intent.Modelers.Services.Api;
 using Intent.Modules.Common;
 using Intent.Modules.Java.Services.Templates.DataTransferModel;
+using Intent.Modules.Java.SpringBoot.Settings;
 using Intent.RoslynWeaver.Attributes;
 using Intent.Utils;
 
@@ -37,7 +38,17 @@ namespace Intent.Modules.Java.SpringBoot.Validation.Decorators
 
         private string UseValidationConstraint(string name)
         {
-            return _template.ImportType($"javax.validation.constraints.{name}");
+            return _template.ImportType($"{JavaxJakarta()}.validation.constraints.{name}");
+        }
+
+        private string JavaxJakarta()
+        {
+            return _application.Settings.GetSpringBoot().TargetVersion().AsEnum() switch
+            {
+                Settings.SpringBoot.TargetVersionOptionsEnum.V2_7_5 => "javax",
+                Settings.SpringBoot.TargetVersionOptionsEnum.V3_1_3 => "jakarta",
+                _ => throw new ArgumentOutOfRangeException()
+            };
         }
 
         public override IEnumerable<string> GetFieldAnnotations(DTOFieldModel field)

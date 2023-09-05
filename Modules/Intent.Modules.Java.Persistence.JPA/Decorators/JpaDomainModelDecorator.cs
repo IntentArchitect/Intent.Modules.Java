@@ -12,6 +12,7 @@ using Intent.Modules.Common.Types.Api;
 using Intent.Modules.Java.Domain.Templates.DomainModel;
 using Intent.Modules.Java.Persistence.JPA.Settings;
 using Intent.Modules.Java.Persistence.JPA.Templates;
+using Intent.Modules.Java.SpringBoot.Settings;
 using Intent.Modules.Metadata.RDBMS.Api.Indexes;
 using Intent.Modules.Metadata.RDBMS.Settings;
 using Intent.RoslynWeaver.Attributes;
@@ -44,11 +45,11 @@ namespace Intent.Modules.Java.Persistence.JPA.Decorators
         {
             if (_template.Model.IsAbstract)
             {
-                yield return $"@{_template.ImportType("javax.persistence.MappedSuperclass")}";
+                yield return $"@{_template.ImportType($"{JavaxJakarta()}.persistence.MappedSuperclass")}";
             }
             else
             {
-                yield return $"@{_template.ImportType("javax.persistence.Entity")}";
+                yield return $"@{_template.ImportType($"{JavaxJakarta()}.persistence.Entity")}";
             }
 
             if (_template.Model.Attributes.Any(IsJsonColumn))
@@ -58,25 +59,25 @@ namespace Intent.Modules.Java.Persistence.JPA.Decorators
 
             if (TryGetSecondaryTableName(out _))
             {
-                yield return $"@{_template.ImportType("javax.persistence.SecondaryTable")}(name = {_template.ClassName}.TABLE_NAME)";
+                yield return $"@{_template.ImportType($"{JavaxJakarta()}.persistence.SecondaryTable")}(name = {_template.ClassName}.TABLE_NAME)";
             }
             if (_template.Model.HasTable() ||
                 !_template.Model.IsAbstract &&
                 _template.Model.GetParentClasses().All(x => x.IsAbstract))
             {
-                yield return $"@{_template.ImportType("javax.persistence.Table")}({string.Join(", ", GetTableAttributes())})";
+                yield return $"@{_template.ImportType($"{JavaxJakarta()}.persistence.Table")}({string.Join(", ", GetTableAttributes())})";
             }
 
             if (_template.Model.Attributes.Count(x => x.HasPrimaryKey()) > 1)
             {
-                yield return $"@{_template.ImportType("javax.persistence.IdClass")}({_template.GetCompositeIdName(_template.Model)}.class)";
+                yield return $"@{_template.ImportType($"{JavaxJakarta()}.persistence.IdClass")}({_template.GetCompositeIdName(_template.Model)}.class)";
             }
 
             if (!_template.Model.IsAbstract &&
                 !DerivesFromNonAbstractClass(_template.Model) &&
                 _template.Model.ChildClasses.Any())
             {
-                yield return $"@{_template.ImportType("javax.persistence.Inheritance")}(strategy = {_template.ImportType("javax.persistence.InheritanceType")}.SINGLE_TABLE)";
+                yield return $"@{_template.ImportType($"{JavaxJakarta()}.persistence.Inheritance")}(strategy = {_template.ImportType($"{JavaxJakarta()}.persistence.InheritanceType")}.SINGLE_TABLE)";
             }
         }
 
@@ -164,13 +165,13 @@ namespace Intent.Modules.Java.Persistence.JPA.Decorators
             foreach (var stereotypeIndex in stereotypeIndexes)
             {
                 indexList.Add(
-                    $"@{_template.ImportType("javax.persistence.Index")}(name = \"{stereotypeIndex.Key}\", columnList = \"{string.Join(",", stereotypeIndex.Select(c => c.Name.ToSnakeCase()))}\")");
+                    $"@{_template.ImportType($"{JavaxJakarta()}.persistence.Index")}(name = \"{stereotypeIndex.Key}\", columnList = \"{string.Join(",", stereotypeIndex.Select(c => c.Name.ToSnakeCase()))}\")");
             }
 
             foreach (var elementIndex in elementIndexes)
             {
                 indexList.Add(
-                    $"@{_template.ImportType("javax.persistence.Index")}(name = \"{elementIndex.Name}\", columnList = \"{string.Join(",", elementIndex.KeyColumns.Select(c => c.Name.ToSnakeCase()))}\")");
+                    $"@{_template.ImportType($"{JavaxJakarta()}.persistence.Index")}(name = \"{elementIndex.Name}\", columnList = \"{string.Join(",", elementIndex.KeyColumns.Select(c => c.Name.ToSnakeCase()))}\")");
             }
 
             const string newLine = @",
@@ -196,9 +197,9 @@ namespace Intent.Modules.Java.Persistence.JPA.Decorators
                     _ => throw new ArgumentOutOfRangeException()
                 };
 
-                yield return @$"@{_template.ImportType("javax.persistence.Id")}
-    @{_template.ImportType("javax.persistence.GeneratedValue")}(strategy = {GetGenerationType(_template.Model)})
-    @{_template.ImportType("javax.persistence.Column")}(columnDefinition = ""{columnType}"", name = ""id"", nullable = false)
+                yield return @$"@{_template.ImportType($"{JavaxJakarta()}.persistence.Id")}
+    @{_template.ImportType($"{JavaxJakarta()}.persistence.GeneratedValue")}(strategy = {GetGenerationType(_template.Model)})
+    @{_template.ImportType($"{JavaxJakarta()}.persistence.Column")}(columnDefinition = ""{columnType}"", name = ""id"", nullable = false)
     private {type} id;";
             }
         }
@@ -214,9 +215,9 @@ namespace Intent.Modules.Java.Persistence.JPA.Decorators
             var primaryKey = model?.GetPrimaryKey();
             if (primaryKey is null)
             {
-                return $"{_template.ImportType("javax.persistence.GenerationType")}.AUTO";
+                return $"{_template.ImportType($"{JavaxJakarta()}.persistence.GenerationType")}.AUTO";
             }
-            return $"{_template.ImportType("javax.persistence.GenerationType")}.{(primaryKey.Identity() ? "IDENTITY" : "AUTO")}";
+            return $"{_template.ImportType($"{JavaxJakarta()}.persistence.GenerationType")}.{(primaryKey.Identity() ? "IDENTITY" : "AUTO")}";
         }
 
         public override string FieldAnnotations(AttributeModel model)
@@ -234,8 +235,8 @@ namespace Intent.Modules.Java.Persistence.JPA.Decorators
                     !_template.Model.Attributes.Any(x => x.HasPrimaryKey()) &&
                     !HasPrimaryKey(_template.Model.ParentClass)))
             {
-                annotations.Add($"@{_template.ImportType("javax.persistence.Id")}");
-                annotations.Add($"@{_template.ImportType("javax.persistence.GeneratedValue")}(strategy = {GetGenerationType(model)})");
+                annotations.Add($"@{_template.ImportType($"{JavaxJakarta()}.persistence.Id")}");
+                annotations.Add($"@{_template.ImportType($"{JavaxJakarta()}.persistence.GeneratedValue")}(strategy = {GetGenerationType(model)})");
             }
 
             if (!string.IsNullOrWhiteSpace(model.GetColumn()?.Type()))
@@ -343,14 +344,14 @@ namespace Intent.Modules.Java.Persistence.JPA.Decorators
 
             if (isStringEnumerated)
             {
-                annotations.Add($"@{_template.ImportType("javax.persistence.Enumerated")}({_template.ImportType("javax.persistence.EnumType")}.STRING)");
+                annotations.Add($"@{_template.ImportType($"{JavaxJakarta()}.persistence.Enumerated")}({_template.ImportType($"{JavaxJakarta()}.persistence.EnumType")}.STRING)");
             }
             else if (isOrdinalEnumerated)
             {
-                annotations.Add($"@{_template.ImportType("javax.persistence.Enumerated")}({_template.ImportType("javax.persistence.EnumType")}.ORDINAL)");
+                annotations.Add($"@{_template.ImportType($"{JavaxJakarta()}.persistence.Enumerated")}({_template.ImportType($"{JavaxJakarta()}.persistence.EnumType")}.ORDINAL)");
             }
 
-            annotations.Add($@"@{_template.ImportType("javax.persistence.Column")}({string.Join(", ", columnSettings)})");
+            annotations.Add($@"@{_template.ImportType($"{JavaxJakarta()}.persistence.Column")}({string.Join(", ", columnSettings)})");
 
             const string newLine = @"
     ";
@@ -379,7 +380,7 @@ namespace Intent.Modules.Java.Persistence.JPA.Decorators
                 _ => null
             };
 
-            fetchType = $"fetch = {_template.ImportType("javax.persistence.FetchType")}.{(fetchType ?? FetchTypeOptionsEnum.Lazy.ToString()).ToUpperInvariant()}";
+            fetchType = $"fetch = {_template.ImportType($"{JavaxJakarta()}.persistence.FetchType")}.{(fetchType ?? FetchTypeOptionsEnum.Lazy.ToString()).ToUpperInvariant()}";
 
             if (!thatEnd.IsNavigable)
             {
@@ -397,7 +398,7 @@ namespace Intent.Modules.Java.Persistence.JPA.Decorators
 
                 if (IsCompositeOwner(thatEnd))
                 {
-                    settings.Add($"cascade = {{ {_template.ImportType("javax.persistence.CascadeType")}.ALL }}");
+                    settings.Add($"cascade = {{ {_template.ImportType($"{JavaxJakarta()}.persistence.CascadeType")}.ALL }}");
                 }
 
                 if (otherEnd.IsNullable)
@@ -410,10 +411,10 @@ namespace Intent.Modules.Java.Persistence.JPA.Decorators
                     settings.Add(fetchType);
                 }
 
-                annotations.Add($"@{_template.ImportType("javax.persistence.OneToOne")}({string.Join(", ", settings)})");
+                annotations.Add($"@{_template.ImportType($"{JavaxJakarta()}.persistence.OneToOne")}({string.Join(", ", settings)})");
                 if (thatEnd.IsTargetEnd())
                 {
-                    annotations.Add($"@{_template.ImportType("javax.persistence.JoinColumn")}(name=\"{thatEnd.Name.ToSnakeCase()}_id\", nullable = {thatEnd.IsNullable.ToString().ToLower()})");
+                    annotations.Add($"@{_template.ImportType($"{JavaxJakarta()}.persistence.JoinColumn")}(name=\"{thatEnd.Name.ToSnakeCase()}_id\", nullable = {thatEnd.IsNullable.ToString().ToLower()})");
                 }
             }
             else if (!otherEnd.IsCollection && thatEnd.IsCollection) // one-to-many
@@ -422,7 +423,7 @@ namespace Intent.Modules.Java.Persistence.JPA.Decorators
 
                 if (IsCompositeOwner(thatEnd))
                 {
-                    settings.Add($"cascade = {{ {_template.ImportType("javax.persistence.CascadeType")}.ALL }}");
+                    settings.Add($"cascade = {{ {_template.ImportType($"{JavaxJakarta()}.persistence.CascadeType")}.ALL }}");
 
                     if (!otherEnd.IsNullable)
                     {
@@ -440,11 +441,11 @@ namespace Intent.Modules.Java.Persistence.JPA.Decorators
                     settings.Add(fetchType);
                 }
 
-                annotations.Add($"@{_template.ImportType("javax.persistence.OneToMany")}({string.Join(", ", settings)})");
+                annotations.Add($"@{_template.ImportType($"{JavaxJakarta()}.persistence.OneToMany")}({string.Join(", ", settings)})");
 
                 if (!otherEnd.IsNavigable)
                 {
-                    annotations.Add($"@{_template.ImportType("javax.persistence.JoinColumn")}(name = \"{otherEnd.Name.ToSnakeCase()}_id\", nullable = false)");
+                    annotations.Add($"@{_template.ImportType($"{JavaxJakarta()}.persistence.JoinColumn")}(name = \"{otherEnd.Name.ToSnakeCase()}_id\", nullable = false)");
                 }
             }
             else if (otherEnd.IsCollection && !thatEnd.IsCollection) // many-to-one
@@ -457,7 +458,7 @@ namespace Intent.Modules.Java.Persistence.JPA.Decorators
 
                 if (IsCompositeOwner(thatEnd))
                 {
-                    manyToOneSettings.Add($"cascade = {{ {_template.ImportType("javax.persistence.CascadeType")}.ALL }}");
+                    manyToOneSettings.Add($"cascade = {{ {_template.ImportType($"{JavaxJakarta()}.persistence.CascadeType")}.ALL }}");
                 }
 
                 if (!string.IsNullOrWhiteSpace(fetchType))
@@ -477,8 +478,8 @@ namespace Intent.Modules.Java.Persistence.JPA.Decorators
                     joinColumnParams.Add($@"updatable = false");
                 }
 
-                annotations.Add($"@{_template.ImportType("javax.persistence.ManyToOne")}({string.Join(", ", manyToOneSettings)})");
-                annotations.Add($"@{_template.ImportType("javax.persistence.JoinColumn")}({string.Join(", ", joinColumnParams)})");
+                annotations.Add($"@{_template.ImportType($"{JavaxJakarta()}.persistence.ManyToOne")}({string.Join(", ", manyToOneSettings)})");
+                annotations.Add($"@{_template.ImportType($"{JavaxJakarta()}.persistence.JoinColumn")}({string.Join(", ", joinColumnParams)})");
             }
             else if (otherEnd.IsCollection && thatEnd.IsCollection) // many-to-many
             {
@@ -489,7 +490,7 @@ namespace Intent.Modules.Java.Persistence.JPA.Decorators
                     settings.Add(fetchType);
                 }
 
-                annotations.Add($"@{_template.ImportType($"javax.persistence.ManyToMany")}({string.Join(", ", settings)})");
+                annotations.Add($"@{_template.ImportType($"{JavaxJakarta()}.persistence.ManyToMany")}({string.Join(", ", settings)})");
                 if (thatEnd.IsTargetEnd())
                 {
                     var sourceEndName = otherEnd.Element.Name;
@@ -501,10 +502,10 @@ namespace Intent.Modules.Java.Persistence.JPA.Decorators
                         joinTableName = thatEnd.Association.TargetEnd.GetJoinTable().Name();
                     }
 
-                    annotations.Add($@"@{_template.ImportType("javax.persistence.JoinTable")}(
+                    annotations.Add($@"@{_template.ImportType($"{JavaxJakarta()}.persistence.JoinTable")}(
             name = ""{joinTableName}"",
-            joinColumns = {{ @{_template.ImportType("javax.persistence.JoinColumn")}(name = ""{otherEnd.Element.Name.ToSnakeCase()}_id"") }},
-            inverseJoinColumns = {{ @{_template.ImportType("javax.persistence.JoinColumn")}(name = ""{thatEnd.Element.Name.ToSnakeCase()}_id"") }}
+            joinColumns = {{ @{_template.ImportType($"{JavaxJakarta()}.persistence.JoinColumn")}(name = ""{otherEnd.Element.Name.ToSnakeCase()}_id"") }},
+            inverseJoinColumns = {{ @{_template.ImportType($"{JavaxJakarta()}.persistence.JoinColumn")}(name = ""{thatEnd.Element.Name.ToSnakeCase()}_id"") }}
     )");
                 }
             }
@@ -519,6 +520,16 @@ namespace Intent.Modules.Java.Persistence.JPA.Decorators
             }
         }
 
+        private string JavaxJakarta()
+        {
+            return _application.Settings.GetSpringBoot().TargetVersion().AsEnum() switch
+            {
+                SpringBoot.Settings.SpringBoot.TargetVersionOptionsEnum.V2_7_5 => "javax",
+                SpringBoot.Settings.SpringBoot.TargetVersionOptionsEnum.V3_1_3 => "jakarta",
+                _ => throw new ArgumentOutOfRangeException()
+            };
+        }
+        
         private bool IsJsonColumn(AttributeModel model)
         {
             return _application.Settings.GetDatabaseSettings().DatabaseProvider().AsEnum() switch

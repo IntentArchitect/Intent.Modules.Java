@@ -33,7 +33,7 @@ namespace Intent.Modules.Java.BeanValidation.Decorators
             _application = application;
             _template.AddDependency(new JavaDependency("javax.validation", "validation-api"));
         }
-
+        
         private string Use(string fullyQualifiedType, string import = null)
         {
             import = import ?? fullyQualifiedType;
@@ -68,12 +68,9 @@ namespace Intent.Modules.Java.BeanValidation.Decorators
     ", annotations);
         }
 
-
         public IEnumerable<string> DeclareImports()
         {
             return _imports;
-
         }
-
     }
 }

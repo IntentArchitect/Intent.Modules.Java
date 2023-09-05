@@ -1,9 +1,11 @@
+using System;
 using System.Collections.Generic;
 using Intent.Engine;
 using Intent.Modules.Common;
 using Intent.Modules.Common.Java;
 using Intent.Modules.Common.Java.Templates;
 using Intent.Modules.Common.Templates;
+using Intent.Modules.Java.SpringBoot.Settings;
 using Intent.RoslynWeaver.Attributes;
 using Intent.Templates;
 
@@ -34,5 +36,14 @@ namespace Intent.Modules.Java.SpringBoot.Validation.Templates.RestResponseEntity
             );
         }
 
+        private string GetHttpStatusType()
+        {
+            return ExecutionContext.Settings.GetSpringBoot().TargetVersion().AsEnum() switch
+            {
+                Settings.SpringBoot.TargetVersionOptionsEnum.V2_7_5 => ImportType("org.springframework.http.HttpStatus"),
+                Settings.SpringBoot.TargetVersionOptionsEnum.V3_1_3 => ImportType("org.springframework.http.HttpStatusCode"),
+                _ => throw new ArgumentOutOfRangeException()
+            };
+        }
     }
 }

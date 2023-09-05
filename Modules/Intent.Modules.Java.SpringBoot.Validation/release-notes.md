@@ -1,5 +1,6 @@
 ### Version 3.4.0
 
+- Improvement: Support for Spring Boot v3.1.3.
 - Improvement: Updated dependencies.
 
 ### Version 3.3.5

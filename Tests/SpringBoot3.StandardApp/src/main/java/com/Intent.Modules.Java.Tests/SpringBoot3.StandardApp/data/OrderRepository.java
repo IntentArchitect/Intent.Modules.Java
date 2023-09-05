@@ -7,6 +7,7 @@ import java.util.Optional;
 import java.util.UUID;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
+import za.myorg.mypackage.Order;
 
 @IntentMerge
 public interface OrderRepository extends JpaRepository<Order, UUID> {

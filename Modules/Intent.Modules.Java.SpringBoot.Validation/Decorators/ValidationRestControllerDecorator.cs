@@ -1,6 +1,8 @@
+using System;
 using System.Collections.Generic;
 using Intent.Engine;
 using Intent.Modelers.Services.Api;
+using Intent.Modules.Java.SpringBoot.Settings;
 using Intent.Modules.Java.SpringBoot.Templates.RestController;
 using Intent.RoslynWeaver.Attributes;
 
@@ -32,13 +34,23 @@ namespace Intent.Modules.Java.SpringBoot.Validation.Decorators
         {
             if (parameter.TypeReference?.Element.IsDTOModel() == true)
             {
-                yield return $"@{_template.ImportType("javax.validation.Valid")}";
+                yield return $"@{_template.ImportType($"{JavaxJakarta()}.validation.Valid")}";
             }
 
             foreach (var annotation in base.ParameterAnnotations(parameter))
             {
                 yield return annotation;
             }
+        }
+        
+        private string JavaxJakarta()
+        {
+            return _application.Settings.GetSpringBoot().TargetVersion().AsEnum() switch
+            {
+                Settings.SpringBoot.TargetVersionOptionsEnum.V2_7_5 => "javax",
+                Settings.SpringBoot.TargetVersionOptionsEnum.V3_1_3 => "jakarta",
+                _ => throw new ArgumentOutOfRangeException()
+            };
         }
     }
 }

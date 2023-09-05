@@ -10,6 +10,7 @@ using Intent.Modules.Common.Java.Templates;
 using Intent.Modules.Common.Templates;
 using Intent.Modules.Common.Types.Api;
 using Intent.Modules.Java.Domain.Templates.Enum;
+using Intent.Modules.Java.SpringBoot.Settings;
 using Intent.RoslynWeaver.Attributes;
 using Intent.Templates;
 
@@ -134,18 +135,28 @@ namespace Intent.Modules.Java.Domain.Templates.DomainModel
                 !attribute.HasStereotype("Primary Key") &&
                 !attribute.HasStereotype("Foreign Key"))
             {
-                yield return $"@{ImportType("javax.validation.constraints.NotNull")}";
+                yield return $"@{ImportType($"{JavaxJakarta()}.validation.constraints.NotNull")}";
             }
 
             if (attribute.HasStereotype("Text Constraints") && attribute.GetStereotypeProperty<int?>("Text Constraints", "MaxLength") != null)
             {
-                yield return $"@{ImportType("javax.validation.constraints.Size")}(max = {attribute.GetStereotypeProperty<int?>("Text Constraints", "MaxLength"):D})";
+                yield return $"@{ImportType($"{JavaxJakarta()}.validation.constraints.Size")}(max = {attribute.GetStereotypeProperty<int?>("Text Constraints", "MaxLength"):D})";
             }
 
             foreach (var annotation in GetDecorators().Select(x => x.FieldAnnotations(attribute)))
             {
                 yield return annotation.Trim();
             }
+        }
+        
+        private string JavaxJakarta()
+        {
+            return ExecutionContext.Settings.GetSpringBoot().TargetVersion().AsEnum() switch
+            {
+                SpringBoot.Settings.SpringBoot.TargetVersionOptionsEnum.V2_7_5 => "javax",
+                SpringBoot.Settings.SpringBoot.TargetVersionOptionsEnum.V3_1_3 => "jakarta",
+                _ => throw new ArgumentOutOfRangeException()
+            };
         }
 
         private IEnumerable<string> GetAnnotations(AssociationEndModel thatEnd)
@@ -157,7 +168,7 @@ namespace Intent.Modules.Java.Domain.Templates.DomainModel
             if (!thatEnd.TypeReference.IsNullable &&
                 !(isManyToOne && hasAggregationForeignKey))
             {
-                yield return $"@{ImportType("javax.validation.constraints.NotNull")}";
+                yield return $"@{ImportType($"{JavaxJakarta()}.validation.constraints.NotNull")}";
             }
 
             foreach (var annotation in GetDecorators().Select(x => x.FieldAnnotations(thatEnd)))
