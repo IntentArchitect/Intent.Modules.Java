@@ -17,12 +17,11 @@ namespace Intent.Modules.Java.SpringBoot.Security.Templates.MethodSecurityConfig
 package {Package};
 
 import org.springframework.context.annotation.Configuration;
-import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
-import org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration;
+import org.springframework.security.config.annotation.method.configuration.{GetMethodSecurityConfigurationAnnotationName()};
 
 @Configuration
-@EnableGlobalMethodSecurity(securedEnabled = true, prePostEnabled = true)
-public class {ClassName} extends GlobalMethodSecurityConfiguration {{
+@{GetMethodSecurityConfigurationAnnotationName()}(securedEnabled = true, prePostEnabled = true)
+public class {ClassName}{GetClassInheritance()} {{
 }}
 ";
         }

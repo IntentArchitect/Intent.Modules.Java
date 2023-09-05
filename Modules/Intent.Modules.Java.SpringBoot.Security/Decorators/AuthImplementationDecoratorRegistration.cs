@@ -12,6 +12,7 @@ namespace Intent.Modules.Java.SpringBoot.Security.Decorators
     [Description(AuthImplementationDecorator.DecoratorId)]
     public class AuthImplementationDecoratorRegistration : DecoratorRegistration<ServiceImplementationTemplate, ServiceImplementationDecorator>
     {
+        [IntentManaged(Mode.Fully)]
         public override ServiceImplementationDecorator CreateDecoratorInstance(ServiceImplementationTemplate template, IApplication application)
         {
             return new AuthImplementationDecorator(template, application);

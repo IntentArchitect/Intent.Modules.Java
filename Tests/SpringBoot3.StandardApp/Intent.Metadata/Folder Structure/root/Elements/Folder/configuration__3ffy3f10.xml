@@ -51,9 +51,23 @@
       </metadata>
       <childElements />
     </childElement>
-    <childElement id="b10e6a18-8283-49ab-8287-14ac2d179efc" type="Template Output" typeId="09de2192-2507-41a2-8044-286c7ecadec2">
-      <name>Intent.Java.SpringBoot.Security.WebSecurityConfig</name>
-      <display>Intent.Java.SpringBoot.Security.WebSecurityConfig</display>
+    <childElement id="a0b1dbb0-7359-46c3-90f6-e41839dd7e03" type="Template Output" typeId="09de2192-2507-41a2-8044-286c7ecadec2">
+      <name>Intent.Java.SpringBoot.Security.WebSecurityConfigV2</name>
+      <display>Intent.Java.SpringBoot.Security.WebSecurityConfigV2</display>
+      <externalReference>Intent.Java.SpringBoot.Security</externalReference>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <isMapped>false</isMapped>
+      <parentFolderId>ec5caf31-fea9-4784-a7a3-c7a7a7d480ed</parentFolderId>
+      <stereotypes />
+      <metadata>
+        <entry key="status" value="assigned" />
+      </metadata>
+      <childElements />
+    </childElement>
+    <childElement id="19cd8a72-157d-4df7-9245-90596bf815b2" type="Template Output" typeId="09de2192-2507-41a2-8044-286c7ecadec2">
+      <name>Intent.Java.SpringBoot.Security.WebSecurityConfigV3</name>
+      <display>Intent.Java.SpringBoot.Security.WebSecurityConfigV3</display>
       <externalReference>Intent.Java.SpringBoot.Security</externalReference>
       <isAbstract>false</isAbstract>
       <genericTypes />

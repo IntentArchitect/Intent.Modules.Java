@@ -11,17 +11,17 @@ using Intent.Templates;
 [assembly: DefaultIntentManaged(Mode.Fully)]
 [assembly: IntentTemplate("Intent.ModuleBuilder.TemplateRegistration.SingleFileNoModel", Version = "1.0")]
 
-namespace Intent.Modules.Java.SpringBoot.Security.Templates.AuthTokenFilter
+namespace Intent.Modules.Java.SpringBoot.Security.Templates.WebSecurityConfigV2
 {
     [IntentManaged(Mode.Merge, Body = Mode.Merge, Signature = Mode.Fully)]
-    public class AuthTokenFilterTemplateRegistration : SingleFileTemplateRegistration
+    public class WebSecurityConfigV2TemplateRegistration : SingleFileTemplateRegistration
     {
-        public override string TemplateId => AuthTokenFilterTemplate.TemplateId;
+        public override string TemplateId => WebSecurityConfigV2Template.TemplateId;
 
         [IntentManaged(Mode.Fully)]
         public override ITemplate CreateTemplateInstance(IOutputTarget outputTarget)
         {
-            return new AuthTokenFilterTemplate(outputTarget);
+            return new WebSecurityConfigV2Template(outputTarget);
         }
     }
 }

@@ -284,7 +284,7 @@
     </FileLog>
     <FileLog>
       <ProjectId>dd665cb7-50a4-4e3b-adf6-c5505f4181ee</ProjectId>
-      <CorrelationId>Intent.Java.SpringBoot.Security.WebSecurityConfig</CorrelationId>
+      <CorrelationId>Intent.Java.SpringBoot.Security.WebSecurityConfigV2</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>src/main/java/com/Intent.Modules.Java.Tests/Standard.SpringBoot.TestApplication/configuration/WebSecurityConfig.java</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>WebSecurityConfig.java</ProjectRelativeFilePath>

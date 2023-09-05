@@ -12,6 +12,7 @@ namespace Intent.Modules.Java.SpringBoot.Security.Decorators
     [Description(SecurityRestControllerDecorator.DecoratorId)]
     public class SecurityRestControllerDecoratorRegistration : DecoratorRegistration<RestControllerTemplate, RestControllerDecorator>
     {
+        [IntentManaged(Mode.Fully)]
         public override RestControllerDecorator CreateDecoratorInstance(RestControllerTemplate template, IApplication application)
         {
             return new SecurityRestControllerDecorator(template, application);

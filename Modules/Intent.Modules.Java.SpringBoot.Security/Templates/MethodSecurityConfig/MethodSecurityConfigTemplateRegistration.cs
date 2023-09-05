@@ -18,6 +18,7 @@ namespace Intent.Modules.Java.SpringBoot.Security.Templates.MethodSecurityConfig
     {
         public override string TemplateId => MethodSecurityConfigTemplate.TemplateId;
 
+        [IntentManaged(Mode.Fully)]
         public override ITemplate CreateTemplateInstance(IOutputTarget outputTarget)
         {
             return new MethodSecurityConfigTemplate(outputTarget);

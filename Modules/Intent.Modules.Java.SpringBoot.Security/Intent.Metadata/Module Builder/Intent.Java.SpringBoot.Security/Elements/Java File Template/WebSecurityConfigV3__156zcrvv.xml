@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <class id="ca70e810-b3c6-49de-b17a-3d57b113914f" type="Java File Template" typeId="e27af6dd-e69e-4e80-a2e1-0bbe9493cf7a">
-  <name>WebSecurityConfig</name>
-  <display>WebSecurityConfig: Single File</display>
+  <name>WebSecurityConfigV3</name>
+  <display>WebSecurityConfigV3: Single File</display>
   <isAbstract>false</isAbstract>
   <genericTypes />
   <typeReference id="354cbb32-2df3-4e4a-8be4-cdea8b80e59d">

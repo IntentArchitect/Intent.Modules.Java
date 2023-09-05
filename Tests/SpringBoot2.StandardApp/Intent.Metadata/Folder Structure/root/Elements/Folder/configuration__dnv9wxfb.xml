@@ -37,9 +37,23 @@
       </metadata>
       <childElements />
     </childElement>
-    <childElement id="bb4c231f-3baa-42dd-b4a7-2e81ae79fe9c" type="Template Output" typeId="09de2192-2507-41a2-8044-286c7ecadec2">
-      <name>Intent.Java.SpringBoot.Security.WebSecurityConfig</name>
-      <display>Intent.Java.SpringBoot.Security.WebSecurityConfig</display>
+    <childElement id="9843fe1f-7e43-4263-923f-f933e9b7cd5b" type="Template Output" typeId="09de2192-2507-41a2-8044-286c7ecadec2">
+      <name>Intent.Java.Spring.Cors.CorsConfig</name>
+      <display>Intent.Java.Spring.Cors.CorsConfig</display>
+      <externalReference>Intent.Java.Spring.Cors</externalReference>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <isMapped>false</isMapped>
+      <parentFolderId>dd665cb7-50a4-4e3b-adf6-c5505f4181ee</parentFolderId>
+      <stereotypes />
+      <metadata>
+        <entry key="status" value="assigned" />
+      </metadata>
+      <childElements />
+    </childElement>
+    <childElement id="9da1b54e-717f-4639-8cc8-a372179044f0" type="Template Output" typeId="09de2192-2507-41a2-8044-286c7ecadec2">
+      <name>Intent.Java.SpringBoot.Security.WebSecurityConfigV2</name>
+      <display>Intent.Java.SpringBoot.Security.WebSecurityConfigV2</display>
       <externalReference>Intent.Java.SpringBoot.Security</externalReference>
       <isAbstract>false</isAbstract>
       <genericTypes />
@@ -51,10 +65,10 @@
       </metadata>
       <childElements />
     </childElement>
-    <childElement id="9843fe1f-7e43-4263-923f-f933e9b7cd5b" type="Template Output" typeId="09de2192-2507-41a2-8044-286c7ecadec2">
-      <name>Intent.Java.Spring.Cors.CorsConfig</name>
-      <display>Intent.Java.Spring.Cors.CorsConfig</display>
-      <externalReference>Intent.Java.Spring.Cors</externalReference>
+    <childElement id="50a4862b-c1eb-4e6a-82ed-b1ce00582b5c" type="Template Output" typeId="09de2192-2507-41a2-8044-286c7ecadec2">
+      <name>Intent.Java.SpringBoot.Security.WebSecurityConfigV3</name>
+      <display>Intent.Java.SpringBoot.Security.WebSecurityConfigV3</display>
+      <externalReference>Intent.Java.SpringBoot.Security</externalReference>
       <isAbstract>false</isAbstract>
       <genericTypes />
       <isMapped>false</isMapped>

@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <package>
   <id>Intent.Java.SpringBoot.Security</id>
   <version>3.4.0-pre.1</version>
@@ -21,7 +21,11 @@
       <role>Startup</role>
       <location>configuration</location>
     </template>
-    <template id="Intent.Java.SpringBoot.Security.WebSecurityConfig" externalReference="ca70e810-b3c6-49de-b17a-3d57b113914f">
+    <template id="Intent.Java.SpringBoot.Security.WebSecurityConfigV2" externalReference="7e5b1307-f766-4074-93bc-6d2d6f6fcded">
+      <role>Startup</role>
+      <location>configuration</location>
+    </template>
+    <template id="Intent.Java.SpringBoot.Security.WebSecurityConfigV3" externalReference="ca70e810-b3c6-49de-b17a-3d57b113914f">
       <role>Startup</role>
       <location>configuration</location>
     </template>
@@ -36,10 +40,12 @@
     <dependency id="Intent.Common" version="3.4.1" />
     <dependency id="Intent.Common.Java" version="3.4.5-pre.1" />
     <dependency id="Intent.Common.Types" version="3.3.9" />
+    <dependency id="Intent.Java.Maven" version="3.3.8" />
     <dependency id="Intent.Java.Services" version="3.4.3" />
     <dependency id="Intent.Java.SpringBoot" version="3.6.0-pre.0" />
-    <dependency id="Intent.Modelers.Services" version="3.4.2" />
     <dependency id="Intent.Java.Weaving.Annotations" version="3.3.8" />
+    <dependency id="Intent.Metadata.WebApi" version="3.4.0" />
+    <dependency id="Intent.Modelers.Services" version="3.4.2" />
   </dependencies>
   <files>
     <file src="$outDir$/$id$.dll" />
@@ -47,4 +53,5 @@
   </files>
   <moduleSettingsExtensions />
   <metadata />
+  <tags />
 </package>

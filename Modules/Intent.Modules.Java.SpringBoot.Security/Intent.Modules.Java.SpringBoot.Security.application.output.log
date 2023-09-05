@@ -51,17 +51,9 @@
     <FileLog>
       <ProjectId>07d6a2d9-6893-4cdb-bf0c-1a1f01f0aad8</ProjectId>
       <CorrelationId>Intent.VisualStudio.Projects.CoreLibrary.CSProject#07d6a2d9-6893-4cdb-bf0c-1a1f01f0aad8</CorrelationId>
-      <OverwriteBehaviour>once-off</OverwriteBehaviour>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Intent.Modules.Java.SpringBoot.Security.csproj</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>Intent.Modules.Java.SpringBoot.Security.csproj</ProjectRelativeFilePath>
-      <IsIgnored>false</IsIgnored>
-    </FileLog>
-    <FileLog>
-      <ProjectId>07d6a2d9-6893-4cdb-bf0c-1a1f01f0aad8</ProjectId>
-      <CorrelationId>Intent.ModuleBuilder.ReadMe</CorrelationId>
-      <OverwriteBehaviour>always</OverwriteBehaviour>
-      <ApplicationRelativeFilePath>README.txt</ApplicationRelativeFilePath>
-      <ProjectRelativeFilePath>README.txt</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
@@ -146,26 +138,50 @@
     </FileLog>
     <FileLog>
       <ProjectId>b4ae8ca4-3cfb-41c1-a34b-cb3526de6791</ProjectId>
+      <CorrelationId>Intent.ModuleBuilder.Java.Templates.JavaFileStringInterpolationTemplate#7e5b1307-f766-4074-93bc-6d2d6f6fcded</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>Templates/WebSecurityConfigV2/WebSecurityConfigV2Template.cs</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>WebSecurityConfigV2/WebSecurityConfigV2Template.cs</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
+      <ProjectId>b4ae8ca4-3cfb-41c1-a34b-cb3526de6791</ProjectId>
+      <CorrelationId>Intent.ModuleBuilder.Java.Templates.JavaFileTemplatePartial#7e5b1307-f766-4074-93bc-6d2d6f6fcded</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>Templates/WebSecurityConfigV2/WebSecurityConfigV2TemplatePartial.cs</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>WebSecurityConfigV2/WebSecurityConfigV2TemplatePartial.cs</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
+      <ProjectId>b4ae8ca4-3cfb-41c1-a34b-cb3526de6791</ProjectId>
+      <CorrelationId>Intent.ModuleBuilder.TemplateRegistration.SingleFileNoModel#7e5b1307-f766-4074-93bc-6d2d6f6fcded</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>Templates/WebSecurityConfigV2/WebSecurityConfigV2TemplateRegistration.cs</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>WebSecurityConfigV2/WebSecurityConfigV2TemplateRegistration.cs</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
+      <ProjectId>b4ae8ca4-3cfb-41c1-a34b-cb3526de6791</ProjectId>
       <CorrelationId>Intent.ModuleBuilder.Java.Templates.JavaFileStringInterpolationTemplate#ca70e810-b3c6-49de-b17a-3d57b113914f</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
-      <ApplicationRelativeFilePath>Templates/WebSecurityConfig/WebSecurityConfigTemplate.cs</ApplicationRelativeFilePath>
-      <ProjectRelativeFilePath>WebSecurityConfig/WebSecurityConfigTemplate.cs</ProjectRelativeFilePath>
+      <ApplicationRelativeFilePath>Templates/WebSecurityConfigV3/WebSecurityConfigV3Template.cs</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>WebSecurityConfigV3/WebSecurityConfigV3Template.cs</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
       <ProjectId>b4ae8ca4-3cfb-41c1-a34b-cb3526de6791</ProjectId>
       <CorrelationId>Intent.ModuleBuilder.Java.Templates.JavaFileTemplatePartial#ca70e810-b3c6-49de-b17a-3d57b113914f</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
-      <ApplicationRelativeFilePath>Templates/WebSecurityConfig/WebSecurityConfigTemplatePartial.cs</ApplicationRelativeFilePath>
-      <ProjectRelativeFilePath>WebSecurityConfig/WebSecurityConfigTemplatePartial.cs</ProjectRelativeFilePath>
+      <ApplicationRelativeFilePath>Templates/WebSecurityConfigV3/WebSecurityConfigV3TemplatePartial.cs</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>WebSecurityConfigV3/WebSecurityConfigV3TemplatePartial.cs</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
       <ProjectId>b4ae8ca4-3cfb-41c1-a34b-cb3526de6791</ProjectId>
       <CorrelationId>Intent.ModuleBuilder.TemplateRegistration.SingleFileNoModel#ca70e810-b3c6-49de-b17a-3d57b113914f</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
-      <ApplicationRelativeFilePath>Templates/WebSecurityConfig/WebSecurityConfigTemplateRegistration.cs</ApplicationRelativeFilePath>
-      <ProjectRelativeFilePath>WebSecurityConfig/WebSecurityConfigTemplateRegistration.cs</ProjectRelativeFilePath>
+      <ApplicationRelativeFilePath>Templates/WebSecurityConfigV3/WebSecurityConfigV3TemplateRegistration.cs</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>WebSecurityConfigV3/WebSecurityConfigV3TemplateRegistration.cs</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
     </FileLog>
   </FileLogs>

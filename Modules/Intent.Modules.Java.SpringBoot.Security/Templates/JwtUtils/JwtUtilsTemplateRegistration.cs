@@ -18,6 +18,7 @@ namespace Intent.Modules.Java.SpringBoot.Security.Templates.JwtUtils
     {
         public override string TemplateId => JwtUtilsTemplate.TemplateId;
 
+        [IntentManaged(Mode.Fully)]
         public override ITemplate CreateTemplateInstance(IOutputTarget outputTarget)
         {
             return new JwtUtilsTemplate(outputTarget);

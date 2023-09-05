@@ -5,11 +5,10 @@ using Intent.RoslynWeaver.Attributes;
 [assembly: DefaultIntentManaged(Mode.Fully)]
 [assembly:IntentTemplate("Intent.ModuleBuilder.Java.Templates.JavaFileStringInterpolationTemplate",Version= "1.0")]
 
-namespace Intent.Modules.Java.SpringBoot.Security.Templates.WebSecurityConfig
+namespace Intent.Modules.Java.SpringBoot.Security.Templates.WebSecurityConfigV3
 {
     [IntentManaged(Mode.Fully, Body = Mode.Merge)]
-    public partial class WebSecurityConfigTemplate
-    {
+    public partial class WebSecurityConfigV3Template    {
         [IntentManaged(Mode.Fully, Body = Mode.Ignore)]
         public override string TransformText()
         {
