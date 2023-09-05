@@ -18,7 +18,7 @@
     <dependency id="Intent.Common" version="3.4.1" />
     <dependency id="Intent.Common.Java" version="3.4.3" />
     <dependency id="Intent.Common.Types" version="3.3.9" />
-    <dependency id="Intent.Java.Domain" version="4.1.1" />
+    <dependency id="Intent.Java.Domain" version="4.2.0-pre.0" />
     <dependency id="Intent.Java.Services" version="3.4.3" />
     <dependency id="Intent.Java.Spring.Data.Repositories" version="4.1.2" />
     <dependency id="Intent.Java.Weaving.Annotations" version="3.3.8" />
