@@ -69,7 +69,7 @@ namespace Intent.Modules.Java.Maven.Templates.PomFile
             }
 
             var versionElement = rootElement.Element(ns + "version");
-            if (versionElement != null && 
+            if (versionElement != null &&
                 Version != null &&
                 string.IsNullOrWhiteSpace(versionElement.Value))
             {

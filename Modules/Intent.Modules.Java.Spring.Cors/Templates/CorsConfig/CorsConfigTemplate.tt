@@ -9,6 +9,7 @@
 <#@ import namespace="Intent.Metadata.Models" #>
 package <#= Package #>;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
@@ -16,14 +17,20 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @Configuration
 public class <#= ClassName #> {
+    @Value("${cors.origin}")
+    private String origin;
+
     @Bean
     public WebMvcConfigurer corsConfigurer() {
         return new WebMvcConfigurer() {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
-                registry.addMapping("/api/**")
-                    .allowedMethods("*")
-                    .allowedOrigins("http://localhost:4200");
+                registry.addMapping("/**")
+                        .allowedOrigins(origin)
+                        .allowedMethods("*")
+                        .maxAge(3600)
+                        .allowedHeaders("*")
+                        .exposedHeaders("*");
             }
         };
     }

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<class id="eced68d4-93cf-41c3-890b-ca665fa21953" type="Module Settings Configuration" typeId="37e678f8-370a-4b05-ae44-69bb3d2b39b6">
+  <name>Spring Boot</name>
+  <display>Spring Boot</display>
+  <isAbstract>false</isAbstract>
+  <sort-children>manually</sort-children>
+  <genericTypes />
+  <isMapped>false</isMapped>
+  <parentFolderId>27f3b2d0-b9e5-47da-bece-d305c33b5945</parentFolderId>
+  <packageId>27f3b2d0-b9e5-47da-bece-d305c33b5945</packageId>
+  <packageName>Intent.Java.SpringBoot</packageName>
+  <stereotypes />
+  <metadata />
+  <childElements>
+    <childElement id="2c7289d0-0261-4040-95ad-e7aba770753c" type="Module Settings Field Configuration" typeId="88e29cab-1342-40c7-b052-5fcd68ffafec">
+      <name>Target Version</name>
+      <display>Target Version</display>
+      <isAbstract>false</isAbstract>
+      <sort-children>manually</sort-children>
+      <genericTypes />
+      <isMapped>false</isMapped>
+      <parentFolderId>eced68d4-93cf-41c3-890b-ca665fa21953</parentFolderId>
+      <packageId>27f3b2d0-b9e5-47da-bece-d305c33b5945</packageId>
+      <packageName>Intent.Java.SpringBoot</packageName>
+      <stereotypes>
+        <stereotype stereotypeDefinitionId="4805c791-5be3-4049-b929-6046d7be9944" name="Field Configuration">
+          <addedByDefault>true</addedByDefault>
+          <definitionPackageName>Intent.ModuleBuilder</definitionPackageName>
+          <definitionPackageId>9972b2a9-b749-4bba-b5c8-824bf694c6ef</definitionPackageId>
+          <properties>
+            <property name="e33ce4e3-a3c5-4a3c-a6b8-96418be03de0" display="Control Type" value="Select" isActive="true" />
+            <property name="7070a9ce-ff31-422e-9cff-d82876c5efdf" display="Is Required" value="true" isActive="true" />
+            <property name="01489021-8311-43d5-b41b-e7628a512c1d" display="Hint" isActive="true" />
+            <property name="653d889c-626f-45c5-a6e6-72b74a2f805c" display="Default Value" value="V2_7_5" isActive="true" />
+          </properties>
+        </stereotype>
+      </stereotypes>
+      <metadata />
+      <childElements>
+        <childElement id="4692ace9-dba1-41f5-b432-d13019520cad" type="Module Settings Field Option" typeId="1592709a-89b1-4cb0-9801-ce9d3b94545a">
+          <name>v2.7.5</name>
+          <display>v2.7.5 = V2_7_5</display>
+          <isAbstract>false</isAbstract>
+          <value>V2_7_5</value>
+          <genericTypes />
+          <isMapped>false</isMapped>
+          <parentFolderId>2c7289d0-0261-4040-95ad-e7aba770753c</parentFolderId>
+          <packageId>27f3b2d0-b9e5-47da-bece-d305c33b5945</packageId>
+          <packageName>Intent.Java.SpringBoot</packageName>
+          <stereotypes />
+          <metadata />
+          <childElements />
+        </childElement>
+        <childElement id="006d410a-8cad-41b8-bdce-417cf3c8d548" type="Module Settings Field Option" typeId="1592709a-89b1-4cb0-9801-ce9d3b94545a">
+          <name>v3.1.3</name>
+          <display>v3.1.3 = V3_1_3</display>
+          <isAbstract>false</isAbstract>
+          <value>V3_1_3</value>
+          <genericTypes />
+          <isMapped>false</isMapped>
+          <parentFolderId>2c7289d0-0261-4040-95ad-e7aba770753c</parentFolderId>
+          <packageId>27f3b2d0-b9e5-47da-bece-d305c33b5945</packageId>
+          <packageName>Intent.Java.SpringBoot</packageName>
+          <stereotypes />
+          <metadata />
+          <childElements />
+        </childElement>
+      </childElements>
+    </childElement>
+  </childElements>
+</class>

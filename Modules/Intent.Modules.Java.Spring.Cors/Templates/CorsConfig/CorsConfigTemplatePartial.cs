@@ -4,6 +4,7 @@ using Intent.Modules.Common;
 using Intent.Modules.Common.Java;
 using Intent.Modules.Common.Java.Templates;
 using Intent.Modules.Common.Templates;
+using Intent.Modules.Java.SpringBoot.Events;
 using Intent.RoslynWeaver.Attributes;
 using Intent.Templates;
 
@@ -33,5 +34,9 @@ namespace Intent.Modules.Java.Spring.Cors.Templates.CorsConfig
             );
         }
 
+        public override void BeforeTemplateExecution()
+        {
+            ExecutionContext.EventDispatcher.Publish(new ApplicationPropertyRequest("cors.origin", "http://localhost:4200"));
+        }
     }
 }

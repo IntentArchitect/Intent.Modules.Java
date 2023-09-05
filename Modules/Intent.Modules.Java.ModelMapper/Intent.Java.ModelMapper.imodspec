@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <package>
   <id>Intent.Java.ModelMapper</id>
-  <version>3.3.11</version>
+  <version>3.4.0-pre.0</version>
   <supportedClientVersions>[3.3.16, 5.0.0-a)</supportedClientVersions>
   <summary>Mapping from Domain entities to DTOs using the ModelMapper framework.</summary>
   <description>Mapping from Domain entities to DTOs using the ModelMapper framework.</description>
@@ -29,6 +29,7 @@
     <dependency id="Intent.Java.Domain" version="4.1.1" />
     <dependency id="Intent.Java.Services" version="3.4.3" />
     <dependency id="Intent.Modelers.Services" version="3.4.2" />
+    <dependency id="Intent.Java.Weaving.Annotations" version="3.3.8" />
   </dependencies>
   <files>
     <file src="$outDir$/$id$.dll" />

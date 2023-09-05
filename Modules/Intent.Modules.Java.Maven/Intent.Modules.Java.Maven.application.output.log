@@ -27,7 +27,7 @@
     <FileLog>
       <ProjectId>2aee7253-e4d7-4433-95b7-561ca904f214</ProjectId>
       <CorrelationId>Intent.VisualStudio.Projects.CoreLibrary.CSProject#2aee7253-e4d7-4433-95b7-561ca904f214</CorrelationId>
-      <OverwriteBehaviour>once-off</OverwriteBehaviour>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Intent.Modules.Java.Maven.csproj</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>Intent.Modules.Java.Maven.csproj</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>

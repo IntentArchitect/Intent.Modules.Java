@@ -1,3 +1,7 @@
+### Version 3.6.0
+
+- Improvement: Support for Spring Boot v3.1.3.
+
 ### Version 3.5.1
 
 - Fixed: Parameter set to `From Body` will now add `@RequestBody`. 

@@ -1,7 +1,7 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <package>
   <id>Intent.Java.SpringBoot</id>
-  <version>3.5.1</version>
+  <version>3.6.0-pre.0</version>
   <supportedClientVersions>[4.0.0-beta.0, 5.0.0-a)</supportedClientVersions>
   <summary>Java Spring Boot controllers and Application class.</summary>
   <description>Java Spring Boot controllers and Application class.</description>
@@ -32,7 +32,7 @@
     <dependency id="Intent.Common" version="3.4.1" />
     <dependency id="Intent.Common.Java" version="3.4.5-pre.1" />
     <dependency id="Intent.Common.Types" version="3.3.9" />
-    <dependency id="Intent.Java.Maven" version="3.3.10" />
+    <dependency id="Intent.Java.Maven" version="3.4.0-pre.0" />
     <dependency id="Intent.Java.Services" version="3.4.3" />
     <dependency id="Intent.Java.Weaving.Annotations" version="3.3.8" />
     <dependency id="Intent.Metadata.WebApi" version="4.0.2" />
@@ -45,7 +45,20 @@
   <metadata>
     <install target="Module Builder;Services" src="Intent.Metadata/Module Builder/Intent.Java.SpringBoot/Intent.Java.SpringBoot.pkg.config" externalReference="27f3b2d0-b9e5-47da-bece-d305c33b5945" />
   </metadata>
-  <moduleSettings />
+  <moduleSettings>
+    <group id="eced68d4-93cf-41c3-890b-ca665fa21953" title="Spring Boot" externalReference="eced68d4-93cf-41c3-890b-ca665fa21953">
+      <settings>
+        <setting id="2c7289d0-0261-4040-95ad-e7aba770753c" title="Target Version" type="select">
+          <isRequired>true</isRequired>
+          <defaultValue>V2_7_5</defaultValue>
+          <options>
+            <option value="V2_7_5" description="v2.7.5" />
+            <option value="V3_1_3" description="v3.1.3" />
+          </options>
+        </setting>
+      </settings>
+    </group>
+  </moduleSettings>
   <moduleSettingsExtensions />
   <tags />
 </package>

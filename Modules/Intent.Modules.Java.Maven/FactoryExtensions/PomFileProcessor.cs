@@ -13,6 +13,7 @@ using Intent.Modules.Common.Templates;
 using Intent.Modules.Java.Maven.Templates;
 using Intent.Modules.Java.Maven.Templates.PomFile;
 using Intent.Modules.Java.Maven.Utils;
+using Intent.Plugins.FactoryExtensions;
 using Intent.RoslynWeaver.Attributes;
 
 [assembly: DefaultIntentManaged(Mode.Fully)]

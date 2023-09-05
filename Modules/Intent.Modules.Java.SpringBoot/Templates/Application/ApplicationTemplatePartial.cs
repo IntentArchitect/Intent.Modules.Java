@@ -23,8 +23,8 @@ namespace Intent.Modules.Java.SpringBoot.Templates.Application
         [IntentManaged(Mode.Fully, Body = Mode.Ignore)]
         public ApplicationTemplate(IOutputTarget outputTarget, object model = null) : base(TemplateId, outputTarget, model)
         {
-            AddDependency(new JavaDependency("org.springframework.boot", "spring-boot-starter"));
-            AddDependency(new JavaDependency("org.springframework.boot", "spring-boot-starter-web"));
+            AddDependency(JavaDependencies.SpringBootStarter);
+            AddDependency(JavaDependencies.SpringBootStarterWeb);
 
             JavaFile = new JavaFile(this.GetPackage(), this.GetFolderPath())
                 .AddImport("org.springframework.boot.SpringApplication")

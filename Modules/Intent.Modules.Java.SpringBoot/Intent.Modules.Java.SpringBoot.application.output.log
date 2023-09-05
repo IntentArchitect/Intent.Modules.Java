@@ -49,6 +49,14 @@
       <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
+      <ProjectId>0a677098-2823-46d7-826c-96feed2b29e8</ProjectId>
+      <CorrelationId>Intent.ModuleBuilder.Templates.Settings.ModuleSettingsExtensions#27f3b2d0-b9e5-47da-bece-d305c33b5945</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>Settings/ModuleSettingsExtensions.cs</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>ModuleSettingsExtensions.cs</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
       <ProjectId>db8d1b7b-e26f-4baa-ba43-990a5ff65135</ProjectId>
       <CorrelationId>Intent.ModuleBuilder.Java.Templates.JavaFileTemplatePartial#352eb8e5-c7f0-42a9-8438-f1b95ea193de</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>

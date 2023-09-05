@@ -1,4 +1,4 @@
-### Version 3.3.11
+### Version 3.4.0
 
 - Improvement: Add support to `pom.xml` `dependencies` for `exclusions`, `type` and `scope` options 
 

@@ -35,7 +35,7 @@
     <FileLog>
       <ProjectId>8220ed3b-fabc-4ff0-945c-acafb0ed917c</ProjectId>
       <CorrelationId>Intent.VisualStudio.Projects.CoreLibrary.CSProject#8220ed3b-fabc-4ff0-945c-acafb0ed917c</CorrelationId>
-      <OverwriteBehaviour>once-off</OverwriteBehaviour>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Intent.Modules.Java.BeanValidation.csproj</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>Intent.Modules.Java.BeanValidation.csproj</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>

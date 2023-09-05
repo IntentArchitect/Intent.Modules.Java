@@ -25,7 +25,7 @@ public class InstallPackagesForScanning : FactoryExtensionBase
     protected override void OnAfterTemplateRegistrations(IApplication application)
     {
         // Parking this until we can get hold of packages that are marked as External
-        
+
         // var appTemplate = application.FindTemplateInstance<IJavaFileBuilderTemplate>(TemplateDependency.OnTemplate("Startup.Application"));
         // if (appTemplate is null) { return; }
         //

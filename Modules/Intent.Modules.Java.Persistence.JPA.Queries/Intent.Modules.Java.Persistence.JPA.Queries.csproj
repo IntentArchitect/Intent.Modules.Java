@@ -7,23 +7,20 @@
   <ItemGroup>
     <PackageReference Include="Intent.Modules.Common" Version="3.4.1" />
     <PackageReference Include="Intent.Modules.Common.Java" Version="3.4.5-pre.1" />
-    <PackageReference Include="Intent.Modules.Common.Types" Version="3.3.7" />
+    <PackageReference Include="Intent.Modules.Common.Types" Version="3.3.9" />
     <PackageReference Include="Intent.Modules.Java.Spring.Data.Repositories" Version="4.2.0" />
     <PackageReference Include="Intent.Modules.Java.Weaving.Annotations" Version="3.3.8" />
-    <PackageReference Include="Intent.Modules.Modelers.Domain" Version="3.4.0" />
-    <PackageReference Include="Intent.Modules.Modelers.Domain.Repositories" Version="3.3.0" />
-    <PackageReference Include="Intent.Modules.Modelers.Services" Version="3.4.0" />
+    <PackageReference Include="Intent.Modules.Modelers.Domain" Version="3.4.2" />
+    <PackageReference Include="Intent.Modules.Modelers.Domain.Repositories" Version="3.3.2" />
+    <PackageReference Include="Intent.Modules.Modelers.Services" Version="3.4.2" />
     <PackageReference Include="Intent.Packager" Version="3.4.0">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Intent.RoslynWeaver.Attributes" Version="2.0.1" />
     <PackageReference Include="Intent.SoftwareFactory.SDK" Version="3.4.2" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\Intent.Modules.Java.Domain\Intent.Modules.Java.Domain.csproj" />
-    <ProjectReference Include="..\Intent.Modules.Java.SpringBoot\Intent.Modules.Java.SpringBoot.csproj" />
+    <PackageReference Include="Intent.Modules.Java.Domain" Version="4.1.1" />
+    <PackageReference Include="Intent.Modules.Java.SpringBoot" Version="3.6.0-pre.0" />    
   </ItemGroup>
 
 </Project>
