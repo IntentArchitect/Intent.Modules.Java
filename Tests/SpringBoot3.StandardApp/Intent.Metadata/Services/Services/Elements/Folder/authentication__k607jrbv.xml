@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<class id="3894c7f8-11c5-4877-be97-f0cfa4907655" type="Folder" typeId="4d95d53a-8855-4f35-aa82-e312643f5c5f">
+  <name>authentication</name>
+  <display>authentication</display>
+  <externalReference>58961d11-cfab-4ec7-b8c5-6fa5bcf0fbba</externalReference>
+  <isAbstract>false</isAbstract>
+  <sort-children>by-type-then-by-name</sort-children>
+  <genericTypes />
+  <isMapped>false</isMapped>
+  <parentFolderId>6f6be8d7-62e5-495c-bbe1-c280ad30e9bb</parentFolderId>
+  <packageId>6f6be8d7-62e5-495c-bbe1-c280ad30e9bb</packageId>
+  <packageName>Services</packageName>
+  <stereotypes />
+  <metadata />
+  <childElements />
+</class>

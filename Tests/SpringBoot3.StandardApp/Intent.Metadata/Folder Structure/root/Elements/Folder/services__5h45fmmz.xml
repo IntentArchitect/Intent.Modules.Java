@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<class id="12e8684f-8f18-4660-9ef5-ff087b216185" type="Folder" typeId="4d95d53a-8855-4f35-aa82-e312643f5c5f">
+  <name>services</name>
+  <display>services</display>
+  <isAbstract>false</isAbstract>
+  <genericTypes />
+  <isMapped>false</isMapped>
+  <parentFolderId>5bbd2daa-6efd-4f12-99c8-2b8d727a1828</parentFolderId>
+  <stereotypes />
+  <metadata />
+  <childElements>
+    <childElement id="23830dda-2d5f-4060-a3cd-77df5901aeb0" type="Template Output" typeId="09de2192-2507-41a2-8044-286c7ecadec2">
+      <name>Intent.Java.Services.ServiceInterface</name>
+      <display>Intent.Java.Services.ServiceInterface</display>
+      <externalReference>Intent.Java.Services</externalReference>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <isMapped>false</isMapped>
+      <parentFolderId>12e8684f-8f18-4660-9ef5-ff087b216185</parentFolderId>
+      <stereotypes />
+      <metadata>
+        <entry key="status" value="assigned" />
+      </metadata>
+      <childElements />
+    </childElement>
+  </childElements>
+</class>

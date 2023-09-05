@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<class id="ec5caf31-fea9-4784-a7a3-c7a7a7d480ed" type="Folder" typeId="4d95d53a-8855-4f35-aa82-e312643f5c5f">
+  <name>configuration</name>
+  <display>configuration</display>
+  <isAbstract>false</isAbstract>
+  <genericTypes />
+  <isMapped>false</isMapped>
+  <parentFolderId>0f1580c4-f71e-4c80-b39d-06599634b4e5</parentFolderId>
+  <stereotypes />
+  <metadata />
+  <childElements>
+    <childElement id="6bc2b594-40b3-43d9-9ebf-ddcd281fb00a" type="Template Output" typeId="09de2192-2507-41a2-8044-286c7ecadec2">
+      <name>Intent.Java.ModelMapper.ModelMapperBean</name>
+      <display>Intent.Java.ModelMapper.ModelMapperBean</display>
+      <externalReference>Intent.Java.ModelMapper</externalReference>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <isMapped>false</isMapped>
+      <parentFolderId>ec5caf31-fea9-4784-a7a3-c7a7a7d480ed</parentFolderId>
+      <stereotypes />
+      <metadata>
+        <entry key="status" value="assigned" />
+      </metadata>
+      <childElements />
+    </childElement>
+    <childElement id="f31ce0a0-5bee-413b-bbcc-3eb41717349b" type="Template Output" typeId="09de2192-2507-41a2-8044-286c7ecadec2">
+      <name>Intent.Java.Spring.Cors.CorsConfig</name>
+      <display>Intent.Java.Spring.Cors.CorsConfig</display>
+      <externalReference>Intent.Java.Spring.Cors</externalReference>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <isMapped>false</isMapped>
+      <parentFolderId>ec5caf31-fea9-4784-a7a3-c7a7a7d480ed</parentFolderId>
+      <stereotypes />
+      <metadata>
+        <entry key="status" value="assigned" />
+      </metadata>
+      <childElements />
+    </childElement>
+    <childElement id="9b24c8d2-95dc-457d-8df0-23308cc55ea4" type="Template Output" typeId="09de2192-2507-41a2-8044-286c7ecadec2">
+      <name>Intent.Java.SpringBoot.Security.MethodSecurityConfig</name>
+      <display>Intent.Java.SpringBoot.Security.MethodSecurityConfig</display>
+      <externalReference>Intent.Java.SpringBoot.Security</externalReference>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <isMapped>false</isMapped>
+      <parentFolderId>ec5caf31-fea9-4784-a7a3-c7a7a7d480ed</parentFolderId>
+      <stereotypes />
+      <metadata>
+        <entry key="status" value="assigned" />
+      </metadata>
+      <childElements />
+    </childElement>
+    <childElement id="b10e6a18-8283-49ab-8287-14ac2d179efc" type="Template Output" typeId="09de2192-2507-41a2-8044-286c7ecadec2">
+      <name>Intent.Java.SpringBoot.Security.WebSecurityConfig</name>
+      <display>Intent.Java.SpringBoot.Security.WebSecurityConfig</display>
+      <externalReference>Intent.Java.SpringBoot.Security</externalReference>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <isMapped>false</isMapped>
+      <parentFolderId>ec5caf31-fea9-4784-a7a3-c7a7a7d480ed</parentFolderId>
+      <stereotypes />
+      <metadata>
+        <entry key="status" value="assigned" />
+      </metadata>
+      <childElements />
+    </childElement>
+  </childElements>
+</class>

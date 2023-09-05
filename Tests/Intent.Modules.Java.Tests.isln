@@ -7,9 +7,10 @@
   <iconType>FontAwesome</iconType>
   <metadataRelativePath>Intent.Metadata</metadataRelativePath>
   <modulesCacheRelativePath>.intent/modules</modulesCacheRelativePath>
-  <lastUsedApplicationTemplate id="Intent.Java.SpringBoot.WebApplication" version="3.3.10" />
+  <lastUsedApplicationTemplate id="Intent.Java.SpringBoot.WebApplication" version="3.4.5" />
   <applications>
     <application id="bcc9ac0a-2cc1-4f78-ab3f-f847093c7680" name="SpringBoot2.StandardApp" relativePath="SpringBoot2.StandardApp/SpringBoot2.StandardApp.application.config" />
     <application id="a023930b-b981-4009-9654-fb12221230ed" name="SpringBoot2.JPA.SqlServer" relativePath="SpringBoot2.JPA.SqlServer/SpringBoot2.JPA.SqlServer.application.config" />
+    <application id="4a891c19-c9d1-4623-925c-0e9ae22ef6a6" name="SpringBoot3.StandardApp" relativePath="SpringBoot3.StandardApp/SpringBoot3.StandardApp.application.config" />
   </applications>
 </solution>

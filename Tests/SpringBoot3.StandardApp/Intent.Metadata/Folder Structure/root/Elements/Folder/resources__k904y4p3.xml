@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<class id="94b72dfa-3f29-4ce3-ab8c-95c9ef1ee439" type="Folder" typeId="4d95d53a-8855-4f35-aa82-e312643f5c5f">
+  <name>resources</name>
+  <display>resources</display>
+  <isAbstract>false</isAbstract>
+  <genericTypes />
+  <isMapped>false</isMapped>
+  <parentFolderId>b47339be-8237-48ec-adf3-943e562829ca</parentFolderId>
+  <stereotypes />
+  <metadata />
+  <childElements>
+    <childElement id="959e2b52-b5ab-40d5-b9e7-4f8fe50eb7b2" type="Template Output" typeId="09de2192-2507-41a2-8044-286c7ecadec2">
+      <name>Intent.Java.SpringBoot.ApplicationProperties</name>
+      <display>Intent.Java.SpringBoot.ApplicationProperties</display>
+      <externalReference>Intent.Java.SpringBoot</externalReference>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <isMapped>false</isMapped>
+      <parentFolderId>94b72dfa-3f29-4ce3-ab8c-95c9ef1ee439</parentFolderId>
+      <stereotypes />
+      <metadata>
+        <entry key="status" value="assigned" />
+      </metadata>
+      <childElements />
+    </childElement>
+  </childElements>
+</class>

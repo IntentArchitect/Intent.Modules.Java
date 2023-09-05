@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<class id="694650eb-43bc-41cb-93e4-a677e38afb15" type="Folder" typeId="4d95d53a-8855-4f35-aa82-e312643f5c5f">
+  <name>projections</name>
+  <display>projections</display>
+  <isAbstract>false</isAbstract>
+  <genericTypes />
+  <isMapped>false</isMapped>
+  <parentFolderId>a2a16f2b-2696-4ad7-88e2-3f6b64936185</parentFolderId>
+  <stereotypes />
+  <metadata />
+  <childElements>
+    <childElement id="b2cd36cd-8149-47dd-aa07-45eeeec1913d" type="Template Output" typeId="09de2192-2507-41a2-8044-286c7ecadec2">
+      <name>Intent.Java.Persistence.JPA.Queries.QueryProjection</name>
+      <display>Intent.Java.Persistence.JPA.Queries.QueryProjection</display>
+      <externalReference>Intent.Java.Persistence.JPA.Queries</externalReference>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <isMapped>false</isMapped>
+      <parentFolderId>694650eb-43bc-41cb-93e4-a677e38afb15</parentFolderId>
+      <stereotypes />
+      <metadata>
+        <entry key="status" value="assigned" />
+      </metadata>
+      <childElements />
+    </childElement>
+  </childElements>
+</class>

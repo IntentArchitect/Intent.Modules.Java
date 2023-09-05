@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<class id="79b49fea-3e90-4b7d-a833-24478a773247" type="Diagram" typeId="4d66fecd-e9b8-436f-aa50-c59040ad0879">
+  <name>Default Diagram</name>
+  <display>Default Diagram</display>
+  <externalReference>46f6029a-cba7-4cee-b6bc-2b8c5a26ce7b</externalReference>
+  <isAbstract>false</isAbstract>
+  <genericTypes />
+  <isMapped>false</isMapped>
+  <parentFolderId>75df74eb-ffdc-48a6-9990-9a18228fc494</parentFolderId>
+  <packageId>75df74eb-ffdc-48a6-9990-9a18228fc494</packageId>
+  <packageName>SpringBoot3.StandardApp.Domain</packageName>
+  <diagram>
+    <targetPackageId>75df74eb-ffdc-48a6-9990-9a18228fc494</targetPackageId>
+  </diagram>
+  <stereotypes />
+  <metadata />
+  <childElements />
+</class>

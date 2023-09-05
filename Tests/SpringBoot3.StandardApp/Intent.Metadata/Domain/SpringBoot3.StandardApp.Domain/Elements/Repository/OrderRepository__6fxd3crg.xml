@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<class id="665e4f5d-e76d-4353-b4fd-634ec96a6809" type="Repository" typeId="96ffceb2-a70a-4b69-869b-0df436c470c3">
+  <name>OrderRepository</name>
+  <display>OrderRepository&lt;Order&gt;</display>
+  <isAbstract>false</isAbstract>
+  <sort-children>manually</sort-children>
+  <genericTypes />
+  <typeReference id="481878b3-0a6c-45fc-be04-de44727d7f53">
+    <typeId>8b4569c6-a070-49fb-ac35-3e2c9d83eff6</typeId>
+    <isNavigable>true</isNavigable>
+    <isNullable>false</isNullable>
+    <isCollection>false</isCollection>
+    <isRequired>true</isRequired>
+    <typePackageName>External.Domain.Package</typePackageName>
+    <typePackageId>74b6957a-0980-489a-80f1-b8ff642f1a7a</typePackageId>
+    <stereotypes />
+    <genericTypeParameters />
+  </typeReference>
+  <isMapped>false</isMapped>
+  <parentFolderId>75df74eb-ffdc-48a6-9990-9a18228fc494</parentFolderId>
+  <packageId>75df74eb-ffdc-48a6-9990-9a18228fc494</packageId>
+  <packageName>SpringBoot3.StandardApp.Domain</packageName>
+  <stereotypes />
+  <metadata />
+  <childElements />
+</class>

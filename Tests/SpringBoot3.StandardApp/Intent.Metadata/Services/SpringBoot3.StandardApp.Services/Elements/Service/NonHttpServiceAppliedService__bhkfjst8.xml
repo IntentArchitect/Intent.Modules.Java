@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<class id="e386f497-e190-4d4c-a9aa-cab759e278c7" type="Service" typeId="b16578a5-27b1-4047-a8df-f0b783d706bd">
+  <name>NonHttpServiceAppliedService</name>
+  <display>NonHttpServiceAppliedService</display>
+  <isAbstract>false</isAbstract>
+  <sort-children>by-type-then-manually</sort-children>
+  <genericTypes />
+  <isMapped>false</isMapped>
+  <parentFolderId>0c1c0e25-c8f3-4a33-8dd7-33e74e334114</parentFolderId>
+  <packageId>0c1c0e25-c8f3-4a33-8dd7-33e74e334114</packageId>
+  <packageName>SpringBoot3.StandardApp.Services</packageName>
+  <stereotypes>
+    <stereotype stereotypeDefinitionId="824d3c4c-8e15-4413-afb7-6bcd372fe557" name="CORS Settings">
+      <addedByDefault>true</addedByDefault>
+      <definitionPackageName>Intent.Java.Spring.Cors</definitionPackageName>
+      <definitionPackageId>697b3afa-5cbc-4332-8476-351bd64446b9</definitionPackageId>
+      <properties>
+        <property name="470eec96-2dc7-4a8b-833b-55c25e797a82" display="Allow Cross Origin Requests" value="false" isActive="true" />
+      </properties>
+    </stereotype>
+  </stereotypes>
+  <metadata />
+  <childElements>
+    <childElement id="a9efe9d7-2cdc-475a-a72e-53399bf3f2dc" type="Operation" typeId="e030c97a-e066-40a7-8188-808c275df3cb">
+      <name>BasicOperation</name>
+      <display>BasicOperation(): void</display>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <typeReference id="1f08f2d8-a9ea-49c3-b545-1e7be6b4e443">
+        <isNavigable>true</isNavigable>
+        <isNullable>false</isNullable>
+        <isCollection>false</isCollection>
+        <isRequired>true</isRequired>
+        <stereotypes />
+        <genericTypeParameters />
+      </typeReference>
+      <isMapped>false</isMapped>
+      <parentFolderId>e386f497-e190-4d4c-a9aa-cab759e278c7</parentFolderId>
+      <packageId>0c1c0e25-c8f3-4a33-8dd7-33e74e334114</packageId>
+      <packageName>SpringBoot3.StandardApp.Services</packageName>
+      <stereotypes>
+        <stereotype stereotypeDefinitionId="824d3c4c-8e15-4413-afb7-6bcd372fe557" name="CORS Settings">
+          <addedByDefault>true</addedByDefault>
+          <definitionPackageName>Intent.Java.Spring.Cors</definitionPackageName>
+          <definitionPackageId>697b3afa-5cbc-4332-8476-351bd64446b9</definitionPackageId>
+          <properties>
+            <property name="470eec96-2dc7-4a8b-833b-55c25e797a82" display="Allow Cross Origin Requests" value="false" isActive="true" />
+          </properties>
+        </stereotype>
+      </stereotypes>
+      <metadata />
+      <childElements />
+    </childElement>
+  </childElements>
+</class>

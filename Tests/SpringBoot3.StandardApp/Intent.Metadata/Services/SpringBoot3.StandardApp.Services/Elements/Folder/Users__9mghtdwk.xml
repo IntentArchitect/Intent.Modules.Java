@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<class id="23184f8b-ade4-45bd-91a8-1a29972a8952" type="Folder" typeId="4d95d53a-8855-4f35-aa82-e312643f5c5f">
+  <name>Users</name>
+  <display>Users</display>
+  <isAbstract>false</isAbstract>
+  <sort-children>by-type-then-by-name</sort-children>
+  <genericTypes />
+  <isMapped>false</isMapped>
+  <parentFolderId>0c1c0e25-c8f3-4a33-8dd7-33e74e334114</parentFolderId>
+  <packageId>0c1c0e25-c8f3-4a33-8dd7-33e74e334114</packageId>
+  <packageName>SpringBoot3.StandardApp.Services</packageName>
+  <stereotypes />
+  <metadata />
+  <childElements />
+</class>
