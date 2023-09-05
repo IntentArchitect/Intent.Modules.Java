@@ -7,6 +7,7 @@ using Intent.Modelers.Domain.Api;
 using Intent.Modules.Common.Java.Templates;
 using Intent.Modules.Common.Templates;
 using Intent.Modules.Java.Domain.Templates.DomainModel;
+using Intent.Modules.Java.SpringBoot.Settings;
 using Intent.RoslynWeaver.Attributes;
 
 [assembly: DefaultIntentManaged(Mode.Merge)]
@@ -31,7 +32,12 @@ namespace Intent.Modules.Java.BeanValidation.Decorators
         {
             _template = template;
             _application = application;
-            _template.AddDependency(new JavaDependency("javax.validation", "validation-api"));
+
+            var validationDependency = JavaDependencies.ValidationApi(application);
+            if (validationDependency is not null)
+            {
+                _template.AddDependency(validationDependency);
+            }
         }
         
         private string Use(string fullyQualifiedType, string import = null)
@@ -50,17 +56,17 @@ namespace Intent.Modules.Java.BeanValidation.Decorators
             var annotations = new List<string>();
             if (model.GetTextConstraints()?.MaxLength() != null)
             {
-                annotations.Add($"@{("javax.validation.constraints.Size")}(max = {model.GetTextConstraints().MaxLength()})");
+                annotations.Add($"@{($"{JavaxJakarta()}.validation.constraints.Size")}(max = {model.GetTextConstraints().MaxLength()})");
             }
 
             if (model.Name.ToLower().EndsWith("email"))
             {
-                annotations.Add($"@{Use("javax.validation.constraints.Email")}");
+                annotations.Add($"@{Use($"{JavaxJakarta()}.validation.constraints.Email")}");
             }
 
             if (!model.TypeReference.IsNullable)
             {
-                annotations.Add($"@{Use("javax.validation.constraints.NotNull")}");
+                annotations.Add($"@{Use($"{JavaxJakarta()}.validation.constraints.NotNull")}");
             }
 
             return @"
@@ -71,6 +77,16 @@ namespace Intent.Modules.Java.BeanValidation.Decorators
         public IEnumerable<string> DeclareImports()
         {
             return _imports;
+        }
+        
+        private string JavaxJakarta()
+        {
+            return _application.Settings.GetSpringBoot().TargetVersion().AsEnum() switch
+            {
+                SpringBoot.Settings.SpringBoot.TargetVersionOptionsEnum.V2_7_5 => "javax",
+                SpringBoot.Settings.SpringBoot.TargetVersionOptionsEnum.V3_1_3 => "jakarta",
+                _ => throw new ArgumentOutOfRangeException()
+            };
         }
     }
 }

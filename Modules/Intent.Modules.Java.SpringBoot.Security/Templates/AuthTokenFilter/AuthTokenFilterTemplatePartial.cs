@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using Intent.Engine;
 using Intent.Modules.Common;
@@ -5,6 +6,7 @@ using Intent.Modules.Common.Java;
 using Intent.Modules.Common.Java.Templates;
 using Intent.Modules.Common.Templates;
 using Intent.Modules.Java.SpringBoot.Events;
+using Intent.Modules.Java.SpringBoot.Settings;
 using Intent.RoslynWeaver.Attributes;
 using Intent.Templates;
 
@@ -42,5 +44,14 @@ namespace Intent.Modules.Java.SpringBoot.Security.Templates.AuthTokenFilter
             );
         }
 
+        private string JavaxJakarta()
+        {
+            return ExecutionContext.Settings.GetSpringBoot().TargetVersion().AsEnum() switch
+            {
+                SpringBoot.Settings.SpringBoot.TargetVersionOptionsEnum.V2_7_5 => "javax",
+                SpringBoot.Settings.SpringBoot.TargetVersionOptionsEnum.V3_1_3 => "jakarta",
+                _ => throw new ArgumentOutOfRangeException()
+            };
+        }
     }
 }

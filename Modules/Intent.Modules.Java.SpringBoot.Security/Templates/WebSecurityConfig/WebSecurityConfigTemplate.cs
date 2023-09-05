@@ -20,30 +20,24 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
-import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
+import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 @Configuration
 @EnableWebSecurity
-public class {ClassName} extends WebSecurityConfigurerAdapter {{
-    @Override
-    protected void configure(HttpSecurity http) throws Exception {{
-        http
-                .cors().and().csrf().disable()
-                .authorizeRequests()
-                .antMatchers(""/api/auth/**"", ""/swagger-ui/**"", ""/v3/api-docs/**"", ""/swagger-resources/**"").permitAll()
-                .anyRequest().authenticated();
-
-        http.addFilterBefore(authenticationJwtTokenFilter(), UsernamePasswordAuthenticationFilter.class);
-    }}
-
+public class {ClassName} {{
     @Bean
-    public {this.GetAuthTokenFilterName()} authenticationJwtTokenFilter() {{
-        return new {this.GetAuthTokenFilterName()}();
+    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {{
+        http.csrf(csrf -> csrf.ignoringRequestMatchers(""/no-csrf""))
+            .authorizeHttpRequests(registry -> registry
+                .requestMatchers(""/api/auth/**"", ""/swagger-ui/**"", ""/v3/api-docs/**"", ""/swagger-resources/**"").permitAll()
+                .anyRequest().permitAll());
+
+        return http.build();
     }}
 
     @Bean
