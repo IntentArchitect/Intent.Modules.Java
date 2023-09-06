@@ -208,6 +208,10 @@ namespace Intent.Modules.Java.SpringBoot.Templates.RestController
                     return
                         $"@RequestParam(value = \"{parameter.Name}\"{required})";
                 }
+                else if (parameter.TypeReference?.HasJavaMapType() == true)
+                {
+                    return $"@RequestParam";
+                }
 
                 if (GetHttpVerb(operation) == HttpVerb.Patch ||
                     GetHttpVerb(operation) == HttpVerb.Post ||

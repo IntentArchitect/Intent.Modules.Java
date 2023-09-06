@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<class id="0e4f0533-50bd-454c-9ede-de0edb70cea0" type="Service" typeId="b16578a5-27b1-4047-a8df-f0b783d706bd">
+  <name>MapFieldService</name>
+  <display>MapFieldService</display>
+  <isAbstract>false</isAbstract>
+  <sort-children>by-type-then-manually</sort-children>
+  <genericTypes />
+  <isMapped>false</isMapped>
+  <parentFolderId>0c1c0e25-c8f3-4a33-8dd7-33e74e334114</parentFolderId>
+  <packageId>0c1c0e25-c8f3-4a33-8dd7-33e74e334114</packageId>
+  <packageName>SpringBoot3.StandardApp.Services</packageName>
+  <stereotypes>
+    <stereotype stereotypeDefinitionId="824d3c4c-8e15-4413-afb7-6bcd372fe557" name="CORS Settings">
+      <addedByDefault>true</addedByDefault>
+      <definitionPackageName>Intent.Java.Spring.Cors</definitionPackageName>
+      <definitionPackageId>697b3afa-5cbc-4332-8476-351bd64446b9</definitionPackageId>
+      <properties>
+        <property name="470eec96-2dc7-4a8b-833b-55c25e797a82" display="Allow Cross Origin Requests" value="false" isActive="true" />
+      </properties>
+    </stereotype>
+    <stereotype stereotypeDefinitionId="c29224ec-d473-4b95-ad4a-ec55c676c4fd" name="Http Service Settings">
+      <addedByDefault>false</addedByDefault>
+      <definitionPackageName>Intent.Metadata.WebApi</definitionPackageName>
+      <definitionPackageId>0011387a-b122-45d7-9cdb-8e21b315ab9f</definitionPackageId>
+      <properties>
+        <property name="1e223bd0-7a72-435a-8741-a612d88e4a12" display="Route" value="api/map-field" isActive="true" />
+      </properties>
+    </stereotype>
+  </stereotypes>
+  <metadata />
+  <childElements>
+    <childElement id="f2ad9598-0fac-4577-98e0-82fa4933f647" type="Operation" typeId="e030c97a-e066-40a7-8188-808c275df3cb">
+      <name>ReceiveMapParam</name>
+      <display>ReceiveMapParam(map: Map&lt;string, string&gt;?): string</display>
+      <isAbstract>false</isAbstract>
+      <sort-children>by-type-then-manually</sort-children>
+      <genericTypes />
+      <typeReference id="a5dd2bc6-8e0c-4ae3-939c-2827ee4f16ad">
+        <typeId>d384db9c-a279-45e1-801e-e4e8099625f2</typeId>
+        <isNavigable>true</isNavigable>
+        <isNullable>false</isNullable>
+        <isCollection>false</isCollection>
+        <isRequired>true</isRequired>
+        <typePackageName>Intent.Common.Types</typePackageName>
+        <typePackageId>870ad967-cbd4-4ea9-b86d-9c3a5d55ea67</typePackageId>
+        <stereotypes />
+        <genericTypeParameters />
+      </typeReference>
+      <isMapped>false</isMapped>
+      <parentFolderId>0e4f0533-50bd-454c-9ede-de0edb70cea0</parentFolderId>
+      <packageId>0c1c0e25-c8f3-4a33-8dd7-33e74e334114</packageId>
+      <packageName>SpringBoot3.StandardApp.Services</packageName>
+      <stereotypes>
+        <stereotype stereotypeDefinitionId="824d3c4c-8e15-4413-afb7-6bcd372fe557" name="CORS Settings">
+          <addedByDefault>true</addedByDefault>
+          <definitionPackageName>Intent.Java.Spring.Cors</definitionPackageName>
+          <definitionPackageId>697b3afa-5cbc-4332-8476-351bd64446b9</definitionPackageId>
+          <properties>
+            <property name="470eec96-2dc7-4a8b-833b-55c25e797a82" display="Allow Cross Origin Requests" value="false" isActive="true" />
+          </properties>
+        </stereotype>
+        <stereotype stereotypeDefinitionId="b4581ed2-42ec-4ae2-83dd-dcdd5f0837b6" name="Http Settings">
+          <addedByDefault>false</addedByDefault>
+          <definitionPackageName>Intent.Metadata.WebApi</definitionPackageName>
+          <definitionPackageId>0011387a-b122-45d7-9cdb-8e21b315ab9f</definitionPackageId>
+          <properties>
+            <property name="801c3e61-4431-4d81-93fa-7e57d33cb3fa" display="Verb" value="GET" isActive="true" />
+            <property name="5dd3e07d-76eb-45d4-9956-4325fb068acc" display="Route" value="receive-map-param" isActive="true" />
+            <property name="4490e212-1e99-43ce-b3dd-048ed2a6bae8" display="Return Type Mediatype" value="Default" isActive="true" />
+          </properties>
+        </stereotype>
+      </stereotypes>
+      <metadata />
+      <childElements>
+        <childElement id="ddef2c20-449a-43b7-b6ee-3ee43d295978" type="Parameter" typeId="00208d20-469d-41cb-8501-768fd5eb796b">
+          <name>map</name>
+          <display>in : map: Map&lt;string, string&gt;?</display>
+          <isAbstract>false</isAbstract>
+          <genericTypes />
+          <typeReference id="7c415203-3ae0-4bfe-9d2f-61b618b6a6e4">
+            <typeId>49c6163a-3640-4df5-a7c9-ed4bab8af996</typeId>
+            <isNavigable>true</isNavigable>
+            <isNullable>true</isNullable>
+            <isCollection>false</isCollection>
+            <isRequired>true</isRequired>
+            <typePackageName>Intent.Common.Java</typePackageName>
+            <typePackageId>1b8f2b45-99c0-42dc-b28e-bcd4621c3e71</typePackageId>
+            <stereotypes />
+            <genericTypeParameters>
+              <genericTypeParameter id="30499baf-5e22-496f-b904-160ccfb9c210">
+                <typeId>d384db9c-a279-45e1-801e-e4e8099625f2</typeId>
+                <isNavigable>true</isNavigable>
+                <isNullable>false</isNullable>
+                <isCollection>false</isCollection>
+                <isRequired>true</isRequired>
+                <genericTypeId>cd19b6e0-4c19-4457-a1b2-1258e11f1de6</genericTypeId>
+                <typePackageName>Intent.Common.Types</typePackageName>
+                <typePackageId>870ad967-cbd4-4ea9-b86d-9c3a5d55ea67</typePackageId>
+                <stereotypes />
+                <genericTypeParameters />
+              </genericTypeParameter>
+              <genericTypeParameter id="22567225-788c-456a-9edd-771fe8fbca7e">
+                <typeId>d384db9c-a279-45e1-801e-e4e8099625f2</typeId>
+                <isNavigable>true</isNavigable>
+                <isNullable>false</isNullable>
+                <isCollection>false</isCollection>
+                <isRequired>true</isRequired>
+                <genericTypeId>9fda189e-6c08-434f-8a96-61bf45e43c1f</genericTypeId>
+                <typePackageName>Intent.Common.Types</typePackageName>
+                <typePackageId>870ad967-cbd4-4ea9-b86d-9c3a5d55ea67</typePackageId>
+                <stereotypes />
+                <genericTypeParameters />
+              </genericTypeParameter>
+            </genericTypeParameters>
+          </typeReference>
+          <isMapped>false</isMapped>
+          <parentFolderId>f2ad9598-0fac-4577-98e0-82fa4933f647</parentFolderId>
+          <packageId>0c1c0e25-c8f3-4a33-8dd7-33e74e334114</packageId>
+          <packageName>SpringBoot3.StandardApp.Services</packageName>
+          <stereotypes>
+            <stereotype stereotypeDefinitionId="d01df110-1208-4af8-a913-92a49d219552" name="Parameter Settings">
+              <addedByDefault>false</addedByDefault>
+              <definitionPackageName>Intent.Metadata.WebApi</definitionPackageName>
+              <definitionPackageId>0011387a-b122-45d7-9cdb-8e21b315ab9f</definitionPackageId>
+              <properties>
+                <property name="d2630e0f-f930-404f-b453-1e8052a712f5" display="Source" value="Default" isActive="true" />
+                <property name="7a331e9b-f13c-4b33-9013-bd59b4a4999c" display="Header Name" isActive="false" />
+              </properties>
+            </stereotype>
+          </stereotypes>
+          <metadata />
+          <childElements />
+        </childElement>
+      </childElements>
+    </childElement>
+  </childElements>
+</class>

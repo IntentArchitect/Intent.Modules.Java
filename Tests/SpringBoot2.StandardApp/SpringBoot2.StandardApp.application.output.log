@@ -156,6 +156,14 @@
     </FileLog>
     <FileLog>
       <ProjectId>fdf6f912-98b9-427b-9fbe-943aa386cedd</ProjectId>
+      <CorrelationId>Intent.Java.SpringBoot.RestController#5360f050-e7b0-45c8-8ae4-15c38263a737</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>src/main/java/com/Intent.Modules.Java.Tests/Standard.SpringBoot.TestApplication/application/rest/MapFieldController.java</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>MapFieldController.java</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
+      <ProjectId>fdf6f912-98b9-427b-9fbe-943aa386cedd</ProjectId>
       <CorrelationId>Intent.Java.SpringBoot.Validation.RestResponseEntityExceptionHandler</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>src/main/java/com/Intent.Modules.Java.Tests/Standard.SpringBoot.TestApplication/application/rest/RestResponseEntityExceptionHandler.java</ApplicationRelativeFilePath>
@@ -212,6 +220,14 @@
     </FileLog>
     <FileLog>
       <ProjectId>d695fc71-35ed-44d8-8c28-58008eaf6f73</ProjectId>
+      <CorrelationId>Intent.Java.Services.ServiceImplementation#5360f050-e7b0-45c8-8ae4-15c38263a737</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>src/main/java/com/Intent.Modules.Java.Tests/Standard.SpringBoot.TestApplication/application/services/impl/MapFieldServiceImpl.java</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>MapFieldServiceImpl.java</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
+      <ProjectId>d695fc71-35ed-44d8-8c28-58008eaf6f73</ProjectId>
       <CorrelationId>Intent.Java.Services.ServiceImplementation#93c20c66-9965-401a-af2c-492ecd868a89</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>src/main/java/com/Intent.Modules.Java.Tests/Standard.SpringBoot.TestApplication/application/services/impl/NonHttpServiceAppliedServiceImpl.java</ApplicationRelativeFilePath>
@@ -232,6 +248,14 @@
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>src/main/java/com/Intent.Modules.Java.Tests/Standard.SpringBoot.TestApplication/application/services/impl/UsersServiceImpl.java</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>UsersServiceImpl.java</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
+      <ProjectId>17313b42-7aa4-4276-bbde-c5f8bb96566c</ProjectId>
+      <CorrelationId>Intent.Java.Services.ServiceInterface#5360f050-e7b0-45c8-8ae4-15c38263a737</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>src/main/java/com/Intent.Modules.Java.Tests/Standard.SpringBoot.TestApplication/application/services/MapFieldService.java</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>MapFieldService.java</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
