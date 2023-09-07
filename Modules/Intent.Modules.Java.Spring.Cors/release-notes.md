@@ -1,6 +1,6 @@
 ### Version 3.4.0
 
-- Improvement: `cors.origin` property introduced instead of being hardcoded.
+- Improvement: `cors.origins` property introduced instead of being hardcoded and allows multiple locations to be specified.
 
 ### Version 3.3.11
 

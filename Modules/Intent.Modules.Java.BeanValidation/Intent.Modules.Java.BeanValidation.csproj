@@ -15,7 +15,7 @@
     </PackageReference>
     <PackageReference Include="Intent.RoslynWeaver.Attributes" Version="2.1.1" />
     <PackageReference Include="Intent.SoftwareFactory.SDK" Version="3.4.2" />
-    <PackageReference Include="Intent.Modules.Java.SpringBoot" Version="3.6.0-pre.0"/>
+    <PackageReference Include="Intent.Modules.Java.SpringBoot" Version="3.6.0-pre.2"/>
   </ItemGroup>
 
 </Project>

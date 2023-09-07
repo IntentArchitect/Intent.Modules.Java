@@ -1,6 +1,7 @@
 ### Version 3.6.0
 
 - Improvement: Support for Spring Boot v3.1.3.
+- Improvement: Java Properties can now cater for comments as well introduced by Modules.
 
 ### Version 3.5.1
 

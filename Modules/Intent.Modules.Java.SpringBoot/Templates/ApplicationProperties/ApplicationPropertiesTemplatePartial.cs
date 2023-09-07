@@ -27,11 +27,11 @@ namespace Intent.Modules.Java.SpringBoot.Templates.ApplicationProperties
         [IntentManaged(Mode.Merge, Signature = Mode.Fully)]
         public ApplicationPropertiesTemplate(IOutputTarget outputTarget, object model = null) : base(TemplateId, outputTarget, model)
         {
-            ExecutionContext.EventDispatcher.Subscribe<ApplicationPropertyRequest>(x => Handle(x.Name, x.Value, null));
-            ExecutionContext.EventDispatcher.Subscribe<ApplicationPropertyRequiredEvent>(x => Handle(x.Name, x.Value, x.Profile));
+            ExecutionContext.EventDispatcher.Subscribe<ApplicationPropertyRequest>(x => Handle(x.Name, x.Value, x.Comment, null));
+            ExecutionContext.EventDispatcher.Subscribe<ApplicationPropertyRequiredEvent>(x => Handle(x.Name, x.Value, null, x.Profile));
         }
 
-        private void Handle(string name, string value, string profile)
+        private void Handle(string name, string value, string? comment, string? profile)
         {
             if (_properties.TryGetValue(name, out var property))
             {
@@ -39,7 +39,7 @@ namespace Intent.Modules.Java.SpringBoot.Templates.ApplicationProperties
 {property.StackTrace}");
             }
 
-            _properties.Add(name, new ApplicationProperty(value, profile, Environment.StackTrace));
+            _properties.Add(name, new ApplicationProperty(value, comment, profile, Environment.StackTrace));
         }
 
         [IntentManaged(Mode.Fully, Body = Mode.Ignore)]
@@ -60,32 +60,38 @@ namespace Intent.Modules.Java.SpringBoot.Templates.ApplicationProperties
             }
 
             var sb = new StringBuilder(content);
-
+            
             var existing = content
                 .Replace("\r\n", "\n")
                 .Split('\n')
-                .Where(x => x.Contains('='))
+                .Where(x => !x.TrimStart().StartsWith("#") && x.Contains('='))
                 .Select(x => x.Split('=').First().Trim())
                 .ToHashSet();
-
-            foreach (var (name, (value, _, _)) in _properties)
+            
+            foreach (var (name, (value, comment, _, _)) in _properties)
             {
                 if (existing.Contains(name))
                 {
                     continue;
                 }
 
+                if (!string.IsNullOrWhiteSpace(comment))
+                {
+                    var linePrefix = comment.StartsWith("#") ? string.Empty : "# ";
+                    sb.AppendLine($"{linePrefix}{comment}");
+                }
                 sb.AppendLine($"{name}={value}");
                 existing.Add(name);
             }
-
+            
             return sb.ToString();
         }
 
-        private record ApplicationProperty(string Value, string Profile, string StackTrace)
+        private record ApplicationProperty(string Value, string? Comment, string? Profile, string StackTrace)
         {
             public string Value { get; } = Value;
-            public string Profile { get; } = Profile;
+            public string? Comment { get; } = Comment;
+            public string? Profile { get; } = Profile;
             public string StackTrace { get; } = StackTrace;
         }
     }

@@ -37,7 +37,7 @@ namespace Intent.Modules.Java.Spring.Cors.Templates.CorsConfig
         public override void BeforeTemplateExecution()
         {
             base.BeforeTemplateExecution();
-            ExecutionContext.EventDispatcher.Publish(new ApplicationPropertyRequest("cors.origin", "http://localhost:4200"));
+            ExecutionContext.EventDispatcher.Publish(new ApplicationPropertyRequest("cors.origins", "http://localhost:4200", "CORS Origins, comma separated."));
         }
     }
 }

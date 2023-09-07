@@ -8,8 +8,8 @@ import org.springframework.beans.factory.annotation.Value;
 
 @Configuration
 public class CorsConfig {
-    @Value("${cors.origin}")
-    private String origin;
+    @Value("${cors.origins}")
+    private String[] origins;
 
     @Bean
     public WebMvcConfigurer corsConfigurer() {
@@ -17,7 +17,7 @@ public class CorsConfig {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/api/**")
-                        .allowedOrigins(origin)
+                        .allowedOrigins(origins)
                         .allowedMethods("*")
                         .maxAge(3600)
                         .allowedHeaders("*")
