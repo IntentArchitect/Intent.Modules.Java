@@ -17,13 +17,17 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
+import lombok.Setter;
 
 @Entity
 @Table(name = "tph_concrete_base_classes")
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
-@Data
+@Getter
+@Setter
 @AllArgsConstructor
-@NoArgsConstructor
+@RequiredArgsConstructor
 @IntentManageClass(privateMethods = Mode.Ignore)
 public class TphConcreteBaseClass implements Serializable {
     private static final long serialVersionUID = 1L;

@@ -1,13 +1,11 @@
 package com.Intent.Modules.Java.Tests.SpringBoot3.StandardApp.domain.models;
 
-import lombok.NoArgsConstructor;
+import lombok.*;
 import com.Intent.Modules.Java.Tests.SpringBoot3.StandardApp.intent.IntentManageClass;
 import com.Intent.Modules.Java.Tests.SpringBoot3.StandardApp.intent.Mode;
 import java.io.Serializable;
 import java.util.List;
 import java.util.UUID;
-import lombok.AllArgsConstructor;
-import lombok.Data;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -21,11 +19,18 @@ import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Email;
 
+import lombok.NoArgsConstructor;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
+import lombok.Setter;
+
 @Entity
 @Table(name = "users")
-@Data
+@RequiredArgsConstructor
+@Getter
+@Setter
 @AllArgsConstructor
-@NoArgsConstructor
 @IntentManageClass(privateMethods = Mode.Ignore)
 public class User implements Serializable {
     private static final long serialVersionUID = 1L;

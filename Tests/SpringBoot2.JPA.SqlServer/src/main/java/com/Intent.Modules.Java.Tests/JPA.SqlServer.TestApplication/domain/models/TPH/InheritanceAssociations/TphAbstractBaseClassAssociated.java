@@ -14,12 +14,16 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
+import lombok.Setter;
 
 @Entity
 @Table(name = "tph_abstract_base_class_associateds")
-@Data
+@Getter
+@Setter
 @AllArgsConstructor
-@NoArgsConstructor
+@RequiredArgsConstructor
 @IntentManageClass(privateMethods = Mode.Ignore)
 public class TphAbstractBaseClassAssociated implements Serializable {
     private static final long serialVersionUID = 1L;

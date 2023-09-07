@@ -60,22 +60,23 @@ namespace Intent.Modules.Java.Domain.Templates.DomainModel
                 yield return annotation;
             }
 
-            if (Model.IsAbstract)
-            {
-                yield return $"@{ImportType("lombok.Getter")}";
-                yield return $"@{ImportType("lombok.Setter")}";
-            }
-            else
-            {
-                yield return $"@{ImportType("lombok.Data")}";
-            }
+            yield return $"@{ImportType("lombok.Getter")}";
+            yield return $"@{ImportType("lombok.Setter")}";
 
             if (Model.Attributes.Any() || GetDecorators().SelectMany(x => x.Fields()).Any())
             {
                 yield return $"@{ImportType("lombok.AllArgsConstructor")}";
             }
 
-            yield return "@NoArgsConstructor";
+            if (Model.IsAbstract)
+            {
+                yield return "@NoArgsConstructor";
+            }
+            else
+            {
+                yield return $"@{ImportType("lombok.RequiredArgsConstructor")}";
+            }
+
             yield return $"{this.IntentManageClassAnnotation()}(privateMethods = {this.IntentModeIgnore()})";
         }
 

@@ -10,13 +10,17 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
+import lombok.Setter;
 
 @Entity
 @SecondaryTable(name = TptPoly_ConcreteB.TABLE_NAME)
 @Table(name = "TptPoly_ConcreteB")
-@Data
+@Getter
+@Setter
 @AllArgsConstructor
-@NoArgsConstructor
+@RequiredArgsConstructor
 @IntentManageClass(privateMethods = Mode.Ignore)
 public class TptPoly_ConcreteB extends TptPoly_BaseClassNonAbstract {
     private static final long serialVersionUID = 1L;

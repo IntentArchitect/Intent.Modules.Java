@@ -15,6 +15,9 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
+import lombok.Setter;
 
 @Entity
 @Table(name = "stereotype_indices", indexes = { @Index(name = "IX_StereotypeIndex_defaultIndexField", columnList = "default_index_field"),
@@ -23,9 +26,10 @@ import lombok.Data;
         @Index(name = "", columnList = "default_index_field"),
         @Index(name = "CustomIndexField", columnList = "custom_index_field"),
         @Index(name = "GroupedIndexField", columnList = "grouped_index_field_a,grouped_index_field_b") })
-@Data
+@Getter
+@Setter
 @AllArgsConstructor
-@NoArgsConstructor
+@RequiredArgsConstructor
 @IntentManageClass(privateMethods = Mode.Ignore)
 public class StereotypeIndex implements Serializable {
     private static final long serialVersionUID = 1L;

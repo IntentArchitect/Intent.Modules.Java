@@ -1,6 +1,7 @@
 ### Version 4.2.0
 
 - Improvement: Support for Spring Boot v3.1.3.
+- Improvement: Removed `@Data` and replaced with `@Getter`, `@Setter` and `@RequiredArgsConstructor`. Read this for more details: [Lombok & Hibernate - How to Avoid Common Pitfalls](https://thorben-janssen.com/lombok-hibernate-how-to-avoid-common-pitfalls/).
 - Improvement: Updated modules.
 
 ### Version 4.1.1

@@ -15,12 +15,16 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
+import lombok.Setter;
 
 @Entity
 @Table(name = "custom_indices", indexes = { @Index(name = "IX_CustomIndices_IndexField", columnList = "index_field") })
-@Data
+@Getter
+@Setter
 @AllArgsConstructor
-@NoArgsConstructor
+@RequiredArgsConstructor
 @IntentManageClass(privateMethods = Mode.Ignore)
 public class CustomIndex implements Serializable {
     private static final long serialVersionUID = 1L;

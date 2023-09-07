@@ -11,13 +11,17 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
+import lombok.Setter;
 
 @Entity
 @SecondaryTable(name = TpcDerivedClassForConcrete.TABLE_NAME)
 @Table(name = "TpcDerivedClassForConcrete")
-@Data
+@Getter
+@Setter
 @AllArgsConstructor
-@NoArgsConstructor
+@RequiredArgsConstructor
 @IntentManageClass(privateMethods = Mode.Ignore)
 public class TpcDerivedClassForConcrete extends TpcConcreteBaseClass {
     private static final long serialVersionUID = 1L;

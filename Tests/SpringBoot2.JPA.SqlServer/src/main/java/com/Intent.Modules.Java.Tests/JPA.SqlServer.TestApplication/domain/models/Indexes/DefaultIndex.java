@@ -16,12 +16,16 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
+import lombok.Setter;
 
 @Entity
 @Table(name = "default_indices", indexes = { @Index(name = "IX_DefaultIndices_IndexField", columnList = "index_field") })
-@Data
+@Getter
+@Setter
 @AllArgsConstructor
-@NoArgsConstructor
+@RequiredArgsConstructor
 @IntentManageClass(privateMethods = Mode.Ignore)
 public class DefaultIndex implements Serializable {
     private static final long serialVersionUID = 1L;
