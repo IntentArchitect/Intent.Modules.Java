@@ -1,7 +1,7 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <package>
   <id>Intent.Java.SpringFox.Swagger</id>
-  <version>3.3.12-pre.0</version>
+  <version>3.3.12</version>
   <supportedClientVersions>[3.3.16, 5.0.0-a)</supportedClientVersions>
   <releaseNotes>release-notes.md</releaseNotes>
   <summary>Obsolete. The functionality of this module has been deprecated. It can safely be uninstalled.</summary>
