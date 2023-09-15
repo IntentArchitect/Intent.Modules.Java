@@ -88,7 +88,7 @@
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>src/main/java/com/Intent.Modules.Java.Tests/Standard.SpringBoot.TestApplication/application/models/Users/CreateUserRoleDto.java</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>Users/CreateUserRoleDto.java</ProjectRelativeFilePath>
-      <IsIgnored>true</IsIgnored>
+      <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
       <ProjectId>dfc1a6fa-64e8-4836-b83b-882c8d6af2dc</ProjectId>
