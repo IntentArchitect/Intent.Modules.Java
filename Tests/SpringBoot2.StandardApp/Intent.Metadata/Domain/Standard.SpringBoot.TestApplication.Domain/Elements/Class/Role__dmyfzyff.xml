@@ -6,7 +6,7 @@
   <sort-children>by-type-then-manually</sort-children>
   <genericTypes />
   <isMapped>false</isMapped>
-  <parentFolderId>3531c1e5-6176-40ea-8e6e-1b136deb744d</parentFolderId>
+  <parentFolderId>77b79c7c-5388-46a6-bbeb-5eac4d87e473</parentFolderId>
   <packageId>3531c1e5-6176-40ea-8e6e-1b136deb744d</packageId>
   <packageName>Standard.SpringBoot.TestApplication.Domain</packageName>
   <stereotypes />
