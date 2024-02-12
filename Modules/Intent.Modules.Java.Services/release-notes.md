@@ -1,3 +1,7 @@
+### Version 3.5.1
+
+- Improvement: Support for Spring Boot v3.1.3.
+
 ### Version 3.5.0
 
 - `Transaction Options` stereotype enhanced with ability to disable transactions, set propagation types, isolation levels, time out times, etc.
