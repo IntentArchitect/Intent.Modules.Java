@@ -1,3 +1,7 @@
+### Version 4.0.0
+
+- Improvement: Updated dependencies to use separate `Intent.Code.Weaving.Java` module.
+
 ### Version 3.4.0
 
 - Fixed: When using OpenAPI the security module only allowed access to `/v2/api-docs/` and not `/v3/api-docs/`.

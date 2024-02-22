@@ -4,7 +4,6 @@ import com.Intent.Modules.Java.Tests.Standard.SpringBoot.TestApplication.applica
 import com.Intent.Modules.Java.Tests.Standard.SpringBoot.TestApplication.application.models.authentication.AuthenticationResult;
 import com.Intent.Modules.Java.Tests.Standard.SpringBoot.TestApplication.exceptions.AuthenticationFailedException;
 
-
 public interface AuthService {
     AuthenticationResult authenticate(AuthenticationRequest request)
             throws AuthenticationFailedException;

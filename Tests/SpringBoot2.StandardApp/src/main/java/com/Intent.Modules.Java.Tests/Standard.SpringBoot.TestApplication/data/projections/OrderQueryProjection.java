@@ -2,7 +2,6 @@ package com.Intent.Modules.Java.Tests.Standard.SpringBoot.TestApplication.data.p
 
 import java.util.UUID;
 
-
 public interface OrderQueryProjection {
     String getNumber();
 

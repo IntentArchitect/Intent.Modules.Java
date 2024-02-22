@@ -1,3 +1,7 @@
+### Version 4.0.0
+
+- Improvement: Updated dependencies to use separate `Intent.Code.Weaving.Java` module.
+
 ### Version 3.4.0
 
 - Improvement: `cors.origins` property introduced instead of being hardcoded and allows multiple locations to be specified.

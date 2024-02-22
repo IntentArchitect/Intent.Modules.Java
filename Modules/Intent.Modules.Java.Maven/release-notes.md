@@ -1,3 +1,7 @@
+### Version 4.0.0
+
+- Improvement: Updated dependencies to use separate `Intent.Code.Weaving.Java` module.
+
 ### Version 3.4.0
 
 - Improvement: Add support to `pom.xml` `dependencies` for `exclusions`, `type` and `scope` options 

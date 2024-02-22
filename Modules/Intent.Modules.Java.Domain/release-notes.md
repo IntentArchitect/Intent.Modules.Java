@@ -1,3 +1,7 @@
+### Version 5.0.0
+
+- Improvement: Updated dependencies to use separate `Intent.Code.Weaving.Java` module.
+
 ### Version 4.2.0
 
 - Improvement: Support for Spring Boot v3.1.3.

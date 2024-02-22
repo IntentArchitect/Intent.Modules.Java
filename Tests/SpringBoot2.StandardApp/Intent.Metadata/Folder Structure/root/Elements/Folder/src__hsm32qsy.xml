@@ -14,7 +14,6 @@
       <name>main</name>
       <externalReference>a8d60b7f-ad97-464d-ae2b-5997205a684e</externalReference>
       <isAbstract>false</isAbstract>
-      <order>1</order>
       <genericTypes />
       <isMapped>false</isMapped>
       <parentFolderId>5ed386e4-5e4a-4874-8084-38a70e77f002</parentFolderId>
@@ -25,7 +24,6 @@
           <name>java</name>
           <externalReference>a8fff636-8ce8-48cf-88ff-dca5db9d57f4</externalReference>
           <isAbstract>false</isAbstract>
-          <order>1</order>
           <genericTypes />
           <isMapped>false</isMapped>
           <parentFolderId>08a2c8f6-1326-4289-90a0-0904eef61b9e</parentFolderId>
@@ -36,7 +34,6 @@
               <name>com</name>
               <externalReference>60e9d8fb-e1af-466e-a754-afcb5f6664e8</externalReference>
               <isAbstract>false</isAbstract>
-              <order>1</order>
               <genericTypes />
               <isMapped>false</isMapped>
               <parentFolderId>e97aa647-1253-41bd-b7cf-73240244138e</parentFolderId>
@@ -47,7 +44,6 @@
                   <name>Intent.Modules.Java.Tests</name>
                   <externalReference>ccecf323-5f4d-4195-b47a-45f264eeb0ac</externalReference>
                   <isAbstract>false</isAbstract>
-                  <order>1</order>
                   <genericTypes />
                   <isMapped>false</isMapped>
                   <parentFolderId>9a4e45c5-c752-48f8-bd82-f88d4699a70d</parentFolderId>
@@ -58,7 +54,6 @@
                       <name>Standard.SpringBoot.TestApplication</name>
                       <externalReference>d9187998-c1d2-40b6-836b-263c442d3723</externalReference>
                       <isAbstract>false</isAbstract>
-                      <order>1</order>
                       <genericTypes />
                       <isMapped>false</isMapped>
                       <parentFolderId>e3197a89-67f1-44a4-840d-b660cd8c147d</parentFolderId>
@@ -69,7 +64,6 @@
                           <name>application</name>
                           <externalReference>acb89909-044e-4485-ab3d-ac5f0f1a95ec</externalReference>
                           <isAbstract>false</isAbstract>
-                          <order>1</order>
                           <genericTypes />
                           <isMapped>false</isMapped>
                           <parentFolderId>a0053403-772f-4a98-9023-551e7c818312</parentFolderId>
@@ -80,7 +74,6 @@
                               <name>Application</name>
                               <externalReference>8d0b1980-861b-4326-ba2f-c55740c5a9d9</externalReference>
                               <isAbstract>false</isAbstract>
-                              <order>1</order>
                               <genericTypes />
                               <isMapped>false</isMapped>
                               <parentFolderId>1995251e-714b-44c8-8740-5ed5bf29f157</parentFolderId>
@@ -94,7 +87,6 @@
                           <name>data</name>
                           <externalReference>42928175-7ec8-46e6-a05d-4e92f9ad01b1</externalReference>
                           <isAbstract>false</isAbstract>
-                          <order>2</order>
                           <genericTypes />
                           <isMapped>false</isMapped>
                           <parentFolderId>a0053403-772f-4a98-9023-551e7c818312</parentFolderId>
@@ -105,7 +97,6 @@
                               <name>Data</name>
                               <externalReference>a6fdd101-3ded-414f-9e2c-0ce4a52a5437</externalReference>
                               <isAbstract>false</isAbstract>
-                              <order>1</order>
                               <genericTypes />
                               <isMapped>false</isMapped>
                               <parentFolderId>c30c700a-cd96-4491-a9be-7a94e1ea645c</parentFolderId>
@@ -133,7 +124,6 @@
                           <name>domain</name>
                           <externalReference>07f4851b-3996-4b65-963c-ca6a87cb00dc</externalReference>
                           <isAbstract>false</isAbstract>
-                          <order>3</order>
                           <genericTypes />
                           <isMapped>false</isMapped>
                           <parentFolderId>a0053403-772f-4a98-9023-551e7c818312</parentFolderId>
@@ -144,7 +134,6 @@
                               <name>Domain</name>
                               <externalReference>fb61de22-23eb-4dd4-9f84-3dd274bfe3d5</externalReference>
                               <isAbstract>false</isAbstract>
-                              <order>1</order>
                               <genericTypes />
                               <isMapped>false</isMapped>
                               <parentFolderId>677f0d15-a001-4263-8dea-633421de49ea</parentFolderId>
@@ -158,7 +147,6 @@
                           <name>intent</name>
                           <externalReference>1b13861b-eb93-44c6-9c4a-c1ff8f321b3d</externalReference>
                           <isAbstract>false</isAbstract>
-                          <order>4</order>
                           <genericTypes />
                           <isMapped>false</isMapped>
                           <parentFolderId>a0053403-772f-4a98-9023-551e7c818312</parentFolderId>
@@ -169,7 +157,6 @@
                               <name>Intent.Annotations</name>
                               <externalReference>83e37cdf-a43d-4ff3-b66a-85094cef254a</externalReference>
                               <isAbstract>false</isAbstract>
-                              <order>1</order>
                               <genericTypes />
                               <isMapped>false</isMapped>
                               <parentFolderId>4e8b99f3-f589-4e6c-8402-b4d05b74e70c</parentFolderId>
@@ -309,7 +296,6 @@
                           <name>Startup</name>
                           <externalReference>357d0b07-49c7-4b72-8e21-33434415b152</externalReference>
                           <isAbstract>false</isAbstract>
-                          <order>5</order>
                           <genericTypes />
                           <isMapped>false</isMapped>
                           <parentFolderId>a0053403-772f-4a98-9023-551e7c818312</parentFolderId>

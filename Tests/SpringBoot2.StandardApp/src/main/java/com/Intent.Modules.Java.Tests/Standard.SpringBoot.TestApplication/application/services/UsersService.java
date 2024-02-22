@@ -6,7 +6,6 @@ import com.Intent.Modules.Java.Tests.Standard.SpringBoot.TestApplication.applica
 import java.util.List;
 import java.util.UUID;
 
-
 public interface UsersService {
     UUID Create(UserCreateDto dto);
 

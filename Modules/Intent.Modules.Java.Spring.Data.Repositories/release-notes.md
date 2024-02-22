@@ -1,3 +1,7 @@
+### Version 5.0.0
+
+- Improvement: Updated dependencies to use separate `Intent.Code.Weaving.Java` module.
+
 ### Version 4.3.0
 
 - Improvement: Module updates.

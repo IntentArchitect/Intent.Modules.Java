@@ -2,7 +2,6 @@ package com.Intent.Modules.Java.Tests.Standard.SpringBoot.TestApplication.applic
 
 import java.util.Map;
 
-
 public interface MapFieldService {
     String ReceiveMapParam(Map<String, String> map);
 
