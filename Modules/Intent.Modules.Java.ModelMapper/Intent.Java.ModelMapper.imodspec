@@ -27,10 +27,10 @@
     <dependency id="Intent.Common" version="3.4.1" />
     <dependency id="Intent.Common.Java" version="4.0.0-pre.0" />
     <dependency id="Intent.Common.Types" version="3.3.9" />
-    <dependency id="Intent.Java.Domain" version="4.2.0" />
-    <dependency id="Intent.Java.Services" version="3.4.3" />
+    <dependency id="Intent.Java.Domain" version="5.0.0-pre.0" />
+    <dependency id="Intent.Java.Services" version="4.0.0-pre.0" />
     <dependency id="Intent.Modelers.Services" version="3.4.2" />
-    <dependency id="Intent.Java.Weaving.Annotations" version="3.3.8" />
+    <dependency id="Intent.Java.Weaving.Annotations" version="4.0.0-pre.0" />
   </dependencies>
   <files>
     <file src="$outDir$/$id$.dll" />

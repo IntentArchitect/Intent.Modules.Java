@@ -18,13 +18,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Intent.Modules.Java.Weaving
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Intent.Modules.Java.Spring.Data.Repositories", "Intent.Modules.Java.Spring.Data.Repositories\Intent.Modules.Java.Spring.Data.Repositories.csproj", "{5EE9053B-4284-4568-9E38-3A4AA5A53AC2}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Intent.Modules.Java.BeanValidation", "Intent.Modules.Java.BeanValidation\Intent.Modules.Java.BeanValidation.csproj", "{8220ED3B-FABC-4FF0-945C-ACAFB0ED917C}"
+Project("{52B49DB5-3EA9-4095-B1A7-DF1AC22D7DAE}") = "Intent.Modules.Java.BeanValidation", "Intent.Modules.Java.BeanValidation\Intent.Modules.Java.BeanValidation.csproj", "{8220ED3B-FABC-4FF0-945C-ACAFB0ED917C}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Intent.Modules.Java.ModelMapper", "Intent.Modules.Java.ModelMapper\Intent.Modules.Java.ModelMapper.csproj", "{997D1487-CFEA-43D7-9AEC-BE05F101F8DF}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Intent.Modules.Java.Spring.Cors", "Intent.Modules.Java.Spring.Cors\Intent.Modules.Java.Spring.Cors.csproj", "{10C0B22A-10CB-477A-9C0F-FEFD470ED8E0}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Intent.Modules.Java.Services.CRUD", "Intent.Modules.Java.Services.CRUD\Intent.Modules.Java.Services.CRUD.csproj", "{EF69D81E-E67C-4251-984C-20C3FB2A945E}"
+Project("{52B49DB5-3EA9-4095-B1A7-DF1AC22D7DAE}") = "Intent.Modules.Java.Services.CRUD", "Intent.Modules.Java.Services.CRUD\Intent.Modules.Java.Services.CRUD.csproj", "{EF69D81E-E67C-4251-984C-20C3FB2A945E}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Intent.Modules.Java.Persistence.JPA.Queries", "Intent.Modules.Java.Persistence.JPA.Queries\Intent.Modules.Java.Persistence.JPA.Queries.csproj", "{FE025313-A7D8-48A9-A0D5-9BD9328F82B0}"
 EndProject

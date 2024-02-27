@@ -3,7 +3,7 @@
   <ApplicationId>5260c3ef-ea5c-487d-9150-6b5cb1fc28be</ApplicationId>
   <FileLogs>
     <FileLog>
-      <CorrelationId>Intent.VisualStudio.Projects.VisualStudio2015Solution#1770fe38-7eb9-472f-8e32-873942940570</CorrelationId>
+      <CorrelationId>Intent.VisualStudio.Projects.VisualStudioSolution#1770fe38-7eb9-472f-8e32-873942940570</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>../Intent.Modules.Java.sln</ApplicationRelativeFilePath>
       <IsIgnored>false</IsIgnored>

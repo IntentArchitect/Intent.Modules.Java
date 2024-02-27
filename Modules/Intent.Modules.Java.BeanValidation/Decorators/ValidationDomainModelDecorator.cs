@@ -39,7 +39,7 @@ namespace Intent.Modules.Java.BeanValidation.Decorators
                 _template.AddDependency(validationDependency);
             }
         }
-        
+
         private string Use(string fullyQualifiedType, string import = null)
         {
             import = import ?? fullyQualifiedType;
@@ -78,7 +78,7 @@ namespace Intent.Modules.Java.BeanValidation.Decorators
         {
             return _imports;
         }
-        
+
         private string JavaxJakarta()
         {
             return _application.Settings.GetSpringBoot().TargetVersion().AsEnum() switch
