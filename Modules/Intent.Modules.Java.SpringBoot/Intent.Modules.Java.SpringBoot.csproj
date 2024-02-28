@@ -58,7 +58,6 @@
     <PackageReference Include="Intent.Modules.Common" Version="3.4.1" />
     <PackageReference Include="Intent.Modules.Common.Java" Version="4.0.0-pre.0" />
     <PackageReference Include="Intent.Modules.Java.Services" Version="3.4.2" />
-    <PackageReference Include="Intent.Modules.Java.Weaving.Annotations" Version="3.3.8" />
     <PackageReference Include="Intent.Modules.Metadata.WebApi" Version="4.0.2" />
     <PackageReference Include="Intent.Modules.Modelers.Services" Version="3.4.2" />
     <PackageReference Include="Intent.Packager" Version="3.4.0">
