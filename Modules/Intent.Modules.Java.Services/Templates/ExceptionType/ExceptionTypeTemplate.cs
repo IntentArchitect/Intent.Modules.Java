@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using Intent.RoslynWeaver.Attributes;
+using Intent.Modules.Java.Weaving.Annotations.Templates;
 
 [assembly: DefaultIntentManaged(Mode.Fully)]
 [assembly:IntentTemplate("Intent.ModuleBuilder.Java.Templates.JavaFileStringInterpolationTemplate",Version= "1.0")]
@@ -16,7 +17,7 @@ namespace Intent.Modules.Java.Services.Templates.ExceptionType
             return $@"
 package {Package};
 
-{this.IntentIgnoreBodyAnnotation()}
+{this.GetIntentIgnoreBodyName()}
 public class {ClassName} extends Exception {{
 }}
 ";
