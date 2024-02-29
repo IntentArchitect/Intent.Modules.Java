@@ -15,14 +15,14 @@ namespace Intent.Modules.Java.SpringBoot.Api
     {
         public static CheckedExceptionHandling GetCheckedExceptionHandling(this ExceptionTypeModel model)
         {
-            var stereotype = model.GetStereotype("Checked Exception Handling");
+            var stereotype = model.GetStereotype("05d3f924-e9c7-4ce1-b8f4-f29bc8e7993e");
             return stereotype != null ? new CheckedExceptionHandling(stereotype) : null;
         }
 
 
         public static bool HasCheckedExceptionHandling(this ExceptionTypeModel model)
         {
-            return model.HasStereotype("Checked Exception Handling");
+            return model.HasStereotype("05d3f924-e9c7-4ce1-b8f4-f29bc8e7993e");
         }
 
         public static bool TryGetCheckedExceptionHandling(this ExceptionTypeModel model, out CheckedExceptionHandling stereotype)
@@ -33,7 +33,7 @@ namespace Intent.Modules.Java.SpringBoot.Api
                 return false;
             }
 
-            stereotype = new CheckedExceptionHandling(model.GetStereotype("Checked Exception Handling"));
+            stereotype = new CheckedExceptionHandling(model.GetStereotype("05d3f924-e9c7-4ce1-b8f4-f29bc8e7993e"));
             return true;
         }
 

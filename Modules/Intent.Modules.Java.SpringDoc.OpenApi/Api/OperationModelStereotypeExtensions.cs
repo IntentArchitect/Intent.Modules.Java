@@ -15,14 +15,14 @@ namespace Intent.Java.SpringDoc.OpenApi.Api
     {
         public static OpenAPIOperation GetOpenAPIOperation(this OperationModel model)
         {
-            var stereotype = model.GetStereotype("OpenAPI Operation");
+            var stereotype = model.GetStereotype("f2b1207e-01fa-4961-b997-0bb53f7e6e20");
             return stereotype != null ? new OpenAPIOperation(stereotype) : null;
         }
 
 
         public static bool HasOpenAPIOperation(this OperationModel model)
         {
-            return model.HasStereotype("OpenAPI Operation");
+            return model.HasStereotype("f2b1207e-01fa-4961-b997-0bb53f7e6e20");
         }
 
         public static bool TryGetOpenAPIOperation(this OperationModel model, out OpenAPIOperation stereotype)
@@ -33,20 +33,20 @@ namespace Intent.Java.SpringDoc.OpenApi.Api
                 return false;
             }
 
-            stereotype = new OpenAPIOperation(model.GetStereotype("OpenAPI Operation"));
+            stereotype = new OpenAPIOperation(model.GetStereotype("f2b1207e-01fa-4961-b997-0bb53f7e6e20"));
             return true;
         }
 
         public static OpenAPITag GetOpenAPITag(this OperationModel model)
         {
-            var stereotype = model.GetStereotype("OpenAPI Tag");
+            var stereotype = model.GetStereotype("7ee3b765-c3c4-4db3-aa8b-f77693b3bb4f");
             return stereotype != null ? new OpenAPITag(stereotype) : null;
         }
 
         public static IReadOnlyCollection<OpenAPITag> GetOpenAPITags(this OperationModel model)
         {
             var stereotypes = model
-                .GetStereotypes("OpenAPI Tag")
+                .GetStereotypes("7ee3b765-c3c4-4db3-aa8b-f77693b3bb4f")
                 .Select(stereotype => new OpenAPITag(stereotype))
                 .ToArray();
 
@@ -56,7 +56,7 @@ namespace Intent.Java.SpringDoc.OpenApi.Api
 
         public static bool HasOpenAPITag(this OperationModel model)
         {
-            return model.HasStereotype("OpenAPI Tag");
+            return model.HasStereotype("7ee3b765-c3c4-4db3-aa8b-f77693b3bb4f");
         }
 
         public static bool TryGetOpenAPITag(this OperationModel model, out OpenAPITag stereotype)
@@ -67,7 +67,7 @@ namespace Intent.Java.SpringDoc.OpenApi.Api
                 return false;
             }
 
-            stereotype = new OpenAPITag(model.GetStereotype("OpenAPI Tag"));
+            stereotype = new OpenAPITag(model.GetStereotype("7ee3b765-c3c4-4db3-aa8b-f77693b3bb4f"));
             return true;
         }
 

@@ -42,7 +42,7 @@ namespace Intent.Modules.Java.SpringBoot.Validation.Decorators
                 yield return annotation;
             }
         }
-        
+
         private string JavaxJakarta()
         {
             return _application.Settings.GetSpringBoot().TargetVersion().AsEnum() switch

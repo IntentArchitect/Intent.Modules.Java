@@ -15,14 +15,14 @@ namespace Intent.Java.Persistence.JPA.Api
     {
         public static AssociationJPASettings GetAssociationJPASettings(this AssociationSourceEndModel model)
         {
-            var stereotype = model.GetStereotype("Association JPA Settings");
+            var stereotype = model.GetStereotype("49de8cd7-872f-4b37-b9a2-2056304434dd");
             return stereotype != null ? new AssociationJPASettings(stereotype) : null;
         }
 
 
         public static bool HasAssociationJPASettings(this AssociationSourceEndModel model)
         {
-            return model.HasStereotype("Association JPA Settings");
+            return model.HasStereotype("49de8cd7-872f-4b37-b9a2-2056304434dd");
         }
 
         public static bool TryGetAssociationJPASettings(this AssociationSourceEndModel model, out AssociationJPASettings stereotype)
@@ -33,7 +33,7 @@ namespace Intent.Java.Persistence.JPA.Api
                 return false;
             }
 
-            stereotype = new AssociationJPASettings(model.GetStereotype("Association JPA Settings"));
+            stereotype = new AssociationJPASettings(model.GetStereotype("49de8cd7-872f-4b37-b9a2-2056304434dd"));
             return true;
         }
 

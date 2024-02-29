@@ -529,7 +529,7 @@ namespace Intent.Modules.Java.Persistence.JPA.Decorators
                 _ => throw new ArgumentOutOfRangeException()
             };
         }
-        
+
         private bool IsJsonColumn(AttributeModel model)
         {
             return _application.Settings.GetDatabaseSettings().DatabaseProvider().AsEnum() switch

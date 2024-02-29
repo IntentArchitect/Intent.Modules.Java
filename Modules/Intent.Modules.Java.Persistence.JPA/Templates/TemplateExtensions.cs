@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Intent.Modelers.Domain.Api;
 using Intent.Modules.Common.Templates;
 using Intent.Modules.Java.Persistence.JPA.Templates.CompositeId;
 using Intent.RoslynWeaver.Attributes;
@@ -11,12 +12,12 @@ namespace Intent.Modules.Java.Persistence.JPA.Templates
 {
     public static class TemplateExtensions
     {
-        public static string GetCompositeIdName<T>(this IIntentTemplate<T> template) where T : Intent.Modelers.Domain.Api.ClassModel
+        public static string GetCompositeIdName<T>(this IIntentTemplate<T> template) where T : ClassModel
         {
             return template.GetTypeName(CompositeIdTemplate.TemplateId, template.Model);
         }
 
-        public static string GetCompositeIdName(this IIntentTemplate template, Intent.Modelers.Domain.Api.ClassModel model)
+        public static string GetCompositeIdName(this IIntentTemplate template, ClassModel model)
         {
             return template.GetTypeName(CompositeIdTemplate.TemplateId, model);
         }

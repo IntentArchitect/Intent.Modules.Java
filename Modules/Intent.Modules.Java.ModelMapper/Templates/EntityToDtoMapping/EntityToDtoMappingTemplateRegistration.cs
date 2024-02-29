@@ -26,6 +26,7 @@ namespace Intent.Modules.Java.ModelMapper.Templates.EntityToDtoMapping
 
         public override string TemplateId => EntityToDtoMappingTemplate.TemplateId;
 
+        [IntentManaged(Mode.Fully)]
         public override ITemplate CreateTemplateInstance(IOutputTarget outputTarget, DTOModel model)
         {
             return new EntityToDtoMappingTemplate(outputTarget, model);

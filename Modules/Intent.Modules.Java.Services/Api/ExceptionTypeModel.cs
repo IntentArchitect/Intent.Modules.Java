@@ -12,7 +12,7 @@ using Intent.RoslynWeaver.Attributes;
 namespace Intent.Modules.Java.Services.Api
 {
     [IntentManaged(Mode.Fully, Signature = Mode.Fully)]
-    public class ExceptionTypeModel : IMetadataModel, IHasStereotypes, IHasName, IHasFolder
+    public class ExceptionTypeModel : IMetadataModel, IHasStereotypes, IHasName, IElementWrapper, IHasFolder
     {
         public const string SpecializationType = "Exception Type";
         public const string SpecializationTypeId = "625e3f28-5e29-4cd3-92e6-9a111dbbb32c";

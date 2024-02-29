@@ -10,7 +10,7 @@ namespace Intent.Modules.Java.Spring.Cors.Templates
 {
     public static class TemplateExtensions
     {
-        public static string GetCorsConfigName<T>(this IntentTemplateBase<T> template)
+        public static string GetCorsConfigName(this IIntentTemplate template)
         {
             return template.GetTypeName(CorsConfigTemplate.TemplateId);
         }

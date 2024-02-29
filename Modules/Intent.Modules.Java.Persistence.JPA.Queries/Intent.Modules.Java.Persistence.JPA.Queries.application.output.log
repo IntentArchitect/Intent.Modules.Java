@@ -3,7 +3,7 @@
   <ApplicationId>91e4276a-bdfd-4c88-9e51-7edf9d77d9f5</ApplicationId>
   <FileLogs>
     <FileLog>
-      <CorrelationId>Intent.VisualStudio.Projects.VisualStudio2015Solution#59fa17ed-d9c9-41a7-91e4-e81eb9f6a629</CorrelationId>
+      <CorrelationId>Intent.VisualStudio.Projects.VisualStudioSolution#59fa17ed-d9c9-41a7-91e4-e81eb9f6a629</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>../Intent.Modules.Java.sln</ApplicationRelativeFilePath>
       <IsIgnored>false</IsIgnored>
@@ -222,14 +222,6 @@
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>modelers/Services Extensions.designer.settings</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>Services Extensions.designer.settings</ProjectRelativeFilePath>
-      <IsIgnored>false</IsIgnored>
-    </FileLog>
-    <FileLog>
-      <ProjectId>fe025313-a7d8-48a9-a0d5-9bd9328f82b0</ProjectId>
-      <CorrelationId>Intent.ModuleBuilder.ReadMe</CorrelationId>
-      <OverwriteBehaviour>always</OverwriteBehaviour>
-      <ApplicationRelativeFilePath>README.txt</ApplicationRelativeFilePath>
-      <ProjectRelativeFilePath>README.txt</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>

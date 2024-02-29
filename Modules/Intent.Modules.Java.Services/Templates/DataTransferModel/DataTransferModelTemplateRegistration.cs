@@ -26,6 +26,7 @@ namespace Intent.Modules.Java.Services.Templates.DataTransferModel
 
         public override string TemplateId => DataTransferModelTemplate.TemplateId;
 
+        [IntentManaged(Mode.Fully)]
         public override ITemplate CreateTemplateInstance(IOutputTarget outputTarget, DTOModel model)
         {
             return new DataTransferModelTemplate(outputTarget, model);

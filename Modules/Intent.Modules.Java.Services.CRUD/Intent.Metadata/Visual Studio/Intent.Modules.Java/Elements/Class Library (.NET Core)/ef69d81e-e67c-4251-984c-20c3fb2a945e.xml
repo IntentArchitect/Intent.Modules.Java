@@ -56,20 +56,6 @@
       <metadata />
       <childElements />
     </childElement>
-    <childElement id="a9a9a55d-f6ac-4f82-8189-0de388d4844f" type="Template Output" typeId="d421c322-7a51-4094-89fa-e5d8a0a97b27">
-      <name>Intent.ModuleBuilder.ReadMe</name>
-      <display>Intent.ModuleBuilder.ReadMe</display>
-      <externalReference>Intent.ModuleBuilder</externalReference>
-      <isAbstract>false</isAbstract>
-      <genericTypes />
-      <isMapped>false</isMapped>
-      <parentFolderId>ef69d81e-e67c-4251-984c-20c3fb2a945e</parentFolderId>
-      <packageId>aab5f39b-56e6-4a19-ad40-d00c9a6d5a0e</packageId>
-      <packageName>Intent.Modules.Java</packageName>
-      <stereotypes />
-      <metadata />
-      <childElements />
-    </childElement>
     <childElement id="71467bd9-ad40-46f4-b32c-8082f21709e5" type="Template Output" typeId="d421c322-7a51-4094-89fa-e5d8a0a97b27">
       <name>Intent.ModuleBuilder.Templates.Api.ApiMetadataDesignerExtensions</name>
       <display>Intent.ModuleBuilder.Templates.Api.ApiMetadataDesignerExtensions</display>
@@ -110,6 +96,22 @@
       <packageName>Intent.Modules.Java</packageName>
       <stereotypes />
       <metadata />
+      <childElements />
+    </childElement>
+    <childElement id="05066547-4584-407e-926a-bb5410da88c8" type="Template Output" typeId="d421c322-7a51-4094-89fa-e5d8a0a97b27">
+      <name>Intent.ModuleBuilder.Templates.ReleaseNotes</name>
+      <display>Intent.ModuleBuilder.Templates.ReleaseNotes</display>
+      <externalReference>Intent.ModuleBuilder</externalReference>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <isMapped>false</isMapped>
+      <parentFolderId>ef69d81e-e67c-4251-984c-20c3fb2a945e</parentFolderId>
+      <packageId>aab5f39b-56e6-4a19-ad40-d00c9a6d5a0e</packageId>
+      <packageName>Intent.Modules.Java</packageName>
+      <stereotypes />
+      <metadata>
+        <entry key="status" value="assigned" />
+      </metadata>
       <childElements />
     </childElement>
     <childElement id="251803fb-502c-4adc-a4c3-3810f498a1aa" type="Template Output" typeId="d421c322-7a51-4094-89fa-e5d8a0a97b27">

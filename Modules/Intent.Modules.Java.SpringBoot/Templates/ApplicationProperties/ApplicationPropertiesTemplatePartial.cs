@@ -60,14 +60,14 @@ namespace Intent.Modules.Java.SpringBoot.Templates.ApplicationProperties
             }
 
             var sb = new StringBuilder(content);
-            
+
             var existing = content
                 .Replace("\r\n", "\n")
                 .Split('\n')
                 .Where(x => !x.TrimStart().StartsWith("#") && x.Contains('='))
                 .Select(x => x.Split('=').First().Trim())
                 .ToHashSet();
-            
+
             foreach (var (name, (value, comment, _, _)) in _properties)
             {
                 if (existing.Contains(name))
@@ -83,7 +83,7 @@ namespace Intent.Modules.Java.SpringBoot.Templates.ApplicationProperties
                 sb.AppendLine($"{name}={value}");
                 existing.Add(name);
             }
-            
+
             return sb.ToString();
         }
 

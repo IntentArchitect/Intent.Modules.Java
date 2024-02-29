@@ -27,6 +27,7 @@ namespace Intent.Modules.Java.SpringBoot.Templates.RestController
 
         public override string TemplateId => RestControllerTemplate.TemplateId;
 
+        [IntentManaged(Mode.Fully)]
         public override ITemplate CreateTemplateInstance(IOutputTarget outputTarget, ServiceModel model)
         {
             return new RestControllerTemplate(outputTarget, model);

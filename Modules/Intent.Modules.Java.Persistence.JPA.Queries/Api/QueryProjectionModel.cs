@@ -12,7 +12,7 @@ using Intent.RoslynWeaver.Attributes;
 namespace Intent.Java.Persistence.JPA.Queries.Api
 {
     [IntentManaged(Mode.Fully, Signature = Mode.Fully)]
-    public class QueryProjectionModel : IMetadataModel, IHasStereotypes, IHasName, IHasFolder
+    public class QueryProjectionModel : IMetadataModel, IHasStereotypes, IHasName, IElementWrapper, IHasFolder
     {
         public const string SpecializationType = "Query Projection";
         public const string SpecializationTypeId = "b8819c07-fa52-4e38-a92c-439e21220c55";

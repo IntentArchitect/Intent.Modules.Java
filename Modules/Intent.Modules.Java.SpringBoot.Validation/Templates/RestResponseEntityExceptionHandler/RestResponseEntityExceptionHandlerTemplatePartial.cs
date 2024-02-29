@@ -9,7 +9,7 @@ using Intent.Modules.Java.SpringBoot.Settings;
 using Intent.RoslynWeaver.Attributes;
 using Intent.Templates;
 
-[assembly: DefaultIntentManaged(Mode.Merge)]
+[assembly: DefaultIntentManaged(Mode.Fully)]
 [assembly: IntentTemplate("Intent.ModuleBuilder.Java.Templates.JavaFileTemplatePartial", Version = "1.0")]
 
 namespace Intent.Modules.Java.SpringBoot.Validation.Templates.RestResponseEntityExceptionHandler

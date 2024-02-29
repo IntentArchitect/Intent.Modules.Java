@@ -12,6 +12,7 @@ namespace Intent.Modules.Java.Persistence.JPA.Queries.Decorators
     [Description(QueryServiceInterfaceDecorator.DecoratorId)]
     public class QueryServiceInterfaceDecoratorRegistration : DecoratorRegistration<ServiceInterfaceTemplate, ServiceInterfaceDecorator>
     {
+        [IntentManaged(Mode.Fully)]
         public override ServiceInterfaceDecorator CreateDecoratorInstance(ServiceInterfaceTemplate template, IApplication application)
         {
             return new QueryServiceInterfaceDecorator(template, application);

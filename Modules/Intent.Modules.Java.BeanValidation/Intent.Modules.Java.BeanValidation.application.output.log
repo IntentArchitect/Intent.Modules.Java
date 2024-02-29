@@ -40,13 +40,5 @@
       <ProjectRelativeFilePath>Intent.Modules.Java.BeanValidation.csproj</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
     </FileLog>
-    <FileLog>
-      <ProjectId>8220ed3b-fabc-4ff0-945c-acafb0ed917c</ProjectId>
-      <CorrelationId>Intent.ModuleBuilder.ReadMe</CorrelationId>
-      <OverwriteBehaviour>always</OverwriteBehaviour>
-      <ApplicationRelativeFilePath>README.txt</ApplicationRelativeFilePath>
-      <ProjectRelativeFilePath>README.txt</ProjectRelativeFilePath>
-      <IsIgnored>false</IsIgnored>
-    </FileLog>
   </FileLogs>
 </outputLog>

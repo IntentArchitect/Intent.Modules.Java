@@ -14,14 +14,14 @@ namespace Intent.Java.Persistence.JPA.Queries.Api
     {
         public static QuerySettings GetQuerySettings(this QueryModel model)
         {
-            var stereotype = model.GetStereotype("Query Settings");
+            var stereotype = model.GetStereotype("5ffc1a1f-cb80-4451-a70e-db3738491e0e");
             return stereotype != null ? new QuerySettings(stereotype) : null;
         }
 
 
         public static bool HasQuerySettings(this QueryModel model)
         {
-            return model.HasStereotype("Query Settings");
+            return model.HasStereotype("5ffc1a1f-cb80-4451-a70e-db3738491e0e");
         }
 
         public static bool TryGetQuerySettings(this QueryModel model, out QuerySettings stereotype)
@@ -32,7 +32,7 @@ namespace Intent.Java.Persistence.JPA.Queries.Api
                 return false;
             }
 
-            stereotype = new QuerySettings(model.GetStereotype("Query Settings"));
+            stereotype = new QuerySettings(model.GetStereotype("5ffc1a1f-cb80-4451-a70e-db3738491e0e"));
             return true;
         }
 

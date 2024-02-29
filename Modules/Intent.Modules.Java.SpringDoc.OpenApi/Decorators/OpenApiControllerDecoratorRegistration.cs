@@ -12,6 +12,7 @@ namespace Intent.Modules.Java.SpringDoc.OpenApi.Decorators
     [Description(OpenApiControllerDecorator.DecoratorId)]
     public class OpenApiControllerDecoratorRegistration : DecoratorRegistration<RestControllerTemplate, RestControllerDecorator>
     {
+        [IntentManaged(Mode.Fully)]
         public override RestControllerDecorator CreateDecoratorInstance(RestControllerTemplate template, IApplication application)
         {
             return new OpenApiControllerDecorator(template, application);

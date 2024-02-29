@@ -11,7 +11,7 @@ namespace Intent.Modules.Java.SpringBoot.Validation.Templates
 {
     public static class TemplateExtensions
     {
-        public static string GetRestResponseEntityExceptionHandlerName<T>(this IntentTemplateBase<T> template)
+        public static string GetRestResponseEntityExceptionHandlerName(this IIntentTemplate template)
         {
             return template.GetTypeName(RestResponseEntityExceptionHandlerTemplate.TemplateId);
         }

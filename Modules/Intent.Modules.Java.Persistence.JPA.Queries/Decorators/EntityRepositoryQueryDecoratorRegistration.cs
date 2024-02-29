@@ -12,6 +12,7 @@ namespace Intent.Modules.Java.Persistence.JPA.Queries.Decorators
     [Description(EntityRepositoryQueryDecorator.DecoratorId)]
     public class EntityRepositoryQueryDecoratorRegistration : DecoratorRegistration<EntityRepositoryTemplate, EntityRepositoryDecorator>
     {
+        [IntentManaged(Mode.Fully)]
         public override EntityRepositoryDecorator CreateDecoratorInstance(EntityRepositoryTemplate template, IApplication application)
         {
             return new EntityRepositoryQueryDecorator(template, application);

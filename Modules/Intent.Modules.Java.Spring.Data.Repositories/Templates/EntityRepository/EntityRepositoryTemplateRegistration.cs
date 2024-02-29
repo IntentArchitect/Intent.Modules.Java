@@ -28,6 +28,7 @@ namespace Intent.Modules.Java.Spring.Data.Repositories.Templates.EntityRepositor
 
         public override string TemplateId => EntityRepositoryTemplate.TemplateId;
 
+        [IntentManaged(Mode.Fully)]
         public override ITemplate CreateTemplateInstance(IOutputTarget outputTarget, ClassModel model)
         {
             return new EntityRepositoryTemplate(outputTarget, model);

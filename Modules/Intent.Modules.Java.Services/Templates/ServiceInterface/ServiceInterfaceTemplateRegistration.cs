@@ -26,6 +26,7 @@ namespace Intent.Modules.Java.Services.Templates.ServiceInterface
 
         public override string TemplateId => ServiceInterfaceTemplate.TemplateId;
 
+        [IntentManaged(Mode.Fully)]
         public override ITemplate CreateTemplateInstance(IOutputTarget outputTarget, ServiceModel model)
         {
             return new ServiceInterfaceTemplate(outputTarget, model);

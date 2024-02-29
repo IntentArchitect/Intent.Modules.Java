@@ -12,6 +12,7 @@ namespace Intent.Modules.Java.Spring.Cors.Decorators
     [Description(CorsRestControllerDecorator.DecoratorId)]
     public class CorsRestControllerDecoratorRegistration : DecoratorRegistration<RestControllerTemplate, RestControllerDecorator>
     {
+        [IntentManaged(Mode.Fully)]
         public override RestControllerDecorator CreateDecoratorInstance(RestControllerTemplate template, IApplication application)
         {
             return new CorsRestControllerDecorator(template, application);

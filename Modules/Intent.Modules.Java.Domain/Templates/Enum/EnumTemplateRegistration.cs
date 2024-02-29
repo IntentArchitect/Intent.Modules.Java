@@ -27,6 +27,7 @@ namespace Intent.Modules.Java.Domain.Templates.Enum
 
         public override string TemplateId => EnumTemplate.TemplateId;
 
+        [IntentManaged(Mode.Fully)]
         public override ITemplate CreateTemplateInstance(IOutputTarget outputTarget, EnumModel model)
         {
             return new EnumTemplate(outputTarget, model);

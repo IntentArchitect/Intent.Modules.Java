@@ -138,6 +138,22 @@
       <metadata />
       <childElements />
     </childElement>
+    <childElement id="23715e9c-953c-422e-95d5-2d30dfd10e26" type="Template Output" typeId="d421c322-7a51-4094-89fa-e5d8a0a97b27">
+      <name>Intent.ModuleBuilder.Templates.ReleaseNotes</name>
+      <display>Intent.ModuleBuilder.Templates.ReleaseNotes</display>
+      <externalReference>Intent.ModuleBuilder</externalReference>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <isMapped>false</isMapped>
+      <parentFolderId>915037d0-3d43-4cda-9777-bb75b8bd5c63</parentFolderId>
+      <packageId>60869086-7611-4173-8f65-1056e7949c6a</packageId>
+      <packageName>Intent.Modules.Java</packageName>
+      <stereotypes />
+      <metadata>
+        <entry key="status" value="assigned" />
+      </metadata>
+      <childElements />
+    </childElement>
     <childElement id="8fff1878-ca53-4d7c-b182-c325984d2b8e" type="Template Output" typeId="d421c322-7a51-4094-89fa-e5d8a0a97b27">
       <name>Intent.ModuleBuilder.Templates.StaticContentOutputReadme</name>
       <display>Intent.ModuleBuilder.Templates.StaticContentOutputReadme</display>
@@ -256,20 +272,6 @@
       <packageName>Intent.Modules.Java</packageName>
       <stereotypes />
       <metadata />
-      <childElements />
-    </childElement>
-    <childElement id="23715e9c-953c-422e-95d5-2d30dfd10e26" type="Template Output" typeId="d421c322-7a51-4094-89fa-e5d8a0a97b27">
-      <name>Intent.ModuleBuilder.Templates.ReleaseNotes</name>
-      <display>Intent.ModuleBuilder.Templates.ReleaseNotes</display>
-      <externalReference>Intent.ModuleBuilder</externalReference>
-      <isAbstract>false</isAbstract>
-      <genericTypes />
-      <isMapped>false</isMapped>
-      <parentFolderId>915037d0-3d43-4cda-9777-bb75b8bd5c63</parentFolderId>
-      <stereotypes />
-      <metadata>
-        <entry key="status" value="assigned" />
-      </metadata>
       <childElements />
     </childElement>
   </childElements>

@@ -18,9 +18,10 @@ namespace Intent.Modules.Java.Maven.Templates.PomFile
     {
         public override string TemplateId => PomFileTemplate.TemplateId;
 
+        [IntentManaged(Mode.Fully)]
         public override ITemplate CreateTemplateInstance(IOutputTarget outputTarget)
         {
-            return new PomFileTemplate(outputTarget, null);
+            return new PomFileTemplate(outputTarget);
         }
     }
 }

@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Intent.Modelers.Services.Api;
 using Intent.Modules.Common.Templates;
 using Intent.Modules.Java.SpringBoot.Templates.Application;
 using Intent.Modules.Java.SpringBoot.Templates.JsonResponse;
@@ -22,12 +23,12 @@ namespace Intent.Modules.Java.SpringBoot.Templates
             return template.GetTypeName(JsonResponseTemplate.TemplateId);
         }
 
-        public static string GetRestControllerName<T>(this IIntentTemplate<T> template) where T : Intent.Modelers.Services.Api.ServiceModel
+        public static string GetRestControllerName<T>(this IIntentTemplate<T> template) where T : ServiceModel
         {
             return template.GetTypeName(RestControllerTemplate.TemplateId, template.Model);
         }
 
-        public static string GetRestControllerName(this IIntentTemplate template, Intent.Modelers.Services.Api.ServiceModel model)
+        public static string GetRestControllerName(this IIntentTemplate template, ServiceModel model)
         {
             return template.GetTypeName(RestControllerTemplate.TemplateId, model);
         }

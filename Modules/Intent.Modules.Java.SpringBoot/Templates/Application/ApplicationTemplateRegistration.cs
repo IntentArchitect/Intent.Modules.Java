@@ -18,6 +18,7 @@ namespace Intent.Modules.Java.SpringBoot.Templates.Application
     {
         public override string TemplateId => ApplicationTemplate.TemplateId;
 
+        [IntentManaged(Mode.Fully)]
         public override ITemplate CreateTemplateInstance(IOutputTarget outputTarget)
         {
             return new ApplicationTemplate(outputTarget);

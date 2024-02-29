@@ -15,14 +15,14 @@ namespace Intent.Java.SpringBoot.Validation.Api
     {
         public static Validations GetValidations(this DTOFieldModel model)
         {
-            var stereotype = model.GetStereotype("Validations");
+            var stereotype = model.GetStereotype("2ec1d83e-7980-435c-b8ac-8ba4f3c5d5ea");
             return stereotype != null ? new Validations(stereotype) : null;
         }
 
 
         public static bool HasValidations(this DTOFieldModel model)
         {
-            return model.HasStereotype("Validations");
+            return model.HasStereotype("2ec1d83e-7980-435c-b8ac-8ba4f3c5d5ea");
         }
 
         public static bool TryGetValidations(this DTOFieldModel model, out Validations stereotype)
@@ -33,7 +33,7 @@ namespace Intent.Java.SpringBoot.Validation.Api
                 return false;
             }
 
-            stereotype = new Validations(model.GetStereotype("Validations"));
+            stereotype = new Validations(model.GetStereotype("2ec1d83e-7980-435c-b8ac-8ba4f3c5d5ea"));
             return true;
         }
 

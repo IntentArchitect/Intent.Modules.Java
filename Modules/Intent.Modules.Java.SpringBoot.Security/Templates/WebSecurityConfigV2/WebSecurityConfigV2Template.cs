@@ -4,6 +4,7 @@ using Intent.RoslynWeaver.Attributes;
 
 [assembly: DefaultIntentManaged(Mode.Fully)]
 [assembly:IntentTemplate("Intent.ModuleBuilder.Java.Templates.JavaFileStringInterpolationTemplate",Version= "1.0")]
+
 namespace Intent.Modules.Java.SpringBoot.Security.Templates.WebSecurityConfigV2
 {
     [IntentManaged(Mode.Fully, Body = Mode.Merge)]

@@ -12,6 +12,7 @@ namespace Intent.Modules.Java.Persistence.JPA.Decorators
     [Description(JpaDomainModelDecorator.DecoratorId)]
     public class JpaDomainModelDecoratorRegistration : DecoratorRegistration<DomainModelTemplate, DomainModelDecorator>
     {
+        [IntentManaged(Mode.Fully)]
         public override DomainModelDecorator CreateDecoratorInstance(DomainModelTemplate template, IApplication application)
         {
             return new JpaDomainModelDecorator(template, application);

@@ -18,6 +18,7 @@ namespace Intent.Modules.Java.SpringBoot.Validation.Templates.RestResponseEntity
     {
         public override string TemplateId => RestResponseEntityExceptionHandlerTemplate.TemplateId;
 
+        [IntentManaged(Mode.Fully)]
         public override ITemplate CreateTemplateInstance(IOutputTarget outputTarget)
         {
             return new RestResponseEntityExceptionHandlerTemplate(outputTarget);

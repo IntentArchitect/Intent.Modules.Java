@@ -50,7 +50,7 @@
       <childElements>
         <childElement id="54dd91dc-2105-49bf-ac27-ab3691d4b14d" type="Module Settings Field Option" typeId="1592709a-89b1-4cb0-9801-ce9d3b94545a">
           <name>Pluralized</name>
-          <display>Pluralized = pluralized</display>
+          <display>Pluralized</display>
           <isAbstract>false</isAbstract>
           <value>pluralized</value>
           <genericTypes />
@@ -64,7 +64,7 @@
         </childElement>
         <childElement id="bec00f3a-c3b5-4cef-971a-a7fd8b171d8e" type="Module Settings Field Option" typeId="1592709a-89b1-4cb0-9801-ce9d3b94545a">
           <name>Singularized</name>
-          <display>Singularized = singularized</display>
+          <display>Singularized</display>
           <isAbstract>false</isAbstract>
           <value>singularized</value>
           <genericTypes />
@@ -105,7 +105,7 @@
       <childElements>
         <childElement id="dbdacb41-8f27-4d7a-b06d-220830f6bc5d" type="Module Settings Field Option" typeId="1592709a-89b1-4cb0-9801-ce9d3b94545a">
           <name>H2</name>
-          <display>H2 = h2</display>
+          <display>H2</display>
           <isAbstract>false</isAbstract>
           <value>h2</value>
           <genericTypes />
@@ -119,7 +119,7 @@
         </childElement>
         <childElement id="bb6cdae0-da9f-48b6-a5cb-b7459d3ca799" type="Module Settings Field Option" typeId="1592709a-89b1-4cb0-9801-ce9d3b94545a">
           <name>MySQL</name>
-          <display>MySQL = mysql</display>
+          <display>MySQL</display>
           <isAbstract>false</isAbstract>
           <value>mysql</value>
           <genericTypes />
@@ -133,7 +133,7 @@
         </childElement>
         <childElement id="18c397e7-20e1-4cf2-80c4-a99bdcd780bf" type="Module Settings Field Option" typeId="1592709a-89b1-4cb0-9801-ce9d3b94545a">
           <name>PostgreSQL</name>
-          <display>PostgreSQL = postgresql</display>
+          <display>PostgreSQL</display>
           <isAbstract>false</isAbstract>
           <value>postgresql</value>
           <genericTypes />
@@ -147,7 +147,7 @@
         </childElement>
         <childElement id="b1043e54-78c7-4561-9f92-20eaa475cf3a" type="Module Settings Field Option" typeId="1592709a-89b1-4cb0-9801-ce9d3b94545a">
           <name>SQL Server</name>
-          <display>SQL Server = sql-server</display>
+          <display>SQL Server</display>
           <isAbstract>false</isAbstract>
           <value>sql-server</value>
           <genericTypes />

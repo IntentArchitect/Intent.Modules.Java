@@ -12,6 +12,7 @@ namespace Intent.Modules.Java.Persistence.JPA.Queries.Decorators
     [Description(QueryDataTransferModelDecorator.DecoratorId)]
     public class QueryDataTransferModelDecoratorRegistration : DecoratorRegistration<DataTransferModelTemplate, DataTransferModelDecorator>
     {
+        [IntentManaged(Mode.Fully)]
         public override DataTransferModelDecorator CreateDecoratorInstance(DataTransferModelTemplate template, IApplication application)
         {
             return new QueryDataTransferModelDecorator(template, application);

@@ -12,6 +12,7 @@ namespace Intent.Modules.Java.Persistence.JPA.Queries.Decorators
     [Description(QueryRestControllerDecorator.DecoratorId)]
     public class QueryRestControllerDecoratorRegistration : DecoratorRegistration<RestControllerTemplate, RestControllerDecorator>
     {
+        [IntentManaged(Mode.Fully)]
         public override RestControllerDecorator CreateDecoratorInstance(RestControllerTemplate template, IApplication application)
         {
             return new QueryRestControllerDecorator(template, application);

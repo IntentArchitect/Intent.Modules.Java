@@ -12,6 +12,7 @@ namespace Intent.Modules.Java.SpringBoot.Validation.Decorators
     [Description(ValidationRestControllerDecorator.DecoratorId)]
     public class ValidationRestControllerDecoratorRegistration : DecoratorRegistration<RestControllerTemplate, RestControllerDecorator>
     {
+        [IntentManaged(Mode.Fully)]
         public override RestControllerDecorator CreateDecoratorInstance(RestControllerTemplate template, IApplication application)
         {
             return new ValidationRestControllerDecorator(template, application);

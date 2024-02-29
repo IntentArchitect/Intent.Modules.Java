@@ -138,6 +138,22 @@
       <metadata />
       <childElements />
     </childElement>
+    <childElement id="38f03532-221f-4b61-a126-6cae1502a73f" type="Template Output" typeId="d421c322-7a51-4094-89fa-e5d8a0a97b27">
+      <name>Intent.ModuleBuilder.Templates.ReleaseNotes</name>
+      <display>Intent.ModuleBuilder.Templates.ReleaseNotes</display>
+      <externalReference>Intent.ModuleBuilder</externalReference>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <isMapped>false</isMapped>
+      <parentFolderId>2aee7253-e4d7-4433-95b7-561ca904f214</parentFolderId>
+      <packageId>df3bac93-c6dc-47c3-9253-a92f3791c0db</packageId>
+      <packageName>Intent.Modules.Java</packageName>
+      <stereotypes />
+      <metadata>
+        <entry key="status" value="assigned" />
+      </metadata>
+      <childElements />
+    </childElement>
     <childElement id="4c89e7e8-5434-40f9-88ab-15cd66c873c4" type="Template Output" typeId="d421c322-7a51-4094-89fa-e5d8a0a97b27">
       <name>Intent.ModuleBuilder.Templates.StaticContentOutputReadme</name>
       <display>Intent.ModuleBuilder.Templates.StaticContentOutputReadme</display>

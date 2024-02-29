@@ -39,7 +39,7 @@
       <childElements>
         <childElement id="4692ace9-dba1-41f5-b432-d13019520cad" type="Module Settings Field Option" typeId="1592709a-89b1-4cb0-9801-ce9d3b94545a">
           <name>v2.7.5</name>
-          <display>v2.7.5 = V2_7_5</display>
+          <display>v2.7.5</display>
           <isAbstract>false</isAbstract>
           <value>V2_7_5</value>
           <genericTypes />
@@ -53,7 +53,7 @@
         </childElement>
         <childElement id="006d410a-8cad-41b8-bdce-417cf3c8d548" type="Module Settings Field Option" typeId="1592709a-89b1-4cb0-9801-ce9d3b94545a">
           <name>v3.1.3</name>
-          <display>v3.1.3 = V3_1_3</display>
+          <display>v3.1.3</display>
           <isAbstract>false</isAbstract>
           <value>V3_1_3</value>
           <genericTypes />

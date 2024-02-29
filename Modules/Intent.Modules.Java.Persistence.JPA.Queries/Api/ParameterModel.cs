@@ -11,7 +11,7 @@ using Intent.RoslynWeaver.Attributes;
 namespace Intent.Java.Persistence.JPA.Queries.Api
 {
     [IntentManaged(Mode.Fully, Signature = Mode.Fully)]
-    public class ParameterModel : IMetadataModel, IHasStereotypes, IHasName, IHasTypeReference
+    public class ParameterModel : IMetadataModel, IHasStereotypes, IHasName, IElementWrapper, IHasTypeReference
     {
         public const string SpecializationType = "Parameter";
         public const string SpecializationTypeId = "c8533d27-520e-46e2-9310-e13077f67988";

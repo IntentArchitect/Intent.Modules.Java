@@ -26,6 +26,7 @@ namespace Intent.Modules.Java.Domain.Templates.DomainModel
 
         public override string TemplateId => DomainModelTemplate.TemplateId;
 
+        [IntentManaged(Mode.Fully)]
         public override ITemplate CreateTemplateInstance(IOutputTarget outputTarget, ClassModel model)
         {
             return new DomainModelTemplate(outputTarget, model);

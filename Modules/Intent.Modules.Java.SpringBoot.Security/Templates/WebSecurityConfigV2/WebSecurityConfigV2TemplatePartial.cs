@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using Intent.Engine;
 using Intent.Modules.Common;
@@ -34,7 +35,7 @@ namespace Intent.Modules.Java.SpringBoot.Security.Templates.WebSecurityConfigV2
                 relativeLocation: this.GetFolderPath()
             );
         }
-        
+
         public override bool CanRunTemplate()
         {
             return ExecutionContext.Settings.GetSpringBoot().TargetVersion().IsV2_7_5();

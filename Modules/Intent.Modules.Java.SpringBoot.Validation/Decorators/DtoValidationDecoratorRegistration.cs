@@ -12,6 +12,7 @@ namespace Intent.Modules.Java.SpringBoot.Validation.Decorators
     [Description(DtoValidationDecorator.DecoratorId)]
     public class DtoValidationDecoratorRegistration : DecoratorRegistration<DataTransferModelTemplate, DataTransferModelDecorator>
     {
+        [IntentManaged(Mode.Fully)]
         public override DataTransferModelDecorator CreateDecoratorInstance(DataTransferModelTemplate template, IApplication application)
         {
             return new DtoValidationDecorator(template, application);

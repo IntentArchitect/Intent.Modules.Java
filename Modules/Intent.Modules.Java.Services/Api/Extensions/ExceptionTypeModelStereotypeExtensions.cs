@@ -14,14 +14,14 @@ namespace Intent.Modules.Java.Services.Api
     {
         public static ExceptionSettings GetExceptionSettings(this ExceptionTypeModel model)
         {
-            var stereotype = model.GetStereotype("Exception Settings");
+            var stereotype = model.GetStereotype("7b4f7447-6cc6-46b1-b3b0-ea8c442a72eb");
             return stereotype != null ? new ExceptionSettings(stereotype) : null;
         }
 
 
         public static bool HasExceptionSettings(this ExceptionTypeModel model)
         {
-            return model.HasStereotype("Exception Settings");
+            return model.HasStereotype("7b4f7447-6cc6-46b1-b3b0-ea8c442a72eb");
         }
 
         public static bool TryGetExceptionSettings(this ExceptionTypeModel model, out ExceptionSettings stereotype)
@@ -32,7 +32,7 @@ namespace Intent.Modules.Java.Services.Api
                 return false;
             }
 
-            stereotype = new ExceptionSettings(model.GetStereotype("Exception Settings"));
+            stereotype = new ExceptionSettings(model.GetStereotype("7b4f7447-6cc6-46b1-b3b0-ea8c442a72eb"));
             return true;
         }
 

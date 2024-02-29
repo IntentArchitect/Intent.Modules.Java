@@ -27,7 +27,8 @@ namespace Intent.Modules.Java.Services.Templates.ServiceImplementation;
 public partial class
     ServiceImplementationTemplate : JavaTemplateBase<Intent.Modelers.Services.Api.ServiceModel, ServiceImplementationDecorator>, IJavaFileBuilderTemplate
 {
-    [IntentManaged(Mode.Fully)] public const string TemplateId = "Intent.Java.Services.ServiceImplementation";
+    [IntentManaged(Mode.Fully)]
+    public const string TemplateId = "Intent.Java.Services.ServiceImplementation";
 
     [IntentManaged(Mode.Fully, Body = Mode.Ignore)]
     public ServiceImplementationTemplate(IOutputTarget outputTarget, Intent.Modelers.Services.Api.ServiceModel model) : base(TemplateId, outputTarget, model)
@@ -71,7 +72,7 @@ public partial class
                         {
                             method.Throws(exception);
                         }
-                        
+
                         if (operation.GetTransactionOptions() == null ||
                             operation.GetTransactionOptions().IsEnabled())
                         {

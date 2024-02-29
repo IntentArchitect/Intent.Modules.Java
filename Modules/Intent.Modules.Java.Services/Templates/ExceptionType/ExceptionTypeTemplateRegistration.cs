@@ -27,6 +27,7 @@ namespace Intent.Modules.Java.Services.Templates.ExceptionType
 
         public override string TemplateId => ExceptionTypeTemplate.TemplateId;
 
+        [IntentManaged(Mode.Fully)]
         public override ITemplate CreateTemplateInstance(IOutputTarget outputTarget, ExceptionTypeModel model)
         {
             return new ExceptionTypeTemplate(outputTarget, model);

@@ -1,5 +1,6 @@
 using System;
 using Intent.Engine;
+using Intent.Modules.Common;
 using Intent.Modules.Common.Java.Events;
 using Intent.Modules.Common.Java.Templates;
 using Intent.Modules.Common.Plugins;

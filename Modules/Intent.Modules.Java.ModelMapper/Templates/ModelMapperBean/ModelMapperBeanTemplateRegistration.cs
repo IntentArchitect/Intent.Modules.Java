@@ -19,6 +19,7 @@ namespace Intent.Modules.Java.ModelMapper.Templates.ModelMapperBean
     {
         public override string TemplateId => ModelMapperBeanTemplate.TemplateId;
 
+        [IntentManaged(Mode.Fully)]
         public override ITemplate CreateTemplateInstance(IOutputTarget outputTarget, IList<DTOModel> model)
         {
             return new ModelMapperBeanTemplate(outputTarget, model);

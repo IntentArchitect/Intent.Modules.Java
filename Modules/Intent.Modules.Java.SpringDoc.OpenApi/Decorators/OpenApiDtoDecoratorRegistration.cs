@@ -12,6 +12,7 @@ namespace Intent.Modules.Java.SpringDoc.OpenApi.Decorators
     [Description(OpenApiDtoDecorator.DecoratorId)]
     public class OpenApiDtoDecoratorRegistration : DecoratorRegistration<DataTransferModelTemplate, DataTransferModelDecorator>
     {
+        [IntentManaged(Mode.Fully)]
         public override DataTransferModelDecorator CreateDecoratorInstance(DataTransferModelTemplate template, IApplication application)
         {
             return new OpenApiDtoDecorator(template, application);

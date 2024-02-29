@@ -12,6 +12,7 @@ namespace Intent.Modules.Java.ModelMapper.Decorators
     [Description(DataTransferModelMappingDecorator.DecoratorId)]
     public class DataTransferModelMappingDecoratorRegistration : DecoratorRegistration<DataTransferModelTemplate, DataTransferModelDecorator>
     {
+        [IntentManaged(Mode.Fully)]
         public override DataTransferModelDecorator CreateDecoratorInstance(DataTransferModelTemplate template, IApplication application)
         {
             return new DataTransferModelMappingDecorator(template, application);

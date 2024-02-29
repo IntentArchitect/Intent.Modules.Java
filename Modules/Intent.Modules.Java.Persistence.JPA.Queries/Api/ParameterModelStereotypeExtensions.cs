@@ -14,14 +14,14 @@ namespace Intent.Java.Persistence.JPA.Queries.Api
     {
         public static ParameterSettings GetParameterSettings(this ParameterModel model)
         {
-            var stereotype = model.GetStereotype("Parameter Settings");
+            var stereotype = model.GetStereotype("481ee769-094e-4c56-a56a-24e7261e029b");
             return stereotype != null ? new ParameterSettings(stereotype) : null;
         }
 
 
         public static bool HasParameterSettings(this ParameterModel model)
         {
-            return model.HasStereotype("Parameter Settings");
+            return model.HasStereotype("481ee769-094e-4c56-a56a-24e7261e029b");
         }
 
         public static bool TryGetParameterSettings(this ParameterModel model, out ParameterSettings stereotype)
@@ -32,7 +32,7 @@ namespace Intent.Java.Persistence.JPA.Queries.Api
                 return false;
             }
 
-            stereotype = new ParameterSettings(model.GetStereotype("Parameter Settings"));
+            stereotype = new ParameterSettings(model.GetStereotype("481ee769-094e-4c56-a56a-24e7261e029b"));
             return true;
         }
 

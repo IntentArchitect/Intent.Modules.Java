@@ -27,6 +27,7 @@ namespace Intent.Modules.Java.Persistence.JPA.Queries.Templates.QueryProjection
 
         public override string TemplateId => QueryProjectionTemplate.TemplateId;
 
+        [IntentManaged(Mode.Fully)]
         public override ITemplate CreateTemplateInstance(IOutputTarget outputTarget, QueryProjectionModel model)
         {
             return new QueryProjectionTemplate(outputTarget, model);

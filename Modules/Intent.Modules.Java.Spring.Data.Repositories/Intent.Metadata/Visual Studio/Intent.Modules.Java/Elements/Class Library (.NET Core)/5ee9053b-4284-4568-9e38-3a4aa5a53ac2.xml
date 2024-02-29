@@ -56,20 +56,6 @@
       <metadata />
       <childElements />
     </childElement>
-    <childElement id="12c5af5e-4d2d-416d-91b5-959403e3de51" type="Template Output" typeId="d421c322-7a51-4094-89fa-e5d8a0a97b27">
-      <name>Intent.ModuleBuilder.ReadMe</name>
-      <display>Intent.ModuleBuilder.ReadMe</display>
-      <externalReference>Intent.ModuleBuilder</externalReference>
-      <isAbstract>false</isAbstract>
-      <genericTypes />
-      <isMapped>false</isMapped>
-      <parentFolderId>5ee9053b-4284-4568-9e38-3a4aa5a53ac2</parentFolderId>
-      <packageId>faa7bb8b-3a31-4e79-beee-0f17d8088ea1</packageId>
-      <packageName>Intent.Modules.Java</packageName>
-      <stereotypes />
-      <metadata />
-      <childElements />
-    </childElement>
     <childElement id="06d28aa6-11c9-4124-b1d5-ff29e718981f" type="Template Output" typeId="d421c322-7a51-4094-89fa-e5d8a0a97b27">
       <name>Intent.ModuleBuilder.Templates.Api.ApiMetadataDesignerExtensions</name>
       <display>Intent.ModuleBuilder.Templates.Api.ApiMetadataDesignerExtensions</display>

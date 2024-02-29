@@ -27,7 +27,8 @@ namespace Intent.Modules.Java.SpringBoot.Templates.RestController
     [IntentManaged(Mode.Merge, Signature = Mode.Fully)]
     partial class RestControllerTemplate : JavaTemplateBase<Intent.Modelers.Services.Api.ServiceModel, RestControllerDecorator>
     {
-        [IntentManaged(Mode.Fully)] public const string TemplateId = "Intent.Java.SpringBoot.RestController";
+        [IntentManaged(Mode.Fully)]
+        public const string TemplateId = "Intent.Java.SpringBoot.RestController";
 
         [IntentManaged(Mode.Merge, Signature = Mode.Fully)]
         public RestControllerTemplate(IOutputTarget outputTarget, Intent.Modelers.Services.Api.ServiceModel model) : base(TemplateId, outputTarget, model)

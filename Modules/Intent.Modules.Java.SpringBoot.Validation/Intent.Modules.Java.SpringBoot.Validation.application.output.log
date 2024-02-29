@@ -3,7 +3,7 @@
   <ApplicationId>2eeddca7-faf7-4848-bd0e-c45c164af278</ApplicationId>
   <FileLogs>
     <FileLog>
-      <CorrelationId>Intent.VisualStudio.Projects.VisualStudio2015Solution#2072f89d-93f6-40f5-b149-5b32947e73ad</CorrelationId>
+      <CorrelationId>Intent.VisualStudio.Projects.VisualStudioSolution#2072f89d-93f6-40f5-b149-5b32947e73ad</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>../Intent.Modules.Java.sln</ApplicationRelativeFilePath>
       <IsIgnored>false</IsIgnored>
@@ -59,17 +59,9 @@
     <FileLog>
       <ProjectId>858c7eb2-2bb7-4927-9c44-a8d5bcac8fba</ProjectId>
       <CorrelationId>Intent.VisualStudio.Projects.CoreLibrary.CSProject#858c7eb2-2bb7-4927-9c44-a8d5bcac8fba</CorrelationId>
-      <OverwriteBehaviour>once-off</OverwriteBehaviour>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Intent.Modules.Java.SpringBoot.Validation.csproj</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>Intent.Modules.Java.SpringBoot.Validation.csproj</ProjectRelativeFilePath>
-      <IsIgnored>false</IsIgnored>
-    </FileLog>
-    <FileLog>
-      <ProjectId>858c7eb2-2bb7-4927-9c44-a8d5bcac8fba</ProjectId>
-      <CorrelationId>Intent.ModuleBuilder.ReadMe</CorrelationId>
-      <OverwriteBehaviour>always</OverwriteBehaviour>
-      <ApplicationRelativeFilePath>README.txt</ApplicationRelativeFilePath>
-      <ProjectRelativeFilePath>README.txt</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>

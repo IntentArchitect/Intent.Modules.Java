@@ -2,37 +2,37 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32526.322
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Intent.Modules.Java.Services", "Intent.Modules.Java.Services\Intent.Modules.Java.Services.csproj", "{9A39A5E5-1C2A-4DF7-BAB4-5D2760783B6D}"
+Project("{52B49DB5-3EA9-4095-B1A7-DF1AC22D7DAE}") = "Intent.Modules.Java.Services", "Intent.Modules.Java.Services\Intent.Modules.Java.Services.csproj", "{9A39A5E5-1C2A-4DF7-BAB4-5D2760783B6D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Intent.Modules.Java.SpringBoot", "Intent.Modules.Java.SpringBoot\Intent.Modules.Java.SpringBoot.csproj", "{915037D0-3D43-4CDA-9777-BB75B8BD5C63}"
+Project("{52B49DB5-3EA9-4095-B1A7-DF1AC22D7DAE}") = "Intent.Modules.Java.SpringBoot", "Intent.Modules.Java.SpringBoot\Intent.Modules.Java.SpringBoot.csproj", "{915037D0-3D43-4CDA-9777-BB75B8BD5C63}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Intent.Modules.Java.Domain", "Intent.Modules.Java.Domain\Intent.Modules.Java.Domain.csproj", "{586E75C2-AE1C-4988-9E68-89C2696670BD}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Intent.Modules.Java.Maven", "Intent.Modules.Java.Maven\Intent.Modules.Java.Maven.csproj", "{2AEE7253-E4D7-4433-95B7-561CA904F214}"
+Project("{52B49DB5-3EA9-4095-B1A7-DF1AC22D7DAE}") = "Intent.Modules.Java.Maven", "Intent.Modules.Java.Maven\Intent.Modules.Java.Maven.csproj", "{2AEE7253-E4D7-4433-95B7-561CA904F214}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Intent.ApplicationTemplates.Java", "Intent.ApplicationTemplates.Java\Intent.ApplicationTemplates.Java.csproj", "{06CAED4B-C0EA-4239-A4E7-6FEBEA061869}"
+Project("{52B49DB5-3EA9-4095-B1A7-DF1AC22D7DAE}") = "Intent.ApplicationTemplates.Java", "Intent.ApplicationTemplates.Java\Intent.ApplicationTemplates.Java.csproj", "{06CAED4B-C0EA-4239-A4E7-6FEBEA061869}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Intent.Modules.Java.Persistence.JPA", "Intent.Modules.Java.Persistence.JPA\Intent.Modules.Java.Persistence.JPA.csproj", "{F92DF344-0995-48CF-9967-DB535AD749B6}"
+Project("{52B49DB5-3EA9-4095-B1A7-DF1AC22D7DAE}") = "Intent.Modules.Java.Persistence.JPA", "Intent.Modules.Java.Persistence.JPA\Intent.Modules.Java.Persistence.JPA.csproj", "{F92DF344-0995-48CF-9967-DB535AD749B6}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Intent.Modules.Java.Spring.Data.Repositories", "Intent.Modules.Java.Spring.Data.Repositories\Intent.Modules.Java.Spring.Data.Repositories.csproj", "{5EE9053B-4284-4568-9E38-3A4AA5A53AC2}"
+Project("{52B49DB5-3EA9-4095-B1A7-DF1AC22D7DAE}") = "Intent.Modules.Java.Spring.Data.Repositories", "Intent.Modules.Java.Spring.Data.Repositories\Intent.Modules.Java.Spring.Data.Repositories.csproj", "{5EE9053B-4284-4568-9E38-3A4AA5A53AC2}"
 EndProject
 Project("{52B49DB5-3EA9-4095-B1A7-DF1AC22D7DAE}") = "Intent.Modules.Java.BeanValidation", "Intent.Modules.Java.BeanValidation\Intent.Modules.Java.BeanValidation.csproj", "{8220ED3B-FABC-4FF0-945C-ACAFB0ED917C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Intent.Modules.Java.ModelMapper", "Intent.Modules.Java.ModelMapper\Intent.Modules.Java.ModelMapper.csproj", "{997D1487-CFEA-43D7-9AEC-BE05F101F8DF}"
+Project("{52B49DB5-3EA9-4095-B1A7-DF1AC22D7DAE}") = "Intent.Modules.Java.ModelMapper", "Intent.Modules.Java.ModelMapper\Intent.Modules.Java.ModelMapper.csproj", "{997D1487-CFEA-43D7-9AEC-BE05F101F8DF}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Intent.Modules.Java.Spring.Cors", "Intent.Modules.Java.Spring.Cors\Intent.Modules.Java.Spring.Cors.csproj", "{10C0B22A-10CB-477A-9C0F-FEFD470ED8E0}"
+Project("{52B49DB5-3EA9-4095-B1A7-DF1AC22D7DAE}") = "Intent.Modules.Java.Spring.Cors", "Intent.Modules.Java.Spring.Cors\Intent.Modules.Java.Spring.Cors.csproj", "{10C0B22A-10CB-477A-9C0F-FEFD470ED8E0}"
 EndProject
 Project("{52B49DB5-3EA9-4095-B1A7-DF1AC22D7DAE}") = "Intent.Modules.Java.Services.CRUD", "Intent.Modules.Java.Services.CRUD\Intent.Modules.Java.Services.CRUD.csproj", "{EF69D81E-E67C-4251-984C-20C3FB2A945E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Intent.Modules.Java.Persistence.JPA.Queries", "Intent.Modules.Java.Persistence.JPA.Queries\Intent.Modules.Java.Persistence.JPA.Queries.csproj", "{FE025313-A7D8-48A9-A0D5-9BD9328F82B0}"
+Project("{52B49DB5-3EA9-4095-B1A7-DF1AC22D7DAE}") = "Intent.Modules.Java.Persistence.JPA.Queries", "Intent.Modules.Java.Persistence.JPA.Queries\Intent.Modules.Java.Persistence.JPA.Queries.csproj", "{FE025313-A7D8-48A9-A0D5-9BD9328F82B0}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Intent.Modules.Java.SpringBoot.Security", "Intent.Modules.Java.SpringBoot.Security\Intent.Modules.Java.SpringBoot.Security.csproj", "{07D6A2D9-6893-4CDB-BF0C-1A1F01F0AAD8}"
+Project("{52B49DB5-3EA9-4095-B1A7-DF1AC22D7DAE}") = "Intent.Modules.Java.SpringBoot.Security", "Intent.Modules.Java.SpringBoot.Security\Intent.Modules.Java.SpringBoot.Security.csproj", "{07D6A2D9-6893-4CDB-BF0C-1A1F01F0AAD8}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Intent.Modules.Java.SpringBoot.Validation", "Intent.Modules.Java.SpringBoot.Validation\Intent.Modules.Java.SpringBoot.Validation.csproj", "{858C7EB2-2BB7-4927-9C44-A8D5BCAC8FBA}"
+Project("{52B49DB5-3EA9-4095-B1A7-DF1AC22D7DAE}") = "Intent.Modules.Java.SpringBoot.Validation", "Intent.Modules.Java.SpringBoot.Validation\Intent.Modules.Java.SpringBoot.Validation.csproj", "{858C7EB2-2BB7-4927-9C44-A8D5BCAC8FBA}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Intent.Modules.Java.Domain.Maven", "Intent.Modules.Java.Domain.Maven\Intent.Modules.Java.Domain.Maven.csproj", "{38A5446F-DC72-46C9-A14B-71727EF18B4F}"
+Project("{52B49DB5-3EA9-4095-B1A7-DF1AC22D7DAE}") = "Intent.Modules.Java.Domain.Maven", "Intent.Modules.Java.Domain.Maven\Intent.Modules.Java.Domain.Maven.csproj", "{38A5446F-DC72-46C9-A14B-71727EF18B4F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Intent.Modules.Java.SpringDoc.OpenApi", "Intent.Modules.Java.SpringDoc.OpenApi\Intent.Modules.Java.SpringDoc.OpenApi.csproj", "{6C983176-1042-4A96-9391-B0576C4272C9}"
+Project("{52B49DB5-3EA9-4095-B1A7-DF1AC22D7DAE}") = "Intent.Modules.Java.SpringDoc.OpenApi", "Intent.Modules.Java.SpringDoc.OpenApi\Intent.Modules.Java.SpringDoc.OpenApi.csproj", "{6C983176-1042-4A96-9391-B0576C4272C9}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Intent.Modules.Java.Enums", "Intent.Modules.Java.Enums\Intent.Modules.Java.Enums.csproj", "{47FE04B4-ACD2-4C63-BEC4-3767A094CA73}"
 EndProject

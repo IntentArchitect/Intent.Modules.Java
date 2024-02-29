@@ -18,6 +18,7 @@ namespace Intent.Modules.Java.Spring.Cors.Templates.CorsConfig
     {
         public override string TemplateId => CorsConfigTemplate.TemplateId;
 
+        [IntentManaged(Mode.Fully)]
         public override ITemplate CreateTemplateInstance(IOutputTarget outputTarget)
         {
             return new CorsConfigTemplate(outputTarget);

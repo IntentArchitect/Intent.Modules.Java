@@ -15,14 +15,14 @@ namespace Intent.Java.Domain.Maven.Api
     {
         public static MavenDependency GetMavenDependency(this DomainPackageModel model)
         {
-            var stereotype = model.GetStereotype("Maven Dependency");
+            var stereotype = model.GetStereotype("090c5c0c-f1b9-457f-ba2e-841312d9e98f");
             return stereotype != null ? new MavenDependency(stereotype) : null;
         }
 
 
         public static bool HasMavenDependency(this DomainPackageModel model)
         {
-            return model.HasStereotype("Maven Dependency");
+            return model.HasStereotype("090c5c0c-f1b9-457f-ba2e-841312d9e98f");
         }
 
         public static bool TryGetMavenDependency(this DomainPackageModel model, out MavenDependency stereotype)
@@ -33,7 +33,7 @@ namespace Intent.Java.Domain.Maven.Api
                 return false;
             }
 
-            stereotype = new MavenDependency(model.GetStereotype("Maven Dependency"));
+            stereotype = new MavenDependency(model.GetStereotype("090c5c0c-f1b9-457f-ba2e-841312d9e98f"));
             return true;
         }
 
