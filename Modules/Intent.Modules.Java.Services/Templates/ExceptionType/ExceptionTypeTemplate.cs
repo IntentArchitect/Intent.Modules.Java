@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
-using Intent.RoslynWeaver.Attributes;
 using Intent.Modules.Java.Weaving.Annotations.Templates;
+using Intent.RoslynWeaver.Attributes;
 
 [assembly: DefaultIntentManaged(Mode.Fully)]
 [assembly:IntentTemplate("Intent.ModuleBuilder.Java.Templates.JavaFileStringInterpolationTemplate",Version= "1.0")]

@@ -6,7 +6,7 @@ Project("{52B49DB5-3EA9-4095-B1A7-DF1AC22D7DAE}") = "Intent.Modules.Java.Service
 EndProject
 Project("{52B49DB5-3EA9-4095-B1A7-DF1AC22D7DAE}") = "Intent.Modules.Java.SpringBoot", "Intent.Modules.Java.SpringBoot\Intent.Modules.Java.SpringBoot.csproj", "{915037D0-3D43-4CDA-9777-BB75B8BD5C63}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Intent.Modules.Java.Domain", "Intent.Modules.Java.Domain\Intent.Modules.Java.Domain.csproj", "{586E75C2-AE1C-4988-9E68-89C2696670BD}"
+Project("{52B49DB5-3EA9-4095-B1A7-DF1AC22D7DAE}") = "Intent.Modules.Java.Domain", "Intent.Modules.Java.Domain\Intent.Modules.Java.Domain.csproj", "{586E75C2-AE1C-4988-9E68-89C2696670BD}"
 EndProject
 Project("{52B49DB5-3EA9-4095-B1A7-DF1AC22D7DAE}") = "Intent.Modules.Java.Maven", "Intent.Modules.Java.Maven\Intent.Modules.Java.Maven.csproj", "{2AEE7253-E4D7-4433-95B7-561CA904F214}"
 EndProject
