@@ -4,7 +4,7 @@
   <display>Domain Settings</display>
   <isAbstract>false</isAbstract>
   <sort-children>manually</sort-children>
-  <order>1</order>
+  <order>7</order>
   <genericTypes />
   <isMapped>false</isMapped>
   <parentFolderId>84eb6eb9-30f5-429d-bf3c-06591e639eec</parentFolderId>
@@ -15,7 +15,7 @@
   <childElements>
     <childElement id="c6b2c7e5-1e29-4b87-8dbb-8adae9b208fa" type="Application Template Settings Field Configuration" typeId="053d28c8-18c9-45b9-b3cb-184ec4b19679">
       <name>Attribute Naming Convention</name>
-      <display>Attribute Naming Convention = c3789138-6649-47e4-901b-5f6469583cb7</display>
+      <display>Attribute Naming Convention</display>
       <isAbstract>false</isAbstract>
       <value>c3789138-6649-47e4-901b-5f6469583cb7</value>
       <genericTypes />

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<class id="d81c5d18-cc45-44af-81cb-a8b27334dba2" type="Module" typeId="6a811790-b322-4340-8b68-84dae5ffafa8">
+  <name>Intent.Modelers.Services</name>
+  <display>Intent.Modelers.Services 3.6.1</display>
+  <isAbstract>false</isAbstract>
+  <value>3.6.1</value>
+  <genericTypes />
+  <isMapped>false</isMapped>
+  <parentFolderId>93f8d0f7-6711-45e6-b04e-237a9281ea4a</parentFolderId>
+  <packageId>84eb6eb9-30f5-429d-bf3c-06591e639eec</packageId>
+  <packageName>Intent.Java.SpringBoot.WebApplication</packageName>
+  <stereotypes />
+  <metadata />
+  <childElements />
+</class>

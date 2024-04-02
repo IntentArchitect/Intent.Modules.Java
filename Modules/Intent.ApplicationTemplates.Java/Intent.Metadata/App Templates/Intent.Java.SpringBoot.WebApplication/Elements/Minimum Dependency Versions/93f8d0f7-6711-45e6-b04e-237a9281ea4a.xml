@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<class id="93f8d0f7-6711-45e6-b04e-237a9281ea4a" type="Minimum Dependency Versions" typeId="63605213-ab56-4042-b801-907bb5a79c08">
+  <name>Minimum Dependency Versions</name>
+  <display>Minimum Dependency Versions</display>
+  <isAbstract>false</isAbstract>
+  <sort-children>by-type-then-by-name</sort-children>
+  <order>1</order>
+  <genericTypes />
+  <isMapped>false</isMapped>
+  <parentFolderId>84eb6eb9-30f5-429d-bf3c-06591e639eec</parentFolderId>
+  <packageId>84eb6eb9-30f5-429d-bf3c-06591e639eec</packageId>
+  <packageName>Intent.Java.SpringBoot.WebApplication</packageName>
+  <stereotypes />
+  <metadata />
+  <childElements />
+</class>

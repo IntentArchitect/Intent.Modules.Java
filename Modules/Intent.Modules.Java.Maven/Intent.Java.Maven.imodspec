@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <package>
   <id>Intent.Java.Maven</id>
-  <version>4.0.0-pre.0</version>
+  <version>4.0.0</version>
   <supportedClientVersions>[3.3.16, 5.0.0-a)</supportedClientVersions>
   <summary>Maven POM file management.</summary>
   <description>Maven POM file management.</description>
@@ -21,7 +21,7 @@
   <dependencies>
     <dependency id="Intent.Code.Weaving.Java" version="1.0.0" />
     <dependency id="Intent.Common" version="3.5.0" />
-    <dependency id="Intent.Common.Java" version="4.0.0-pre.1" />
+    <dependency id="Intent.Common.Java" version="4.0.0" />
     <dependency id="Intent.Common.Types" version="3.3.9" />
   </dependencies>
   <files>

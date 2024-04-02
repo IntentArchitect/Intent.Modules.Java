@@ -1,7 +1,7 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <package>
   <id>Intent.Java.SpringBoot.Validation</id>
-  <version>4.0.0-pre.0</version>
+  <version>4.0.0</version>
   <supportedClientVersions>[3.3.16, 5.0.0-a)</supportedClientVersions>
   <releaseNotes>release-notes.md</releaseNotes>
   <summary>Provides request validation to the Spring Boot application</summary>
@@ -23,11 +23,11 @@
   <dependencies>
     <dependency id="Intent.Code.Weaving.Java" version="1.0.0" />
     <dependency id="Intent.Common" version="3.5.0" />
-    <dependency id="Intent.Common.Java" version="4.0.0-pre.1" />
+    <dependency id="Intent.Common.Java" version="4.0.0" />
     <dependency id="Intent.Common.Types" version="3.3.9" />
-    <dependency id="Intent.Java.Maven" version="4.0.0-pre.0" />
-    <dependency id="Intent.Java.Services" version="4.0.0-pre.0" />
-    <dependency id="Intent.Java.SpringBoot" version="4.0.0-pre.0" />
+    <dependency id="Intent.Java.Maven" version="4.0.0" />
+    <dependency id="Intent.Java.Services" version="4.0.0" />
+    <dependency id="Intent.Java.SpringBoot" version="4.0.0" />
     <dependency id="Intent.Java.Weaving.Annotations" version="4.0.0" />
     <dependency id="Intent.Metadata.WebApi" version="4.4.3" />
     <dependency id="Intent.Modelers.Domain" version="3.6.0" />
