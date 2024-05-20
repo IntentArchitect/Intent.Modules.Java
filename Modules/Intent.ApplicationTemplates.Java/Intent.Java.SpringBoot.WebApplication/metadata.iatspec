@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <applicationTemplate>
   <id>Intent.Java.SpringBoot.WebApplication</id>
-  <version>3.4.12</version>
+  <version>3.4.13</version>
   <supportedClientVersions>[4.0.0-beta.0, 5.0.0)</supportedClientVersions>
   <displayName>Java SpringBoot Web Application</displayName>
   <shortDescription>Create a Java web application using SpringBoot</shortDescription>
@@ -192,10 +192,10 @@
     <module id="Intent.Common" version="3.6.0" />
     <module id="Intent.Common.Java" version="4.1.0" />
     <module id="Intent.Java.Weaving.Annotations" version="4.1.0" />
-    <module id="Intent.Metadata.RDBMS" version="3.6.0" />
+    <module id="Intent.Metadata.RDBMS" version="3.6.1" />
     <module id="Intent.Metadata.WebApi" version="4.5.1" />
     <module id="Intent.Modelers.Domain.Repositories" version="3.4.0" />
-    <module id="Intent.Modelers.Services" version="3.7.1" />
-    <module id="Intent.Modelers.Services.DomainInteractions" version="1.1.1" />
+    <module id="Intent.Modelers.Services" version="3.7.2" />
+    <module id="Intent.Modelers.Services.DomainInteractions" version="1.1.2" />
   </minimumDependencyVersions>
 </applicationTemplate>
