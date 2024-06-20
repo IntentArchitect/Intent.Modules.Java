@@ -86,7 +86,9 @@ public class UsersServiceImpl implements UsersService {
     @Transactional(readOnly = true)
     public Page<UserDto> FindAllPaginated(Pageable pageable) {
         var users = userRepository.findAll(pageable);
-        return new PageImpl<>(UserDto.mapFromUsers(users.getContent(), mapper), PageRequest.of(pageable.getPageNumber(), pageable.getPageSize()), users.getTotalElements());
+        return new PageImpl<>(UserDto.mapFromUsers(users.getContent(), mapper), 
+            PageRequest.of(pageable.getPageNumber(), pageable.getPageSize()), 
+            users.getTotalElements());
     }
 
     private static Role createRole(CreateUserRoleDto dto) {
