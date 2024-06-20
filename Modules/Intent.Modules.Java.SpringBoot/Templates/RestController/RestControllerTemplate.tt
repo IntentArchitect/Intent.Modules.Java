@@ -32,9 +32,18 @@ public class <#= ClassName #> {
             PushIndent("    ");
 #>
     try {
-<#      }
+<#      } #>
+<#
+        var pageableParam = GetPaginatedParameter(operation);
+        if (pageableParam is not null)
+        { #>
+        if (<#= pageableParam.Name #>.isUnpaged()) {
+            <#= pageableParam.Name #> = <#= ImportType("org.springframework.data.domain.PageRequest") #>.of(<#= GetPageableOfRange(pageableParam) #>);
+        }
 
-        if (operation.ReturnType != null) { #>
+<#      } #>
+<#      if (operation.ReturnType != null) 
+        { #>
         final <#= GetTypeName(operation) #> result = <#= GetServiceInterfaceName().ToCamelCase() #>.<#= operation.Name #>(<#= this.GetArguments(operation.Parameters) #>);
 <#          if (!operation.ReturnType.IsNullable && GetTypeInfo(operation.ReturnType).Template != null && !operation.ReturnType.IsCollection) { #>
         if (result == null) {
@@ -43,7 +52,9 @@ public class <#= ClassName #> {
 <#          } #>
 
         return new ResponseEntity<>(<#= GetResultValue(operation) #>, <#= GetHttpResponseCode(operation) #>);
-<#      } else { #>
+<#      } 
+        else 
+        { #>
         <#= GetServiceInterfaceName().ToCamelCase() #>.<#= operation.Name #>(<#= this.GetArguments(operation.Parameters) #>);
 <#      }
 
@@ -54,7 +65,8 @@ public class <#= ClassName #> {
             { #>
         } catch (<#= checkedException.Types #> e) {
 <#
-                if (checkedException.Log) { #>
+                if (checkedException.Log) 
+                { #>
             log.error(e.getMessage(), e);
 <#              } #>
             throw new <#= ImportType("org.springframework.web.server.ResponseStatusException") #>(<#= ImportType("org.springframework.http.HttpStatus") #>.<#= checkedException.HttpStatus #>);

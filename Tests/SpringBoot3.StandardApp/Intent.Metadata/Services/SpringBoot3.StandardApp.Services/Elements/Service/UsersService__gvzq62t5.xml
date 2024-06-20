@@ -100,6 +100,7 @@
               <properties>
                 <property name="d2630e0f-f930-404f-b453-1e8052a712f5" display="Source" value="Default" isActive="true" />
                 <property name="7a331e9b-f13c-4b33-9013-bd59b4a4999c" display="Header Name" isActive="false" />
+                <property name="c8caa58e-972a-42f2-983e-652ceee762b2" display="Query String Name" isActive="false" />
               </properties>
             </stereotype>
           </stereotypes>
@@ -179,6 +180,7 @@
               <properties>
                 <property name="d2630e0f-f930-404f-b453-1e8052a712f5" display="Source" value="Default" isActive="true" />
                 <property name="7a331e9b-f13c-4b33-9013-bd59b4a4999c" display="Header Name" isActive="false" />
+                <property name="c8caa58e-972a-42f2-983e-652ceee762b2" display="Query String Name" isActive="false" />
               </properties>
             </stereotype>
           </stereotypes>
@@ -298,6 +300,7 @@
               <properties>
                 <property name="d2630e0f-f930-404f-b453-1e8052a712f5" display="Source" value="Default" isActive="true" />
                 <property name="7a331e9b-f13c-4b33-9013-bd59b4a4999c" display="Header Name" isActive="false" />
+                <property name="c8caa58e-972a-42f2-983e-652ceee762b2" display="Query String Name" isActive="false" />
               </properties>
             </stereotype>
           </stereotypes>
@@ -332,6 +335,7 @@
               <properties>
                 <property name="d2630e0f-f930-404f-b453-1e8052a712f5" display="Source" value="Default" isActive="true" />
                 <property name="7a331e9b-f13c-4b33-9013-bd59b4a4999c" display="Header Name" isActive="false" />
+                <property name="c8caa58e-972a-42f2-983e-652ceee762b2" display="Query String Name" isActive="false" />
               </properties>
             </stereotype>
           </stereotypes>
@@ -411,9 +415,92 @@
               <properties>
                 <property name="d2630e0f-f930-404f-b453-1e8052a712f5" display="Source" value="Default" isActive="true" />
                 <property name="7a331e9b-f13c-4b33-9013-bd59b4a4999c" display="Header Name" isActive="false" />
+                <property name="c8caa58e-972a-42f2-983e-652ceee762b2" display="Query String Name" isActive="false" />
               </properties>
             </stereotype>
           </stereotypes>
+          <metadata />
+          <childElements />
+        </childElement>
+      </childElements>
+    </childElement>
+    <childElement id="23f7f83b-2b65-4be5-8287-dc7360ad5ce2" type="Operation" typeId="e030c97a-e066-40a7-8188-808c275df3cb">
+      <name>FindAllPaginated</name>
+      <display>FindAllPaginated(pageable: Pageable): Page&lt;UserDto&gt;</display>
+      <isAbstract>false</isAbstract>
+      <sort-children>by-type-then-manually</sort-children>
+      <genericTypes />
+      <typeReference id="70c8bc33-8df0-42b6-a468-2954f1a2db84">
+        <typeId>d93a490d-d9c3-4b5c-a6ad-9bc2f9015dcc</typeId>
+        <isNavigable>true</isNavigable>
+        <isNullable>false</isNullable>
+        <isCollection>false</isCollection>
+        <isRequired>true</isRequired>
+        <typePackageName>Intent.Java.SpringBoot</typePackageName>
+        <typePackageId>27f3b2d0-b9e5-47da-bece-d305c33b5945</typePackageId>
+        <stereotypes />
+        <genericTypeParameters>
+          <genericTypeParameter id="81a742ea-c206-4260-951b-0d802a6401e0">
+            <typeId>ce4fff57-542b-409a-a93d-882a7e57ab3d</typeId>
+            <isNavigable>true</isNavigable>
+            <isNullable>false</isNullable>
+            <isCollection>false</isCollection>
+            <isRequired>true</isRequired>
+            <genericTypeId>494cdb33-59da-4ba8-a443-679f8925729a</genericTypeId>
+            <typePackageName>SpringBoot3.StandardApp.Services</typePackageName>
+            <typePackageId>0c1c0e25-c8f3-4a33-8dd7-33e74e334114</typePackageId>
+            <stereotypes />
+            <genericTypeParameters />
+          </genericTypeParameter>
+        </genericTypeParameters>
+      </typeReference>
+      <isMapped>false</isMapped>
+      <parentFolderId>2c792ad7-6826-4293-aa43-0251eb01c0ec</parentFolderId>
+      <packageId>0c1c0e25-c8f3-4a33-8dd7-33e74e334114</packageId>
+      <packageName>SpringBoot3.StandardApp.Services</packageName>
+      <stereotypes>
+        <stereotype stereotypeDefinitionId="b4581ed2-42ec-4ae2-83dd-dcdd5f0837b6" name="Http Settings">
+          <addedByDefault>true</addedByDefault>
+          <definitionPackageName>Intent.Metadata.WebApi</definitionPackageName>
+          <definitionPackageId>0011387a-b122-45d7-9cdb-8e21b315ab9f</definitionPackageId>
+          <properties>
+            <property name="801c3e61-4431-4d81-93fa-7e57d33cb3fa" display="Verb" value="GET" isActive="true" />
+            <property name="5dd3e07d-76eb-45d4-9956-4325fb068acc" display="Route" value="paginated" isActive="true" />
+            <property name="4490e212-1e99-43ce-b3dd-048ed2a6bae8" display="Return Type Mediatype" value="Default" isActive="true" />
+          </properties>
+        </stereotype>
+        <stereotype stereotypeDefinitionId="824d3c4c-8e15-4413-afb7-6bcd372fe557" name="CORS Settings">
+          <addedByDefault>true</addedByDefault>
+          <definitionPackageName>Intent.Java.Spring.Cors</definitionPackageName>
+          <definitionPackageId>697b3afa-5cbc-4332-8476-351bd64446b9</definitionPackageId>
+          <properties>
+            <property name="470eec96-2dc7-4a8b-833b-55c25e797a82" display="Allow Cross Origin Requests" value="false" isActive="true" />
+          </properties>
+        </stereotype>
+      </stereotypes>
+      <metadata />
+      <childElements>
+        <childElement id="b0be9326-333b-451a-96e8-1f3996300749" type="Parameter" typeId="00208d20-469d-41cb-8501-768fd5eb796b">
+          <name>pageable</name>
+          <display>in : pageable: Pageable</display>
+          <isAbstract>false</isAbstract>
+          <genericTypes />
+          <typeReference id="08a9b0aa-45c0-4c25-8ed8-12f37330e2a4">
+            <typeId>e48ce4f3-7dab-4668-b137-362f3c0a752e</typeId>
+            <isNavigable>true</isNavigable>
+            <isNullable>false</isNullable>
+            <isCollection>false</isCollection>
+            <isRequired>true</isRequired>
+            <typePackageName>Intent.Java.SpringBoot</typePackageName>
+            <typePackageId>27f3b2d0-b9e5-47da-bece-d305c33b5945</typePackageId>
+            <stereotypes />
+            <genericTypeParameters />
+          </typeReference>
+          <isMapped>false</isMapped>
+          <parentFolderId>23f7f83b-2b65-4be5-8287-dc7360ad5ce2</parentFolderId>
+          <packageId>0c1c0e25-c8f3-4a33-8dd7-33e74e334114</packageId>
+          <packageName>SpringBoot3.StandardApp.Services</packageName>
+          <stereotypes />
           <metadata />
           <childElements />
         </childElement>
