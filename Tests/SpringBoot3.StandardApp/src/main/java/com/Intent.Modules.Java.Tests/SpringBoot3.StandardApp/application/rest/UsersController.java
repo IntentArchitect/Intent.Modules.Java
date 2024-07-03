@@ -95,7 +95,7 @@ public class UsersController {
         @ApiResponse(responseCode = "404", description = "Can\'t find an Page<UserDto> with the parameters provided.") })
     public ResponseEntity<Page<UserDto>> FindAllPaginated(@Parameter(required = true)  Pageable pageable) {
         if (pageable.isUnpaged()) {
-            pageable = PageRequest.of(0, 100);
+            pageable = PageRequest.of(0, 150);
         }
 
         final Page<UserDto> result = usersService.FindAllPaginated(pageable);

@@ -500,7 +500,17 @@
           <parentFolderId>23f7f83b-2b65-4be5-8287-dc7360ad5ce2</parentFolderId>
           <packageId>0c1c0e25-c8f3-4a33-8dd7-33e74e334114</packageId>
           <packageName>SpringBoot3.StandardApp.Services</packageName>
-          <stereotypes />
+          <stereotypes>
+            <stereotype stereotypeDefinitionId="f9297602-456c-424e-9651-21d235e04e0d" name="Pageable Settings">
+              <addedByDefault>false</addedByDefault>
+              <definitionPackageName>Intent.Java.SpringBoot</definitionPackageName>
+              <definitionPackageId>27f3b2d0-b9e5-47da-bece-d305c33b5945</definitionPackageId>
+              <properties>
+                <property name="6af5b607-a4a8-4d87-87f3-53a797f11ebd" display="Default Page Number" value="0" isActive="true" />
+                <property name="b79574dc-e33b-45f7-83f9-1b7c966a4d7c" display="Default Page Size" value="150" isActive="true" />
+              </properties>
+            </stereotype>
+          </stereotypes>
           <metadata />
           <childElements />
         </childElement>
