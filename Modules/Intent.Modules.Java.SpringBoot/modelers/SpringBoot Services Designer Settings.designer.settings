@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<settings version="3.1.1">
+  <id>4d8737f5-fb15-4981-b697-e1ca7c8634de</id>
+  <name>SpringBoot Services Designer Settings</name>
+  <designerReferences />
+  <packageSettings />
+  <packageExtensions />
+  <elementSettings />
+  <elementExtensions>
+    <elementExtension type="Operation" typeId="e030c97a-e066-40a7-8188-808c275df3cb">
+      <creationOptions />
+      <scriptOptions>
+        <option>
+          <text>Paginate</text>
+          <shortcut>ctrl + shift + g</shortcut>
+          <icon type="FontAwesome" source="angle-double-right" />
+          <script>function changeReturnType(element) {
+    const pageResultTypeId = "d93a490d-d9c3-4b5c-a6ad-9bc2f9015dcc";
+    let currentReturnType = element.typeReference.typeId;
+    if (currentReturnType === pageResultTypeId) {
+        return;
+    }
+    element.typeReference.setType(pageResultTypeId, [{ typeId: currentReturnType, isCollection: false, isNullable: false }]);
+    element.typeReference.setIsCollection(false);
+    element.typeReference.setIsNullable(false);
+}
+function addPagingParameters(element, childElementType) {
+    const pageableTypeId = "e48ce4f3-7dab-4668-b137-362f3c0a752e";
+    if (!element.getChildren(childElementType).find(x =&gt; x.typeReference?.getTypeId() === pageableTypeId)) {
+        let peagable = createElement(childElementType, "pageable", element.id);
+        peagable.typeReference.setType(pageableTypeId);
+    }
+}
+function addPagination(element) {
+    addPagingParameters(element, "Parameter");
+    changeReturnType(element);
+}
+addPagination(element);
+</script>
+        </option>
+      </scriptOptions>
+      <mappingOptions />
+      <typeOrder />
+      <mappingSettings />
+    </elementExtension>
+  </elementExtensions>
+  <associationSettings />
+  <associationExtensions />
+  <mappingSettings />
+  <mappableElementPackages />
+  <mappableElementPackageExtensions />
+</settings>

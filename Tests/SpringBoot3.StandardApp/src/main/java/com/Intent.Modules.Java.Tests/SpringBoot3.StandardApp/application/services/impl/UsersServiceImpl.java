@@ -1,6 +1,9 @@
 package com.Intent.Modules.Java.Tests.SpringBoot3.StandardApp.application.services.impl;
 
 import lombok.AllArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageImpl;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 import java.util.stream.Collectors;
 import java.util.stream.Collectors;
@@ -20,6 +23,7 @@ import java.util.List;
 import java.util.UUID;
 import org.modelmapper.ModelMapper;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.data.domain.Pageable;
 
 @Service
 @AllArgsConstructor
@@ -76,6 +80,15 @@ public class UsersServiceImpl implements UsersService {
         var userDto = UserDto.mapFromUser(user.get(), mapper);
         userRepository.delete(user.get());
         return userDto;
+    }
+
+    @Override
+    @Transactional(readOnly = true)
+    public Page<UserDto> FindAllPaginated(Pageable pageable) {
+        var users = userRepository.findAll(pageable);
+        return new PageImpl<>(UserDto.mapFromUsers(users.getContent(), mapper), 
+            PageRequest.of(pageable.getPageNumber(), pageable.getPageSize()), 
+            users.getTotalElements());
     }
 
     private static Role createRole(CreateUserRoleDto dto) {

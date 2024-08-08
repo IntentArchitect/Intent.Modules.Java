@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<stereotypeDefinition id="f9297602-456c-424e-9651-21d235e04e0d" version="3.1.0">
+  <name>Pageable Settings</name>
+  <targetMode>that-reference</targetMode>
+  <targetTypes>
+    <type id="00208d20-469d-41cb-8501-768fd5eb796b">Parameter</type>
+  </targetTypes>
+  <targetReferenceTypes>
+    <type id="e48ce4f3-7dab-4668-b137-362f3c0a752e">Pageable</type>
+  </targetReferenceTypes>
+  <applyMode>manually</applyMode>
+  <icon type="FontAwesome" source="cogs" />
+  <displayIcon>false</displayIcon>
+  <displayIconFunction>return false;</displayIconFunction>
+  <displayFunction />
+  <displayAsAnnotation>false</displayAsAnnotation>
+  <displayAsText>true</displayAsText>
+  <autoAdd>false</autoAdd>
+  <allowMultipleApplies>false</allowMultipleApplies>
+  <parentFolderId>91c31304-fa5d-493f-a9f8-28517b85459e</parentFolderId>
+  <order>0</order>
+  <packageId>27f3b2d0-b9e5-47da-bece-d305c33b5945</packageId>
+  <packageName>Intent.Java.SpringBoot</packageName>
+  <properties>
+    <property id="6af5b607-a4a8-4d87-87f3-53a797f11ebd">
+      <name>Default Page Number</name>
+      <type>string</type>
+      <controlType>number</controlType>
+      <optionsSource>n/a</optionsSource>
+      <placeholder>(default)</placeholder>
+      <valueOptions />
+      <lookupTypes />
+      <isRequiredFunction />
+    </property>
+    <property id="b79574dc-e33b-45f7-83f9-1b7c966a4d7c">
+      <name>Default Page Size</name>
+      <type>string</type>
+      <controlType>number</controlType>
+      <optionsSource>n/a</optionsSource>
+      <placeholder>(default)</placeholder>
+      <valueOptions />
+      <lookupTypes />
+      <isRequiredFunction />
+    </property>
+  </properties>
+</stereotypeDefinition>

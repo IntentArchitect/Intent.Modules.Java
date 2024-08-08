@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<class id="b6ddafd1-71f7-4e16-bc2f-457c8349a4df" type="Element Extension" typeId="e3c7b1ca-f080-45c1-b56f-8d44226c8e20">
+  <name>Operation Extension</name>
+  <display>Operation Extension: Operation</display>
+  <isAbstract>false</isAbstract>
+  <sort-children>by-type-then-manually</sort-children>
+  <genericTypes />
+  <typeReference id="5434c132-ebd8-40fe-b160-fc1bbf4dcf07">
+    <typeId>e030c97a-e066-40a7-8188-808c275df3cb</typeId>
+    <isNavigable>true</isNavigable>
+    <isNullable>false</isNullable>
+    <isCollection>false</isCollection>
+    <isRequired>true</isRequired>
+    <typePackageName>Intent.Modelers.Services</typePackageName>
+    <typePackageId>4ba53041-59f9-4446-a207-6da4fbdf86fe</typePackageId>
+    <stereotypes />
+    <genericTypeParameters />
+  </typeReference>
+  <isMapped>false</isMapped>
+  <parentFolderId>4d8737f5-fb15-4981-b697-e1ca7c8634de</parentFolderId>
+  <packageId>27f3b2d0-b9e5-47da-bece-d305c33b5945</packageId>
+  <packageName>Intent.Java.SpringBoot</packageName>
+  <stereotypes>
+    <stereotype stereotypeDefinitionId="159cbc8e-a910-40f7-8e45-3edadbb863c2" name="Type Reference Extension Settings">
+      <addedByDefault>true</addedByDefault>
+      <definitionPackageName>Intent.ModuleBuilder</definitionPackageName>
+      <definitionPackageId>9972b2a9-b749-4bba-b5c8-824bf694c6ef</definitionPackageId>
+      <properties>
+        <property name="35226a83-3965-4224-8aef-20c68a0c5180" display="Mode" value="Inherit" isActive="true" />
+        <property name="7d3859d4-084d-4ff0-8b31-850b4a8f8cd0" display="Display Name" isActive="false" />
+        <property name="17223dbd-8df0-4700-8b81-02274ca3ed7f" display="Hint" isActive="false" />
+        <property name="b2cef034-5706-45d2-8554-f4dc582a18ff" display="Target Types" isActive="false" />
+        <property name="93e4efa9-186d-4e88-ae0a-491bcd6e6f5e" display="Default Type Id" isActive="false" />
+        <property name="7a0c4185-1c08-4d3e-9185-14683d7a3bd0" display="Allow Collection" value="Inherit" isActive="false" />
+        <property name="e3dc90ec-4f5f-4f20-b271-e28a5094dc91" display="Allow Nullable" value="Inherit" isActive="false" />
+      </properties>
+    </stereotype>
+    <stereotype stereotypeDefinitionId="312eab00-f6db-492e-bbb4-e41383c8d3d8" name="Extension Settings">
+      <addedByDefault>true</addedByDefault>
+      <definitionPackageName>Intent.ModuleBuilder</definitionPackageName>
+      <definitionPackageId>9972b2a9-b749-4bba-b5c8-824bf694c6ef</definitionPackageId>
+      <properties>
+        <property name="8c964307-9d03-4a14-9fd3-40ea2607955a" display="Display Text Function" value="" isActive="true" />
+        <property name="996ed45f-2318-4587-9618-73db3d7cfed0" display="Validate Function" value="" isActive="true" />
+      </properties>
+    </stereotype>
+  </stereotypes>
+  <metadata />
+  <childElements>
+    <childElement id="e3fb7931-8b3f-4db0-be1c-dc9e6978b366" type="Context Menu" typeId="d45e383d-90ba-4b64-aca7-34ca100cea21">
+      <name>[context menu]</name>
+      <display>[context menu]</display>
+      <isAbstract>false</isAbstract>
+      <sort-children>manually</sort-children>
+      <genericTypes />
+      <isMapped>false</isMapped>
+      <parentFolderId>b6ddafd1-71f7-4e16-bc2f-457c8349a4df</parentFolderId>
+      <packageId>27f3b2d0-b9e5-47da-bece-d305c33b5945</packageId>
+      <packageName>Intent.Java.SpringBoot</packageName>
+      <stereotypes />
+      <metadata />
+      <childElements>
+        <childElement id="1ed7a987-c2da-4038-b043-5fd7babbd25e" type="Run Script Option" typeId="345d46fb-c500-409a-88c7-26720572c9af">
+          <name>Paginate</name>
+          <display>Paginate: Script</display>
+          <isAbstract>false</isAbstract>
+          <genericTypes />
+          <typeReference id="910a81e1-0d74-4e99-90d1-4c6ef6679468">
+            <typeId>043eee26-1591-42ac-9f2c-fc911b070eb1</typeId>
+            <isNavigable>true</isNavigable>
+            <isNullable>false</isNullable>
+            <isCollection>false</isCollection>
+            <isRequired>true</isRequired>
+            <typePackageName>Intent.ModuleBuilder</typePackageName>
+            <typePackageId>9972b2a9-b749-4bba-b5c8-824bf694c6ef</typePackageId>
+            <stereotypes />
+            <genericTypeParameters />
+          </typeReference>
+          <isMapped>false</isMapped>
+          <parentFolderId>e3fb7931-8b3f-4db0-be1c-dc9e6978b366</parentFolderId>
+          <packageId>27f3b2d0-b9e5-47da-bece-d305c33b5945</packageId>
+          <packageName>Intent.Java.SpringBoot</packageName>
+          <stereotypes>
+            <stereotype stereotypeDefinitionId="56bc0465-c1fe-4bca-9493-2a3ce88a4047" name="Script Settings">
+              <addedByDefault>true</addedByDefault>
+              <definitionPackageName>Intent.ModuleBuilder</definitionPackageName>
+              <definitionPackageId>9972b2a9-b749-4bba-b5c8-824bf694c6ef</definitionPackageId>
+              <properties>
+                <property name="73a4088f-626e-4d31-b0b2-113167f015b2" display="Script" value="function changeReturnType(element) {&#xD;&#xA;    const pageResultTypeId = &quot;d93a490d-d9c3-4b5c-a6ad-9bc2f9015dcc&quot;;&#xD;&#xA;    let currentReturnType = element.typeReference.typeId;&#xD;&#xA;    if (currentReturnType === pageResultTypeId) {&#xD;&#xA;        return;&#xD;&#xA;    }&#xD;&#xA;    element.typeReference.setType(pageResultTypeId, [{ typeId: currentReturnType, isCollection: false, isNullable: false }]);&#xD;&#xA;    element.typeReference.setIsCollection(false);&#xD;&#xA;    element.typeReference.setIsNullable(false);&#xD;&#xA;}&#xD;&#xA;function addPagingParameters(element, childElementType) {&#xD;&#xA;    const pageableTypeId = &quot;e48ce4f3-7dab-4668-b137-362f3c0a752e&quot;;&#xD;&#xA;    if (!element.getChildren(childElementType).find(x =&gt; x.typeReference?.getTypeId() === pageableTypeId)) {&#xD;&#xA;        let peagable = createElement(childElementType, &quot;pageable&quot;, element.id);&#xD;&#xA;        peagable.typeReference.setType(pageableTypeId);&#xD;&#xA;    }&#xD;&#xA;}&#xD;&#xA;function addPagination(element) {&#xD;&#xA;    addPagingParameters(element, &quot;Parameter&quot;);&#xD;&#xA;    changeReturnType(element);&#xD;&#xA;}&#xD;&#xA;addPagination(element);&#xD;&#xA;" isActive="true" />
+              </properties>
+            </stereotype>
+            <stereotype stereotypeDefinitionId="cbe77364-d1d0-400b-a8c4-646a4c869612" name="Option Settings">
+              <comment />
+              <addedByDefault>true</addedByDefault>
+              <definitionPackageName>Intent.ModuleBuilder</definitionPackageName>
+              <definitionPackageId>9972b2a9-b749-4bba-b5c8-824bf694c6ef</definitionPackageId>
+              <properties>
+                <property name="b2c3a117-23d3-47e5-8b83-5b902c55a226" display="Icon" value="{&quot;source&quot;:&quot;angle-double-right&quot;,&quot;type&quot;:2,&quot;absolutePathRelativeTo&quot;:null}" isActive="true" />
+                <property name="0abff08a-3986-40b1-a28f-4cc03c4fc1ec" display="Shortcut" value="ctrl + shift + g" isActive="true" />
+                <property name="79f6973f-5e3a-4618-9d4c-d7cc604bffe0" display="Shortcut (macOS)" isActive="true" />
+                <property name="e034a0ca-0101-4594-8384-43048b714578" display="Type Order" isActive="true" />
+                <property name="c03841e5-a1e9-4e95-b699-5a466dde7d7d" display="Is Option Visible Function" isActive="true" />
+              </properties>
+            </stereotype>
+          </stereotypes>
+          <metadata />
+          <childElements />
+        </childElement>
+      </childElements>
+    </childElement>
+  </childElements>
+</class>

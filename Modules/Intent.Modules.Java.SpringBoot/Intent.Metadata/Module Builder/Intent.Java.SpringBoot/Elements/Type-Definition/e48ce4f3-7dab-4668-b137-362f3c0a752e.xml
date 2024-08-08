@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<class id="e48ce4f3-7dab-4668-b137-362f3c0a752e" type="Type-Definition" typeId="d4e577cd-ad05-4180-9a2e-fff4ddea0e1e">
+  <name>Pageable</name>
+  <display>Pageable</display>
+  <isAbstract>false</isAbstract>
+  <genericTypes />
+  <isMapped>false</isMapped>
+  <parentFolderId>1fb2dfda-04e4-466c-a91b-8dd0276217b3</parentFolderId>
+  <packageId>27f3b2d0-b9e5-47da-bece-d305c33b5945</packageId>
+  <packageName>Intent.Java.SpringBoot</packageName>
+  <stereotypes>
+    <stereotype stereotypeDefinitionId="05d3f924-e9c7-4ce1-b8f4-f29bc8e7993e" name="Checked Exception Handling">
+      <addedByDefault>true</addedByDefault>
+      <definitionPackageName>Intent.Java.SpringBoot</definitionPackageName>
+      <definitionPackageId>27f3b2d0-b9e5-47da-bece-d305c33b5945</definitionPackageId>
+      <properties>
+        <property name="995740c3-93e6-401a-b2d9-5e91c3d00886" display="Http Response Status" value="INTERNAL_SERVER_ERROR (500)" isActive="true" />
+        <property name="4372c9e8-2e2e-4c0d-bae9-3b4f09686940" display="Log" value="true" isActive="true" />
+      </properties>
+    </stereotype>
+    <stereotype stereotypeDefinitionId="7c40ee54-3dd5-4bdd-b6d3-2d65be7c928e" name="Java">
+      <addedByDefault>false</addedByDefault>
+      <definitionPackageName>Intent.Common.Java</definitionPackageName>
+      <definitionPackageId>1b8f2b45-99c0-42dc-b28e-bcd4621c3e71</definitionPackageId>
+      <properties>
+        <property name="3a9b6439-bed1-4d6c-b7a7-88bcfb989560" display="Type" value="Pageable" isActive="true" />
+        <property name="f18998f9-4a4b-4b2a-9323-d01f3edd6a00" display="Package" value="org.springframework.data.domain" isActive="true" />
+        <property name="f7e7c272-2b24-476b-aaf2-985b4982ec02" display="Is Primitive" value="false" isActive="true" />
+        <property name="9da76c15-d7f0-44c1-8c0a-9ff665d32d4d" display="Is Collection" value="false" isActive="true" />
+      </properties>
+    </stereotype>
+  </stereotypes>
+  <metadata />
+  <childElements />
+</class>

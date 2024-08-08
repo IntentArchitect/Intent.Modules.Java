@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Intent.Engine;
+using Intent.Exceptions;
 using Intent.Metadata.WebApi.Api;
 using Intent.Modelers.Services.Api;
 using Intent.Modules.Common;
@@ -17,6 +18,7 @@ using Intent.Modules.Java.Services.Templates.ServiceInterface;
 using Intent.Modules.Java.SpringBoot.Api;
 using Intent.RoslynWeaver.Attributes;
 using Intent.Templates;
+using ParameterModelStereotypeExtensions = Intent.Metadata.WebApi.Api.ParameterModelStereotypeExtensions;
 using OperationExtensionModel = Intent.Modules.Java.Services.Api.OperationExtensionModel;
 
 [assembly: DefaultIntentManaged(Mode.Merge)]
@@ -94,7 +96,7 @@ namespace Intent.Modules.Java.SpringBoot.Templates.RestController
 
             if (operation.Parameters.Any() &&
                 operation.Parameters.All(parameter =>
-                    parameter.GetParameterSettings().Source().AsEnum() == ParameterModelStereotypeExtensions
+                    parameter.GetParameterSettings()?.Source().AsEnum() == ParameterModelStereotypeExtensions
                         .ParameterSettings.SourceOptionsEnum.FromForm))
             {
                 mappingAnnotationParameters.Add($"consumes = {ImportType("org.springframework.http.MediaType")}.APPLICATION_FORM_URLENCODED_VALUE");
@@ -127,6 +129,17 @@ namespace Intent.Modules.Java.SpringBoot.Templates.RestController
                 default:
                     throw new ArgumentOutOfRangeException();
             }
+        }
+
+        private static ParameterModel? GetPaginatedParameter(OperationModel operation)
+        {
+            var parameters = operation.Parameters.Where(p => p.Type?.Element.Name == "Pageable").ToArray();
+            return parameters.Length switch
+            {
+                0 => null,
+                1 => parameters[0],
+                _ => throw new ElementException(operation.InternalElement, "Multiple Pageable parameters found. Only max of 1 allowed.")
+            };
         }
 
         private string GetReturnType(OperationModel operation)
@@ -189,67 +202,60 @@ namespace Intent.Modules.Java.SpringBoot.Templates.RestController
         {
             var required = parameter.Type.IsNullable ? ", required = false" : string.Empty;
 
-            if (parameter.GetParameterSettings().Source().IsDefault())
+            switch (parameter.GetParameterSettings())
             {
-                if ((GetTypeInfo(parameter.TypeReference).IsPrimitive ||
-                     GetTypeInfo(parameter.TypeReference).Name == "String" ||
-                     GetTypeInfo(parameter.TypeReference).Name == "UUID") &&
-                    !parameter.TypeReference.IsCollection)
-                {
-
-                    if (GetPath(operation) != null && GetPath(operation).Split('/', StringSplitOptions.RemoveEmptyEntries).Any(x =>
-                            x.Contains('{')
-                            && x.Contains('}')
-                            && x.Split(new[] { '{', '}' }, StringSplitOptions.RemoveEmptyEntries).Any(i => i == parameter.Name)))
+                case null:
+                case var setting when setting.Source().IsDefault():
+                    if ((GetTypeInfo(parameter.TypeReference).IsPrimitive ||
+                         GetTypeInfo(parameter.TypeReference).Name == "String" ||
+                         GetTypeInfo(parameter.TypeReference).Name == "UUID") &&
+                        !parameter.TypeReference.IsCollection)
                     {
+
+                        if (GetPath(operation) != null && GetPath(operation).Split('/', StringSplitOptions.RemoveEmptyEntries).Any(x =>
+                                x.Contains('{')
+                                && x.Contains('}')
+                                && x.Split(new[] { '{', '}' }, StringSplitOptions.RemoveEmptyEntries).Any(i => i == parameter.Name)))
+                        {
+                            return
+                                $"@PathVariable(value = \"{parameter.Name}\"{required})";
+                        }
+
                         return
-                            $"@PathVariable(value = \"{parameter.Name}\"{required})";
+                            $"@RequestParam(value = \"{parameter.Name}\"{required})";
+                    }
+                    else if (parameter.TypeReference?.HasJavaMapType() == true)
+                    {
+                        return $"@RequestParam";
                     }
 
-                    return
-                        $"@RequestParam(value = \"{parameter.Name}\"{required})";
-                }
-                else if (parameter.TypeReference?.HasJavaMapType() == true)
-                {
-                    return $"@RequestParam";
-                }
+                    if (GetHttpVerb(operation) == HttpVerb.Patch ||
+                        GetHttpVerb(operation) == HttpVerb.Post ||
+                        GetHttpVerb(operation) == HttpVerb.Put)
+                    {
+                        return "@RequestBody";
+                    }
 
-                if (GetHttpVerb(operation) == HttpVerb.Patch ||
-                    GetHttpVerb(operation) == HttpVerb.Post ||
-                    GetHttpVerb(operation) == HttpVerb.Put)
-                {
+                    return string.Empty;
+
+                case var setting when setting.Source().IsFromBody():
                     return "@RequestBody";
-                }
 
-                return string.Empty;
-            }
+                case var setting when setting.Source().IsFromForm():
+                    return string.Empty;
 
-            if (parameter.GetParameterSettings().Source().IsFromBody())
-            {
-                return "@RequestBody";
-            }
+                case var setting when setting.Source().IsFromHeader():
+                    var headerName = parameter.GetParameterSettings().HeaderName();
+                    return $"@RequestHeader{(!string.IsNullOrWhiteSpace(headerName) ? $"(\"{headerName}\")" : string.Empty)}";
 
-            if (parameter.GetParameterSettings().Source().IsFromForm())
-            {
-                return string.Empty;
-            }
+                case var setting when setting.Source().IsFromQuery():
+                    return $"@RequestParam(value = \"{parameter.Name}\"{required})";
 
-            if (parameter.GetParameterSettings().Source().IsFromHeader())
-            {
-                var headerName = parameter.GetParameterSettings().HeaderName();
-                return $"@RequestHeader{(!string.IsNullOrWhiteSpace(headerName) ? $"(\"{headerName}\")" : string.Empty)}";
-            }
+                case var setting when setting.Source().IsFromRoute():
+                    return $"@PathVariable(value = \"{parameter.Name}\"{required})";
 
-            if (parameter.GetParameterSettings().Source().IsFromQuery())
-            {
-                return
-                    $"@RequestParam(value = \"{parameter.Name}\"{required})";
-            }
-
-            if (parameter.GetParameterSettings().Source().IsFromRoute())
-            {
-                return
-                    $"@PathVariable(value = \"{parameter.Name}\"{required})";
+                default:
+                    break;
             }
 
             return string.Empty;
@@ -298,6 +304,16 @@ namespace Intent.Modules.Java.SpringBoot.Templates.RestController
             }
 
             return (typeName, "INTERNAL_SERVER_ERROR (500)", true);
+        }
+
+        private string GetPageableOfRange(ParameterModel parameterModel)
+        {
+            var pageableSettings = parameterModel.GetPageableSettings();
+            if (pageableSettings is not null && pageableSettings.DefaultPageNumber().HasValue && pageableSettings.DefaultPageSize().HasValue)
+            {
+                return $"{pageableSettings.DefaultPageNumber()!.Value}, {pageableSettings.DefaultPageSize()!.Value}";
+            }
+            return "0, 100";
         }
 
         private IEnumerable<CheckedException> GetCheckedExceptions(OperationModel operation)

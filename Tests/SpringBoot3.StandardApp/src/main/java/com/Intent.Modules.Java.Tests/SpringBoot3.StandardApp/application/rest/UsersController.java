@@ -1,6 +1,8 @@
 package com.Intent.Modules.Java.Tests.SpringBoot3.StandardApp.application.rest;
 
 import lombok.AllArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -16,6 +18,7 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 import java.util.List;
 import java.util.UUID;
 import jakarta.validation.Valid;
+import org.springframework.data.domain.Pageable;
 
 @RestController
 @RequestMapping("/api/users")
@@ -80,6 +83,22 @@ public class UsersController {
         if (result == null) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
+
+        return new ResponseEntity<>(result, HttpStatus.OK);
+    }
+
+    @GetMapping(path = "/paginated")
+    @Operation(summary = "FindAllPaginated")
+    @ApiResponses(value = {
+        @ApiResponse(responseCode = "200", description = "Returns the specified Page<UserDto>."),
+        @ApiResponse(responseCode = "400", description = "One or more validation errors have occurred."),
+        @ApiResponse(responseCode = "404", description = "Can\'t find an Page<UserDto> with the parameters provided.") })
+    public ResponseEntity<Page<UserDto>> FindAllPaginated(@Parameter(required = true)  Pageable pageable) {
+        if (pageable.isUnpaged()) {
+            pageable = PageRequest.of(0, 150);
+        }
+
+        final Page<UserDto> result = usersService.FindAllPaginated(pageable);
 
         return new ResponseEntity<>(result, HttpStatus.OK);
     }
