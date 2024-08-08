@@ -61,8 +61,8 @@
       <metadata />
       <childElements>
         <childElement id="1ed7a987-c2da-4038-b043-5fd7babbd25e" type="Run Script Option" typeId="345d46fb-c500-409a-88c7-26720572c9af">
-          <name>Paginate with Page response</name>
-          <display>Paginate with Page response: Script</display>
+          <name>Paginate</name>
+          <display>Paginate: Script</display>
           <isAbstract>false</isAbstract>
           <genericTypes />
           <typeReference id="910a81e1-0d74-4e99-90d1-4c6ef6679468">

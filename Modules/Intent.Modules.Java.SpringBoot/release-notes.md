@@ -1,3 +1,7 @@
+### Version 4.0.1
+
+- New Feature: Added pagination feature for Service operations.
+
 ### Version 4.0.0
 
 - Improvement: Updated dependencies to use separate `Intent.Code.Weaving.Java` module.

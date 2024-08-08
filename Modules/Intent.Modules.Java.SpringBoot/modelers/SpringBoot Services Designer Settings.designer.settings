@@ -11,7 +11,7 @@
       <creationOptions />
       <scriptOptions>
         <option>
-          <text>Paginate with Page response</text>
+          <text>Paginate</text>
           <shortcut>ctrl + shift + g</shortcut>
           <icon type="FontAwesome" source="angle-double-right" />
           <script>function changeReturnType(element) {
