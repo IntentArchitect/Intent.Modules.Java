@@ -1,3 +1,7 @@
+### Version 4.0.2
+
+- Fixed: Setting the Lombok package version for out the box compilations to work.
+
 ### Version 4.0.1
 
 - New Feature: Added pagination feature for Service operations.

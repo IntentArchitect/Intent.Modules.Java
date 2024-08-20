@@ -16,6 +16,7 @@ using Intent.Modules.Java.Services.Templates.DataTransferModel;
 using Intent.Modules.Java.Services.Templates.ExceptionType;
 using Intent.Modules.Java.Services.Templates.ServiceInterface;
 using Intent.Modules.Java.SpringBoot.Api;
+using Intent.Modules.Java.SpringBoot.Settings;
 using Intent.RoslynWeaver.Attributes;
 using Intent.Templates;
 using ParameterModelStereotypeExtensions = Intent.Metadata.WebApi.Api.ParameterModelStereotypeExtensions;
@@ -36,7 +37,7 @@ namespace Intent.Modules.Java.SpringBoot.Templates.RestController
         public RestControllerTemplate(IOutputTarget outputTarget, Intent.Modelers.Services.Api.ServiceModel model) : base(TemplateId, outputTarget, model)
         {
             AddTypeSource(DataTransferModelTemplate.TemplateId).WithCollectionFormat("java.util.List<{0}>");
-            AddDependency(JavaDependencies.Lombok);
+            AddDependency(JavaDependencies.LombokVersioned(ExecutionContext.Settings.GetSpringBoot().TargetVersion().AsEnum()));
             AddTypeSource(ExceptionTypeTemplate.TemplateId);
         }
 

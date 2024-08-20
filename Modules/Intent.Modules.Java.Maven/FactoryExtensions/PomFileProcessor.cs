@@ -153,110 +153,15 @@ namespace Intent.Modules.Java.Maven.FactoryExtensions
                 var artifactIdElement = dependencyElement.Element(XName.Get("artifactId", @namespace.NamespaceName));
                 lastElement = artifactIdElement ?? lastElement;
 
-                // <version>
-                {
-                    var versionElement = dependencyElement.Element(XName.Get("version", @namespace.NamespaceName));
-                    if (versionElement != null &&
-                        dependency.Version != null &&
-                        ComparableVersion.Parse(versionElement.Value) < ComparableVersion.Parse(dependency.Version))
-                    {
-                        versionElement.Value = dependency.Version;
-                    }
+                lastElement = ProcessVersion(dependencyElement, dependency, lastElement);
 
-                    lastElement = versionElement ?? lastElement;
-                }
+                lastElement = ProcessExclusions(dependencyElement, dependency, lastElement);
 
-                // <exclusions>
-                {
-                    var exclusionsElement = dependencyElement.Element(XName.Get("exclusions", @namespace.NamespaceName));
-                    if (exclusionsElement == null &&
-                        dependency.Exclusions?.Any() == true)
-                    {
-                        exclusionsElement = new XElement(XName.Get("exclusions", @namespace.NamespaceName), Environment.NewLine, "\t\t\t");
-                        lastElement.AddAfterSelf(Environment.NewLine + "\t\t\t", exclusionsElement);
-                    }
+                lastElement = ProcessType(dependencyElement, dependency, lastElement);
 
-                    foreach (var exclusion in dependency.Exclusions ?? Enumerable.Empty<JavaDependencyExclusion>())
-                    {
-                        var exclusionElement = exclusionsElement.XPathSelectElement(
-                            $"ns:exclusion[ns:groupId[text() = \"{exclusion.GroupId}\"] and ns:artifactId[text() = \"{exclusion.ArtifactId}\"]]", namespaces);
-                        if (exclusionElement != null)
-                        {
-                            continue;
-                        }
+                lastElement = ProcessScope(dependencyElement, dependency, lastElement);
 
-                        exclusionElement = XElement.Parse($@"<exclusion>
-					<groupId>{exclusion.GroupId}</groupId>
-					<artifactId>{exclusion.ArtifactId}</artifactId>
-				</exclusion>", LoadOptions.PreserveWhitespace).WithoutNamespaces(@namespace);
-
-                        exclusionsElement.Add("\t", exclusionElement, Environment.NewLine, "\t\t\t");
-                    }
-
-                    lastElement = exclusionsElement ?? lastElement;
-                }
-
-                // <type>
-                {
-                    var typeElement = dependencyElement.Element(XName.Get("type", @namespace.NamespaceName));
-                    if (typeElement == null &&
-                        dependency.Type != null)
-                    {
-                        typeElement = new XElement(XName.Get("type", @namespace.NamespaceName));
-                        lastElement.AddAfterSelf(Environment.NewLine + "\t\t\t", typeElement);
-                    }
-
-                    if (typeElement != null &&
-                        dependency.Type != null &&
-                        !string.Equals(typeElement.Value, dependency.Type, StringComparison.OrdinalIgnoreCase))
-                    {
-                        typeElement.SetValue(dependency.Type);
-                    }
-
-                    lastElement = typeElement ?? lastElement;
-                }
-
-                // <scope>
-                {
-                    var scopeElement = dependencyElement.Element(XName.Get("scope", @namespace.NamespaceName));
-                    if (scopeElement == null &&
-                        dependency.Scope != null)
-                    {
-                        scopeElement = new XElement(XName.Get("scope", @namespace.NamespaceName));
-                        lastElement.AddAfterSelf(Environment.NewLine + "\t\t\t", scopeElement);
-                    }
-
-                    if (scopeElement != null &&
-                        dependency.Scope != null &&
-                        !string.Equals(scopeElement.Value, dependency.Scope.Value.ToString(), StringComparison.OrdinalIgnoreCase))
-                    {
-                        scopeElement.SetValue(dependency.Scope.Value.ToString().ToLowerInvariant());
-                    }
-
-                    lastElement = scopeElement ?? lastElement;
-                }
-
-                // <optional>
-                {
-                    var optionalElement = dependencyElement.Element(XName.Get("optional", @namespace.NamespaceName));
-                    if (dependency.Optional)
-                    {
-                        if (optionalElement == null)
-                        {
-                            optionalElement = new XElement(XName.Get("optional", @namespace.NamespaceName));
-                            lastElement.AddAfterSelf(Environment.NewLine + "\t\t\t", optionalElement);
-                        }
-
-                        if (optionalElement.Value != "true")
-                        {
-                            optionalElement.SetValue("true");
-                        }
-                    }
-                    else
-                    {
-                        optionalElement?.Remove();
-                    }
-                }
+                lastElement = ProcessOptional(dependencyElement, dependency, lastElement);
             }
 
             // Sort dependencies
@@ -280,6 +185,127 @@ namespace Intent.Modules.Java.Maven.FactoryExtensions
             }
 
             return doc.ToStringUTF8();
+
+            XElement ProcessVersion(XElement dependencyElement, JavaDependency dependency, XElement lastElement)
+            {
+                if (dependency.Version is null)
+                {
+                    return lastElement;
+                }
+
+                var versionElement = dependencyElement.Element(XName.Get("version", @namespace.NamespaceName));
+                if (versionElement is null)
+                {
+                    versionElement = new XElement(XName.Get("version", @namespace.NamespaceName), dependency.Version);
+                    versionElement.Value = dependency.Version;
+                    lastElement.AddAfterSelf(Environment.NewLine + "\t\t\t", versionElement);
+                }
+                else if (ComparableVersion.Parse(versionElement.Value) < ComparableVersion.Parse(dependency.Version))
+                {
+                    versionElement.Value = dependency.Version;
+                }
+
+                lastElement = versionElement ?? lastElement;
+                return lastElement;
+            }
+
+            XElement ProcessExclusions(XElement dependencyElement, JavaDependency dependency, XElement lastElement)
+            {
+                var exclusionsElement = dependencyElement.Element(XName.Get("exclusions", @namespace.NamespaceName));
+                if (exclusionsElement == null &&
+                    dependency.Exclusions?.Any() == true)
+                {
+                    exclusionsElement = new XElement(XName.Get("exclusions", @namespace.NamespaceName), Environment.NewLine, "\t\t\t");
+                    lastElement.AddAfterSelf(Environment.NewLine + "\t\t\t", exclusionsElement);
+                }
+
+                foreach (var exclusion in dependency.Exclusions ?? Enumerable.Empty<JavaDependencyExclusion>())
+                {
+                    var exclusionElement = exclusionsElement.XPathSelectElement(
+                        $"ns:exclusion[ns:groupId[text() = \"{exclusion.GroupId}\"] and ns:artifactId[text() = \"{exclusion.ArtifactId}\"]]", namespaces);
+                    if (exclusionElement != null)
+                    {
+                        continue;
+                    }
+
+                    exclusionElement = XElement.Parse($@"<exclusion>
+					<groupId>{exclusion.GroupId}</groupId>
+					<artifactId>{exclusion.ArtifactId}</artifactId>
+				</exclusion>", LoadOptions.PreserveWhitespace).WithoutNamespaces(@namespace);
+
+                    exclusionsElement.Add("\t", exclusionElement, Environment.NewLine, "\t\t\t");
+                }
+
+                lastElement = exclusionsElement ?? lastElement;
+                return lastElement;
+            }
+
+            XElement ProcessType(XElement dependencyElement, JavaDependency dependency, XElement lastElement)
+            {
+                var typeElement = dependencyElement.Element(XName.Get("type", @namespace.NamespaceName));
+                if (typeElement == null &&
+                    dependency.Type != null)
+                {
+                    typeElement = new XElement(XName.Get("type", @namespace.NamespaceName));
+                    lastElement.AddAfterSelf(Environment.NewLine + "\t\t\t", typeElement);
+                }
+
+                if (typeElement != null &&
+                    dependency.Type != null &&
+                    !string.Equals(typeElement.Value, dependency.Type, StringComparison.OrdinalIgnoreCase))
+                {
+                    typeElement.SetValue(dependency.Type);
+                }
+
+                lastElement = typeElement ?? lastElement;
+                return lastElement;
+            }
+
+            XElement ProcessScope(XElement dependencyElement, JavaDependency dependency, XElement lastElement)
+            {
+                var scopeElement = dependencyElement.Element(XName.Get("scope", @namespace.NamespaceName));
+                if (scopeElement == null &&
+                    dependency.Scope != null)
+                {
+                    scopeElement = new XElement(XName.Get("scope", @namespace.NamespaceName));
+                    lastElement.AddAfterSelf(Environment.NewLine + "\t\t\t", scopeElement);
+                }
+
+                if (scopeElement != null &&
+                    dependency.Scope != null &&
+                    !string.Equals(scopeElement.Value, dependency.Scope.Value.ToString(), StringComparison.OrdinalIgnoreCase))
+                {
+                    scopeElement.SetValue(dependency.Scope.Value.ToString().ToLowerInvariant());
+                }
+
+                lastElement = scopeElement ?? lastElement;
+                return lastElement;
+            }
+
+            XElement ProcessOptional(XElement dependencyElement, JavaDependency dependency, XElement lastElement)
+            {
+                var optionalElement = dependencyElement.Element(XName.Get("optional", @namespace.NamespaceName));
+                if (dependency.Optional)
+                {
+                    if (optionalElement == null)
+                    {
+                        optionalElement = new XElement(XName.Get("optional", @namespace.NamespaceName));
+                        lastElement.AddAfterSelf(Environment.NewLine + "\t\t\t", optionalElement);
+                    }
+
+                    if (optionalElement.Value != "true")
+                    {
+                        optionalElement.SetValue("true");
+                    }
+                }
+                else
+                {
+                    optionalElement?.Remove();
+                }
+
+                lastElement = optionalElement ?? lastElement;
+                return lastElement;
+            }
         }
 
         private static bool IsSemanticallyTheSame(string original, string updated)

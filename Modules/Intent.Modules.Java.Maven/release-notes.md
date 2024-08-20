@@ -1,3 +1,7 @@
+### Version 4.0.1
+
+- Fixed: When a Java Dependency introduces a version and a version element is missing in the POM file, it will be added.
+
 ### Version 4.0.0
 
 - Improvement: Updated dependencies to use separate `Intent.Code.Weaving.Java` module.
