@@ -22,10 +22,10 @@ import lombok.Setter;
 @Entity
 @Table(name = "stereotype_indices", indexes = { @Index(name = "IX_StereotypeIndex_defaultIndexField", columnList = "default_index_field"),
         @Index(name = "CustomIndexField", columnList = "custom_index_field"),
-        @Index(name = "GroupedIndexField", columnList = "grouped_index_field_a,grouped_index_field_b"),
+        @Index(name = "GroupedIndexField", columnList = "grouped_index_field_a,grouped_index_field_b", unique = true),
         @Index(name = "", columnList = "default_index_field"),
         @Index(name = "CustomIndexField", columnList = "custom_index_field"),
-        @Index(name = "GroupedIndexField", columnList = "grouped_index_field_a,grouped_index_field_b") })
+        @Index(name = "GroupedIndexField", columnList = "grouped_index_field_a,grouped_index_field_b", unique = true) })
 @Getter
 @Setter
 @AllArgsConstructor
