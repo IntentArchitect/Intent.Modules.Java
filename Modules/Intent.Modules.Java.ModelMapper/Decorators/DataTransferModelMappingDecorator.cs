@@ -42,16 +42,24 @@ namespace Intent.Modules.Java.ModelMapper.Decorators
             var typeName = GetEntityTypeName();
             var typeNameCamelCased = typeName.ToCamelCase();
             var typeNamePascalCased = typeName.ToPascalCase();
+            
+            var mapFromParamName = typeNameCamelCased.Pluralize();
+            var mapLambdaParamName = typeNameCamelCased;
+
+            if (mapLambdaParamName == mapFromParamName)
+            {
+                mapLambdaParamName = $"nested{typeNamePascalCased}";
+            }
 
             return $@"
     public static {_template.ClassName} mapFrom{typeNamePascalCased}({typeName} {typeNameCamelCased}, {_template.ImportType("org.modelmapper.ModelMapper")} mapper) {{
         return mapper.map({typeNameCamelCased}, {_template.ClassName}.class);
     }}
 
-    public static {_template.ImportType("java.util.List")}<{_template.ClassName}> mapFrom{typeNamePascalCased.Pluralize()}({_template.ImportType("java.util.Collection")}<{typeName}> {typeNameCamelCased.Pluralize()}, {_template.ImportType("org.modelmapper.ModelMapper")} mapper) {{
-        return {typeNameCamelCased.Pluralize()}
+    public static {_template.ImportType("java.util.List")}<{_template.ClassName}> mapFrom{typeNamePascalCased.Pluralize()}({_template.ImportType("java.util.Collection")}<{typeName}> {mapFromParamName}, {_template.ImportType("org.modelmapper.ModelMapper")} mapper) {{
+        return {mapFromParamName}
             .stream()
-            .map({typeNameCamelCased} -> {_template.ClassName}.mapFrom{typeName}({typeNameCamelCased}, mapper))
+            .map({mapLambdaParamName} -> {_template.ClassName}.mapFrom{typeName}({mapLambdaParamName}, mapper))
             .collect({_template.ImportType("java.util.stream.Collectors")}.toList());
     }}";
         }

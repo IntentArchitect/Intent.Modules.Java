@@ -125,11 +125,11 @@ namespace Intent.Modules.Java.Services.CRUD.Decorators.ImplementationStrategies
                         break;
                     case null:
                     case AttributeModel.SpecializationTypeId:
-                        var attribute = field.Mapping?.Element
-                                        ?? domainModel.ChildElements.First(p => p.Name == field.Name);
+                        var attribute = (field.Mapping?.Element
+                                        ?? domainModel.ChildElements.First(p => p.Name == field.Name)).AsAttributeModel();
                         if (!attribute.Name.Equals("Id", StringComparison.OrdinalIgnoreCase))
                         {
-                            codeLines.Add($"{entityVarExpr}.set{attribute.Name.ToPascalCase()}({dtoVarName}.get{field.Name.ToPascalCase()}());");
+                            codeLines.Add($"{entityVarExpr}.{attribute.Setter()}({dtoVarName}.{field.Getter()}());");
                             break;
                         }
 

@@ -1,3 +1,8 @@
+### Version 4.0.1
+
+- Fixed: Mapped boolean fields have `is` prefix instead of `get`.
+- Fixed: `mapFrom` mapping methods in DTOs will check for possible naming clashes.
+
 ### Version 4.0.0
 
 - Improvement: Updated dependencies to use separate `Intent.Code.Weaving.Java` module.

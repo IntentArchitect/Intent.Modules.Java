@@ -1,3 +1,7 @@
+### Version 4.0.2
+
+- Fixed: Mapped boolean fields have `is` prefix instead of `get`.
+
 ### Version 4.0.1
 
 - New Feature: Added pagination feature for Service operations.

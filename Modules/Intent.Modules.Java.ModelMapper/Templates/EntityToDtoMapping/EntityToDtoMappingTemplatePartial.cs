@@ -62,7 +62,7 @@ namespace Intent.Modules.Java.ModelMapper.Templates.EntityToDtoMapping
                 var shouldCast = GetTypeInfo(field.TypeReference).IsPrimitive &&
                                  field.Mapping.Element?.TypeReference != null &&
                                  GetTypeInfo(field.TypeReference).Name != GetTypeInfo(field.Mapping.Element.TypeReference).Name;
-                if ($"get{field.Name.ToPascalCase()}()" != GetPath(field.Mapping.Path) || shouldCast)
+                if ($"{GetFieldQueryPrefix(field.TypeReference)}{field.Name.ToPascalCase()}()" != GetPath(field.Mapping.Path) || shouldCast)
                 {
                     memberMappings.Add($@"map().set{field.Name.ToPascalCase()}({(shouldCast ? $"({GetTypeName(field)})" : "")}source.{GetPath(field.Mapping.Path)});");
                 }
@@ -74,10 +74,25 @@ namespace Intent.Modules.Java.ModelMapper.Templates.EntityToDtoMapping
 
         private string GetPath(IEnumerable<IElementMappingPathTarget> path)
         {
-            return string.Join(".", path
+            var result = string.Join(".", path
                 .Where(x => x.Specialization != GeneralizationModel.SpecializationType)
-                .Select(x => x.Specialization == OperationModel.SpecializationType ? $"{x.Name.ToPascalCase()}()" : $"get{x.Name.ToPascalCase()}()"));
+                .Select(x => x.Specialization == OperationModel.SpecializationType ? $"{x.Name.ToPascalCase()}()" : $"{GetMappingCallPrefix(x)}{x.Name.ToPascalCase()}()"));
+            return result;
         }
 
+        private string GetMappingCallPrefix(IElementMappingPathTarget mappingElement)
+        {
+            return GetFieldQueryPrefix(mappingElement.Element.TypeReference);
+        }
+
+        private string GetFieldQueryPrefix(ITypeReference typeReference)
+        {
+            if (typeReference?.HasBoolType() == true || typeReference?.HasJavaBooleanType() == true)
+            {
+                return "is";
+            }
+
+            return "get";
+        }
     }
 }
