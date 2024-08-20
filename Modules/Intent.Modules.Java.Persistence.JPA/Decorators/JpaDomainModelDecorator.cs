@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using Intent.Engine;
 using Intent.Java.Persistence.JPA.Api;
 using Intent.Metadata.RDBMS.Api;
@@ -164,19 +165,37 @@ namespace Intent.Modules.Java.Persistence.JPA.Decorators
 
             foreach (var stereotypeIndex in stereotypeIndexes)
             {
-                indexList.Add(
-                    $"@{_template.ImportType($"{JavaxJakarta()}.persistence.Index")}(name = \"{stereotypeIndex.Key}\", columnList = \"{string.Join(",", stereotypeIndex.Select(c => c.Name.ToSnakeCase()))}\")");
+                indexList.Add(GetIndexAnnotation(stereotypeIndex.Key, stereotypeIndex.Select(ind => ind.Name), stereotypeIndex.First().GetIndex().IsUnique()));
             }
 
             foreach (var elementIndex in elementIndexes)
             {
-                indexList.Add(
-                    $"@{_template.ImportType($"{JavaxJakarta()}.persistence.Index")}(name = \"{elementIndex.Name}\", columnList = \"{string.Join(",", elementIndex.KeyColumns.Select(c => c.Name.ToSnakeCase()))}\")");
+                indexList.Add(GetIndexAnnotation(elementIndex.Name, elementIndex.KeyColumns.Select(ind => ind.Name), elementIndex.IsUnique));
             }
 
             const string newLine = @",
         ";
             yield return $@"indexes = {{ {string.Join(newLine, indexList)} }}";
+        }
+
+        private string GetIndexAnnotation(string indexKey, IEnumerable<string> columnNames, bool isUnique)
+        {
+            var sb = new StringBuilder();
+
+            sb.Append("@");
+            sb.Append(_template.ImportType($"{JavaxJakarta()}.persistence.Index"));
+            sb.Append("(");
+            sb.Append($@"name = ""{indexKey}""");
+            sb.Append(", ");
+            sb.Append($@"columnList = ""{string.Join(",", columnNames.Select(c => c.ToSnakeCase()))}""");
+            if (isUnique)
+            {
+                sb.Append(", ");
+                sb.Append($@"unique = true");
+            }
+            sb.Append(")");
+            
+            return sb.ToString();
         }
 
         public override IEnumerable<string> Fields()

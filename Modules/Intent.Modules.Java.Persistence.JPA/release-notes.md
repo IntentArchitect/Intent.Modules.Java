@@ -1,3 +1,7 @@
+### Version 5.0.1
+
+- Fixed: Unique Index constraint recognized.
+
 ### Version 5.0.0
 
 - Improvement: Updated dependencies to use separate `Intent.Code.Weaving.Java` module.
