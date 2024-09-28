@@ -15,7 +15,7 @@
   <childElements>
     <childElement id="2a273d07-0f79-4483-927c-90246d89becc" type="Application Template Settings Field Configuration" typeId="053d28c8-18c9-45b9-b3cb-184ec4b19679">
       <name>Target Version</name>
-      <display>Target Version</display>
+      <display>Target Version = 2c7289d0-0261-4040-95ad-e7aba770753c</display>
       <isAbstract>false</isAbstract>
       <value>2c7289d0-0261-4040-95ad-e7aba770753c</value>
       <sort-children>manually</sort-children>
@@ -41,7 +41,7 @@
       <childElements>
         <childElement id="85b19406-1ced-4469-bea3-db9c33b9f9f2" type="Application Template Settings Field Option" typeId="7194651e-45da-4a0c-b1ab-0351a5c08fc8">
           <name>v2.7.5</name>
-          <display>v2.7.5</display>
+          <display>v2.7.5 = V2_7_5</display>
           <isAbstract>false</isAbstract>
           <value>V2_7_5</value>
           <genericTypes />
@@ -55,7 +55,7 @@
         </childElement>
         <childElement id="55a10414-c16e-4aa7-8b62-4d86e27a1a74" type="Application Template Settings Field Option" typeId="7194651e-45da-4a0c-b1ab-0351a5c08fc8">
           <name>v3.1.3</name>
-          <display>v3.1.3</display>
+          <display>v3.1.3 = V3_1_3</display>
           <isAbstract>false</isAbstract>
           <value>V3_1_3</value>
           <genericTypes />
