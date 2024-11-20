@@ -72,9 +72,9 @@ steps:
 # Required for entry in NuGet.Config that is generated as part of 'dotnet pack'.
 - task: NuGetAuthenticate@1
 
-# Make it available to other pipeline builds...
+# We pack upfront as projects may rely on NuGet packages from this same solution
 - task: PowerShell@2
-  displayName: 'Push Intent Nuget Packages to DevOps Artifacts'
+  displayName: 'dotnet pack'
   inputs:
     pwsh: true
     failOnStderr: true
@@ -84,9 +84,9 @@ steps:
       -dotnetPackOutputDirectory $(Build.ArtifactStagingDirectory)
       -vstsFeedUrl $(vstsFeedUrl)
 
-# Push the NuGet packages to the DevOps artifact feed so that they're available to other pipelines
+# Push the NuGet packages to the DevOps artifact feed so that they're available to this build and other pipelines
 - task: NuGetCommand@2
-  displayName: 'nuget push'
+  displayName: 'Push Intent Nuget Packages to DevOps Artifacts'
   condition: and(succeeded(), in('True', variables.isMaster, variables.isDevelopment))
   inputs:
       command: 'push'
@@ -106,6 +106,8 @@ steps:
     feedsToUse: 'select'
     vstsFeed: $(vstsFeed)
     projects: $(targetsToBuild)
+    restoreArguments: >
+      --no-cache
 
 - task: PowerShell@2
   displayName: 'Update Project URLs in imodspecs'
