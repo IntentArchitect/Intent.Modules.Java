@@ -9,15 +9,15 @@
       <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
-      <ProjectId>06caed4b-c0ea-4239-a4e7-6febea061869</ProjectId>
-      <CorrelationId>Intent.VisualStudio.Projects.CoreLibrary.CSProject#06caed4b-c0ea-4239-a4e7-6febea061869</CorrelationId>
+      <ProjectId>11a1a347-6b82-4c5d-8622-1806b60f9815</ProjectId>
+      <CorrelationId>Intent.VisualStudio.Projects.CSharpProject#11a1a347-6b82-4c5d-8622-1806b60f9815</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Intent.ApplicationTemplates.Java.csproj</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>Intent.ApplicationTemplates.Java.csproj</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
-      <ProjectId>06caed4b-c0ea-4239-a4e7-6febea061869</ProjectId>
+      <ProjectId>11a1a347-6b82-4c5d-8622-1806b60f9815</ProjectId>
       <CorrelationId>Intent.ApplicationTemplate.Builder.Templates.IatSpecFile#84eb6eb9-30f5-429d-bf3c-06591e639eec</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Intent.Java.SpringBoot.WebApplication/metadata.iatspec</ApplicationRelativeFilePath>

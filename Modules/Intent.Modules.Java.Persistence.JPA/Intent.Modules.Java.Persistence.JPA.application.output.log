@@ -49,7 +49,7 @@
       <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
-      <ProjectId>f92df344-0995-48cf-9967-db535ad749b6</ProjectId>
+      <ProjectId>f8d21e70-ccce-46ea-9fe9-5a3c63ba8f6a</ProjectId>
       <CorrelationId>Intent.ModuleBuilder.IModSpecFile</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Intent.Java.Persistence.JPA.imodspec</ApplicationRelativeFilePath>
@@ -57,8 +57,8 @@
       <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
-      <ProjectId>f92df344-0995-48cf-9967-db535ad749b6</ProjectId>
-      <CorrelationId>Intent.VisualStudio.Projects.CoreLibrary.CSProject#f92df344-0995-48cf-9967-db535ad749b6</CorrelationId>
+      <ProjectId>f8d21e70-ccce-46ea-9fe9-5a3c63ba8f6a</ProjectId>
+      <CorrelationId>Intent.VisualStudio.Projects.CSharpProject#f8d21e70-ccce-46ea-9fe9-5a3c63ba8f6a</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Intent.Modules.Java.Persistence.JPA.csproj</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>Intent.Modules.Java.Persistence.JPA.csproj</ProjectRelativeFilePath>

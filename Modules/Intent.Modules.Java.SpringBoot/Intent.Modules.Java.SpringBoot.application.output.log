@@ -41,7 +41,7 @@
       <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
-      <ProjectId>915037d0-3d43-4cda-9777-bb75b8bd5c63</ProjectId>
+      <ProjectId>0e9225ac-dd8a-43b3-bc1c-e1f2586286fc</ProjectId>
       <CorrelationId>Intent.ModuleBuilder.IModSpecFile</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Intent.Java.SpringBoot.imodspec</ApplicationRelativeFilePath>
@@ -49,8 +49,8 @@
       <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
-      <ProjectId>915037d0-3d43-4cda-9777-bb75b8bd5c63</ProjectId>
-      <CorrelationId>Intent.VisualStudio.Projects.CoreLibrary.CSProject#915037d0-3d43-4cda-9777-bb75b8bd5c63</CorrelationId>
+      <ProjectId>0e9225ac-dd8a-43b3-bc1c-e1f2586286fc</ProjectId>
+      <CorrelationId>Intent.VisualStudio.Projects.CSharpProject#0e9225ac-dd8a-43b3-bc1c-e1f2586286fc</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Intent.Modules.Java.SpringBoot.csproj</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>Intent.Modules.Java.SpringBoot.csproj</ProjectRelativeFilePath>
@@ -65,7 +65,7 @@
       <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
-      <ProjectId>915037d0-3d43-4cda-9777-bb75b8bd5c63</ProjectId>
+      <ProjectId>0e9225ac-dd8a-43b3-bc1c-e1f2586286fc</ProjectId>
       <CorrelationId>Intent.ModuleBuilder.Templates.ReleaseNotes</CorrelationId>
       <OverwriteBehaviour>once-off</OverwriteBehaviour>
       <ApplicationRelativeFilePath>release-notes.md</ApplicationRelativeFilePath>

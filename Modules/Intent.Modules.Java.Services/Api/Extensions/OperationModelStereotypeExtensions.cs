@@ -15,13 +15,13 @@ namespace Intent.Modules.Java.Services.Api
     {
         public static TransactionOptions GetTransactionOptions(this OperationModel model)
         {
-            var stereotype = model.GetStereotype("b72430de-3a53-44de-af0a-75023119d64f");
+            var stereotype = model.GetStereotype(TransactionOptions.DefinitionId);
             return stereotype != null ? new TransactionOptions(stereotype) : null;
         }
 
         public static bool HasTransactionOptions(this OperationModel model)
         {
-            return model.HasStereotype("b72430de-3a53-44de-af0a-75023119d64f");
+            return model.HasStereotype(TransactionOptions.DefinitionId);
         }
 
         public static bool TryGetTransactionOptions(this OperationModel model, out TransactionOptions stereotype)
@@ -32,7 +32,7 @@ namespace Intent.Modules.Java.Services.Api
                 return false;
             }
 
-            stereotype = new TransactionOptions(model.GetStereotype("b72430de-3a53-44de-af0a-75023119d64f"));
+            stereotype = new TransactionOptions(model.GetStereotype(TransactionOptions.DefinitionId));
             return true;
         }
 
@@ -40,6 +40,7 @@ namespace Intent.Modules.Java.Services.Api
         public class TransactionOptions
         {
             private IStereotype _stereotype;
+            public const string DefinitionId = "b72430de-3a53-44de-af0a-75023119d64f";
 
             public TransactionOptions(IStereotype stereotype)
             {

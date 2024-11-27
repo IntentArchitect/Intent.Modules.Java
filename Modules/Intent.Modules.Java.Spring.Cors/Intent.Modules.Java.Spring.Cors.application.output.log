@@ -41,7 +41,7 @@
       <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
-      <ProjectId>10c0b22a-10cb-477a-9c0f-fefd470ed8e0</ProjectId>
+      <ProjectId>b1ac2216-c7c0-43ae-b009-f53a7fc7fdf6</ProjectId>
       <CorrelationId>Intent.ModuleBuilder.IModSpecFile</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Intent.Java.Spring.Cors.imodspec</ApplicationRelativeFilePath>
@@ -49,8 +49,8 @@
       <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
-      <ProjectId>10c0b22a-10cb-477a-9c0f-fefd470ed8e0</ProjectId>
-      <CorrelationId>Intent.VisualStudio.Projects.CoreLibrary.CSProject#10c0b22a-10cb-477a-9c0f-fefd470ed8e0</CorrelationId>
+      <ProjectId>b1ac2216-c7c0-43ae-b009-f53a7fc7fdf6</ProjectId>
+      <CorrelationId>Intent.VisualStudio.Projects.CSharpProject#b1ac2216-c7c0-43ae-b009-f53a7fc7fdf6</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Intent.Modules.Java.Spring.Cors.csproj</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>Intent.Modules.Java.Spring.Cors.csproj</ProjectRelativeFilePath>

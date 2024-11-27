@@ -33,7 +33,7 @@
       <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
-      <ProjectId>38a5446f-dc72-46c9-a14b-71727ef18b4f</ProjectId>
+      <ProjectId>22176ad6-5b86-4c4f-8107-b1cb0b06f36f</ProjectId>
       <CorrelationId>Intent.ModuleBuilder.IModSpecFile</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Intent.Java.Domain.Maven.imodspec</ApplicationRelativeFilePath>
@@ -41,8 +41,8 @@
       <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
-      <ProjectId>38a5446f-dc72-46c9-a14b-71727ef18b4f</ProjectId>
-      <CorrelationId>Intent.VisualStudio.Projects.CoreLibrary.CSProject#38a5446f-dc72-46c9-a14b-71727ef18b4f</CorrelationId>
+      <ProjectId>22176ad6-5b86-4c4f-8107-b1cb0b06f36f</ProjectId>
+      <CorrelationId>Intent.VisualStudio.Projects.CSharpProject#22176ad6-5b86-4c4f-8107-b1cb0b06f36f</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Intent.Modules.Java.Domain.Maven.csproj</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>Intent.Modules.Java.Domain.Maven.csproj</ProjectRelativeFilePath>

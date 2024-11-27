@@ -57,7 +57,7 @@
       <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
-      <ProjectId>9a39a5e5-1c2a-4df7-bab4-5d2760783b6d</ProjectId>
+      <ProjectId>0fc02dd1-dbc8-4f0c-ad23-97597d853744</ProjectId>
       <CorrelationId>Intent.ModuleBuilder.Templates.Api.ApiMetadataProviderExtensions</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>ApiMetadataProviderExtensions.cs</ApplicationRelativeFilePath>
@@ -65,7 +65,7 @@
       <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
-      <ProjectId>9a39a5e5-1c2a-4df7-bab4-5d2760783b6d</ProjectId>
+      <ProjectId>0fc02dd1-dbc8-4f0c-ad23-97597d853744</ProjectId>
       <CorrelationId>Intent.ModuleBuilder.IModSpecFile</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Intent.Java.Services.imodspec</ApplicationRelativeFilePath>
@@ -73,8 +73,8 @@
       <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
-      <ProjectId>9a39a5e5-1c2a-4df7-bab4-5d2760783b6d</ProjectId>
-      <CorrelationId>Intent.VisualStudio.Projects.CoreLibrary.CSProject#9a39a5e5-1c2a-4df7-bab4-5d2760783b6d</CorrelationId>
+      <ProjectId>0fc02dd1-dbc8-4f0c-ad23-97597d853744</ProjectId>
+      <CorrelationId>Intent.VisualStudio.Projects.CSharpProject#0fc02dd1-dbc8-4f0c-ad23-97597d853744</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Intent.Modules.Java.Services.csproj</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>Intent.Modules.Java.Services.csproj</ProjectRelativeFilePath>
@@ -89,7 +89,7 @@
       <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
-      <ProjectId>9a39a5e5-1c2a-4df7-bab4-5d2760783b6d</ProjectId>
+      <ProjectId>0fc02dd1-dbc8-4f0c-ad23-97597d853744</ProjectId>
       <CorrelationId>Intent.ModuleBuilder.Templates.Api.ApiPackageExtensionModel#41a851f3-5ac3-425c-8de2-513d75573a53</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>PackageExtensionModel.cs</ApplicationRelativeFilePath>

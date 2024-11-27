@@ -57,7 +57,7 @@
       <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
-      <ProjectId>6c983176-1042-4a96-9391-b0576c4272c9</ProjectId>
+      <ProjectId>41bcc653-c390-4e2c-81f5-5cb5c37bde96</ProjectId>
       <CorrelationId>Intent.ModuleBuilder.IModSpecFile</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Intent.Java.SpringDoc.OpenApi.imodspec</ApplicationRelativeFilePath>
@@ -65,8 +65,8 @@
       <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
-      <ProjectId>6c983176-1042-4a96-9391-b0576c4272c9</ProjectId>
-      <CorrelationId>Intent.VisualStudio.Projects.CoreLibrary.CSProject#6c983176-1042-4a96-9391-b0576c4272c9</CorrelationId>
+      <ProjectId>41bcc653-c390-4e2c-81f5-5cb5c37bde96</ProjectId>
+      <CorrelationId>Intent.VisualStudio.Projects.CSharpProject#41bcc653-c390-4e2c-81f5-5cb5c37bde96</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Intent.Modules.Java.SpringDoc.OpenApi.csproj</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>Intent.Modules.Java.SpringDoc.OpenApi.csproj</ProjectRelativeFilePath>

@@ -41,7 +41,7 @@
       <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
-      <ProjectId>07d6a2d9-6893-4cdb-bf0c-1a1f01f0aad8</ProjectId>
+      <ProjectId>613871a4-b2ab-4dcf-89c1-abce10b43206</ProjectId>
       <CorrelationId>Intent.ModuleBuilder.IModSpecFile</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Intent.Java.SpringBoot.Security.imodspec</ApplicationRelativeFilePath>
@@ -49,8 +49,8 @@
       <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
-      <ProjectId>07d6a2d9-6893-4cdb-bf0c-1a1f01f0aad8</ProjectId>
-      <CorrelationId>Intent.VisualStudio.Projects.CoreLibrary.CSProject#07d6a2d9-6893-4cdb-bf0c-1a1f01f0aad8</CorrelationId>
+      <ProjectId>613871a4-b2ab-4dcf-89c1-abce10b43206</ProjectId>
+      <CorrelationId>Intent.VisualStudio.Projects.CSharpProject#613871a4-b2ab-4dcf-89c1-abce10b43206</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Intent.Modules.Java.SpringBoot.Security.csproj</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>Intent.Modules.Java.SpringBoot.Security.csproj</ProjectRelativeFilePath>

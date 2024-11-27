@@ -15,14 +15,14 @@ namespace Intent.Modules.Java.SpringBoot.Api
     {
         public static CheckedExceptionHandling GetCheckedExceptionHandling(this TypeDefinitionModel model)
         {
-            var stereotype = model.GetStereotype("05d3f924-e9c7-4ce1-b8f4-f29bc8e7993e");
+            var stereotype = model.GetStereotype(CheckedExceptionHandling.DefinitionId);
             return stereotype != null ? new CheckedExceptionHandling(stereotype) : null;
         }
 
 
         public static bool HasCheckedExceptionHandling(this TypeDefinitionModel model)
         {
-            return model.HasStereotype("05d3f924-e9c7-4ce1-b8f4-f29bc8e7993e");
+            return model.HasStereotype(CheckedExceptionHandling.DefinitionId);
         }
 
         public static bool TryGetCheckedExceptionHandling(this TypeDefinitionModel model, out CheckedExceptionHandling stereotype)
@@ -33,13 +33,14 @@ namespace Intent.Modules.Java.SpringBoot.Api
                 return false;
             }
 
-            stereotype = new CheckedExceptionHandling(model.GetStereotype("05d3f924-e9c7-4ce1-b8f4-f29bc8e7993e"));
+            stereotype = new CheckedExceptionHandling(model.GetStereotype(CheckedExceptionHandling.DefinitionId));
             return true;
         }
 
         public class CheckedExceptionHandling
         {
             private IStereotype _stereotype;
+            public const string DefinitionId = "05d3f924-e9c7-4ce1-b8f4-f29bc8e7993e";
 
             public CheckedExceptionHandling(IStereotype stereotype)
             {

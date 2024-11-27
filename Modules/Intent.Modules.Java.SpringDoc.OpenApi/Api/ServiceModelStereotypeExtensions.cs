@@ -15,14 +15,14 @@ namespace Intent.Java.SpringDoc.OpenApi.Api
     {
         public static OpenAPITag GetOpenAPITag(this ServiceModel model)
         {
-            var stereotype = model.GetStereotype("7ee3b765-c3c4-4db3-aa8b-f77693b3bb4f");
+            var stereotype = model.GetStereotype(OpenAPITag.DefinitionId);
             return stereotype != null ? new OpenAPITag(stereotype) : null;
         }
 
         public static IReadOnlyCollection<OpenAPITag> GetOpenAPITags(this ServiceModel model)
         {
             var stereotypes = model
-                .GetStereotypes("7ee3b765-c3c4-4db3-aa8b-f77693b3bb4f")
+                .GetStereotypes(OpenAPITag.DefinitionId)
                 .Select(stereotype => new OpenAPITag(stereotype))
                 .ToArray();
 
@@ -32,7 +32,7 @@ namespace Intent.Java.SpringDoc.OpenApi.Api
 
         public static bool HasOpenAPITag(this ServiceModel model)
         {
-            return model.HasStereotype("7ee3b765-c3c4-4db3-aa8b-f77693b3bb4f");
+            return model.HasStereotype(OpenAPITag.DefinitionId);
         }
 
         public static bool TryGetOpenAPITag(this ServiceModel model, out OpenAPITag stereotype)
@@ -43,13 +43,14 @@ namespace Intent.Java.SpringDoc.OpenApi.Api
                 return false;
             }
 
-            stereotype = new OpenAPITag(model.GetStereotype("7ee3b765-c3c4-4db3-aa8b-f77693b3bb4f"));
+            stereotype = new OpenAPITag(model.GetStereotype(OpenAPITag.DefinitionId));
             return true;
         }
 
         public class OpenAPITag
         {
             private IStereotype _stereotype;
+            public const string DefinitionId = "7ee3b765-c3c4-4db3-aa8b-f77693b3bb4f";
 
             public OpenAPITag(IStereotype stereotype)
             {

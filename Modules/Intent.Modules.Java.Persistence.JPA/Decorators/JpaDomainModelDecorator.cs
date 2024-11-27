@@ -194,7 +194,7 @@ namespace Intent.Modules.Java.Persistence.JPA.Decorators
                 sb.Append($@"unique = true");
             }
             sb.Append(")");
-            
+
             return sb.ToString();
         }
 

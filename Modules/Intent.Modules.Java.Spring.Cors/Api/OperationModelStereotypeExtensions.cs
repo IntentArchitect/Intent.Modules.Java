@@ -15,14 +15,14 @@ namespace Intent.Java.Spring.Cors.Api
     {
         public static CORSSettings GetCORSSettings(this OperationModel model)
         {
-            var stereotype = model.GetStereotype("824d3c4c-8e15-4413-afb7-6bcd372fe557");
+            var stereotype = model.GetStereotype(CORSSettings.DefinitionId);
             return stereotype != null ? new CORSSettings(stereotype) : null;
         }
 
 
         public static bool HasCORSSettings(this OperationModel model)
         {
-            return model.HasStereotype("824d3c4c-8e15-4413-afb7-6bcd372fe557");
+            return model.HasStereotype(CORSSettings.DefinitionId);
         }
 
         public static bool TryGetCORSSettings(this OperationModel model, out CORSSettings stereotype)
@@ -33,7 +33,7 @@ namespace Intent.Java.Spring.Cors.Api
                 return false;
             }
 
-            stereotype = new CORSSettings(model.GetStereotype("824d3c4c-8e15-4413-afb7-6bcd372fe557"));
+            stereotype = new CORSSettings(model.GetStereotype(CORSSettings.DefinitionId));
             return true;
         }
 
@@ -41,6 +41,7 @@ namespace Intent.Java.Spring.Cors.Api
         public class CORSSettings
         {
             private IStereotype _stereotype;
+            public const string DefinitionId = "824d3c4c-8e15-4413-afb7-6bcd372fe557";
 
             public CORSSettings(IStereotype stereotype)
             {

@@ -17,7 +17,7 @@
       <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
-      <ProjectId>ef69d81e-e67c-4251-984c-20c3fb2a945e</ProjectId>
+      <ProjectId>173698e0-1923-4b37-a35e-3845a0bf5987</ProjectId>
       <CorrelationId>Intent.ModuleBuilder.IModSpecFile</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Intent.Java.Services.CRUD.imodspec</ApplicationRelativeFilePath>
@@ -25,8 +25,8 @@
       <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
-      <ProjectId>ef69d81e-e67c-4251-984c-20c3fb2a945e</ProjectId>
-      <CorrelationId>Intent.VisualStudio.Projects.CoreLibrary.CSProject#ef69d81e-e67c-4251-984c-20c3fb2a945e</CorrelationId>
+      <ProjectId>173698e0-1923-4b37-a35e-3845a0bf5987</ProjectId>
+      <CorrelationId>Intent.VisualStudio.Projects.CSharpProject#173698e0-1923-4b37-a35e-3845a0bf5987</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Intent.Modules.Java.Services.CRUD.csproj</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>Intent.Modules.Java.Services.CRUD.csproj</ProjectRelativeFilePath>

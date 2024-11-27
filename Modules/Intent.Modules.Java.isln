@@ -19,10 +19,8 @@
     <application id="e1ac2551-105e-45da-be15-8b6a51f50fa4" name="Intent.Modules.Java.ModelMapper" relativePath="Intent.Modules.Java.ModelMapper/Intent.Modules.Java.ModelMapper.application.config" />
     <application id="2a056a85-a105-4062-b43c-b434e72dff8b" name="Intent.Modules.Java.Spring.Cors" relativePath="Intent.Modules.Java.Spring.Cors/Intent.Modules.Java.Spring.Cors.application.config" />
     <application id="107906ee-a9fd-4272-818a-28912b7ad043" name="Intent.Modules.Java.Services.CRUD" relativePath="Intent.Modules.Java.Services.CRUD/Intent.Modules.Java.Services.CRUD.application.config" />
-    <application id="591f2bfb-b70f-4d42-977f-333a15ee80ab" name="ApplicationTemplates.Java.Metadata" relativePath="ApplicationTemplates.Java.Metadata/ApplicationTemplates.Java.Metadata.application.config" />
     <application id="91e4276a-bdfd-4c88-9e51-7edf9d77d9f5" name="Intent.Modules.Java.Persistence.JPA.Queries" relativePath="Intent.Modules.Java.Persistence.JPA.Queries/Intent.Modules.Java.Persistence.JPA.Queries.application.config" />
     <application id="3a8d3506-4654-4e9c-ae9d-ac18fb71fd6a" name="Intent.Modules.Java.SpringBoot.Security" relativePath="Intent.Modules.Java.SpringBoot.Security/Intent.Modules.Java.SpringBoot.Security.application.config" />
-    <application id="39743c9c-ac35-475c-9856-57b5c4d9e7cb" name="Intent.Modules.Java.SpringBoot.Security.Metadata" relativePath="Intent.Modules.Java.SpringBoot.Security.Metadata/Intent.Modules.Java.SpringBoot.Security.Metadata.application.config" />
     <application id="2eeddca7-faf7-4848-bd0e-c45c164af278" name="Intent.Modules.Java.SpringBoot.Validation" relativePath="Intent.Modules.Java.SpringBoot.Validation/Intent.Modules.Java.SpringBoot.Validation.application.config" />
     <application id="3b37b26f-6533-4e96-8a64-f93a1a6b9a17" name="Intent.Modules.Java.Domain.Maven" relativePath="Intent.Modules.Java.Domain.Maven/Intent.Modules.Java.Domain.Maven.application.config" />
     <application id="6e21d1cd-2a2d-403f-b396-ea350ccc7b8b" name="Java.SpringDoc.OpenApi" relativePath="Intent.Modules.Java.SpringDoc.OpenApi/Intent.Modules.Java.SpringDoc.OpenApi.application.config" />

@@ -15,14 +15,14 @@ namespace Intent.Modules.Java.SpringBoot.Api
     {
         public static PageableSettings GetPageableSettings(this ParameterModel model)
         {
-            var stereotype = model.GetStereotype("f9297602-456c-424e-9651-21d235e04e0d");
+            var stereotype = model.GetStereotype(PageableSettings.DefinitionId);
             return stereotype != null ? new PageableSettings(stereotype) : null;
         }
 
 
         public static bool HasPageableSettings(this ParameterModel model)
         {
-            return model.HasStereotype("f9297602-456c-424e-9651-21d235e04e0d");
+            return model.HasStereotype(PageableSettings.DefinitionId);
         }
 
         public static bool TryGetPageableSettings(this ParameterModel model, out PageableSettings stereotype)
@@ -33,13 +33,14 @@ namespace Intent.Modules.Java.SpringBoot.Api
                 return false;
             }
 
-            stereotype = new PageableSettings(model.GetStereotype("f9297602-456c-424e-9651-21d235e04e0d"));
+            stereotype = new PageableSettings(model.GetStereotype(PageableSettings.DefinitionId));
             return true;
         }
 
         public class PageableSettings
         {
             private IStereotype _stereotype;
+            public const string DefinitionId = "f9297602-456c-424e-9651-21d235e04e0d";
 
             public PageableSettings(IStereotype stereotype)
             {

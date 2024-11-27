@@ -42,7 +42,7 @@ namespace Intent.Modules.Java.ModelMapper.Decorators
             var typeName = GetEntityTypeName();
             var typeNameCamelCased = typeName.ToCamelCase();
             var typeNamePascalCased = typeName.ToPascalCase();
-            
+
             var mapFromParamName = typeNameCamelCased.Pluralize();
             var mapLambdaParamName = typeNameCamelCased;
 

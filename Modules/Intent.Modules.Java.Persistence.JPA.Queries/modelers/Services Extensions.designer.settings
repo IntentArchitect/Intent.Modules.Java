@@ -12,10 +12,10 @@
       <typeReferenceSetting>
         <isRequired>true</isRequired>
         <targetTypes>
-          <type>DTO</type>
-          <type>Type-Definition</type>
-          <type>Enum</type>
-          <type>Query Projection</type>
+          <type type="DTO" typeId="fee0edca-4aa0-4f77-a524-6bbd84e78734" />
+          <type type="Type-Definition" typeId="d4e577cd-ad05-4180-9a2e-fff4ddea0e1e" />
+          <type type="Enum" typeId="85fba0e9-9161-4c85-a603-a229ef312beb" />
+          <type type="Query Projection" typeId="b8819c07-fa52-4e38-a92c-439e21220c55" />
         </targetTypes>
         <allowIsNavigable>inherit</allowIsNavigable>
         <allowIsNullable>inherit</allowIsNullable>
@@ -27,10 +27,10 @@
       <typeReferenceSetting>
         <isRequired>false</isRequired>
         <targetTypes>
-          <type>DTO</type>
-          <type>Type-Definition</type>
-          <type>Enum</type>
-          <type>Query Projection</type>
+          <type type="DTO" typeId="fee0edca-4aa0-4f77-a524-6bbd84e78734" />
+          <type type="Type-Definition" typeId="d4e577cd-ad05-4180-9a2e-fff4ddea0e1e" />
+          <type type="Enum" typeId="85fba0e9-9161-4c85-a603-a229ef312beb" />
+          <type type="Query Projection" typeId="b8819c07-fa52-4e38-a92c-439e21220c55" />
         </targetTypes>
         <allowIsNavigable>inherit</allowIsNavigable>
         <allowIsNullable>inherit</allowIsNullable>
@@ -43,4 +43,5 @@
   <mappingSettings />
   <mappableElementPackages />
   <mappableElementPackageExtensions />
+  <scripts />
 </settings>

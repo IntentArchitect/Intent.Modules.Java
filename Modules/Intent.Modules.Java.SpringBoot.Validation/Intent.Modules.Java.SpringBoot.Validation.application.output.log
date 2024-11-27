@@ -49,7 +49,7 @@
       <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
-      <ProjectId>858c7eb2-2bb7-4927-9c44-a8d5bcac8fba</ProjectId>
+      <ProjectId>9092c3e0-a48b-41cd-be89-3594304ac6a6</ProjectId>
       <CorrelationId>Intent.ModuleBuilder.IModSpecFile</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Intent.Java.SpringBoot.Validation.imodspec</ApplicationRelativeFilePath>
@@ -57,8 +57,8 @@
       <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
-      <ProjectId>858c7eb2-2bb7-4927-9c44-a8d5bcac8fba</ProjectId>
-      <CorrelationId>Intent.VisualStudio.Projects.CoreLibrary.CSProject#858c7eb2-2bb7-4927-9c44-a8d5bcac8fba</CorrelationId>
+      <ProjectId>9092c3e0-a48b-41cd-be89-3594304ac6a6</ProjectId>
+      <CorrelationId>Intent.VisualStudio.Projects.CSharpProject#9092c3e0-a48b-41cd-be89-3594304ac6a6</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Intent.Modules.Java.SpringBoot.Validation.csproj</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>Intent.Modules.Java.SpringBoot.Validation.csproj</ProjectRelativeFilePath>

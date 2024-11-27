@@ -9,7 +9,7 @@
       <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
-      <ProjectId>5ee9053b-4284-4568-9e38-3a4aa5a53ac2</ProjectId>
+      <ProjectId>816ea383-3c96-46a3-9880-bd359c950d7b</ProjectId>
       <CorrelationId>Intent.ModuleBuilder.IModSpecFile</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Intent.Java.Spring.Data.Repositories.imodspec</ApplicationRelativeFilePath>
@@ -17,8 +17,8 @@
       <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
-      <ProjectId>5ee9053b-4284-4568-9e38-3a4aa5a53ac2</ProjectId>
-      <CorrelationId>Intent.VisualStudio.Projects.CoreLibrary.CSProject#5ee9053b-4284-4568-9e38-3a4aa5a53ac2</CorrelationId>
+      <ProjectId>816ea383-3c96-46a3-9880-bd359c950d7b</ProjectId>
+      <CorrelationId>Intent.VisualStudio.Projects.CSharpProject#816ea383-3c96-46a3-9880-bd359c950d7b</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Intent.Modules.Java.Spring.Data.Repositories.csproj</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>Intent.Modules.Java.Spring.Data.Repositories.csproj</ProjectRelativeFilePath>

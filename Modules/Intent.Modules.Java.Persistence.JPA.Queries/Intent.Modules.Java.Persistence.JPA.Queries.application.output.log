@@ -105,7 +105,7 @@
       <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
-      <ProjectId>fe025313-a7d8-48a9-a0d5-9bd9328f82b0</ProjectId>
+      <ProjectId>238aad33-5f4c-4f80-872d-401c984e9f6e</ProjectId>
       <CorrelationId>Intent.ModuleBuilder.Templates.Api.ApiMetadataProviderExtensions</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>ApiMetadataProviderExtensions.cs</ApplicationRelativeFilePath>
@@ -193,7 +193,7 @@
       <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
-      <ProjectId>fe025313-a7d8-48a9-a0d5-9bd9328f82b0</ProjectId>
+      <ProjectId>238aad33-5f4c-4f80-872d-401c984e9f6e</ProjectId>
       <CorrelationId>Intent.ModuleBuilder.IModSpecFile</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Intent.Java.Persistence.JPA.Queries.imodspec</ApplicationRelativeFilePath>
@@ -201,8 +201,8 @@
       <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
-      <ProjectId>fe025313-a7d8-48a9-a0d5-9bd9328f82b0</ProjectId>
-      <CorrelationId>Intent.VisualStudio.Projects.CoreLibrary.CSProject#fe025313-a7d8-48a9-a0d5-9bd9328f82b0</CorrelationId>
+      <ProjectId>238aad33-5f4c-4f80-872d-401c984e9f6e</ProjectId>
+      <CorrelationId>Intent.VisualStudio.Projects.CSharpProject#238aad33-5f4c-4f80-872d-401c984e9f6e</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Intent.Modules.Java.Persistence.JPA.Queries.csproj</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>Intent.Modules.Java.Persistence.JPA.Queries.csproj</ProjectRelativeFilePath>

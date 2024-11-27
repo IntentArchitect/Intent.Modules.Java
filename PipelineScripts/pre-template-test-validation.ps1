@@ -2,8 +2,22 @@
 
 param(
     [string]$buildArtifactStagingDirectory,
+    [string]$modulesIntentSolutionRelativePath,
     [string]$testsIntentSolutionRelativePath
 )
+
+$repoConfigContent = 
+"<?xml version=""1.0"" encoding=""utf-8""?>
+<assetRepositories>
+  <entries>
+    <entry>
+      <name>Pipeline build artifact staging directory</name>
+      <address>$buildArtifactStagingDirectory</address>
+      <isBuiltIn>false</isBuiltIn>
+      <order>3</order>
+    </entry>
+  </entries>
+</assetRepositories>"
 
 $moduleLookup = @{}
 $moduleFileNames = Get-ChildItem "$buildArtifactStagingDirectory/*.imod" | % {
@@ -38,33 +52,28 @@ $moduleFileNames = Get-ChildItem "$buildArtifactStagingDirectory/*.imod" | % {
 $curLocation = Get-Location;
 Write-Host "`$curLocation = $curLocation"
 
-$repoConfigContent = 
-"<?xml version=""1.0"" encoding=""utf-8""?>
-<assetRepositories>
-  <entries>
-    <entry>
-      <name>Pipeline build artifact staging directory</name>
-      <address>$buildArtifactStagingDirectory</address>
-      <isBuiltIn>false</isBuiltIn>
-      <order>3</order>
-    </entry>
-  </entries>
-</assetRepositories>"
+$moduleSlnDir = [System.IO.Path]::GetDirectoryName($modulesIntentSolutionRelativePath)
+Write-Host "`$moduleSlnDir = $moduleSlnDir"
 
-$testSln = [xml] (Get-Content "./$testsIntentSolutionRelativePath" -Encoding UTF8)
+$moduleRepoPath = [System.IO.Path]::Combine($curLocation, $moduleSlnDir, "intent.repositories.config")
+Write-Host "`$moduleRepoPath = $moduleRepoPath"
+$repoConfigContent | Set-Content $moduleRepoPath -Encoding UTF8
+
 $testSlnDir = [System.IO.Path]::GetDirectoryName($testsIntentSolutionRelativePath)
 Write-Host "`$testSlnDir = $testSlnDir"
 
-$repoPath = [System.IO.Path]::Combine($curLocation, $testSlnDir, "intent.repositories.config")
-Write-Host "`$repoPath = $repoPath"
-$repoConfigContent | Set-Content $repoPath -Encoding UTF8
+$testsRepoPath = [System.IO.Path]::Combine($curLocation, $testSlnDir, "intent.repositories.config")
+Write-Host "`$testsRepoPath = $testsRepoPath"
+$repoConfigContent | Set-Content $testsRepoPath -Encoding UTF8
 
 $discrepanciesFound = $false
 
+$testSln = [xml] (Get-Content "./$testsIntentSolutionRelativePath" -Encoding UTF8)
 $testSln.solution.applications.application | % {
     $appRelPath = [System.IO.Path]::Combine($curLocation, $testSlnDir, $_.relativePath)
     $basePath = [System.IO.Path]::GetDirectoryName($appRelPath)
     $modulesConfig = [System.IO.Path]::Combine($basePath, "modules.config")
+    $name = $_.name
 
     $modulesConfigContent = [xml] (Get-Content $modulesConfig -Encoding UTF8)
     $modulesConfigContent.modules.module | % { 
