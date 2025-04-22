@@ -1,4 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <deviationsLog>
-  <files />
+  <files>
+    <file>
+      <correlationId>Intent.ModuleBuilder.Templates.TemplateDecorator#bf2de9f1-760a-47b5-838b-e76fdbc8e7f7</correlationId>
+      <path>Intent.Modules.Java.Persistence.JPA/Decorators/JpaDomainModelDecorator.cs</path>
+      <count>2</count>
+      <updatedByAccountName>dandre.jvv@intentarchitect.com</updatedByAccountName>
+      <updatedByDisplayName>Dandre Jansen van Vuuren</updatedByDisplayName>
+      <updatedAt>2025-04-22T14:38:59.0507729Z</updatedAt>
+      <deviationsHash>5E149837A840E8FB5CDBE24CF6ECD909BC24BEE5132F696F20EBA6B53FDC0B97</deviationsHash>
+      <fileHash>4246F8DC2E04A774F57F7031721919825C4823508CC5BD6B045856D9101DE5F2</fileHash>
+    </file>
+    <file>
+      <correlationId>Intent.ModuleBuilder.Java.Templates.JavaFileTemplatePartial#7d42e56d-ed1e-4e84-9688-7f71691a568a</correlationId>
+      <path>Intent.Modules.Java.Persistence.JPA/Templates/CompositeId/CompositeIdTemplatePartial.cs</path>
+      <count>2</count>
+      <updatedByAccountName>dandre.jvv@intentarchitect.com</updatedByAccountName>
+      <updatedByDisplayName>Dandre Jansen van Vuuren</updatedByDisplayName>
+      <updatedAt>2025-04-22T14:38:59.0508141Z</updatedAt>
+      <deviationsHash>387E01DF86D48F27E6EE245092DA59BB3F9CB69C440BB967F557A3A36D438CA3</deviationsHash>
+      <fileHash>4214EE2B11021699B3BE2DCBD103C4A7A269DD745CEEE5BF519EC24DBE0AA078</fileHash>
+    </file>
+  </files>
 </deviationsLog>

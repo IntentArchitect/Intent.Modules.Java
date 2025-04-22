@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<class id="f6ab5800-f629-4240-aeca-45f408d212c6" type="Version Migration" typeId="03f24c57-66d8-4868-95a7-6daef900dc7f">
+  <name>5.0.2-pre.0</name>
+  <display>5.0.2-pre.0</display>
+  <isAbstract>false</isAbstract>
+  <genericTypes />
+  <isMapped>false</isMapped>
+  <parentFolderId>ec2ae4d3-f9a2-42d1-b161-7d4ef1c453c1</parentFolderId>
+  <packageId>2e4398f1-893d-432e-badb-ab0c4ea3280e</packageId>
+  <packageName>Intent.Java.Persistence.JPA</packageName>
+  <stereotypes />
+  <metadata />
+  <childElements />
+</class>

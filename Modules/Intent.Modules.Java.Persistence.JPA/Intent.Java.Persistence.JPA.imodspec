@@ -1,8 +1,8 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <package>
   <id>Intent.Java.Persistence.JPA</id>
-  <version>5.0.1</version>
-  <supportedClientVersions>[3.3.16, 5.0.0-a)</supportedClientVersions>
+  <version>5.0.2-pre.0</version>
+  <supportedClientVersions>[4.0.0-beta.7, 5.0.0-a)</supportedClientVersions>
   <summary>JPA Annotation decoration of Domain entities.</summary>
   <description>JPA Annotation decoration of Domain entities.</description>
   <authors>Intent Architect</authors>
@@ -30,9 +30,9 @@
     <dependency id="Intent.Java.Services" version="3.5.1" />
     <dependency id="Intent.Java.SpringBoot" version="4.0.0" />
     <dependency id="Intent.Java.Weaving.Annotations" version="4.0.0" />
-    <dependency id="Intent.Metadata.RDBMS" version="3.5.1" />
+    <dependency id="Intent.Metadata.RDBMS" version="3.7.2-pre.1" />
     <dependency id="Intent.Metadata.WebApi" version="4.4.3" />
-    <dependency id="Intent.Modelers.Domain" version="3.6.0" />
+    <dependency id="Intent.Modelers.Domain" version="3.12.2" />
     <dependency id="Intent.Modelers.Services" version="3.5.1" />
   </dependencies>
   <files>
@@ -47,18 +47,20 @@
     <groupExtension id="3a2fbba6-a2e0-4d36-90f9-18b8fec07ecf" groupId="ac0a788e-d8b3-4eea-b56d-538608f1ded9" externalReference="3a2fbba6-a2e0-4d36-90f9-18b8fec07ecf">
       <settings>
         <setting id="8d56d60a-3778-4a95-ae26-ab640f7e5270" title="Table Naming Convention" type="select">
-          <isRequired>true</isRequired>
-          <hint>Database table naming convention, can be overridden on a table-by-table basis by applying the "Table" stereotype to a Class.</hint>
+          <isRequired>false</isRequired>
+          <hint>Database table naming convention can be overridden on a table-by-table basis by applying the "Table" stereotype to a Class.</hint>
           <defaultValue>pluralized</defaultValue>
+          <isRequiredFunction>return true;</isRequiredFunction>
           <options>
             <option value="pluralized" description="Pluralized" />
             <option value="singularized" description="Singularized" />
           </options>
         </setting>
         <setting id="976df8f4-09c5-4186-bb69-a946e6b00b9c" title="Database Provider" type="select">
-          <isRequired>true</isRequired>
+          <isRequired>false</isRequired>
           <hint>Underlying database technology.</hint>
           <defaultValue>h2</defaultValue>
+          <isRequiredFunction>return true;</isRequiredFunction>
           <options>
             <option value="h2" description="H2" />
             <option value="mysql" description="MySQL" />
@@ -70,4 +72,7 @@
     </groupExtension>
   </moduleSettingsExtensions>
   <tags />
+  <migrations>
+    <migration version="5.0.2-pre.0" />
+  </migrations>
 </package>

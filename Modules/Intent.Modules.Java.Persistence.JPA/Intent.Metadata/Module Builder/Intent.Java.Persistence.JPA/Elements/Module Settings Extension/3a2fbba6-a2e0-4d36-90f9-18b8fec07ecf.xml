@@ -40,9 +40,11 @@
           <definitionPackageId>9972b2a9-b749-4bba-b5c8-824bf694c6ef</definitionPackageId>
           <properties>
             <property name="e33ce4e3-a3c5-4a3c-a6b8-96418be03de0" display="Control Type" value="Select" isActive="true" />
-            <property name="7070a9ce-ff31-422e-9cff-d82876c5efdf" display="Is Required" value="true" isActive="true" />
-            <property name="01489021-8311-43d5-b41b-e7628a512c1d" display="Hint" value="Database table naming convention, can be overridden on a table-by-table basis by applying the &quot;Table&quot; stereotype to a Class." isActive="true" />
+            <property name="7070a9ce-ff31-422e-9cff-d82876c5efdf" display="Is Required" value="true" isActive="false" />
+            <property name="01489021-8311-43d5-b41b-e7628a512c1d" display="Hint" value="Database table naming convention can be overridden on a table-by-table basis by applying the &quot;Table&quot; stereotype to a Class." isActive="true" />
             <property name="653d889c-626f-45c5-a6e6-72b74a2f805c" display="Default Value" value="pluralized" isActive="true" />
+            <property name="c3456e79-0607-41a5-9b85-e0712f4f4834" display="Is Active Function" value="" isActive="true" />
+            <property name="fa54329f-d4e5-48bc-8027-e17206e9fc89" display="Is Required Function" value="return true;" isActive="true" />
           </properties>
         </stereotype>
       </stereotypes>
@@ -50,7 +52,7 @@
       <childElements>
         <childElement id="54dd91dc-2105-49bf-ac27-ab3691d4b14d" type="Module Settings Field Option" typeId="1592709a-89b1-4cb0-9801-ce9d3b94545a">
           <name>Pluralized</name>
-          <display>Pluralized</display>
+          <display>Pluralized = pluralized</display>
           <isAbstract>false</isAbstract>
           <value>pluralized</value>
           <genericTypes />
@@ -64,7 +66,7 @@
         </childElement>
         <childElement id="bec00f3a-c3b5-4cef-971a-a7fd8b171d8e" type="Module Settings Field Option" typeId="1592709a-89b1-4cb0-9801-ce9d3b94545a">
           <name>Singularized</name>
-          <display>Singularized</display>
+          <display>Singularized = singularized</display>
           <isAbstract>false</isAbstract>
           <value>singularized</value>
           <genericTypes />
@@ -95,9 +97,11 @@
           <definitionPackageId>9972b2a9-b749-4bba-b5c8-824bf694c6ef</definitionPackageId>
           <properties>
             <property name="e33ce4e3-a3c5-4a3c-a6b8-96418be03de0" display="Control Type" value="Select" isActive="true" />
-            <property name="7070a9ce-ff31-422e-9cff-d82876c5efdf" display="Is Required" value="true" isActive="true" />
+            <property name="7070a9ce-ff31-422e-9cff-d82876c5efdf" display="Is Required" value="true" isActive="false" />
             <property name="01489021-8311-43d5-b41b-e7628a512c1d" display="Hint" value="Underlying database technology." isActive="true" />
             <property name="653d889c-626f-45c5-a6e6-72b74a2f805c" display="Default Value" value="h2" isActive="true" />
+            <property name="c3456e79-0607-41a5-9b85-e0712f4f4834" display="Is Active Function" value="" isActive="true" />
+            <property name="fa54329f-d4e5-48bc-8027-e17206e9fc89" display="Is Required Function" value="return true;" isActive="true" />
           </properties>
         </stereotype>
       </stereotypes>
@@ -105,7 +109,7 @@
       <childElements>
         <childElement id="dbdacb41-8f27-4d7a-b06d-220830f6bc5d" type="Module Settings Field Option" typeId="1592709a-89b1-4cb0-9801-ce9d3b94545a">
           <name>H2</name>
-          <display>H2</display>
+          <display>H2 = h2</display>
           <isAbstract>false</isAbstract>
           <value>h2</value>
           <genericTypes />
@@ -119,7 +123,7 @@
         </childElement>
         <childElement id="bb6cdae0-da9f-48b6-a5cb-b7459d3ca799" type="Module Settings Field Option" typeId="1592709a-89b1-4cb0-9801-ce9d3b94545a">
           <name>MySQL</name>
-          <display>MySQL</display>
+          <display>MySQL = mysql</display>
           <isAbstract>false</isAbstract>
           <value>mysql</value>
           <genericTypes />
@@ -133,7 +137,7 @@
         </childElement>
         <childElement id="18c397e7-20e1-4cf2-80c4-a99bdcd780bf" type="Module Settings Field Option" typeId="1592709a-89b1-4cb0-9801-ce9d3b94545a">
           <name>PostgreSQL</name>
-          <display>PostgreSQL</display>
+          <display>PostgreSQL = postgresql</display>
           <isAbstract>false</isAbstract>
           <value>postgresql</value>
           <genericTypes />
@@ -147,7 +151,7 @@
         </childElement>
         <childElement id="b1043e54-78c7-4561-9f92-20eaa475cf3a" type="Module Settings Field Option" typeId="1592709a-89b1-4cb0-9801-ce9d3b94545a">
           <name>SQL Server</name>
-          <display>SQL Server</display>
+          <display>SQL Server = sql-server</display>
           <isAbstract>false</isAbstract>
           <value>sql-server</value>
           <genericTypes />
