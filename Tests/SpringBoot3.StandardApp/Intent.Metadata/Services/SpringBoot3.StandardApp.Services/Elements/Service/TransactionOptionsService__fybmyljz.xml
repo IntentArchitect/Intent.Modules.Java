@@ -55,6 +55,7 @@
             <property name="801c3e61-4431-4d81-93fa-7e57d33cb3fa" display="Verb" value="POST" isActive="true" />
             <property name="5dd3e07d-76eb-45d4-9956-4325fb068acc" display="Route" value="transaction-default" isActive="true" />
             <property name="4490e212-1e99-43ce-b3dd-048ed2a6bae8" display="Return Type Mediatype" value="Default" isActive="true" />
+            <property name="e3870725-34b3-4684-85f2-ec4a667207fb" display="Success Response Code" isActive="true" />
           </properties>
         </stereotype>
         <stereotype stereotypeDefinitionId="824d3c4c-8e15-4413-afb7-6bcd372fe557" name="CORS Settings">
@@ -95,6 +96,7 @@
             <property name="801c3e61-4431-4d81-93fa-7e57d33cb3fa" display="Verb" value="POST" isActive="true" />
             <property name="5dd3e07d-76eb-45d4-9956-4325fb068acc" display="Route" value="no-transaction" isActive="true" />
             <property name="4490e212-1e99-43ce-b3dd-048ed2a6bae8" display="Return Type Mediatype" value="Default" isActive="true" />
+            <property name="e3870725-34b3-4684-85f2-ec4a667207fb" display="Success Response Code" isActive="true" />
           </properties>
         </stereotype>
         <stereotype stereotypeDefinitionId="b72430de-3a53-44de-af0a-75023119d64f" name="Transaction Options">
@@ -147,6 +149,7 @@
             <property name="801c3e61-4431-4d81-93fa-7e57d33cb3fa" display="Verb" value="POST" isActive="true" />
             <property name="5dd3e07d-76eb-45d4-9956-4325fb068acc" display="Route" value="transaction-read-only" isActive="true" />
             <property name="4490e212-1e99-43ce-b3dd-048ed2a6bae8" display="Return Type Mediatype" value="Default" isActive="true" />
+            <property name="e3870725-34b3-4684-85f2-ec4a667207fb" display="Success Response Code" isActive="true" />
           </properties>
         </stereotype>
         <stereotype stereotypeDefinitionId="b72430de-3a53-44de-af0a-75023119d64f" name="Transaction Options">
@@ -199,6 +202,7 @@
             <property name="801c3e61-4431-4d81-93fa-7e57d33cb3fa" display="Verb" value="POST" isActive="true" />
             <property name="5dd3e07d-76eb-45d4-9956-4325fb068acc" display="Route" value="transaction-isolation-level" isActive="true" />
             <property name="4490e212-1e99-43ce-b3dd-048ed2a6bae8" display="Return Type Mediatype" value="Default" isActive="true" />
+            <property name="e3870725-34b3-4684-85f2-ec4a667207fb" display="Success Response Code" isActive="true" />
           </properties>
         </stereotype>
         <stereotype stereotypeDefinitionId="b72430de-3a53-44de-af0a-75023119d64f" name="Transaction Options">
@@ -251,6 +255,7 @@
             <property name="801c3e61-4431-4d81-93fa-7e57d33cb3fa" display="Verb" value="POST" isActive="true" />
             <property name="5dd3e07d-76eb-45d4-9956-4325fb068acc" display="Route" value="transaction-propagation-level" isActive="true" />
             <property name="4490e212-1e99-43ce-b3dd-048ed2a6bae8" display="Return Type Mediatype" value="Default" isActive="true" />
+            <property name="e3870725-34b3-4684-85f2-ec4a667207fb" display="Success Response Code" isActive="true" />
           </properties>
         </stereotype>
         <stereotype stereotypeDefinitionId="b72430de-3a53-44de-af0a-75023119d64f" name="Transaction Options">
@@ -303,6 +308,7 @@
             <property name="801c3e61-4431-4d81-93fa-7e57d33cb3fa" display="Verb" value="POST" isActive="true" />
             <property name="5dd3e07d-76eb-45d4-9956-4325fb068acc" display="Route" value="transaction-timeout" isActive="true" />
             <property name="4490e212-1e99-43ce-b3dd-048ed2a6bae8" display="Return Type Mediatype" value="Default" isActive="true" />
+            <property name="e3870725-34b3-4684-85f2-ec4a667207fb" display="Success Response Code" isActive="true" />
           </properties>
         </stereotype>
         <stereotype stereotypeDefinitionId="b72430de-3a53-44de-af0a-75023119d64f" name="Transaction Options">

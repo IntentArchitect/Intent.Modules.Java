@@ -17,7 +17,6 @@ public class UpdateUserRoleDto {
     private UUID id;
     private String name;
     private UUID userId;
-    private UUID Id;
 
     public static UpdateUserRoleDto mapFromRole(Role role, ModelMapper mapper) {
         return mapper.map(role, UpdateUserRoleDto.class);
