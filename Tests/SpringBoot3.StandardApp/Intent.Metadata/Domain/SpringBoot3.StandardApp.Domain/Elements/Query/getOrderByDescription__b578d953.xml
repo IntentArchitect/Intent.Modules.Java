@@ -18,13 +18,13 @@
     <genericTypeParameters />
   </typeReference>
   <isMapped>true</isMapped>
-  <mappedClass>
+  <mappedClass isRoot="true">
     <applicationId>bcc9ac0a-2cc1-4f78-ab3f-f847093c7680</applicationId>
     <metadataId>6ab29b31-27af-4f56-a67c-986d82097d63</metadataId>
     <mappingSettingsId>2290d513-2fd9-4425-8f88-14e17c008162</mappingSettingsId>
     <autoSyncTypeReference>true</autoSyncTypeReference>
     <mappedPath>
-      <target id="8b4569c6-a070-49fb-ac35-3e2c9d83eff6" name="Order" type="element" specialization="Class" />
+      <target id="8b4569c6-a070-49fb-ac35-3e2c9d83eff6" name="Order" type="element" specialization="Class" specializationId="04e12b51-ed12-42a3-9667-a6aa81bb6d10" />
     </mappedPath>
   </mappedClass>
   <parentFolderId>665e4f5d-e76d-4353-b4fd-634ec96a6809</parentFolderId>
@@ -64,8 +64,8 @@
         <mappingSettingsId>2290d513-2fd9-4425-8f88-14e17c008162</mappingSettingsId>
         <autoSyncTypeReference>true</autoSyncTypeReference>
         <mappedPath>
-          <target id="9a243c91-af0e-4c9b-a10d-40e47ff577be" name="OrderItems" type="association" specialization="Association" />
-          <target id="21ec053b-714a-49a0-b659-687a44996bf5" name="description" type="element" specialization="Attribute" />
+          <target id="9a243c91-af0e-4c9b-a10d-40e47ff577be" name="OrderItems" type="association" specialization="Association Target End" specializationId="0a66489f-30aa-417b-a75d-b945863366fd" />
+          <target id="21ec053b-714a-49a0-b659-687a44996bf5" name="description" type="element" specialization="Attribute" specializationId="0090fb93-483e-41af-a11d-5ad2dc796adf" />
         </mappedPath>
       </mappedClass>
       <parentFolderId>ba782293-03f3-45c7-b069-922d805e493e</parentFolderId>

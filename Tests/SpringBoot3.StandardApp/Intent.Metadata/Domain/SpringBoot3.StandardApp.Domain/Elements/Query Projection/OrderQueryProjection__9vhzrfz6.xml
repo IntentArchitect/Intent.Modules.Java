@@ -6,13 +6,13 @@
   <sort-children>by-type-then-manually</sort-children>
   <genericTypes />
   <isMapped>true</isMapped>
-  <mappedClass>
+  <mappedClass isRoot="true">
     <applicationId>bcc9ac0a-2cc1-4f78-ab3f-f847093c7680</applicationId>
     <metadataId>6ab29b31-27af-4f56-a67c-986d82097d63</metadataId>
     <mappingSettingsId>23a4e11b-f188-4fd3-b1f7-ed3fa17e4447</mappingSettingsId>
     <autoSyncTypeReference>true</autoSyncTypeReference>
     <mappedPath>
-      <target id="8b4569c6-a070-49fb-ac35-3e2c9d83eff6" name="Order" type="element" specialization="Class" />
+      <target id="8b4569c6-a070-49fb-ac35-3e2c9d83eff6" name="Order" type="element" specialization="Class" specializationId="04e12b51-ed12-42a3-9667-a6aa81bb6d10" />
     </mappedPath>
   </mappedClass>
   <parentFolderId>75df74eb-ffdc-48a6-9990-9a18228fc494</parentFolderId>
@@ -42,7 +42,7 @@
         <mappingSettingsId>23a4e11b-f188-4fd3-b1f7-ed3fa17e4447</mappingSettingsId>
         <autoSyncTypeReference>true</autoSyncTypeReference>
         <mappedPath>
-          <target id="e5c4a491-27a5-4805-8487-6d4d784c76ca" name="number" type="element" specialization="Attribute" />
+          <target id="e5c4a491-27a5-4805-8487-6d4d784c76ca" name="number" type="element" specialization="Attribute" specializationId="0090fb93-483e-41af-a11d-5ad2dc796adf" />
         </mappedPath>
       </mappedClass>
       <parentFolderId>6d969904-2665-44c3-8f4e-0c29d3f8a188</parentFolderId>
@@ -73,7 +73,7 @@
         <mappingSettingsId>23a4e11b-f188-4fd3-b1f7-ed3fa17e4447</mappingSettingsId>
         <autoSyncTypeReference>true</autoSyncTypeReference>
         <mappedPath>
-          <target id="37fa84df-b018-4e45-bbb1-ca94fffbcf28" name="id" type="element" specialization="Attribute" />
+          <target id="37fa84df-b018-4e45-bbb1-ca94fffbcf28" name="id" type="element" specialization="Attribute" specializationId="0090fb93-483e-41af-a11d-5ad2dc796adf" />
         </mappedPath>
       </mappedClass>
       <parentFolderId>6d969904-2665-44c3-8f4e-0c29d3f8a188</parentFolderId>

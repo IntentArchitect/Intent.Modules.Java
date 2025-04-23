@@ -30,7 +30,7 @@
   </sourceEnd>
   <targetEnd id="83c5a7af-6950-4c0a-a024-779ed210cab6" type="Association Target End" typeId="0a66489f-30aa-417b-a75d-b945863366fd">
     <name>OrderItems</name>
-    <display>OrderItems: OrderItem[*]   [1 --&gt; *]</display>
+    <display>OrderItems: OrderItem[*]</display>
     <order>2</order>
     <typeReference id="c2edae04-e917-44cc-8554-5624706572c5">
       <typeId>047030b9-4d5f-47c5-8100-117170bb5cb5</typeId>
