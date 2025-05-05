@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <applicationTemplate>
   <id>Intent.Java.SpringBoot.WebApplication</id>
-  <version>4.0.14</version>
+  <version>4.0.15-pre.0</version>
   <supportedClientVersions>[4.3.0-a, 5.0.0-a)</supportedClientVersions>
   <displayName>Java SpringBoot Web Application</displayName>
   <shortDescription>Create a Java web application using SpringBoot</shortDescription>
@@ -118,7 +118,7 @@
           <description>Persistence infrastructure using JPA</description>
           <icon type="UrlImagePath" source="data:image/png;base64,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" />
           <modules>
-            <module id="Intent.Java.Persistence.JPA" version="5.0.1" metadataOnly="false">
+            <module id="Intent.Java.Persistence.JPA" version="5.0.2" metadataOnly="false">
               <includedByDefault>true</includedByDefault>
               <required>true</required>
             </module>
@@ -194,12 +194,12 @@
     <module id="Intent.Common.Java" version="4.1.2" />
     <module id="Intent.Common.Types" version="4.1.1" />
     <module id="Intent.Java.Weaving.Annotations" version="4.1.0" />
-    <module id="Intent.Metadata.RDBMS" version="3.7.2" />
+    <module id="Intent.Metadata.RDBMS" version="3.7.3" />
     <module id="Intent.Metadata.Security" version="1.0.2" />
     <module id="Intent.Metadata.WebApi" version="4.7.7" />
     <module id="Intent.Modelers.Domain" version="3.12.2" />
     <module id="Intent.Modelers.Domain.Repositories" version="3.5.1" />
-    <module id="Intent.Modelers.Services" version="3.9.3" />
+    <module id="Intent.Modelers.Services" version="3.9.4" />
     <module id="Intent.Modelers.Services.DomainInteractions" version="2.1.5" />
   </minimumDependencyVersions>
 </applicationTemplate>
