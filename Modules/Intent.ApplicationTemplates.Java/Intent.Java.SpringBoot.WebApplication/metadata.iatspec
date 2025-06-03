@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<applicationTemplate>
+<applicationTemplate type="application-template">
   <id>Intent.Java.SpringBoot.WebApplication</id>
-  <version>4.0.16-pre.0</version>
+  <version>4.0.16</version>
   <supportedClientVersions>[4.3.0-a, 5.0.0-a)</supportedClientVersions>
   <displayName>Java SpringBoot Web Application</displayName>
+  <additionalImages />
   <shortDescription>Create a Java web application using SpringBoot</shortDescription>
   <authors>Intent Architect</authors>
   <priority>1005</priority>
@@ -167,7 +168,7 @@
     </group>
   </componentGroups>
   <additionalSettings>
-    <group id="11ac2c9d-9f1b-4df9-a50e-b3a68195cd95" title="Domain Settings">
+    <group id="11ac2c9d-9f1b-4df9-a50e-b3a68195cd95" title="Domain Settings" type="application-settings">
       <settings>
         <setting id="c3789138-6649-47e4-901b-5f6469583cb7" title="Attribute Naming Convention" type="hidden">
           <defaultValue>camel-case</defaultValue>
@@ -176,7 +177,7 @@
         </setting>
       </settings>
     </group>
-    <group id="63d1578e-fa0c-4c23-b295-3f6d87d1a960" title="Spring Boot">
+    <group id="63d1578e-fa0c-4c23-b295-3f6d87d1a960" title="Spring Boot" type="application-settings">
       <settings>
         <setting id="2c7289d0-0261-4040-95ad-e7aba770753c" title="Target Version" type="select">
           <defaultValue>V3_1_3</defaultValue>
