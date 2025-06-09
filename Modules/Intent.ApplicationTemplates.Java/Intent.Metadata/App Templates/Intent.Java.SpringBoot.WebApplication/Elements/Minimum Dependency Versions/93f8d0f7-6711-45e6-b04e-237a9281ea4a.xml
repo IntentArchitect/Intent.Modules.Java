@@ -15,7 +15,7 @@
   <childElements>
     <childElement id="2d76c2aa-f90c-43b3-b3c8-ab69c4bcb06c" type="Module" typeId="6a811790-b322-4340-8b68-84dae5ffafa8">
       <name>Intent.Common</name>
-      <display>Intent.Common 3.7.4</display>
+      <display>Intent.Common 3.7.7</display>
       <isAbstract>false</isAbstract>
       <value>3.7.7</value>
       <genericTypes />
@@ -43,7 +43,7 @@
     </childElement>
     <childElement id="41ac06b4-1a5a-46e8-986b-4afdc61d4ecb" type="Module" typeId="6a811790-b322-4340-8b68-84dae5ffafa8">
       <name>Intent.Common.Types</name>
-      <display>Intent.Common.Types 4.1.0</display>
+      <display>Intent.Common.Types 4.1.1</display>
       <isAbstract>false</isAbstract>
       <value>4.1.1</value>
       <genericTypes />
@@ -71,7 +71,7 @@
     </childElement>
     <childElement id="f8c46e7f-6d59-4a17-9bd3-831875dd6f8c" type="Module" typeId="6a811790-b322-4340-8b68-84dae5ffafa8">
       <name>Intent.Metadata.RDBMS</name>
-      <display>Intent.Metadata.RDBMS 3.7.0</display>
+      <display>Intent.Metadata.RDBMS 3.7.4</display>
       <isAbstract>false</isAbstract>
       <value>3.7.4</value>
       <genericTypes />
@@ -85,7 +85,7 @@
     </childElement>
     <childElement id="1b3a8d20-58d0-43a7-92fd-d283783f95a4" type="Module" typeId="6a811790-b322-4340-8b68-84dae5ffafa8">
       <name>Intent.Metadata.Security</name>
-      <display>Intent.Metadata.Security 1.0.1</display>
+      <display>Intent.Metadata.Security 1.0.4</display>
       <isAbstract>false</isAbstract>
       <value>1.0.4</value>
       <genericTypes />
@@ -99,7 +99,7 @@
     </childElement>
     <childElement id="26968d2e-d974-4dc0-b1b1-2df35d179be8" type="Module" typeId="6a811790-b322-4340-8b68-84dae5ffafa8">
       <name>Intent.Metadata.WebApi</name>
-      <display>Intent.Metadata.WebApi 4.7.0</display>
+      <display>Intent.Metadata.WebApi 4.7.8</display>
       <isAbstract>false</isAbstract>
       <value>4.7.8</value>
       <genericTypes />
@@ -113,7 +113,7 @@
     </childElement>
     <childElement id="586b1f2b-deda-4059-ad54-733bfe9179a4" type="Module" typeId="6a811790-b322-4340-8b68-84dae5ffafa8">
       <name>Intent.Modelers.Domain</name>
-      <display>Intent.Modelers.Domain 3.12.0</display>
+      <display>Intent.Modelers.Domain 3.12.2</display>
       <isAbstract>false</isAbstract>
       <value>3.12.2</value>
       <genericTypes />
@@ -127,7 +127,7 @@
     </childElement>
     <childElement id="d4c858cb-da99-475b-b4fd-f17e16e61498" type="Module" typeId="6a811790-b322-4340-8b68-84dae5ffafa8">
       <name>Intent.Modelers.Domain.Repositories</name>
-      <display>Intent.Modelers.Domain.Repositories 3.5.0</display>
+      <display>Intent.Modelers.Domain.Repositories 3.5.1</display>
       <isAbstract>false</isAbstract>
       <value>3.5.1</value>
       <genericTypes />
@@ -141,7 +141,7 @@
     </childElement>
     <childElement id="d81c5d18-cc45-44af-81cb-a8b27334dba2" type="Module" typeId="6a811790-b322-4340-8b68-84dae5ffafa8">
       <name>Intent.Modelers.Services</name>
-      <display>Intent.Modelers.Services 3.9.0</display>
+      <display>Intent.Modelers.Services 3.9.4</display>
       <isAbstract>false</isAbstract>
       <value>3.9.4</value>
       <genericTypes />
@@ -155,7 +155,7 @@
     </childElement>
     <childElement id="4e6923ca-9161-40e4-8c1b-c91dc406edf7" type="Module" typeId="6a811790-b322-4340-8b68-84dae5ffafa8">
       <name>Intent.Modelers.Services.DomainInteractions</name>
-      <display>Intent.Modelers.Services.DomainInteractions 2.1.0</display>
+      <display>Intent.Modelers.Services.DomainInteractions 2.1.5</display>
       <isAbstract>false</isAbstract>
       <value>2.1.5</value>
       <genericTypes />
