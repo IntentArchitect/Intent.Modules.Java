@@ -31,5 +31,5 @@
   <metadata>
     <install target="Domain" src="Intent.Metadata/Module Builder/Intent.Java.Domain.Maven/Intent.Java.Domain.Maven.pkg.config" externalReference="6d2225a7-282e-495f-b587-e014ef045df1" />
   </metadata>
-  <tags />
+  <tags>java</tags>
 </package>

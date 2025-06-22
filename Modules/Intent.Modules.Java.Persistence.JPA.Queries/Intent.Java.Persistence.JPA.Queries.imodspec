@@ -51,5 +51,5 @@
     <install target="Services" src="modelers/Services Extensions.designer.settings" externalReference="d0a0818c-da04-4526-bf66-cb3238cd7d59" />
     <install target="Domain" src="Intent.Metadata/Module Builder/Intent.Java.Persistence.JPA.Queries/Intent.Java.Persistence.JPA.Queries.pkg.config" externalReference="1f412104-d5bd-42a6-9655-ce7e37bad8cb" />
   </metadata>
-  <tags />
+  <tags>java</tags>
 </package>
