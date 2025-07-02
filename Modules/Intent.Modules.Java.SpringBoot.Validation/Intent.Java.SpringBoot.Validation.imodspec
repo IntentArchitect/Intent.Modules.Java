@@ -41,5 +41,5 @@
   <metadata>
     <install target="Services" src="Intent.Metadata/Module Builder/Intent.Java.SpringBoot.Validation/Intent.Java.SpringBoot.Validation.pkg.config" externalReference="5fbac7a8-1f34-4e1a-a4c2-75234de5bd69" />
   </metadata>
-  <tags />
+  <tags>java</tags>
 </package>

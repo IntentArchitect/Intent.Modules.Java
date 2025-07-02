@@ -71,7 +71,7 @@
       </settings>
     </groupExtension>
   </moduleSettingsExtensions>
-  <tags />
+  <tags>java</tags>
   <migrations>
     <migration version="5.0.2-pre.0" />
   </migrations>

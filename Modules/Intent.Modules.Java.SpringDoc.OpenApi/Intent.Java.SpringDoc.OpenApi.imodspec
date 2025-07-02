@@ -35,5 +35,5 @@
   <metadata>
     <install target="Services" src="Intent.Metadata/Module Builder/Intent.Java.SpringDoc.OpenApi/Intent.Java.SpringDoc.OpenApi.pkg.config" externalReference="a4d68385-e0ad-43a7-8f37-deea04770d82" />
   </metadata>
-  <tags />
+  <tags>java</tags>
 </package>
