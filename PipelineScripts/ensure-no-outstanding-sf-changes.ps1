@@ -1,6 +1,7 @@
 param(
     [Parameter(Mandatory = $true)][string]$IslnPath,
-    [switch]$CheckDeviations
+    [switch]$CheckDeviations,
+    [switch]$ClearCachedModules
 )
 
 $intent_architect_user = $Env:INTENT_PACKAGER_USERNAME
@@ -20,6 +21,12 @@ else {
     $intent_architect_password = [System.Text.Encoding]::Unicode.GetString([System.Security.Cryptography.ProtectedData]::Unprotect([System.Convert]::FromBase64String($Env:INTENT_PACKAGER_PASSWORD), $null, "CurrentUser"))
 }
 
+if ($ClearCachedModules) {
+    $folder = [System.IO.Path]::GetDirectoryName($IslnPath)
+    $cacheFolder = [System.IO.Path]::Combine($folder, ".intent")
+    Remove-Item -Path $cacheFolder -Recurse -Force
+}
+
 $params = @(
     "ensure-no-outstanding-changes"
     "--check-deviations"
@@ -35,6 +42,6 @@ if (-not $CheckDeviations) {
 }
 
 intent-cli $params
-# dotnet run --project D:\Dev\Intent\Intent.IntentArchitect\IntentArchitect.ElectronClient\Intent.SoftwareFactory.CLI\Intent.SoftwareFactory.CLI.csproj /p:WarningLevel=0 /p:NoWarn="NU5104" -- $params
+# dotnet run --no-build --project D:\Dev\Intent\Intent.IntentArchitect\IntentArchitect.ElectronClient\Intent.SoftwareFactory.CLI\Intent.SoftwareFactory.CLI.csproj /p:WarningLevel=0 /p:NoWarn="NU5104" -- $params
 
 exit $LASTEXITCODE
