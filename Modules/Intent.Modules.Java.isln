@@ -12,7 +12,6 @@
     <application id="40927c95-a61c-4636-8f22-200ed47e571f" name="Intent.Modules.Java.Domain" relativePath="Intent.Modules.Java.Domain/Intent.Modules.Java.Domain.application.config" />
     <application id="df7ecc09-497a-465f-aab7-11f37732aca4" name="Intent.Modules.Java.SpringBoot" relativePath="Intent.Modules.Java.SpringBoot/Intent.Modules.Java.SpringBoot.application.config" />
     <application id="13711c7f-093c-4051-8f56-16e3cbe88663" name="Intent.Modules.Java.Maven" relativePath="Intent.Modules.Java.Maven/Intent.Modules.Java.Maven.application.config" />
-    <application id="15695506-8a9b-4a83-8369-3cd2529d2750" name="Intent.Java.ApplicationTemplates" relativePath="Intent.ApplicationTemplates.Java/Intent.Java.ApplicationTemplates.application.config" />
     <application id="27d96011-0954-47b0-a26c-a8091c854ead" name="Intent.Modules.Java.Persistence.JPA" relativePath="Intent.Modules.Java.Persistence.JPA/Intent.Modules.Java.Persistence.JPA.application.config" />
     <application id="2a1f90d0-0a78-4a3a-899b-a45205055f19" name="Intent.Modules.Java.Spring.Data.Repositories" relativePath="Intent.Modules.Java.Spring.Data.Repositories/Intent.Modules.Java.Spring.Data.Repositories.application.config" />
     <application id="5260c3ef-ea5c-487d-9150-6b5cb1fc28be" name="Intent.Modules.Java.BeanValidation" relativePath="Intent.Modules.Java.BeanValidation/Intent.Modules.Java.BeanValidation.application.config" />
@@ -24,5 +23,6 @@
     <application id="2eeddca7-faf7-4848-bd0e-c45c164af278" name="Intent.Modules.Java.SpringBoot.Validation" relativePath="Intent.Modules.Java.SpringBoot.Validation/Intent.Modules.Java.SpringBoot.Validation.application.config" />
     <application id="3b37b26f-6533-4e96-8a64-f93a1a6b9a17" name="Intent.Modules.Java.Domain.Maven" relativePath="Intent.Modules.Java.Domain.Maven/Intent.Modules.Java.Domain.Maven.application.config" />
     <application id="6e21d1cd-2a2d-403f-b396-ea350ccc7b8b" name="Java.SpringDoc.OpenApi" relativePath="Intent.Modules.Java.SpringDoc.OpenApi/Intent.Modules.Java.SpringDoc.OpenApi.application.config" />
+    <application id="39743c9c-ac35-475c-9856-57b5c4d9e7cb" name="Java.SpringBoot.Security.Metadata" relativePath="Intent.Modules.Java.SpringBoot.Security.Metadata/Intent.Modules.Java.SpringBoot.Security.Metadata.application.config" />
   </applications>
 </solution>
