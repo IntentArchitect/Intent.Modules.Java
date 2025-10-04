@@ -27,7 +27,6 @@
       <type>string</type>
       <controlType>select</controlType>
       <optionsSource>options</optionsSource>
-      <placeholder />
       <defaultValue>INTERNAL_SERVER_ERROR (500)</defaultValue>
       <valueOptions>
         <option>CONTINUE (100)</option>
@@ -92,7 +91,6 @@
         <option>NOT_EXTENDED (510)</option>
         <option>NETWORK_AUTHENTICATION_REQUIRED (511)</option>
       </valueOptions>
-      <lookupTypes />
       <isRequiredFunction>return true;</isRequiredFunction>
     </property>
     <property id="4372c9e8-2e2e-4c0d-bae9-3b4f09686940">
@@ -100,10 +98,7 @@
       <type>string</type>
       <controlType>checkbox</controlType>
       <optionsSource>n/a</optionsSource>
-      <placeholder />
       <defaultValue>true</defaultValue>
-      <valueOptions />
-      <lookupTypes />
     </property>
   </properties>
 </stereotypeDefinition>

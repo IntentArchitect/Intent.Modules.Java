@@ -1,8 +1,8 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <package>
   <id>Intent.Java.SpringBoot</id>
   <version>4.0.2</version>
-  <supportedClientVersions>[4.0.0-beta.0, 5.0.0-a)</supportedClientVersions>
+  <supportedClientVersions>[4.4.0-a, 5.0.0-a)</supportedClientVersions>
   <summary>Java Spring Boot controllers and Application class.</summary>
   <description>Java Spring Boot controllers and Application class.</description>
   <authors>Intent Architect</authors>
@@ -48,7 +48,7 @@
     <install target="Services" src="modelers/SpringBoot Services Designer Settings.designer.settings" externalReference="4d8737f5-fb15-4981-b697-e1ca7c8634de" />
   </metadata>
   <moduleSettings>
-    <group id="eced68d4-93cf-41c3-890b-ca665fa21953" title="Spring Boot" externalReference="eced68d4-93cf-41c3-890b-ca665fa21953">
+    <group id="eced68d4-93cf-41c3-890b-ca665fa21953" title="Spring Boot" externalReference="eced68d4-93cf-41c3-890b-ca665fa21953" type="application-settings">
       <settings>
         <setting id="2c7289d0-0261-4040-95ad-e7aba770753c" title="Target Version" type="select">
           <isRequired>true</isRequired>
@@ -63,4 +63,5 @@
   </moduleSettings>
   <moduleSettingsExtensions />
   <tags>java</tags>
+  <migrations />
 </package>

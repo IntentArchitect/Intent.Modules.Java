@@ -2,7 +2,7 @@
 <solution id="4a60f52a-513f-45fc-ae6b-058edc24915f">
   <name>Intent.Modules.Java.Tests</name>
   <description>Test Applications for the Java Intent Architect Modules</description>
-  <version>3.3.0</version>
+  <version>4.5.20</version>
   <icon>vial</icon>
   <iconType>FontAwesome</iconType>
   <metadataRelativePath>Intent.Metadata</metadataRelativePath>

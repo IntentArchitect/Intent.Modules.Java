@@ -25,20 +25,14 @@
       <type>string</type>
       <controlType>checkbox</controlType>
       <optionsSource>n/a</optionsSource>
-      <placeholder />
       <defaultValue>true</defaultValue>
-      <valueOptions />
-      <lookupTypes />
     </property>
     <property id="5b96293d-d351-4705-bb83-7ca3fdd4d8b3">
       <name>Is Read Only</name>
       <type>string</type>
       <controlType>checkbox</controlType>
       <optionsSource>n/a</optionsSource>
-      <placeholder />
       <defaultValue>true</defaultValue>
-      <valueOptions />
-      <lookupTypes />
       <isActiveFunction>return IsEnabled;</isActiveFunction>
     </property>
     <property id="2d46c091-7f14-47fd-b022-3a3cc8b8c571">
@@ -49,8 +43,6 @@
       <optionsSource>n/a</optionsSource>
       <placeholder>(required)</placeholder>
       <defaultValue>-1</defaultValue>
-      <valueOptions />
-      <lookupTypes />
       <isActiveFunction>return IsEnabled;</isActiveFunction>
       <isRequiredFunction>return true;</isRequiredFunction>
     </property>
@@ -68,7 +60,6 @@
         <option>Repeatable Read</option>
         <option>Serializable</option>
       </valueOptions>
-      <lookupTypes />
       <isActiveFunction>return IsEnabled;</isActiveFunction>
       <isRequiredFunction>return true;</isRequiredFunction>
     </property>
@@ -88,7 +79,6 @@
         <option>Never</option>
         <option>Nested</option>
       </valueOptions>
-      <lookupTypes />
       <isActiveFunction>return IsEnabled;</isActiveFunction>
       <isRequiredFunction>return true;</isRequiredFunction>
     </property>

@@ -28,8 +28,6 @@
       <optionsSource>n/a</optionsSource>
       <placeholder>(default)</placeholder>
       <defaultValue>false</defaultValue>
-      <valueOptions />
-      <lookupTypes />
     </property>
   </properties>
 </stereotypeDefinition>

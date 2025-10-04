@@ -25,19 +25,13 @@
       <type>string</type>
       <controlType>checkbox</controlType>
       <optionsSource>n/a</optionsSource>
-      <placeholder />
       <defaultValue>false</defaultValue>
-      <valueOptions />
-      <lookupTypes />
     </property>
     <property id="643b9ffb-f812-4db7-8368-f0d0faff90a3">
       <name>Package</name>
       <type>string</type>
       <controlType>text</controlType>
       <optionsSource>n/a</optionsSource>
-      <placeholder />
-      <valueOptions />
-      <lookupTypes />
       <isActiveFunction>return properties["Is External"].value;</isActiveFunction>
       <isRequiredFunction>return properties["Is External"].value;</isRequiredFunction>
     </property>

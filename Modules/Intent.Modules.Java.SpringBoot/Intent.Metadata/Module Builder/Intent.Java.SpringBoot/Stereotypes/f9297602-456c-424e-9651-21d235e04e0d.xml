@@ -28,9 +28,6 @@
       <controlType>number</controlType>
       <optionsSource>n/a</optionsSource>
       <placeholder>(default)</placeholder>
-      <valueOptions />
-      <lookupTypes />
-      <isRequiredFunction />
     </property>
     <property id="b79574dc-e33b-45f7-83f9-1b7c966a4d7c">
       <name>Default Page Size</name>
@@ -38,9 +35,6 @@
       <controlType>number</controlType>
       <optionsSource>n/a</optionsSource>
       <placeholder>(default)</placeholder>
-      <valueOptions />
-      <lookupTypes />
-      <isRequiredFunction />
     </property>
   </properties>
 </stereotypeDefinition>

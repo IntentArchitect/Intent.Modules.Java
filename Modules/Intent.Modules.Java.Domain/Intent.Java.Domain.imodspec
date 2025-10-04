@@ -2,7 +2,7 @@
 <package>
   <id>Intent.Java.Domain</id>
   <version>5.0.0</version>
-  <supportedClientVersions>[3.3.16, 5.0.0-a)</supportedClientVersions>
+  <supportedClientVersions>[4.4.0-a, 5.0.0-a)</supportedClientVersions>
   <summary>Entity POJOs based on the Domain designer.</summary>
   <description>Entity POJOs based on the Domain designer.</description>
   <authors>Intent Architect</authors>
@@ -39,4 +39,5 @@
   <moduleSettings />
   <moduleSettingsExtensions />
   <tags>java</tags>
+  <migrations />
 </package>

@@ -2,7 +2,7 @@
 <package>
   <id>Intent.Java.Services</id>
   <version>4.0.0</version>
-  <supportedClientVersions>[3.3.16, 5.0.0-a)</supportedClientVersions>
+  <supportedClientVersions>[4.4.0-a, 5.0.0-a)</supportedClientVersions>
   <summary>Service interfaces and implementation placeholders based on the Services designer.</summary>
   <description>Service interfaces and implementation placeholders based on the Services designer.</description>
   <authors>Intent Architect</authors>
@@ -51,4 +51,5 @@
   <moduleSettings />
   <moduleSettingsExtensions />
   <tags>java</tags>
+  <migrations />
 </package>
