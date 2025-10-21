@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<outputLog>
+  <ApplicationId>107906ee-a9fd-4272-818a-28912b7ad043</ApplicationId>
+  <FileLogs>
+    <FileLog>
+      <CorrelationId>Intent.VisualStudio.Projects.VisualStudioSolution#aab5f39b-56e6-4a19-ad40-d00c9a6d5a0e</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>../Intent.Modules.Java.sln</ApplicationRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
+      <ProjectId>145ba3c3-7bc0-4bf0-8f6d-c95f632522fc</ProjectId>
+      <CorrelationId>Intent.ModuleBuilder.Templates.FactoryExtension#18b30dd9-2af1-4330-a183-a6c64f1af28b</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>FactoryExtensions/CrudServiceFactoryExtension.cs</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>CrudServiceFactoryExtension.cs</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
+      <ProjectId>173698e0-1923-4b37-a35e-3845a0bf5987</ProjectId>
+      <CorrelationId>Intent.ModuleBuilder.IModSpecFile</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>Intent.Java.Services.CRUD.imodspec</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>Intent.Java.Services.CRUD.imodspec</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
+      <ProjectId>173698e0-1923-4b37-a35e-3845a0bf5987</ProjectId>
+      <CorrelationId>Intent.VisualStudio.Projects.CSharpProject#173698e0-1923-4b37-a35e-3845a0bf5987</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>Intent.Modules.Java.Services.CRUD.csproj</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>Intent.Modules.Java.Services.CRUD.csproj</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+  </FileLogs>
+</outputLog>
