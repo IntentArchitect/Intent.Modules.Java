@@ -2,7 +2,7 @@
 <package>
   <id>Intent.Java.SpringDoc.OpenApi</id>
   <version>2.0.0</version>
-  <supportedClientVersions>[3.3.16, 5.0.0-a)</supportedClientVersions>
+  <supportedClientVersions>[3.3.16, 6.0.0-a)</supportedClientVersions>
   <summary>Adds OpenAPI 3 support using springdoc-openapi.</summary>
   <description>Adds OpenAPI 3 support using springdoc-openapi.</description>
   <authors>Intent Architect</authors>

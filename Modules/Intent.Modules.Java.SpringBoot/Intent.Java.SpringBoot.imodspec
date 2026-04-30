@@ -2,7 +2,7 @@
 <package>
   <id>Intent.Java.SpringBoot</id>
   <version>4.0.2</version>
-  <supportedClientVersions>[4.4.0-a, 5.0.0-a)</supportedClientVersions>
+  <supportedClientVersions>[4.4.0-a, 6.0.0-a)</supportedClientVersions>
   <summary>Java Spring Boot controllers and Application class.</summary>
   <description>Java Spring Boot controllers and Application class.</description>
   <authors>Intent Architect</authors>

@@ -1,8 +1,8 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <package>
   <id>Intent.Java.Persistence.JPA</id>
   <version>5.0.2</version>
-  <supportedClientVersions>[4.0.0-beta.7, 5.0.0-a)</supportedClientVersions>
+  <supportedClientVersions>[4.0.0-beta.7, 6.0.0-a)</supportedClientVersions>
   <summary>JPA Annotation decoration of Domain entities.</summary>
   <description>JPA Annotation decoration of Domain entities.</description>
   <authors>Intent Architect</authors>
