@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<class id="e77f03d6-e359-49d5-a541-c6814ef297d5" type="Role" typeId="8663c9f9-2852-45e7-aaa1-0883a2e6f1da">
+  <name>AI.Context.Skills</name>
+  <display>AI.Context.Skills</display>
+  <isAbstract>false</isAbstract>
+  <genericTypes />
+  <isMapped>false</isMapped>
+  <parentFolderId>a5e3713a-0ab3-4584-9dcb-367c19df09c5</parentFolderId>
+  <stereotypes />
+  <metadata />
+  <childElements />
+</class>
